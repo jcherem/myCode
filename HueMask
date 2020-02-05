@@ -1,12 +1,15 @@
 set cut_paste_input [stack 0]
 version 11.3 v4
+push 0
+push 0
 push $cut_paste_input
 Group {
- name HueMask
+ inputs 3
+ name VIEWER_INPUT
  tile_color 0xbc84ff
  selected true
- xpos 14625
- ypos 7616
+ xpos 14642
+ ypos 7604
  addUserKnob {20 Controller}
  addUserKnob {26 General}
  addUserKnob {26 instructions l " " T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
@@ -78,6 +81,7 @@ Group {
  crop true
  addUserKnob {26 xxxxxxxxx l "" +STARTLINE}
  addUserKnob {20 dropdown l "Preview settings" n 1}
+ dropdown 0
  addUserKnob {26 colordatapreview l "Color Data Preview"}
  addUserKnob {41 value l Brightness T Grade_brightness_1.value}
  addUserKnob {41 value_2 l Gamma T Gamma_overall.value}
@@ -88,8 +92,8 @@ Group {
  addUserKnob {20 endGroup n -1}
  addUserKnob {26 xxxxxxx_1 l "" +STARTLINE}
  addUserKnob {20 group_2 l "Colorwheel Look" n 1}
+ group_2 0
  addUserKnob {6 colorless l "Show Color Guides" +STARTLINE}
- colorless true
  addUserKnob {6 showtargets l "Show Color Targets" -STARTLINE}
  showtargets true
  addUserKnob {41 saturation l Saturation T Saturation_colorwheel.saturation}
@@ -238,7 +242,7 @@ Group {
   label REFORMAT
   note_font_size 42
   xpos -284
-  ypos -753
+  ypos -972
   bdwidth 2638
   bdheight 222
  }
@@ -281,7 +285,7 @@ Group {
   label "keyer luminance"
   note_font_size 42
   xpos -376
-  ypos -396
+  ypos -400
   bdwidth 247
   bdheight 211
  }
@@ -383,6 +387,17 @@ Group {
   ypos -487
   bdwidth 1139
   bdheight 403
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode42
+  tile_color 0x3a833bff
+  label "keyer luminance"
+  note_font_size 42
+  xpos -466
+  ypos -714
+  bdwidth 247
+  bdheight 211
  }
  BackdropNode {
   inputs 0
@@ -594,23 +609,23 @@ Group {
   inputs 0
   name InputPlate
   xpos -219
-  ypos -864
+  ypos -1083
  }
  Dot {
   name Dot36
   xpos -185
-  ypos -822
+  ypos -1041
  }
 set Nc28a0060 [stack 0]
  Dot {
   name Dot115
   xpos -4435
-  ypos -822
+  ypos -1041
  }
  Dot {
   name Dot118
   xpos -4435
-  ypos -633
+  ypos -852
  }
  Dot {
   name Dot144
@@ -628,14 +643,14 @@ push $Nc28a0060
  Dot {
   name Dot53
   xpos -185
-  ypos -705
+  ypos -924
  }
 set Nc2ba4080 [stack 0]
  Crop {
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox
   xpos -169
-  ypos -668
+  ypos -887
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
@@ -644,7 +659,7 @@ push $Nc2ba4080
   box {0 0 {width} {height}}
   name Crop2
   xpos -275
-  ypos -665
+  ypos -884
  }
  set Cc6fa3790 [stack 0]
  Switch {
@@ -652,13 +667,14 @@ push $Nc2ba4080
   which {{parent.crop}}
   name Switch_crop_223
   xpos -219
-  ypos -603
+  ypos -824
  }
  set Cc740b5a0 [stack 0]
+set Nc740b5a0 [stack 0]
  Dot {
   name Dot159
   xpos -185
-  ypos -301
+  ypos -305
  }
 set Nf8703b80 [stack 0]
  Colorspace {
@@ -666,7 +682,7 @@ set Nf8703b80 [stack 0]
   name Colorspace10
   label "input \[value colorspace_in]\noutput \[value colorspace_out]"
   xpos -366
-  ypos -316
+  ypos -320
  }
  Shuffle {
   green black
@@ -674,13 +690,13 @@ set Nf8703b80 [stack 0]
   alpha black
   name Shuffle18
   xpos -366
-  ypos -268
+  ypos -272
  }
  Keyer {
   operation "luminance key"
   name Keyer_highlights_2134
   xpos -366
-  ypos -225
+  ypos -229
   disable {{!parent.boolean_2}}
  }
 push $Nf8703b80
@@ -690,7 +706,7 @@ push $Nf8703b80
   to0 rgba.alpha
   name Copy7
   xpos -219
-  ypos -225
+  ypos -229
   disable {{!parent.boolean_2}}
  }
  Dot {
@@ -705,6 +721,12 @@ set Nbb97f1a0 [stack 0]
   ypos -98
  }
 set Nc2882ba0 [stack 0]
+ Premult {
+  name Premult3
+  xpos -219
+  ypos -53
+  disable true
+ }
  Premult {
   name Premult_for_keyer_23
   xpos -219
@@ -1078,7 +1100,6 @@ push $N8aeaf9a0
   xpos 7
   ypos 2574
  }
-push $N45e49ac0
  Dot {
   inputs 0
   name Dot119
@@ -1746,13 +1767,7 @@ push $N733c7590
   xpos -350
   ypos 2460
  }
- Switch {
-  inputs 2
-  which {{parent.offplate}}
-  name Switch_to_nothing_1
-  xpos -384
-  ypos 2497
- }
+set N45e52310 [stack 0]
  Merge2 {
   inputs 2
   operation under
@@ -2299,6 +2314,7 @@ push $N648b9fa0
  }
  Reformat {
   type scale
+  scale 1.7
   black_outside true
   pbb true
   name Reformat_final_Scale_12
@@ -2698,7 +2714,6 @@ clone $Cb4b16390 {
   ypos 3926
   disable {{!parent.showtargets}}
  }
-set N6662400 [stack 0]
  Grade {
   inputs 1+1
   white 4
@@ -3712,18 +3727,6 @@ push $N156d74d0
   xpos -3861
   ypos 7284
  }
-push $N6662400
- Viewer {
-  frame_range 1041-1082
-  frame_increment 8
-  overscan 300
-  center_fstop 0
-  viewerProcess Film
-  far 100000
-  name Viewer1
-  xpos 3
-  ypos 3933
- }
  StickyNote {
   inputs 0
   name StickyNote6
@@ -3732,5 +3735,84 @@ push $N6662400
   note_font_size 19.25
   xpos -290
   ypos 2530
+ }
+push $Nc740b5a0
+ Dot {
+  name Dot183
+  xpos -275
+  ypos -619
+ }
+set Nc7fc96c0 [stack 0]
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace12
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos -456
+  ypos -634
+ }
+set N80db4a80 [stack 0]
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name Shuffle22
+  xpos -456
+  ypos -586
+ }
+set Nce83bcd0 [stack 0]
+ Keyer {
+  operation "luminance key"
+  name Keyer_highlights_1
+  xpos -456
+  ypos -543
+  disable {{!parent.boolean_2}}
+ }
+set Nce972ed0 [stack 0]
+push $Nc7fc96c0
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -309
+  ypos -543
+  disable {{!parent.boolean_2}}
+ }
+push $Nc7fc96c0
+push $Nce972ed0
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy4
+  xpos -152
+  ypos -536
+ }
+push $N80db4a80
+ Keyer {
+  invert true
+  operation "luminance key"
+  range {0.4292508918 0.4444444445 1 1}
+  name Keyer2
+  xpos -726
+  ypos -602
+ }
+push $Nce83bcd0
+ Keyer {
+  operation "luminance key"
+  range {0.1618443652 0.2061368741 1 1}
+  name Keyer1
+  xpos -572
+  ypos -593
+ }
+push $N45e49ac0
+push $N45e52310
+ Switch {
+  inputs 2
+  which {{parent.offplate}}
+  name Switch_to_nothing_1
+  selected true
+  xpos -251
+  ypos 2497
  }
 end_group
