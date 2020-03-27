@@ -10,8 +10,8 @@ Group {
  name huemask
  tile_color 0xbc84ff
  selected true
- xpos -515
- ypos -259
+ xpos -802
+ ypos -1205
  addUserKnob {20 Controller}
  addUserKnob {26 General}
  addUserKnob {26 instructions l " " T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
@@ -25,7 +25,7 @@ Group {
  addUserKnob {26 ""}
  addUserKnob {41 scale l "Overall Scale" t "this scale is only the UI scaling doesn't affect the quality data. \n\nif you want to increase the detail of the data go to settings and activate the checkbox for 1k  data " T Reformat_final_Scale_12.scale}
  addUserKnob {7 zoom2 l Zoom t "This will increase the color data into the darkest pixel or into the brightest colors. \n\nThis is usefull when your plate is too dark or is too bright to spot colors.\n\n" R -1 1}
- zoom2 0.22
+ zoom2 0.33
  addUserKnob {26 ""}
  addUserKnob {20 group_1 l "Use with luminance" n 1}
  group_1 0
@@ -45,13 +45,11 @@ Group {
  addUserKnob {20 endGroup_1 l endGroup n -1}
  addUserKnob {26 xxxxxxxxx_1 l "" +STARTLINE}
  addUserKnob {20 Referencegroup l Reference n 1}
- Referencegroup 0
  addUserKnob {6 Reference l "Show Reference" t "it's a more convinience buttom to deactivate the reference input instead of unplugging the node. " +STARTLINE}
  Reference true
  addUserKnob {6 offplate l "Off plate" -STARTLINE}
  addUserKnob {41 operation l "Merge Operation" -STARTLINE T Merge_reference.operation}
  addUserKnob {6 disablered l "Show Outline Red" +STARTLINE}
- disablered true
  addUserKnob {6 compare l "Highlight Original alpha" t "this will highlight what ever you had in your alpha previous the node. \nThis is usefull if you have a CG and want to see how your colors are blending with the plate overall \n" +STARTLINE}
  addUserKnob {20 endGroup_3 l endGroup n -1}
  addUserKnob {26 ""}
@@ -92,7 +90,6 @@ Group {
  addUserKnob {26 mask_separate l Mask}
  addUserKnob {41 value_3 l Opacity T Multiply_maskopacity.value}
  addUserKnob {6 boolean_1 l Glow +STARTLINE}
- boolean_1 true
  addUserKnob {26 xxxxxxx l "" +STARTLINE}
  addUserKnob {20 endGroup n -1}
  addUserKnob {26 xxxxxxx_1 l "" +STARTLINE}
@@ -246,7 +243,7 @@ Group {
   tile_color 0x337f7eff
   label REFORMAT
   note_font_size 42
-  xpos -284
+  xpos -285
   ypos -972
   bdwidth 2638
   bdheight 222
@@ -289,8 +286,8 @@ Group {
   tile_color 0x3a833bff
   label "keyer luminance"
   note_font_size 42
-  xpos -376
-  ypos -400
+  xpos -593
+  ypos -558
   bdwidth 247
   bdheight 211
  }
@@ -395,12 +392,12 @@ Group {
  }
  BackdropNode {
   inputs 0
-  name BackdropNode42
+  name BackdropNode43
   tile_color 0x3a833bff
   label "keyer luminance"
   note_font_size 42
-  xpos -466
-  ypos -714
+  xpos -135
+  ypos -558
   bdwidth 247
   bdheight 211
  }
@@ -614,14 +611,14 @@ Group {
   inputs 0
   name InputAlpha
   label "\[value number]"
-  xpos -21
+  xpos -22
   ypos -1138
   number 4
  }
  Input {
   inputs 0
   name InputPlate
-  xpos -219
+  xpos -220
   ypos -1228
  }
  Copy {
@@ -629,26 +626,26 @@ Group {
   from0 rgba.alpha
   to0 rgba.alpha
   name Copy9
-  xpos -219
+  xpos -220
   ypos -1138
   disable {{"!\[exists parent.input4]"}}
  }
  Dot {
   name Dot36
-  xpos -185
+  xpos -186
   ypos -1041
  }
 set N214c6d30 [stack 0]
  Dot {
   name Dot53
-  xpos -185
+  xpos -186
   ypos -924
  }
 set N2135ed00 [stack 0]
  Crop {
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox
-  xpos -169
+  xpos -170
   ypos -887
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
@@ -657,7 +654,7 @@ push $N2135ed00
  Crop {
   box {0 0 {width} {height}}
   name Crop2
-  xpos -275
+  xpos -276
   ypos -884
  }
  set C21419b90 [stack 0]
@@ -665,48 +662,72 @@ push $N2135ed00
   inputs 2
   which {{parent.crop}}
   name Switch_crop_223
-  xpos -219
+  xpos -220
   ypos -824
  }
  set C212b3990 [stack 0]
 set N212b3990 [stack 0]
  Dot {
   name Dot159
-  xpos -185
-  ypos -305
+  xpos -402
+  ypos -463
  }
 set N220500d0 [stack 0]
  Colorspace {
   colorspace_out YCbCr
   name Colorspace10
   label "input \[value colorspace_in]\noutput \[value colorspace_out]"
-  xpos -366
-  ypos -320
+  xpos -583
+  ypos -478
  }
  Shuffle {
   green black
   blue black
   alpha black
   name Shuffle18
-  xpos -366
-  ypos -272
+  xpos -583
+  ypos -430
  }
  Keyer {
   operation "luminance key"
   name Keyer_highlights_2134
-  xpos -366
-  ypos -229
+  xpos -583
+  ypos -387
   disable {{!parent.boolean_2}}
  }
+set N21236f00 [stack 0]
 push $N220500d0
  Copy {
   inputs 2
   from0 rgba.alpha
   to0 rgba.alpha
   name Copy7
-  xpos -219
-  ypos -229
+  xpos -436
+  ypos -387
   disable {{!parent.boolean_2}}
+ }
+push $N21236f00
+push $N212b3990
+ Dot {
+  name Dot185
+  xpos 55
+  ypos -463
+ }
+ ChannelMerge {
+  inputs 2
+  operation multiply
+  name ChannelMerge4
+  xpos 21
+  ypos -393
+  disable {{!parent.boolean_2}}
+ }
+set Nc3cd6870 [stack 0]
+ Switch {
+  inputs 2
+  which {{"!\[exists parent.input4]"}}
+  name Switch18_to_merge_with_alpha_2
+  xpos -219
+  ypos -208
  }
  Dot {
   name Dot89
@@ -2366,65 +2387,6 @@ push $Nf21e4290
   xpos -290
   ypos 2530
  }
-push $N212b3990
- Dot {
-  name Dot183
-  xpos -275
-  ypos -619
- }
-set Neef10d70 [stack 0]
- Colorspace {
-  colorspace_out YCbCr
-  name Colorspace12
-  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
-  xpos -456
-  ypos -634
- }
-set Neef15810 [stack 0]
- Shuffle {
-  green black
-  blue black
-  alpha black
-  name Shuffle22
-  xpos -456
-  ypos -586
- }
-set Neef2e530 [stack 0]
- Keyer {
-  operation "luminance key"
-  name Keyer_highlights_1
-  xpos -456
-  ypos -543
-  disable {{!parent.boolean_2}}
- }
-set Neef3ea80 [stack 0]
-push $Neef10d70
- Copy {
-  inputs 2
-  from0 rgba.alpha
-  to0 rgba.alpha
-  name Copy2
-  xpos -309
-  ypos -543
-  disable {{!parent.boolean_2}}
- }
-push $Neef15810
- Keyer {
-  invert true
-  operation "luminance key"
-  range {0.4292508918 0.4444444445 1 1}
-  name Keyer2
-  xpos -726
-  ypos -602
- }
-push $Neef2e530
- Keyer {
-  operation "luminance key"
-  range {0.1618443652 0.2061368741 1 1}
-  name Keyer1
-  xpos -572
-  ypos -593
- }
 push $Nff5fac10
 push $Nf1fba680
  Switch {
@@ -2433,16 +2395,6 @@ push $Nf1fba680
   name Switch_to_nothing_1
   xpos -251
   ypos 2497
- }
-push $Neef10d70
-push $Neef3ea80
- Copy {
-  inputs 2
-  from0 rgba.alpha
-  to0 rgba.alpha
-  name Copy4
-  xpos -152
-  ypos -536
  }
 push $N214c6d30
  Dot {
@@ -3850,5 +3802,17 @@ push $Nef058460
   name Output1
   xpos -3953
   ypos 8573
+ }
+push $Nc3cd6870
+ Viewer {
+  frame_range 1001-1044
+  frame_increment 8
+  overscan 300
+  center_fstop 0
+  viewerProcess Film
+  far 100000
+  name Viewer1
+  xpos 439
+  ypos -334
  }
 end_group
