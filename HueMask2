@@ -1,24 +1,23 @@
 set cut_paste_input [stack 0]
 version 11.3 v6
-push 0
-push 0
 push $cut_paste_input
 Group {
- inputs 3
  name Huemask_2
  tile_color 0xb2d6ff
  selected true
- xpos 1557
- ypos 2118
+ xpos -249
+ ypos -149
  addUserKnob {20 Controller}
  addUserKnob {26 ""}
  addUserKnob {4 pulldown l "Display mode" M {"Scope on plate" "Scope only" "" "" ""}}
+ pulldown "Scope only"
  addUserKnob {26 General}
  addUserKnob {26 instructions l " " T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
  addUserKnob {6 activate l "Scope On" t "Manual check box to desactivate the Scope. However desactivated by default when send to render." +STARTLINE}
  activate true
  addUserKnob {6 alpha l "Premult alpha on scope" t "This is usefull if you just want to see what is on your alpha. so it takes out all the extra color you don't want to see without premulting the plate \n\nWith this on, you will preview only what you had in your the input alpha and the roto mask will apply only on that part as well. \n\nBasically it does a premult based on the alpha so you can work only on that color, " -STARTLINE}
- addUserKnob {26 "" +STARTLINE}
+ alpha true
+ addUserKnob {26 ""}
  addUserKnob {6 boolean_4 l "Use alpha for Matte" t "Use alpha for Matte\n\nThis is useful if you want to paint directly the color that you want to have the matte" +STARTLINE}
  addUserKnob {20 group_3 l Settings -STARTLINE n 1}
  group_3 0
@@ -103,12 +102,12 @@ Group {
  addUserKnob {26 mask_separate l Mask}
  addUserKnob {41 value_3 l Opacity T Multiply_maskopacity.value}
  addUserKnob {6 boolean_1 l Glow +STARTLINE}
- boolean_1 true
  addUserKnob {26 xxxxxxx l "" +STARTLINE}
  addUserKnob {20 endGroup n -1}
  addUserKnob {26 xxxxxxx_1 l "" +STARTLINE}
  addUserKnob {20 group_2 l "Colorwheel Look" n 1}
  addUserKnob {6 colorless l "Show Color Guides" +STARTLINE}
+ colorless true
  addUserKnob {6 showtargets l "Show Color Targets" -STARTLINE}
  addUserKnob {41 saturation l Saturation T Saturation_colorwheel.saturation}
  addUserKnob {41 value_1 l Brightness T Colorwheel_Brightess_1.value}
@@ -636,27 +635,29 @@ Group {
   inputs 0
   name Alpha
   label "\[value number]"
-  xpos -18
-  ypos -1522
+  xpos -23
+  ypos -1506
   number 1
  }
  Dot {
   name Dot188
-  xpos 16
+  xpos 11
   ypos -1373
  }
  Input {
   inputs 0
   name InputPlate
-  xpos -227
-  ypos -1495
+  xpos -223
+  ypos -1497
  }
  Copy {
   inputs 2
   from0 rgba.alpha
   to0 rgba.alpha
+  bbox A
   name Copy9
-  xpos -227
+  selected true
+  xpos -223
   ypos -1382
   disable {{"!\[exists parent.input1]"}}
  }
@@ -665,13 +666,13 @@ Group {
   xpos -189
   ypos -1281
  }
-set N11e42740 [stack 0]
+set N10ec99d0 [stack 0]
  Dot {
   name Dot53
   xpos -189
   ypos -1164
  }
-set N11e2d9d0 [stack 0]
+set Nc3fcf30 [stack 0]
  Crop {
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox
@@ -680,14 +681,14 @@ set N11e2d9d0 [stack 0]
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
-push $N11e2d9d0
+push $Nc3fcf30
  Crop {
   box {0 0 {width} {height}}
   name Crop2
   xpos -279
   ypos -1124
  }
- set C11e25360 [stack 0]
+ set Cc43f420 [stack 0]
  Switch {
   inputs 2
   which {{parent.crop}}
@@ -695,14 +696,14 @@ push $N11e2d9d0
   xpos -223
   ypos -1064
  }
- set C11e12c60 [stack 0]
-set N11e12c60 [stack 0]
+ set C11a1c170 [stack 0]
+set N11a1c170 [stack 0]
  Dot {
   name Dot159
   xpos -405
   ypos -703
  }
-set N11e01970 [stack 0]
+set Nd1fb230 [stack 0]
  Colorspace {
   colorspace_out YCbCr
   name Colorspace10
@@ -725,8 +726,8 @@ set N11e01970 [stack 0]
   ypos -627
   disable {{!parent.boolean_2}}
  }
-set N11d95cf0 [stack 0]
-push $N11e01970
+set N1089b630 [stack 0]
+push $Nd1fb230
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -736,9 +737,9 @@ push $N11e01970
   ypos -627
   disable {{!parent.boolean_2}}
  }
-set N11d67790 [stack 0]
-push $N11d95cf0
-push $N11e12c60
+set N91f42a0 [stack 0]
+push $N1089b630
+push $N11a1c170
  Dot {
   name Dot185
   xpos 52
@@ -752,7 +753,7 @@ push $N11e12c60
   ypos -633
   disable {{!parent.boolean_2}}
  }
-set N11d47e00 [stack 0]
+set N10e063b0 [stack 0]
  Switch {
   inputs 2
   which {{!parent.alpha}}
@@ -760,7 +761,7 @@ set N11d47e00 [stack 0]
   xpos -343
   ypos -527
  }
-push $N11d47e00
+push $N10e063b0
  Switch {
   inputs 2
   which {{-(pulldown)+1}}
@@ -773,13 +774,13 @@ push $N11d47e00
   xpos -188
   ypos -390
  }
-set N11d159d0 [stack 0]
+set N10a069a0 [stack 0]
  Dot {
   name Dot5
   xpos -188
   ypos -279
  }
-set N11d005a0 [stack 0]
+set Nc301c60 [stack 0]
  Premult {
   name Premult3
   xpos -222
@@ -797,14 +798,14 @@ set N11d005a0 [stack 0]
   xpos -188
   ypos -200
  }
-set N11ce78e0 [stack 0]
+set N110d20f0 [stack 0]
  Dot {
   name Dot199
   xpos 48
   ypos -200
  }
-push $N11ce78e0
-push $N11d005a0
+push $N110d20f0
+push $Nc301c60
  Dot {
   name Dot6
   xpos 1782
@@ -820,8 +821,8 @@ push $N11d005a0
   xpos 1782
   ypos -158
  }
-set N11c962d0 [stack 0]
-push $N11ce78e0
+set N108c7f40 [stack 0]
+push $N110d20f0
  Switch {
   inputs 3
   which {{"parent.compare ==1? 2 : parent.alpha"}}
@@ -829,7 +830,7 @@ push $N11ce78e0
   xpos -222
   ypos -161
  }
- set C11c9b280 [stack 0]
+ set Ccf9b5b0 [stack 0]
  Dot {
   name Dot9
   xpos -188
@@ -843,7 +844,7 @@ push $N11ce78e0
   xpos -188
   ypos -106
  }
-set N11c74fc0 [stack 0]
+set N10742500 [stack 0]
  Switch {
   inputs 2
   which {{parent.boolean_4}}
@@ -864,7 +865,7 @@ set N11c74fc0 [stack 0]
   ypos 539
   disable {{!parent.blurmatte}}
  }
- set C11c61ae0 [stack 0]
+ set C110ec220 [stack 0]
  Colorspace {
   colorspace_out YCbCr
   name Colorspace5
@@ -889,13 +890,13 @@ set N11c74fc0 [stack 0]
   xpos 1082
   ypos 683
  }
- set C11bdb990 [stack 0]
+ set C1055e860 [stack 0]
  Dot {
   name Dot112
   xpos 1116
   ypos 3153
  }
-set N11bb6080 [stack 0]
+set Nc4aafb0 [stack 0]
  Dot {
   name Dot113
   xpos 981
@@ -907,7 +908,7 @@ set N11bb6080 [stack 0]
   xpos 41
   ypos 2401
  }
-set N11bc0100 [stack 0]
+set N10b39730 [stack 0]
  Dot {
   name Dot179
   xpos -67
@@ -927,7 +928,7 @@ set N11bc0100 [stack 0]
   xpos -67
   ypos 2458
  }
-push $N11bc0100
+push $N10b39730
  Reformat {
   format {{{parent.ReformatScope_1.format}}}
   resize distort
@@ -944,13 +945,13 @@ push $N11bc0100
   xpos 7
   ypos 2455
  }
- set C11b36af0 [stack 0]
+ set C9182820 [stack 0]
  Dot {
   name Dot181
   xpos 41
   ypos 2500
  }
-set N11b28d20 [stack 0]
+set N115997d0 [stack 0]
  Input {
   inputs 0
   name InputReference_2dn
@@ -964,13 +965,13 @@ set N11b28d20 [stack 0]
   xpos 3910
   ypos -237
  }
-set N11b11870 [stack 0]
-clone $C11e25360 {
+set N11cfd070 [stack 0]
+clone $Cc43f420 {
   xpos 3784
   ypos -195
   selected false
  }
-push $N11b11870
+push $N11cfd070
  Crop {
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox2
@@ -979,7 +980,7 @@ push $N11b11870
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
-clone $C11e12c60 {
+clone $C11a1c170 {
   inputs 2
   xpos 3886
   ypos -128
@@ -1003,7 +1004,7 @@ clone $C11e12c60 {
   xpos 3920
   ypos 700
  }
-set N11ac1b70 [stack 0]
+set N10ff0ec0 [stack 0]
  Dot {
   name Dot172
   xpos 3812
@@ -1024,7 +1025,7 @@ set N11ac1b70 [stack 0]
   xpos 3812
   ypos 795
  }
-push $N11ac1b70
+push $N10ff0ec0
  Reformat {
   format "1024 1024 0 0 1024 1024 1 square_1K"
   resize distort
@@ -1034,7 +1035,7 @@ push $N11ac1b70
   xpos 3886
   ypos 729
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos 3886
   ypos 792
@@ -1045,8 +1046,8 @@ clone $C11b36af0 {
   xpos 3920
   ypos 913
  }
-set N11a44440 [stack 0]
-clone $C11c61ae0 {
+set Nd7116a0 [stack 0]
+clone $C110ec220 {
   xpos 3886
   ypos 931
   selected false
@@ -1066,7 +1067,7 @@ clone $C11c61ae0 {
   xpos 3886
   ypos 1027
  }
-clone $C11bdb990 {
+clone $C1055e860 {
   xpos 3886
   ypos 1063
   selected false
@@ -1078,7 +1079,7 @@ clone $C11bdb990 {
   ypos 1087
   disable {{!parent.Reformat_to_clamp_values.disable}}
  }
-push $N11a44440
+push $Nd7116a0
  Dot {
   name Dot177
   tile_color 0xcc804e00
@@ -1109,7 +1110,7 @@ push $N11a44440
   xpos 3920
   ypos 1550
  }
-set N10133680 [stack 0]
+set N1140d310 [stack 0]
  Dot {
   name Dot77
   xpos 3810
@@ -1150,7 +1151,7 @@ set N10133680 [stack 0]
   xpos 3810
   ypos 1823
  }
-push $N10133680
+push $N1140d310
  Merge2 {
   inputs 2
   operation under
@@ -1178,7 +1179,7 @@ push $N10133680
   xpos -62
   ypos 2038
  }
-set Nf35c8b0 [stack 0]
+set N113ae000 [stack 0]
  Dot {
   name Dot120
   xpos -170
@@ -1198,7 +1199,7 @@ set Nf35c8b0 [stack 0]
   xpos -170
   ypos 2095
  }
-push $Nf35c8b0
+push $N113ae000
  Reformat {
   format {{{parent.ReformatScope_1.format}}}
   resize distort
@@ -1208,7 +1209,7 @@ push $Nf35c8b0
   xpos -96
   ypos 2056
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos -96
   ypos 2092
@@ -1219,7 +1220,7 @@ clone $C11b36af0 {
   xpos -62
   ypos 2137
  }
-set N1128d9c0 [stack 0]
+set N11827360 [stack 0]
  Input {
   inputs 0
   name InputReference
@@ -1233,13 +1234,13 @@ set N1128d9c0 [stack 0]
   xpos 3072
   ypos -221
  }
-set N112634a0 [stack 0]
-clone $C11e25360 {
+set N1173dec0 [stack 0]
+clone $Cc43f420 {
   xpos 2946
   ypos -179
   selected false
  }
-push $N112634a0
+push $N1173dec0
  Crop {
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox1
@@ -1248,7 +1249,7 @@ push $N112634a0
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
-clone $C11e12c60 {
+clone $C11a1c170 {
   inputs 2
   xpos 3048
   ypos -112
@@ -1272,7 +1273,7 @@ clone $C11e12c60 {
   xpos 3082
   ypos 500
  }
-set N111da940 [stack 0]
+set N11b3fb00 [stack 0]
  Dot {
   name Dot127
   xpos 2974
@@ -1293,7 +1294,7 @@ set N111da940 [stack 0]
   xpos 2974
   ypos 595
  }
-push $N111da940
+push $N11b3fb00
  Reformat {
   format "1024 1024 0 0 1024 1024 1 square_1K"
   resize distort
@@ -1303,7 +1304,7 @@ push $N111da940
   xpos 3048
   ypos 529
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos 3048
   ypos 592
@@ -1314,8 +1315,8 @@ clone $C11b36af0 {
   xpos 3082
   ypos 713
  }
-set N1116b830 [stack 0]
-clone $C11c61ae0 {
+set N117afab0 [stack 0]
+clone $C110ec220 {
   xpos 3048
   ypos 731
   selected false
@@ -1335,7 +1336,7 @@ clone $C11c61ae0 {
   xpos 3048
   ypos 827
  }
-clone $C11bdb990 {
+clone $C1055e860 {
   xpos 3048
   ypos 863
   selected false
@@ -1347,7 +1348,7 @@ clone $C11bdb990 {
   ypos 887
   disable {{!parent.Reformat_to_clamp_values.disable}}
  }
-push $N1116b830
+push $N117afab0
  Dot {
   name Dot80
   tile_color 0xcc804e00
@@ -1378,7 +1379,7 @@ push $N1116b830
   xpos 3082
   ypos 1350
  }
-set N11043350 [stack 0]
+set N11917640 [stack 0]
  Dot {
   name Dot88
   xpos 2972
@@ -1419,7 +1420,7 @@ set N11043350 [stack 0]
   xpos 2972
   ypos 1623
  }
-push $N11043350
+push $N11917640
  Merge2 {
   inputs 2
   operation under
@@ -1446,13 +1447,13 @@ push $N11043350
   xpos -96
   ypos 2211
  }
-push $N11c962d0
+push $N108c7f40
  Dot {
   name Dot110
   xpos 1782
   ypos 96
  }
-set N10f2a740 [stack 0]
+set N11dbe680 [stack 0]
  Dot {
   name Dot124
   xpos 1674
@@ -1473,7 +1474,7 @@ set N10f2a740 [stack 0]
   xpos 1674
   ypos 191
  }
-push $N10f2a740
+push $N11dbe680
  Reformat {
   format "1024 1024 0 0 1024 1024 1 square_1K"
   resize distort
@@ -1483,7 +1484,7 @@ push $N10f2a740
   xpos 1748
   ypos 125
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos 1748
   ypos 188
@@ -1494,8 +1495,8 @@ clone $C11b36af0 {
   xpos 1782
   ypos 489
  }
-set N10eb3cf0 [stack 0]
-clone $C11c61ae0 {
+set N1199f180 [stack 0]
+clone $C110ec220 {
   xpos 1748
   ypos 522
   selected false
@@ -1515,12 +1516,12 @@ clone $C11c61ae0 {
   xpos 1748
   ypos 626
  }
-clone $C11bdb990 {
+clone $C1055e860 {
   xpos 1748
   ypos 700
   selected false
  }
-set N10e41460 [stack 0]
+set N11c29ef0 [stack 0]
  AdjBBox {
   numpixels {{parent.AdjBBox_Color_Data_1.numpixels}}
   name AdjBBox2
@@ -1528,7 +1529,7 @@ set N10e41460 [stack 0]
   ypos 724
   disable {{!parent.Reformat_to_clamp_values.disable}}
  }
-push $N10eb3cf0
+push $N1199f180
  Dot {
   name Dot12
   xpos 1633
@@ -1564,7 +1565,7 @@ push $N10eb3cf0
   xpos 1782
   ypos 1139
  }
-set N10db1f50 [stack 0]
+set N109873b0 [stack 0]
  Dot {
   name Dot23
   xpos 1581
@@ -1598,7 +1599,7 @@ set N10db1f50 [stack 0]
   xpos 1421
   ypos 1290
  }
-push $N10db1f50
+push $N109873b0
  Merge2 {
   inputs 2
   operation under
@@ -1611,7 +1612,7 @@ push $N10db1f50
   xpos 1785
   ypos 1589
  }
-push $N11c74fc0
+push $N10742500
  Dot {
   name Dot11
   xpos -354
@@ -1622,7 +1623,7 @@ push $N11c74fc0
   xpos -354
   ypos 98
  }
-set N10d018d0 [stack 0]
+set N111b0ad0 [stack 0]
  Dot {
   name Dot116
   xpos -462
@@ -1643,7 +1644,7 @@ set N10d018d0 [stack 0]
   xpos -462
   ypos 193
  }
-push $N10d018d0
+push $N111b0ad0
  Reformat {
   format "1024 1024 0 0 1024 1024 1 square_1K"
   resize distort
@@ -1653,7 +1654,7 @@ push $N10d018d0
   xpos -388
   ypos 127
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos -388
   ypos 190
@@ -1672,8 +1673,8 @@ clone $C11b36af0 {
   xpos -353
   ypos 516
  }
-set N10c702e0 [stack 0]
-clone $C11c61ae0 {
+set N11b06210 [stack 0]
+clone $C110ec220 {
   xpos -387
   ypos 556
   selected false
@@ -1693,7 +1694,7 @@ clone $C11c61ae0 {
   xpos -387
   ypos 652
  }
-clone $C11bdb990 {
+clone $C1055e860 {
   xpos -387
   ypos 688
   selected false
@@ -1710,7 +1711,7 @@ clone $C11bdb990 {
   xpos -353
   ypos 736
  }
-push $N10c702e0
+push $N11b06210
  Dot {
   name Dot17
   tile_color 0xcc804e00
@@ -1749,13 +1750,13 @@ push $N10c702e0
   xpos -353
   ypos 1122
  }
-set N10b3e7b0 [stack 0]
+set N13cc7310 [stack 0]
  Dot {
   name Dot183
   xpos -353
   ypos 1161
  }
-set N10b299a0 [stack 0]
+set N13ccbcf0 [stack 0]
  Dot {
   name Dot186
   xpos -463
@@ -1789,7 +1790,7 @@ set N10b299a0 [stack 0]
   xpos -623
   ypos 1312
  }
-push $N10b299a0
+push $N13ccbcf0
  Merge2 {
   inputs 2
   operation under
@@ -1803,7 +1804,7 @@ push $N10b299a0
   xpos -350
   ypos 1547
  }
-set N10a50e10 [stack 0]
+set N13d17180 [stack 0]
  Dot {
   name Dot29
   xpos -235
@@ -1815,9 +1816,9 @@ set N10a50e10 [stack 0]
   xpos -269
   ypos 1586
  }
-push $N10a50e10
-push $N10a50e10
-clone $C11c9b280 {
+push $N13d17180
+push $N13d17180
+clone $Ccf9b5b0 {
   inputs 3
   xpos -384
   ypos 1586
@@ -1828,7 +1829,7 @@ clone $C11c9b280 {
   xpos -350
   ypos 1739
  }
-set N10a0d310 [stack 0]
+set N13d38d00 [stack 0]
  Dot {
   name Dot169
   xpos -505
@@ -1852,7 +1853,7 @@ set N10a0d310 [stack 0]
   xpos -539
   ypos 1866
  }
-push $N10a0d310
+push $N13d38d00
  Merge2 {
   inputs 2
   operation plus
@@ -1867,7 +1868,7 @@ push $N10a0d310
   xpos -350
   ypos 2097
  }
-push $N1128d9c0
+push $N11827360
  Switch {
   inputs 2
   which {{parent.offplate}}
@@ -1888,7 +1889,7 @@ push $N1128d9c0
   xpos -350
   ypos 2460
  }
-set N1094a050 [stack 0]
+set N13d98030 [stack 0]
  Merge2 {
   inputs 2
   operation under
@@ -1902,7 +1903,7 @@ set N1094a050 [stack 0]
   xpos -350
   ypos 2727
  }
-set N10904130 [stack 0]
+set N13dad280 [stack 0]
  Dot {
   name Dot111
   xpos 803
@@ -1988,8 +1989,8 @@ set N10904130 [stack 0]
   xpos 947
   ypos 4937
  }
-push $N11bb6080
-push $N10b3e7b0
+push $Nc4aafb0
+push $N13cc7310
  Dot {
   name Dot198
   xpos 288
@@ -2000,7 +2001,7 @@ push $N10b3e7b0
   xpos 288
   ypos 2787
  }
-set N1ac9ccc0 [stack 0]
+set N13f48db0 [stack 0]
  FrameHold {
   first_frame 1032
   name FrameHold1
@@ -2018,7 +2019,7 @@ set N1ac9ccc0 [stack 0]
   addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
   addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
   addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
-  addUserKnob {26 "" +STARTLINE T " "}
+  addUserKnob {26 "" -STARTLINE T " "}
   addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
   addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
   addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
@@ -2026,8 +2027,8 @@ set N1ac9ccc0 [stack 0]
   addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
   addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
   addUserKnob {1 hidden_foce_startline +HIDDEN}
-  addUserKnob {26 show +HIDDEN T " "}
-  addUserKnob {26 shot +HIDDEN T " "}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
   addUserKnob {1 show_specify l show +HIDDEN}
   show_specify " "
   addUserKnob {1 shot_specify l shot +HIDDEN}
@@ -2045,11 +2046,10 @@ set N1ac9ccc0 [stack 0]
  Crop {
   box {0 0 512 512}
   name Crop6
-  selected true
   xpos 254
   ypos 2841
  }
-set N23b5eb20 [stack 0]
+set N13f5b980 [stack 0]
  Reformat {
   resize none
   pbb true
@@ -2099,7 +2099,7 @@ set N23b5eb20 [stack 0]
   xpos 654
   ypos 2900
  }
-set N10634f40 [stack 0]
+set N13fadf40 [stack 0]
  Reformat {
   type scale
   scale 0.5
@@ -2124,7 +2124,7 @@ set N10634f40 [stack 0]
   xpos 483
   ypos 2964
  }
-set N106147a0 [stack 0]
+set N13fc6680 [stack 0]
  Reformat {
   resize distort
   filter Notch
@@ -2133,13 +2133,13 @@ set N106147a0 [stack 0]
   xpos 483
   ypos 3000
  }
-set N105e8d20 [stack 0]
+set N13fd5740 [stack 0]
  Dot {
   name Dot160
   xpos 517
   ypos 3050
  }
-push $N10634f40
+push $N13fadf40
  Dot {
   name Dot57
   xpos 654
@@ -2155,7 +2155,7 @@ push $N10634f40
   xpos 620
   ypos 2962
  }
-set N105c7cb0 [stack 0]
+set N13fedea0 [stack 0]
  Reformat {
   resize distort
   filter Notch
@@ -2164,7 +2164,7 @@ set N105c7cb0 [stack 0]
   xpos 620
   ypos 2998
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos 620
   ypos 3047
@@ -2215,13 +2215,13 @@ clone $C11b36af0 {
   xpos 1116
   ypos 5724
  }
-set N1052bf30 [stack 0]
+set N140496b0 [stack 0]
  Dot {
   name Dot146
   xpos 1116
   ypos 7470
  }
-set N10517240 [stack 0]
+set N1404e230 [stack 0]
  Dot {
   name Dot2
   xpos 1116
@@ -2235,8 +2235,8 @@ set N10517240 [stack 0]
   xpos -2614
   ypos 6850
  }
-push $N1052bf30
-push $N11d159d0
+push $N140496b0
+push $N10a069a0
  Dot {
   name Dot56
   xpos -3926
@@ -2252,7 +2252,7 @@ push $N11d159d0
   xpos -3919
   ypos 5385
  }
-set N104f5530 [stack 0]
+set N14065ae0 [stack 0]
  Dot {
   name Dot145
   xpos -3495
@@ -2308,7 +2308,7 @@ set N104f5530 [stack 0]
   xpos -3495
   ypos 5697
  }
-set N10424880 [stack 0]
+set N140dd250 [stack 0]
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -2328,7 +2328,7 @@ set N10424880 [stack 0]
   xpos -3495
   ypos 5815
  }
-set N10406370 [stack 0]
+set N140f80b0 [stack 0]
  Dot {
   name Dot151
   xpos -3007
@@ -2344,7 +2344,7 @@ set N10406370 [stack 0]
   xpos -3007
   ypos 5930
  }
-set N103dd910 [stack 0]
+set N14109970 [stack 0]
  Dot {
   name Dot132
   xpos -3115
@@ -2365,7 +2365,7 @@ set N103dd910 [stack 0]
   xpos -3115
   ypos 6025
  }
-push $N103dd910
+push $N14109970
  Reformat {
   format {{{parent.ReformatScope_1.format}}}
   resize distort
@@ -2375,7 +2375,7 @@ push $N103dd910
   xpos -3041
   ypos 5959
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos -3041
   ypos 6022
@@ -2386,8 +2386,8 @@ clone $C11b36af0 {
   xpos -3007
   ypos 6183
  }
-set N1037d860 [stack 0]
-clone $C11c61ae0 {
+set N1413ddd0 [stack 0]
+clone $C110ec220 {
   xpos -3041
   ypos 6216
   selected false
@@ -2407,7 +2407,7 @@ clone $C11c61ae0 {
   xpos -3041
   ypos 6320
  }
-clone $C11bdb990 {
+clone $C1055e860 {
   xpos -3041
   ypos 6394
   selected false
@@ -2419,7 +2419,7 @@ clone $C11bdb990 {
   ypos 6418
   disable {{!parent.Reformat_to_clamp_values.disable}}
  }
-push $N1037d860
+push $N1413ddd0
  Dot {
   name Dot135
   xpos -3156
@@ -2455,13 +2455,13 @@ push $N1037d860
   xpos -3007
   ypos 6553
  }
-set N1026cc70 [stack 0]
+set N141b5630 [stack 0]
  Dot {
   name Dot138
   xpos -3208
   ypos 6553
  }
-set N10250910 [stack 0]
+set N141bb190 [stack 0]
  FilterErode {
   size -0.5
   filter gaussian
@@ -2483,7 +2483,7 @@ set N10250910 [stack 0]
   xpos -1570
   ypos 1994
  }
-set N1024a9f0 [stack 0]
+set N141d4850 [stack 0]
  Colorspace {
   colorspace_out YCbCr
   name Colorspace2
@@ -2499,12 +2499,12 @@ set N1024a9f0 [stack 0]
   xpos -1604
   ypos 2060
  }
-clone $C11bdb990 {
+clone $C1055e860 {
   xpos -1604
   ypos 2096
   selected false
  }
-push $N1024a9f0
+push $N141d4850
  Dot {
   name Dot61
   xpos -1796
@@ -2539,20 +2539,20 @@ push $N1024a9f0
   xpos -1570
   ypos 2274
  }
-set N101b0400 [stack 0]
+set N14232ea0 [stack 0]
  Dot {
   name Dot166
   xpos -1663
   ypos 2274
  }
-set N101b54b0 [stack 0]
+set N14237a40 [stack 0]
  Dilate {
   size 18
   name Dilate15
   xpos -1872
   ypos 2265
  }
-push $N10e41460
+push $N11c29ef0
  Dot {
   name Dot32
   xpos 1969
@@ -2593,7 +2593,7 @@ push $N10e41460
   xpos -290
   ypos 2530
  }
-push $N11e42740
+push $N10ec99d0
  Dot {
   name Dot115
   xpos -4438
@@ -2609,15 +2609,15 @@ push $N11e42740
   xpos -4435
   ypos 7867
  }
-set N10153590 [stack 0]
+set N14272ae0 [stack 0]
  Dot {
   name Dot154
   xpos -4435
   ypos 8153
  }
-push $N10153590
-push $N10517240
-push $N10406370
+push $N14272ae0
+push $N1404e230
+push $N140f80b0
  Dot {
   name Dot147
   xpos -3495
@@ -2628,19 +2628,19 @@ push $N10406370
   xpos -3495
   ypos 7311
  }
-push $N104f5530
+push $N14065ae0
  Dot {
   name Dot27
   xpos -3919
   ypos 5605
  }
-set N10146380 [stack 0]
+set N142858f0 [stack 0]
  Dot {
   name Dot40
   xpos -3800
   ypos 5605
  }
-push $N10424880
+push $N140dd250
  Switch {
   inputs 2
   which {{"\[exists parent.input1]"}}
@@ -2648,7 +2648,7 @@ push $N10424880
   xpos -3834
   ypos 5694
  }
-push $N10146380
+push $N142858f0
  Switch {
   inputs 2
   which 1
@@ -2662,19 +2662,19 @@ push $N10146380
   xpos -3919
   ypos 6943
  }
-set N1241cea0 [stack 0]
+set N1429f230 [stack 0]
  Dot {
   name Dot152
   xpos -4057
   ypos 6943
  }
-set N1241a760 [stack 0]
+set N142a3d40 [stack 0]
  Dot {
   name Dot153
   xpos -4057
   ypos 7128
  }
-push $N10250910
+push $N141bb190
  Dilate {
   size 1.5
   name Dilate4
@@ -2689,7 +2689,7 @@ push $N10250910
   xpos -3402
   ypos 6626
  }
-push $N1026cc70
+push $N141b5630
  Merge2 {
   inputs 2
   operation under
@@ -2715,7 +2715,7 @@ push $N1026cc70
   xpos -3041
   ypos 6833
  }
- set C1232ced0 [stack 0]
+ set C142e98a0 [stack 0]
  Dot {
   name Dot140
   xpos -3007
@@ -2752,7 +2752,7 @@ push $N1026cc70
   xpos -2714
   ypos 3287
  }
-set N120ba230 [stack 0]
+set N143245d0 [stack 0]
  Dilate {
   channels alpha
   size -1.6
@@ -2767,14 +2767,14 @@ set N120ba230 [stack 0]
   xpos -2977
   ypos 3314
  }
-set N11924710 [stack 0]
+set N14334210 [stack 0]
  Invert {
   channels alpha
   name Invert1
   xpos -2977
   ypos 3397
  }
-set N118d21c0 [stack 0]
+set N14341900 [stack 0]
  Dot {
   name Dot161
   xpos -2943
@@ -2866,7 +2866,7 @@ set N118d21c0 [stack 0]
   xpos -2339
   ypos 3815
  }
-set N117350c0 [stack 0]
+set N143a30b0 [stack 0]
  Colorspace {
   colorspace_out YCbCr
   name Colorspace4
@@ -2882,7 +2882,7 @@ set N117350c0 [stack 0]
   xpos -2263
   ypos 3848
  }
-push $N117350c0
+push $N143a30b0
  BlinkScript {
   inputs 2
   recompileCount 15
@@ -2920,7 +2920,7 @@ push $N117350c0
   xpos -2587
   ypos 3920
  }
- set C114d8ac0 [stack 0]
+ set C143fcbd0 [stack 0]
  Reformat {
   inputs 0
   format {{{parent.ReformatScope_1.format}}}
@@ -2934,7 +2934,7 @@ push $N117350c0
   xpos -3136
   ypos 3515
  }
-set N10b7b060 [stack 0]
+set N14417800 [stack 0]
  Transform {
   center {512 512}
   shutteroffset centred
@@ -2967,7 +2967,7 @@ set N10b7b060 [stack 0]
   xpos -3136
   ypos 3901
  }
-push $N10b7b060
+push $N14417800
  Dot {
   name Dot15
   xpos -3037
@@ -2997,8 +2997,8 @@ push $N10b7b060
   xpos -3037
   ypos 3605
  }
-set N115e5db0 [stack 0]
-push $N120ba230
+set N1447ad10 [stack 0]
+push $N143245d0
  Dilate {
   channels alpha
   size -0.6
@@ -3013,7 +3013,7 @@ push $N120ba230
   xpos -2748
   ypos 3347
  }
-push $N118d21c0
+push $N14341900
  ChannelMerge {
   inputs 2
   operation in
@@ -3027,7 +3027,7 @@ push $N118d21c0
   xpos -2748
   ypos 3460
  }
-set Nec68c80 [stack 0]
+set N144a4a80 [stack 0]
  Grade {
   inputs 1+1
   channels rgba
@@ -3038,8 +3038,8 @@ set Nec68c80 [stack 0]
   xpos -2748
   ypos 3602
  }
-push $N115e5db0
-push $Nec68c80
+push $N1447ad10
+push $N144a4a80
  Dot {
   name Dot69
   xpos -2555
@@ -3081,7 +3081,7 @@ push $Nec68c80
   xpos -2748
   ypos 3666
  }
-clone $C114d8ac0 {
+clone $C143fcbd0 {
   xpos -2748
   ypos 3827
   selected false
@@ -3141,7 +3141,7 @@ clone $C114d8ac0 {
   xpos -2714
   ypos 4088
  }
-set Nf2ea580 [stack 0]
+set N14569f80 [stack 0]
  Dot {
   name Dot48
   xpos -2824
@@ -3155,28 +3155,28 @@ set Nf2ea580 [stack 0]
   xpos -2858
   ypos 4125
  }
-push $Nf2ea580
-clone $C11b36af0 {
+push $N14569f80
+clone $C9182820 {
   inputs 2
   xpos -2748
   ypos 4125
   selected false
  }
-push $N101b0400
+push $N14232ea0
  Dilate {
   size 0.6
   name Dilate18
   xpos -1604
   ypos 2629
  }
-push $N101b54b0
+push $N14237a40
  Dilate {
   size 12
   name Dilate10
   xpos -1697
   ypos 2315
  }
-set Nf6f7f00 [stack 0]
+set N14595750 [stack 0]
  EdgeDetectWrapper {
   blursize 3
   name EdgeDetect3
@@ -3216,7 +3216,7 @@ set Nf6f7f00 [stack 0]
   xpos -1869
   ypos 2573
  }
-push $Nf6f7f00
+push $N14595750
  Grade {
   channels rgba
   multiply {0.5 0.5 0.5 0.002}
@@ -3254,7 +3254,7 @@ push $Nf6f7f00
   xpos -1664
   ypos 2860
  }
-set Nf677ab0 [stack 0]
+set N11175240 [stack 0]
  Dot {
   name Dot65
   xpos -1782
@@ -3274,7 +3274,7 @@ set Nf677ab0 [stack 0]
   xpos -1782
   ypos 2919
  }
-push $Nf677ab0
+push $N11175240
  Reformat {
   format {{{parent.ReformatScope_1.format}}}
   resize distort
@@ -3284,7 +3284,7 @@ push $Nf677ab0
   xpos -1698
   ypos 2878
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos -1698
   ypos 2916
@@ -3312,14 +3312,14 @@ clone $C11b36af0 {
   xpos -693
   ypos 2973
  }
-set Nef597b0 [stack 0]
+set N14688450 [stack 0]
  Dot {
   name Dot131
   xpos -693
   ypos 2997
  }
-push $Nef597b0
-push $N10904130
+push $N14688450
+push $N13dad280
  Dot {
   name Dot190
   xpos -350
@@ -3355,13 +3355,12 @@ push $N10904130
   ypos 3100
  }
  Gamma {
-  value 0.86
   name Gamma_overall
   xpos -384
   ypos 3124
  }
  Multiply {
-  value 20.61
+  value 3
   name Grade_brightness_1
   xpos -384
   ypos 3160
@@ -3376,7 +3375,7 @@ push $N10904130
   xpos -350
   ypos 3376
  }
-set N123c9980 [stack 0]
+set N146e3e10 [stack 0]
  Dot {
   name Dot173
   xpos -494
@@ -3387,7 +3386,7 @@ set N123c9980 [stack 0]
   xpos -494
   ypos 3801
  }
-push $N106147a0
+push $N13fc6680
  Dot {
   name Dot156
   xpos 377
@@ -3398,7 +3397,7 @@ push $N106147a0
   xpos 377
   ypos 3086
  }
-push $N105c7cb0
+push $N13fedea0
  Dot {
   name Dot157
   xpos 586
@@ -3409,7 +3408,7 @@ push $N105c7cb0
   xpos 586
   ypos 3086
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos 480
   ypos 3083
@@ -3444,25 +3443,25 @@ clone $C11b36af0 {
   xpos 370
   ypos 3376
  }
-set N11fba200 [stack 0]
+set N1472b6c0 [stack 0]
  Dot {
   name Dot50
   xpos 370
   ypos 3406
  }
-set N11fac7b0 [stack 0]
+set N14730240 [stack 0]
  Dot {
   name Dot51
   xpos 370
   ypos 3446
  }
-set N11f88660 [stack 0]
+set N14734dc0 [stack 0]
  Dot {
   name Dot20
   xpos 370
   ypos 3492
  }
-set N11eed110 [stack 0]
+set N14739940 [stack 0]
  Dot {
   name Dot7
   xpos 370
@@ -3523,7 +3522,7 @@ set N11eed110 [stack 0]
   xpos 591
   ypos 3520
  }
-set N11bd7a00 [stack 0]
+set N14795590 [stack 0]
  Dot {
   name Dot163
   xpos 473
@@ -3543,7 +3542,7 @@ set N11bd7a00 [stack 0]
   xpos 473
   ypos 3579
  }
-push $N11bd7a00
+push $N14795590
  Reformat {
   format {{{parent.ReformatScope_1.format}}}
   resize distort
@@ -3553,7 +3552,7 @@ push $N11bd7a00
   xpos 557
   ypos 3538
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos 557
   ypos 3576
@@ -3577,7 +3576,7 @@ clone $C11b36af0 {
   xpos 336
   ypos 3686
  }
-push $N123c9980
+push $N146e3e10
  Merge2 {
   inputs 2
   name Merge_Mask_preview4324
@@ -3597,22 +3596,22 @@ push $N123c9980
   xpos -384
   ypos 3797
  }
-push $N11eed110
+push $N14739940
  Dilate {
   size -1
   name Dilate1
   xpos 173
   ypos 3483
  }
-push $N11f88660
+push $N14734dc0
  EdgeDetectWrapper {
   name EdgeDetect1
   xpos 113
   ypos 3437
  }
-push $N11fac7b0
-push $N11fba200
-push $N123c9980
+push $N14730240
+push $N1472b6c0
+push $N146e3e10
  Saturation {
   inputs 1+1
   saturation 0.78
@@ -3686,7 +3685,7 @@ push $N123c9980
   xpos -2714
   ypos 4314
  }
-set N11108b70 [stack 0]
+set N14884260 [stack 0]
  Dot {
   name Dot95
   xpos -2550
@@ -3708,7 +3707,7 @@ set N11108b70 [stack 0]
   xpos -2551
   ypos 4873
  }
-push $N11924710
+push $N14334210
  Dot {
   name Dot54
   xpos -3251
@@ -3724,7 +3723,7 @@ push $N11924710
   xpos -3251
   ypos 4326
  }
-set N10f9fc40 [stack 0]
+set N148a85d0 [stack 0]
  Dot {
   name Dot46
   xpos -3354
@@ -3738,8 +3737,8 @@ set N10f9fc40 [stack 0]
   xpos -3388
   ypos 4363
  }
-push $N10f9fc40
-clone $C11b36af0 {
+push $N148a85d0
+clone $C9182820 {
   inputs 2
   xpos -3285
   ypos 4363
@@ -3750,7 +3749,7 @@ clone $C11b36af0 {
   xpos -3251
   ypos 4437
  }
-set N10ec1730 [stack 0]
+set N148c8e20 [stack 0]
  Dot {
   name Dot25
   xpos -3251
@@ -3774,7 +3773,7 @@ set N10ec1730 [stack 0]
   xpos -3044
   ypos 4565
  }
-set N10d7ad10 [stack 0]
+set N148dfca0 [stack 0]
  Dot {
   name Dot91
   xpos -3152
@@ -3794,8 +3793,8 @@ set N10d7ad10 [stack 0]
   xpos -3152
   ypos 4622
  }
-push $N10d7ad10
-clone $C11b36af0 {
+push $N148dfca0
+clone $C9182820 {
   inputs 2
   xpos -3078
   ypos 4619
@@ -3814,7 +3813,7 @@ clone $C11b36af0 {
   xpos -3078
   ypos 4770
  }
-push $N11108b70
+push $N14884260
  Dot {
   name Dot101
   xpos -2931
@@ -3837,19 +3836,19 @@ push $N11108b70
   xpos -3044
   ypos 4849
  }
-push $N11108b70
+push $N14884260
  Dot {
   name Dot103
   xpos -2714
   ypos 4370
  }
-set N109e40b0 [stack 0]
+set N149396e0 [stack 0]
  Dot {
   name Dot93
   xpos -2845
   ypos 4370
  }
-push $N10ec1730
+push $N148c8e20
  ChannelMerge {
   inputs 2
   operation stencil
@@ -3857,7 +3856,7 @@ push $N10ec1730
   xpos -2879
   ypos 4422
  }
-push $N109e40b0
+push $N149396e0
  Grade {
   inputs 1+1
   channels alpha
@@ -3885,7 +3884,7 @@ push $N109e40b0
   xpos -2743
   ypos 4870
  }
-clone $C1232ced0 {
+clone $C142e98a0 {
   xpos -2743
   ypos 5070
   selected false
@@ -3917,8 +3916,8 @@ clone $C1232ced0 {
   xpos -2709
   ypos 7027
  }
-set Nf233b90 [stack 0]
-push $N1241cea0
+set N149a2ad0 [stack 0]
+push $N1429f230
  Merge2 {
   inputs 2
   name Merge_with_the_plate
@@ -3934,7 +3933,7 @@ push $N1241cea0
   xpos -3953
   ypos 7118
  }
-push $N1241a760
+push $N142a3d40
  Dot {
   name Dot149
   xpos -4249
@@ -3968,7 +3967,6 @@ push $N1241a760
   ypos 7461
   disable {{"!\[exists parent.input2]"}}
  }
-set Nf049030 [stack 0]
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -3987,7 +3985,7 @@ set Nf049030 [stack 0]
   ypos 8144
   disable {{!parent.keepmyalpha}}
  }
-push $Nf233b90
+push $N149a2ad0
  Dot {
   name Dot184
   xpos -2709
@@ -4005,8 +4003,8 @@ push $Nf233b90
   xpos -3953
   ypos 8546
  }
-push $N11d67790
-push $N11d47e00
+push $N91f42a0
+push $N10e063b0
  Switch {
   inputs 2
   which {{"!\[exists parent.input4]"}}
@@ -4014,8 +4012,8 @@ push $N11d47e00
   xpos -529
   ypos -516
  }
-push $N11b28d20
-push $N1094a050
+push $N115997d0
+push $N13d98030
  Switch {
   inputs 2
   which {{parent.offplate}}
@@ -4023,13 +4021,13 @@ push $N1094a050
   xpos -249
   ypos 2496
  }
-push $N1ac9ccc0
+push $N13f48db0
  Dot {
   name Dot192
   xpos 138
   ypos 2787
  }
-set N1cc73340 [stack 0]
+set N14a37300 [stack 0]
  Reformat {
   type scale
   scale 0.5
@@ -4054,13 +4052,13 @@ set N1cc73340 [stack 0]
   xpos -33
   ypos 2851
  }
-set N16de1a40 [stack 0]
+set N14a4f530 [stack 0]
  Dot {
   name Dot194
   xpos -139
   ypos 2860
  }
-push $N1cc73340
+push $N14a37300
  Dot {
   name Dot195
   xpos 138
@@ -4076,13 +4074,13 @@ push $N1cc73340
   xpos 104
   ypos 2849
  }
-set N1cc454b0 [stack 0]
+set N14a67cb0 [stack 0]
  Dot {
   name Dot196
   xpos 70
   ypos 2858
  }
-push $N16de1a40
+push $N14a4f530
  Reformat {
   resize distort
   filter Notch
@@ -4096,7 +4094,7 @@ push $N16de1a40
   xpos 1
   ypos 2937
  }
-push $N1cc454b0
+push $N14a67cb0
  Reformat {
   resize distort
   filter Notch
@@ -4105,13 +4103,13 @@ push $N1cc454b0
   xpos 104
   ypos 2885
  }
-clone $C11b36af0 {
+clone $C9182820 {
   inputs 2
   xpos 51
   ypos 2934
   selected false
  }
-push $N23b5eb20
+push $N13f5b980
  Reformat {
   format "512 512 0 0 512 512 1 square_512"
   resize none
@@ -4130,12 +4128,11 @@ push $N23b5eb20
   xpos 358
   ypos 2891
  }
-push $N105e8d20
-push $Nf049030
+push $N13fd5740
+push $N11a1c170
  Viewer {
   inputs 2
-  frame 1032
-  frame_range 1001-1100
+  frame_range 1041-1100
   overscan 300
   center_fstop 0
   viewerProcess Film
