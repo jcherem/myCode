@@ -7,7 +7,7 @@ Group {
  name Huemask
  tile_color 0xb2d6ff
  selected true
- xpos -420
+ xpos -414
  ypos -9
  addUserKnob {20 Controller}
  addUserKnob {26 instructions l " " +INVISIBLE T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
@@ -20,7 +20,6 @@ Group {
  addUserKnob {6 alpha l "Premult alpha on scope" t "This is usefull if you just want to see what is on your alpha. so it takes out all the extra color you don't want to see without premulting the plate \n\nWith this on, you will preview only what you had in your the input alpha and the roto mask will apply only on that part as well. \n\nBasically it does a premult based on the alpha so you can work only on that color, " +STARTLINE}
  alpha true
  addUserKnob {6 boolean_5 l "Alpha BBox" -STARTLINE}
- boolean_5 true
  addUserKnob {6 darkmode l "Transparent mode" +STARTLINE}
  addUserKnob {41 scale l "Overall Scale" t "this scale is only the UI scaling doesn't affect the quality data. \n\nif you want to increase the detail of the data go to settings and activate the checkbox for 1k  data " T Reformat_final_Scale_12.scale}
  addUserKnob {7 zoom2 l Zoom t "This will increase the color data into the darkest pixel or into the brightest colors. \n\nThis is usefull when your plate is too dark or is too bright to spot colors.\n\n" R -1 1}
