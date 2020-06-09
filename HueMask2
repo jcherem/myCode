@@ -1,11 +1,14 @@
 set cut_paste_input [stack 0]
 version 11.3 v6
+push 0
 push $cut_paste_input
 Group {
+ inputs 2
  name Huemask
  tile_color 0xb2d6ff
  selected true
- xpos -434
+ xpos -420
+ ypos -9
  addUserKnob {20 Controller}
  addUserKnob {26 instructions l " " +INVISIBLE T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
  addUserKnob {26 ""}
@@ -16,6 +19,8 @@ Group {
  group_4 0
  addUserKnob {6 alpha l "Premult alpha on scope" t "This is usefull if you just want to see what is on your alpha. so it takes out all the extra color you don't want to see without premulting the plate \n\nWith this on, you will preview only what you had in your the input alpha and the roto mask will apply only on that part as well. \n\nBasically it does a premult based on the alpha so you can work only on that color, " +STARTLINE}
  alpha true
+ addUserKnob {6 boolean_5 l "Alpha BBox" -STARTLINE}
+ boolean_5 true
  addUserKnob {6 darkmode l "Transparent mode" +STARTLINE}
  addUserKnob {41 scale l "Overall Scale" t "this scale is only the UI scaling doesn't affect the quality data. \n\nif you want to increase the detail of the data go to settings and activate the checkbox for 1k  data " T Reformat_final_Scale_12.scale}
  addUserKnob {7 zoom2 l Zoom t "This will increase the color data into the darkest pixel or into the brightest colors. \n\nThis is usefull when your plate is too dark or is too bright to spot colors.\n\n" R -1 1}
@@ -436,6 +441,17 @@ Group {
  }
  BackdropNode {
   inputs 0
+  name BackdropNode46
+  tile_color 0x797979ff
+  label "alpha input"
+  note_font_size 42
+  xpos -233
+  ypos -1813
+  bdwidth 346
+  bdheight 275
+ }
+ BackdropNode {
+  inputs 0
   name BackdropNode5
   tile_color 0x337f7eff
   label "overall Scale"
@@ -654,31 +670,63 @@ Group {
  }
  Input {
   inputs 0
+  name InputPlate
+  xpos -223
+  ypos -1862
+ }
+ Dot {
+  name Dot212
+  xpos -189
+  ypos -1620
+ }
+set N6c26f680 [stack 0]
+ Input {
+  inputs 0
   name Alpha
   label "\[value number]"
-  xpos -18
-  ypos -1666
+  xpos 23
+  ypos -1733
   number 1
  }
  Dot {
   name Dot188
-  xpos 16
-  ypos -1538
+  xpos 57
+  ypos -1656
  }
- Input {
-  inputs 0
-  name InputPlate
-  xpos -223
-  ypos -1662
+ Dot {
+  name Dot211
+  xpos 57
+  ypos -1620
  }
+set Nae95a670 [stack 0]
+ Dot {
+  name Dot213
+  xpos 57
+  ypos -1563
+ }
+push $Nae95a670
+push $N6c26f680
  Copy {
   inputs 2
   from0 rgba.alpha
   to0 rgba.alpha
   name Copy9
+  xpos -73
+  ypos -1629
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox3
+  xpos -73
+  ypos -1566
+  disable {{!parent.boolean_5}}
+ }
+ Switch {
+  inputs 2
+  which {{"!\[exists parent.input1]"}}
+  name Switch_InputAlpha
   xpos -223
-  ypos -1547
-  disable {{"!\[exists parent.input1]"}}
+  ypos -1566
  }
  Dot {
   name Dot144
@@ -1041,7 +1089,6 @@ push $N2cea08a0
  }
  Dot {
   name Dot83
-  selected true
   xpos 3910
   ypos -1178
  }
