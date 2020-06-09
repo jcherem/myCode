@@ -5,8 +5,7 @@ Group {
  name Huemask
  tile_color 0xb2d6ff
  selected true
- xpos -381
- ypos -79
+ xpos -434
  addUserKnob {20 Controller}
  addUserKnob {26 instructions l " " +INVISIBLE T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
  addUserKnob {26 ""}
@@ -257,8 +256,8 @@ Group {
   note_font_size 42
   xpos -288
   ypos -1212
-  bdwidth 2638
-  bdheight 222
+  bdwidth 258
+  bdheight 199
  }
  BackdropNode {
   inputs 0
@@ -397,10 +396,10 @@ Group {
   tile_color 0x7171c600
   label "reference input"
   note_font_size 42
-  xpos 2936
-  ypos -487
-  bdwidth 1139
-  bdheight 403
+  xpos 2789
+  ypos -1245
+  bdwidth 1283
+  bdheight 223
  }
  BackdropNode {
   inputs 0
@@ -423,6 +422,17 @@ Group {
   ypos 8375
   bdwidth 243
   bdheight 200
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode45
+  tile_color 0x797979ff
+  label "Alpha only or different plate reference"
+  note_font_size 42
+  xpos 2787
+  ypos -1583
+  bdwidth 1284
+  bdheight 317
  }
  BackdropNode {
   inputs 0
@@ -647,19 +657,19 @@ Group {
   name Alpha
   label "\[value number]"
   xpos -18
-  ypos -1593
+  ypos -1666
   number 1
  }
  Dot {
   name Dot188
   xpos 16
-  ypos -1465
+  ypos -1538
  }
  Input {
   inputs 0
   name InputPlate
   xpos -223
-  ypos -1589
+  ypos -1662
  }
  Copy {
   inputs 2
@@ -667,9 +677,15 @@ Group {
   to0 rgba.alpha
   name Copy9
   xpos -223
-  ypos -1474
+  ypos -1547
   disable {{"!\[exists parent.input1]"}}
  }
+ Dot {
+  name Dot144
+  xpos -189
+  ypos -1445
+ }
+set N1ca04640 [stack 0]
  Dot {
   name Dot36
   xpos -189
@@ -966,33 +982,88 @@ set N16eaa440 [stack 0]
   name InputReference_2dn
   label "\[value number]"
   xpos 3876
-  ypos -324
+  ypos -1711
   number 4
  }
  Dot {
-  name Dot83
+  name Dot207
   xpos 3910
-  ypos -237
+  ypos -1504
+ }
+set N2cea08a0 [stack 0]
+ Dot {
+  name Dot209
+  xpos 3851
+  ypos -1504
+ }
+set N2c70af80 [stack 0]
+ Dot {
+  name Dot208
+  xpos 3851
+  ypos -1382
+ }
+push $N1ca04640
+push $N2c70af80
+ Dot {
+  name Dot210
+  xpos 3787
+  ypos -1504
+ }
+set N28770d80 [stack 0]
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy2
+  xpos 3753
+  ypos -1454
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox2
+  xpos 3753
+  ypos -1385
+ }
+ Premult {
+  name Premult8
+  xpos 3753
+  ypos -1334
+ }
+push $N2cea08a0
+ Switch {
+  inputs 2
+  which {{!parent.NoOp2.boolean}}
+  name Switch22
+  xpos 3876
+  ypos -1334
+ }
+ Dot {
+  name Dot83
+  selected true
+  xpos 3910
+  ypos -1178
  }
 set N1f6daf70 [stack 0]
 clone $C19cf7ab0 {
   xpos 3784
-  ypos -195
+  ypos -1136
   selected false
  }
 push $N1f6daf70
  Crop {
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox2
-  xpos 3985
-  ypos -201
+  xpos 3969
+  ypos -1143
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
 clone $C1cb73970 {
   inputs 2
   xpos 3886
-  ypos -128
+  ypos -1069
   selected false
  }
  Remove {
@@ -1235,18 +1306,72 @@ set N1f77a920 [stack 0]
   name InputReference
   label "\[value number]"
   xpos 3038
-  ypos -304
+  ypos -1697
   number 3
+ }
+ Dot {
+  name Dot203
+  xpos 3072
+  ypos -1504
+ }
+set N2115c1c0 [stack 0]
+ Dot {
+  name Dot205
+  xpos 3029
+  ypos -1504
+ }
+set N1c307060 [stack 0]
+ Dot {
+  name Dot206
+  xpos 3029
+  ypos -1382
+ }
+push $N1ca04640
+push $N1c307060
+ Dot {
+  name Dot204
+  xpos 2942
+  ypos -1504
+ }
+set N1cef3770 [stack 0]
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy1
+  xpos 2908
+  ypos -1433
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos 2908
+  ypos -1385
+ }
+ Premult {
+  name Premult5
+  xpos 2908
+  ypos -1334
+ }
+push $N2115c1c0
+ Switch {
+  inputs 2
+  which {{!parent.NoOp1.boolean}}
+  name Switch21
+  xpos 3038
+  ypos -1334
  }
  Dot {
   name Dot78
   xpos 3072
-  ypos -221
+  ypos -1162
  }
 set N16a95990 [stack 0]
 clone $C19cf7ab0 {
   xpos 2946
-  ypos -179
+  ypos -1120
   selected false
  }
 push $N16a95990
@@ -1254,14 +1379,14 @@ push $N16a95990
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox1
   xpos 3147
-  ypos -185
+  ypos -1126
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
 clone $C1cb73970 {
   inputs 2
   xpos 3048
-  ypos -112
+  ypos -1053
   selected false
  }
  Remove {
@@ -2283,89 +2408,6 @@ set N16bb1a60 [stack 0]
   xpos -2614
   ypos 6850
  }
- Constant {
-  inputs 0
-  channels rgb
-  color {0 0 0 0}
-  format "256 256 0 0 256 256 1 square_256"
-  name Constant_to_pick_1
-  xpos -1604
-  ypos 1816
- }
- Dot {
-  name Dot60
-  xpos -1570
-  ypos 1994
- }
-set N1ce5c2b0 [stack 0]
- Colorspace {
-  colorspace_out YCbCr
-  name Colorspace2
-  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
-  xpos -1604
-  ypos 2012
- }
- Shuffle {
-  red green
-  green blue
-  blue black
-  name Shuffle8
-  xpos -1604
-  ypos 2060
- }
-clone $C16e10620 {
-  xpos -1604
-  ypos 2096
-  selected false
- }
-push $N1ce5c2b0
- Dot {
-  name Dot61
-  xpos -1796
-  ypos 1994
- }
- Dot {
-  name Dot62
-  xpos -1796
-  ypos 2129
- }
- BlinkScript {
-  inputs 2
-  recompileCount 15
-  ProgramGroup 1
-  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
-  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
-  useGPUIfAvailable false
-  rebuild ""
-  InverseSTKernel_resolution {{width} {height}}
-  rebuild_finalise ""
-  name BlinkScript_Reverse_Stmap2
-  xpos -1604
-  ypos 2120
- }
- Dot {
-  name Dot63
-  xpos -1570
-  ypos 2196
- }
- Dot {
-  name Dot167
-  xpos -1570
-  ypos 2274
- }
-set N1b7d8610 [stack 0]
- Dot {
-  name Dot166
-  xpos -1663
-  ypos 2274
- }
-set N19688960 [stack 0]
- Dilate {
-  size 18
-  name Dilate15
-  xpos -1872
-  ypos 2265
- }
 push $N1b4f5a80
  Dot {
   name Dot32
@@ -3331,14 +3373,89 @@ clone $C174ccb20 {
   ypos 4125
   selected false
  }
-push $N1b7d8610
+ Constant {
+  inputs 0
+  channels rgb
+  color {0 0 0 0}
+  format "256 256 0 0 256 256 1 square_256"
+  name Constant_to_pick_1
+  xpos -1604
+  ypos 1816
+ }
+ Dot {
+  name Dot60
+  xpos -1570
+  ypos 1994
+ }
+set N1ce5c2b0 [stack 0]
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace2
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos -1604
+  ypos 2012
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle8
+  xpos -1604
+  ypos 2060
+ }
+clone $C16e10620 {
+  xpos -1604
+  ypos 2096
+  selected false
+ }
+push $N1ce5c2b0
+ Dot {
+  name Dot61
+  xpos -1796
+  ypos 1994
+ }
+ Dot {
+  name Dot62
+  xpos -1796
+  ypos 2129
+ }
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap2
+  xpos -1604
+  ypos 2120
+ }
+ Dot {
+  name Dot63
+  xpos -1570
+  ypos 2196
+ }
+ Dot {
+  name Dot167
+  xpos -1570
+  ypos 2274
+ }
+set N1b7d8610 [stack 0]
  Dilate {
   size 0.6
   name Dilate18
   xpos -1604
   ypos 2629
  }
-push $N19688960
+push $N1b7d8610
+ Dot {
+  name Dot166
+  xpos -1663
+  ypos 2274
+ }
  Dilate {
   size 12
   name Dilate10
@@ -4105,12 +4222,10 @@ push $N1c4badd0
   from0 rgba.alpha
   to0 rgba.alpha
   name Copy4
-  selected true
   xpos -3953
   ypos 7555
   disable {{!parent.boolean_4}}
  }
-set N16426650 [stack 0]
  Copy {
   inputs 2
   from0 rgba.alpha
@@ -4160,7 +4275,7 @@ push $N16f4acd0
   ypos 8710
  }
 push $N19c84330
-push $N16426650
+push $N1cef3770
  Viewer {
   inputs 2
   frame_range 1041-1100
@@ -4171,5 +4286,23 @@ push $N16426650
   name Viewer1
   xpos 871
   ypos 2834
+ }
+push $N28770d80
+ NoOp {
+  name NoOp2
+  xpos 3633
+  ypos -1507
+  addUserKnob {20 User}
+  addUserKnob {6 boolean l DetectColorOnly +STARTLINE}
+  boolean {{"\[string first \".r\" \[channels \[input this 0]]]>-1"}}
+ }
+push $N1cef3770
+ NoOp {
+  name NoOp1
+  xpos 2832
+  ypos -1507
+  addUserKnob {20 User}
+  addUserKnob {6 boolean l DetectColorOnly +STARTLINE}
+  boolean {{"\[string first \".r\" \[channels \[input this 0]]]>-1"}}
  }
 end_group
