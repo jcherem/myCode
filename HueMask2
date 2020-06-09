@@ -7,7 +7,7 @@ Group {
  name Huemask
  tile_color 0xb2d6ff
  selected true
- xpos -414
+ xpos -408
  ypos -9
  addUserKnob {20 Controller}
  addUserKnob {26 instructions l " " +INVISIBLE T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
@@ -258,8 +258,8 @@ Group {
   tile_color 0x337f7eff
   label REFORMAT
   note_font_size 42
-  xpos -288
-  ypos -1212
+  xpos -285
+  ypos -1031
   bdwidth 258
   bdheight 199
  }
@@ -401,7 +401,7 @@ Group {
   label "reference input"
   note_font_size 42
   xpos 2789
-  ypos -1245
+  ypos -1266
   bdwidth 1283
   bdheight 223
  }
@@ -434,7 +434,7 @@ Group {
   label "Alpha only or different plate reference"
   note_font_size 42
   xpos 2787
-  ypos -1583
+  ypos -1604
   bdwidth 1284
   bdheight 317
  }
@@ -444,8 +444,8 @@ Group {
   tile_color 0x797979ff
   label "alpha input"
   note_font_size 42
-  xpos -233
-  ypos -1813
+  xpos -230
+  ypos -1411
   bdwidth 346
   bdheight 275
  }
@@ -674,34 +674,40 @@ Group {
   ypos -1862
  }
  Dot {
-  name Dot212
+  name Dot144
   xpos -189
-  ypos -1620
+  ypos -1445
+ }
+set N1ca04640 [stack 0]
+ Dot {
+  name Dot212
+  xpos -186
+  ypos -1218
  }
 set N6c26f680 [stack 0]
  Input {
   inputs 0
   name Alpha
   label "\[value number]"
-  xpos 23
-  ypos -1733
+  xpos 26
+  ypos -1331
   number 1
  }
  Dot {
   name Dot188
-  xpos 57
-  ypos -1656
+  xpos 60
+  ypos -1254
  }
  Dot {
   name Dot211
-  xpos 57
-  ypos -1620
+  xpos 60
+  ypos -1218
  }
 set Nae95a670 [stack 0]
  Dot {
   name Dot213
-  xpos 57
-  ypos -1563
+  xpos 60
+  ypos -1161
  }
 push $Nae95a670
 push $N6c26f680
@@ -710,46 +716,40 @@ push $N6c26f680
   from0 rgba.alpha
   to0 rgba.alpha
   name Copy9
-  xpos -73
-  ypos -1629
+  xpos -70
+  ypos -1227
  }
  CopyBBox {
   inputs 2
   name CopyBBox3
-  xpos -73
-  ypos -1566
+  xpos -70
+  ypos -1164
   disable {{!parent.boolean_5}}
  }
  Switch {
   inputs 2
   which {{"!\[exists parent.input1]"}}
   name Switch_InputAlpha
-  xpos -223
-  ypos -1566
+  xpos -220
+  ypos -1164
  }
- Dot {
-  name Dot144
-  xpos -189
-  ypos -1445
- }
-set N1ca04640 [stack 0]
  Dot {
   name Dot36
-  xpos -189
-  ypos -1281
+  xpos -186
+  ypos -1100
  }
 set N178929b0 [stack 0]
  Dot {
   name Dot53
-  xpos -189
-  ypos -1164
+  xpos -186
+  ypos -983
  }
 set N15e44110 [stack 0]
  Crop {
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox
-  xpos -173
-  ypos -1127
+  xpos -170
+  ypos -946
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
@@ -757,16 +757,16 @@ push $N15e44110
  Crop {
   box {0 0 {width} {height}}
   name Crop2
-  xpos -279
-  ypos -1124
+  xpos -276
+  ypos -943
  }
  set C19cf7ab0 [stack 0]
  Switch {
   inputs 2
   which {{parent.crop}}
   name Switch_crop_223
-  xpos -222
-  ypos -1066
+  xpos -219
+  ypos -885
  }
  set C1cb73970 [stack 0]
 set N1cb73970 [stack 0]
@@ -1029,32 +1029,32 @@ set N16eaa440 [stack 0]
   name InputReference_2dn
   label "\[value number]"
   xpos 3876
-  ypos -1711
+  ypos -1732
   number 4
  }
  Dot {
   name Dot207
   xpos 3910
-  ypos -1504
+  ypos -1525
  }
 set N2cea08a0 [stack 0]
  Dot {
   name Dot209
   xpos 3851
-  ypos -1504
+  ypos -1525
  }
 set N2c70af80 [stack 0]
  Dot {
   name Dot208
   xpos 3851
-  ypos -1382
+  ypos -1403
  }
 push $N1ca04640
 push $N2c70af80
  Dot {
   name Dot210
   xpos 3787
-  ypos -1504
+  ypos -1525
  }
 set N28770d80 [stack 0]
  ShuffleCopy {
@@ -1071,12 +1071,12 @@ set N28770d80 [stack 0]
   inputs 2
   name CopyBBox2
   xpos 3753
-  ypos -1385
+  ypos -1406
  }
  Premult {
   name Premult8
   xpos 3753
-  ypos -1334
+  ypos -1355
  }
 push $N2cea08a0
  Switch {
@@ -1084,17 +1084,17 @@ push $N2cea08a0
   which {{!parent.NoOp2.boolean}}
   name Switch22
   xpos 3876
-  ypos -1334
+  ypos -1355
  }
  Dot {
   name Dot83
   xpos 3910
-  ypos -1178
+  ypos -1199
  }
 set N1f6daf70 [stack 0]
 clone $C19cf7ab0 {
   xpos 3784
-  ypos -1136
+  ypos -1157
   selected false
  }
 push $N1f6daf70
@@ -1102,14 +1102,14 @@ push $N1f6daf70
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox2
   xpos 3969
-  ypos -1143
+  ypos -1164
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
 clone $C1cb73970 {
   inputs 2
   xpos 3886
-  ypos -1069
+  ypos -1090
   selected false
  }
  Remove {
@@ -1352,32 +1352,32 @@ set N1f77a920 [stack 0]
   name InputReference
   label "\[value number]"
   xpos 3038
-  ypos -1697
+  ypos -1718
   number 3
  }
  Dot {
   name Dot203
   xpos 3072
-  ypos -1504
+  ypos -1525
  }
 set N2115c1c0 [stack 0]
  Dot {
   name Dot205
   xpos 3029
-  ypos -1504
+  ypos -1525
  }
 set N1c307060 [stack 0]
  Dot {
   name Dot206
   xpos 3029
-  ypos -1382
+  ypos -1403
  }
 push $N1ca04640
 push $N1c307060
  Dot {
   name Dot204
   xpos 2942
-  ypos -1504
+  ypos -1525
  }
 set N1cef3770 [stack 0]
  ShuffleCopy {
@@ -1388,18 +1388,18 @@ set N1cef3770 [stack 0]
   alpha alpha2
   name ShuffleCopy1
   xpos 2908
-  ypos -1433
+  ypos -1454
  }
  CopyBBox {
   inputs 2
   name CopyBBox1
   xpos 2908
-  ypos -1385
+  ypos -1406
  }
  Premult {
   name Premult5
   xpos 2908
-  ypos -1334
+  ypos -1355
  }
 push $N2115c1c0
  Switch {
@@ -1407,17 +1407,17 @@ push $N2115c1c0
   which {{!parent.NoOp1.boolean}}
   name Switch21
   xpos 3038
-  ypos -1334
+  ypos -1355
  }
  Dot {
   name Dot78
   xpos 3072
-  ypos -1162
+  ypos -1183
  }
 set N16a95990 [stack 0]
 clone $C19cf7ab0 {
   xpos 2946
-  ypos -1120
+  ypos -1141
   selected false
  }
 push $N16a95990
@@ -1425,14 +1425,14 @@ push $N16a95990
   box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
   name Crop_To_BBox1
   xpos 3147
-  ypos -1126
+  ypos -1147
   addUserKnob {20 padding_tab l Padding}
   addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
  }
 clone $C1cb73970 {
   inputs 2
   xpos 3048
-  ypos -1053
+  ypos -1074
   selected false
  }
  Remove {
@@ -2623,13 +2623,13 @@ push $N18f2fdc0
 push $N178929b0
  Dot {
   name Dot115
-  xpos -4438
-  ypos -1281
+  xpos -4435
+  ypos -1100
  }
  Dot {
   name Dot118
-  xpos -4438
-  ypos -1092
+  xpos -4435
+  ypos -911
  }
  Dot {
   name Dot154
@@ -4337,7 +4337,7 @@ push $N28770d80
  NoOp {
   name NoOp2
   xpos 3633
-  ypos -1507
+  ypos -1528
   addUserKnob {20 User}
   addUserKnob {6 boolean l DetectColorOnly +STARTLINE}
   boolean {{"\[string first \".r\" \[channels \[input this 0]]]>-1"}}
@@ -4346,7 +4346,7 @@ push $N1cef3770
  NoOp {
   name NoOp1
   xpos 2832
-  ypos -1507
+  ypos -1528
   addUserKnob {20 User}
   addUserKnob {6 boolean l DetectColorOnly +STARTLINE}
   boolean {{"\[string first \".r\" \[channels \[input this 0]]]>-1"}}
