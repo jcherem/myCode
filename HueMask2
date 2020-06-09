@@ -7,7 +7,7 @@ Group {
  name Huemask
  tile_color 0xb2d6ff
  selected true
- xpos -408
+ xpos -414
  ypos -9
  addUserKnob {20 Controller}
  addUserKnob {26 instructions l " " +INVISIBLE T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
@@ -853,6 +853,164 @@ set N1c8a75f0 [stack 0]
   ypos -279
  }
 set N17662900 [stack 0]
+ Dot {
+  name Dot6
+  xpos 2118
+  ypos -279
+ }
+ Premult {
+  name Premult_alpha_to_isolate_1
+  xpos 2084
+  ypos -217
+ }
+ Dot {
+  name Dot4
+  xpos 2118
+  ypos -157
+ }
+set N1b503280 [stack 0]
+ Dot {
+  name Dot110
+  xpos 2118
+  ypos 97
+ }
+set N190d6a10 [stack 0]
+ Dot {
+  name Dot124
+  xpos 2010
+  ypos 97
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  black_outside true
+  pbb true
+  name ReformatScope_16
+  xpos 1976
+  ypos 123
+ }
+ Dot {
+  name Dot125
+  xpos 2010
+  ypos 192
+ }
+push $N190d6a10
+ Reformat {
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_20
+  xpos 2084
+  ypos 126
+ }
+ Switch {
+  inputs 2
+  which {{!parent.resolution5}}
+  name Switch_reformat
+  xpos 2084
+  ypos 189
+ }
+ set C174ccb20 [stack 0]
+ Dot {
+  name Dot8
+  xpos 2118
+  ypos 490
+ }
+set N168a29b0 [stack 0]
+ Blur {
+  size 50
+  name Blur_colodata_1
+  label "size \[value size]"
+  xpos 2084
+  ypos 523
+  disable {{!parent.blurmatte}}
+ }
+ set C1dd36330 [stack 0]
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace1
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos 2084
+  ypos 579
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle2
+  xpos 2084
+  ypos 627
+ }
+ Grade {
+  blackpoint {{parent.zoom2}}
+  whitepoint {{1-blackpoint}}
+  black_clamp false
+  name Grade_Uniform_Scale_1
+  xpos 2084
+  ypos 701
+ }
+ set C16e10620 [stack 0]
+set N1b4f5a80 [stack 0]
+ AdjBBox {
+  numpixels {{parent.AdjBBox_Color_Data_1.numpixels}}
+  name AdjBBox2
+  xpos 2084
+  ypos 725
+  disable {{!parent.Reformat_to_clamp_values.disable}}
+ }
+push $N168a29b0
+ Dot {
+  name Dot12
+  xpos 1969
+  ypos 490
+ }
+ Dot {
+  name Dot21
+  xpos 1969
+  ypos 758
+ }
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap4
+  xpos 2084
+  ypos 749
+ }
+ Premult {
+  name Premult4
+  xpos 2084
+  ypos 820
+  disable true
+ }
+ Dot {
+  name Dot28
+  xpos 2118
+  ypos 1140
+ }
+set N16d9dd30 [stack 0]
+ Dot {
+  name Dot23
+  xpos 1917
+  ypos 1140
+ }
+set N1ba64f40 [stack 0]
+ FilterErode {
+  size -0.4
+  filter gaussian
+  name FilterErode6
+  xpos 1723
+  ypos 1131
+ }
+push $N17662900
  Premult {
   name Premult3
   xpos -222
@@ -877,23 +1035,7 @@ set N1b6b2320 [stack 0]
   ypos -200
  }
 push $N1b6b2320
-push $N17662900
- Dot {
-  name Dot6
-  xpos 2118
-  ypos -279
- }
- Premult {
-  name Premult_alpha_to_isolate_1
-  xpos 2084
-  ypos -217
- }
- Dot {
-  name Dot4
-  xpos 2118
-  ypos -157
- }
-set N1b503280 [stack 0]
+push $N1b503280
 push $N1b6b2320
  Switch {
   inputs 3
@@ -929,15 +1071,11 @@ set N1b505c20 [stack 0]
   xpos 1113
   ypos -106
  }
- Blur {
-  size 50
-  name Blur_colodata_1
-  label "size \[value size]"
+clone $C1dd36330 {
   xpos 1079
   ypos 539
-  disable {{!parent.blurmatte}}
+  selected false
  }
- set C1dd36330 [stack 0]
  Colorspace {
   colorspace_out YCbCr
   name Colorspace5
@@ -954,15 +1092,11 @@ set N1b505c20 [stack 0]
   xpos 1079
   ypos 635
  }
- Grade {
-  blackpoint {{parent.zoom2}}
-  whitepoint {{1-blackpoint}}
-  black_clamp false
-  name Grade_Uniform_Scale_1
+clone $C16e10620 {
   xpos 1082
   ypos 683
+  selected false
  }
- set C16e10620 [stack 0]
  Dot {
   name Dot112
   xpos 1116
@@ -1010,14 +1144,12 @@ push $N16df5850
   xpos 7
   ypos 2419
  }
- Switch {
+clone $C174ccb20 {
   inputs 2
-  which {{!parent.resolution5}}
-  name Switch_reformat
   xpos 7
   ypos 2455
+  selected false
  }
- set C174ccb20 [stack 0]
  Dot {
   name Dot181
   xpos 41
@@ -1242,12 +1374,14 @@ set N16a23490 [stack 0]
   xpos 3810
   ypos 1550
  }
+set N15d048f0 [stack 0]
  FilterErode {
-  size -0.4
-  filter gaussian
-  name FilterErode1
-  xpos 3776
-  ypos 1629
+  size -0.1
+  filter quadratic
+  mix 0.01
+  name FilterErode8
+  xpos 3646
+  ypos 1614
  }
  Shuffle {
   red alpha
@@ -1565,12 +1699,14 @@ set N1f777f30 [stack 0]
   xpos 2972
   ypos 1350
  }
+set N167773e0 [stack 0]
  FilterErode {
-  size -0.4
-  filter gaussian
-  name FilterErode4
-  xpos 2938
-  ypos 1429
+  size -0.1
+  filter quadratic
+  mix 0.01
+  name FilterErode7
+  xpos 2831
+  ypos 1425
  }
  Shuffle {
   red alpha
@@ -1627,136 +1763,14 @@ push $N1f777f30
   xpos -96
   ypos 2211
  }
-push $N1b503280
- Dot {
-  name Dot110
-  xpos 2118
-  ypos 97
- }
-set N190d6a10 [stack 0]
- Dot {
-  name Dot124
-  xpos 2010
-  ypos 97
- }
- Reformat {
-  format "512 512 0 0 512 512 1 square_512"
-  resize distort
-  filter Impulse
-  black_outside true
-  pbb true
-  name ReformatScope_16
-  xpos 1976
-  ypos 123
- }
- Dot {
-  name Dot125
-  xpos 2010
-  ypos 192
- }
-push $N190d6a10
- Reformat {
-  format "1024 1024 0 0 1024 1024 1 square_1K"
-  resize distort
-  filter Impulse
-  pbb true
-  name ReformatScope_20
-  xpos 2084
-  ypos 126
- }
-clone $C174ccb20 {
-  inputs 2
-  xpos 2084
-  ypos 189
-  selected false
- }
- Dot {
-  name Dot8
-  xpos 2118
-  ypos 490
- }
-set N168a29b0 [stack 0]
-clone $C1dd36330 {
-  xpos 2084
-  ypos 523
-  selected false
- }
- Colorspace {
-  colorspace_out YCbCr
-  name Colorspace1
-  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
-  xpos 2084
-  ypos 579
- }
- Shuffle {
-  red green
-  green blue
-  blue black
-  name Shuffle2
-  xpos 2084
-  ypos 627
- }
-clone $C16e10620 {
-  xpos 2084
-  ypos 701
-  selected false
- }
-set N1b4f5a80 [stack 0]
- AdjBBox {
-  numpixels {{parent.AdjBBox_Color_Data_1.numpixels}}
-  name AdjBBox2
-  xpos 2084
-  ypos 725
-  disable {{!parent.Reformat_to_clamp_values.disable}}
- }
-push $N168a29b0
- Dot {
-  name Dot12
-  xpos 1969
-  ypos 490
- }
- Dot {
-  name Dot21
-  xpos 1969
-  ypos 758
- }
- BlinkScript {
-  inputs 2
-  recompileCount 15
-  ProgramGroup 1
-  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
-  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
-  useGPUIfAvailable false
-  rebuild ""
-  InverseSTKernel_resolution {{width} {height}}
-  rebuild_finalise ""
-  name BlinkScript_Reverse_Stmap4
-  xpos 2084
-  ypos 749
- }
- Premult {
-  name Premult4
-  xpos 2084
-  ypos 820
-  disable true
- }
- Dot {
-  name Dot28
-  xpos 2118
-  ypos 1140
- }
-set N16d9dd30 [stack 0]
- Dot {
-  name Dot23
-  xpos 1917
-  ypos 1140
- }
+push $N1ba64f40
  FilterErode {
-  size -0.4
-  filter gaussian
-  name FilterErode6
-  xpos 1723
-  ypos 1131
+  size -0.1
+  filter quadratic
+  mix 0.01
+  name FilterErode5
+  xpos 1769
+  ypos 1188
  }
  Shuffle {
   red alpha
@@ -1942,12 +1956,15 @@ set N1c3ea500 [stack 0]
   xpos -463
   ypos 1161
  }
+set N17b23080 [stack 0]
  FilterErode {
-  size -0.4
-  filter gaussian
-  name FilterErode3
+  size -0.1
+  filter quadratic
+  mix 0.01
+  name FilterErode2
+  selected true
   xpos -657
-  ypos 1152
+  ypos 1197
  }
  Shuffle {
   red alpha
@@ -4350,5 +4367,29 @@ push $N1cef3770
   addUserKnob {20 User}
   addUserKnob {6 boolean l DetectColorOnly +STARTLINE}
   boolean {{"\[string first \".r\" \[channels \[input this 0]]]>-1"}}
+ }
+push $N167773e0
+ FilterErode {
+  size -0.4
+  filter gaussian
+  name FilterErode4
+  xpos 2938
+  ypos 1391
+ }
+push $N15d048f0
+ FilterErode {
+  size -0.4
+  filter gaussian
+  name FilterErode1
+  xpos 3776
+  ypos 1602
+ }
+push $N17b23080
+ FilterErode {
+  size -0.4
+  filter gaussian
+  name FilterErode3
+  xpos -776
+  ypos 1142
  }
 end_group
