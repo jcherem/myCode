@@ -1,0 +1,123 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+add_layer {__Pworld __Pworld.x __Pworld.y __Pworld.z}
+Group {
+ name Group1
+ help "v01\nBuild a UV map from a point cloud generated from XYZ data - typically Pref pass of CG render.\nThis enables 2D textures to 'stick' to animated geometry, as the Pref values do not change."
+ selected true
+ xpos -6512
+ ypos 1427
+ addUserKnob {20 MagicPrefMap}
+ addUserKnob {22 documentation l Documentation T nukescripts.start('http://dnet/x/phUSC') +STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {41 in l "Position Channels" t "Select the channel containing Pref data." T Shuffle_position.in}
+ addUserKnob {41 in_alpha l "Alpha Channel" t "Select the channel containing Alpha. If no alpha, leave as None" T Copy_alpha.from0}
+ addUserKnob {6 unpremultiply l Unpremultiply t "Unpremultiply input by dividing by alpha" +STARTLINE}
+ addUserKnob {41 ignore_zeros l "Ignore Zero Inputs" t "Ignores zero inputs of (0,0,0) when there is no alpha channel" -STARTLINE T MagicPrefMapCore1.ignore_zeros}
+ addUserKnob {41 normalise l Normalise -STARTLINE T MagicPrefMapCore1.normalise}
+ addUserKnob {26 ""}
+ addUserKnob {41 ref_frame l "Reference Frame" t "Frame the UV Map is based on." T FrameHold1.first_frame}
+ addUserKnob {41 skip l "Skip Frames" T MagicPrefMapCore1.skip}
+ addUserKnob {41 samples l Samples T MagicPrefMapCore1.samples}
+}
+ Input {
+  inputs 0
+  name Inputimg
+  xpos 0
+ }
+ Shuffle {
+  in __Pworld
+  out rgb
+  name Shuffle_position
+  xpos 0
+  ypos 85
+ }
+set N2552d1f0 [stack 0]
+push $N2552d1f0
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy_alpha
+  xpos 0
+  ypos 141
+  disable {{"from0 == 0"}}
+ }
+ Unpremult {
+  name Unpremult2
+  xpos 0
+  ypos 202
+  disable {{!parent.unpremultiply}}
+ }
+ Dot {
+  name Dot1
+  xpos 34
+  ypos 294
+ }
+set N90845f90 [stack 0]
+ Dot {
+  name Dot2
+  xpos -81
+  ypos 294
+ }
+ FrameHold {
+  first_frame 1049
+  name FrameHold1
+  xpos -115
+  ypos 336
+  addUserKnob {20 dneg l DNeg}
+  addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+  addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+  addUserKnob {26 ""}
+  addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  first_frame_dup 1049
+  addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {26 ""}
+  addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+  addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+  addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+  addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+  addUserKnob {26 "" T " "}
+  addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+  addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+  addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+  addUserKnob {26 ""}
+  addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+  addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+  addUserKnob {1 hidden_foce_startline +HIDDEN}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+  addUserKnob {1 show_specify l show +HIDDEN}
+  show_specify " "
+  addUserKnob {1 shot_specify l shot +HIDDEN}
+  shot_specify " "
+  addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+  addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+  addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+  addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+  addUserKnob {1 cut_in_specify +HIDDEN}
+  addUserKnob {1 cut_out_specify +HIDDEN}
+  addUserKnob {1 comp_first_specify +HIDDEN}
+  addUserKnob {1 comp_last_specify +HIDDEN}
+  addUserKnob {1 hero_frame_specify +HIDDEN}
+ }
+ Dot {
+  name Dot3
+  xpos -81
+  ypos 411
+ }
+push $N90845f90
+ MagicPrefMapCore {
+  inputs 2
+  name MagicPrefMapCore1
+  selected true
+  xpos 0
+  ypos 408
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 472
+ }
+end_group
