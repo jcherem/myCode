@@ -1,0 +1,102 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+Dot {
+ name Dot135
+ selected true
+ xpos -64411
+ ypos -40755
+}
+set N3410b910 [stack 0]
+Dot {
+ name Dot33
+ selected true
+ xpos -64631
+ ypos -40755
+}
+Saturation {
+ saturation 0
+ name Saturation8
+ selected true
+ xpos -64665
+ ypos -40663
+}
+set N34114f90 [stack 0]
+Grade {
+ white 0.8
+ gamma 0.95
+ name Grade80
+ selected true
+ xpos -64665
+ ypos -40591
+}
+set N34120f20 [stack 0]
+Dot {
+ name Dot157
+ selected true
+ xpos -64851
+ ypos -40588
+}
+Dot {
+ name Dot9
+ selected true
+ xpos -64851
+ ypos -40447
+}
+push $N34120f20
+Grade {
+ gamma 0.87
+ name Grade79
+ selected true
+ xpos -64665
+ ypos -40518
+}
+Merge2 {
+ inputs 2
+ operation max
+ mix 0.6
+ name Merge104
+ selected true
+ xpos -64665
+ ypos -40450
+}
+Grade {
+ white 1.1
+ name Grade41
+ selected true
+ xpos -64665
+ ypos -40426
+}
+Dot {
+ name Dot136
+ selected true
+ xpos -64631
+ ypos -40348
+}
+push $N3410b910
+push $N34114f90
+Merge2 {
+ inputs 2
+ operation divide
+ name Merge105
+ selected true
+ xpos -64445
+ ypos -40663
+}
+Grade {
+ white {1.030000091 0.86 1.42 1}
+ multiply 1.1
+ mix 0.5
+ name Grade32
+ selected true
+ xpos -64445
+ ypos -40510
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge108
+ selected true
+ xpos -64445
+ ypos -40351
+}
