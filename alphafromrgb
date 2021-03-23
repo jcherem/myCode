@@ -1,0 +1,12 @@
+set cut_paste_input [stack 0]
+version 11.3 v4
+push $cut_paste_input
+Expression {
+channel3 alpha
+expr3 "(r+g+b) > 0 ? 1 : a"
+name alphafromrgb
+label "\[value expr3]"
+selected true
+xpos 57264
+ypos 14582
+}
