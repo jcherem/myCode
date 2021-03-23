@@ -1,0 +1,122 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Group {
+ name AngleEdgeDetect
+ selected true
+ xpos 47
+ ypos 5803
+ addUserKnob {20 AngleEdgeDetect}
+ addUserKnob {7 edgeAngle -STARTLINE R 0 360}
+ edgeAngle 221
+ addUserKnob {7 size R 0 50}
+ size 40.6
+ addUserKnob {7 shrinkShape R 0 10}
+ shrinkShape 5.15
+ addUserKnob {26 ""}
+ addUserKnob {7 insideBlur R 0 20}
+ addUserKnob {7 edgeSoft R 0 100}
+ addUserKnob {7 intensity R 0 10}
+ intensity 1
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -573
+  ypos -259
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  label "\[value in]--->\[value out]"
+  note_font_size 20
+  xpos -573
+  ypos -170
+ }
+set N98cea460 [stack 0]
+ Dot {
+  name Dot3
+  xpos -761
+  ypos -151
+ }
+set N1a232680 [stack 0]
+ Dot {
+  name Dot1
+  xpos -761
+  ypos 233
+ }
+ Blur {
+  size {{parent.edgeSoft}}
+  name Blur1
+  xpos -715
+  ypos 223
+ }
+push $N1a232680
+ Transform {
+  translate {{"(size * sin (edgeAngle* pi/180))" i} {"(size * cos\n(edgeAngle * pi/180))" i}}
+  center {1024 778}
+  name Transform1
+  label "Filter: \[value filter]"
+  note_font_size 20
+  xpos -717
+  ypos -28
+ }
+push $N98cea460
+ Merge2 {
+  inputs 2
+  operation stencil
+  name Merge1
+  label "Bbox: \[value bbox]"
+  note_font_size 20
+  xpos -573
+  ypos -28
+ }
+ FilterErode {
+  channels alpha
+  size {{parent.shrinkShape i} {parent.shrinkShape i}}
+  name FilterErode1
+  xpos -571
+  ypos 67
+ }
+ Blur {
+  size {{parent.insideBlur}}
+  name insideBlur
+  xpos -571
+  ypos 147
+ }
+ Merge2 {
+  inputs 2
+  operation in
+  name In
+  label "Bbox: \[value bbox]"
+  note_font_size 20
+  xpos -571
+  ypos 214
+ }
+ Multiply {
+  value {{parent.intensity}}
+  name Multiply1
+  xpos -571
+  ypos 304
+ }
+ Clamp {
+  name Clamp1
+  xpos -571
+  ypos 362
+ }
+set N1a228360 [stack 0]
+ Output {
+  name Output1
+  xpos -571
+  ypos 437
+ }
+push $N1a228360
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -721
+  ypos 445
+ }
+end_group
