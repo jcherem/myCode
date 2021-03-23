@@ -1,0 +1,532 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+add_layer {__depth __depth.red __depth.green __depth.blue __depth.alpha __depth.r __depth.z __depth.x __depth.y __depth.Z __depth.x __depth.Z}
+Group {
+ name atmosFX_depthHaze14
+ tile_color 0xa1c13fff
+ label "\n\[value HazeColour]\n\[value rgbChannel]"
+ selected true
+ xpos -6187
+ ypos -15909
+ addUserKnob {20 User l AtmosFX_depthHaze}
+ addUserKnob {41 Channel T Shuffle3.in}
+ addUserKnob {68 rgbChannel M {Depth Height ""}}
+ addUserKnob {6 Unpremult_Depth +STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {7 HazeAmount}
+ addUserKnob {68 HazeColour M {ConstantColour BgColour}}
+ addUserKnob {18 ConstantColour}
+ ConstantColour {2.15662384 2.2 2.987838507}
+ addUserKnob {6 ConstantColour_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 ViewBg +STARTLINE}
+ addUserKnob {7 BlurBg R 0 500}
+ BlurBg 1100
+ addUserKnob {26 ""}
+ addUserKnob {7 AddHighlights}
+ addUserKnob {7 AddShadows}
+ addUserKnob {7 Desaturation}
+ addUserKnob {7 Diffusion}
+ addUserKnob {26 ""}
+ addUserKnob {26 ControlDepth}
+ addUserKnob {6 ViewDepth +STARTLINE}
+ ViewDepth true
+ addUserKnob {3 DepthNear}
+ DepthNear 290
+ addUserKnob {3 DepthFar}
+ addUserKnob {7 Gamma R 0.2 2}
+ Gamma 0.3
+}
+ Input {
+  inputs 0
+  name Input
+  xpos 608
+  ypos -695
+ }
+ Dot {
+  name Dot4
+  xpos 642
+  ypos -573
+ }
+set N219fcdd0 [stack 0]
+ Dot {
+  name Dot7
+  xpos 421
+  ypos -573
+ }
+set N21a018e0 [stack 0]
+ Dot {
+  name Dot8
+  xpos 421
+  ypos 357
+ }
+set N21a06460 [stack 0]
+ Dot {
+  name Dot10
+  xpos 421
+  ypos 572
+ }
+ Input {
+  inputs 0
+  name bg
+  xpos 1281
+  ypos -565
+  number 1
+ }
+ Clamp {
+  channels rgba
+  maximum 5
+  name Clamp1
+  xpos 1281
+  ypos -539
+ }
+ Shuffle {
+  alpha white
+  name Shuffle4
+  xpos 1281
+  ypos -513
+ }
+ Blur {
+  channels rgb
+  size {{parent.BlurBg}}
+  name Blur6
+  xpos 1281
+  ypos -475
+ }
+ Dot {
+  name Dot22
+  xpos 1315
+  ypos -325
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {{parent.ConstantColour.r} {parent.ConstantColour.g} {parent.ConstantColour.b} 1}
+  name Constant1
+  xpos 1090
+  ypos -577
+ }
+ Shuffle {
+  alpha white
+  name Shuffle2
+  xpos 1090
+  ypos -505
+ }
+ Transform {
+  scale 1.2
+  center {{width/2} {height/2}}
+  black_outside false
+  name Transform1
+  xpos 1090
+  ypos -467
+ }
+ Switch {
+  inputs 2
+  which {{parent.HazeColour}}
+  name Switch3
+  xpos 1090
+  ypos -329
+ }
+ Dot {
+  name Dot3
+  xpos 1124
+  ypos -174
+ }
+set N21a75490 [stack 0]
+ Dot {
+  name Dot24
+  xpos 1124
+  ypos 531
+ }
+push $N21a06460
+push $N219fcdd0
+ Dot {
+  name Dot6
+  xpos 749
+  ypos -573
+ }
+set N21a7eaf0 [stack 0]
+ Dot {
+  name Dot5
+  xpos 832
+  ypos -573
+ }
+set N21a83720 [stack 0]
+ Dot {
+  name Dot13
+  xpos 954
+  ypos -573
+ }
+ Log2Lin {
+  operation lin2log
+  black 0
+  white 665
+  name Log2Lin3
+  xpos 920
+  ypos -555
+ }
+ Keyer {
+  invert true
+  operation "luminance key"
+  range {0 0.3 1 1}
+  name Keyer2
+  xpos 920
+  ypos -529
+ }
+ Dot {
+  name Dot21
+  xpos 954
+  ypos -236
+ }
+push $N21a018e0
+ Dot {
+  name Dot9
+  xpos 282
+  ypos -573
+ }
+ Shuffle {
+  in {__depth.red __depth.green __depth.blue __depth.alpha}
+  in2 rgba
+  alpha alpha2
+  name Shuffle3
+  label "\[value in]"
+  xpos 248
+  ypos -546
+ }
+ Dot {
+  name Dot11
+  xpos 282
+  ypos -496
+ }
+set N21abf9e0 [stack 0]
+ Dot {
+  name Dot12
+  xpos 163
+  ypos -496
+ }
+ Unpremult {
+  name Unpremult2
+  xpos 129
+  ypos -478
+ }
+ Dot {
+  name Dot23
+  xpos 163
+  ypos -452
+ }
+push $N21abf9e0
+ Switch {
+  inputs 2
+  which {{parent.Unpremult_Depth}}
+  name Switch2
+  xpos 248
+  ypos -456
+ }
+ Dot {
+  name Dot18
+  xpos 282
+  ypos -430
+ }
+set N21adde50 [stack 0]
+ Dot {
+  name Dot19
+  xpos 161
+  ypos -430
+ }
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha green
+  name Shuffle5
+  xpos 127
+  ypos -401
+ }
+ Dot {
+  name Dot20
+  xpos 161
+  ypos -355
+ }
+push $N21adde50
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha red
+  name Shuffle6
+  xpos 248
+  ypos -404
+ }
+ Switch {
+  inputs 2
+  which {{parent.rgbChannel}}
+  name Switch5
+  xpos 248
+  ypos -359
+ }
+ Grade {
+  channels alpha
+  blackpoint {{parent.DepthNear}}
+  whitepoint {{parent.DepthFar}}
+  gamma {{parent.Gamma}}
+  white_clamp true
+  name Grade1
+  xpos 248
+  ypos -309
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  mix {{parent.AddShadows}}
+  name Merge3
+  label SHADOWS
+  xpos 248
+  ypos -246
+ }
+ Dot {
+  name Dot1
+  xpos 282
+  ypos -174
+ }
+set N21b361a0 [stack 0]
+ Dot {
+  name Dot17
+  xpos 282
+  ypos -99
+ }
+set N21b3acc0 [stack 0]
+ Dot {
+  name Dot14
+  xpos 282
+  ypos 191
+ }
+set N21b3f840 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  alpha black
+  name Shuffle1
+  xpos 248
+  ypos 315
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy2
+  xpos 248
+  ypos 353
+ }
+ Premult {
+  name Premult3
+  xpos 248
+  ypos 410
+ }
+ Dot {
+  name Dot2
+  xpos 282
+  ypos 478
+ }
+push $N21a06460
+push $N21b3f840
+ Grade {
+  channels alpha
+  multiply {{parent.Diffusion*5}}
+  name Grade2
+  xpos 498
+  ypos 181
+ }
+push $N21b3acc0
+ Grade {
+  channels alpha
+  multiply {{parent.Desaturation*5}}
+  name Grade3
+  xpos 498
+  ypos -109
+ }
+push $N21b361a0
+push $N21a7eaf0
+ Log2Lin {
+  operation lin2log
+  black 0
+  white 665
+  name Log2Lin1
+  xpos 715
+  ypos -553
+ }
+ Keyer {
+  operation "luminance key"
+  range {0.5 1 1 1}
+  name Keyer1
+  xpos 715
+  ypos -527
+ }
+ Dot {
+  name Dot27
+  xpos 749
+  ypos -489
+ }
+push $N21a83720
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 798
+  ypos -493
+ }
+ Premult {
+  name Premult1
+  xpos 798
+  ypos -467
+ }
+ Multiply {
+  value {{parent.AddHighlights}}
+  name Multiply1
+  xpos 798
+  ypos -441
+ }
+push $N21a75490
+ Merge2 {
+  inputs 2
+  operation plus
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge2
+  label HIGHLIGHTS
+  xpos 798
+  ypos -184
+ }
+push $N219fcdd0
+ Unpremult {
+  name Unpremult1
+  xpos 608
+  ypos -455
+ }
+ Merge2 {
+  inputs 2+1
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  mix {{parent.HazeAmount}}
+  name Merge1
+  label HAZE
+  xpos 608
+  ypos -184
+ }
+ Saturation {
+  inputs 1+1
+  saturation 0
+  name Saturation1
+  xpos 608
+  ypos -103
+ }
+ Dot {
+  name Dot15
+  xpos 642
+  ypos -62
+ }
+set N21c09c90 [stack 0]
+ Dot {
+  name Dot16
+  xpos 531
+  ypos -62
+ }
+ Clamp {
+  maximum 55
+  name Clamp2
+  xpos 497
+  ypos -44
+ }
+ Blur {
+  channels rgba
+  size 1
+  name Blur1
+  xpos 497
+  ypos -8
+ }
+ Blur {
+  channels rgba
+  size 2
+  mix 0.9
+  name Blur2
+  xpos 497
+  ypos 18
+ }
+ Blur {
+  channels rgba
+  size 4
+  mix 0.8
+  name Blur3
+  xpos 497
+  ypos 44
+ }
+ Blur {
+  channels rgba
+  size 8
+  mix 0.7
+  name Blur4
+  xpos 497
+  ypos 70
+ }
+ Blur {
+  channels rgba
+  size 16
+  mix 0.6
+  name Blur5
+  xpos 497
+  ypos 97
+ }
+ Blur {
+  channels rgba
+  size 32
+  mix 0.5
+  name Blur7
+  xpos 497
+  ypos 123
+ }
+push $N21c09c90
+ Keymix {
+  inputs 3
+  name Keymix1
+  label DIFFUSION
+  xpos 608
+  ypos 175
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy3
+  xpos 608
+  ypos 353
+ }
+ Premult {
+  name Premult2
+  xpos 608
+  ypos 414
+ }
+ Switch {
+  inputs 2
+  which {{parent.ViewDepth}}
+  name Switch1
+  xpos 608
+  ypos 474
+ }
+ Switch {
+  inputs 2
+  which {{parent.ViewBg}}
+  name Switch4
+  xpos 608
+  ypos 527
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos 608
+  ypos 568
+ }
+ Shuffle {
+  alpha red
+  name Shuffle7
+  xpos 608
+  ypos 648
+ }
+ Output {
+  name Output1
+  xpos 608
+  ypos 758
+ }
+end_group
