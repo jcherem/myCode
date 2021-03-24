@@ -1,0 +1,12 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Clamp {
+maximum 0
+MinClampTo_enable true
+MaxClampTo_enable true
+name Clamp_Sharp
+selected true
+xpos 10402
+ypos 14423
+}
