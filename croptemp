@@ -1,0 +1,19 @@
+set cut_paste_input [stack 0]
+version 11.3 v4
+push $cut_paste_input
+TimeEcho {
+framesbehind 60
+name TimeEcho1
+selected true
+xpos 13606
+ypos -2372
+disable true
+}
+Crop {
+box {1200 486 2732 1744}
+name Crop4
+selected true
+xpos 13606
+ypos -2343
+disable {{"\$gui ? 0 : 1"}}
+}
