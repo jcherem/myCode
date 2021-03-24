@@ -1,0 +1,345 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Grade {
+white 0.075
+gamma 2
+name Grade136
+selected true
+xpos -12482
+ypos -13833
+}
+set Nfa606ed0 [stack 0]
+Dot {
+name Dot268
+selected true
+xpos -12563
+ypos -13829
+}
+Dot {
+name Dot419
+selected true
+xpos -12563
+ypos -13567
+}
+push 0
+Grade {
+channels alpha
+whitepoint 0.014
+gamma 3.85
+name Grade159
+selected true
+xpos -12127
+ypos -13582
+}
+Blur {
+size 30
+name Blur62
+selected true
+xpos -12127
+ypos -13620
+}
+push $Nfa606ed0
+Group {
+name L_Exponblur5
+help "L_ExponBlur_v03 The ExponBlur blurs an image with an exponential falloff based upon an alpha. Most often used with roto shapes. The effect is applied to RGBA only. (For any questions, comments or suggestions please email gizmos@luma-pictures.com)"
+selected true
+xpos -12482
+ypos -13719
+addUserKnob {20 ExponBlur}
+addUserKnob {14 size R -40 40}
+size 10
+addUserKnob {7 Multiplier R 0 10}
+Multiplier 2
+addUserKnob {6 crop l "crop to format" +STARTLINE}
+crop true
+addUserKnob {26 ""}
+addUserKnob {22 Button l "     Luma Pictures     " T "import os\nimport sys\n\ntry:\n    import subprocess\n    def _run(cmd, shell, wait):\n        opener = subprocess.Popen(cmd, shell=shell)\n        if wait:\n            opener.wait()\n        return opener.pid\nexcept ImportError:\n    import popen2\n    def _run(cmd, shell, wait):\n        opener = popen2.Popen3(cmd)\n        if wait:\n            opener.wait()\n        return opener.pid\n\ndef _open(url, wait=0):\n    if sys.platform == \"darwin\":\n        cmd = \[\"open\", url]\n    elif hasattr(os, \"startfile\"):\n        return os.startfile(url)\n    elif os.environ.has_key(\"KDE_FULL_SESSION\") or os.environ.has_key(\"KDE_MULTIHEAD\") or \\\n        os.environ.has_key(\"GNOME_DESKTOP_SESSION_ID\") or os.environ.has_key(\"GNOME_KEYRING_SOCKET\"):\n        cmd = \[\"xdg-open\", url]\n    else:\n        raise OSError, \"Desktop not supported.\"\n\n    return _run(cmd, 0, wait)\n\n_open('http://www.luma-pictures.com/tools/nuke/')" +STARTLINE}
+}
+Input {
+inputs 0
+name Input1
+xpos -407
+ypos 305
+}
+set Nfa444490 [stack 0]
+Invert {
+name Invert4
+xpos -407
+ypos 360
+disable {{"parent.size>=0 ? 1 : 0" i}}
+}
+set Nfa448fb0 [stack 0]
+Blur {
+size {{parent.size.w i} {parent.size.h i}}
+crop {{parent.crop i}}
+name Blur1
+label "\[value size]"
+xpos -615
+ypos 477
+}
+push $Nfa448fb0
+Blur {
+size {{parent.size.w*parent.Multiplier i} {parent.size.h*parent.Multiplier i}}
+crop {{parent.crop i}}
+name Blur2
+label "\[value size]"
+xpos -480
+ypos 476
+}
+Merge2 {
+inputs 2
+name Merge7
+xpos -537
+ypos 572
+}
+push $Nfa448fb0
+Blur {
+size {{parent.size.w*parent.Multiplier*2 i} {parent.size.h*parent.Multiplier*2 i}}
+crop {{parent.crop i}}
+name Blur3
+label "\[value size]"
+xpos -357
+ypos 475
+}
+Merge2 {
+inputs 2
+name Merge8
+xpos -477
+ypos 637
+}
+push $Nfa448fb0
+Blur {
+size {{parent.size.w*parent.Multiplier*4 i} {parent.size.h*parent.Multiplier*4 i}}
+crop {{parent.crop i}}
+name Blur4
+label "\[value size]"
+xpos -229
+ypos 475
+}
+Merge2 {
+inputs 2
+name Merge9
+xpos -402
+ypos 707
+}
+Invert {
+name Invert5
+xpos -402
+ypos 768
+disable {{"parent.size>=0 ? 1 : 0" i}}
+}
+push $Nfa444490
+Dot {
+name Dot2
+xpos -101
+ypos 308
+}
+Dot {
+name Dot1
+xpos -101
+ypos 859
+}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+name ChannelsPassThrough
+xpos -402
+ypos 856
+}
+Output {
+name Output1
+xpos -402
+ypos 926
+}
+end_group
+set Nfa43a9b0 [stack 0]
+Grade {
+channels alpha
+whitepoint 0.23
+gamma 0.78
+white_clamp true
+name Grade160
+selected true
+xpos -12364
+ypos -13725
+}
+Merge2 {
+inputs 2
+operation mask
+name Merge201
+selected true
+xpos -12127
+ypos -13719
+}
+push $Nfa606ed0
+Grade {
+channels alpha
+whitepoint 0.23
+gamma 0.78
+white_clamp true
+mix 0.418
+name Grade161
+selected true
+xpos -12363
+ypos -13839
+}
+Constant {
+inputs 0
+channels rgb
+color {0.142525509 0.1798469126 0.1984298676 1}
+name Constant8
+selected true
+xpos -12245
+ypos -13926
+}
+Merge2 {
+inputs 2
+name Merge202
+selected true
+xpos -12245
+ypos -13833
+}
+Group {
+name PxF_Bandpass2
+help "Extract detail from an image by subtracting the original image from a blur of itself.\nUseful to enhance an image for easier tracking."
+tile_color 0x733520ff
+selected true
+xpos -12241
+ypos -13757
+addUserKnob {20 User}
+addUserKnob {41 colorspace_out l Colorspace t "Pixel values will be converted from linear to this colorspace before processing." T Colorspace1.colorspace_out}
+addUserKnob {41 blur_1 l blurAmount1 T Blur1.size}
+addUserKnob {41 blur_2 l blurAmount2 T Blur2.size}
+addUserKnob {7 brightness l Gain t "Overall gain applied after bandpass filter." R 0 20}
+brightness 15.6
+addUserKnob {41 saturation t "Overall saturation after bandpass and gain." T Saturation1.saturation}
+addUserKnob {7 offset l offsetDarks t "Constant added after bandpass."}
+offset 0.5
+addUserKnob {6 bc l "black clamp" t "Clamp values < 0 to 0." +STARTLINE}
+bc true
+addUserKnob {6 wc l "white clamp" t "Clamp values > 1 to 1." -STARTLINE}
+wc true
+addUserKnob {26 ""}
+addUserKnob {26 t l "" t "Applies a bandpass filter to the image to isolate certain spacial frequencies. Useful to enhance detail to make footage easier to track. Used to add detail to an image " -STARTLINE T "PxF_Bandpass 2.0.3 - (c) 2012 - Xavier Bourque - www.pixelfudger.com"}
+}
+Input {
+inputs 0
+name mask
+xpos 359
+ypos 157
+number 1
+}
+Input {
+inputs 0
+name img
+xpos 171
+ypos -273
+}
+set Nfa374130 [stack 0]
+Dot {
+name Dot1
+xpos 405
+ypos 31
+}
+set Nfa378ca0 [stack 0]
+push $Nfa378ca0
+push $Nfa374130
+Colorspace {
+colorspace_out Cineon
+name Colorspace1
+xpos 171
+ypos -163
+}
+set Nfa37d7b0 [stack 0]
+Blur {
+name Blur1
+xpos 132
+ypos -126
+}
+push $Nfa37d7b0
+Blur {
+size 9.2
+name Blur2
+xpos 227
+ypos -127
+}
+Merge2 {
+inputs 2
+operation minus
+name Merge1
+xpos 180
+ypos -71
+}
+Grade {
+white {{brightness i}}
+add {{offset i}}
+black_clamp {{bc i}}
+white_clamp {{wc i}}
+name Grade1
+xpos 180
+ypos 4
+}
+Saturation {
+saturation 0
+name Saturation1
+xpos 180
+ypos 47
+}
+ShuffleCopy {
+inputs 2
+name ShuffleCopy1
+xpos 180
+ypos 163
+}
+Keymix {
+inputs 3
+invertMask true
+bbox B
+name Keymix1
+xpos 180
+ypos 229
+disable {{"\[exists parent.input1] ? 0 : 1" i x1 0}}
+}
+Output {
+name Output1
+xpos 180
+ypos 296
+}
+end_group
+Merge2 {
+inputs 2
+operation mask
+bbox A
+name Merge203
+selected true
+xpos -12241
+ypos -13680
+}
+Clamp {
+name Clamp12
+selected true
+xpos -12362
+ypos -13648
+}
+push $Nfa43a9b0
+Merge2 {
+inputs 2
+operation screen
+mix 0.21
+name Merge204
+selected true
+xpos -12482
+ypos -13642
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy32
+selected true
+xpos -12482
+ypos -13577
+}
