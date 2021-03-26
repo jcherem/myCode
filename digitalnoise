@@ -1,0 +1,122 @@
+set cut_paste_input [stack 0]
+version 11.3 v4
+Group {
+inputs 0
+name DigitalNoise1
+onCreate "\nheight = nuke.root().format().height()\nwidth  = nuke.root().format().width()\nnuke.thisNode()\['center'].setValue(\[width/2.0, height/2.0])\n"
+knobChanged "\nknob = nuke.thisKnob()\nif knob.name() == 'skew_order':\n    nuke.toNode('NoiseTransform')\['rot_order'].setValue('Z' + knob.value())\nif knob.name() == 'noise_type':\n    if knob.value() in \['Voronoi', 'Manhattan', 'Chebyshev', 'Euclidian']:\n        nuke.thisNode()\['range'].clearFlag(0x00040000)\n    else:\n        nuke.thisNode()\['range'].setFlag(0x00040000)\n"
+selected true
+xpos 57948
+ypos 37113
+addUserKnob {20 cellnoise l "Cell Noise"}
+addUserKnob {68 type M {square rectangle}}
+addUserKnob {41 format T DigitalNoise.format}
+addUserKnob {6 use_gpu l "use gpu" t "Faster calculations, may not work on all computers. Disable to switch to CPU." -STARTLINE}
+use_gpu true
+addUserKnob {26 ""}
+addUserKnob {7 size R 1 1000}
+size 100
+addUserKnob {7 z t "This knob must be animated if you want it to change over time."}
+z 0.1
+addUserKnob {7 gain R 0 2}
+gain 1
+addUserKnob {7 gamma R 0 2}
+gamma 1
+addUserKnob {20 transform l Transform}
+addUserKnob {12 translate}
+addUserKnob {7 rotate R -180 180}
+addUserKnob {14 scale R 0 100}
+scale {1 1}
+addUserKnob {7 skewX l "skew X" R -1 1}
+addUserKnob {7 skewY l "skew Y" R -1 1}
+addUserKnob {4 skew_order l "skew order" t "Specifies which order the skew values should be applied in.\n" M {XY YX}}
+addUserKnob {12 center}
+center {2048 1152}
+addUserKnob {7 xrotate t "Rotation about X axis in 3D noise space." R 0 90}
+addUserKnob {7 yrotate t "Rotation about Y axis in 3D noise space." R 0 90}
+}
+BlinkScript {
+inputs 0
+recompileCount 14
+ProgramGroup 1
+KernelDescription "2 \"DigitalNoise\" iterate pixelWise 058dc77c5685a9671eab98e1216e47da20678e02290fb778eb9f1a41fd38bbe9 1 \"dst\" Write Point 4 \"Gain\" Float 1 AACAPw== \"Gamma\" Float 1 AACAPw== \"transform\" Float 16 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA== \"Type\" Int 1 AAAAAA== 4 \"gain\" 1 1 \"gamma\" 1 1 \"transform\" 16 1 \"type\" 1 1 4 \"fRange\" Float 1 1 AAAAAA== \"iRange\" Int 1 1 AAAAAA== \"transform_inv\" Float 16 1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA== \"z\" Float 1 1 AAAAAA=="
+EncodedSource "1 4642 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"
+useGPUIfAvailable {{parent.use_gpu}}
+rebuild ""
+DigitalNoise_Gain {{parent.gain}}
+DigitalNoise_Gamma {{parent.gamma}}
+DigitalNoise_transform {
+    {{parent.NoiseTransform.world_matrix.0} {parent.NoiseTransform.world_matrix.1} {parent.NoiseTransform.world_matrix.2} {parent.NoiseTransform.world_matrix.3}}
+    {{parent.NoiseTransform.world_matrix.4} {parent.NoiseTransform.world_matrix.5} {parent.NoiseTransform.world_matrix.6} {parent.NoiseTransform.world_matrix.7}}
+    {{parent.NoiseTransform.world_matrix.8} {parent.NoiseTransform.world_matrix.9} {parent.NoiseTransform.world_matrix.10} {parent.NoiseTransform.world_matrix.11}}
+    {{parent.NoiseTransform.world_matrix.12} {parent.NoiseTransform.world_matrix.13} {parent.NoiseTransform.world_matrix.14} {parent.NoiseTransform.world_matrix.15}}
+  }
+DigitalNoise_Type {{parent.type}}
+protectKernelWhenPublishing true
+rebuild_finalise ""
+name DigitalNoise
+xpos 896
+ypos 82
+}
+Output {
+name Output1
+xpos 896
+ypos 163
+}
+Axis2 {
+inputs 0
+xform_order TRS
+translate {{parent.translate.x} {parent.translate.y} {parent.z*100}}
+rotate {{parent.xrotate} {parent.yrotate} {parent.rotate}}
+scaling {{parent.scale.w} {parent.scale.h} 1}
+uniform_scale {{parent.size}}
+skew {{"parent.skewX * 45"} {"parent.skewY * 45"} 0}
+pivot {{parent.center.x} {parent.center.y} 0}
+name NoiseTransform
+xpos 906
+ypos -72
+addUserKnob {20 "Ppos Locator"}
+addUserKnob {18 pointPosition l "Point Position"}
+pointPosition {0 0 0}
+addUserKnob {6 pointPosition_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {6 pointPosition_panelDropped_1_1_1_1_1_1_1_1_1_1_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+addUserKnob {1 leaf_label l Leaf}
+addUserKnob {1 ivy_version l Version}
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+end_group
