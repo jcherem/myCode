@@ -1,0 +1,44 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Group {
+name DepthFix1
+selected true
+xpos 4118
+ypos -22928
+}
+Input {
+inputs 0
+name Input1
+xpos -895
+ypos -595
+}
+add_layer {__depth __depth.red __depth.green __depth.blue __depth.alpha __depth.r __depth.z __depth.x __depth.y __depth.Z}
+Unpremult {
+channels {__depth.red __depth.green __depth.blue none}
+name Unpremult2
+xpos -895
+ypos -555
+}
+Expression {
+channel0 depth
+expr0 "rgba.alpha > 0.000001? 0 : 1/__depth.red"
+channel1 {-rgba.red rgba.green -rgba.blue none}
+channel2 {-rgba.red -rgba.green rgba.blue none}
+name Expression2
+selected true
+xpos -895
+ypos -517
+}
+Premult {
+channels {__depth.red __depth.green __depth.blue none}
+name Premult2
+xpos -895
+ypos -491
+}
+Output {
+name Output1
+xpos -895
+ypos -391
+}
+end_group
