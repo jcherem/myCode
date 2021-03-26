@@ -1,0 +1,945 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+Group {
+ inputs 0
+ name Eye_glare1
+ selected true
+ xpos 1710
+ ypos 9381
+ addUserKnob {20 User}
+ addUserKnob {41 intvalue l "Halo rings intencity" T Multiply2.value}
+ addUserKnob {26 ""}
+ addUserKnob {26 corelabel l "" +STARTLINE T "Core animation"}
+ addUserKnob {41 N1translate l "texture translate" T Noise1.translate}
+ addUserKnob {26 ""}
+ addUserKnob {26 raytext l "" +STARTLINE T "Rays animation"}
+ addUserKnob {41 which l "Rays variations" T Switch1.which}
+ addUserKnob {41 rotate T Transform1.rotate}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0x2a4c5dff
+  label "Obstacle texture here"
+  note_font_size 42
+  note_font_color 0x9ecaffff
+  xpos 134
+  ypos -421
+  bdwidth 818
+  bdheight 446
+ }
+ BackdropNode {
+  inputs 0
+  name BlinkScript_Knobs
+  tile_color 0x778b9bff
+  label "To get animated glare add some dirt\n texture here and if you have match-move\nlater, add it inverted  to texture.\nIt will be effect like static eyelashes before\nmoving picture\n"
+  xpos 987
+  ypos -333
+  bdwidth 233
+  bdheight 99
+ }
+ BackdropNode {
+  inputs 0
+  name BlinkScript_Knobs1
+  tile_color 0x778b9bff
+  label "Hello!\nThis is simplified model of physical eye model\nthat can give us glare we can see around\nbright spots \n"
+  xpos 352
+  ypos -1902
+  bdwidth 233
+  bdheight 99
+ }
+ Constant {
+  inputs 0
+  color {0 0 0 0}
+  format "2000 2000 0 0 2000 2000 1 base"
+  name Constant1
+  xpos 425
+  ypos -1744
+ }
+ Dot {
+  name Dot1
+  xpos 459
+  ypos -1485
+ }
+set N3fc89a50 [stack 0]
+ Dot {
+  name Dot14
+  xpos -367
+  ypos -1485
+ }
+set N544f47d0 [stack 0]
+ Dot {
+  name Dot15
+  xpos -988
+  ypos -1485
+ }
+ Dot {
+  name Dot7
+  xpos -988
+  ypos -550
+ }
+set N6419d720 [stack 0]
+ Group {
+  name Complex
+  xpos -1022
+  ypos -146
+  addUserKnob {20 Complex}
+  addUserKnob {41 "Local GPU: " T BlinkScript3.gpuName}
+  addUserKnob {41 "Use GPU if Available" T BlinkScript3.useGPUIfAvailable}
+  addUserKnob {26 ""}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -561
+   ypos 698
+  }
+  BlinkScript {
+   recompileCount 20
+   ProgramGroup 1
+   KernelDescription "2 \"Complex\" iterate pixelWise e0aca51cb42d6878b8d472d39635c6088bda9dba9b90a374d080a570de2c708f 2 \"src\" Read Random \"dst\" Write Point 0 0 0"
+   EncodedSource "1 519 ohiF3cDJt/6uXjbHwdsi3ndWE2jjH1E/7rg0FfLxtKPG2UrGNYFiBfg4dwfFkMdPHIktvL7dgS9ppJe5z8dOoQOkcKwYqNPV8NWyuEpRxengBZRzicpGRLaWbafVVbgBugWJR0aKf+od8OvlrW3ZtcBF7A21L7lIj5JGft+48iB40cffGLZx4BLIDtRe8yAlxA9I8ZhKeMHzHIDGtNkixFXlhr8yvSD1RUIfiusbMHgVMzbF9ufSfUwEN7fKnuxu32VfKylRYr7pOJs99SMmOvrq5SvV5fzbHGViwKVQpSeZNzSB0921IWXRCgj3R+PZ8svR43TgvX7yxDZnSRlCHtmx6Vnmi/fmtjgVx9TYrTYEWuqMFhMvLFJAy0OK1V5s3Ge5X/Ri3qN9bCZpMrEYODQXbNQrcNtf0kpCxQInyV6IbBLSBg0J7NhMu4Znsaz4V3hdeD6KqmMoelx2/NNIheCyOENaWeRAw2fockdnrJPH6A4YnVI5HLl9HO6tvBJWC0GboCFy4SW9/wG/EWkAcToTYYTAiupqOukzqeo0Cv/NUDQ0LAbobIPCcTyFnrO/mDDwcAwJnlkCCgzdkvbk6cizarZwVpZeZF5ImSLws2dHSIzBRjo6Mvhs441FM9OuZRq9j9CQ2JFwMPpymgZ08beUGipY9bExlTm9Uq2Z+j1+CXW21UFHdDTTouIQm+Ep"
+   rebuild ""
+   protectKernelWhenPublishing true
+   rebuild_finalise ""
+   name BlinkScript3
+   xpos -561
+   ypos 738
+  }
+  Output {
+   name Output1
+   xpos -561
+   ypos 838
+  }
+ end_group
+ Dot {
+  name Dot13
+  xpos -988
+  ypos 280
+ }
+push $N6419d720
+ Noise {
+  size 27
+  zoffset 50.05
+  lacunarity 14
+  gain 1
+  gamma 0.605
+  center {1056 499}
+  name Noise1
+  xpos -354
+  ypos -554
+ }
+push $N544f47d0
+ Dot {
+  name Dot5
+  xpos -367
+  ypos -1256
+ }
+set N401c6070 [stack 0]
+ Dot {
+  name Dot12
+  xpos -241
+  ypos -1256
+ }
+ Expression {
+  temp_name0 gg
+  temp_expr0 (0.5+x)/(width)-.5
+  temp_name1 rr
+  temp_expr1 (0.5+y)/(height)-.5
+  temp_name2 xx
+  temp_expr2 sqrt(rr*rr+gg*gg)
+  temp_name3 yy
+  temp_expr3 "atan2(x-width/2 , y-height/2 )/pi"
+  channel0 {rgba.red -rgba.green -rgba.blue none}
+  expr0 1-(yy<0?1-abs(yy)/2:yy/2)
+  channel1 {-rgba.red rgba.green -rgba.blue none}
+  expr1 (.5-xx)*2
+  channel2 {-rgba.red -rgba.green rgba.blue none}
+  expr2 0
+  expr3 0
+  name Expression1
+  xpos -275
+  ypos -1170
+  addUserKnob {20 User}
+ }
+ Dot {
+  name Dot2
+  xpos -241
+  ypos -1102
+ }
+push $N401c6070
+ Expression {
+  channel0 rgba
+  expr0 sin(x)
+  name Expression8
+  xpos -401
+  ypos -1170
+ }
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap3
+  xpos -401
+  ypos -1112
+ }
+ Dot {
+  name Dot3
+  xpos -367
+  ypos -885
+ }
+push $N3fc89a50
+ Radial {
+  area {0 0 {"\[topnode].width"} {"\[topnode].height"}}
+  softness 0.015
+  name Radial1
+  xpos 425
+  ypos -1210
+ }
+ Multiply {
+  inputs 1+1
+  value 0.7
+  name Multiply2
+  label "Halo rings intencity"
+  xpos 425
+  ypos -896
+ }
+ Multiply {
+  inputs 1+1
+  channels rgba
+  value 0
+  name Multiply3
+  xpos 425
+  ypos -554
+ }
+ Dot {
+  name Dot4
+  xpos 459
+  ypos -330
+ }
+set N93acd970 [stack 0]
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha black
+  name Shuffle3
+  xpos 248
+  ypos -340
+ }
+set Nd5d14880 [stack 0]
+ RotoPaint {
+  cliptype none
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x447a2000 x447a2000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Brush21 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4494a000
+       {x450b2000 x44d78000 x3c800000}
+       {x450a2000 x44d68000 x3e6c0000}
+       {x4507e000 x44d50000 x3e95c000}
+       {x45036000 x44d0c000 x3eb04000}
+       {x44f18000 x44c5c000 x3ec84000}
+       {x44e38000 x44bd8000 x3ed40000}
+       {x44cf4000 x44b18000 x3ed8c000}
+       {x44ae4000 x449d8000 x3ed8c000}
+       {x44850000 x44838000 x3ee10000}
+       {x44528000 x44638000 x3ee78000}
+       {x441a8000 x443b8000 x3ee80000}
+       {x43c20000 x44148000 x3eecc000}
+       {x43540000 x43ec0000 x3ef84000}
+       {x42700000 x43b70000 x3ef60000}
+       {xc2980000 x43860000 x3eed4000}
+       {xc3480000 x43360000 x3eea4000}
+       {xc38f0000 x43020000 x3ee40000}
+       {xc3b30000 x42b00000 x3ee14000}
+       {xc3bf0000 x42900000 x3edd8000}
+       {xc3c30000 x42880000 x3edd8000}
+       {xc3c90000 x42680000 x3edd8000}
+       {xc3cd0000 x42580000 x3edf8000}
+       {xc3cc0000 x42680000 x3ec38000}
+       {xc3c90000 x42780000 x3ec48000}
+       {xc3c50000 x428c0000 x3ec68000}
+       {xc3c00000 x42ac0000 x3eca8000}
+       {xc3ba0000 x42d40000 x3ecc8000}
+       {xc3aa0000 x43160000 x3ecdc000}
+       {xc3910000 x43540000 x3ed00000}
+       {xc35c0000 x43900000 x3ed34000}
+       {xc3020000 x43bf0000 x3ed64000}
+       {xc1900000 x43f30000 x3ed80000}
+       {x42f00000 x44148000 x3edd4000}
+       {x43a60000 x44380000 x3ee58000}
+       {x43f90000 x44510000 x3ee54000}
+       {x44730000 x44884000 x3ee9c000}
+       {x44ab8000 x44a08000 x3ee40000}
+       {x44d40000 x44b70000 x3ee08000}
+       {x4508e000 x44d00000 x3ee34000}
+       {x451b6000 x44dc4000 x3ed7c000}}}
+     {t
+   {{x4494a000 x440f2666}}
+   {{x4494a000 x4435299a}}
+   {{x4494a000 0}}  x43f48000 x424c0000
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}  xc2f80000
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bu 1 str 1 spx x44840000 spy x43f98000 sb 1 ltn x4494a000 ltm x4494a000 tt x41880000}}}}}}
+  toolbox {brush {
+  { selectAll r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1189 ltm 1189 ltt 0 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_paint_color {0 0 0 0}
+  toolbar_opacity 0.5
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_start 1189
+  toolbar_lifetime_end 1189
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {1056 499}
+  colorOverlay {0 0 0 0}
+  opacity 0.5
+  lifetime_type "all frames"
+  lifetime_start 1189
+  lifetime_end 1189
+  motionblur_on true
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  source_black_outside true
+  name RotoPaint4
+  xpos 67
+  ypos -259
+ }
+push $Nd5d14880
+ RotoPaint {
+  cliptype none
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x447a2000 x447a2000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Brush21 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4494a000
+       {x450b2000 x44d78000 x3c800000}
+       {x450a2000 x44d68000 x3e6c0000}
+       {x4507e000 x44d50000 x3e95c000}
+       {x45036000 x44d0c000 x3eb04000}
+       {x44f18000 x44c5c000 x3ec84000}
+       {x44e38000 x44bd8000 x3ed40000}
+       {x44cf4000 x44b18000 x3ed8c000}
+       {x44ae4000 x449d8000 x3ed8c000}
+       {x44850000 x44838000 x3ee10000}
+       {x44528000 x44638000 x3ee78000}
+       {x441a8000 x443b8000 x3ee80000}
+       {x43c20000 x44148000 x3eecc000}
+       {x43540000 x43ec0000 x3ef84000}
+       {x42700000 x43b70000 x3ef60000}
+       {xc2980000 x43860000 x3eed4000}
+       {xc3480000 x43360000 x3eea4000}
+       {xc38f0000 x43020000 x3ee40000}
+       {xc3b30000 x42b00000 x3ee14000}
+       {xc3bf0000 x42900000 x3edd8000}
+       {xc3c30000 x42880000 x3edd8000}
+       {xc3c90000 x42680000 x3edd8000}
+       {xc3cd0000 x42580000 x3edf8000}
+       {xc3cc0000 x42680000 x3ec38000}
+       {xc3c90000 x42780000 x3ec48000}
+       {xc3c50000 x428c0000 x3ec68000}
+       {xc3c00000 x42ac0000 x3eca8000}
+       {xc3ba0000 x42d40000 x3ecc8000}
+       {xc3aa0000 x43160000 x3ecdc000}
+       {xc3910000 x43540000 x3ed00000}
+       {xc35c0000 x43900000 x3ed34000}
+       {xc3020000 x43bf0000 x3ed64000}
+       {xc1900000 x43f30000 x3ed80000}
+       {x42f00000 x44148000 x3edd4000}
+       {x43a60000 x44380000 x3ee58000}
+       {x43f90000 x44510000 x3ee54000}
+       {x44730000 x44884000 x3ee9c000}
+       {x44ab8000 x44a08000 x3ee40000}
+       {x44d40000 x44b70000 x3ee08000}
+       {x4508e000 x44d00000 x3ee34000}
+       {x451b6000 x44dc4000 x3ed7c000}}}
+     {t
+   {{x4494a000 x440f2666}}
+   {{x4494a000 x4435299a}}
+   {{x4494a000 0}}  x43f48000 x424c0000
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}  xc2040000
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bu 1 str 1 spx x44840000 spy x43f98000 sb 1 ltn x4494a000 ltm x4494a000 tt x41880000}}}}}}
+  toolbox {brush {
+  { selectAll r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1189 ltm 1189 ltt 0 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_paint_color {0 0 0 0}
+  toolbar_opacity 0.5
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_start 1189
+  toolbar_lifetime_end 1189
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {1056 499}
+  colorOverlay {0 0 0 0}
+  opacity 0.5
+  lifetime_type "all frames"
+  lifetime_start 1189
+  lifetime_end 1189
+  motionblur_on true
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  source_black_outside true
+  name RotoPaint3
+  xpos 164
+  ypos -260
+ }
+set Nd5d15010 [stack 0]
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge1
+  xpos 67
+  ypos -185
+ }
+set N228986f0 [stack 0]
+push 0
+push $Nd5d14880
+ RotoPaint {
+  cliptype none
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x447a2000 x447a2000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Brush21 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4494a000
+       {x450b2000 x44d78000 x3c800000}
+       {x450a2000 x44d68000 x3e6c0000}
+       {x4507e000 x44d50000 x3e95c000}
+       {x45036000 x44d0c000 x3eb04000}
+       {x44f18000 x44c5c000 x3ec84000}
+       {x44e38000 x44bd8000 x3ed40000}
+       {x44cf4000 x44b18000 x3ed8c000}
+       {x44ae4000 x449d8000 x3ed8c000}
+       {x44850000 x44838000 x3ee10000}
+       {x44528000 x44638000 x3ee78000}
+       {x441a8000 x443b8000 x3ee80000}
+       {x43c20000 x44148000 x3eecc000}
+       {x43540000 x43ec0000 x3ef84000}
+       {x42700000 x43b70000 x3ef60000}
+       {xc2980000 x43860000 x3eed4000}
+       {xc3480000 x43360000 x3eea4000}
+       {xc38f0000 x43020000 x3ee40000}
+       {xc3b30000 x42b00000 x3ee14000}
+       {xc3bf0000 x42900000 x3edd8000}
+       {xc3c30000 x42880000 x3edd8000}
+       {xc3c90000 x42680000 x3edd8000}
+       {xc3cd0000 x42580000 x3edf8000}
+       {xc3cc0000 x42680000 x3ec38000}
+       {xc3c90000 x42780000 x3ec48000}
+       {xc3c50000 x428c0000 x3ec68000}
+       {xc3c00000 x42ac0000 x3eca8000}
+       {xc3ba0000 x42d40000 x3ecc8000}
+       {xc3aa0000 x43160000 x3ecdc000}
+       {xc3910000 x43540000 x3ed00000}
+       {xc35c0000 x43900000 x3ed34000}
+       {xc3020000 x43bf0000 x3ed64000}
+       {xc1900000 x43f30000 x3ed80000}
+       {x42f00000 x44148000 x3edd4000}
+       {x43a60000 x44380000 x3ee58000}
+       {x43f90000 x44510000 x3ee54000}
+       {x44730000 x44884000 x3ee9c000}
+       {x44ab8000 x44a08000 x3ee40000}
+       {x44d40000 x44b70000 x3ee08000}
+       {x4508e000 x44d00000 x3ee34000}
+       {x451b6000 x44dc4000 x3ed7c000}}}
+     {t
+   {{x4494a000 x440f2666}}
+   {{x4494a000 x4435299a}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}  x41900000
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bu 1 str 1 spx x44840000 spy x43f98000 sb 1 ltn x4494a000 ltm x4494a000 tt x41880000}}}}}}
+  toolbox {brush {
+  { selectAll r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1189 ltm 1189 ltt 0 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_paint_color {0 0 0 0}
+  toolbar_opacity 0.5
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_start 1189
+  toolbar_lifetime_end 1189
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {1056 499}
+  colorOverlay {0 0 0 0}
+  opacity 0.5
+  lifetime_type "all frames"
+  lifetime_start 1189
+  lifetime_end 1189
+  motionblur_on true
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  source_black_outside true
+  name RotoPaint2
+  xpos -215
+  ypos -265
+ }
+push $Nd5d14880
+ RotoPaint {
+  cliptype none
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x447a2000 x447a2000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Brush21 512 catmullrom
+     {cc
+      {f 2080}
+      {px x4494a000
+       {x450b2000 x44d78000 x3c800000}
+       {x450a2000 x44d68000 x3e6c0000}
+       {x4507e000 x44d50000 x3e95c000}
+       {x45036000 x44d0c000 x3eb04000}
+       {x44f18000 x44c5c000 x3ec84000}
+       {x44e38000 x44bd8000 x3ed40000}
+       {x44cf4000 x44b18000 x3ed8c000}
+       {x44ae4000 x449d8000 x3ed8c000}
+       {x44850000 x44838000 x3ee10000}
+       {x44528000 x44638000 x3ee78000}
+       {x441a8000 x443b8000 x3ee80000}
+       {x43c20000 x44148000 x3eecc000}
+       {x43540000 x43ec0000 x3ef84000}
+       {x42700000 x43b70000 x3ef60000}
+       {xc2980000 x43860000 x3eed4000}
+       {xc3480000 x43360000 x3eea4000}
+       {xc38f0000 x43020000 x3ee40000}
+       {xc3b30000 x42b00000 x3ee14000}
+       {xc3bf0000 x42900000 x3edd8000}
+       {xc3c30000 x42880000 x3edd8000}
+       {xc3c90000 x42680000 x3edd8000}
+       {xc3cd0000 x42580000 x3edf8000}
+       {xc3cc0000 x42680000 x3ec38000}
+       {xc3c90000 x42780000 x3ec48000}
+       {xc3c50000 x428c0000 x3ec68000}
+       {xc3c00000 x42ac0000 x3eca8000}
+       {xc3ba0000 x42d40000 x3ecc8000}
+       {xc3aa0000 x43160000 x3ecdc000}
+       {xc3910000 x43540000 x3ed00000}
+       {xc35c0000 x43900000 x3ed34000}
+       {xc3020000 x43bf0000 x3ed64000}
+       {xc1900000 x43f30000 x3ed80000}
+       {x42f00000 x44148000 x3edd4000}
+       {x43a60000 x44380000 x3ee58000}
+       {x43f90000 x44510000 x3ee54000}
+       {x44730000 x44884000 x3ee9c000}
+       {x44ab8000 x44a08000 x3ee40000}
+       {x44d40000 x44b70000 x3ee08000}
+       {x4508e000 x44d00000 x3ee34000}
+       {x451b6000 x44dc4000 x3ed7c000}}}
+     {t
+   {{x4494a000 x440f2666}}
+   {{x4494a000 x4435299a}}
+   {{x4494a000 0}}  x43f48000 x424c0000     
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}  xc2b00000
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 0}}
+   {{x4494a000 1}}}
+     {a ro 0 go 0 bo 0 ao 0 opc x3f000000 bu 1 str 1 spx x44840000 spy x43f98000 sb 1 ltn x4494a000 ltm x4494a000 tt x41880000}}}}}}
+  toolbox {brush {
+  { selectAll r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush r 0 g 0 b 0 a 0 opc 0.5 str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1189 ltm 1189 ltt 0 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_paint_color {0 0 0 0}
+  toolbar_opacity 0.5
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_start 1189
+  toolbar_lifetime_end 1189
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {1056 499}
+  colorOverlay {0 0 0 0}
+  opacity 0.5
+  lifetime_type "all frames"
+  lifetime_start 1189
+  lifetime_end 1189
+  motionblur_on true
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  source_black_outside true
+  name RotoPaint1
+  xpos -103
+  ypos -261
+ }
+ Merge2 {
+  inputs 3+1
+  operation max
+  name Merge2
+  xpos -215
+  ypos -186
+ }
+push $N228986f0
+push $Nd5d15010
+ Dot {
+  name Dot9
+  xpos 198
+  ypos -142
+ }
+push $Nd5d14880
+ Dot {
+  name Dot6
+  xpos 282
+  ypos -104
+ }
+ Switch {
+  inputs 4
+  which 2
+  name Switch1
+  xpos -215
+  ypos -108
+ }
+ Transform {
+  rotate 10
+  center {1000 1000}
+  shutteroffset centred
+  name Transform1
+  selected true
+  xpos -215
+  ypos -82
+ }
+set N4c274280 [stack 0]
+ Dot {
+  name Dot8
+  xpos -181
+  ypos -37
+ }
+push $N93acd970
+ Multiply {
+  inputs 1+1
+  value 0
+  name Multiply4
+  label "Example 2"
+  xpos 425
+  ypos -53
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge4
+  xpos 425
+  ypos 276
+ }
+ Transform {
+  scale 0.2
+  center {1000.5 1000.5}
+  name Transform12
+  xpos 425
+  ypos 421
+ }
+ FFT {
+  channels rgba
+  normalize_input true
+  name FFT1
+  xpos 425
+  ypos 481
+  cached true
+ }
+ Expression {
+  temp_name0 t
+  temp_expr0 "x%2 ? 0 : 1"
+  expr0 r*t
+  expr1 g*t
+  expr2 b*t
+  name Expression2
+  label "even fields removal"
+  xpos 425
+  ypos 593
+ }
+ Group {
+  name CenterKernel
+  xpos 425
+  ypos 693
+  addUserKnob {20 CenterKernel}
+  addUserKnob {41 "Local GPU: " T BlinkScript3.gpuName}
+  addUserKnob {41 "Use GPU if Available" T BlinkScript3.useGPUIfAvailable}
+  addUserKnob {26 ""}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos 936
+   ypos 1573
+  }
+  BlinkScript {
+   recompileCount 60
+   ProgramGroup 1
+   KernelDescription "2 \"CenterKernel\" iterate pixelWise d9b0f6cf4fc4aaa26a04b480844d49dce6b088eca4581db2067cb18aee672409 2 \"src\" Read Random \"dst\" Write Point 0 0 1 \"srcconstEdgeColor\" Float 4 1 AAAAAAAAAAAAAAAAAAAAAA=="
+   EncodedSource "1 496 62Tdm/8If/gPqHtgTnm5Z51Zz4Wvadj6TsNeTlkzMeO+mmcO6eHFSxEoSlJYhwX41UY9MlVb2JvxPZflngnnh4jbM0Aql5DkQvAm8HyhkcZaR4Yy3RGXvUjyst8d2hqtV1x8h/9kfwXNZMvMTV4bajtVwdmrIo5p2iT6xj87UxZPFeK6YkCcA01PiB4MqrW5MK/3iuvYXNZ7wW1EZ65hUJpZXJpXTHP5XfFAcfoYjOR/k9fSRSKjJ4ENiprJUVjarLfKSAxWWm3fmTM+ww1okgP86qaSm13pp/pUNQeUoiCVpDNqS+32ogAHp+as0GRYQ21stW4yHZB0GOK4LYR+nNfUB4RcayFWK730zX5b/bYp3uWeHt0wz8JuCtkswTO+xQb4ScSuRw8ioPatkshSGTyOQS8cPf4Gq2UshHGXf8sF5AcGmw8JA+ply2ReF2yNw0HATaMB/GfqWzjEAhltA8c/LSc6uoJiaLY90Aj6U/X3no2K1SuPHC1YVDRtVOtixPU7tbU77PWry6XjEj4MH2zB4NO8hBU8h9S/VaB4+VEFiJEcSnNsnS2fSvkZ94+OeWY+wT2oTE45lbEhpbi911d6IjMXP1c1ZeWKZu4oJ9CEn9x8UL9ieGfZDcz3VIY8KmHhX8axLahgL4vUGf5aUOxyU4dWNbeOhgxy0A6K9Ao="
+   useGPUIfAvailable false
+   rebuild ""
+   protectKernelWhenPublishing true
+   rebuild_finalise ""
+   name BlinkScript3
+   xpos 936
+   ypos 1613
+  }
+  Output {
+   name Output1
+   xpos 936
+   ypos 1713
+  }
+ end_group
+ Expression {
+  temp_name0 k
+  temp_expr0 r*r
+  expr0 k/2.0664
+  expr1 k/2.0664
+  expr2 k/2.0664
+  name Expression7
+  xpos 425
+  ypos 798
+ }
+ Group {
+  name SpectralBlur
+  xpos 425
+  ypos 844
+  addUserKnob {20 SpectralBlur}
+  addUserKnob {41 "Local GPU: " T BlinkScript2.gpuName}
+  addUserKnob {41 "Use GPU if Available" T BlinkScript2.useGPUIfAvailable}
+  addUserKnob {26 ""}
+  addUserKnob {41 iterations_full T BlinkScript2.SpectralBlur_iterations_full}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos 928
+   ypos 1724
+  }
+  BlinkScript {
+   recompileCount 1
+   ProgramGroup 1
+   KernelDescription "2 \"SpectralBlur\" iterate pixelWise d8a1a615855bd6df38510011d8cd29a2ffbfe950c4008ea1dbdfd230377d0cc5 2 \"src\" Read Random \"dst\" Write Point 1 \"iterations_full\" Bool 1 AA== 1 \"iterations_full\" 1 1 2 \"srcconstEdgeColor\" Float 4 1 AAAAAAAAAAAAAAAAAAAAAA== \"col\" Float 4 1 AAAAAAAAAAAAAAAAAAAAAA=="
+   EncodedSource "1 5574 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"
+   rebuild ""
+   SpectralBlur_iterations_full true
+   protectKernelWhenPublishing true
+   rebuild_finalise ""
+   name BlinkScript2
+   xpos 928
+   ypos 1764
+  }
+  Output {
+   name Output1
+   xpos 928
+   ypos 1864
+  }
+ end_group
+ Blur {
+  size 2
+  name Blur1
+  xpos 425
+  ypos 891
+ }
+ Colorspace {
+  colorspace_in CIE-XYZ
+  name Colorspace1
+  xpos 425
+  ypos 975
+ }
+ Expression {
+  expr0 clamp(r)*10000
+  expr1 clamp(g)*10000
+  expr2 clamp(b)*10000
+  name Expression3
+  xpos 425
+  ypos 1037
+ }
+ Output {
+  name Output1
+  xpos 425
+  ypos 1137
+ }
+push $N4c274280
+ Viewer {
+  frame 1015
+  frame_range 1001-1101
+  overscan 300
+  center_fstop 0
+  viewerProcess Film
+  far 100000
+  name Viewer1
+  xpos 78
+  ypos 476
+ }
+end_group
