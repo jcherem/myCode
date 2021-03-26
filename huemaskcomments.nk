@@ -1,0 +1,3470 @@
+set cut_paste_input [stack 0]
+version 11.3 v4
+push $cut_paste_input
+Roto {
+ output alpha
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x45000000 x44900000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px x44808000
+        {x42600000 x40a00000}
+        {x43b175ff x443a7b63}
+        {xc2600000 xc0a00000}
+        {x40800000 x42180000}
+        {x4383f5ff x4432fb63}
+        {xc0800000 xc2180000}
+        {xc1c80000 x42000000}
+        {x438c75ff x44177b63}
+        {x41c80000 xc2000000}
+        {xc1b00000 xc0000000}
+        {x43cb7697 x43ef765e}
+        {x41b00000 x40000000}
+        {xc0e00000 xc1980000}
+        {x43f075fe x44033b63}
+        {x40e00000 x41980000}
+        {x41800000 xc1980000}
+        {x43f2a5a8 x44174384}
+        {xc1800000 x41980000}
+        {x41d80000 xc1600000}
+        {x43db25ec x442e4f68}
+        {xc1d80000 x41600000}}}     idem}
+     {tx x44808000 x43e14925 x44261b6e}
+     {a osw x41200000 osf 0 str 1 spx x45000000 spy x44900000 sb 1 ltn x44808000 ltm x44808000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {2048 1152}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1028
+ lifetime_end 1028
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto6
+ selected true
+ xpos 934
+ ypos -17
+}
+Blur {
+ size 0.7
+ name Blur6
+ selected true
+ xpos 934
+ ypos 19
+}
+Text {
+ inputs 0
+ message "expert mode\nexport roto feature \nbake reference\nmake black and white point \ndo a logo \nhit m cannot see through the scope \ncontactsheet \n\nadd crop"
+ font /usr/share/fonts/msttcore/trebuc.ttf
+ size 80
+ xjustify right
+ yjustify bottom
+ box {163.84 92.16 3932.16 2211.84}
+ center {2048 1152}
+ name Text2
+ selected true
+ xpos 1039
+ ypos -25
+ addUserKnob {20 dneg l DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {7 padding l "padding %" R 0 20}
+ padding 4
+ addUserKnob {15 orig_box +HIDDEN}
+ orig_box {0 0 4096 2304}
+}
+push 0
+Group {
+ name HueMask
+ tile_color 0xbc84ff
+ selected true
+ xpos 742
+ ypos 57
+ addUserKnob {20 Controller}
+ addUserKnob {26 General}
+ addUserKnob {26 instructions l " " T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
+ addUserKnob {6 activate l "Show Scope" t "Manual check box to desactivate the Scope. However desactivated by default when send to render." +STARTLINE}
+ activate true
+ addUserKnob {6 alpha l "Affect and Preview alpha only" t "This is usefull if you just want to see what is on your alpha. so it takes out all the extra color you don't want to see without premulting the plate \n\nWith this on, you will preview only what you had in your the input alpha and the roto mask will apply only on that part as well. \n\nBasically it does a premult based on the alpha so you can work only on that color, " -STARTLINE}
+ addUserKnob {6 activatemask l "Activate Roto by Mask" t "by default it's on, so you can connect a Roto and create and alpha.\n\nIt's same if you unplugged the Roto " +INVISIBLE +STARTLINE}
+ activatemask true
+ addUserKnob {6 keepmyalpha l "Keep Previous Alpha" t "This should be on, in case you want only the vector scope as preview or as an Input Process " -STARTLINE +INVISIBLE}
+ addUserKnob {26 ""}
+ addUserKnob {41 scale l "Overall Scale" t "this scale is only the UI scaling doesn't affect the quality data. \n\nif you want to increase the detail of the data go to settings and activate the checkbox for 1k  data " T Reformat_final_Scale_12.scale}
+ addUserKnob {7 zoom2 l Zoom t "This will increase the color data into the darkest pixel or into the brightest colors. \n\nThis is usefull when your plate is too dark or is too bright to spot colors.\n\n" R -1 1}
+ addUserKnob {26 ""}
+ addUserKnob {20 group_1 l "Use with luminance" n 1}
+ group_1 0
+ addUserKnob {6 boolean_2 l "Use luminance keyer" +STARTLINE}
+ addUserKnob {41 invert -STARTLINE T Keyer_highlights_2134.invert}
+ addUserKnob {41 range l HighLights T Keyer_highlights_2134.range}
+ addUserKnob {20 endGroup_7 l endGroup n -1}
+ addUserKnob {26 xxxxx l "" +STARTLINE}
+ addUserKnob {20 ColorSamplergroup l "Pixel Sampler" n 1}
+ ColorSamplergroup 0
+ addUserKnob {6 activatesampler l "On/Off " +STARTLINE}
+ addUserKnob {6 useaskeylight l "Use as a Keylight" -STARTLINE}
+ addUserKnob {7 double l Opacity t "Opacity of the sampler"}
+ double 0.1
+ addUserKnob {41 color l Color t "(don't pick over the scope!)" T Constant_to_pick_1.color}
+ addUserKnob {26 xxxxxxxx l "" +STARTLINE}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {26 xxxxxxxxx_1 l "" +STARTLINE}
+ addUserKnob {20 Referencegroup l Reference n 1}
+ Referencegroup 0
+ addUserKnob {6 Reference l "Show Reference" t "it's a more convinience buttom to deactivate the reference input instead of unplugging the node. " +STARTLINE}
+ Reference true
+ addUserKnob {6 offplate l "Off plate" -STARTLINE}
+ addUserKnob {41 operation l "Merge Operation" -STARTLINE T Merge_reference.operation}
+ addUserKnob {6 disablered l "Show Outline Red" +STARTLINE}
+ addUserKnob {6 compare l "Highlight Original alpha" t "this will highlight what ever you had in your alpha previous the node. \nThis is usefull if you have a CG and want to see how your colors are blending with the plate overall \n" +STARTLINE}
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 Grading n 1}
+ Grading 0
+ addUserKnob {6 enablegrading l Enable +STARTLINE}
+ addUserKnob {6 boolean_3 l "Preview Original" t "This is usefull if you want to see how it was before you grading the color matte." -STARTLINE}
+ addUserKnob {41 saturation_1 l Saturation T Saturation_FOR_PREVIEW_1234.saturation}
+ addUserKnob {7 Contrast R 0.5 1.5}
+ Contrast 1
+ addUserKnob {7 Tint l "Magenta/Green <font color=#FF00FF><sup>◄</sup></font><font color=#00FF00><sub>►</sub></font>" R -1 4}
+ Tint 1
+ addUserKnob {7 Temperature l "Temperature <font color=#0400FF><sup>◄</sup></font><font color=#FF9E00><sub>►</sub></font>" R -1 4}
+ Temperature 1
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {26 xxxxxxxxxxxxxxxxxx l "" +STARTLINE}
+ addUserKnob {20 group l "Matte Adjusments (beta)" n 1}
+ group 0
+ addUserKnob {6 blurmatte l "Blur Matte" +STARTLINE}
+ addUserKnob {41 size l Amount -STARTLINE T Blur_colodata_1.size}
+ addUserKnob {6 boolean l "Time Echo " +STARTLINE}
+ addUserKnob {41 framesbehind l "Frames to look at" -STARTLINE T TimeEcho1.framesbehind}
+ addUserKnob {20 endGroup_6 l endGroup n -1}
+ addUserKnob {26 xxxxxxxxxxx_1 l "" +STARTLINE}
+ addUserKnob {26 credits l "" +STARTLINE T "HueMask v1.0   -   Jorge Miranda Cherem"}
+ addUserKnob {26 link l "" +STARTLINE +INVISIBLE T "<a href=\"https://www.linkedin.com/in/jorge-miranda-8b4a4417/\"><span style=\"color:#C8C8C8;\">Linkedin</span></a>"}
+ addUserKnob {20 settings l Settings}
+ addUserKnob {26 text l "Format Issues"}
+ addUserKnob {6 crop l "Crop to Bbox" t "Uncheck this if the BBbox is smaller than your comp that can't see the scope anymore." -STARTLINE}
+ crop true
+ addUserKnob {26 xxxxxxxxx l "" +STARTLINE}
+ addUserKnob {20 dropdown l "Preview settings" n 1}
+ dropdown 0
+ addUserKnob {26 colordatapreview l "Color Data Preview"}
+ addUserKnob {41 value l Brightness T Grade_brightness_1.value}
+ addUserKnob {41 value_2 l Gamma T Gamma_overall.value}
+ addUserKnob {26 mask_separate l Mask}
+ addUserKnob {41 value_3 l Opacity T Multiply_maskopacity.value}
+ addUserKnob {6 boolean_1 l Glow +STARTLINE}
+ addUserKnob {26 xxxxxxx l "" +STARTLINE}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 xxxxxxx_1 l "" +STARTLINE}
+ addUserKnob {20 group_2 l "Colorwheel Look" n 1}
+ group_2 0
+ addUserKnob {6 colorless l "Show Color Guides" +STARTLINE}
+ colorless true
+ addUserKnob {6 showtargets l "Show Color Targets" -STARTLINE}
+ addUserKnob {41 saturation l Saturation T Saturation_colorwheel.saturation}
+ addUserKnob {41 value_1 l Brightness T Colorwheel_Brightess_1.value}
+ addUserKnob {7 opacity l Opacity}
+ opacity 0.73
+ addUserKnob {6 darkmode l "Transparent mode" +STARTLINE}
+ addUserKnob {6 opaque l Opaque +STARTLINE}
+ opaque true
+ addUserKnob {41 color_1 l "Fill Empty Color" -STARTLINE T Constant_to_fill_space_23.color}
+ addUserKnob {20 endGroup_8 l endGroup n -1}
+ addUserKnob {26 xxxxxxxxxx_1 l "" +STARTLINE}
+ addUserKnob {20 opaque_1 l "Color Data" n 1}
+ opaque_1 0
+ addUserKnob {6 resolution5 l "1k for more detail  " +STARTLINE}
+ addUserKnob {6 noclampvalues l "No Clamp Values" +STARTLINE}
+ addUserKnob {41 numpixels l "Add Pixels" T AdjBBox_Color_Data_1.numpixels}
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {26 ""}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0x388e8e00
+  label "Color picker "
+  note_font_size 42
+  xpos -2031
+  ypos 1737
+  bdwidth 1302
+  bdheight 1328
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode10
+  tile_color 0x397b90ff
+  label "Color Targets"
+  note_font_size 42
+  xpos -2467
+  ypos 3478
+  bdwidth 323
+  bdheight 517
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode11
+  tile_color 0x337f7eff
+  label "reformat for more detail"
+  note_font_size 42
+  xpos -503
+  ypos 258
+  bdwidth 550
+  bdheight 201
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode12
+  tile_color 0x397b90ff
+  label "uv color convertion"
+  note_font_size 42
+  xpos -486
+  ypos 676
+  bdwidth 455
+  bdheight 396
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode15
+  tile_color 0x7171c600
+  label "only premulted"
+  note_font_size 42
+  xpos -389
+  ypos 1717
+  bdwidth 210
+  bdheight 147
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode18
+  tile_color 0x283f5eff
+  label "show reference and off plate"
+  note_font_size 42
+  xpos -394
+  ypos 2231
+  bdwidth 538
+  bdheight 327
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode19
+  tile_color 0x397b90ff
+  label CC
+  note_font_size 42
+  xpos -578
+  ypos 3069
+  bdwidth 490
+  bdheight 192
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0x8e388e00
+  label "premulted area"
+  note_font_size 42
+  xpos 1546
+  ypos -15
+  bdwidth 451
+  bdheight 1836
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode20
+  tile_color 0x5b7d56ff
+  label "preview mask"
+  note_font_size 42
+  xpos -577
+  ypos 3308
+  bdwidth 1362
+  bdheight 509
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode22
+  tile_color 0x797979ff
+  label "alpha from rgb\n(r+g+b) > 0 ? 1 : a"
+  note_font_size 42
+  xpos -398
+  ypos 1104
+  bdwidth 413
+  bdheight 149
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode26
+  tile_color 0x397b90ff
+  label "color grading "
+  note_font_size 42
+  xpos -3929
+  ypos 5428
+  bdwidth 1189
+  bdheight 1681
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode27
+  tile_color 0x337f7eff
+  label REFORMAT
+  note_font_size 42
+  xpos -284
+  ypos -753
+  bdwidth 2638
+  bdheight 222
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode28
+  tile_color 0x337f7eff
+  label "overall Scale"
+  note_font_size 42
+  xpos -3252
+  ypos 6741
+  bdwidth 413
+  bdheight 167
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode29
+  tile_color 0x8e8e3800
+  label "time echo"
+  note_font_size 42
+  xpos -498
+  ypos 485
+  bdwidth 546
+  bdheight 168
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0x797979ff
+  label "affect alpha only "
+  note_font_size 42
+  xpos 1741
+  ypos -179
+  bdheight 221
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode30
+  tile_color 0x3a833bff
+  label "keyer luminance"
+  note_font_size 42
+  xpos -376
+  ypos -396
+  bdwidth 247
+  bdheight 211
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode31
+  tile_color 0xaf8508ff
+  label "glow stuff"
+  note_font_size 42
+  xpos -547
+  ypos 1879
+  bdwidth 359
+  bdheight 295
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode32
+  tile_color 0x397b90ff
+  label "ColorWheel look"
+  note_font_size 42
+  xpos -3398
+  ypos 4234
+  bdwidth 903
+  bdheight 664
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode33
+  tile_color 0x8e8e3800
+  label "grading mode"
+  note_font_size 42
+  xpos -394
+  ypos 3832
+  bdwidth 453
+  bdheight 108
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode35
+  tile_color 0x337f7eff
+  label "master Reformat "
+  note_font_size 42
+  xpos -3144
+  ypos 1863
+  bdwidth 453
+  bdheight 242
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode36
+  tile_color 0x3a833bff
+  label "keylightStuff "
+  note_font_size 42
+  xpos 762
+  ypos 4731
+  bdwidth 410
+  bdheight 416
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode4
+  tile_color 0x397b90ff
+  label "simple remap of color"
+  note_font_size 42
+  xpos 1067
+  ypos 115
+  bdwidth 132
+  bdheight 2592
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode5
+  tile_color 0x337f7eff
+  label "overall Scale"
+  note_font_size 42
+  xpos -3027
+  ypos 4977
+  bdwidth 413
+  bdheight 167
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode6
+  tile_color 0x397b90ff
+  label "preview Color Wheel"
+  note_font_size 42
+  xpos -3398
+  ypos 3068
+  bdwidth 892
+  bdheight 1100
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode7
+  tile_color 0x797979ff
+  label "roto input"
+  note_font_size 42
+  xpos 473
+  ypos 2665
+  bdwidth 237
+  bdheight 531
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode8
+  tile_color 0x32415e00
+  label reference
+  note_font_size 42
+  xpos 2904
+  ypos 126
+  bdwidth 334
+  bdheight 2283
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode13
+  tile_color 0x397b90ff
+  label "uv color convertion"
+  note_font_size 42
+  xpos 1621
+  ypos 649
+  bdwidth 373
+  bdheight 379
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode14
+  tile_color 0x397b90ff
+  label "uv color convertion"
+  note_font_size 42
+  xpos 2949
+  ypos 633
+  bdwidth 393
+  bdheight 324
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode16
+  tile_color 0x337f7eff
+  label "reformat for more detail "
+  note_font_size 42
+  xpos 1448
+  ypos 244
+  bdwidth 594
+  bdheight 212
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode17
+  tile_color 0x337f7eff
+  label "reformat for more detail "
+  note_font_size 42
+  xpos 2745
+  ypos 408
+  bdwidth 594
+  bdheight 212
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode21
+  tile_color 0x8e388e00
+  label HIGHLIGHT
+  note_font_size 42
+  xpos 1315
+  ypos 1275
+  bdwidth 210
+  bdheight 325
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode23
+  tile_color 0x397b90ff
+  label "uv color convertion"
+  note_font_size 42
+  xpos -3171
+  ypos 6103
+  bdwidth 373
+  bdheight 379
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode24
+  tile_color 0x337f7eff
+  label "reformat for more detail "
+  note_font_size 42
+  xpos -3344
+  ypos 5838
+  bdwidth 594
+  bdheight 212
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode25
+  tile_color 0x8e388e00
+  label HIGHLIGHT
+  note_font_size 42
+  xpos -3477
+  ypos 6449
+  bdwidth 210
+  bdheight 325
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode34
+  tile_color 0x797979ff
+  label "grading with no Roto"
+  note_font_size 42
+  xpos -3979
+  ypos 5541
+  bdwidth 219
+  bdheight 197
+  z_order 1
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode9
+  tile_color 0x8e388e00
+  label HIGHLIGHT
+  note_font_size 42
+  xpos 2930
+  ypos 1272
+  bdwidth 264
+  bdheight 415
+  z_order 1
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote1
+  tile_color 0x101010ff
+  label "   POINTER   "
+  note_font_size 19.25
+  xpos -284
+  ypos 2953
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote2
+  tile_color 0x101010ff
+  label REFERENCE
+  note_font_size 19.25
+  xpos -315
+  ypos 2449
+ }
+ Input {
+  inputs 0
+  name InputPlate
+  xpos -219
+  ypos -864
+ }
+ Dot {
+  name Dot36
+  xpos -185
+  ypos -822
+ }
+set N862b6b70 [stack 0]
+ Dot {
+  name Dot115
+  xpos -4435
+  ypos -822
+ }
+ Dot {
+  name Dot118
+  xpos -4435
+  ypos -633
+ }
+ Dot {
+  name Dot144
+  xpos -4435
+  ypos 7867
+ }
+set N85786db0 [stack 0]
+ Dot {
+  name Dot154
+  xpos -4435
+  ypos 8153
+ }
+push $N85786db0
+push $N862b6b70
+ Dot {
+  name Dot53
+  xpos -185
+  ypos -705
+ }
+set N54ea8b20 [stack 0]
+ Crop {
+  box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
+  name Crop_To_BBox
+  xpos -169
+  ypos -668
+  addUserKnob {20 padding_tab l Padding}
+  addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
+ }
+push $N54ea8b20
+ Crop {
+  box {0 0 {width} {height}}
+  name Crop2
+  xpos -275
+  ypos -665
+ }
+ set C6828d130 [stack 0]
+ Switch {
+  inputs 2
+  which {{parent.crop}}
+  name Switch_crop_223
+  xpos -219
+  ypos -603
+ }
+ set C9e7c91e0 [stack 0]
+ Dot {
+  name Dot159
+  xpos -185
+  ypos -301
+ }
+set N8f401fb0 [stack 0]
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace10
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos -366
+  ypos -316
+ }
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name Shuffle18
+  xpos -366
+  ypos -268
+ }
+ Keyer {
+  operation "luminance key"
+  name Keyer_highlights_2134
+  xpos -366
+  ypos -225
+  disable {{!parent.boolean_2}}
+ }
+push $N8f401fb0
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy7
+  xpos -219
+  ypos -225
+  disable {{!parent.boolean_2}}
+ }
+ Dot {
+  name Dot89
+  xpos -185
+  ypos -150
+ }
+set Nc392bf50 [stack 0]
+ Dot {
+  name Dot5
+  xpos -185
+  ypos -98
+ }
+set N681dde80 [stack 0]
+ Premult {
+  name Premult_for_keyer_23
+  xpos -219
+  ypos 5
+  disable {{parent.Copy7.disable}}
+ }
+ Dot {
+  name Dot123
+  xpos -185
+  ypos 29
+ }
+set N9e4e3fc0 [stack 0]
+push $N681dde80
+ Dot {
+  name Dot6
+  xpos 1785
+  ypos -99
+ }
+ Premult {
+  name Premult_alpha_to_isolate_1
+  xpos 1751
+  ypos -37
+ }
+ Dot {
+  name Dot4
+  xpos 1785
+  ypos 71
+ }
+set N54969f40 [stack 0]
+push $N9e4e3fc0
+ Switch {
+  inputs 3
+  which {{"parent.compare ==1? 2 : parent.alpha"}}
+  name Switch_method
+  xpos -219
+  ypos 68
+ }
+ set C54890ef0 [stack 0]
+ Dot {
+  name Dot9
+  xpos -185
+  ypos 185
+ }
+ Dot {
+  name Dot10
+  tile_color 0xcc804e00
+  label plate
+  note_font_size 30
+  xpos -185
+  ypos 216
+ }
+set N215ff130 [stack 0]
+ Dot {
+  name Dot24
+  xpos 1116
+  ypos 216
+ }
+ Blur {
+  size 50
+  name Blur_colodata_1
+  label "size \[value size]"
+  xpos 1082
+  ypos 779
+  disable {{!parent.blurmatte}}
+ }
+ set C54f556c0 [stack 0]
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace5
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos 1082
+  ypos 827
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle3
+  label "in \[value in]-->out \[value out]"
+  xpos 1082
+  ypos 875
+ }
+ Grade {
+  blackpoint {{parent.zoom2}}
+  whitepoint {{1-blackpoint}}
+  black_clamp false
+  name Grade_Uniform_Scale_1
+  xpos 1082
+  ypos 923
+ }
+ set C682b4270 [stack 0]
+ Dot {
+  name Dot112
+  xpos 1116
+  ypos 2560
+ }
+set Nc3622100 [stack 0]
+ Dot {
+  name Dot113
+  xpos 981
+  ypos 2560
+ }
+ Dot {
+  inputs 0
+  name Dot119
+  xpos -62
+  ypos 2311
+ }
+set N546fddf0 [stack 0]
+ Dot {
+  name Dot120
+  xpos -170
+  ypos 2311
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_18
+  xpos -204
+  ypos 2332
+ }
+ Dot {
+  name Dot121
+  xpos -170
+  ypos 2368
+ }
+push $N546fddf0
+ Reformat {
+  format {{{parent.ReformatScope_1.format}}}
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_3
+  xpos -96
+  ypos 2329
+ }
+ Switch {
+  inputs 2
+  which {{!parent.resolution5}}
+  name Switch_reformat
+  xpos -96
+  ypos 2365
+ }
+ set C54fe4690 [stack 0]
+ Dot {
+  name Dot122
+  xpos -62
+  ypos 2410
+ }
+set Nd0bba860 [stack 0]
+ Input {
+  inputs 0
+  name InputReference
+  label "\[value number]"
+  xpos 3038
+  ypos -603
+  number 2
+ }
+ Dot {
+  name Dot78
+  xpos 3072
+  ypos -435
+ }
+set N682c8a50 [stack 0]
+clone $C6828d130 {
+  xpos 2946
+  ypos -393
+  selected false
+ }
+push $N682c8a50
+ Crop {
+  box {{input.bbox.x-bbox_padding} {input.bbox.y-bbox_padding} {input.bbox.r+bbox_padding} {input.bbox.t+bbox_padding}}
+  name Crop_To_BBox1
+  xpos 3147
+  ypos -399
+  addUserKnob {20 padding_tab l Padding}
+  addUserKnob {7 bbox_padding l "bbox padding" t "Add or subtract from bounding box" R -100 100}
+ }
+clone $C9e7c91e0 {
+  inputs 2
+  xpos 3048
+  ypos -326
+  selected false
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name Keep
+  xpos 3048
+  ypos 229
+ }
+ Shuffle {
+  alpha white
+  name Shuffle14
+  xpos 3048
+  ypos 253
+ }
+ Dot {
+  name Dot126
+  xpos 3082
+  ypos 500
+ }
+set Nbd6e7d20 [stack 0]
+ Dot {
+  name Dot127
+  xpos 2974
+  ypos 500
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  black_outside true
+  pbb true
+  name ReformatScope_22
+  xpos 2940
+  ypos 526
+ }
+ Dot {
+  name Dot128
+  xpos 2974
+  ypos 595
+ }
+push $Nbd6e7d20
+ Reformat {
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_23
+  xpos 3048
+  ypos 529
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos 3048
+  ypos 592
+  selected false
+ }
+ Dot {
+  name Dot79
+  xpos 3082
+  ypos 713
+ }
+set N87da4740 [stack 0]
+clone $C54f556c0 {
+  xpos 3048
+  ypos 731
+  selected false
+ }
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace3
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos 3048
+  ypos 779
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle10
+  xpos 3048
+  ypos 827
+ }
+clone $C682b4270 {
+  xpos 3048
+  ypos 863
+  selected false
+ }
+ AdjBBox {
+  numpixels 800
+  name AdjBBox_Color_Data_2
+  xpos 3048
+  ypos 887
+  disable {{!parent.Reformat_to_clamp_values.disable}}
+ }
+push $N87da4740
+ Dot {
+  name Dot80
+  tile_color 0xcc804e00
+  xpos 2959
+  ypos 713
+ }
+ Dot {
+  name Dot81
+  xpos 2959
+  ypos 920
+ }
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap5
+  xpos 3048
+  ypos 911
+ }
+ Dot {
+  name Dot87
+  xpos 3082
+  ypos 1350
+ }
+set N6827fef0 [stack 0]
+ Dot {
+  name Dot88
+  xpos 2972
+  ypos 1350
+ }
+ FilterErode {
+  size -0.4
+  filter gaussian
+  name FilterErode4
+  xpos 2938
+  ypos 1429
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle11
+  xpos 2938
+  ypos 1480
+ }
+ Grade {
+  white 4
+  multiply {1 0 0 0}
+  multiply_panelDropped true
+  name Grade13
+  xpos 2938
+  ypos 1536
+ }
+ Glow2 {
+  brightness 0.02
+  size 21
+  name Glow1
+  xpos 2938
+  ypos 1569
+ }
+ Dot {
+  name Dot105
+  xpos 2972
+  ypos 1623
+ }
+push $N6827fef0
+ Merge2 {
+  inputs 2
+  operation under
+  bbox B
+  name Merge8
+  xpos 3048
+  ypos 1620
+  disable {{!parent.disablered}}
+ }
+ Dot {
+  name Dot85
+  xpos 3082
+  ypos 2487
+ }
+ Dot {
+  name Dot130
+  xpos 1028
+  ypos 2487
+ }
+ Switch {
+  inputs 2
+  which {{!parent.Reference}}
+  name Switch_to_show_reference
+  xpos -96
+  ypos 2484
+ }
+push $Nd0bba860
+push $N54969f40
+ Dot {
+  name Dot110
+  xpos 1785
+  ypos 336
+ }
+set N6b96d340 [stack 0]
+ Dot {
+  name Dot124
+  xpos 1677
+  ypos 336
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  black_outside true
+  pbb true
+  name ReformatScope_16
+  xpos 1643
+  ypos 362
+ }
+ Dot {
+  name Dot125
+  xpos 1677
+  ypos 431
+ }
+push $N6b96d340
+ Reformat {
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_20
+  xpos 1751
+  ypos 365
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos 1751
+  ypos 428
+  selected false
+ }
+ Dot {
+  name Dot8
+  xpos 1785
+  ypos 729
+ }
+set Nd0b6f7f0 [stack 0]
+clone $C54f556c0 {
+  xpos 1751
+  ypos 762
+  selected false
+ }
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace1
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos 1751
+  ypos 818
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle2
+  xpos 1751
+  ypos 866
+ }
+clone $C682b4270 {
+  xpos 1751
+  ypos 940
+  selected false
+ }
+set N54fdd980 [stack 0]
+ AdjBBox {
+  numpixels {{parent.AdjBBox_Color_Data_1.numpixels}}
+  name AdjBBox2
+  xpos 1751
+  ypos 964
+  disable {{!parent.Reformat_to_clamp_values.disable}}
+ }
+push $Nd0b6f7f0
+ Dot {
+  name Dot12
+  xpos 1636
+  ypos 729
+ }
+ Dot {
+  name Dot21
+  xpos 1636
+  ypos 997
+ }
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap4
+  xpos 1751
+  ypos 988
+ }
+ Premult {
+  name Premult4
+  xpos 1751
+  ypos 1059
+  disable true
+ }
+ Dot {
+  name Dot28
+  xpos 1785
+  ypos 1379
+ }
+set Nd2d9a910 [stack 0]
+ Dot {
+  name Dot23
+  xpos 1584
+  ypos 1379
+ }
+ FilterErode {
+  size -0.4
+  filter gaussian
+  name FilterErode6
+  xpos 1390
+  ypos 1370
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle16
+  xpos 1390
+  ypos 1475
+ }
+ Grade {
+  white 4
+  multiply {1 0 0 0}
+  multiply_panelDropped true
+  name Grade15
+  xpos 1390
+  ypos 1511
+ }
+ Dot {
+  name Dot72
+  xpos 1424
+  ypos 1530
+ }
+push $Nd2d9a910
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge3
+  xpos 1751
+  ypos 1527
+ }
+ Dot {
+  name Dot42
+  xpos 1785
+  ypos 1839
+ }
+push $N215ff130
+ Dot {
+  name Dot11
+  xpos -351
+  ypos 216
+ }
+ Dot {
+  name Dot106
+  xpos -351
+  ypos 338
+ }
+set Nd179e510 [stack 0]
+ Dot {
+  name Dot116
+  xpos -459
+  ypos 338
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  black_outside true
+  pbb true
+  name ReformatScope_17
+  xpos -493
+  ypos 364
+ }
+ Dot {
+  name Dot117
+  xpos -459
+  ypos 433
+ }
+push $Nd179e510
+ Reformat {
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_21
+  xpos -385
+  ypos 367
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos -385
+  ypos 430
+  selected false
+ }
+ TimeEcho {
+  framesbehind 10
+  frmaesfade 0
+  name TimeEcho1
+  xpos -385
+  ypos 568
+  disable {{!parent.boolean}}
+ }
+ Dot {
+  name Dot16
+  xpos -350
+  ypos 756
+ }
+set Nd1798010 [stack 0]
+clone $C54f556c0 {
+  xpos -384
+  ypos 796
+  selected false
+ }
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace6
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos -384
+  ypos 844
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle7
+  xpos -384
+  ypos 892
+ }
+clone $C682b4270 {
+  xpos -384
+  ypos 928
+  selected false
+ }
+ AdjBBox {
+  numpixels 800
+  name AdjBBox_Color_Data_1
+  xpos -384
+  ypos 952
+  disable {{!parent.Reformat_to_clamp_values.disable}}
+ }
+ Dot {
+  name Dot109
+  xpos -350
+  ypos 976
+ }
+push $Nd1798010
+ Dot {
+  name Dot17
+  tile_color 0xcc804e00
+  xpos -473
+  ypos 756
+ }
+ Dot {
+  name Dot18
+  xpos -473
+  ypos 1028
+ }
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap
+  xpos -384
+  ypos 1019
+ }
+ Expression {
+  channel3 alpha
+  expr3 "(r+g+b) > 0 ? 1 : a"
+  name alphafromrgb_21
+  label "\[value expr3]"
+  xpos -384
+  ypos 1207
+ }
+ Dot {
+  name Dot71
+  xpos -350
+  ypos 1362
+ }
+ Dot {
+  name Dot30
+  xpos -350
+  ypos 1797
+ }
+set N54e67d80 [stack 0]
+ Dot {
+  name Dot29
+  xpos -235
+  ypos 1797
+ }
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos -269
+  ypos 1836
+ }
+push $N54e67d80
+push $N54e67d80
+clone $C54890ef0 {
+  inputs 3
+  xpos -384
+  ypos 1836
+  selected false
+ }
+ Dot {
+  name Dot168
+  xpos -350
+  ypos 1961
+ }
+set Nd17ac910 [stack 0]
+ Dot {
+  name Dot169
+  xpos -505
+  ypos 1961
+ }
+ Clamp {
+  name Clamp6
+  xpos -539
+  ypos 1997
+ }
+ Blur {
+  size 44
+  filter box
+  name Blur7
+  xpos -539
+  ypos 2033
+ }
+ Multiply {
+  value 0.28
+  name Multiply8
+  xpos -539
+  ypos 2088
+ }
+push $Nd17ac910
+ Merge2 {
+  inputs 2
+  operation plus
+  mix 0.25
+  name Plus_for_glow_12
+  xpos -384
+  ypos 2094
+  disable {{!parent.boolean_1}}
+ }
+ Dot {
+  name Dot129
+  xpos -350
+  ypos 2370
+ }
+ Switch {
+  inputs 2
+  which {{parent.offplate}}
+  name Switch_to_nothing_234
+  xpos -384
+  ypos 2407
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge_reference
+  xpos -384
+  ypos 2484
+  disable {{"!\[exists parent.input2]"}}
+ }
+ Dot {
+  name Dot86
+  xpos -350
+  ypos 2608
+ }
+set Nd2d2b5c0 [stack 0]
+ Dot {
+  name Dot111
+  xpos 806
+  ypos 2608
+ }
+ OFXuk.co.thefoundry.keylight.keylight_v201 {
+  show "Final Result"
+  unPreMultiply false
+  screenColour {{parent.Constant_to_pick_1.color x1009 0.08577041328} {parent.Constant_to_pick_1.color x1009 0.0464130193} {parent.Constant_to_pick_1.color x1009 0.02878418192}}
+  screenGain 1
+  screenBalance 0.5
+  alphaBias {0.5 0.5 0.5}
+  despillBias {0.5 0.5 0.5}
+  gangBiases true
+  preBlur 0
+  "Screen Matte" 0
+  screenClipMin 0
+  screenClipMax 1
+  screenClipRollback 0
+  screenGrowShrink 0
+  screenSoftness 0
+  screenDespotBlack 0
+  screenDespotWhite 0
+  screenReplaceMethod "Soft Colour"
+  screenReplaceColour {0.5 0.5 0.5}
+  Tuning 0
+  midPoint 0.5
+  lowGain 1
+  midGain 1
+  highGain 1
+  "Inside Mask" 0
+  sourceAlphaHandling Ignore
+  insideReplaceMethod "Soft Colour"
+  insideReplaceColour {0.5 0.5 0.5}
+  Crops 0
+  SourceXMethod Colour
+  SourceYMethod Colour
+  SourceEdgeColour 0
+  SourceCropL 0
+  SourceCropR 1
+  SourceCropB 0
+  SourceCropT 1
+  balanceSet true
+  insideComponent None
+  outsideComponent None
+  cacheBreaker true
+  name Keylight1
+  xpos 772
+  ypos 4811
+ }
+ Erode {
+  size 2.5
+  name Erode1
+  xpos 772
+  ypos 4835
+ }
+ Invert {
+  name Invert3
+  xpos 772
+  ypos 4871
+ }
+ Reformat {
+  resize distort
+  filter Impulse
+  pbb true
+  name Reformat1
+  xpos 772
+  ypos 4907
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle13
+  label "in \[value in]-->out \[value out]"
+  xpos 772
+  ypos 4931
+ }
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap1
+  xpos 947
+  ypos 4937
+ }
+push $Nc3622100
+ Input {
+  inputs 0
+  name InputRoto
+  label "\[value number]"
+  xpos 620
+  ypos 2742
+  number 1
+ }
+ Dot {
+  name Dot52
+  xpos 654
+  ypos 2797
+ }
+set N54762ee0 [stack 0]
+ Reformat {
+  type scale
+  scale 0.5
+  filter Impulse
+  pbb true
+  name Reformat_final_Scale_1adfadsf1
+  xpos 483
+  ypos 2794
+ }
+ Dot {
+  name Dot58
+  xpos 517
+  ypos 2836
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize none
+  center false
+  filter Impulse
+  pbb true
+  name ReformatScope_10
+  xpos 483
+  ypos 2873
+ }
+set Nd1521420 [stack 0]
+ Reformat {
+  resize distort
+  filter Notch
+  pbb true
+  name Reformat_to_original_1
+  xpos 483
+  ypos 2909
+ }
+ Dot {
+  name Dot160
+  xpos 517
+  ypos 2959
+ }
+push $N54762ee0
+ Dot {
+  name Dot57
+  xpos 654
+  ypos 2836
+ }
+ Reformat {
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  resize none
+  center false
+  filter Impulse
+  pbb true
+  name ReformatScope_11
+  xpos 620
+  ypos 2871
+ }
+set Nd1548c10 [stack 0]
+ Reformat {
+  resize distort
+  filter Notch
+  pbb true
+  name Reformat_to_original_1k
+  xpos 620
+  ypos 2912
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos 620
+  ypos 2956
+  selected false
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle5
+  label "in \[value in]-->out \[value out]"
+  xpos 620
+  ypos 3144
+ }
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap_apply1
+  xpos 1079
+  ypos 3150
+ }
+ Switch {
+  inputs 2
+  which {{parent.useaskeylight}}
+  name Switch_keylight_method_321
+  xpos 1082
+  ypos 4943
+ }
+ Dot {
+  name Dot76
+  xpos 1116
+  ypos 5011
+ }
+ Dot {
+  name Dot35
+  xpos 1116
+  ypos 5057
+ }
+ Dot {
+  name Dot41
+  xpos 1116
+  ypos 5724
+ }
+set Nd159bae0 [stack 0]
+ Dot {
+  name Dot146
+  xpos 1116
+  ypos 7470
+ }
+set Nd15a0670 [stack 0]
+push $Nd159bae0
+push $Nc392bf50
+ Dot {
+  name Dot56
+  xpos -3923
+  ypos -150
+ }
+ Dot {
+  name Dot114
+  xpos -3923
+  ypos 117
+ }
+ Dot {
+  name Dot139
+  xpos -3919
+  ypos 5385
+ }
+set Nd15ae920 [stack 0]
+ Dot {
+  name Dot145
+  xpos -3495
+  ypos 5385
+ }
+ Saturation {
+  name Saturation_FOR_PREVIEW_1234
+  xpos -3529
+  ypos 5454
+  disable {{!parent.enablegrading}}
+ }
+ Colorspace {
+  colorspace_out CIE-XYZ
+  name Colorspace7
+  xpos -3529
+  ypos 5491
+  disable {{!parent.enablegrading}}
+ }
+ Grade {
+  white {1 {parent.Tint*0.1+0.9} {parent.Temperature*0.5+0.5} 1}
+  black_clamp false
+  name Grade5_temp_and_tint_12
+  xpos -3529
+  ypos 5515
+  disable {{parent.Colorspace7.disable}}
+ }
+ Colorspace {
+  colorspace_in CIE-XYZ
+  name Colorspace8
+  xpos -3529
+  ypos 5545
+  disable {{!parent.enablegrading}}
+ }
+ Expression {
+  temp_name0 Gamma
+  temp_expr0 parent.Contrast
+  expr0 "r<1&&r>0?r<0.5?pow(r,Gamma)*pow(0.5, 1-Gamma):1-pow(1-r,Gamma)*pow(0.5, 1-Gamma):r"
+  expr1 "g<1&&g>0?g<0.5?pow(g,Gamma)*pow(0.5, 1-Gamma):1-pow(1-g,Gamma)*pow(0.5, 1-Gamma):g"
+  expr2 "b<1&&b>0?b<0.5?pow(b,Gamma)*pow(0.5, 1-Gamma):1-pow(1-b,Gamma)*pow(0.5, 1-Gamma):b"
+  name Expression9
+  xpos -3529
+  ypos 5569
+  disable {{parent.Contrast==1?1:1-parent.enablegrading}}
+ }
+ Shuffle {
+  alpha white
+  name Shuffle20
+  xpos -3529
+  ypos 5593
+ }
+ Dot {
+  name Dot19
+  xpos -3495
+  ypos 5697
+ }
+set Nd142d810 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy3
+  xpos -3529
+  ypos 5715
+  disable {{"!\[exists parent.input1]"}}
+ }
+ Premult {
+  name Premult7
+  xpos -3529
+  ypos 5768
+ }
+ Dot {
+  name Dot43
+  xpos -3495
+  ypos 5815
+ }
+set Nd1440580 [stack 0]
+ Dot {
+  name Dot147
+  xpos -3495
+  ypos 6826
+ }
+ Dot {
+  name Dot3
+  xpos -3495
+  ypos 7311
+ }
+push $Nd15ae920
+ Dot {
+  name Dot27
+  xpos -3919
+  ypos 5605
+ }
+set Nd144e700 [stack 0]
+ Dot {
+  name Dot40
+  xpos -3800
+  ypos 5605
+ }
+push $Nd142d810
+ Switch {
+  inputs 2
+  which {{"\[exists parent.input1]"}}
+  name no_grading_if_there_is_Roto_123
+  xpos -3834
+  ypos 5694
+ }
+push $Nd144e700
+ Switch {
+  inputs 2
+  which 1
+  name Switch_Enable_Grading_with_no_Roto_212
+  xpos -3953
+  ypos 5694
+  disable {{!parent.enablegrading}}
+ }
+ Dot {
+  name Dot148
+  xpos -3919
+  ypos 6943
+ }
+set Nd1468240 [stack 0]
+ Dot {
+  name Dot152
+  xpos -4057
+  ypos 6943
+ }
+set Nd146cb80 [stack 0]
+ Dot {
+  name Dot153
+  xpos -4057
+  ypos 7128
+ }
+push $Nd1440580
+ Dot {
+  name Dot151
+  xpos -3007
+  ypos 5815
+ }
+ Premult {
+  name Premult2
+  xpos -3041
+  ypos 5906
+ }
+ Dot {
+  name Dot45
+  xpos -3007
+  ypos 5930
+ }
+set Nd1483070 [stack 0]
+ Dot {
+  name Dot132
+  xpos -3115
+  ypos 5930
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  black_outside true
+  pbb true
+  name ReformatScope_24
+  xpos -3149
+  ypos 5956
+ }
+ Dot {
+  name Dot133
+  xpos -3115
+  ypos 6025
+ }
+push $Nd1483070
+ Reformat {
+  format {{{parent.ReformatScope_1.format}}}
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_26
+  xpos -3041
+  ypos 5959
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos -3041
+  ypos 6022
+  selected false
+ }
+ Dot {
+  name Dot134
+  xpos -3007
+  ypos 6183
+ }
+set Nd14b73a0 [stack 0]
+clone $C54f556c0 {
+  xpos -3041
+  ypos 6216
+  selected false
+ }
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace9
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos -3041
+  ypos 6272
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle4
+  xpos -3041
+  ypos 6320
+ }
+clone $C682b4270 {
+  xpos -3041
+  ypos 6394
+  selected false
+ }
+ AdjBBox {
+  numpixels {{parent.AdjBBox_Color_Data_1.numpixels}}
+  name AdjBBox1
+  xpos -3041
+  ypos 6418
+  disable {{!parent.Reformat_to_clamp_values.disable}}
+ }
+push $Nd14b73a0
+ Dot {
+  name Dot135
+  xpos -3156
+  ypos 6183
+ }
+ Dot {
+  name Dot136
+  xpos -3156
+  ypos 6451
+ }
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap1
+  xpos -3041
+  ypos 6442
+ }
+ Premult {
+  name Premult10
+  xpos -3041
+  ypos 6515
+  disable true
+ }
+ Dot {
+  name Dot137
+  xpos -3007
+  ypos 6553
+ }
+set Nd133eb40 [stack 0]
+ Dot {
+  name Dot138
+  xpos -3208
+  ypos 6553
+ }
+set Nd1343680 [stack 0]
+ Dilate {
+  size 1.5
+  name Dilate4
+  xpos -3402
+  ypos 6544
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle17
+  xpos -3402
+  ypos 6626
+ }
+push $Nd133eb40
+ Merge2 {
+  inputs 2
+  operation under
+  mix 0.215
+  name Merge10
+  xpos -3041
+  ypos 6632
+  disable true
+ }
+ Grade {
+  multiply {4 0 0 1}
+  multiply_panelDropped true
+  name Grade19
+  xpos -3041
+  ypos 6656
+  disable true
+ }
+ Reformat {
+  type scale
+  scale 2.7
+  black_outside true
+  pbb true
+  name Reformat_final_Scale_12
+  xpos -3041
+  ypos 6833
+ }
+ set Ccfadbe50 [stack 0]
+ Dot {
+  name Dot140
+  xpos -3007
+  ypos 6857
+ }
+ ColorWheel {
+  inputs 0
+  format {{{parent.ReformatScope_1.format}}}
+  gamma 0.45
+  rotate -110.12
+  name ColorWheel2
+  xpos -2748
+  ypos 3123
+ }
+ Saturation {
+  mode Maximum
+  name Saturation_colorwheel
+  xpos -2748
+  ypos 3199
+ }
+ Mirror2 {
+  flip true
+  name Mirror2_2
+  xpos -2748
+  ypos 3223
+ }
+ Unpremult {
+  name Unpremult1
+  xpos -2748
+  ypos 3247
+ }
+ Dot {
+  name Dot33
+  xpos -2714
+  ypos 3287
+ }
+set Nd13be0b0 [stack 0]
+ Dilate {
+  channels alpha
+  size -1.6
+  name Dilate8
+  xpos -2981
+  ypos 3278
+ }
+ Blur {
+  channels alpha
+  size 2
+  name Blur6
+  xpos -2977
+  ypos 3314
+ }
+set Nd13cdbf0 [stack 0]
+ Invert {
+  channels alpha
+  name Invert1
+  xpos -2977
+  ypos 3397
+ }
+set Nd13db2a0 [stack 0]
+ Dot {
+  name Dot161
+  xpos -2943
+  ypos 3704
+ }
+ Dot {
+  name Dot165
+  xpos -2943
+  ypos 3986
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 0 0 0}
+  color_panelDropped true
+  format "12 12 0 0 12 12 1 12px"
+  name Constant_Colors_212
+  xpos -2362
+  ypos 3631
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {0 1 0 0}
+  color_panelDropped true
+  format "12 12 0 0 12 12 1 12px"
+  name Constant_Colors_1
+  xpos -2255
+  ypos 3625
+ }
+ Constant {
+  inputs 0
+  color {1 1 0 1}
+  color_panelDropped true
+  format "12 12 0 0 12 12 1 12px"
+  name Constant_Colors_4
+  xpos -2457
+  ypos 3629
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 0 1 0}
+  color_panelDropped true
+  format "12 12 0 0 12 12 1 12px"
+  name Constant_Colors_5
+  xpos -2255
+  ypos 3558
+ }
+ Constant {
+  inputs 0
+  color {0 0 1 1}
+  color_panelDropped true
+  format "12 12 0 0 12 12 1 12px"
+  name Constant_Colors_2
+  xpos -2362
+  ypos 3565
+ }
+ Constant {
+  inputs 0
+  color {0 1 1 1}
+  color_panelDropped true
+  format "12 12 0 0 12 12 1 12px"
+  name Constant_Colors_3
+  xpos -2456
+  ypos 3559
+ }
+ ContactSheet {
+  inputs 6
+  width 30
+  height 30
+  rows 2
+  columns 3
+  gap -2
+  startframe 1
+  endframe 1
+  name ContactSheet1
+  xpos -2373
+  ypos 3737
+ }
+ Multiply {
+  value 0.5
+  name Multiply5
+  xpos -2373
+  ypos 3771
+ }
+ Dot {
+  name Dot107
+  xpos -2339
+  ypos 3815
+ }
+set Nd124c7d0 [stack 0]
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace4
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos -2263
+  ypos 3800
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle12
+  xpos -2263
+  ypos 3848
+ }
+push $Nd124c7d0
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap6
+  xpos -2360
+  ypos 3848
+ }
+ Reformat {
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  scale 0.5
+  resize distort
+  center false
+  filter Impulse
+  pbb true
+  name Reformat4_512_2
+  xpos -2373
+  ypos 3917
+ }
+ Dilate {
+  size -5
+  name Dilate2
+  xpos -2373
+  ypos 3953
+ }
+ Reformat {
+  inputs 0
+  format {{{parent.ReformatScope_1.format}}}
+  pbb true
+  name Reformat_for_wheel_1
+  xpos -3170
+  ypos 3479
+ }
+ Dot {
+  name Dot13
+  xpos -3136
+  ypos 3515
+ }
+set Nd12b5370 [stack 0]
+ Transform {
+  center {512 512}
+  shutteroffset centred
+  name Transform9
+  xpos -3170
+  ypos 3563
+ }
+ Expression {
+  expr0 "sin(hypot(x-center.x, y-center.y) / size)"
+  name Ringing1
+  tile_color 0xffffff
+  label "\[value expr3]"
+  xpos -3170
+  ypos 3587
+  addUserKnob {20 User}
+  addUserKnob {12 center}
+  center {512 512}
+  addUserKnob {7 size R 0.1 20}
+  size 15.0648
+ }
+ Clamp {
+  maximum 0
+  MaxClampTo_enable true
+  name Clamp1
+  xpos -3170
+  ypos 3611
+ }
+ Dot {
+  name Dot14
+  xpos -3136
+  ypos 3901
+ }
+push $Nd12b5370
+ Dot {
+  name Dot15
+  xpos -3037
+  ypos 3515
+ }
+ Rectangle {
+  area {3.819999933 509.9 1020.080017 514}
+  name Rectangle3
+  xpos -3071
+  ypos 3533
+ }
+ Rectangle {
+  area {513.8400269 4 510.922 1020.840027}
+  name Rectangle4
+  xpos -3071
+  ypos 3557
+ }
+ Transform {
+  center {512 512}
+  shutteroffset centred
+  name Transform10
+  xpos -3071
+  ypos 3581
+ }
+ Dot {
+  name Dot22
+  xpos -3037
+  ypos 3605
+ }
+set Nd1128710 [stack 0]
+push $Nd13be0b0
+ Dilate {
+  channels alpha
+  size -0.6
+  name Dilate5
+  xpos -2748
+  ypos 3311
+ }
+ Blur {
+  channels alpha
+  size 2
+  name Blur5
+  xpos -2748
+  ypos 3347
+ }
+push $Nd13db2a0
+ ChannelMerge {
+  inputs 2
+  operation in
+  name ChannelMerge1
+  xpos -2748
+  ypos 3391
+ }
+ Grade {
+  multiply 0.52
+  name Grade8
+  xpos -2748
+  ypos 3460
+ }
+set Nd11523d0 [stack 0]
+ Grade {
+  inputs 1+1
+  channels rgba
+  add {0 0 0 0.13}
+  add_panelDropped true
+  maskChannelMask rgba.red
+  name Grade9
+  xpos -2748
+  ypos 3602
+ }
+push $Nd1128710
+push $Nd11523d0
+ Dot {
+  name Dot69
+  xpos -2555
+  ypos 3463
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle9
+  xpos -2589
+  ypos 3481
+ }
+ Multiply {
+  value 0.3
+  name Multiply3
+  xpos -2589
+  ypos 3566
+ }
+ Grade {
+  inputs 1+1
+  channels rgba
+  add {0.5 0.5 0.5 0.13}
+  add_panelDropped true
+  maskChannelMask rgba.red
+  name Grade12
+  xpos -2589
+  ypos 3602
+ }
+ Dot {
+  name Dot108
+  xpos -2555
+  ypos 3669
+ }
+ Switch {
+  inputs 2
+  which {{parent.colorless}}
+  name Switch_colorless
+  xpos -2748
+  ypos 3666
+ }
+ Multiply {
+  name Colorwheel_Brightess_1
+  xpos -2748
+  ypos 3827
+ }
+ Premult {
+  name Premult1
+  xpos -2748
+  ypos 3874
+ }
+ Grade {
+  inputs 1+1
+  add {0.016664 0.016664 0.016664 0}
+  add_panelDropped true
+  maskChannelMask rgba.red
+  name Grade14
+  xpos -2748
+  ypos 3898
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  bbox A
+  name Merge_targets_31
+  xpos -2748
+  ypos 3959
+  disable {{!parent.showtargets}}
+ }
+ Grade {
+  inputs 1+1
+  white 4
+  multiply 4
+  name Grade21
+  xpos -2748
+  ypos 3983
+ }
+ Glow2 {
+  tint 0.37
+  tolerance 0.27
+  brightness 0.75
+  size 7.5
+  name Glow3
+  xpos -2748
+  ypos 4020
+  disable {{!parent.boolean_1}}
+ }
+ Glow2 {
+  tint 0.37
+  brightness 0.75
+  size 20.5
+  name Glow2
+  xpos -2748
+  ypos 4044
+  disable {{!parent.boolean_1}}
+ }
+ Dot {
+  name Dot47
+  xpos -2714
+  ypos 4088
+ }
+set Nd10270b0 [stack 0]
+ Dot {
+  name Dot48
+  xpos -2824
+  ypos 4088
+ }
+ Reformat {
+  type scale
+  scale 0.5
+  pbb true
+  name Reformat4_512_1
+  xpos -2858
+  ypos 4125
+ }
+push $Nd10270b0
+clone $C54fe4690 {
+  inputs 2
+  xpos -2748
+  ypos 4125
+  selected false
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {0 0 0 0}
+  format "256 256 0 0 256 256 1 square_256"
+  name Constant_to_pick_1
+  xpos -1604
+  ypos 1816
+ }
+ Dot {
+  name Dot60
+  xpos -1570
+  ypos 1994
+ }
+set Nd1050470 [stack 0]
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace2
+  label "input \[value colorspace_in]\noutput \[value colorspace_out]"
+  xpos -1604
+  ypos 2012
+ }
+ Shuffle {
+  red green
+  green blue
+  blue black
+  name Shuffle8
+  xpos -1604
+  ypos 2060
+ }
+clone $C682b4270 {
+  xpos -1604
+  ypos 2096
+  selected false
+ }
+push $Nd1050470
+ Dot {
+  name Dot61
+  xpos -1796
+  ypos 1994
+ }
+ Dot {
+  name Dot62
+  xpos -1796
+  ypos 2129
+ }
+ BlinkScript {
+  inputs 2
+  recompileCount 15
+  ProgramGroup 1
+  KernelDescription "2 \"InverseSTKernel\" iterate pixelWise 9753518d3989a0c1fb92c06d5d19df80c62a16f5bafddfa2581a1a4683595474 3 \"src\" Read Point \"stmap\" Read Point \"dst\" Write Random 1 \"resolution\" Float 2 AAAAAAAAAAA= 1 \"resolution\" 2 1 0"
+  kernelSource "// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy\n\nkernel InverseSTKernel : ImageComputationKernel<ePixelWise>\n\{\n  Image<eRead, eAccessPoint, eEdgeNone> src;\n  Image<eRead, eAccessPoint, eEdgeNone> stmap;\n  Image<eWrite, eAccessRandom> dst;\n\n  param:\n    float2 resolution;\n\n\n  void process() \{\n    float2 uv;\n    uv.x = ((stmap().x * resolution.x - 0.5f));\n    uv.y = ((stmap().y * resolution.y - 0.5f));\n    //always make sure that you don't write outside bounds\n    //as it will usually crash nuke.\n    if (dst.bounds.inside(uv.x,uv.y)) \{ \n      dst(uv.x,uv.y) = src(); \n    \}\n  \}\n\};"
+  useGPUIfAvailable false
+  rebuild ""
+  InverseSTKernel_resolution {{width} {height}}
+  rebuild_finalise ""
+  name BlinkScript_Reverse_Stmap2
+  xpos -1604
+  ypos 2120
+ }
+ Dot {
+  name Dot63
+  xpos -1570
+  ypos 2196
+ }
+ Dot {
+  name Dot167
+  xpos -1570
+  ypos 2274
+ }
+set Nd10aead0 [stack 0]
+ Dilate {
+  size 0.6
+  name Dilate18
+  xpos -1604
+  ypos 2629
+ }
+push $Nd10aead0
+ Dot {
+  name Dot166
+  xpos -1663
+  ypos 2274
+ }
+set Nd10be690 [stack 0]
+ Dilate {
+  size 12
+  name Dilate10
+  xpos -1697
+  ypos 2315
+ }
+set Nd10c3290 [stack 0]
+ EdgeDetectWrapper {
+  blursize 3
+  name EdgeDetect3
+  xpos -1869
+  ypos 2315
+ }
+ Dilate {
+  size -3
+  name Dilate16
+  xpos -1869
+  ypos 2357
+ }
+ Grade {
+  channels alpha
+  multiply 2.55
+  name Grade23
+  xpos -1869
+  ypos 2404
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle19
+  xpos -1869
+  ypos 2453
+ }
+ Grade {
+  multiply {4 1 -1 1}
+  multiply_panelDropped true
+  name Grade27
+  xpos -1869
+  ypos 2504
+ }
+ Premult {
+  name Premult12
+  xpos -1869
+  ypos 2573
+ }
+push $Nd10c3290
+ Grade {
+  channels rgba
+  multiply {0.5 0.5 0.5 0.002}
+  multiply_panelDropped true
+  name Grade24
+  xpos -1698
+  ypos 2465
+ }
+ Merge2 {
+  inputs 2
+  name Merge17
+  xpos -1698
+  ypos 2573
+ }
+ Merge2 {
+  inputs 2
+  name Merge18
+  xpos -1698
+  ypos 2635
+ }
+ Crop {
+  box {0 0 256 256}
+  name Crop3
+  xpos -1698
+  ypos 2684
+ }
+ Clamp {
+  channels rgba
+  name Clamp5
+  xpos -1698
+  ypos 2830
+ }
+ Dot {
+  name Dot64
+  xpos -1664
+  ypos 2860
+ }
+set Nd0f7a600 [stack 0]
+ Dot {
+  name Dot65
+  xpos -1782
+  ypos 2860
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_5
+  xpos -1816
+  ypos 2883
+ }
+ Dot {
+  name Dot66
+  xpos -1782
+  ypos 2919
+ }
+push $Nd0f7a600
+ Reformat {
+  format {{{parent.ReformatScope_1.format}}}
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_6
+  xpos -1698
+  ypos 2878
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos -1698
+  ypos 2916
+  selected false
+ }
+ Dot {
+  name Dot67
+  xpos -1664
+  ypos 2973
+ }
+ Multiply {
+  channels rgba
+  value {{parent.double}}
+  name Multiply_intensity_sampler
+  xpos -1326
+  ypos 2970
+ }
+ Dot {
+  name Dot68
+  xpos -1159
+  ypos 2973
+ }
+ Dot {
+  name Dot104
+  xpos -693
+  ypos 2973
+ }
+set Nd0fc3e70 [stack 0]
+ Dot {
+  name Dot131
+  xpos -693
+  ypos 2997
+ }
+push $Nd0fc3e70
+push $Nd2d2b5c0
+ Grade {
+  inputs 1+1
+  channels rgba
+  multiply 11
+  add {1 1 1 0}
+  add_panelDropped true
+  black_clamp false
+  name Grade7
+  xpos -384
+  ypos 2970
+  disable {{!parent.activatesampler}}
+ }
+ Merge2 {
+  inputs 2
+  name Merge6
+  xpos -384
+  ypos 2994
+  disable {{!parent.activatesampler}}
+ }
+ Dot {
+  name Dot171
+  xpos -350
+  ypos 3037
+ }
+ Unpremult {
+  name Unpremult3
+  xpos -384
+  ypos 3100
+ }
+ Gamma {
+  value 0.86
+  name Gamma_overall
+  xpos -384
+  ypos 3124
+ }
+ Multiply {
+  value 4
+  name Grade_brightness_1
+  xpos -384
+  ypos 3160
+ }
+ Premult {
+  name Premult9
+  xpos -384
+  ypos 3196
+ }
+ Dot {
+  name Dot39
+  xpos -350
+  ypos 3376
+ }
+set Nd0e2ac30 [stack 0]
+ Dot {
+  name Dot173
+  xpos -494
+  ypos 3376
+ }
+ Dot {
+  name Dot174
+  xpos -494
+  ypos 3801
+ }
+push $Nd1521420
+ Dot {
+  name Dot156
+  xpos 377
+  ypos 2882
+ }
+ Dot {
+  name Dot59
+  xpos 377
+  ypos 2995
+ }
+push $Nd1548c10
+ Dot {
+  name Dot157
+  xpos 586
+  ypos 2880
+ }
+ Dot {
+  name Dot158
+  xpos 586
+  ypos 2995
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos 480
+  ypos 2992
+  selected false
+ }
+ Dot {
+  name Dot1
+  xpos 514
+  ypos 3040
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  label "in \[value in]-->out \[value out]"
+  xpos 480
+  ypos 3128
+ }
+ Dot {
+  name Dot141
+  xpos 370
+  ypos 3143
+ }
+ Dot {
+  name Dot31
+  xpos 370
+  ypos 3320
+ }
+ Dot {
+  name Dot70
+  xpos 370
+  ypos 3376
+ }
+set Nd0e724f0 [stack 0]
+ Dot {
+  name Dot50
+  xpos 370
+  ypos 3406
+ }
+set Nd0e77080 [stack 0]
+ Dot {
+  name Dot51
+  xpos 370
+  ypos 3446
+ }
+set Nd0e7bc10 [stack 0]
+ Dot {
+  name Dot20
+  xpos 370
+  ypos 3492
+ }
+set Nd0e807a0 [stack 0]
+ Dot {
+  name Dot7
+  xpos 370
+  ypos 3510
+ }
+ Multiply {
+  channels rgba
+  value 0.06
+  name Multiply_maskopacity
+  xpos 336
+  ypos 3540
+ }
+ Grade {
+  multiply_panelDropped true
+  name Grade20
+  xpos 336
+  ypos 3593
+ }
+ Reformat {
+  inputs 0
+  format {{{parent.ReformatScope_1.format}}}
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_8
+  xpos 678
+  ypos 3433
+ }
+ Ramp {
+  p0 {100 -1}
+  p1 {100 934}
+  type smooth
+  name Ramp1
+  xpos 678
+  ypos 3469
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {0.9909453392 0.331563741 0.1530252844 2.867353396e-05}
+  color_panelDropped true
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  name Constant1
+  xpos 557
+  ypos 3397
+ }
+ Grade {
+  inputs 1+1
+  multiply {1.15 0.48 0.32 1}
+  multiply_panelDropped true
+  invert_mask true
+  name Grade22
+  xpos 557
+  ypos 3469
+ }
+ Dot {
+  name Dot162
+  xpos 591
+  ypos 3520
+ }
+set Nd0edba70 [stack 0]
+ Dot {
+  name Dot163
+  xpos 473
+  ypos 3520
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_2
+  xpos 439
+  ypos 3538
+ }
+ Dot {
+  name Dot164
+  xpos 473
+  ypos 3579
+ }
+push $Nd0edba70
+ Reformat {
+  format {{{parent.ReformatScope_1.format}}}
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_4
+  xpos 557
+  ypos 3538
+ }
+clone $C54fe4690 {
+  inputs 2
+  xpos 557
+  ypos 3576
+  selected false
+ }
+ Dot {
+  name Dot37
+  xpos 591
+  ypos 3643
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy8
+  xpos 336
+  ypos 3634
+ }
+ Premult {
+  name Premult11
+  xpos 336
+  ypos 3686
+ }
+push $Nd0e2ac30
+ Merge2 {
+  inputs 2
+  name Merge_Mask_preview4324
+  xpos -384
+  ypos 3686
+ }
+ Dot {
+  name Dot38
+  xpos -350
+  ypos 3765
+ }
+ Switch {
+  inputs 2
+  which {{parent.useaskeylight}}
+  name Switch_keylight_method_1
+  xpos -384
+  ypos 3798
+ }
+push $Nd0e807a0
+ Dilate {
+  size -1
+  name Dilate1
+  xpos 173
+  ypos 3483
+ }
+push $Nd0e7bc10
+ EdgeDetectWrapper {
+  name EdgeDetect1
+  xpos 113
+  ypos 3437
+ }
+push $Nd0e77080
+push $Nd0e724f0
+push $Nd0e2ac30
+ Saturation {
+  inputs 1+1
+  saturation 0.78
+  name Saturation1
+  xpos 3
+  ypos 3373
+ }
+ Multiply {
+  inputs 1+1
+  value {0.294 0.294 0.294 0.24}
+  value_panelDropped true
+  name Multiply1
+  xpos 3
+  ypos 3397
+ }
+ Grade {
+  inputs 1+1
+  add {1 0 0 0}
+  add_panelDropped true
+  name Grade18
+  xpos 3
+  ypos 3443
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  bbox B
+  name Merge12
+  xpos 3
+  ypos 3489
+  disable {{parent.boolean_3}}
+ }
+ Dot {
+  name Dot142
+  xpos 37
+  ypos 3915
+ }
+ Switch {
+  inputs 2
+  which {{!parent.enablegrading}}
+  name Switch_grading_mode
+  xpos -384
+  ypos 3912
+ }
+ Dot {
+  name Dot155
+  xpos -350
+  ypos 4204
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge16
+  xpos -2748
+  ypos 4201
+ }
+ Reformat {
+  type scale
+  resize none
+  center false
+  filter Impulse
+  black_outside true
+  pbb true
+  name Reformat_to_clamp_values
+  xpos -2748
+  ypos 4266
+  disable {{parent.noclampvalues}}
+ }
+ Dot {
+  name Dot96
+  xpos -2714
+  ypos 4314
+ }
+set Ncfbda530 [stack 0]
+ Dot {
+  name Dot95
+  xpos -2550
+  ypos 4314
+ }
+ Dot {
+  name Dot94
+  xpos -2551
+  ypos 4420
+ }
+ AdjBBox {
+  numpixels 5
+  name AdjBBox3
+  xpos -2585
+  ypos 4438
+ }
+ Dot {
+  name Dot99
+  xpos -2551
+  ypos 4873
+ }
+push $Nd13cdbf0
+ Dot {
+  name Dot54
+  xpos -3251
+  ypos 3323
+ }
+ Dot {
+  name Dot55
+  xpos -3251
+  ypos 4246
+ }
+ Dot {
+  name Dot44
+  xpos -3251
+  ypos 4326
+ }
+set Ncfa0e6d0 [stack 0]
+ Dot {
+  name Dot46
+  xpos -3354
+  ypos 4326
+ }
+ Reformat {
+  type scale
+  scale 0.5
+  pbb true
+  name Reformat3
+  xpos -3388
+  ypos 4363
+ }
+push $Ncfa0e6d0
+clone $C54fe4690 {
+  inputs 2
+  xpos -3285
+  ypos 4363
+  selected false
+ }
+ Dot {
+  name Dot26
+  xpos -3251
+  ypos 4437
+ }
+set Ncfa2ef40 [stack 0]
+ Dot {
+  name Dot25
+  xpos -3251
+  ypos 4474
+ }
+ Dot {
+  name Dot97
+  xpos -3251
+  ypos 4676
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  name Constant_to_fill_space_23
+  xpos -3078
+  ypos 4493
+ }
+ Dot {
+  name Dot90
+  xpos -3044
+  ypos 4565
+ }
+set Ncfa45ce0 [stack 0]
+ Dot {
+  name Dot91
+  xpos -3152
+  ypos 4565
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_15
+  xpos -3186
+  ypos 4586
+ }
+ Dot {
+  name Dot92
+  xpos -3152
+  ypos 4622
+ }
+push $Ncfa45ce0
+clone $C54fe4690 {
+  inputs 2
+  xpos -3078
+  ypos 4619
+  selected false
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -3078
+  ypos 4667
+ }
+ Premult {
+  name Premult6
+  xpos -3078
+  ypos 4770
+ }
+push $Ncfbda530
+ Dot {
+  name Dot101
+  xpos -2931
+  ypos 4314
+ }
+ Dot {
+  name Dot102
+  xpos -2931
+  ypos 4802
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge9
+  xpos -3078
+  ypos 4799
+ }
+ Dot {
+  name Dot100
+  xpos -3044
+  ypos 4849
+ }
+push $Ncfbda530
+ Dot {
+  name Dot103
+  xpos -2714
+  ypos 4370
+ }
+set Ncfaa0490 [stack 0]
+ Dot {
+  name Dot93
+  xpos -2845
+  ypos 4370
+ }
+push $Ncfa2ef40
+ ChannelMerge {
+  inputs 2
+  operation stencil
+  name ChannelMerge2
+  xpos -2879
+  ypos 4422
+ }
+push $Ncfaa0490
+ Grade {
+  inputs 1+1
+  channels alpha
+  add {{parent.opacity}}
+  name Grade_Opacity_1
+  xpos -2748
+  ypos 4428
+ }
+ Dot {
+  name Dot98
+  xpos -2709
+  ypos 4802
+ }
+ Switch {
+  inputs 2
+  which {{parent.opaque}}
+  name Switch_opaque_23
+  xpos -2743
+  ypos 4846
+ }
+ Switch {
+  inputs 2
+  which {{parent.darkmode}}
+  name Switch_transparency_23
+  xpos -2743
+  ypos 4870
+ }
+clone $Ccfadbe50 {
+  xpos -2743
+  ypos 5072
+  selected false
+ }
+ Dot {
+  name Dot34
+  xpos -2709
+  ypos 5252
+ }
+ Dot {
+  name Dot170
+  xpos -2709
+  ypos 5883
+ }
+ Dot {
+  name Dot49
+  xpos -2709
+  ypos 6727
+ }
+ Merge2 {
+  inputs 2
+  name Merge11
+  xpos -2743
+  ypos 6854
+  disable {{!parent.enablegrading}}
+ }
+ Dot {
+  name Dot143
+  xpos -2709
+  ypos 7027
+ }
+push $Nd1468240
+ Merge2 {
+  inputs 2
+  name Merge_with_the_plate
+  xpos -3953
+  ypos 7024
+  disable {{!parent.activate}}
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy5
+  xpos -3953
+  ypos 7119
+ }
+push $Nd146cb80
+ Dot {
+  name Dot149
+  xpos -4249
+  ypos 6943
+ }
+ Dot {
+  name Dot150
+  xpos -4249
+  ypos 7236
+ }
+ Switch {
+  inputs 2
+  which {{"\$gui ? 1 : 0"}}
+  name Switch_gui_off
+  xpos -3953
+  ypos 7233
+ }
+ Merge2 {
+  inputs 2
+  name Merge14
+  xpos -3953
+  ypos 7308
+  disable {{!parent.enablegrading}}
+ }
+ ShuffleCopy {
+  inputs 2
+  red alpha
+  out alpha
+  name ShuffleCopy_output
+  xpos -3953
+  ypos 7461
+  disable {{"!\[exists parent.input1]"}}
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name CopyDEPRECATED_42
+  xpos -3953
+  ypos 7858
+  disable {{!!parent.activatemask}}
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy6
+  xpos -3953
+  ypos 8144
+  disable {{!parent.keepmyalpha}}
+ }
+ Output {
+  name Output1
+  xpos -3953
+  ypos 8575
+ }
+push $Nd15a0670
+ Dot {
+  name Dot2
+  xpos 1116
+  ypos 7545
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote4
+  tile_color 0xff
+  label "   GRADING WHEEL INSERT   "
+  xpos -2614
+  ypos 6850
+ }
+push $Nd1343680
+ FilterErode {
+  size -0.5
+  filter gaussian
+  name FilterErode2
+  xpos -3409
+  ypos 6498
+ }
+push $Nd10be690
+ Dilate {
+  size 18
+  name Dilate15
+  xpos -1872
+  ypos 2265
+ }
+push $N54fdd980
+ Dot {
+  name Dot32
+  xpos 1972
+  ypos 943
+ }
+ Reformat {
+  inputs 0
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  resize distort
+  filter Impulse
+  pbb true
+  name ReformatScope_1
+  xpos -3134
+  ypos 1943
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote3
+  tile_color 0xff
+  label "VectorScope INSERT   "
+  xpos -3886
+  ypos 6997
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote5
+  tile_color 0xff
+  label "   GRADING WHEEL INSERT   "
+  xpos -3861
+  ypos 7284
+ }
+push $Nd2d2b5c0
+ Viewer {
+  frame 1045
+  frame_range 1009-1082
+  frame_increment 8
+  overscan 300
+  center_fstop 0
+  viewerProcess Film
+  far 100000
+  name Viewer1
+  xpos 3
+  ypos 3933
+ }
+end_group
