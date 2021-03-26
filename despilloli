@@ -1,0 +1,395 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push 0
+push $cut_paste_input
+Group {
+inputs 2
+name despill_oli1
+knobChanged "import colorsys\n\nn = nuke.thisNode() \nk = nuke.thisKnob()\n\nif k.name() == 'screenColor':\n    screenColor = n.knob('screenColor').getValue()\n    luma = 0.2126*screenColor\[0]+0.7152*screenColor\[1]+0.0722*screenColor\[2]\n    n.knob('Luma').setValue(luma)\n\nluma = n.knob('Luma').getValue()\nlumaHSV = colorsys.rgb_to_hsv(luma,luma,luma)\nprint 'luma HSV \{0\}'.format(lumaHSV)\nhueShift = n.knob('hueShift').getValue()\nsatShift = n.knob('hueShift').getValue() / 180\nprint 'hueShift \{0\}'.format(hueShift)\nresultColor = colorsys.hsv_to_rgb(hueShift ,satShift, lumaHSV\[2])\nprint 'result \{0\}'.format(resultColor)\nn.knob('targetColor').setValue(resultColor)\nif n.knob('despillMath').getValue() == 0:\n    n.knob('balance').setVisible(True)\n    n.knob('hueShift').setVisible(True)\n    n.knob('gain').setVisible(True)\n    n.knob('suppression').setVisible(False)\n    n.knob('limiter').setVisible(False)\n    n.knob('spilltweak').setVisible(False)\nelse:\n    n.knob('balance').setVisible(False)\n    n.knob('hueShift').setVisible(False)\n    n.knob('gain').setVisible(False)\n    n.knob('suppression').setVisible(True)\n    n.knob('limiter').setVisible(True)\n    n.knob('spilltweak').setVisible(True)"
+selected true
+xpos -2109
+ypos 8615
+addUserKnob {20 User l main}
+addUserKnob {26 Despill l "<font size=5><b>Despill</font></b>"}
+addUserKnob {6 hue_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {18 screenColor l spill}
+screenColor {0.1520533413 0.4061694741 0.08006646484}
+addUserKnob {6 screenColor_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {3 back_color l INVISIBLE +INVISIBLE}
+back_color {{screenColor.b>screenColor.g}}
+addUserKnob {7 Luma}
+Luma 0.09
+addUserKnob {18 targetColor l INVISIBLE +INVISIBLE}
+targetColor {0.09 0.094 0.094}
+addUserKnob {6 targetColor_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {4 despillMath l "despill math" t "average = avg of other two channels\npxf_killspill = same math as pxf\n" M {average pxf_killspill minimum "" ""}}
+addUserKnob {7 balance l "weight r/gb" t "- determines which colors get more affected by the despill operation. Lower values work better for red tones. Higher values stronger affect blue and green tones." R 0 2}
+balance 0.85
+addUserKnob {7 hueShift l "hue offset" R -180 180}
+hueShift -8
+addUserKnob {7 gain l tolerance t "Increasing tolerance will affect a wider range of colors." R 0.5 3.5}
+gain 1.43
+addUserKnob {7 suppression +HIDDEN R 0 2}
+suppression 0.4
+addUserKnob {7 limiter +HIDDEN R 0 10}
+limiter 0.95
+addUserKnob {18 spilltweak +HIDDEN R 0 10}
+spilltweak {-0.2 0.2 0.2}
+addUserKnob {6 spilltweak_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {7 opacity}
+opacity 1
+addUserKnob {26 ""}
+addUserKnob {6 mask l "enable mask" +STARTLINE}
+mask true
+addUserKnob {6 spillMatteOverlay l "spillmatte Overlay" -STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {20 advanced n 1}
+advanced 0
+addUserKnob {7 brightScreen l "brightScreen fix" t "compensates for screen values higher than 1" R 0 100}
+brightScreen 50
+addUserKnob {20 endGroup n -1}
+}
+Input {
+inputs 0
+name source
+xpos -84
+ypos -141
+}
+Dot {
+name Dot2
+note_font_size 40
+xpos -50
+ypos 100
+}
+set Nb4391ae0 [stack 0]
+Dot {
+name Dot3
+note_font_size 40
+xpos 177
+ypos 100
+}
+set Nb1285b60 [stack 0]
+Dot {
+name Dot1
+note_font_size 40
+xpos 350
+ypos 100
+}
+set Na87ed5c0 [stack 0]
+Dot {
+name Dot4
+xpos 1362
+ypos 100
+}
+set Nb91b5990 [stack 0]
+push $Nb91b5990
+push $Nb91b5990
+Shuffle {
+red blue
+green blue
+alpha black
+name Blue
+xpos 2011
+ypos 268
+}
+set Na77df590 [stack 0]
+push $Nb91b5990
+Shuffle {
+red green
+blue green
+alpha black
+name Green
+xpos 1900
+ypos 265
+}
+set Nab1c8a30 [stack 0]
+push $Nb91b5990
+Shuffle {
+green red
+blue red
+alpha black
+name Red
+xpos 1807
+ypos 265
+}
+set Nfb0547c0 [stack 0]
+Switch {
+inputs 3
+which {{back_color+1}}
+name High
+xpos 1807
+ypos 361
+}
+push $Nab1c8a30
+push $Nfb0547c0
+Switch {
+inputs 2
+which {{"back_color == 2 ? 1 : back_color == 1 ? 0 : 0"}}
+name LowA
+xpos 1900
+ypos 361
+}
+Multiply {
+value {{"1 - parent.suppression"}}
+name Multiply1
+xpos 1900
+ypos 424
+}
+push $Na77df590
+push $Nab1c8a30
+push 0
+Switch {
+inputs 3
+which {{"back_color ==2 ? 2 : back_color == 0? 2 : 1"}}
+name LowB
+xpos 2011
+ypos 372
+}
+Multiply {
+value {{parent.suppression}}
+name Multiply2
+xpos 2011
+ypos 424
+}
+Merge2 {
+inputs 2
+operation plus
+name Merge3
+xpos 1962
+ypos 536
+}
+Multiply {
+value {{parent.limiter}}
+name Multiply3
+xpos 1962
+ypos 580
+}
+Merge2 {
+inputs 2
+operation min
+name Merge10
+xpos 1807
+ypos 609
+}
+set Nf0ef8770 [stack 0]
+ShuffleCopy {
+inputs 2
+red red
+green green
+name ShuffleBlue
+xpos 1410
+ypos 611
+}
+push $Nb91b5990
+push $Nf0ef8770
+ShuffleCopy {
+inputs 2
+red red
+blue blue
+name ShuffleGreen
+xpos 1298
+ypos 569
+}
+push $Nb91b5990
+push $Nf0ef8770
+ShuffleCopy {
+inputs 2
+green green
+blue blue
+name ShuffleRed
+xpos 1194
+ypos 609
+}
+Switch {
+inputs 3
+which {{back_color+1}}
+name Switch1
+xpos 1298
+ypos 665
+}
+set N12f4da70 [stack 0]
+Merge2 {
+inputs 2
+operation minus
+name Merge9
+xpos 1486
+ypos 787
+}
+Saturation {
+saturation 0
+name Saturation1
+xpos 1486
+ypos 825
+}
+ColorCorrect {
+gain {{parent.spilltweak.r} {parent.spilltweak.g} {parent.spilltweak.b} 1}
+name ColorCorrect3
+xpos 1486
+ypos 895
+}
+set Nad8c9410 [stack 0]
+push $Na87ed5c0
+Expression {
+temp_name0 blueScreen
+temp_expr0 (b*parent.gain-(r*parent.balance+g*(1-(parent.balance-1)))/2)
+temp_name1 greenScreen
+temp_expr1 (g*parent.gain-(r*parent.balance+b*(1-(parent.balance-1)))/2)
+temp_name2 alphaWhitePoint
+temp_expr2 (alphavalueBlue*1.1)*(1-blueGreen)+(alphavalueGreen*1.1)*(blueGreen)
+expr0 parent.screenColor.b>parent.screenColor.g?blueScreen/alphaWhitePoint:greenScreen/alphaWhitePoint
+channel3 alpha
+expr3 parent.screenColor.b>parent.screenColor.g?(blueScreen/alphaWhitePoint)*alphaWhitePoint/51:(greenScreen/alphaWhitePoint)*alphaWhitePoint/51
+name expressionAverage
+xpos 316
+ypos 414
+addUserKnob {20 User}
+addUserKnob {7 blueGreen}
+blueGreen {{parent.screenColor.b>parent.screenColor.g?0:1}}
+addUserKnob {7 alphavalueGreen}
+alphavalueGreen {{(parent.screenColor.g*parent.gain)-((parent.screenColor.b*(1-(parent.balance-1))+parent.screenColor.r*parent.balance)/2)}}
+addUserKnob {7 alphavalueBlue}
+alphavalueBlue {{(parent.screenColor.b*parent.gain)-((parent.screenColor.g*(1-(parent.balance-1))+parent.screenColor.r*parent.balance)/2)}}
+}
+set N6a59ca0 [stack 0]
+ColorCorrect {
+channels alpha
+gain 200
+name ColorCorrect2
+xpos 316
+ypos 568
+}
+set N466c5e0 [stack 0]
+Switch {
+inputs 2
+which {{parent.despillMath}}
+name Switch3
+xpos 316
+ypos 883
+}
+Dot {
+name Dot8
+note_font_size 40
+xpos 364
+ypos 2366
+}
+push $Nb4391ae0
+Dot {
+name Dot10
+note_font_size 40
+xpos -434
+ypos 100
+}
+Dot {
+name Dot6
+note_font_size 40
+xpos -434
+ypos 2003
+}
+set Nabbbc860 [stack 0]
+Dot {
+name Dot9
+note_font_size 40
+xpos -434
+ypos 2056
+}
+Input {
+inputs 0
+name mask
+xpos 166
+ypos 1999
+number 1
+}
+push $Nabbbc860
+push $Nb91b5990
+Dot {
+name Dot5
+xpos 1668
+ypos 984
+}
+push $N12f4da70
+push $Nad8c9410
+Merge2 {
+inputs 2
+operation plus
+name Merge11
+xpos 1298
+ypos 895
+}
+ShuffleCopy {
+inputs 2
+name ShuffleCopy1
+xpos 1298
+ypos 980
+}
+Dot {
+name Dot7
+note_font_size 40
+xpos 1332
+ypos 1226
+}
+push $N6a59ca0
+push $Nb1285b60
+Expression {
+inputs 1+1
+expr0 parent.screenColor.b>parent.screenColor.g?r+((parent.targetColor.r*(clamp(1/clamp(expressionAverage.alphavalueBlue/(brightScreen+1)),0,1000000))-parent.screenColor.r*(clamp(1/clamp(expressionAverage.alphavalueBlue/(brightScreen+1)),0,1000000)))):r+((parent.targetColor.r*(clamp(1/clamp(expressionAverage.alphavalueGreen/(brightScreen+1)),0,1000000))-parent.screenColor.r*(clamp(1/clamp(expressionAverage.alphavalueGreen/(brightScreen+1)),0,1000000))))
+expr1 parent.screenColor.b>parent.screenColor.g?g+((parent.targetColor.g*(clamp(1/clamp(expressionAverage.alphavalueBlue/(brightScreen+1)),0,1000000))-parent.screenColor.g*(clamp(1/clamp(expressionAverage.alphavalueBlue/(brightScreen+1)),0,1000000)))):g+((parent.targetColor.g*(clamp(1/clamp(expressionAverage.alphavalueGreen/(brightScreen+1)),0,1000000))-parent.screenColor.g*(clamp(1/clamp(expressionAverage.alphavalueGreen/(brightScreen+1)),0,1000000))))
+expr2 parent.screenColor.b>parent.screenColor.g?b+((parent.targetColor.b*(clamp(1/clamp(expressionAverage.alphavalueBlue/(brightScreen+1)),0,1000000))-parent.screenColor.b*(clamp(1/clamp(expressionAverage.alphavalueBlue/(brightScreen+1)),0,1000000)))):b+((parent.targetColor.b*(clamp(1/clamp(expressionAverage.alphavalueGreen/(brightScreen+1)),0,1000000))-parent.screenColor.b*(clamp(1/clamp(expressionAverage.alphavalueGreen/(brightScreen+1)),0,1000000))))
+name Expression1
+xpos 143
+ypos 414
+}
+push $Nb4391ae0
+Merge2 {
+inputs 2
+operation copy
+bbox B
+mix {{parent.opacity}}
+name Merge1
+xpos -91
+ypos 414
+}
+Switch {
+inputs 2
+which {{parent.despillMath}}
+name Switch2
+xpos -91
+ypos 1222
+}
+Keymix {
+inputs 3
+invertMask true
+name Keymix1
+xpos -91
+ypos 1993
+disable {{!parent.mask}}
+}
+add_layer {spill spill.red spill.green spill.blue}
+Merge2 {
+inputs 2
+operation minus
+output spill
+name Merge2
+xpos -91
+ypos 2046
+}
+ColorCorrect {
+inputs 1+1
+offset {1 0 0 0}
+name ColorCorrect1
+xpos -91
+ypos 2362
+disable {{!parent.spillMatteOverlay}}
+}
+Output {
+name Output1
+xpos -91
+ypos 2437
+}
+push $N466c5e0
+Viewer {
+frame_range 1017-1094
+name Viewer1
+xpos 686
+ypos 536
+}
+end_group
