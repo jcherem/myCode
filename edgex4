@@ -1,0 +1,371 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+push 0
+Group {
+inputs 2
+name EdgeX4
+tile_color 0xdba846ff
+selected true
+xpos 2534
+ypos 19412
+addUserKnob {20 User l Edge}
+addUserKnob {6 Grain_Size_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {20 aadjust l "adjust alpha" n 1}
+addUserKnob {41 blackpoint T Grade28.blackpoint}
+addUserKnob {41 whitepoint T Grade28.whitepoint}
+addUserKnob {3 derode l "erode alpha" t "Erode alpha"}
+addUserKnob {6 aadjv l "<font size=\"3\"><font color=\"Goldenrod\">&nbsp;&nbsp;view alpha" -STARTLINE}
+addUserKnob {20 endGroup n -1}
+addUserKnob {26 ""}
+addUserKnob {7 bsize l "<font size=\"3\"><font 1\">&nbsp;&nbsp;edge size" t "Increase amount of edge extend" R 0 10}
+bsize 3
+addUserKnob {7 einner l "edgeblur in size" t "Soften inside edge" R 0 10}
+einner 2
+addUserKnob {7 eouter l "edgeblur out size" t "Soften outside edge" R 0 10}
+eouter 2
+addUserKnob {7 addh l "add highlights" t "Add highlights"}
+addUserKnob {41 size l "soften highlights" t "Blur mix amount" T Blur1.size}
+addUserKnob {20 endGroup_1 l endGroup n -1}
+addUserKnob {4 mOp l "merge operation" t "Min or Max plate over edge" M {none max min "" "" ""}}
+addUserKnob {26 ""}
+addUserKnob {7 mix}
+mix 1
+}
+Input {
+inputs 0
+name Matte
+xpos 330
+ypos -14
+number 1
+}
+Input {
+inputs 0
+name B
+xpos 457
+ypos -16
+}
+Dot {
+name Dot8
+xpos 491
+ypos 95
+}
+set Nb49e7e60 [stack 0]
+ShuffleCopy {
+inputs 2
+name ShuffleCopy5
+xpos 330
+ypos 91
+}
+push $Nb49e7e60
+Switch {
+inputs 2
+which {{"\[exists parent.input1]"}}
+name Switch1
+xpos 457
+ypos 200
+}
+set N957cd710 [stack 0]
+Dot {
+name Dot56
+xpos 82
+ypos 204
+}
+Dot {
+name Dot65
+xpos 85
+ypos 781
+}
+set N1058ee60 [stack 0]
+Dot {
+name Dot10
+xpos 85
+ypos 1068
+}
+set N10592700 [stack 0]
+Dot {
+name Dot9
+xpos 85
+ypos 1419
+}
+set Naf8e69a0 [stack 0]
+push $N957cd710
+Grade {
+channels alpha
+blackpoint 0.095
+white_clamp true
+name Grade28
+xpos 457
+ypos 226
+}
+set Naf8ea190 [stack 0]
+Dilate {
+channels alpha
+size {{parent.derode}}
+name Dilate5
+xpos 457
+ypos 260
+}
+set N121e05f0 [stack 0]
+Shuffle {
+red alpha
+green alpha
+blue alpha
+name Shuffle1
+xpos 738
+ypos 266
+}
+Dot {
+name Dot2
+xpos 772
+ypos 1523
+}
+push $Naf8e69a0
+push $N10592700
+Dot {
+name Dot11
+xpos 216
+ypos 1068
+}
+set N97e44d0 [stack 0]
+Expression {
+channel0 {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+expr3 (min(mix(r,b,.5),g))
+name Expression1
+xpos 182
+ypos 1128
+}
+Grade {
+channels alpha
+blackpoint 0.05
+gamma 0.3
+white_clamp true
+unpremult -rgba.alpha
+name Grade3
+xpos 182
+ypos 1154
+}
+set N972716d0 [stack 0]
+Blur {
+channels alpha
+name Blur1
+xpos 182
+ypos 1275
+}
+push $N972716d0
+Premult {
+name Premult1
+xpos 334
+ypos 1160
+}
+push $N97e44d0
+push $N121e05f0
+Clamp {
+channels alpha
+name Clamp1
+xpos 457
+ypos 298
+}
+Premult {
+name Premult7
+xpos 457
+ypos 377
+}
+set Nae1831b0 [stack 0]
+Blur {
+channels rgba
+size {{parent.bsize}}
+name Blur19
+label "Size \[value size]"
+xpos 457
+ypos 425
+}
+Unpremult {
+name Unpremult4
+xpos 457
+ypos 463
+}
+set Nae2eab60 [stack 0]
+push $N121e05f0
+push $Naf8ea190
+ShuffleCopy {
+inputs 2
+name ShuffleCopy7
+xpos 332
+ypos 266
+}
+Premult {
+name Premult8
+xpos 332
+ypos 316
+}
+set N104da610 [stack 0]
+EdgeDetectWrapper {
+edgedetector simple
+channels alpha
+erodesize -1
+name EdgeDetect1
+xpos 214
+ypos 310
+}
+Blur {
+size 2
+name Blur21
+xpos 214
+ypos 371
+}
+push $Nae1831b0
+push $N104da610
+Keymix {
+inputs 3
+name Keymix16
+xpos 332
+ypos 371
+}
+Dot {
+name Dot73
+xpos 366
+ypos 530
+}
+Merge2 {
+inputs 2
+operation under
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge2
+xpos 457
+ypos 526
+}
+EdgeBlur {
+size {{parent.einner}}
+name EdgeBlur4
+xpos 457
+ypos 599
+}
+set N321d55e0 [stack 0]
+Grade {
+channels alpha
+blackpoint 0.99
+white_clamp true
+name Grade37
+xpos 306
+ypos 599
+}
+push $N1058ee60
+push $Nae2eab60
+Dot {
+name Dot3
+xpos 636
+ypos 467
+}
+Shuffle {
+alpha red
+name Shuffle2
+xpos 602
+ypos 535
+}
+Grade {
+whitepoint 0
+white_clamp true
+name Grade36
+label Alpha
+xpos 602
+ypos 582
+}
+Dot {
+name Dot1
+xpos 636
+ypos 648
+}
+push $N321d55e0
+ShuffleCopy {
+inputs 2
+alpha red
+name ShuffleCopy6
+xpos 457
+ypos 644
+}
+Merge2 {
+inputs 2
+operation under
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge3
+xpos 457
+ypos 777
+}
+EdgeBlur {
+size {{parent.eouter}}
+name EdgeBlur5
+xpos 457
+ypos 907
+}
+set Naeaa7fa0 [stack 0]
+ShuffleCopy {
+inputs 2
+name ShuffleCopy1
+xpos 306
+ypos 913
+}
+push $Naeaa7fa0
+Dissolve {
+inputs 2
+which {{parent.gmix}}
+name Dissolve4
+xpos 457
+ypos 1004
+}
+Merge2 {
+inputs 2
+operation {{mOp==1?17:mOp==2?18:22}}
+name Mergexp
+xpos 457
+ypos 1064
+disable {{mOp==0?1:0}}
+}
+set Nac2b9750 [stack 0]
+Merge2 {
+inputs 2
+name Merge1
+xpos 334
+ypos 1201
+}
+push $Nac2b9750
+Keymix {
+inputs 3
+mix {{parent.addh}}
+name Keymix2
+xpos 457
+ypos 1275
+}
+push $Naf8e69a0
+Dissolve {
+inputs 2
+which {{parent.mix}}
+name Dissolve1
+xpos 457
+ypos 1422
+}
+ShuffleCopy {
+inputs 2
+name ShuffleCopy8
+xpos 457
+ypos 1466
+}
+Switch {
+inputs 2
+which {{parent.aadjv}}
+name Switch2
+xpos 457
+ypos 1519
+}
+CopyBBox {
+inputs 2
+name CopyBBox2
+xpos 457
+ypos 1552
+}
+Output {
+name Output1
+xpos 457
+ypos 1592
+}
+end_group
