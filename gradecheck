@@ -1,0 +1,13 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push 0
+push $cut_paste_input
+Grade {
+inputs 1+1
+channels {rgba.red -rgba.green -rgba.blue none}
+multiply 20
+name Grade_check_1
+selected true
+xpos 5719
+ypos -24303
+}
