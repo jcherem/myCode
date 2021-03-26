@@ -1,0 +1,16 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+LayerRegex {
+ operation keep
+ type channels
+ regex "(?:rgba|.*__light_grp\\d+|origRender|__depth)"
+ name LayerRegex2
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos 12444
+ ypos -17330
+ addUserKnob {20 _dneg_tab +INVISIBLE}
+ addUserKnob {1 _preset_twig_dnuuid +INVISIBLE}
+ _preset_twig_dnuuid 108c0ab0-0e99-4f36-9e52-ff5649f8f5af
+}
