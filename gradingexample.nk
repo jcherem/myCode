@@ -1,0 +1,774 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+BackdropNode {
+ inputs 0
+ name BackdropNode122
+ tile_color 0xaaaaaa00
+ label "MATCH GRADE"
+ note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold"
+ note_font_size 42
+ selected true
+ xpos 10834
+ ypos 4806
+ bdwidth 919
+ bdheight 712
+}
+Reformat {
+ inputs 0
+ format "2880 2160 0 0 2880 2160 2 Alexa SXT 4:3 Full Ana"
+ pbb true
+ name Reformat2
+ selected true
+ xpos 10704
+ ypos 5177
+}
+Roto {
+ output alpha
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x4486c000 x4461c000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x447a4000 x447d0000 x44802000 x44818000 x4481c000 x44834000 x44846000 x44854000 x4486c000 x44884000 x44898000 x448b8000 x448c8000 x448d4000}
+        {{{x40000000 -}}
+      {{xc0800000 -}}}
+        {{{x44633c10 0 1 xc0ad4f46 1}
+       {x44594e30 -}
+       {x446b8000 x412e4b20 1 x412e4b20 1}
+       {x448d552e x4181f44f 1 x4181f44f 1}
+       {x449025a0 x40e4bcdb 1 x40e4bcdb 1}
+       {x4499d782 -}
+       {x4483e6d8 xc18bf58c 1 xc18bf58c 1}
+       {x446db43e xc118e047 1 xc118e047 1}
+       {x445a6b1b -}
+       {x44839604 x408947cd 1 x408947cd 1}
+       {x44855f9e -}
+       {x44817937 -}
+       {x44829312 -}
+       {x44829c6c xbf13b400 1 0 1}}
+      {{x451f4d0f 0 1 xc1555819 1}
+       {x45170afc xc115e0a0 1 xc115e0a0 1}
+       {x45114000 xc0c7dcd5 1 xc0c7dcd5 1}
+       {x 2
+        {x450daca2 -}}
+       {x450dab1b xbcc38000 1 xbcc38000 1}
+       {x450a9390 -}
+       {x450d1e0c x400d1000 1 x400d1000 1}
+       {x450dab1c -}
+       {x450cb368 xc0444f74 1 xc0444f74 1}
+       {x45097367 xc01c00c0 1 xc01c00c0 1}
+       {x4508a366 xbf3ce0ab 1 xbf3ce0ab 1}
+       {x45092816 -}
+       {x45092033 x40481d00 1 0 1}}}
+        {{{xc0000000 -}}
+      {{x40800000 -}}}
+        {{{x42980000 -}}
+      {{x 5
+        {x43240000 -}}
+       {x 2
+        {x43240008 -}}
+       {x43240010 x37579436 1 x37579436 1}
+       {x 2
+        {x43240018 -}}
+       {x43240010 xb71d89d9 1 xb71d89d9 1}
+       {x 2
+        {x43240008 -}}
+       {x43240008 xb8000000 1 0 1}}}
+        {{{x4429bc10 0 1 xc0ad4f46 1}
+       {x441fce30 -}
+       {x44320000 x412e4b1d 1 x412e4b1d 1}
+       {x44612a5b x4181f44c 1 x4181f44c 1}
+       {x4466cb3f x40e4bcdb 1 x40e4bcdb 1}
+       {x447a2f03 -}
+       {x444e4daf xc18bf58c 1 xc18bf58c 1}
+       {x4434343d xc118e047 1 xc118e047 1}
+       {x4420eb1a -}
+       {x444dac07 x408947cd 1 x408947cd 1}
+       {x44513f3b -}
+       {x4449726e -}
+       {x444ba624 -}
+       {x444bb8d7 xbf13b500 1 0 1}}
+      {{x4510ed0f 0 1 xc1555819 1}
+       {x4508aafc xc115e0a0 1 xc115e0a0 1}
+       {x4502e000 xc0c7dcd5 1 xc0c7dcd5 1}
+       {x 2
+        {x44fe9944 -}}
+       {x44fe9635 xbcc3c000 1 xbcc3c000 1}
+       {x44f8671f -}
+       {x44fd7c16 x400d0f80 1 x400d0f80 1}
+       {x44fe9635 -}
+       {x44fca6cd xc0444f5d 1 xc0444f5d 1}
+       {x44f626cc xc01c0060 1 xc01c0060 1}
+       {x44f486cb xbf3ce0ab 1 xbf3ce0ab 1}
+       {x44f5902b -}
+       {x44f58065 x40481d80 1 0 1}}}
+        {{{xc2980000 -}}
+      {{xc3240000 -}}}
+        {{{xc1b00000 -}}
+      {{x42cc0000 -}}}
+        {{{x44243c10 0 1 xc0ad4f46 1}
+       {x441a4e30 -}
+       {x442c8000 x412e4b1d 1 x412e4b1d 1}
+       {x445baa5b x4181f44c 1 x4181f44c 1}
+       {x44614b3f x40e4bcdb 1 x40e4bcdb 1}
+       {x4474af03 -}
+       {x4448cdaf xc18bf58c 1 xc18bf58c 1}
+       {x442eb43d xc118e047 1 xc118e047 1}
+       {x441b6b1a -}
+       {x44482c07 x408947cd 1 x408947cd 1}
+       {x444bbf3b -}
+       {x4443f26e -}
+       {x44462624 -}
+       {x444638d7 xbf13b500 1 0 1}}
+      {{x44d39a1e 0 1 xc1555819 1}
+       {x44c315f8 xc115e0a0 1 xc115e0a0 1}
+       {x44b78000 xc0c7dcd5 1 xc0c7dcd5 1}
+       {x 2
+        {x44b05944 -}}
+       {x44b05635 xbcc3c000 1 xbcc3c000 1}
+       {x44aa271f -}
+       {x44af3c16 x400d0f80 1 x400d0f80 1}
+       {x44b05635 -}
+       {x44ae66cd xc0444f5d 1 xc0444f5d 1}
+       {x44a7e6cc xc01c0060 1 xc01c0060 1}
+       {x44a646cb xbf3ce0ab 1 xbf3ce0ab 1}
+       {x44a7502b -}
+       {x44a74065 x40481d80 1 0 1}}}
+        {{{x41b00000 -}}
+      {{xc2cc0000 -}}}
+        {{{xc2300000 -}}
+      {{x 12
+        {x42c00000 -}}
+       {x42bffff0 -}
+       {x42c00000 x38000000 1 0 1}}}
+        {{{x443a3c10 0 1 xc0ad4f46 1}
+       {x44304e30 -}
+       {x44428000 x412e4b20 1 x412e4b20 1}
+       {x4471aa5c x4181f44f 1 x4181f44f 1}
+       {x44774b40 x40e4bcdb 1 x40e4bcdb 1}
+       {x44855782 -}
+       {x445ecdb0 xc18bf58c 1 xc18bf58c 1}
+       {x4444b43e xc118e047 1 xc118e047 1}
+       {x44316b1b -}
+       {x445e2c08 x408947cd 1 x408947cd 1}
+       {x4461bf3c -}
+       {x4459f26f -}
+       {x445c2625 -}
+       {x445c38d8 xbf13b500 1 0 1}}
+      {{x44a41a1e 0 1 xc1555819 1}
+       {x449395f8 xc115e0a0 1 xc115e0a0 1}
+       {x44880000 xc0c7dcd5 1 xc0c7dcd5 1}
+       {x 2
+        {x4480d944 -}}
+       {x4480d635 xbcc3c000 1 xbcc3c000 1}
+       {x44754e3e -}
+       {x447f782c x400d0f80 1 x400d0f80 1}
+       {x4480d635 -}
+       {x447dcd9a xc0444f5d 1 xc0444f5d 1}
+       {x4470cd98 xc01c0060 1 xc01c0060 1}
+       {x446d8d96 xbf3ce0ab 1 xbf3ce0ab 1}
+       {x446fa056 -}
+       {x446f80ca x40481d80 1 0 1}}}
+        {{{x42300000 -}}
+      {{xc2c00000 -}}}
+        {{{xc2280000 -}}
+      {{x42500000 -}}}
+        {{{x44573c10 0 1 xc0ad4f46 1}
+       {x444d4e30 -}
+       {x445f8000 x412e4b20 1 x412e4b20 1}
+       {x4487552e x4181f44f 1 x4181f44f 1}
+       {x448a25a0 x40e4bcdb 1 x40e4bcdb 1}
+       {x4493d782 -}
+       {x447bcdb0 xc18bf58c 1 xc18bf58c 1}
+       {x4461b43e xc118e047 1 xc118e047 1}
+       {x444e6b1b -}
+       {x447b2c08 x408947cd 1 x408947cd 1}
+       {x447ebf3c -}
+       {x4476f26f -}
+       {x44792625 -}
+       {x447938d8 xbf13b500 1 0 1}}
+      {{x44829a1e 0 1 xc1555821 1}
+       {x44642bef xc115e0a0 1 xc115e0a0 1}
+       {x444d0000 xc0c7dcd5 1 xc0c7dcd5 1}
+       {x443eb287 xbd3ac000 1 xbd3ac000 1}
+       {x443eb095 xbbdfb6db 1 xbbdfb6db 1}
+       {x443eac69 xbc858000 1 xbc858000 1}
+       {x44324f13 -}
+       {x443c782b x400d0f80 1 x400d0f80 1}
+       {x443eac69 -}
+       {x443acd99 xc0444f5d 1 xc0444f5d 1}
+       {x442dcd97 xc01c0060 1 xc01c0060 1}
+       {x442a8d95 xbf3ce0d5 1 xbf3ce0d5 1}
+       {x442ca054 -}
+       {x442c80c9 x40481dc0 1 0 1}}}
+        {{{x42280000 -}}
+      {{xc2500000 -}}}
+        {{{x 2
+        {xc2400020 -}}
+       {x 12
+        {xc2400000 -}}}
+      {{x41600000 -}}}
+        {{{x44821e09 0 1 xc0ad4f46 1}
+       {x447a4e32 -}
+       {x44864000 x412e4b15 1 x412e4b15 1}
+       {x449dd52d x4181f44a 1 x4181f44a 1}
+       {x44a0a59f x40e4bcee 1 x40e4bcee 1}
+       {x44aa5782 -}
+       {x449466d8 xc18bf58c 1 xc18bf58c 1}
+       {x44875a1f xc118e047 1 xc118e047 1}
+       {x447b6b1b -}
+       {x44941604 x408947cd 1 x408947cd 1}
+       {x4495df9e -}
+       {x4491f937 -}
+       {x44931312 -}
+       {x44931c6c xbf13b400 1 0 1}}
+      {{x445eb43b 0 1 xc155581a 1}
+       {x443dabef xc115e09d 1 xc115e09d 1}
+       {x44268000 xc0c7dcd5 1 xc0c7dcd5 1}
+       {x44183287 xbd3ac000 1 xbd3ac000 1}
+       {x44183095 xbbdfb6db 1 xbbdfb6db 1}
+       {x44182c69 xbc858000 1 xbc858000 1}
+       {x440bcf13 -}
+       {x4415f82b x400d0f80 1 x400d0f80 1}
+       {x44182c69 -}
+       {x44144d99 xc0444f5d 1 xc0444f5d 1}
+       {x44074d97 xc01c0060 1 xc01c0060 1}
+       {x44040d95 xbf3ce0d5 1 xbf3ce0d5 1}
+       {x44062054 -}
+       {x440600c9 x40481dc0 1 0 1}}}
+        {{{x42400000 -}}
+      {{xc1600000 -}}}
+        {{{xc1f00000 -}}
+      {{xc2780000 -}}}
+        {{{x44915e09 0 1 xc0ad4f46 1}
+       {x448c6719 -}
+       {x44958000 x412e4b15 1 x412e4b15 1}
+       {x44ad152d x4181f44a 1 x4181f44a 1}
+       {x44afe59f x40e4bcee 1 x40e4bcee 1}
+       {x44b99782 -}
+       {x44a3a6d8 xc18bf58c 1 xc18bf58c 1}
+       {x44969a1f xc118e043 1 xc118e043 1}
+       {x448cf58e -}
+       {x44a35604 x408947cd 1 x408947cd 1}
+       {x44a51f9e -}
+       {x44a13937 -}
+       {x44a25312 -}
+       {x44a25c6c xbf13b400 1 0 1}}
+      {{x445a343b 0 1 xc155581a 1}
+       {x44392bef xc115e09d 1 xc115e09d 1}
+       {x44220000 xc0c7dcd5 1 xc0c7dcd5 1}
+       {x4413b287 xbd3ac000 1 xbd3ac000 1}
+       {x4413b095 xbbdfb6db 1 xbbdfb6db 1}
+       {x4413ac69 xbc858000 1 xbc858000 1}
+       {x44074f13 -}
+       {x4411782b x400d0f80 1 x400d0f80 1}
+       {x4413ac69 -}
+       {x440fcd99 xc0444f5d 1 xc0444f5d 1}
+       {x4402cd97 xc01c0060 1 xc01c0060 1}
+       {x43ff1b2a xbf3ce0c0 1 xbf3ce0c0 1}
+       {x4401a054 -}
+       {x440180c9 x40481da0 1 0 1}}}
+        {{{x41f00000 -}}
+      {{x42780000 -}}}
+        {{{xc1000000 -}}
+      {{xc2cc0000 -}}}
+        {{{x449ede09 0 1 xc0ad4f46 1}
+       {x4499e719 -}
+       {x44a30000 x413587c5 1 x413587c5 1}
+       {x44bbf08e x418a1f71 1 x418a1f71 1}
+       {x44bf0e63 x410430ae 1 x410430ae 1}
+       {x44ca65e1 -}
+       {x44b47536 xc18bf58c 1 xc18bf58c 1}
+       {x44a7687e xc118e03d 1 xc118e03d 1}
+       {x449dc3ed -}
+       {x44b42464 x408947cd 1 x408947cd 1}
+       {x44b5edfe -}
+       {x44b20797 -}
+       {x44b32172 -}
+       {x44b32acc xbf13b400 1 0 1}}
+      {{x44891a1e 0 1 xc1515b01 1}
+       {x4471a0f0 xc115e0a0 1 xc115e0a0 1}
+       {x445a0000 xc0ddeff0 1 xc0ddeff0 1}
+       {x444803f3 xc0bf5d00 1 xc0bf5d00 1}
+       {x4446908e xbf94576e 1 xbf94576e 1}
+       {x4443f58f xc026bfc0 1 xc026bfc0 1}
+       {x44374e45 -}
+       {x4441c151 x400d0f80 1 x400d0f80 1}
+       {x4443f58f -}
+       {x444016bf xc0444f5d 1 xc0444f5d 1}
+       {x443316bd xc01c0060 1 xc01c0060 1}
+       {x442fd6bb xbf3ce0d5 1 xbf3ce0d5 1}
+       {x4431e97a -}
+       {x4431c9ef x40481dc0 1 0 1}}}
+        {{{x41000000 -}}
+      {{x42cc0000 -}}}
+        {{{x40000000 -}}
+      {{xc2dc0000 -}}}
+        {{{x44a3de09 0 1 xc0ad4f46 1}
+       {x449ee719 -}
+       {x44a80000 x413e939b 1 x413e939b 1}
+       {x44c2a2c6 x4194555e 1 x4194555e 1}
+       {x44c62157 x411a7765 1 x411a7765 1}
+       {x44d387d5 -}
+       {x44bd972a xc18bf58c 1 xc18bf58c 1}
+       {x44b08a72 xc118e03d 1 xc118e03d 1}
+       {x44a6e5e1 -}
+       {x44bd4658 x408947cd 1 x408947cd 1}
+       {x44bf0ff2 -}
+       {x44bb298b -}
+       {x44bc4366 -}
+       {x44bc4cc0 xbf13b400 1 0 1}}
+      {{x44bc5a1e 0 1 xc14d5647 1}
+       {x44ac4b68 xc115e0a0 1 xc115e0a0 1}
+       {x44a04000 xc0f42d00 1 xc0f42d00 1}
+       {x44956730 xc0ea6462 1 xc0ea6462 1}
+       {x449458e7 xc01367b7 1 xc01367b7 1}
+       {x44915f5a xc06549e8 1 xc06549e8 1}
+       {x448af15f -}
+       {x4490453b x400d0f80 1 x400d0f80 1}
+       {x44915f5a -}
+       {x448f6ff2 xc0444f74 1 xc0444f74 1}
+       {x4488eff0 xc01c0060 1 xc01c0060 1}
+       {x44874fef xbf3ce0ab 1 xbf3ce0ab 1}
+       {x4488594f -}
+       {x44884989 x40481d80 1 0 1}}}
+        {{{xc0000000 -}}
+      {{x42dc0000 -}}}
+        {{{x 4
+        {x41f00000 -}}
+       {x40fc5fa6 -}
+       {x 5
+        {x41f00000 -}}
+       {x 2
+        {xbfd7cdae -}}
+       {xbfd7cb6d x374fb6db 1 x374fb6db 1}
+       {xbfd7c800 x37a75249 1 0 1}}
+      {{x 4
+        {xc2dc0000 -}}
+       {xc3137936 -}
+       {x 5
+        {xc2dc0000 -}}
+       {x 4
+        {xc2ee608d -}}}}
+        {{{x44a09e09 0 1 xc0ad4f46 1}
+       {x449ba719 -}
+       {x44a4c000 x4145d04b 1 x4145d04b 1}
+       {x44c0be27 x419d4d54 1 x419d4d54 1}
+       {x44c4b3b5 x412c499b 1 x412c499b 1}
+       {x44d39634 -}
+       {x44bda58a xc18bf58c 1 xc18bf58c 1}
+       {x44b098d1 xc118e043 1 xc118e043 1}
+       {x44a6f440 -}
+       {x44bd54b6 x4139f95d 1 x4139f95d 1}
+       {x44c6eb1c -}
+       {x44c304b5 -}
+       {x44c41e90 -}
+       {x44c427ea xbf13b400 1 0 1}}
+      {{x44e89a1e 0 1 xc1503524 1}
+       {x44d8614e xc115e0a0 1 xc115e0a0 1}
+       {x44cc8000 xc0e44a80 1 xc0e44a80 1}
+       {x44c2fa52 xc0c08280 1 xc0c08280 1}
+       {x44c279fb xbfbe3092 1 xbfbe3092 1}
+       {x44c060a8 xc04e9eab 1 xc04e9eab 1}
+       {x44ba0079 -}
+       {x44bf4689 x400d0f80 1 x400d0f80 1}
+       {x44c060a8 -}
+       {x44be7140 xbfb4d6e9 1 xbfb4d6e9 1}
+       {x44bc7e0a xbf8ccd62 1 xbf8ccd62 1}
+       {x44bade09 xbf3ce0ab 1 xbf3ce0ab 1}
+       {x44bbe769 -}
+       {x44bbd7a3 x40481d80 1 0 1}}}
+        {{{x 4
+        {xc1f00000 -}}
+       {xc0fc5ff9 -}
+       {x 5
+        {xc1f00000 -}}
+       {x 4
+        {x3fd7c800 -}}}
+      {{x 4
+        {x42dc0000 -}}
+       {x43137936 -}
+       {x 5
+        {x42dc0000 -}}
+       {x 4
+        {x42ee608d -}}}}
+        {{{x42000000 -}}
+      {{xc2a80000 -}}}
+        {{{x44981e09 0 1 xc0ad4f46 1}
+       {x44932719 -}
+       {x449c4000 x415b864b 1 x415b864b 1}
+       {x44bc5047 x41b501ec 1 x41b501ec 1}
+       {x44c10464 x4161c040 1 x4161c040 1}
+       {x44d5014e -}
+       {x44bf10a4 xc18bf58c 1 xc18bf58c 1}
+       {x44b203eb xc118e043 1 xc118e043 1}
+       {x44a85f5a -}
+       {x44bebfd0 x408947cd 1 x408947cd 1}
+       {x44c0896a -}
+       {x44bca303 -}
+       {x44bdbcde -}
+       {x44bdc638 xbf13b400 1 0 1}}
+      {{x45078d0f 0 1 xc190dcfb 1}
+       {x44fa35b2 xc115e0a0 1 xc115e0a0 1}
+       {x44f30000 -}
+       {x44f3705a x3f16b800 1 x3f16b800 1}
+       {x44f3f4eb x4061c500 1 x4061c500 1}
+       {x44f99cbd -}
+       {x44f36ef8 -}
+       {x44f8829e x400d0f80 1 x400d0f80 1}
+       {x44f99cbd -}
+       {x44f7ad55 xc0444f5d 1 xc0444f5d 1}
+       {x44f12d54 xc01c0060 1 xc01c0060 1}
+       {x44ef8d53 xbf3ce0ab 1 xbf3ce0ab 1}
+       {x44f096b3 -}
+       {x44f086ed x40481d80 1 0 1}}}
+        {{{xc2000000 -}}
+      {{x 7
+        {x42a80000 -}}
+       {x42a7ffe0 -}
+       {x 2
+        {x42a7fff0 -}}
+       {x 4
+        {x42a7ffe0 -}}}}
+        {{{x429c0000 -}}
+      {{x 5
+        {xc2a00000 -}}
+       {xc2a00010 -}
+       {x 8
+        {xc2a00000 -}}}}
+        {{{x448e5e09 0 1 xc0ad4f46 1}
+       {x44896719 -}
+       {x44928000 x4145d045 1 x4145d045 1}
+       {x44ae7e26 x419c8080 1 x419c8080 1}
+       {x44b24a1a x412c499b 1 x412c499b 1}
+       {x44c15633 -}
+       {x44ab6588 xc18bf58c 1 xc18bf58c 1}
+       {x449e58d0 xc118e03d 1 xc118e03d 1}
+       {x4494b43f -}
+       {x44ab14b6 x408947cd 1 x408947cd 1}
+       {x44acde50 -}
+       {x44a8f7e9 -}
+       {x44aa11c4 -}
+       {x44aa1b1e xbf13b400 1 0 1}}
+      {{x45154d0f 0 1 xc190dcfb 1}
+       {x450adad9 xc115e0a0 1 xc115e0a0 1}
+       {x45074000 -}
+       {x4508b69c x4025ddd9 1 x4025ddd9 1}
+       {x45095b11 x40b23a92 1 x40b23a92 1}
+       {x450d9636 -}
+       {x450a7f53 -}
+       {x450d0926 x400d1000 1 x400d1000 1}
+       {x450d9636 -}
+       {x450c9e82 xc0444f74 1 xc0444f74 1}
+       {x45095e81 xc01c00c0 1 xc01c00c0 1}
+       {x45088e80 xbf3ce0ab 1 xbf3ce0ab 1}
+       {x45091330 -}
+       {x45090b4d x40481d00 1 0 1}}}
+        {{{xc29c0000 -}}
+      {{x42a00000 -}}}}}     idem}
+     {tx x44802000 x44840555 x44b12555}
+     {a osw x41200000 osf 0 str 1 spx x4486c000 spy x4461c000 sb 1 ltn x44802000 ltm x44802000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1078 903}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1025
+ lifetime_end 1025
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto2
+ selected true
+ xpos 10704
+ ypos 5222
+}
+Blur {
+ size 100
+ name Blur2
+ selected true
+ xpos 10704
+ ypos 5267
+}
+push $cut_paste_input
+Dot {
+ name Dot260
+ note_font "bold Bold Bold Bold Bold Bold Bold"
+ note_font_size 40
+ selected true
+ xpos 11373
+ ypos 4880
+}
+set N29c5d090 [stack 0]
+Grade {
+ whitepoint {0.8833566308 0.9636536837 1 1}
+ white {0.3715876639 0.6065876484 1.02158761 0}
+ gamma {0.8500000238 0.8500000238 0.8500000238 0.8999999762}
+ invert_mask true
+ mix 0.95
+ name Grade1
+ label "\[value mix]"
+ selected true
+ xpos 11339
+ ypos 5026
+}
+Dot {
+ name Dot261
+ note_font "bold Bold Bold Bold Bold Bold Bold Bold"
+ note_font_size 40
+ selected true
+ xpos 11373
+ ypos 5072
+}
+set N29c72a90 [stack 0]
+Colorspace {
+ colorspace_out HSV
+ name Colorspace3
+ selected true
+ xpos 11110
+ ypos 5068
+}
+Expression {
+ expr0 r-b
+ expr1 r-b
+ expr2 r-b
+ expr3 r-b
+ name Expression6
+ selected true
+ xpos 11110
+ ypos 5095
+}
+Grade {
+ channels rgba
+ whitepoint {0.4034000635 0.4034000635 0.4034000635 0.4034000635}
+ white_clamp true
+ name Grade64
+ selected true
+ xpos 11110
+ ypos 5121
+}
+set N29c9e830 [stack 0]
+ChannelMerge {
+ inputs 2
+ operation min
+ name ChannelMerge8
+ selected true
+ xpos 10829
+ ypos 5261
+}
+push $N29c9e830
+push $N29c5d090
+Dot {
+ name Dot262
+ selected true
+ xpos 10938
+ ypos 4880
+}
+Keyer {
+ invert true
+ operation redscreen
+ range {0.983000505 1.0085 1 1}
+ name Keyer10
+ selected true
+ xpos 10904
+ ypos 5086
+}
+Dot {
+ name Dot263
+ selected true
+ xpos 10938
+ ypos 5157
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ mix 0.5
+ name Merge29
+ label "mix: \[value mix]"
+ selected true
+ xpos 11110
+ ypos 5147
+}
+Blur {
+ size 39.5
+ name Blur3
+ selected true
+ xpos 11110
+ ypos 5185
+}
+Dot {
+ name Dot8
+ selected true
+ xpos 11144
+ ypos 5238
+}
+set N29cdf380 [stack 0]
+Dot {
+ name Dot7
+ selected true
+ xpos 11477
+ ypos 5238
+}
+Merge2 {
+ inputs 2
+ operation plus
+ mix 0.97
+ name Plus
+ selected true
+ xpos 11443
+ ypos 5273
+}
+Dot {
+ name Dot10
+ selected true
+ xpos 11477
+ ypos 5310
+}
+set N29dc5310 [stack 0]
+Dot {
+ name Dot9
+ selected true
+ xpos 11741
+ ypos 5320
+}
+push $N29cdf380
+Dot {
+ name Dot264
+ selected true
+ xpos 11144
+ ypos 5379
+}
+push $N29c72a90
+Grade {
+ inputs 1+1
+ whitepoint {0.05305855721 0.06028250605 0.1007068083 0}
+ white {0.1083645895 0.0833646059 0.07836458832 1}
+ gamma {0.9703459144 0.9950576425 1 1}
+ mix 0.5
+ name Grade2
+ selected true
+ xpos 11338
+ ypos 5375
+}
+dnColorCorrect {
+ exposure 0.3
+ name dnColorCorrect1
+ selected true
+ xpos 11338
+ ypos 5401
+}
+HueCorrect {
+ hue {sat {curve 1 0.6333333254 1 1 1 1 1}
+   lum {}
+   red {}
+   green {}
+   blue {}
+   r_sup {}
+   g_sup {curve 1 1 1 1 0.8412934542 1 1}
+   b_sup {}
+   sat_thrsh {}}
+ name HueCorrect5
+ label "\[value mix]"
+ selected true
+ xpos 11338
+ ypos 5443
+}
+push $N29dc5310
+push $N29dc5310
+push $N29dc5310
+push $N29c5d090
+Dot {
+ name Dot11
+ selected true
+ xpos 11647
+ ypos 4880
+}
+Grade {
+ white 0.9
+ name Grade12
+ selected true
+ xpos 11613
+ ypos 5195
+}
+HueCorrect {
+ inputs 1+1
+ hue {sat {curve 1 1 1 x4 2.231343269 1}
+   lum {}
+   red {curve 1 x3.387037277 0.6990050077 x6 1}
+   green {curve 1 1 x4.364815235 0.7154228687 x6 1}
+   blue {curve 1 x3.99814868 1.284577131 x6 1}
+   r_sup {}
+   g_sup {}
+   b_sup {}
+   sat_thrsh {}}
+ invert_mask true
+ name HueCorrect6
+ label "\[value mix]"
+ selected true
+ xpos 11613
+ ypos 5300
+}
+Grade {
+ inputs 1+1
+ multiply {0.758904 1.006428 1.358904 1}
+ multiply_panelDropped true
+ name Grade14
+ selected true
+ xpos 11613
+ ypos 5367
+}
+HueCorrect {
+ inputs 1+1
+ hue {sat {curve 0.6661692858 x0.9425926805 0.3706468344 x3 1 x4 1 0.8850746155 0.6661692858 s-0.2003050297 t0}
+   lum {}
+   red {}
+   green {}
+   blue {}
+   r_sup {}
+   g_sup {}
+   b_sup {}
+   sat_thrsh {}}
+ name HueCorrect7
+ label "\[value mix]"
+ selected true
+ xpos 11613
+ ypos 5427
+}
+Dot {
+ name Dot5
+ selected true
+ xpos 11647
+ ypos 5540
+}
+Dissolve {
+ inputs 2
+ which 0.5
+ name Dissolve1
+ selected true
+ xpos 11488
+ ypos 5530
+}
