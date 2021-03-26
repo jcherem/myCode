@@ -1,0 +1,249 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push 0
+push $cut_paste_input
+Group {
+ inputs 2
+ name EH_DynamicDespill1
+ help "A simple expression based spill corrector that is enabled to use\nbackground luminance values if plugged in. Similar to the spill suppression\nin IBK Gizmo.\n\nAny questions contact cameron.a.carson@gmail.com"
+ knobChanged "nuke.thisNode()\['rgbWeight'].setVisible(nuke.thisNode()\['\nspillOp'].value()=='Average')\nnuke.thisNode()\['blgrtext'].\nsetVisible(nuke.thisNode()\['spillOp'].value()=='Average')"
+ tile_color 0x6aff55ff
+ selected true
+ xpos -2913
+ ypos 3420
+ addUserKnob {20 Main}
+ addUserKnob {4 use l Use M {Background "Luma Fill CC" ""}}
+ use "Luma Fill CC"
+ addUserKnob {4 spillType l "Spill Type" t "Select spill type to remove" M {Green Blue ""}}
+ addUserKnob {4 spillOp l "Spill Operation" t "Select the type of spill\noperation to perform" M {Average Max "Red Limit" "Blue/Green Limit" ""}}
+ addUserKnob {7 rgbWeight l "Red Weight" t "Adjust weight to favor one\ncolor or other." R -1 1}
+ rgbWeight -0.1
+ addUserKnob {26 blgrtext l "Blue/Green Weight" -STARTLINE T " "}
+ addUserKnob {26 unnamed_1 l "" +STARTLINE T " "}
+ addUserKnob {7 opMult l "Operation Multiplier" t "This limiting channels\nare multiplied by this value." R 0 2}
+ opMult 1
+ addUserKnob {26 unnamed l "" +STARTLINE T " "}
+ addUserKnob {6 lumaRest l "Luma Match" t "Check to Restore Lumanance to BG\nor Original" +STARTLINE}
+ lumaRest true
+ addUserKnob {7 bgBlur l "BG PreBlur" t "Adjust to level of BG Blur\nDesired." R 0 50}
+ bgBlur 20
+ addUserKnob {26 unnamed_2 l "" +STARTLINE T " "}
+ addUserKnob {20 spillCC l "Luma Fill CC" n 1}
+ addUserKnob {18 blackCC l Blacks t "Lifts Blacks" R -1 1}
+ blackCC {0 0 0}
+ addUserKnob {6 blackCC_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {18 whiteCC l Whites t "Gains Whites" R 0 4}
+ whiteCC {0.5807133317 0.7307133675 0.9607133269}
+ addUserKnob {6 whiteCC_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {18 gammaCC l Gamma t Gamma R 0 4}
+ gammaCC 1
+ addUserKnob {6 gammaCC_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 unnnamed l "" +STARTLINE T " "}
+}
+ Input {
+  inputs 0
+  name BG
+  xpos 211
+  ypos -205
+  number 1
+ }
+ Blur {
+  size {{bgBlur}}
+  name Blur1
+  xpos 211
+  ypos 185
+ }
+ Input {
+  inputs 0
+  name FG
+  xpos 0
+  ypos -200
+ }
+ Dot {
+  name Dot1
+  xpos 34
+  ypos -160
+ }
+set N3109abd0 [stack 0]
+ Dot {
+  name Dot3
+  xpos 140
+  ypos -160
+ }
+ Dot {
+  name Dot2
+  xpos 140
+  ypos 4
+ }
+set N310a4030 [stack 0]
+ Dot {
+  name Dot4
+  xpos 140
+  ypos 85
+ }
+set N310a8b60 [stack 0]
+push $N310a4030
+push $N3109abd0
+ Expression {
+  temp_name0 rw
+  temp_expr0 r*(1-rgbWeight)
+  temp_name1 gw
+  temp_expr1 g*(1+rgbWeight)
+  temp_name2 bw
+  temp_expr2 b*(1+rgbWeight)
+  expr0 r>(gw+bw)/2*opMult?(gw+bw)/2*opMult:r
+  expr1 g>(bw+rw)/2*opMult?(bw+rw)/2*opMult:g
+  expr2 b>(rw+gw)/2*opMult?(rw+gw)/2*opMult:b
+  name Average_Op
+  xpos 0
+  ypos -122
+  disable {{"spillOp != 0" x1 1}}
+ }
+ Expression {
+  temp_name0 lm
+  temp_expr0 "spillOp == 2 ? r : spillType == 0 ? b : g"
+  expr0 r>lm*opMult?lm*opMult:r
+  expr1 g>lm*opMult?lm*opMult:g
+  expr2 b>lm*opMult?lm*opMult:b
+  name Limit_Op
+  xpos 0
+  ypos -86
+  disable {{"spillOp < 2 "}}
+ }
+ Expression {
+  temp_name0 gb
+  temp_expr0 (g>b?g:b)
+  temp_name1 rb
+  temp_expr1 (r>b?r:b)
+  temp_name2 rg
+  temp_expr2 (r>g?r:g)
+  expr0 r>gb*opMult?gb*opMult:r
+  expr1 g>rb*opMult?rb*opMult:g
+  expr2 b>rg*opMult?rg*opMult:b
+  name Max_Op
+  xpos 0
+  ypos -42
+  disable {{"spillOp != 1"}}
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  blue blue
+  alpha alpha2
+  name Copy_RedBlue
+  xpos 0
+  ypos -6
+  disable {{"spillType != 0" x1339 1}}
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  alpha alpha2
+  name Copy_RedGreen
+  xpos 0
+  ypos 75
+  disable {{"spillType != 1"}}
+ }
+ Dot {
+  name Dot6
+  xpos 34
+  ypos 194
+ }
+set N310f5e30 [stack 0]
+push $N310a8b60
+ Merge2 {
+  inputs 2
+  operation from
+  name Merge3
+  xpos 106
+  ypos 190
+ }
+ Clamp {
+  name Clamp2
+  xpos 106
+  ypos 233
+ }
+ Saturation {
+  saturation 0
+  mode Maximum
+  name Saturation2
+  xpos 106
+  ypos 281
+ }
+ Grade {
+  black {{blackCC} {blackCC} {blackCC} {blackCC}}
+  white {{whiteCC} {whiteCC} {whiteCC} {whiteCC}}
+  gamma {{gammaCC x14 1.22}}
+  name Grade1
+  xpos 106
+  ypos 325
+ }
+ Dot {
+  name Dot5
+  xpos 140
+  ypos 361
+ }
+set N31136610 [stack 0]
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge2
+  label "!\[exists parent.input1]"
+  xpos 211
+  ypos 351
+  disable {{parent.use}}
+ }
+ Dot {
+  name Dot7
+  xpos 245
+  ypos 484
+ }
+push $N31136610
+ Dot {
+  name Dot8
+  xpos 140
+  ypos 414
+ }
+push $N310f5e30
+add_layer {SpillMap SpillMap.red SpillMap.green SpillMap.blue SpillMap.alpha}
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha red
+  out SpillMap
+  name ShuffleCopy1
+  xpos 0
+  ypos 404
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos 0
+  ypos 480
+  disable {{"lumaRest != 1" x1 1}}
+ }
+set N31162af0 [stack 0]
+ Output {
+  name Output1
+  xpos 0
+  ypos 593
+ }
+push $N31162af0
+ Viewer {
+  frame_range 1001-1142
+  frame_increment 8
+  overscan 300
+  center_fstop 0
+  viewerProcess Film
+  input_process false
+  far 100000
+  name Viewer1
+  xpos 245
+  ypos 553
+ }
+end_group
