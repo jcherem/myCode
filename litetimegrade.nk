@@ -1,0 +1,10 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Grade {
+ name Grade33
+ label "\[value lifetimeStart]-\[value lifetimeEnd]"
+ selected true
+ xpos 8600
+ ypos 12311
+}
