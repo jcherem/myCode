@@ -1,0 +1,298 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Group {
+ name EdgeMatte4
+ tile_color 0x272727ff
+ selected true
+ xpos 33880
+ ypos 6398
+ addUserKnob {20 edgeMatte}
+ addUserKnob {7 DialateOutside_Slider l "outside matte size:  " t "Drag the slider to grow/shrink the outside matte." R 0 100}
+ DialateOutside_Slider 20
+ addUserKnob {6 offOutsideMatteSize l on/off t "tur off outside matte alteration\n" -STARTLINE}
+ addUserKnob {7 ErodeInside_Slider l "inside matte size:    " t "Drag the slider to grow/shrink the inside matte." R 0 100}
+ ErodeInside_Slider 20
+ addUserKnob {6 offInsideMatteSize l on/off t "tur off inside matte alteration\n" -STARTLINE}
+ addUserKnob {26 divline0 l "" +STARTLINE}
+ addUserKnob {7 BlurOutside_Slider l "blur outside matte:  " t "Drag the slider to blur the outside matte." R 0 100}
+ addUserKnob {6 offBlurOutside l on/off t "turn off outside matte blur" -STARTLINE}
+ addUserKnob {7 BlurInside_Slider l "blur inside matte:    " t "Drag the slider to blur the inside matte." R 0 100}
+ addUserKnob {6 offBlurInside l on/off t "turn off inside matte blur" -STARTLINE}
+ addUserKnob {26 divline1 l "" +STARTLINE}
+ addUserKnob {7 OverallBlur_Slider l "overall matte blur:   " t "Drag the slider to add overall blur to the edge matte." R 0 100}
+ OverallBlur_Slider 15
+ addUserKnob {26 divline3 l "" +STARTLINE}
+ addUserKnob {6 invertMask l "invert mask" t "Click this to invert the mask input.\n____________________________<br />\nInvert mask is only applied to the mask input of this node and will not affect the alpha-input." +STARTLINE}
+ addUserKnob {26 divline4 l "" +STARTLINE}
+ addUserKnob {6 viewMatte l "preview edgeMatte" t "Check this box to get a overlay of the edgeMatte on top of your input.\n\nThis can be useful if you are using an alpha input that also has RGB channels (when keying for example). This way you can view the edge-matte while addjusting it, to easier get the results you need.\n\n_______________________________________________ \nPS: This is only for preview purposes. Best practises is to turn off the preview mode when using the edgeMatte for compositing tasks." +STARTLINE}
+ addUserKnob {7 previewOpacity l "        preview opacity: " t "Drag the slider to set the opacity of the preview overlay." -STARTLINE}
+ previewOpacity 0.3
+ addUserKnob {4 previewColor l "       preview color:  " t "Pick the overlay color to use when 'preview edgeMatte' is checked." -STARTLINE M {red green blue ""}}
+ addUserKnob {26 divline5 l "" +STARTLINE}
+ addUserKnob {26 info l "" +STARTLINE T "<font color=\"#838383\">This tool creates an edge matte based on the alpha input.<br />\nIncrease the slider values to grow/shrink the matte, and blur the edges if needed.<br />\nPS: This node only outputs an alpha channel. RGB is only preserved in preview mode.\n</font>"}
+ addUserKnob {26 divline6 l "" +STARTLINE}
+ addUserKnob {26 copyright l "" +STARTLINE T "<font color=\"#494949\">// edgeMatte v1.0 © Tor Andreassen - www.fxtor.net\n</font>"}
+}
+ BackdropNode {
+  inputs 0
+  name "preview edgematte over RGB"
+  tile_color 0x44444401
+  gl_color 0x44444401
+  label "preview edgematte"
+  note_font "Arial Black"
+  note_font_size 20
+  xpos -1092
+  ypos 1415
+  bookmark false
+  bdwidth 1665
+  bdheight 897
+ }
+ BackdropNode {
+  inputs 0
+  name "remove inverted matte if mask is used"
+  tile_color 0x44444401
+  gl_color 0x44444401
+  label "remove inverted matte if mask is used"
+  note_font "Arial Black"
+  note_font_size 20
+  xpos -1093
+  ypos 972
+  bookmark false
+  bdwidth 1665
+  bdheight 424
+ }
+ Input {
+  inputs 0
+  name mask
+  label "\[value number]"
+  xpos -976
+  ypos 1064
+  number 1
+ }
+ Invert {
+  name InvertMask
+  xpos -976
+  ypos 1162
+  disable {{!(parent.invertMask)}}
+ }
+ Invert {
+  channels alpha
+  name Invert1
+  xpos -976
+  ypos 1253
+ }
+ Erode {
+  name Erode1
+  label "kill visable pixels on the edge of the inverted matte"
+  xpos -976
+  ypos 1305
+ }
+ Input {
+  inputs 0
+  name alpha
+  label "\[value number]"
+  xpos -526
+  ypos 70
+ }
+set N66926370 [stack 0]
+ Remove {
+  channels rgb
+  name Remove1
+  label "kill RGB channels"
+  xpos -526
+  ypos 288
+ }
+ Dot {
+  name Dot6
+  tile_color 0x494949ff
+  xpos -492
+  ypos 509
+ }
+set N66933660 [stack 0]
+ Dot {
+  name Dot3
+  xpos -315
+  ypos 509
+ }
+ Erode {
+  size {{(ErodeInside_Slider)-1}}
+  name ErodeInside
+  xpos -349
+  ypos 592
+  disable {{this.parent.offInsideMatteSize}}
+ }
+ Blur {
+  size {{(BlurInside_Slider)+(OverallBlur_Slider)}}
+  name BlurInside
+  xpos -349
+  ypos 650
+  disable {{this.parent.offBlurInside}}
+ }
+ Dot {
+  name Dot7
+  xpos -315
+  ypos 777
+ }
+push $N66933660
+ Dot {
+  name Dot2
+  xpos -670
+  ypos 509
+ }
+ Dilate {
+  size {{parent.DialateOutside_Slider}}
+  name DialateOutside
+  xpos -704
+  ypos 594
+  disable {{this.parent.offOutsideMatteSize}}
+ }
+ Blur {
+  size {{(BlurOutside_Slider)+(OverallBlur_Slider)}}
+  name BlurOutside
+  xpos -704
+  ypos 646
+  disable {{this.parent.offBlurOutside}}
+ }
+ Dot {
+  name Dot9
+  xpos -670
+  ypos 777
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  name Merge1
+  xpos -526
+  ypos 773
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  name Merge2
+  label "autoCheck: removes inverted matte if custom mask exists"
+  xpos -526
+  ypos 1312
+  disable {{"!\[exists parent.input1.label]"}}
+ }
+ Dot {
+  name darkDot
+  tile_color 0x1a1a1aff
+  xpos -492
+  ypos 1781
+ }
+set N36338a80 [stack 0]
+ Dot {
+  name Dot8
+  xpos -492
+  ypos 2011
+ }
+set N3633d500 [stack 0]
+ Dot {
+  name Dot10
+  label "\n\ninclude edgeMatte alpha channel in preview mode"
+  xpos -24
+  ypos 2011
+ }
+push $N36338a80
+ Multiply {
+  channels alpha
+  value {{parent.previewOpacity}}
+  name MultiplyOverlay
+  xpos -190
+  ypos 1771
+ }
+ Constant {
+  inputs 0
+  channels {-rgba.red -rgba.green rgba.blue none}
+  color 1
+  name Constant3
+  label blue
+  xpos 148
+  ypos 1515
+ }
+ Constant {
+  inputs 0
+  channels {-rgba.red rgba.green -rgba.blue none}
+  color 1
+  name Constant2
+  label green
+  xpos 44
+  ypos 1519
+ }
+ Constant {
+  inputs 0
+  channels {rgba.red -rgba.green -rgba.blue none}
+  color 1
+  name Constant1
+  xpos -76
+  ypos 1519
+ }
+ Switch {
+  inputs 3
+  which {{previewColor}}
+  name SwitchOverlay
+  tile_color 0x272727ff
+  xpos 44
+  ypos 1666
+ }
+ Crop {
+  box {0 0 {alpha.width()} {alpha.height()}}
+  reformat true
+  crop false
+  name AutoReformat2
+  xpos 44
+  ypos 1712
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 44
+  ypos 1771
+ }
+ Premult {
+  name Premult1
+  xpos 44
+  ypos 1818
+ }
+push $N66926370
+ Dot {
+  name Dot1
+  xpos 411
+  ypos 80
+ }
+ Merge2 {
+  inputs 2
+  name Merge3
+  xpos 377
+  ypos 1818
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos 377
+  ypos 2001
+ }
+ Dot {
+  name Dot4
+  xpos 411
+  ypos 2132
+ }
+push $N3633d500
+ Switch {
+  inputs 2
+  which {{parent.viewMatte}}
+  name previewMatte
+  xpos -526
+  ypos 2128
+ }
+ Output {
+  name Output1
+  xpos -526
+  ypos 2671
+ }
+end_group
