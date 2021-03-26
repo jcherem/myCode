@@ -1,0 +1,420 @@
+set cut_paste_input [stack 0]
+version 11.3 v4
+push $cut_paste_input
+Group {
+name RealLensHaze2
+help "This tool adds an overall glow (haze) to an image based on the luminace of things.\nIt is based on a real effect taking place in a glass lens.\nFor proof of concept it can also be used to remove the effect off a plate.\nThis is to be used to help integrating CG elements into plates or make full CG shots look more photographic.\n\nOriginally developed by Marian in 2009 (c)\nAdjusted and improved by keith,jon and lev in 2018(c)\n"
+selected true
+xpos -8065
+ypos 5744
+addUserKnob {20 User l RealLensHaze}
+addUserKnob {41 value l color T Multiply1.value}
+addUserKnob {41 pop3 l "wide blur size" T Blur1.pop3}
+addUserKnob {41 size_1 l "core blur size" T Blur2.size}
+addUserKnob {41 mix l "wide blur mix" T Merge1.mix}
+addUserKnob {41 which l mix T Dissolve1.which}
+addUserKnob {41 op2 l "highlights keyer turnoff" T Switch2.op2}
+addUserKnob {41 op l Operation T Switch1.op}
+addUserKnob {20 keyero l "keyer options" n 1}
+addUserKnob {6 lk l "Log Keyer" +STARTLINE}
+lk true
+addUserKnob {6 lktest l "Preview Keyer" -STARTLINE}
+addUserKnob {41 range T Keyer1.range}
+addUserKnob {20 endGroup n -1}
+addUserKnob {26 ""}
+addUserKnob {26 info l "" +STARTLINE T "keith/jon/lev (c) 2018 dumbo vision"}
+}
+Input {
+inputs 0
+name Input
+xpos -431
+ypos -338
+}
+set N18a9d300 [stack 0]
+Group {
+name Log_Keyer_v1
+help "Use to pull a key in log space - output is linear"
+xpos -587
+ypos -215
+addUserKnob {20 User}
+addUserKnob {41 input T Keyer1.input}
+addUserKnob {41 output T Keyer1.output}
+addUserKnob {41 combine l "" -STARTLINE T Keyer1.combine}
+addUserKnob {41 invert T Keyer1.invert}
+addUserKnob {41 operation T Keyer1.operation}
+addUserKnob {41 range T Keyer1.range}
+addUserKnob {41 Clamped l Clamp T clamp_on_off.Clamped}
+addUserKnob {41 shuffle l Shuffle T shuffler.shuffle}
+}
+Input {
+inputs 0
+name Input
+xpos -895
+ypos -891
+}
+Log2Lin {
+operation lin2log
+black 0
+white 665
+name Log2Lin1
+xpos -895
+ypos -837
+}
+Keyer {
+operation "luminance key"
+range {{parent.parent.Keyer1.range x1091 0} {parent.parent.Keyer1.range x1091 0.804581955} {parent.parent.Keyer1.range x1091 1} {parent.parent.Keyer1.range x1091 1}}
+name Keyer1
+xpos -895
+ypos -792
+}
+set N18abe950 [stack 0]
+Dot {
+name Dot1
+xpos -746
+ypos -779
+}
+Dot {
+name Dot2
+xpos -746
+ypos -646
+}
+push $N18abe950
+Clamp {
+channels alpha
+name Clamp1
+xpos -895
+ypos -726
+}
+Switch {
+inputs 2
+which {{Clamped==0?0:1 i}}
+name clamp_on_off
+xpos -895
+ypos -651
+addUserKnob {20 User}
+addUserKnob {4 Clamped l Clamp t "Select whether you want the alpha to be clamped\n" M {on off "" "" ""}}
+}
+Log2Lin {
+black 0
+white 665
+name Log2Lin2
+xpos -895
+ypos -590
+}
+set N18ae9f10 [stack 0]
+push $N18ae9f10
+Shuffle {
+red black
+green black
+blue black
+name Shuffle3
+xpos -828
+ypos -517
+}
+push $N18ae9f10
+Shuffle {
+red alpha
+green alpha
+blue alpha
+name Shuffle2
+xpos -927
+ypos -516
+}
+push $N18ae9f10
+Shuffle {
+red alpha
+green alpha
+blue alpha
+alpha black
+name Shuffle1
+xpos -1027
+ypos -515
+}
+Switch {
+inputs 4
+which {{shuffle i}}
+name shuffler
+xpos -882
+ypos -441
+addUserKnob {20 User}
+addUserKnob {4 shuffle l Shuffle M {aaan aaaa nnna rgba}}
+shuffle rgba
+}
+Output {
+name Output1
+xpos -882
+ypos -356
+}
+end_group
+push $N18a9d300
+Keyer {
+operation "luminance key"
+name Keyer1
+xpos -222
+ypos -234
+}
+Switch {
+inputs 2
+which {{lk}}
+name Switch3
+xpos -440
+ypos -149
+postage_stamp_frame 9
+}
+set N18b417d0 [stack 0]
+Shuffle {
+red alpha
+green alpha
+blue alpha
+name Shuffle1
+xpos -540
+ypos 691
+postage_stamp_frame 9
+}
+push $N18b417d0
+Clamp {
+name Clamp1
+xpos -440
+ypos -82
+}
+set N18b59d10 [stack 0]
+push $N18a9d300
+Group {
+inputs 2
+name Switch_Matte_v1
+xpos -230
+ypos -72
+addUserKnob {20 User}
+addUserKnob {41 output l "Matte Channel" T Copy4.from0}
+addUserKnob {41 bbox l "Set BBox to " T Copy4.bbox}
+addUserKnob {26 ""}
+addUserKnob {6 premult l Premult +STARTLINE}
+premult true
+addUserKnob {6 invert l Invert +STARTLINE}
+}
+Input {
+inputs 0
+name Matte
+label "\[value number]"
+xpos -895
+ypos -721
+number 1
+}
+Invert {
+channels alpha
+name Invert1
+xpos -895
+ypos -642
+disable {{!invert i}}
+}
+Input {
+inputs 0
+name Image
+label "\[value number]"
+xpos -1011
+ypos -720
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy4
+xpos -1011
+ypos -570
+disable {{"!\[exists parent.input1]" i}}
+}
+Premult {
+name Premult1
+xpos -1011
+ypos -507
+disable {{!premult i}}
+}
+Output {
+name Output1
+xpos -1011
+ypos -338
+}
+end_group
+set N18b68480 [stack 0]
+Blur {
+size 200
+name Blur2
+xpos -129
+ypos -11
+}
+push $N18b68480
+Blur {
+size {{pop3 i} {pop3 i}}
+name Blur1
+xpos -306
+ypos -19
+addUserKnob {20 User}
+addUserKnob {12 uiweq l ertr}
+addUserKnob {7 pop3 l "Wide Blur Size" t "\t\t" R 0 1000}
+pop3 850
+}
+Merge2 {
+inputs 2
+operation plus
+name Merge1
+xpos -219
+ypos 45
+}
+Multiply {
+channels rgb
+value 0.03
+name Multiply1
+xpos -221
+ypos 91
+}
+set N18bcdbe0 [stack 0]
+push $N18bcdbe0
+push $N18b59d10
+Merge2 {
+inputs 2
+operation out
+name Merge2
+xpos -440
+ypos 149
+}
+Switch {
+inputs 2
+which {{op2 i}}
+name Switch2
+xpos -440
+ypos 222
+addUserKnob {20 User}
+addUserKnob {6 op2 l KeyOff +STARTLINE}
+}
+set N18be9b90 [stack 0]
+Clamp {
+maximum 100
+name Clamp2
+xpos -431
+ypos 263
+}
+set N18bf2010 [stack 0]
+push $N18a9d300
+Clamp {
+maximum 100
+name Clamp4
+xpos 31
+ypos 122
+}
+set N18c00750 [stack 0]
+Merge2 {
+inputs 2
+operation plus
+name Merge7
+xpos 33
+ypos 338
+}
+set N18c0eea0 [stack 0]
+push $N18be9b90
+push $N18a9d300
+Merge2 {
+inputs 2
+name Merge5
+xpos -733
+ypos 242
+}
+push $N18a9d300
+Merge2 {
+inputs 2
+operation max
+name Merge6
+xpos -631
+ypos 363
+}
+set N18c2f730 [stack 0]
+Dissolve {
+inputs 2
+which 0.5
+name Dissolve2
+xpos 8
+ypos 435
+}
+push $N18c0eea0
+push $N18bf2010
+Invert {
+name Invert1
+xpos -431
+ypos 334
+}
+push $N18c00750
+Invert {
+name Invert2
+xpos -323
+ypos 339
+}
+Merge2 {
+inputs 2
+operation multiply
+name Merge3
+xpos -374
+ypos 432
+}
+Invert {
+name Invert3
+xpos -374
+ypos 477
+}
+push $N18c2f730
+push $N18a9d300
+push $N18bf2010
+Merge2 {
+inputs 2
+operation minus
+name Merge4
+xpos -857
+ypos 302
+}
+Clamp {
+maximum 100
+name Clamp3
+xpos -857
+ypos 355
+}
+Switch {
+inputs 5
+which {{op i}}
+name Switch1
+xpos -374
+ypos 591
+addUserKnob {20 User}
+addUserKnob {4 op l Operation M {Remove Over Screen Add "Over/Add mixed"}}
+op Add
+}
+push $N18a9d300
+Dissolve {
+inputs 2
+which 1
+name Dissolve1
+xpos -263
+ypos 627
+}
+push $N18a9d300
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+alpha alpha2
+name ShuffleCopy1
+xpos -131
+ypos 696
+}
+Switch {
+inputs 2
+which {{lktest}}
+name Switch4
+xpos -540
+ypos 765
+postage_stamp_frame 9
+}
+Output {
+name Output1
+xpos -540
+ypos 891
+}
+end_group
