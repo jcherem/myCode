@@ -1,0 +1,17 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+NoOp {
+ name intensities_controller
+ selected true
+ xpos -369
+ ypos -254
+ addUserKnob {20 User}
+ addUserKnob {7 intensities}
+ addUserKnob {7 maximum}
+ addUserKnob {7 multiply}
+ addUserKnob {7 gamma}
+ addUserKnob {7 result}
+ result {{intensities/maximum*multiply}}
+ addUserKnob {7 bake}
+}
