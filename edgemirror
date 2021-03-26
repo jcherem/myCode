@@ -1,0 +1,179 @@
+set cut_paste_input [stack 0]
+version 11.3 v4
+push $cut_paste_input
+Group {
+ name EdgeMirror1
+ tile_color 0xaf7cb5ff
+ selected true
+ xpos 14637
+ ypos 6394
+ addUserKnob {20 User}
+ addUserKnob {6 Preview l "Mirror Preview" +STARTLINE}
+ addUserKnob {4 Choice l "Mirror Choice:" M {"Pixel Stretch\t" Mirror}}
+ Choice Mirror
+ addUserKnob {26 ""}
+ addUserKnob {26 Info l "" +STARTLINE T "This tools mirrors or stretches the pixels of your input image, for use with camerashake,heathaze, etc"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 506
+  ypos -387
+ }
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos 506
+  ypos -331
+ }
+ Crop {
+  box {{bbox.x} {bbox.y} {bbox.r} {bbox.t}}
+  crop false
+  name Crop1
+  xpos 506
+  ypos -295
+ }
+ Crop {
+  box {{bbox.x+1} {bbox.y+1} {bbox.r-1} {bbox.t-1}}
+  crop false
+  name Crop2
+  xpos 506
+  ypos -271
+ }
+set Nb0a56610 [stack 0]
+ Mirror2 {
+  flip true
+  flop true
+  name Mirror2_3
+  xpos 729
+  ypos -240
+ }
+set Nb0a61210 [stack 0]
+ Transform {
+  translate {{-bbox.r} {bbox.t}}
+  scale {1 1}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform7
+  xpos 69
+  ypos -178
+ }
+push $Nb0a61210
+ Transform {
+  translate {{-bbox.r} {-bbox.t}}
+  scale {1 1}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform8
+  xpos 167
+  ypos -175
+ }
+push $Nb0a61210
+ Transform {
+  translate {{bbox.r} {-bbox.t}}
+  scale {1 1}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform6
+  xpos 891
+  ypos -178
+ }
+push $Nb0a61210
+ Transform {
+  translate {{bbox.r} {bbox.t}}
+  scale {1 1}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform4
+  xpos 789
+  ypos -182
+ }
+push $Nb0a56610
+ Mirror2 {
+  flip true
+  name Mirror2_1
+  xpos 357
+  ypos -215
+ }
+set Nb0aa2280 [stack 0]
+ Transform {
+  translate {0 {bbox.t}}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform1
+  xpos 281
+  ypos -176
+ }
+push $Nb0a56610
+ Crop {
+  box {{bbox.x+1} {bbox.y+1} {bbox.r-1} {bbox.t-1}}
+  name Crop4
+  xpos 465
+  ypos -200
+ }
+push $Nb0a56610
+ Mirror2 {
+  flop true
+  name Mirror2_2
+  xpos 574
+  ypos -224
+ }
+set Nb0ac3310 [stack 0]
+ Transform {
+  translate {{bbox.r} 0}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform3
+  xpos 574
+  ypos -180
+ }
+push $Nb0ac3310
+ Transform {
+  translate {{-bbox.r} 0}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform2
+  xpos 673
+  ypos -183
+ }
+push 0
+push $Nb0aa2280
+ Transform {
+  translate {0 {-bbox.t}}
+  center {4312 3612}
+  shutteroffset centred
+  name Transform5
+  xpos 385
+  ypos -175
+ }
+push $Nb0a56610
+ Merge2 {
+  inputs 10+1
+  name Merge1
+  xpos 506
+  ypos -115
+ }
+push $Nb0a56610
+ Switch {
+  inputs 2
+  which {{parent.Choice}}
+  name Switch1
+  xpos 506
+  ypos -84
+ }
+ Reformat {
+  type scale
+  scale 2
+  resize none
+  pbb true
+  name Reformat2
+  xpos 506
+  ypos -46
+  disable {{!parent.Preview}}
+ }
+ Output {
+  name Output1
+  xpos 506
+  ypos 36
+ }
+end_group
