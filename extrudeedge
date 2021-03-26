@@ -1,0 +1,19 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push 0
+push $cut_paste_input
+ExtrudeEdges2 {
+inputs 2
+name ExtrudeEdges2_1
+note_font "Bitstream Vera Sans"
+selected true
+xpos -126674
+ypos 39605
+EdgeMaskChannel none
+preProcess 1
+size 6.5
+extrude 1
+extrudeBlur 8.5
+edgeGrade 0
+transition 0
+}
