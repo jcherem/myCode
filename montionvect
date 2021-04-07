@@ -1,0 +1,193 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+Group {
+ name Group_motionvect
+ selected true
+ xpos -214
+ ypos -194
+ addUserKnob {20 MagicWarper}
+ addUserKnob {41 documentation l Documentation T VectorAccumulator1.documentation}
+ addUserKnob {3 ref_frame l "reference frame"}
+ ref_frame 1020
+ addUserKnob {6 reverse t "Reverses the warping so that all of the images are aligned to the reference frame" -STARTLINE}
+ addUserKnob {41 allow_backtrack l "allow backtrack" -STARTLINE T VectorAccumulator1.allow_backtrack}
+ addUserKnob {41 uv_scale l "UV scale" T VectorAccumulator1.uv_scale}
+ addUserKnob {41 max_layer l "max layer" +INVISIBLE T VectorAccumulator1.max_layer}
+ addUserKnob {41 mode T VectorAccumulator1.mode}
+ addUserKnob {41 from0 l "Copy channel" T Copy1.from0}
+ addUserKnob {41 from1 l "Copy channel" T Copy1.from1}
+ addUserKnob {41 from2 l "Copy channel" T Copy1.from2}
+ addUserKnob {41 from3 l "Copy channel" T Copy1.from3}
+ addUserKnob {20 stabilise_options l "stabilise options" n 1}
+ addUserKnob {6 x_stabilise l x-stabilise t "Stabilise horizontally" -STARTLINE}
+ x_stabilise true
+ addUserKnob {6 y_stabilise l y-stabilise t "Stabilise vertically" -STARTLINE}
+ y_stabilise true
+ addUserKnob {20 endGroup n -1}
+}
+ Input {
+  inputs 0
+  name element
+  xpos 249
+  ypos 293
+  number 1
+ }
+set N5da71a0 [stack 0]
+ Dot {
+  name Dot2
+  xpos 283
+  ypos 211
+ }
+ Input {
+  inputs 0
+  name vectors
+  xpos -184
+  ypos 146
+ }
+ VectorAccumulator {
+  inputs 1+1
+  ref_frame {{"abs(parent.reverse - parent.mode) ? frame : parent.ref_frame"}}
+  current_frame {{"abs(parent.reverse - parent.mode) ? parent.ref_frame : frame"}}
+  uv_scale {1 1}
+  name VectorAccumulator1
+  xpos -184
+  ypos 207
+ }
+ Input {
+  inputs 0
+  name sequence
+  xpos 112
+  ypos 543
+  number 2
+ }
+set N123c6f00 [stack 0]
+push $N123c6f00
+push $N5da71a0
+ Switch {
+  inputs 2
+  which {{parent.mode}}
+  name Switch3
+  xpos 112
+  ypos 293
+ }
+ Switch {
+  inputs 2
+  which {{parent.reverse}}
+  name Switch6
+  xpos 2
+  ypos 293
+ }
+ Copy {
+  inputs 2
+  from0 forward.u
+  to0 forward.u
+  from1 forward.v
+  to1 forward.v
+  from2 backward.u
+  to2 backward.u
+  from3 backward.v
+  to3 backward.v
+  name Copy1
+  selected true
+  xpos -184
+  ypos 269
+ }
+set N134ce200 [stack 0]
+ Expression {
+  channel0 {forward.u -forward.v}
+  expr0 "parent.mode == 1 ? forward.u * parent.x_stabilise : forward.u"
+  channel1 {-forward.u forward.v}
+  expr1 "parent.mode == 1 ? forward.v * parent.y_stabilise : forward.v"
+  channel2 {-rgba.red -rgba.green -rgba.blue none}
+  name Expression2
+  xpos -263
+  ypos 359
+ }
+ IDistort {
+  uv forward
+  uv_scale {{parent.uv_scale} {parent.uv_scale}}
+  name IDistort2
+  xpos -263
+  ypos 415
+  addUserKnob {20 User}
+ }
+push $N134ce200
+ Expression {
+  channel0 {backward.u -backward.v}
+  expr0 "parent.mode == 1 ? backward.u * parent.x_stabilise : backward.u"
+  channel1 {-backward.u backward.v}
+  expr1 "parent.mode == 1 ? backward.v * parent.y_stabilise : backward.v"
+  channel2 {-rgba.red -rgba.green -rgba.blue none}
+  name Expression1
+  xpos -108
+  ypos 370
+ }
+ IDistort {
+  uv backward
+  uv_scale {{parent.uv_scale} {parent.uv_scale}}
+  name IDistort1
+  xpos -108
+  ypos 415
+  addUserKnob {20 User}
+ }
+ Switch {
+  inputs 2
+  which {{"abs(parent.reverse - parent.mode) ? (frame > parent.ref_frame) : (frame < parent.ref_frame)"}}
+  name Switch1
+  xpos -174
+  ypos 466
+ }
+set N12756b30 [stack 0]
+ Dot {
+  name Dot3
+  xpos -278
+  ypos 470
+ }
+ Dot {
+  name Dot4
+  xpos -278
+  ypos 601
+ }
+push $N12756b30
+push $N5da71a0
+push $N123c6f00
+ Switch {
+  inputs 2
+  which {{parent.reverse}}
+  name Switch5
+  xpos -27
+  ypos 543
+ }
+ Merge2 {
+  inputs 2
+  name Merge1
+  xpos -174
+  ypos 543
+ }
+ Switch {
+  inputs 2
+  which {{parent.mode}}
+  name Switch4
+  xpos -174
+  ypos 597
+ }
+push $N123c6f00
+ Dot {
+  name Dot1
+  xpos 146
+  ypos 658
+ }
+ Switch {
+  inputs 2
+  which {{"\[exists parent.input0] && \[exists parent.input1]"}}
+  name Switch2
+  xpos -174
+  ypos 654
+ }
+ Output {
+  name Output1
+  xpos -174
+  ypos 698
+ }
+end_group
