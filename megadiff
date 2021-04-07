@@ -1,0 +1,98 @@
+set cut_paste_input [stack 0]
+version 11.3 v4
+push $cut_paste_input
+Group {
+name Megadiff_2
+tile_color 0x888888ff
+selected true
+xpos 3860
+ypos 6872
+addUserKnob {20 User}
+addUserKnob {6 boolean l "Premult Difference" +STARTLINE}
+boolean true
+addUserKnob {41 gain T Difference32.gain}
+addUserKnob {1 string l "" +STARTLINE}
+string VIEWER_INPUT
+}
+BackdropNode {
+inputs 0
+name BackdropNode15
+tile_color 0x388e8e00
+label difference
+note_font_size 42
+xpos 497
+ypos 386
+bdwidth 276
+bdheight 270
+}
+Input {
+inputs 0
+name InputComp
+label "\[value number] "
+xpos 683
+ypos 422
+}
+Dot {
+name Dot123
+xpos 717
+ypos 471
+}
+set N1c1f98d0 [stack 0]
+Input {
+inputs 0
+name InputReference
+label "\[value number]"
+xpos 507
+ypos 425
+number 1
+}
+Dot {
+name Dot124
+xpos 541
+ypos 466
+}
+Difference {
+inputs 2
+gain 100000
+name Difference32
+xpos 507
+ypos 588
+}
+set N1cdfe010 [stack 0]
+Premult {
+name Premult106
+xpos 507
+ypos 624
+}
+push $N1cdfe010
+push $N1c1f98d0
+Grade {
+channels {rgba.red -rgba.green -rgba.blue none}
+multiply 0.6
+name Grade17
+xpos 683
+ypos 540
+}
+Grade {
+inputs 1+1
+channels {rgba.red -rgba.green -rgba.blue none}
+add {1 0 0 0}
+add_panelDropped true
+name Grade20
+xpos 683
+ypos 588
+}
+Switch {
+inputs 2
+which {{parent.boolean}}
+name Switch1
+selected true
+xpos 683
+ypos 619
+}
+Output {
+name Output1
+xpos 683
+ypos 688
+}
+end_group
