@@ -1,0 +1,17 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+BlinkScript {
+ recompileCount 20
+ ProgramGroup 1
+ KernelDescription "2 \"MultichannelMonochrome\" iterate pixelWise ea75bd2b8d571f23d6d3134b83bdef9d93aeea074dee8868725f065be759452a 2 \"src\" Read Point \"dst\" Write Point 5 \"weight\" Float 4 0LNZPlkXNz+Y3ZM9AAAAAA== \"source\" Float 4 AACAPwAAgD8AAIA/AACAPw== \"target\" Float 4 AACAPwAAgD8AAIA/AACAPw== \"multiply\" Float 4 AACAPwAAgD8AAIA/AACAPw== \"use weighted target as source \" Bool 1 AQ== 5 \"weights\" 4 1 \"sourceColour\" 4 1 \"targetColour\" 4 1 \"multiply\" 4 1 \"useWeightedTarget\" 1 1 1 \"output\" Float 4 1 AAAAAAAAAAAAAAAAAAAAAA=="
+ kernelSource "kernel MultichannelMonochrome: ImageComputationKernel<ePixelWise>\n\{\n\tImage<eRead, eAccessPoint, eEdgeClamped> src;\n\tImage<eWrite> dst;\n\n\tparam:\n\t\t\n\t\tfloat4 weights;\n\t\tfloat4 sourceColour;\n\t\tfloat4 targetColour;\n\t\tfloat4 multiply;\n\t\tbool useWeightedTarget;\n\n\tlocal:\n\t\tfloat4 output;\n\n\t\n\tvoid define()\{\n\n\t\tdefineParam(weights, \"weight\", float4(0.2126f,0.7152f,0.0722f,0.0f ));\n\t\tdefineParam(sourceColour, \"source\", float4(1.0f));\n\t\tdefineParam(targetColour, \"target\", float4(1.0f));\n\t\tdefineParam(multiply, \"multiply\", float4(1.0f));\n\t\tdefineParam(useWeightedTarget, \"use weighted target as source \", true);\n\t\}\n\n\t\n\tvoid init()\{\n\t\t\n\t\}\n\n\t\n\tvoid process()\{\n\n\n\t\tif(useWeightedTarget == 1) \{\n\n\t\t\tsourceColour = targetColour.x*weights.x+targetColour.y*weights.y+targetColour.z*weights.z;\n\n\t\t\}\n\n\toutput = src().x*weights.x+src().y*weights.y+src().z*weights.z;\n\n\toutput = (output/sourceColour)*targetColour*multiply;\n\n\t\tdst() = output;\n\t\}\n\};"
+ useGPUIfAvailable false
+ rebuild ""
+ MultichannelMonochrome_weight {0.2125999928 0.715200007 0.07220000029 0}
+ rebuild_finalise ""
+ name MultichannelMonochrome
+ selected true
+ xpos -422
+ ypos -448
+}
