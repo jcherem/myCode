@@ -1,0 +1,24 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+add_layer {__Pworld __Pworld.x __Pworld.y __Pworld.z}
+Mask3DV2 {
+name Mask3DV2_2
+note_font "Bitstream Vera Sans"
+selected true
+xpos -185081
+ypos 29682
+in __Pworld
+out rgba.alpha
+radius 60
+transform 0
+_class Mask3D
+}
+Grade {
+add 1
+maskChannelInput rgba.alpha
+name Grade17
+selected true
+xpos -185081
+ypos 29702
+}
