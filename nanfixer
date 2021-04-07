@@ -1,0 +1,43 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+Group {
+ name nanfixer
+ tile_color 0x7ba2ffff
+ selected true
+ xpos 19270
+ ypos -14676
+ addUserKnob {20 fix_values l "fix values"}
+ addUserKnob {41 inf l "replace INF " T FixPixels.inf}
+ addUserKnob {41 nan l "replace NAN" T FixPixels.nan}
+}
+ Input {
+  inputs 0
+  name img
+  xpos 451
+  ypos -291
+ }
+ Expression {
+  expr0 "isinf(r) ? inf.r : isnan(r) ? nan.r : r"
+  expr1 "isinf(g) ? inf.g : isnan(g) ? nan.g : g"
+  expr2 "isinf(b) ? inf.b : isnan(b) ? nan.b : b"
+  channel3 alpha
+  expr3 "isinf(a) ? inf.a : isnan(a) ? nan.a : a"
+  name FixPixels
+  selected true
+  xpos 451
+  ypos -231
+  addUserKnob {20 User}
+  addUserKnob {19 inf l "replace inf"}
+  inf {1 1 1 1}
+  addUserKnob {6 inf_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {19 nan l "replace nan"}
+  nan {0.0138308676 0.01410156954 0.01470179483 1}
+  addUserKnob {6 nan_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ }
+ Output {
+  name Output1
+  xpos 451
+  ypos -151
+ }
+end_group
