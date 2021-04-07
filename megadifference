@@ -1,0 +1,64 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x388e8e00
+ label difference
+ note_font_size 42
+ selected true
+ xpos -822
+ ypos 311
+ bdwidth 276
+ bdheight 270
+}
+push 0
+Dot {
+ name Dot3
+ selected true
+ xpos -602
+ ypos 396
+}
+set N2e8f0560 [stack 0]
+push $cut_paste_input
+Dot {
+ name Dot2
+ selected true
+ xpos -778
+ ypos 391
+}
+Difference {
+ inputs 2
+ gain 100000
+ name Difference5
+ selected true
+ xpos -812
+ ypos 513
+}
+set N2d9011d0 [stack 0]
+Premult {
+ name Premult22
+ selected true
+ xpos -812
+ ypos 551
+}
+push $N2d9011d0
+push $N2e8f0560
+Grade {
+ channels {rgba.red -rgba.green -rgba.blue}
+ multiply 0.6
+ name Grade2
+ selected true
+ xpos -636
+ ypos 465
+}
+Grade {
+ inputs 1+1
+ channels {rgba.red -rgba.green -rgba.blue}
+ add {1 0 0 0}
+ add_panelDropped true
+ name Grade1
+ selected true
+ xpos -636
+ ypos 513
+}
