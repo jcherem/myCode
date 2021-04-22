@@ -1,0 +1,532 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+ZenCamera {
+ inputs 0
+ file /jobs/TM/mjd2395/maya/cam/CAM/C_mjd2395-postvis-v006/C_mjd2395-postvis-v006_master.####.zen
+ firstFrame 0
+ lastFrame 0
+ translate {{curve} {curve} {curve}}
+ rotate {{curve} {curve} {curve}}
+ focal {{curve}}
+ haperture 25.02989632
+ vaperture 10.4804445
+ near 0.05000000075
+ win_translate {{curve} {curve}}
+ focal_point {{curve}}
+ fstop {{curve}}
+ interaxialSeparation {{curve}}
+ zeroParallax {{curve}}
+ fwLeftTopPercent {{curve}}
+ fwLeftBottomPercent {{curve}}
+ fwRightTopPercent {{curve}}
+ fwRightBottomPercent {{curve}}
+ neard {{"(-((focal*interaxialSeparation/(nearz*haperture)) + ( (zeroParallax?(2*interaxialSeparation*focal*((2*0)-1)) / (haperture * zeroParallax):0) /2.0))) * (units==0?2048:units==1?1920:units==2?1828:100)"}}
+ fard {{"(-((focal*interaxialSeparation/(farz*haperture)) + ( (zeroParallax?(2*interaxialSeparation*focal*((2*0)-1)) / (haperture * zeroParallax):0) /2.0))) * (units==0?2048:units==1?1920:units==2?1828:100)"}}
+ name ZenCamera2
+ selected true
+ xpos 836
+ ypos 1744
+ addUserKnob {20 Projector}
+ addUserKnob {22 makeProjectorButton l "Make Projector..." -STARTLINE T zenProjector.makeProjectorNode()}
+}
+Dot {
+ name Dot14
+ selected true
+ xpos 859
+ ypos 2343
+}
+Dot {
+ name Dot8
+ selected true
+ xpos 199
+ ypos 2343
+}
+Dot {
+ name Dot11
+ selected true
+ xpos -241
+ ypos 2343
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0 1 0 1}
+ color_panelDropped true
+ format "128 128 0 0 128 128 1 128x128"
+ name Constant1
+ selected true
+ xpos -274
+ ypos 977
+}
+BlendMat {
+ surfaceblend "vertex color"
+ name BlendMat1
+ selected true
+ xpos -278
+ ypos 1074
+}
+Dot {
+ name Dot6
+ selected true
+ xpos -244
+ ypos 1143
+}
+set N11511480 [stack 0]
+Constant {
+ inputs 0
+ channels rgb
+ format "512 512 0 0 512 512 1 square_512"
+ name Constant6
+ selected true
+ xpos 386
+ ypos 613
+}
+Noise {
+ zoffset 46
+ gain 0.606
+ gamma 0.55
+ center {960 540}
+ name Noise4
+ selected true
+ xpos 385
+ ypos 764
+}
+Card2 {
+ rows 200
+ columns {{rows}}
+ translate {37.55203247 26.03323364 389.3642578}
+ rotate {90 90 0}
+ scaling {7 4 1}
+ uniform_scale 200
+ control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+ name Card1
+ selected true
+ xpos 385
+ ypos 879
+}
+Dot {
+ name Dot7
+ selected true
+ xpos 419
+ ypos 1551
+}
+Dot {
+ name Dot9
+ selected true
+ xpos -131
+ ypos 1551
+}
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 900
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{curve x1000 9.612678528 0}}
+ rate_variation 0.5
+ lifetime 500
+ velocity 0
+ rotation_velocity 0.5
+ rotation_velocity_variation 1
+ size 3
+ size_variation 1
+ mass 0.5
+ mass_variation 1
+ spread 0.3
+ color 0.1
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2050
+ name ParticleEmitter6
+ selected true
+ xpos -331
+ ypos 1499
+}
+set N119b80a0 [stack 0]
+ParticleTurbulence {
+ strength {{curve x1001 1.5 x1080 0.3} {strength.x x1001 0} {strength.x x1001 0}}
+ scale {0.018 {scale.x x1031 -0.675999999} {scale.x x1031 0.1639999598}}
+ offset {{curve x1001 37.55203247 x1161 37.55203247} {curve x1001 26.03323364 x1161 26.03323364} {curve x1001 389.3642578 x1161 399.3642578}}
+ name ParticleTurbulence7
+ selected true
+ xpos -384
+ ypos 1665
+ disable true
+}
+ParticleTurbulence {
+ strength {{curve x1001 0.9 x1080 0.15} {strength.x x1001 0} {strength.x x1001 0}}
+ scale {0.3 {scale.x x1031 -0.675999999} {scale.x x1031 0.1639999598}}
+ offset {{curve x1001 37.55203247 x1161 37.55203247} {curve x1001 26.03323364 x1161 26.03323364} {curve x1001 389.3642578 x1161 399.3642578}}
+ name ParticleTurbulence8
+ selected true
+ xpos -384
+ ypos 1739
+ disable true
+}
+ParticlePointForce {
+ strength {{curve x1001 -300 x1033 -80 x1080 0}}
+ falloff inverse
+ radius 1000
+ position {-8.0596323 164.977066 114.8669472}
+ name ParticlePointForce3
+ selected true
+ xpos -384
+ ypos 1803
+ disable true
+}
+ParticleBounce {
+ out_bounce_mode kill
+ in_bounce_mode kill
+ object sphere
+ bounceaxis_translate {-8.0596323 164.977066 114.8669472}
+ bounceaxis_scaling {1.8 3 {bounceaxis_scaling.x}}
+ bounceaxis_uniform_scale 100
+ name ParticleBounce5
+ selected true
+ xpos -384
+ ypos 1889
+ disable true
+}
+ParticleBounce {
+ out_new_channels {b}
+ out_bounce 0.1
+ out_friction 0.05
+ in_new_channels {b}
+ in_bounce 0.05
+ object sphere
+ bounceaxis_translate {-18.0596323 182.5 86.0334244}
+ bounceaxis_rotate {0 60 0}
+ bounceaxis_scaling {3.8 4 1}
+ bounceaxis_uniform_scale 100
+ name ParticleBounce18
+ selected true
+ xpos -384
+ ypos 1961
+ disable true
+}
+ParticleBounce {
+ out_new_channels {a}
+ out_bounce 0.1
+ in_new_channels {a}
+ in_bounce 0.1
+ bounceaxis_translate {-10.14775467 182.500412 309.398468}
+ bounceaxis_rotate {90.0000025 0 -175.8323055}
+ bounceaxis_scaling {5 1 3}
+ bounceaxis_uniform_scale 200
+ channels {b}
+ name ParticleBounce11
+ selected true
+ xpos -384
+ ypos 2022
+ disable true
+}
+ParticlePointForce {
+ strength {{curve x1001 -300 x1033 -80 x1080 0}}
+ falloff inverse
+ radius 1000
+ position {-8.0596323 164.977066 614.8669472}
+ channels {b}
+ name ParticlePointForce5
+ selected true
+ xpos -388
+ ypos 2101
+ disable true
+}
+ParticleDrag {
+ drag 0.3
+ rotational_drag 0.2
+ name ParticleDrag5
+ selected true
+ xpos -384
+ ypos 2167
+ disable true
+}
+ParticleGravity {
+ to {{curve x1136 0} {curve x1001 -0.05 x1136 -0.2} {curve x1136 0}}
+ probability 0.9
+ name ParticleGravity2
+ selected true
+ xpos -384
+ ypos 2232
+ disable true
+}
+push $cut_paste_input
+Reformat {
+ format "2276 1906 0 0 2276 1906 2 Alexa Cropped"
+ pbb true
+ name Reformat2
+ selected true
+ xpos 496
+ ypos 2190
+}
+Dot {
+ name Dot13
+ selected true
+ xpos 529
+ ypos 2295
+}
+Dot {
+ name Dot15
+ selected true
+ xpos 199
+ ypos 2295
+}
+Dot {
+ name Dot2
+ selected true
+ xpos -241
+ ypos 2295
+}
+add_layer {__Pworld __Pworld.x __Pworld.y __Pworld.z}
+add_layer {__Nworld __Nworld.x __Nworld.y __Nworld.z}
+ScanlineRender {
+ inputs 3
+ antialiasing low
+ overscan 300
+ samples {{"\$gui ? 1 : 25"}}
+ shutteroffset centred
+ motion_vectors_type distance
+ MB_channel forward
+ output_shader_vectors true
+ P_channel __Pworld
+ N_channel __Nworld
+ name ScanlineRender6
+ selected true
+ xpos -384
+ ypos 2388
+}
+Remove {
+ operation keep
+ channels rgba
+ channels2 depth
+ channels3 __Nworld
+ channels4 __Pworld
+ name Remove4
+ selected true
+ xpos -384
+ ypos 2460
+}
+Reformat {
+ inputs 0
+ format "128 128 0 0 128 128 1 128x128"
+ pbb true
+ name Reformat3
+ selected true
+ xpos -54
+ ypos 870
+ disable true
+}
+Noise {
+ size 80
+ zoffset {{"frame *0.08"}}
+ center {1138 953}
+ name Noise8
+ selected true
+ xpos -54
+ ypos 927
+ disable true
+}
+Constant {
+ inputs 0
+ channels rgb
+ format "128 128 0 0 128 128 1 128x128"
+ name Constant8
+ selected true
+ xpos -274
+ ypos 615
+ disable true
+}
+BasicMaterial {
+ name BasicMaterial1
+ selected true
+ xpos -274
+ ypos 756
+ disable true
+}
+Cylinder {
+ rows 8
+ columns {{rows}}
+ close_top true
+ close_bottom true
+ scaling {0.1 1 {scaling.x}}
+ name Cylinder1
+ selected true
+ xpos -274
+ ypos 828
+ disable true
+}
+DisplaceGeo {
+ inputs 2
+ scale 1
+ filter Cubic
+ name DisplaceGeo4
+ selected true
+ xpos -274
+ ypos 927
+ disable true
+}
+Sphere {
+ inputs 0
+ uniform_scale 176.3
+ name Sphere1
+ selected true
+ xpos 292
+ ypos 1652
+ disable true
+}
+set N3b57f110 [stack 0]
+push $N11511480
+push $N3b57f110
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 900
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{curve x1000 9.612678528 0}}
+ rate_variation 0.5
+ lifetime 500
+ velocity 0
+ rotation_velocity 0.5
+ rotation_velocity_variation 1
+ size 6
+ size_variation 1
+ mass 0.5
+ mass_variation 1
+ spread 0.3
+ color 0.1
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2050
+ name ParticleEmitter1
+ selected true
+ xpos 87
+ ypos 1608
+ disable true
+}
+ParticleExpression {
+ colexpr v(0,1,0)
+ new_channels all
+ name ParticleExpression3
+ selected true
+ xpos 87
+ ypos 1678
+ disable true
+}
+ParticlePointForce {
+ strength {{curve x1000 0 1000}}
+ radius 1168
+ position {{parent.Sphere1.translate} {parent.Sphere1.translate} {parent.Sphere1.translate}}
+ channels {a}
+ uniform_scale 1000
+ name ParticlePointForce4
+ selected true
+ xpos 87
+ ypos 1739
+ disable true
+}
+ParticleDrag {
+ drag 0.3
+ rotational_drag 0.2
+ name ParticleDrag2
+ selected true
+ xpos 96
+ ypos 1806
+ disable true
+}
+Scene {
+ inputs 2
+ name Scene1
+ selected true
+ xpos 92
+ ypos 1913
+}
+Noise {
+ inputs 0
+ zoffset {{"frame/25 +10"}}
+ gain 0.606
+ gamma 0.55
+ center {960 540}
+ name Noise1
+ selected true
+ xpos 540
+ ypos 775
+}
+push $N119b80a0
+ParticleExpression {
+ colexpr v(0,1,0)
+ new_channels all
+ name ParticleExpression2
+ selected true
+ xpos -197
+ ypos 1590
+}
+ParticlePointForce {
+ strength -9000
+ radius 1168
+ position {-8.0596323 548.4 114.8669472}
+ channels {a}
+ uniform_scale 1000
+ name ParticlePointForce1
+ selected true
+ xpos -193
+ ypos 1637
+}
+ParticleTurbulence {
+ strength {0.1 {strength.x} {strength.x}}
+ scale {100 {scale.x} {scale.x}}
+ channels {a}
+ name ParticleTurbulence1
+ selected true
+ xpos -193
+ ypos 1675
+}
+ParticleBounce {
+ out_bounce_mode none
+ out_new_channels {b}
+ in_bounce_mode none
+ in_new_channels {b}
+ bounceaxis_translate {{parent.ParticlePointForce1.position.x} {parent.ParticlePointForce1.position.y} {parent.ParticlePointForce1.position.z}}
+ bounceaxis_uniform_scale 500
+ channels {a}
+ name ParticleBounce1
+ selected true
+ xpos -193
+ ypos 1739
+}
+ParticleDrag {
+ drag 1
+ channels {b}
+ name ParticleDrag1
+ selected true
+ xpos -193
+ ypos 1777
+}
+ParticleGravity {
+ to {0 -0.01 0}
+ channels {b}
+ name ParticleGravity1
+ selected true
+ xpos -193
+ ypos 1815
+}
+ParticleExpression {
+ colexpr v(1,0,0)
+ channels {b}
+ name ParticleExpression1
+ selected true
+ xpos -193
+ ypos 1877
+}
