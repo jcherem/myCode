@@ -1,0 +1,263 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Sphere {
+ uniform_scale 176.3
+ name Sphere1
+ selected true
+ xpos -168
+ ypos -163
+ disable true
+}
+set N10f47410 [stack 0]
+Constant {
+ inputs 0
+ channels rgb
+ color {0 1 0 1}
+ color_panelDropped true
+ format "128 128 0 0 128 128 1 128x128"
+ name Constant1
+ selected true
+ xpos -738
+ ypos -842
+}
+BlendMat {
+ surfaceblend "vertex color"
+ name BlendMat1
+ selected true
+ xpos -742
+ ypos -745
+}
+Dot {
+ name Dot6
+ selected true
+ xpos -708
+ ypos -676
+}
+set N125332c0 [stack 0]
+push $N10f47410
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 900
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{curve x1000 9.612678528 0}}
+ rate_variation 0.5
+ lifetime 500
+ velocity 0
+ rotation_velocity 0.5
+ rotation_velocity_variation 1
+ size 6
+ size_variation 1
+ mass 0.5
+ mass_variation 1
+ spread 0.3
+ color 0.1
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2050
+ name ParticleEmitter1
+ selected true
+ xpos -373
+ ypos -207
+ disable true
+}
+ParticleExpression {
+ colexpr v(0,1,0)
+ new_channels all
+ name ParticleExpression3
+ selected true
+ xpos -373
+ ypos -137
+ disable true
+}
+ParticlePointForce {
+ strength {{curve x1000 0 1000}}
+ radius 1168
+ position {{parent.Sphere1.translate} {parent.Sphere1.translate} {parent.Sphere1.translate}}
+ channels {a}
+ uniform_scale 1000
+ name ParticlePointForce4
+ selected true
+ xpos -373
+ ypos -79
+ disable true
+}
+ParticleDrag {
+ drag 0.3
+ rotational_drag 0.2
+ name ParticleDrag2
+ selected true
+ xpos -364
+ ypos -9
+ disable true
+}
+Scene {
+ inputs 2
+ name Scene1
+ selected true
+ xpos -368
+ ypos 98
+}
+push $N125332c0
+Constant {
+ inputs 0
+ channels rgb
+ format "512 512 0 0 512 512 1 square_512"
+ name Constant6
+ selected true
+ xpos -78
+ ypos -1206
+}
+Noise {
+ zoffset 46
+ gain 0.606
+ gamma 0.55
+ center {960 540}
+ name Noise4
+ selected true
+ xpos -79
+ ypos -1055
+}
+Card2 {
+ rows 200
+ columns {{rows}}
+ translate {37.55203247 26.03323364 389.3642578}
+ rotate {90 90 0}
+ scaling {7 4 1}
+ uniform_scale 200
+ control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+ name Card1
+ selected true
+ xpos -79
+ ypos -940
+}
+Dot {
+ name Dot7
+ selected true
+ xpos -45
+ ypos -268
+}
+Dot {
+ name Dot9
+ selected true
+ xpos -436
+ ypos -296
+}
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 900
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{curve x1000 2.936341286 0}}
+ rate_variation 0.5
+ lifetime 500
+ velocity 0
+ rotation_velocity 0.5
+ rotation_velocity_variation 1
+ size 3
+ size_variation 1
+ mass 0.5
+ mass_variation 1
+ spread 0.3
+ color 0.1
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2050
+ name ParticleEmitter6
+ selected true
+ xpos -661
+ ypos -300
+}
+ParticleExpression {
+ colexpr v(0,1,0)
+ new_channels all
+ name ParticleExpression2
+ selected true
+ xpos -661
+ ypos -254
+}
+ParticlePointForce {
+ strength -9000
+ radius 1168
+ position {-8.0596323 548.4 114.8669472}
+ channels {a}
+ uniform_scale 1000
+ name ParticlePointForce1
+ selected true
+ xpos -661
+ ypos -191
+}
+ParticleTurbulence {
+ strength {0.1 {strength.x} {strength.x}}
+ scale {100 {scale.x} {scale.x}}
+ channels {a}
+ name ParticleTurbulence1
+ selected true
+ xpos -699
+ ypos -145
+}
+ParticleBounce {
+ out_bounce_mode none
+ out_new_channels {b}
+ in_bounce_mode none
+ in_new_channels {b}
+ bounceaxis_translate {{parent.ParticlePointForce1.position.x} {parent.ParticlePointForce1.position.y} {parent.ParticlePointForce1.position.z}}
+ bounceaxis_uniform_scale 500
+ channels {a}
+ name ParticleBounce1
+ selected true
+ xpos -653
+ ypos -92
+}
+ParticleDrag {
+ drag 1
+ channels {b}
+ name ParticleDrag1
+ selected true
+ xpos -653
+ ypos -37
+}
+ParticleGravity {
+ to {0 -0.01 0}
+ channels {b}
+ name ParticleGravity1
+ selected true
+ xpos -653
+ ypos 1
+}
+ParticleExpression {
+ colexpr v(1,0,0)
+ channels {b}
+ name ParticleExpression1
+ selected true
+ xpos -653
+ ypos 53
+}
+Viewer {
+ frame 988
+ frame_range 900-1134
+ frame_increment 8
+ overscan 300
+ center_fstop 0
+ viewerProcess Film
+ far 100000
+ name Viewer1
+ selected true
+ xpos -43
+ ypos -14
+}
