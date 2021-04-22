@@ -1,0 +1,304 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push 0
+push $cut_paste_input
+Group {
+ inputs 2
+ name PositionBake
+ selected true
+ xpos -623
+ ypos -172
+ addUserKnob {20 User}
+ addUserKnob {41 udim T UVTile67tile.udim}
+ addUserKnob {41 first_frame_dup l "first frame" T FrameHold8_tile.first_frame_dup}
+ addUserKnob {41 format l "output format" T Reformat23.format}
+ addUserKnob {41 antialiasing T ScanlineRender18.antialiasing}
+}
+ Input {
+  inputs 0
+  name Camera
+  xpos -530
+  ypos -490
+ }
+ Dot {
+  name Dot88
+  tile_color 0xff000000
+  xpos -496
+  ypos -376
+ }
+set Nef7d4b0 [stack 0]
+ Dot {
+  name Dot89
+  tile_color 0xff000000
+  xpos -496
+  ypos -272
+ }
+push $Nef7d4b0
+ FrameHold {
+  name FrameHold6
+  xpos -348
+  ypos -386
+  addUserKnob {20 dneg l DNeg}
+  addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+  addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+  addUserKnob {26 ""}
+  addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  first_frame_dup {{parent.FrameHold8_tile.first_frame_dup}}
+  addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {26 ""}
+  addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+  addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+  addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+  addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+  addUserKnob {26 "" -STARTLINE T " "}
+  addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+  addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+  addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+  addUserKnob {26 ""}
+  addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+  addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+  addUserKnob {1 hidden_foce_startline +HIDDEN}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+  addUserKnob {1 show_specify l show +HIDDEN}
+  show_specify " "
+  addUserKnob {1 shot_specify l shot +HIDDEN}
+  shot_specify " "
+  addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+  addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+  addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+  addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+  addUserKnob {1 cut_in_specify +HIDDEN}
+  addUserKnob {1 cut_out_specify +HIDDEN}
+  addUserKnob {1 comp_first_specify +HIDDEN}
+  addUserKnob {1 comp_last_specify +HIDDEN}
+  addUserKnob {1 hero_frame_specify +HIDDEN}
+ }
+ Wireframe {
+  inputs 0
+  name Wireframe9
+  xpos -238
+  ypos -587
+ }
+ Diffuse {
+  name Diffuse1
+  xpos -238
+  ypos -542
+ }
+ UVTile2 {
+  udim {{parent.UVTile67tile.udim}}
+  udim_enable true
+  name UVTile64
+  label "\[value udim]"
+  xpos -238
+  ypos -516
+ }
+ Input {
+  inputs 0
+  name Geometry
+  xpos 129
+  ypos -533
+  number 1
+ }
+ Dot {
+  name Dot90
+  xpos 163
+  ypos -474
+ }
+set Ne4a6200 [stack 0]
+ ApplyMaterial {
+  inputs 2
+  name ApplyMaterial2
+  xpos -238
+  ypos -478
+ }
+ FrameHold {
+  name FrameHold7
+  xpos -238
+  ypos -418
+  addUserKnob {20 dneg l DNeg}
+  addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+  addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+  addUserKnob {26 ""}
+  addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  first_frame_dup {{parent.FrameHold8_tile.first_frame_dup}}
+  addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {26 ""}
+  addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+  addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+  addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+  addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+  addUserKnob {26 "" -STARTLINE T " "}
+  addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+  addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+  addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+  addUserKnob {26 ""}
+  addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+  addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+  addUserKnob {1 hidden_foce_startline +HIDDEN}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+  addUserKnob {1 show_specify l show +HIDDEN}
+  show_specify " "
+  addUserKnob {1 shot_specify l shot +HIDDEN}
+  shot_specify " "
+  addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+  addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+  addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+  addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+  addUserKnob {1 cut_in_specify +HIDDEN}
+  addUserKnob {1 cut_out_specify +HIDDEN}
+  addUserKnob {1 comp_first_specify +HIDDEN}
+  addUserKnob {1 comp_last_specify +HIDDEN}
+  addUserKnob {1 hero_frame_specify +HIDDEN}
+ }
+ Reformat {
+  inputs 0
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  resize none
+  pbb true
+  name Reformat23
+  xpos -128
+  ypos -386
+ }
+add_layer {__Pworld __Pworld.x __Pworld.y __Pworld.z}
+add_layer {__Nworld __Nworld.x __Nworld.y __Nworld.z}
+ ScanlineRender {
+  inputs 3
+  conservative_shader_sampling false
+  antialiasing high
+  projection_mode uv
+  shutteroffset centred
+  motion_vectors_type distance
+  output_shader_vectors true
+  P_channel __Pworld
+  N_channel __Nworld
+  name ScanlineRender18
+  selected true
+  xpos -238
+  ypos -380
+ }
+ FrameHold {
+  first_frame {{parent.FrameHold8_tile.first_frame_dup}}
+  name FrameHold5
+  xpos -238
+  ypos -321
+  addUserKnob {20 dneg l DNeg}
+  addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+  addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+  addUserKnob {26 ""}
+  addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {26 ""}
+  addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+  addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+  addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+  addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+  addUserKnob {26 "" -STARTLINE T " "}
+  addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+  addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+  addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+  addUserKnob {26 ""}
+  addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+  addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+  addUserKnob {1 hidden_foce_startline +HIDDEN}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+  addUserKnob {1 show_specify l show +HIDDEN}
+  show_specify " "
+  addUserKnob {1 shot_specify l shot +HIDDEN}
+  shot_specify " "
+  addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+  addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+  addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+  addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+  addUserKnob {1 cut_in_specify +HIDDEN}
+  addUserKnob {1 cut_out_specify +HIDDEN}
+  addUserKnob {1 comp_first_specify +HIDDEN}
+  addUserKnob {1 comp_last_specify +HIDDEN}
+  addUserKnob {1 hero_frame_specify +HIDDEN}
+ }
+ UVTile2 {
+  udim {{parent.UVTile67tile.udim}}
+  udim_enable true
+  name UVTile65
+  label "\[value udim]"
+  xpos -128
+  ypos -321
+ }
+push $Ne4a6200
+ ApplyMaterial {
+  inputs 2
+  name ApplyMaterial3
+  xpos 129
+  ypos -315
+ }
+push 0
+ ScanlineRender {
+  inputs 3
+  conservative_shader_sampling false
+  overscan 150
+  shutteroffset centred
+  motion_vectors_type distance
+  P_channel __Pworld
+  N_channel __Nworld
+  name ScanlineRender19
+  xpos 129
+  ypos -276
+ }
+ Output {
+  name Output1
+  xpos 129
+  ypos -190
+ }
+ UVTile2 {
+  inputs 0
+  udim 1005
+  udim_enable true
+  name UVTile67tile
+  label "\[value udim]"
+  xpos -399
+  ypos -537
+ }
+ FrameHold {
+  first_frame 1001
+  name FrameHold8_tile
+  xpos -399
+  ypos -501
+  addUserKnob {20 dneg l DNeg}
+  addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+  addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+  addUserKnob {26 ""}
+  addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  first_frame_dup 1001
+  addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {26 ""}
+  addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+  addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+  addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+  addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+  addUserKnob {26 "" -STARTLINE T " "}
+  addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+  addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+  addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+  addUserKnob {26 ""}
+  addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+  addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+  addUserKnob {1 hidden_foce_startline +HIDDEN}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+  addUserKnob {1 show_specify l show +HIDDEN}
+  show_specify " "
+  addUserKnob {1 shot_specify l shot +HIDDEN}
+  shot_specify " "
+  addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+  addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+  addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+  addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+  addUserKnob {1 cut_in_specify +HIDDEN}
+  addUserKnob {1 cut_out_specify +HIDDEN}
+  addUserKnob {1 comp_first_specify +HIDDEN}
+  addUserKnob {1 comp_last_specify +HIDDEN}
+  addUserKnob {1 hero_frame_specify +HIDDEN}
+ }
+end_group
