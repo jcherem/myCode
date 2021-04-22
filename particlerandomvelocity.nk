@@ -1,0 +1,14 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+ParticleExpression {
+ colexpr_onlynew true
+ massexpr_onlynew true
+ velexpr "vel + ((randomv-0.5)/5)"
+ velexpr_onlynew true
+ seed 15
+ name RANDOM_VELOCITY
+ selected true
+ xpos 6028
+ ypos 293
+}
