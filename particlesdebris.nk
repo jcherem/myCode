@@ -1,0 +1,2644 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x355e3500
+ label "bounce floor "
+ note_font_size 42
+ selected true
+ xpos -725
+ ypos -379
+ bdwidth 880
+ bdheight 199
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0x39a890ff
+ label "debris \nambient occlusion"
+ note_font_size 42
+ selected true
+ xpos 539
+ ypos 887
+ bdwidth 416
+ bdheight 736
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x263150ff
+ label dof
+ note_font_size 42
+ selected true
+ xpos -1557
+ ypos 2512
+ bdwidth 127
+ bdheight 435
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode12
+ tile_color 0x388e8e00
+ label format
+ note_font_size 42
+ selected true
+ xpos 2139
+ ypos 1386
+ bdheight 205
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode13
+ tile_color 0x283f5eff
+ label "geo of the floor or card "
+ note_font_size 42
+ selected true
+ xpos 1477
+ ypos 297
+ bdwidth 590
+ bdheight 366
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode14
+ tile_color 0x388e8e00
+ label "End of simulation viewer here is recomended "
+ note_font_size 42
+ selected true
+ xpos -720
+ ypos 57
+ bdwidth 870
+ bdheight 187
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode15
+ tile_color 0x511e8e00
+ label emitter
+ note_font_size 42
+ selected true
+ xpos 493
+ ypos -1285
+ bdwidth 237
+ bdheight 202
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode16
+ tile_color 0x2b999900
+ label spawner
+ note_font_size 42
+ selected true
+ xpos -1421
+ ypos -844
+ bdwidth 1151
+ bdheight 352
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x91746ff
+ label "particle Drag "
+ note_font_size 42
+ selected true
+ xpos -723
+ ypos -122
+ bdwidth 862
+ bdheight 157
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0x91746ff
+ label ParticleInstance
+ note_font_size 42
+ selected true
+ xpos -1405
+ ypos -1862
+ bdwidth 1570
+ bdheight 535
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0xd2848cff
+ label "instance proxy"
+ note_font_size 42
+ selected true
+ xpos -1517
+ ypos -1243
+ bdwidth 1555
+ bdheight 156
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode7
+ tile_color 0x7c3636ff
+ label "floor  occlusion"
+ note_font_size 42
+ selected true
+ xpos 1102
+ ypos 887
+ bdwidth 630
+ bdheight 732
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode8
+ tile_color 0x642323ff
+ label camera
+ note_font_size 42
+ selected true
+ xpos -1408
+ ypos 414
+ bdwidth 274
+ bdheight 1251
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode9
+ tile_color 0x394c90ff
+ label "Base color"
+ note_font_size 42
+ selected true
+ xpos -168
+ ypos 885
+ bdwidth 603
+ bdheight 737
+}
+push $cut_paste_input
+Light2 {
+ light_type directional
+ translate {27.25 8.15000248 -172.9999847}
+ rotate {-16.4 113 -0.184}
+ uniform_scale 1000
+ cast_shadows true
+ depthmap_slope_bias 0.01
+ name Light3
+ selected true
+ xpos 159
+ ypos 721
+}
+Transform {
+ inputs 0
+ scale 0.5
+ center {128 128}
+ shutteroffset centred
+ name Transform7
+ selected true
+ xpos -1145
+ ypos -1245
+}
+Camera2 {
+ inputs 0
+ read_from_file true
+ selectable false
+ translate {{curve x1071 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062 20.827062} {curve x1071 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825 11.482825} {curve x1071 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402 -301.778402}}
+ rotate {{curve x1071 1.539756 1.537323 1.543571 1.544304 1.547576 1.544387 1.550422 1.547136 1.54554 1.544048 1.538222 1.53503 1.533432 1.534429 1.533805 1.534689 1.536681 1.529373 1.532085 1.534643 1.531194 1.535286 1.535914 1.532153 1.539197 1.54249 1.545764 1.545262 1.545161 1.542817 1.536489 1.532329 1.530851 1.532482 1.533745 1.533945 1.536744 1.536285 1.535966 1.537581 1.535527 1.535346 1.534964 1.538055 1.539257 1.5355 1.538273 1.534293 1.53285 1.53252 1.530555 1.532858 1.531874 1.530492 1.531916 1.532589 1.533262 1.533935} {curve x1071 176.87966 176.87992 176.878252 176.872941 176.863412 176.858817 176.85851 176.859996 176.860003 176.8606 176.862726 176.869334 176.869369 176.868591 176.864235 176.863309 176.860605 176.863339 176.867105 176.869471 176.869692 176.867073 176.862234 176.861636 176.857288 176.851343 176.838422 176.843422 176.843143 176.843172 176.84296 176.845759 176.845617 176.846599 176.845096 176.844951 176.841747 176.841607 176.840595 176.84064 176.84135 176.844084 176.846647 176.847678 176.847598 176.849607 176.847515 176.848333 176.846911 176.845923 176.845681 176.845549 176.844646 176.843877 176.844548 176.847308 176.850068 176.852828} {curve x1071 -0.635403 -0.641206 -0.634991 -0.61806 -0.610925 -0.603284 -0.612574 -0.607615 -0.610062 -0.610654 -0.617078 -0.62814 -0.627569 -0.624837 -0.623175 -0.625589 -0.625112 -0.63396 -0.638314 -0.639119 -0.647472 -0.648938 -0.636618 -0.639226 -0.621664 -0.615164 -0.60539 -0.610843 -0.614739 -0.621842 -0.630476 -0.632695 -0.634241 -0.632093 -0.630173 -0.630778 -0.631473 -0.632024 -0.631638 -0.627238 -0.626911 -0.637444 -0.63614 -0.636529 -0.634364 -0.641689 -0.638585 -0.644426 -0.64132 -0.64653 -0.64391 -0.649373 -0.640259 -0.643083 -0.641241 -0.641399 -0.641557 -0.641715}}
+ scaling {{curve x1071 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} {curve x1071 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} {curve x1071 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+ uniform_scale {{curve x1071 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+ skew {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ pivot {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ focal {{curve x1071 65.52189636 65.5246582 65.52742004 65.53018188 65.53295135 65.5357132 65.53847504 65.54123688 65.54400635 65.54676819 65.54953003 65.55229187 65.55506134 65.55782318 65.56058502 65.56334686 65.56611633 65.56887817 65.57164001 65.57440186 65.57717133 65.57993317 65.58276367 65.58586121 65.5892334 65.59287262 65.5967865 65.60089874 65.60501099 65.60912323 65.61323547 65.61734772 65.62145996 65.6255722 65.62969208 65.63380432 65.63791656 65.64202881 65.64614105 65.6502533 65.65436554 65.65847778 65.66259003 65.66670227 65.67081451 65.67493439 65.67904663 65.68315887 65.68727112 65.69138336 65.69549561 65.69960785 65.70372009 65.70783234 65.71112823 65.71359253 65.71605682 65.71852875}}
+ haperture {{curve x1071 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831 24.57599831}}
+ vaperture {{curve x1071 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046 18.72681046}}
+ near {{curve x1071 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5}}
+ far {{curve x1071 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000 10000000}}
+ win_translate {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ win_scale {{curve x1071 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} {curve x1071 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+ focal_point {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ fstop {{curve x1071 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905 5.599999905}}
+ file /jobs/MAGIC/127_or_2510/ivy/cam/C_127_or_2510_layout_shot_v001/C_127_or_2510_layout_shot_v001.abc
+ suppress_dialog true
+ name Camera1
+ selected true
+ xpos -1140
+ ypos 680
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" "Alexa 65/6k 2.11" "Alexa MINI/OpenGate" "Alexa MINI/16:9 Full" "Alexa SXT/4:3 Full" "Delivery Extractions/IMAX 15perf" "Film 35mm/4k Full App" "Generic/1080p HD" Generic/Anamorphic Generic/Spherical IMAX/6k IMAX/15perf "IMAX/15perf Scaled" "IMAX/65mm 5 perf" "Internal Movie Extractions/Previs" "Internal Movie Extractions/MAGIC Working" "Internal Movie Extractions/Super 35mm Film" "Internal Movie Extractions/MAGIC IMAX Delivery" "Internal Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Previs" "Movie Extractions/MAGIC Working" "Movie Extractions/Alexa SXT 4:3 Full" "Movie Extractions/Super 35mm Film" "Movie Extractions/MAGIC IMAX Delivery" "Movie Extractions/Alexa 65 6k 2.11 " "Movie Extractions/MAGIC IMAX Working" "Movie Extractions/Alexa MINI OpenGate 100pc" "Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Alexa MINI 16:9 Full" "Movie Extractions/Alexa 65 6k 2.11" "Movie Extractions/VistaVision" "Movie Extractions/IMAX 65mm 5 Perf" "Movie Extractions/MAGIC IMAX Working 2k" "Movie Extractions VFX/MAGIC Working" "Movie Extractions VFX/MAGIC IMAX Working" Previs/Anamorphic Previs/Spherical "Previs/IMAX 6k" Sony/A7 "Sony/A7 Portrait" VistaVision/6k "Working Extractions/Super 35mm Film" "Working Extractions/IMAX 15perf" "Working Extractions/Alexa MINI OpenGate 100pc" "Working Extractions/Alexa MINI 16:9 Full 100pc" "Working Extractions/Alexa SXT 4:3 Full 100pc" "Working Extractions/Alexa MINI OpenGate 95pc" "Working Extractions/VistaVision" "Working Extractions/Alexa 65 6k 2.11" "Working Extractions/IMAX 65mm 5 Perf" "Working Extractions/MAGIC IMAX Working 2k" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" +DISABLED R -1 1}
+ hshake {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 vshake l "hero vert shake" +DISABLED R -1 1}
+ vshake {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shakeroll l "hero shake roll" +DISABLED R -180 180}
+ shakeroll {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 ahshake l "ambient horiz shake" +DISABLED R -1 1}
+ ahshake {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 avshake l "ambient vert shake" +DISABLED R -1 1}
+ avshake {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 ashakeroll l "ambient shake roll" +DISABLED R -180 180}
+ ashakeroll {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/MAGIC/127_or_2510/ivy/cam/C_127_or_2510_layout_shot_v001/C_127_or_2510_layout_shot_v001.abc
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 87540b2c-4e44-40e6-941e-15c1bfb066ab
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid ce8ac903-7022-4658-b305-7ff9709d66ba
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid d62f0cab-ff46-4c8e-b459-a230278cf967
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid a105866a-b0b5-4d47-8a3e-45edaa0244d4
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype cam
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label alembic
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 1
+ addUserKnob {43 ivy_notes l Notes}
+ ivy_notes "latest layout scene - roto'd out vehicles and placed over top of element road still/plate - \nlooking through renderCam/bg01 camera - just the plates"
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+ addUserKnob {20 abc_user_props l Alembic}
+ addUserKnob {26 _info l Info T "User Properties\nAll the user properties below are represented as mm to convert to inches divide by 25.4"}
+ addUserKnob {7 focus l Focus}
+ focus {{curve x1071 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673 41.66666673}}
+ addUserKnob {1 id l Id}
+ addUserKnob {7 interaxialSeparation l "Interaxial Separation"}
+ interaxialSeparation 6.35
+ addUserKnob {7 lensProfileZoom l "Lens Profile Zoom"}
+ lensProfileZoom {{curve x1071 1664.256168 1664.326318 1664.396469 1664.46662 1664.536964 1664.607115 1664.677266 1664.747417 1664.817761 1664.887912 1664.958063 1665.028214 1665.098558 1665.168709 1665.23886 1665.30901 1665.379355 1665.449506 1665.519656 1665.589807 1665.660152 1665.730302 1665.802197 1665.880875 1665.966528 1666.058965 1666.158377 1666.262828 1666.367279 1666.47173 1666.576181 1666.680632 1666.785083 1666.889534 1666.994179 1667.09863 1667.203081 1667.307532 1667.411983 1667.516434 1667.620885 1667.725336 1667.829787 1667.934238 1668.038689 1668.143333 1668.247784 1668.352235 1668.456686 1668.561137 1668.665588 1668.770039 1668.87449 1668.978941 1669.062657 1669.12525 1669.187843 1669.25063}}
+ addUserKnob {1 lensSolve l "Lens Solve"}
+ lensSolve /jobs/MAGIC/127_or_2510/ivy/lnd/LND_127_or_2510_cameratrack_bg01_v003/LND_127_or_2510_cameratrack_bg01_v003.lensdata
+ addUserKnob {7 ambientShakeHorizontal l "Ambient Shake Horizontal"}
+ ambientShakeHorizontal {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 ambientShakeRoll l "Ambient Shake Roll"}
+ ambientShakeRoll {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 ambientShakeVertical l "Ambient Shake Vertical"}
+ ambientShakeVertical {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 heroShakeHorizontal l "Hero Shake Horizontal"}
+ heroShakeHorizontal {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 heroShakeRoll l "Hero Shake Roll"}
+ heroShakeRoll {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 heroShakeVertical l "Hero Shake Vertical"}
+ heroShakeVertical {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shake3dRx l "Shake 3D Rx"}
+ shake3dRx {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shake3dRy l "Shake 3D Ry"}
+ shake3dRy {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shake3dRz l "Shake 3D Rz"}
+ shake3dRz {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shake3dTx l "Shake 3D Tx"}
+ shake3dTx {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shake3dTy l "Shake 3D Ty"}
+ shake3dTy {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shake3dTz l "Shake 3D Tz"}
+ shake3dTz {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shakeHorizontal l "Shake Horizontal"}
+ shakeHorizontal {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shakeRoll l "Shake Roll"}
+ shakeRoll {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 shakeVertical l "Shake Vertical"}
+ shakeVertical {{curve x1071 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+ addUserKnob {7 zeroParallax l "Zero Parallax"}
+ zeroParallax 254
+}
+Camera2 {
+ inputs 0
+ translate {19.38810349 2.64513135 -35.72108841}
+ rotate {-2.47799921 152.8000488 1.068215738e-07}
+ name Camera2
+ selected true
+ xpos -1278
+ ypos 630
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" "Alexa 65/6k 2.11" "Alexa MINI/OpenGate" "Alexa MINI/16:9 Full" "Alexa SXT/4:3 Full" "Delivery Extractions/IMAX 15perf" "Film 35mm/4k Full App" "Generic/1080p HD" Generic/Anamorphic Generic/Spherical IMAX/6k IMAX/15perf "IMAX/15perf Scaled" "IMAX/65mm 5 perf" "Internal Movie Extractions/Previs" "Internal Movie Extractions/MAGIC Working" "Internal Movie Extractions/Super 35mm Film" "Internal Movie Extractions/MAGIC IMAX Delivery" "Internal Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Previs" "Movie Extractions/MAGIC Working" "Movie Extractions/Alexa SXT 4:3 Full" "Movie Extractions/Super 35mm Film" "Movie Extractions/MAGIC IMAX Delivery" "Movie Extractions/Alexa 65 6k 2.11 " "Movie Extractions/MAGIC IMAX Working" "Movie Extractions/Alexa MINI OpenGate 100pc" "Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Alexa MINI 16:9 Full" "Movie Extractions/Alexa 65 6k 2.11" "Movie Extractions/VistaVision" "Movie Extractions/IMAX 65mm 5 Perf" "Movie Extractions/MAGIC IMAX Working 2k" "Movie Extractions VFX/MAGIC Working" "Movie Extractions VFX/MAGIC IMAX Working" Previs/Anamorphic Previs/Spherical "Previs/IMAX 6k" Sony/A7 "Sony/A7 Portrait" VistaVision/6k "Working Extractions/Super 35mm Film" "Working Extractions/IMAX 15perf" "Working Extractions/Alexa MINI OpenGate 100pc" "Working Extractions/Alexa MINI 16:9 Full 100pc" "Working Extractions/Alexa SXT 4:3 Full 100pc" "Working Extractions/Alexa MINI OpenGate 95pc" "Working Extractions/VistaVision" "Working Extractions/Alexa 65 6k 2.11" "Working Extractions/IMAX 65mm 5 Perf" "Working Extractions/MAGIC IMAX Working 2k" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" R -1 1}
+ addUserKnob {7 vshake l "hero vert shake" R -1 1}
+ addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
+ addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
+ addUserKnob {7 avshake l "ambient vert shake" R -1 1}
+ addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+set N15f36220 [stack 0]
+Dot {
+ name Dot14
+ selected true
+ xpos -1254
+ ypos 1492
+}
+set N1626bb90 [stack 0]
+Dot {
+ name Dot11
+ selected true
+ xpos -1254
+ ypos 1569
+}
+set N1626b260 [stack 0]
+FillMat {
+ inputs 0
+ color 1
+ name FillMat6
+ selected true
+ xpos 604
+ ypos 1413
+}
+AmbientOcclusion {
+ samples 15
+ spread 0.1
+ falloff 1
+ name AmbientOcclusion5
+ selected true
+ xpos 604
+ ypos 1466
+}
+FillMat {
+ inputs 0
+ color 1
+ name FillMat3
+ selected true
+ xpos 1621
+ ypos 1265
+}
+AmbientOcclusion {
+ spread 100
+ falloff 1
+ name AmbientOcclusion2
+ selected true
+ xpos 1621
+ ypos 1291
+}
+AmbientOcclusion {
+ spread 10
+ falloff 1
+ name AmbientOcclusion3
+ selected true
+ xpos 1621
+ ypos 1317
+}
+Noise {
+ inputs 0
+ output rgb
+ gain 0.355
+ gamma 1
+ center {1056 499}
+ name Noise19
+ selected true
+ xpos 1332
+ ypos 414
+}
+Constant {
+ inputs 0
+ color {1 1 1 1}
+ color_panelDropped true
+ name Constant22
+ selected true
+ xpos 1187
+ ypos 441
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Multiply2
+ selected true
+ xpos 1332
+ ypos 464
+}
+push 0
+Phong {
+ inputs 2
+ name Phong14
+ selected true
+ xpos 1332
+ ypos 509
+}
+Card2 {
+ inputs 0
+ translate {0 -0.0405 22.93828447}
+ uniform_scale 100
+ type bilinear
+ uv_position {0 0}
+ control_points {3 3 3 6 
+
+1 {-0.4639999866 0 -0.5699999928} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1270000041 -0.002000033855} 0 {0 0 0} 0 {0 0 0} 
+1 {0.03599999845 0 -0.5699999928} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0.001000002027 0.1204999983 -0.01099997759} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5360000134 0 -0.5699999928} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0.002999961376 0 0.02549999952} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {1 0.5 0} 
+1 {-0.5 0.380997479 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0 1 0} 
+1 {0 0.380997479 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0.5 1 0} 
+1 {0.5 0.380997479 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {1 1 0} }
+ drawPosition {-0.4639999866 0 -0.5699999928}
+ name Card2
+ selected true
+ xpos 1487
+ ypos 379
+}
+Normals {
+ action build
+ name Normals4
+ selected true
+ xpos 1487
+ ypos 457
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial12
+ selected true
+ xpos 1487
+ ypos 509
+}
+Dot {
+ name Dot47
+ selected true
+ xpos 1521
+ ypos 617
+}
+set N150985a0 [stack 0]
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial3
+ selected true
+ xpos 1487
+ ypos 1317
+}
+Dot {
+ name Dot13
+ selected true
+ xpos 1521
+ ypos 1406
+}
+FillMat {
+ inputs 0
+ color 1
+ name FillMat4
+ selected true
+ xpos 1145
+ ypos 1274
+}
+Grade {
+ channels rgba
+ multiply 0
+ maskChannelInput rgba.red
+ name Grade3
+ selected true
+ xpos 1145
+ ypos 1300
+}
+Dot {
+ name Dot200
+ selected true
+ xpos 1179
+ ypos 1338
+}
+CheckerBoard2 {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name CheckerBoard1
+ selected true
+ xpos -1023
+ ypos -660
+}
+Transform {
+ scale 0.3
+ center {128 128}
+ shutteroffset centred
+ name Transform5
+ selected true
+ xpos -1023
+ ypos -588
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0 0 1 0}
+ color_panelDropped true
+ format "256 256 0 0 256 256 1 square_256"
+ name Constant9
+ selected true
+ xpos -1409
+ ypos -765
+}
+add_layer {col col.red col.green col.blue}
+Shuffle {
+ out col
+ name Shuffle13
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -1409
+ ypos -646
+}
+Reformat {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name Reformat14
+ selected true
+ xpos -1258
+ ypos -764
+}
+Noise {
+ size 6
+ center {1144 858}
+ name Noise11
+ selected true
+ xpos -1258
+ ypos -726
+}
+Shuffle {
+ alpha white
+ name Shuffle12
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -1258
+ ypos -700
+}
+ShuffleCopy {
+ inputs 2
+ in col
+ red red
+ green green
+ blue blue
+ out col
+ name ShuffleCopy1
+ selected true
+ xpos -1258
+ ypos -640
+}
+Phong {
+ specular 0.015
+ name Phong1
+ selected true
+ xpos -1258
+ ypos -555
+}
+Sphere {
+ rows 3
+ columns 3
+ radius 0.2
+ uniform_scale 0.35
+ name Sphere7
+ selected true
+ xpos -1258
+ ypos -529
+}
+Switch {
+ inputs 2
+ which {{"\$gui ? 1 : 0"}}
+ name Switch2
+ selected true
+ xpos -1023
+ ypos -529
+}
+set N14267bd0 [stack 0]
+CheckerBoard2 {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name CheckerBoard4
+ selected true
+ xpos -1639
+ ypos -1258
+}
+Transform {
+ scale 0.5
+ center {128 128}
+ shutteroffset centred
+ name Transform6
+ selected true
+ xpos -1639
+ ypos -1162
+ disable true
+}
+Dot {
+ name Dot22
+ selected true
+ xpos -1605
+ ypos -1136
+}
+set N14b743e0 [stack 0]
+Reformat {
+ inputs 0
+ format "512 512 0 0 512 512 1 square_512"
+ name Reformat6
+ selected true
+ xpos -1394
+ ypos -1426
+}
+Noise {
+ premult rgb
+ size {894.3333333 -125}
+ gain 0.475
+ gamma 0.505
+ center {1024 576}
+ name Noise6
+ selected true
+ xpos -1394
+ ypos -1388
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {1 1 0 0}
+ color_panelDropped true
+ format "256 256 0 0 256 256 1 square_256"
+ name Constant5
+ selected true
+ xpos -1395
+ ypos -1713
+}
+Shuffle {
+ out col
+ name Shuffle2
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -1395
+ ypos -1611
+}
+Reformat {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name Reformat8
+ selected true
+ xpos -1275
+ ypos -1715
+}
+Noise {
+ center {1144 858}
+ name Noise1
+ selected true
+ xpos -1275
+ ypos -1677
+}
+Shuffle {
+ alpha white
+ name Shuffle10
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -1275
+ ypos -1651
+}
+ShuffleCopy {
+ inputs 2
+ in col
+ red red
+ green green
+ blue blue
+ out col
+ name ShuffleCopy2
+ selected true
+ xpos -1275
+ ypos -1605
+}
+Phong {
+ specular 0.015
+ name Phong6
+ selected true
+ xpos -1275
+ ypos -1536
+}
+Sphere {
+ rows 10
+ columns 10
+ radius 0.2
+ uniform_scale 0.26
+ name Sphere5
+ selected true
+ xpos -1275
+ ypos -1463
+}
+DisplaceGeo {
+ inputs 2
+ scale 1.115
+ name DisplaceGeo5
+ selected true
+ xpos -1275
+ ypos -1388
+}
+clone node15fcc710|Switch|119496 Switch {
+ inputs 2
+ which {{"\$gui ? 1 : 0"}}
+ name Switch1
+ selected true
+ xpos -1275
+ ypos -1140
+}
+set C15fcc710 [stack 0]
+Dot {
+ name Dot29
+ selected true
+ xpos -1241
+ ypos -895
+}
+push $N14b743e0
+Reformat {
+ inputs 0
+ format "512 512 0 0 512 512 1 square_512"
+ name Reformat5
+ selected true
+ xpos -1047
+ ypos -1396
+}
+Noise {
+ premult rgb
+ size {-894.3333333 125}
+ gain 0.475
+ gamma 0.505
+ center {1024 576}
+ name Noise5
+ selected true
+ xpos -1047
+ ypos -1358
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {1 0.030063 0.984683 0}
+ color_panelDropped true
+ format "256 256 0 0 256 256 1 square_256"
+ name Constant4
+ selected true
+ xpos -1083
+ ypos -1754
+}
+Shuffle {
+ out col
+ name Shuffle3
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -1083
+ ypos -1610
+}
+Reformat {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name Reformat9
+ selected true
+ xpos -927
+ ypos -1732
+}
+Noise {
+ size 11
+ center {1144 858}
+ name Noise7
+ selected true
+ xpos -928
+ ypos -1694
+}
+Shuffle {
+ alpha white
+ name Shuffle9
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -928
+ ypos -1668
+}
+ShuffleCopy {
+ inputs 2
+ in col
+ red red
+ green green
+ blue blue
+ out col
+ name ShuffleCopy3
+ selected true
+ xpos -928
+ ypos -1604
+}
+Phong {
+ specular 0.015
+ name Phong5
+ selected true
+ xpos -928
+ ypos -1578
+}
+Sphere {
+ rows 10
+ columns 10
+ radius 0.2
+ uniform_scale 0.26
+ name Sphere4
+ selected true
+ xpos -928
+ ypos -1435
+}
+DisplaceGeo {
+ inputs 2
+ scale 1.115
+ name DisplaceGeo4
+ selected true
+ xpos -937
+ ypos -1358
+}
+clone $C15fcc710 {
+ inputs 2
+ xpos -928
+ ypos -1140
+ selected true
+}
+push $N14b743e0
+Reformat {
+ inputs 0
+ format "512 512 0 0 512 512 1 square_512"
+ name Reformat4
+ selected true
+ xpos -730
+ ypos -1405
+}
+Noise {
+ premult rgb
+ size 340
+ gain 0.475
+ gamma 0.505
+ center {1024 576}
+ name Noise4
+ selected true
+ xpos -730
+ ypos -1367
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0 0 1 0}
+ color_panelDropped true
+ format "256 256 0 0 256 256 1 square_256"
+ name Constant3
+ selected true
+ xpos -731
+ ypos -1726
+}
+Shuffle {
+ out col
+ name Shuffle4
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -731
+ ypos -1628
+}
+Reformat {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name Reformat11
+ selected true
+ xpos -611
+ ypos -1718
+}
+Noise {
+ size 560
+ center {1144 858}
+ name Noise8
+ selected true
+ xpos -611
+ ypos -1680
+}
+Shuffle {
+ alpha white
+ name Shuffle8
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -611
+ ypos -1654
+}
+ShuffleCopy {
+ inputs 2
+ in col
+ red red
+ green green
+ blue blue
+ out col
+ name ShuffleCopy4
+ selected true
+ xpos -611
+ ypos -1622
+ disable true
+}
+Phong {
+ specular 0.015
+ name Phong4
+ selected true
+ xpos -611
+ ypos -1574
+}
+Sphere {
+ rows 10
+ columns 10
+ radius 0.035
+ uniform_scale 0.26
+ name Sphere3
+ selected true
+ xpos -611
+ ypos -1443
+}
+DisplaceGeo {
+ inputs 2
+ scale 0.37
+ name DisplaceGeo3
+ selected true
+ xpos -611
+ ypos -1367
+}
+clone $C15fcc710 {
+ inputs 2
+ xpos -611
+ ypos -1140
+ selected true
+}
+push $N14b743e0
+Reformat {
+ inputs 0
+ format "512 512 0 0 512 512 1 square_512"
+ name Reformat3
+ selected true
+ xpos -402
+ ypos -1405
+}
+Noise {
+ premult rgb
+ size 6.6
+ gain 0.475
+ gamma 0.505
+ center {1024 576}
+ name Noise3
+ selected true
+ xpos -402
+ ypos -1367
+}
+Constant {
+ inputs 0
+ color {0 1 0 1}
+ color_panelDropped true
+ format "256 256 0 0 256 256 1 square_256"
+ name Constant2
+ selected true
+ xpos -407
+ ypos -1782
+}
+Shuffle {
+ alpha white
+ name Shuffle7
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -407
+ ypos -1684
+}
+Shuffle {
+ out col
+ name Shuffle5
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -407
+ ypos -1628
+}
+Reformat {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name Reformat12
+ selected true
+ xpos -283
+ ypos -1762
+}
+Noise {
+ size 6
+ center {1144 858}
+ name Noise9
+ selected true
+ xpos -283
+ ypos -1724
+}
+Shuffle {
+ alpha white
+ name Shuffle11
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -283
+ ypos -1698
+}
+ShuffleCopy {
+ inputs 2
+ in col
+ red red
+ green green
+ blue blue
+ out col
+ name ShuffleCopy5
+ selected true
+ xpos -283
+ ypos -1622
+}
+Phong {
+ specular 0.015
+ name Phong3
+ selected true
+ xpos -283
+ ypos -1596
+}
+Sphere {
+ rows 10
+ columns 10
+ radius 0.2
+ uniform_scale 0.26
+ name Sphere2
+ selected true
+ xpos -283
+ ypos -1447
+}
+DisplaceGeo {
+ inputs 2
+ scale 0.37
+ name DisplaceGeo2
+ selected true
+ xpos -283
+ ypos -1367
+}
+clone $C15fcc710 {
+ inputs 2
+ xpos -283
+ ypos -1140
+ selected true
+}
+push $N14b743e0
+Reformat {
+ inputs 0
+ format "512 512 0 0 512 512 1 square_512"
+ name Reformat10
+ selected true
+ xpos 75
+ ypos -1399
+}
+Noise {
+ premult rgb
+ size 155
+ gain 0.69
+ gamma 0.215
+ center {1024 576}
+ name Noise2
+ selected true
+ xpos 75
+ ypos -1361
+}
+Constant {
+ inputs 0
+ color {1 0 0 1}
+ color_panelDropped true
+ format "256 256 0 0 256 256 1 square_256"
+ name Constant1
+ selected true
+ xpos -178
+ ypos -1739
+}
+Shuffle {
+ out col
+ name Shuffle6
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -178
+ ypos -1650
+}
+Reformat {
+ inputs 0
+ format "256 256 0 0 256 256 1 square_256"
+ name Reformat13
+ selected true
+ xpos -49
+ ypos -1768
+}
+Noise {
+ size {820 820}
+ center {1144 858}
+ name Noise10
+ selected true
+ xpos -49
+ ypos -1730
+}
+Shuffle {
+ alpha white
+ name Shuffle1
+ label "--->\[knob in] >\[knob out]"
+ selected true
+ xpos -49
+ ypos -1704
+}
+ShuffleCopy {
+ inputs 2
+ in col
+ red red
+ green green
+ blue blue
+ out col
+ name ShuffleCopy6
+ selected true
+ xpos -49
+ ypos -1644
+}
+Phong {
+ specular 0.015
+ name Phong2
+ selected true
+ xpos -49
+ ypos -1532
+}
+Sphere {
+ rows 10
+ columns 10
+ radius 0.1
+ uniform_scale 0.26
+ name Sphere1
+ selected true
+ xpos -49
+ ypos -1430
+}
+DisplaceGeo {
+ inputs 2
+ scale 0.37
+ name DisplaceGeo1
+ selected true
+ xpos -49
+ ypos -1361
+}
+clone $C15fcc710 {
+ inputs 2
+ xpos -49
+ ypos -1140
+ selected true
+}
+Card2 {
+ inputs 0
+ translate {1.892000198 1.003600001 -9.294401169}
+ rotate {-15.45 -85.85 1.35}
+ scaling {1 0.205 1}
+ uniform_scale 0.205
+ control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+ name Card3
+ selected true
+ xpos 636
+ ypos -1165
+}
+Card2 {
+ inputs 0
+ translate {1.89199996 1.005401254 -9.285600662}
+ rotate {26.75 -33.4 0}
+ scaling {1 0.25 1}
+ uniform_scale 0.205
+ control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+ name Card4
+ selected true
+ xpos 499
+ ypos -1204
+}
+MergeGeo {
+ inputs 2
+ name MergeGeo2
+ selected true
+ xpos 499
+ ypos -1165
+}
+TransformGeo {
+ translate {-1.19984436 1.330005646 10.00015259}
+ rotate {0 234.75 0}
+ uniform_scale 38.325
+ pivot {1.899999976 1.04400003 -9.324000359}
+ name TransformGeo1
+ selected true
+ xpos 499
+ ypos -1118
+}
+Dot {
+ name Dot30
+ selected true
+ xpos 533
+ ypos -895
+}
+push 0
+ParticleEmitter {
+ inputs 7
+ start_frame 1005
+ emit_from edges
+ rate {{curve x1008 0 x1010 0.0419417711 x1011 14.0158844 x1021 0}}
+ rate_variation 1
+ lifetime 200
+ velocity 2
+ velocity_variation 3
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 0.15
+ size_variation 1
+ mass 5
+ mass_variation 1
+ spread 0.105
+ color_from_texture true
+ start_wrap true
+ max_clip_length 121
+ seed 19
+ name ParticleEmitter1
+ selected true
+ xpos -358
+ ypos -899
+}
+ParticleSpawn {
+ inputs 2
+ rate {{curve x1007 0 x1009 1.176095448 x1010 2.766733526 x1020 0}}
+ lifetime 200
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 0.25
+ size_variation 2
+ mass 1
+ mass_variation 1
+ spread 0.125
+ conserve_mass false
+ conserve_momentum false
+ name ParticleSpawn1
+ selected true
+ xpos -358
+ ypos -535
+ disable true
+}
+ParticleGravity {
+ to {0 -0.25 0}
+ name ParticleGravity2
+ selected true
+ xpos -358
+ ypos -417
+}
+ParticleBounce {
+ out_bounce_mode kill
+ out_new_channels {b}
+ in_new_channels {b}
+ in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
+ in_friction 0.69
+ bounceaxis_translate {2.200000048 0 -9.200001717}
+ bounceaxis_uniform_scale 152.45
+ name ParticleBounce2
+ selected true
+ xpos -358
+ ypos -292
+}
+ParticleDirectionalForce {
+ strength {0.03 0.03 0}
+ channels {a}
+ name ParticleDirectionalForce1
+ selected true
+ xpos -358
+ ypos -167
+}
+ParticleDrag {
+ drag 0.16
+ rotational_drag {{curve x1022 0 x1041 0.0838830173}}
+ name ParticleDrag1
+ selected true
+ xpos -358
+ ypos -60
+}
+ParticleSettings {
+ steps_per_frame 5
+ name ParticleSettings1
+ selected true
+ xpos -358
+ ypos 211
+}
+set N159a0620 [stack 0]
+Dot {
+ name Dot21
+ note_font_size 40
+ selected true
+ xpos -324
+ ypos 622
+}
+set N14e8ed20 [stack 0]
+Dot {
+ name Dot10
+ selected true
+ xpos -324
+ ypos 797
+}
+set N16af6950 [stack 0]
+Dot {
+ name Dot15
+ selected true
+ xpos 75
+ ypos 797
+}
+set N1671b550 [stack 0]
+Scene {
+ shadow_override "override inputs"
+ name Scene7
+ selected true
+ xpos 1269
+ ypos 773
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial4
+ selected true
+ xpos 1259
+ ypos 1334
+}
+Scene {
+ inputs 2
+ name Scene8
+ selected true
+ xpos 1269
+ ypos 1382
+}
+set N13602480 [stack 0]
+Dot {
+ name Dot18
+ selected true
+ xpos 763
+ ypos 1406
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial8
+ selected true
+ xpos 729
+ ypos 1466
+}
+Reformat {
+ inputs 0
+ black_outside true
+ pbb true
+ name Reformat15
+ selected true
+ xpos 2149
+ ypos 1466
+}
+Dot {
+ name Dot12
+ selected true
+ xpos 2183
+ ypos 1569
+}
+set N16311710 [stack 0]
+RayRender {
+ inputs 3
+ stochastic_samples {{parent.RayRender1.stochastic_samples}}
+ interpolate_animation false
+ samples {{parent.RayRender1.samples}}
+ shutteroffset centred
+ name RayRender5
+ selected true
+ xpos 729
+ ypos 1565
+}
+FileOut {
+ name FileOut3
+ tile_color 0xbfbf00ff
+ selected true
+ xpos 730
+ ypos 1591
+ icon smartgrade.png
+ channels all
+ _destination /jobs
+ file /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_aoc_v001/3168x2414/E_127_or_2510_comp_precomp_debirs_aoc_v001.####.exr
+ proxy ""
+ fileProxy /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_aoc_v001/1584x1207/E_127_or_2510_comp_precomp_debirs_aoc_v001.####.exr
+ views {main}
+ first 1073
+ last 1126
+ proxy_mode "full + proxy"
+ pbb true
+ smart_grade on
+ tex_metadata "default metadata and exr/*"
+ _format "3168 2414 0 0 3168 2414 1.0 MAGIC Working"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '1', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'debirs_aoc', 'out_dir': u'ELEMENT'\}, 'job': 'MAGIC', 'stalk': None, 'stalkAttrs': \{'framerange': '1073-1126'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==0c6f0c91-4243-4c5c-bd5c-617ec4a578ea&Stem.stemname==127_or_2510&Stem.stemtype==shot'\}"
+ _old_filetype exr
+ _stalkname E_127_or_2510_comp_precomp_debirs_aoc_v001
+ _twigtype 2d
+ _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+ _invert_grade /tools/MAGIC/ivyasset/163_pa_0100/ivy/grade/GRD_163_pa_0100_neutral_v002/GRD_163_pa_0100_neutral_v002.grade
+}
+Dot {
+ name Dot19
+ selected true
+ xpos 763
+ ypos 2199
+}
+Constant {
+ inputs 0
+ channels rgb
+ color 1
+ name Constant8
+ selected true
+ xpos 851
+ ypos 2442
+}
+Merge2 {
+ inputs 2
+ name Merge6
+ selected true
+ xpos 730
+ ypos 2465
+}
+push $N1626b260
+ColorWheel {
+ inputs 0
+ format "1024 1024 0 0 1024 1024 1 square_1K"
+ gamma 0.45
+ name ColorWheel1
+ selected true
+ xpos 213
+ ypos 1135
+}
+Crop {
+ box {0 0 3168 585}
+ name Crop3
+ selected true
+ xpos 213
+ ypos 1288
+}
+Transform {
+ translate {15 1425}
+ scale {1.75999999 5.46999979}
+ center {1415 423}
+ shutteroffset centred
+ name Transform4
+ selected true
+ xpos 213
+ ypos 1314
+}
+FrameHold {
+ first_frame 1126
+ name FrameHold1
+ selected true
+ xpos 213
+ ypos 1340
+ addUserKnob {20 dneg l DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+ addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+ addUserKnob {26 ""}
+ addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+ first_frame_dup 1126
+ addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+ addUserKnob {26 ""}
+ addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+ addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+ addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+ addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+ addUserKnob {26 "" -STARTLINE T " "}
+ addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+ addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+ addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+ addUserKnob {26 ""}
+ addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+ addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+ addUserKnob {1 hidden_foce_startline +HIDDEN}
+ addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+ addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+ addUserKnob {1 show_specify l show +HIDDEN}
+ show_specify " "
+ addUserKnob {1 shot_specify l shot +HIDDEN}
+ shot_specify " "
+ addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+ addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+ addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+ addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+ addUserKnob {1 cut_in_specify +HIDDEN}
+ addUserKnob {1 cut_out_specify +HIDDEN}
+ addUserKnob {1 comp_first_specify +HIDDEN}
+ addUserKnob {1 comp_last_specify +HIDDEN}
+ addUserKnob {1 hero_frame_specify +HIDDEN}
+}
+Blur {
+ size 38
+ name Blur1
+ selected true
+ xpos 213
+ ypos 1376
+}
+Grade {
+ name Grade2
+ selected true
+ xpos 213
+ ypos 1414
+}
+Sphere {
+ inputs 0
+ cast_shadow false
+ receive_shadow false
+ translate {20.80000305 1.999999762 -172.8999786}
+ uniform_scale 469.2
+ name Sphere6
+ selected true
+ xpos 335
+ ypos 1271
+}
+Dot {
+ name Dot16
+ selected true
+ xpos 369
+ ypos 1492
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial7
+ selected true
+ xpos 213
+ ypos 1488
+}
+push 0
+push $N1626bb90
+push 0
+Phong {
+ inputs 0
+ diffuse 4
+ min_shininess 3
+ max_shininess 3
+ name Phong7
+ selected true
+ xpos -112
+ ypos 1062
+}
+Reflection {
+ name Reflection1
+ selected true
+ xpos -112
+ ypos 1132
+}
+push $N1671b550
+ParticleToGeo {
+ name ParticleToGeo1
+ selected true
+ xpos 41
+ ypos 975
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial5
+ selected true
+ xpos 41
+ ypos 1132
+}
+Scene {
+ inputs 5
+ name Scene9
+ selected true
+ xpos 51
+ ypos 1468
+}
+push $N16311710
+add_layer {IBL IBL.red IBL.green IBL.blue}
+RayRender {
+ inputs 3
+ stochastic_samples 10
+ interpolate_animation false
+ samples {{parent.ScanlineRender3.samples}}
+ shutteroffset centred
+ output_shader_vectors true
+ AOV_Direct_Diffuse col
+ AOV_Reflection IBL
+ name RayRender1
+ label "\$gui ? 1: 3"
+ selected true
+ xpos 41
+ ypos 1559
+}
+Dot {
+ name Dot25
+ selected true
+ xpos 75
+ ypos 1671
+}
+set N161239b0 [stack 0]
+Dot {
+ name Dot26
+ selected true
+ xpos -84
+ ypos 1671
+}
+Keyer {
+ operation "luminance key"
+ range {0 0.1174409797 1 1}
+ name Keyer2
+ selected true
+ xpos -118
+ ypos 1722
+}
+Invert {
+ name Invert1
+ selected true
+ xpos -118
+ ypos 1760
+}
+Dot {
+ name Dot28
+ selected true
+ xpos -86
+ ypos 1810
+}
+push $N161239b0
+Shuffle {
+ in IBL
+ in2 alpha
+ name Shuffle14
+ selected true
+ xpos 41
+ ypos 1715
+}
+Keyer {
+ operation "luminance key"
+ range {0 0.1313044439 1 1}
+ name Keyer1
+ selected true
+ xpos 41
+ ypos 1753
+}
+Copy {
+ inputs 2
+ from0 rgba.alpha
+ to0 rgba.alpha
+ name Copy1
+ selected true
+ xpos 41
+ ypos 1800
+}
+Unpremult {
+ name Unpremult1
+ selected true
+ xpos 43
+ ypos 2398
+}
+Grade {
+ multiply 1.5
+ gamma 0.62
+ name Grade4
+ selected true
+ xpos 43
+ ypos 2439
+}
+Grade {
+ inputs 1+1
+ multiply 0.66
+ maskChannelMask rgba.red
+ invert_mask true
+ name Grade5
+ selected true
+ xpos 43
+ ypos 2465
+}
+Premult {
+ name Premult1
+ selected true
+ xpos 43
+ ypos 2514
+}
+set N169447a0 [stack 0]
+Transform {
+ translate {0 -21.45}
+ center {1584 1207}
+ shutteroffset centred
+ name Transform9
+ selected true
+ xpos 952
+ ypos 2524
+}
+FilterErode {
+ filter gaussian
+ name FilterErode1
+ selected true
+ xpos 952
+ ypos 2550
+}
+Blur {
+ size 12
+ name Blur2
+ selected true
+ xpos 952
+ ypos 2593
+}
+Roto {
+ inputs 0
+ output alpha
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x44c60000 x4496e000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x448aa000 x448cc000}
+        {{x40200000}
+      {0}}
+        {{x43188000}
+      {x44678000}}
+        {{xc0200000}
+      {0}}
+        {{xc2280000}
+      {0}}
+        {{x436f0000}
+      {x445ae000}}
+        {{x42280000}
+      {0}}
+        {{xc3288000}
+      {xc1e40000}}
+        {{x43ef8000}
+      {x4465a000}}
+        {{x43288000}
+      {x41e40000}}
+        {{{xc2950000 -}}
+      {{xc1ac0000 -}}}
+        {{{x45493195 0 1 xc307bdba 1}
+       {x44616000 xc307bdba 1 0 1}}
+      {{x44917001 0 1 xc0e96978 1}
+       {x447bc000 xc0e96978 1 0 1}}}
+        {{{x42950000 -}}
+      {{x41ac0000 -}}}
+        {{{xc0900000 -}}
+      {{xc0f00000 -}}}
+        {{{x4554f995 0 1 xc307bdba 1}
+       {x44884000 xc307bdba 1 0 1}}
+      {{x44981001 0 1 xc0e96978 1}
+       {x44848000 xc0e96978 1 0 1}}}
+        {{{x40900000 -}}
+      {{x40f00000 -}}}
+        {{{x41a00000 -}}
+      {{xc1480000 -}}}
+        {{{x45558195 0 1 xc307bdba 1}
+       {x44895000 xc307bdba 1 0 1}}
+      {{x449ee001 0 1 xc0e96978 1}
+       {x448b5000 xc0e96978 1 0 1}}}
+        {{{xc1a00000 -}}
+      {{x41480000 -}}}
+        {{{x42e00000 -}}
+      {{x41180000 -}}}
+        {{{x454b7195 0 1 xc307bdba 1}
+       {x446a6000 xc307bdba 1 0 1}}
+      {{x44a54001 0 1 xc0e96978 1}
+       {x4491b000 xc0e96978 1 0 1}}}
+        {{{xc2e00000 -}}
+      {{xc1180000 -}}}
+        {{x430d8000}
+      {x42260000}}
+        {{{x42e86668 -}
+       {x441e4000 -}}
+      {{x44981999 -}
+       {x448cf000 -}}}
+        {{xc30d8000}
+      {xc2260000}}
+        {{x41300000}
+      {x40600000}}
+        {{{xc0a66540 -}
+       {x43c30000 -}}
+      {{x44832666 -}
+       {x4484d000 -}}}
+        {{xc1300000}
+      {xc0600000}}}}     idem}
+     {tx x448cc000 x442478e4 x448091c7}
+     {a osw x41200000 osf 0 str 1 spx x44c60000 spy x4496e000 sb 1 ltn x448cc000 ltm x448cc000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1584 1207}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1126
+ lifetime_end 1126
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto7
+ selected true
+ xpos 1083
+ ypos 2397
+}
+push $N1626b260
+push $N13602480
+push $N16311710
+RayRender {
+ inputs 3
+ stochastic_samples {{parent.RayRender1.stochastic_samples}}
+ interpolate_animation false
+ samples {{parent.RayRender1.samples}}
+ shutteroffset centred
+ name RayRender2
+ selected true
+ xpos 1259
+ ypos 1565
+}
+FileOut {
+ name FileOut4
+ tile_color 0xbfbf00ff
+ selected true
+ xpos 1259
+ ypos 1591
+ icon smartgrade.png
+ channels all
+ _destination /jobs
+ file /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001/3168x2414/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001.####.exr
+ proxy ""
+ fileProxy /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001/1584x1207/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001.####.exr
+ views {main}
+ first 1073
+ last 1126
+ proxy_mode "full + proxy"
+ pbb true
+ smart_grade on
+ tex_metadata "default metadata and exr/*"
+ _format "3168 2414 0 0 3168 2414 1.0 MAGIC Working"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '1', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'debirs_floor_aoc', 'out_dir': u'ELEMENT'\}, 'job': 'MAGIC', 'stalk': None, 'stalkAttrs': \{'framerange': '1073-1126'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==0c6f0c91-4243-4c5c-bd5c-617ec4a578ea&Stem.stemname==127_or_2510&Stem.stemtype==shot'\}"
+ _old_filetype exr
+ _stalkname E_127_or_2510_comp_precomp_debirs_floor_aoc_v001
+ _twigtype 2d
+ _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+ _invert_grade /tools/MAGIC/ivyasset/163_pa_0100/ivy/grade/GRD_163_pa_0100_neutral_v002/GRD_163_pa_0100_neutral_v002.grade
+}
+Dot {
+ name Dot17
+ selected true
+ xpos 1293
+ ypos 2206
+}
+Grade {
+ inputs 1+1
+ channels all
+ add 1
+ white_clamp true
+ name Grade104
+ selected true
+ xpos 1259
+ ypos 2397
+}
+Constant {
+ inputs 0
+ channels rgb
+ color 1
+ name Constant6
+ selected true
+ xpos 1426
+ ypos 2450
+}
+Merge2 {
+ inputs 2
+ name Merge11
+ selected true
+ xpos 1259
+ ypos 2473
+}
+Grade {
+ inputs 1+1
+ multiply 0.19
+ white_clamp true
+ name Grade7
+ selected true
+ xpos 1259
+ ypos 2599
+}
+Invert {
+ channels rgb
+ name Invert4
+ selected true
+ xpos 1259
+ ypos 2696
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0.019828 0.020339 0.015814 1}
+ color_panelDropped true
+ name Constant7
+ selected true
+ xpos 1404
+ ypos 2589
+}
+Grade {
+ multiply 0.7
+ name Grade102
+ selected true
+ xpos 1404
+ ypos 2661
+}
+Dot {
+ name Dot397
+ selected true
+ xpos 1438
+ ypos 2732
+}
+Copy {
+ inputs 2
+ from0 rgba.red
+ to0 rgba.alpha
+ name Copy15
+ selected true
+ xpos 1259
+ ypos 2722
+}
+Grade {
+ channels rgba
+ multiply 3.3
+ white_clamp true
+ name Grade6
+ selected true
+ xpos 1259
+ ypos 2760
+}
+Premult {
+ name Premult13
+ selected true
+ xpos 1259
+ ypos 2806
+}
+Transform {
+ translate {0 12.4}
+ center {1584 1207}
+ shutteroffset centred
+ name Transform8
+ selected true
+ xpos 1259
+ ypos 2852
+}
+Transform {
+ translate {850 38}
+ center {706 832}
+ shutteroffset centred
+ name Transform2
+ label 378
+ selected true
+ xpos 1261
+ ypos 2878
+}
+Dot {
+ name Dot8
+ selected true
+ xpos 1293
+ ypos 2915
+}
+Defocus {
+ name Defocus2
+ selected true
+ xpos -1558
+ ypos 2905
+}
+push $N169447a0
+Transform {
+ translate {850 38}
+ center {706 832}
+ shutteroffset centred
+ name Transform3
+ label 378
+ selected true
+ xpos 43
+ ypos 2555
+}
+Dot {
+ name Dot24
+ selected true
+ xpos 77
+ ypos 2602
+}
+Defocus {
+ name Defocus1
+ selected true
+ xpos -1547
+ ypos 2592
+}
+Read {
+ inputs 0
+ file /jobs/MAGIC/127_or_2510/OUT/O_127_or_2510_comp_v020/3168x2414/O_127_or_2510_comp_v020.####.exr
+ localizationPolicy off
+ format "3168 2414 0 0 3168 2414 1 MAGIC Working"
+ proxy_format "640 480 0 0 640 480 1 PC_Video"
+ first 1073
+ last 1126
+ origfirst 1073
+ origlast 1126
+ origset true
+ version 14
+ smartGrade true
+ name Read83
+ selected true
+ xpos -1928
+ ypos 913
+ postage_stamp_frame 1099
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/MAGIC/127_or_2510/OUT/O_127_or_2510_comp_v020/3168x2414/O_127_or_2510_comp_v020.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid d90decff-5f75-4321-b6b6-2bee8eda6096
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid 3771ac26-aecb-434e-8eef-68f820000bbd
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid 83d53166-fd6d-464f-ad31-1ca8d1fe19c5
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid f3670918-ded7-4773-bd0b-8d086574ab84
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype out
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 20
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+ name Dot20
+ selected true
+ xpos -1894
+ ypos 2445
+}
+set N16833d20 [stack 0]
+Merge2 {
+ inputs 2
+ name Merge5
+ selected true
+ xpos -1928
+ ypos 2598
+}
+Merge2 {
+ inputs 2
+ name Merge112
+ selected true
+ xpos -1928
+ ypos 2911
+}
+FileOut {
+ name FileOut1
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -1928
+ ypos 3304
+ icon smartgrade.png
+ channels rgba
+ _destination /jobs
+ file /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_particles_v001/3168x2414/E_127_or_2510_comp_precomp_particles_v001.####.exr
+ proxy ""
+ fileProxy /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_particles_v001/1584x1207/E_127_or_2510_comp_precomp_particles_v001.####.exr
+ views {main}
+ first 1073
+ last 1126
+ proxy_mode "full + proxy"
+ pbb true
+ smart_grade on
+ tex_metadata "default metadata and exr/*"
+ _format "3168 2414 0 0 3168 2414 1.0 MAGIC Working"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '1', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'particles', 'out_dir': u'ELEMENT'\}, 'job': 'MAGIC', 'stalk': None, 'stalkAttrs': \{'framerange': '1073-1126'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==0c6f0c91-4243-4c5c-bd5c-617ec4a578ea&Stem.stemname==127_or_2510&Stem.stemtype==shot'\}"
+ _old_filetype exr
+ _stalkname E_127_or_2510_comp_precomp_particles_v001
+ _twigtype 2d
+ _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+ _invert_grade /tools/MAGIC/ivyasset/163_pa_0100/ivy/grade/GRD_163_pa_0100_neutral_v002/GRD_163_pa_0100_neutral_v002.grade
+}
+Read {
+ inputs 0
+ file /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_particles_v001/3168x2414/E_127_or_2510_comp_precomp_particles_v001.####.exr
+ localizationPolicy off
+ format "3168 2414 0 0 3168 2414 1 MAGIC Working"
+ proxy /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_particles_v001/1584x1207/E_127_or_2510_comp_precomp_particles_v001.%04d.exr
+ proxy_format "1584 1207 0 0 1584 1207 1 "
+ first 1073
+ last 1126
+ origfirst 1073
+ origlast 1126
+ origset true
+ smartGrade true
+ name Read4
+ selected true
+ xpos -1944
+ ypos 3430
+ postage_stamp_frame 1099
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_particles_v001/3168x2414/E_127_or_2510_comp_precomp_particles_v001.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 28dffa8f-300d-4cd1-9900-ed48f52d6972
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid dfd38202-e1e6-4e11-9c97-cc17ed365392
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid bf643a80-210c-4e58-9065-674977eafdff
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype elmr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 1
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Read {
+ inputs 0
+ file /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_col_v001/3168x2414/E_127_or_2510_comp_precomp_debirs_col_v001.####.exr
+ localizationPolicy off
+ format "3168 2414 0 0 3168 2414 1 MAGIC Working"
+ proxy /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_col_v001/1584x1207/E_127_or_2510_comp_precomp_debirs_col_v001.%04d.exr
+ proxy_format "1584 1207 0 0 1584 1207 1 "
+ first 1073
+ last 1126
+ origfirst 1073
+ origlast 1126
+ origset true
+ smartGrade true
+ name Read8
+ selected true
+ xpos -358
+ ypos 1691
+ postage_stamp_frame 1099
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_col_v001/3168x2414/E_127_or_2510_comp_precomp_debirs_col_v001.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 07250b74-0973-4efc-adca-08cc7c8eae22
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid 8a05b357-0f08-4404-b969-f28a3cdf6426
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid e89871b5-4b21-4539-a2b8-0b6307fd1bce
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype elmr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 1
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+ name Dot27
+ selected true
+ xpos -324
+ ypos 2292
+}
+Dot {
+ name Dot23
+ selected true
+ xpos -324
+ ypos 2413
+}
+Transform {
+ translate {850 38}
+ center {706 832}
+ shutteroffset centred
+ name Transform10
+ label 378
+ selected true
+ xpos -1534
+ ypos 2403
+}
+push $N16833d20
+Merge2 {
+ inputs 2
+ name Merge4
+ selected true
+ xpos -1534
+ ypos 2441
+}
+push $N14e8ed20
+push $N15f36220
+Scene {
+ inputs 2
+ name Scene1
+ selected true
+ xpos -624
+ ypos 598
+}
+push $N1626b260
+push $N16af6950
+push $N16311710
+ScanlineRender {
+ inputs 3
+ conservative_shader_sampling false
+ overscan 150
+ shutteroffset centred
+ motion_vectors_type distance
+ name ScanlineRender3
+ selected true
+ xpos -358
+ ypos 1565
+}
+Shuffle {
+ in col
+ name Shuffle15
+ selected true
+ xpos -358
+ ypos 1591
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ tile_color 0x101010ff
+ label "   ANIMATION   "
+ selected true
+ xpos -208
+ ypos -932
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ tile_color 0x101010ff
+ label "   ANIMATION   "
+ selected true
+ xpos -219
+ ypos -548
+}
+StickyNote {
+ inputs 0
+ name StickyNote4
+ tile_color 0x101010ff
+ label "   ANIMATION   "
+ selected true
+ xpos -211
+ ypos -303
+}
+StickyNote {
+ inputs 0
+ name StickyNote3
+ tile_color 0x101010ff
+ label "   ANIMATION   "
+ selected true
+ xpos -202
+ ypos -59
+}
+Read {
+ inputs 0
+ file /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001/3168x2414/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001.####.exr
+ localizationPolicy off
+ format "3168 2414 0 0 3168 2414 1 MAGIC Working"
+ proxy /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001/1584x1207/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001.%04d.exr
+ proxy_format "1584 1207 0 0 1584 1207 1 "
+ first 1073
+ last 1126
+ origfirst 1073
+ origlast 1126
+ origset true
+ smartGrade true
+ name Read7
+ selected true
+ xpos 1818
+ ypos 1676
+ postage_stamp_frame 1099
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/MAGIC/127_or_2510/ELEMENT/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001/3168x2414/E_127_or_2510_comp_precomp_debirs_floor_aoc_v001.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid ab6d8ecf-aec1-40e1-af80-60524fe6e29c
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid 09310ce7-7fd5-4f11-80c3-4618e08a09a6
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid 6a797d8e-6c37-4e3b-9cb7-56e0ded99af2
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype elmr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 1
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push $N150985a0
+push $N14e8ed20
+push $N150985a0
+Scene {
+ inputs 3
+ name Scene6
+ selected true
+ xpos -59
+ ypos 598
+}
+push $N159a0620
+Dot {
+ name Dot48
+ selected true
+ xpos 138
+ ypos 215
+}
+set N137bd110 [stack 0]
+ParticleExpression {
+ colexpr v(1,0,0)
+ opacityexpr 1
+ new_channels {}
+ channels {a}
+ name ParticleExpression1
+ tile_color 0xff0000ff
+ selected true
+ xpos 428
+ ypos 116
+}
+ParticleExpression {
+ colexpr "color == v(1,0,0) ?  vel : v(0,0,0) "
+ opacityexpr "color == v(1,0,0) ?  1 : 0"
+ new_channels {}
+ channels {a}
+ name ParticleExpression2
+ tile_color 0xffff00ff
+ selected true
+ xpos 437
+ ypos 180
+}
+push $N14267bd0
+push $N137bd110
+ParticleExpression {
+ colexpr "v(1,0,0) "
+ opacityexpr 1
+ new_channels {}
+ channels {a}
+ name ParticleExpression3
+ tile_color 0xffff00ff
+ selected true
+ xpos 322
+ ypos 201
+}
+add_layer {pos pos.red pos.green pos.blue pos.alpha}
+ParticleToImage {
+ pos pos
+ name ParticleToImage1
+ selected true
+ xpos 322
+ ypos 284
+ cached true
+ bookmark true
+}
+PositionToPoints2 {
+ display textured
+ render_mode textured
+ P_channel pos
+ detail 1
+ pointSize 10
+ name PositionToPoints2
+ selected true
+ xpos 322
+ ypos 310
+ bookmark true
+}
+set N16c7a070 [stack 0]
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 1005
+ rate {{curve x1007 0 x1009 1.983287826 x1010 4.665632308 x1020 0}}
+ selection_threshhold 0.1
+ rate_variation 1
+ lifetime 200
+ velocity 2
+ velocity_variation 3
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 0.39
+ size_variation 2
+ mass 5
+ mass_variation 1
+ spread 0.105
+ color_from_texture true
+ start_wrap true
+ max_clip_length 121
+ seed 20
+ name ParticleEmitter2
+ selected true
+ xpos 322
+ ypos 382
+}
+set N14970d70 [stack 0]
+ParticleGravity {
+ to {0 -0.25 0}
+ name ParticleGravity1
+ selected true
+ xpos 528
+ ypos 348
+ disable true
+}
+ParticleBounce {
+ out_bounce_mode kill
+ out_new_channels {b}
+ in_new_channels {b}
+ in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
+ in_friction 0.69
+ bounceaxis_translate {2.200000048 0 -9.200001717}
+ bounceaxis_uniform_scale 152.45
+ name ParticleBounce1
+ selected true
+ xpos 527
+ ypos 407
+ disable true
+}
+ParticleDirectionalForce {
+ strength {0.03 0.03 0}
+ channels {a}
+ name ParticleDirectionalForce2
+ selected true
+ xpos 568
+ ypos 480
+ disable true
+}
+ParticleDrag {
+ drag 0.16
+ rotational_drag {{curve x1022 0 x1041 0.0838830173}}
+ name ParticleDrag2
+ selected true
+ xpos 541
+ ypos 532
+ disable true
+}
+ParticleSettings {
+ steps_per_frame 5
+ name ParticleSettings5
+ selected true
+ xpos 449
+ ypos 576
+ disable true
+}
+push $N137bd110
+ParticleExpression {
+ colexpr vel
+ new_channels {}
+ channels {a}
+ name ParticleExpression4
+ tile_color 0xffff00ff
+ selected true
+ xpos 245
+ ypos 236
+ disable true
+}
+push $N14970d70
+push $N137bd110
+Scene {
+ inputs 2
+ name Scene15
+ selected true
+ xpos 121
+ ypos 362
+}
+push $N16c7a070
+Viewer {
+ frame 1030
+ frame_range 1001-1050
+ overscan 300
+ center_fstop 0
+ viewerProcess Film
+ far 100000
+ name Viewer2
+ selected true
+ xpos 1372
+ ypos 2153
+}
+push $N159a0620
+Viewer {
+ frame 1030
+ frame_range 1001-1050
+ overscan 300
+ center_fstop 0
+ viewerProcess Film
+ far 100000
+ name Viewer1
+ selected true
+ xpos -40
+ ypos -10
+}
