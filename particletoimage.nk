@@ -1,0 +1,11 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+add_layer {pos pos.red pos.green pos.blue pos.alpha}
+ParticleToImage {
+ pos pos
+ name ParticleToImage2
+ selected true
+ xpos 6895
+ ypos 573
+}
