@@ -1,0 +1,24 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+ParticleExpression {
+ temp_name0 axisX
+ temp_expr0 "\[value Axis1.translate.x]"
+ temp_expr0_pp false
+ temp_name1 axisY
+ temp_expr1 "\[value Axis1.translate.y]"
+ temp_expr1_pp false
+ temp_name2 axisZ
+ temp_expr2 "\[value Axis1.translate.z]"
+ temp_expr2_pp false
+ temp_name3 speed
+ temp_expr3 .01
+ temp_expr3_pp false
+ velexpr "norm(v(axisX, axisY, axisZ) - pos) * speed"
+ probability 0.5
+ name ParticleExpression_follow
+ label "\[ expr \{\[string match \[value region] \"none\"] ? \" \" : \[concat  \[value region] \[ expr \{ \[value region_invert] ? \"(x)\" : \" \" \}]] \}]"
+ selected true
+ xpos -327
+ ypos 646
+}
