@@ -1,0 +1,203 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Group {
+name Puzzle
+label "\[value in]->\[? red r \"\"]\[? green g \"\"]\[? blue b \"\"]\[? alpha a \"\"]"
+selected true
+xpos -17162
+ypos -19891
+addUserKnob {20 main l Main}
+addUserKnob {41 in l puzzle T Reveal_Channel.in}
+addUserKnob {41 disable_2 l "Unpremult Puzzle" T Unpremult_Puzzle.disable}
+addUserKnob {26 keep l Keep}
+addUserKnob {6 red +STARTLINE}
+addUserKnob {6 green +STARTLINE}
+green true
+addUserKnob {6 blue +STARTLINE}
+blue true
+addUserKnob {6 alpha +STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {41 disable_1 l "Show Puzzle" T Show_Puzzle.disable}
+addUserKnob {41 disable_3 l "disable clamp" T Clamp1.disable}
+}
+Input {
+inputs 0
+name InPuz
+xpos 159
+ypos -228
+}
+Dot {
+name Dot5
+xpos 193
+ypos -169
+}
+set N3283e270 [stack 0]
+Shuffle {
+name Reveal_Channel
+xpos 159
+ypos -126
+}
+set N32842e50 [stack 0]
+push $N3283e270
+push $N32842e50
+ShuffleCopy {
+inputs 2
+name ShuffleCopy1
+xpos 18
+ypos -126
+}
+Unpremult {
+name Unpremult1
+xpos 18
+ypos -63
+}
+Switch {
+inputs 2
+which 1
+name Unpremult_Puzzle
+xpos 159
+ypos -63
+}
+Dot {
+name Dot1
+xpos 193
+ypos 111
+}
+set N328709f0 [stack 0]
+Shuffle {
+red black
+green black
+blue black
+alpha black
+black black
+white black
+name black_Shuffle6
+tile_color 0xff
+xpos -74
+ypos 241
+}
+set N328754d0 [stack 0]
+push $N328709f0
+Shuffle {
+red alpha
+green alpha
+blue alpha
+black alpha
+white alpha
+name alpha_Shuffle1
+tile_color 0xffffffff
+xpos 294
+ypos 239
+}
+Switch {
+inputs 2
+which {{!parent.alpha i}}
+name Switch4
+xpos 294
+ypos 412
+}
+push $N328754d0
+push $N328709f0
+Shuffle {
+red blue
+green blue
+alpha blue
+black blue
+white blue
+name blue_Shuffle1
+tile_color 0xffff
+xpos 203
+ypos 239
+}
+Switch {
+inputs 2
+which {{!parent.blue i}}
+name Switch3
+xpos 203
+ypos 413
+}
+push $N328754d0
+push $N328709f0
+Shuffle {
+red green
+blue green
+alpha green
+black green
+white green
+name green_Shuffle1
+tile_color 0xff00ff
+xpos 111
+ypos 240
+}
+Switch {
+inputs 2
+which {{!parent.green i}}
+name Switch2
+xpos 111
+ypos 411
+}
+push 0
+push $N328754d0
+push $N328709f0
+Shuffle {
+green red
+blue red
+alpha red
+black red
+white red
+name red_Shuffle5
+tile_color 0xff0000ff
+xpos 22
+ypos 242
+}
+Switch {
+inputs 2
+which {{!parent.red}}
+name Switch1
+xpos 22
+ypos 412
+}
+push $N328754d0
+Dot {
+name Dot2
+xpos -40
+ypos 419
+}
+Merge2 {
+inputs 5+1
+operation disjoint-over
+name Merge2
+xpos 162
+ypos 560
+}
+Clamp {
+name Clamp1
+xpos 162
+ypos 586
+disable true
+}
+push $N328709f0
+Dot {
+name Dot4
+xpos 444
+ypos 111
+}
+Dot {
+name Dot3
+xpos 444
+ypos 746
+}
+Switch {
+inputs 2
+which 1
+name Show_Puzzle
+xpos 162
+ypos 742
+}
+Output {
+name Output1
+xpos 162
+ypos 840
+}
+end_group
