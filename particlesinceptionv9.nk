@@ -1,0 +1,2379 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x388e8e00
+ label "general Forces"
+ note_font_size 42
+ selected true
+ xpos 6546
+ ypos 1774
+ bdwidth 359
+ bdheight 243
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0x7171c600
+ label "Secondary emitter "
+ note_font_size 42
+ selected true
+ xpos 5657
+ ypos -443
+ bdheight 293
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x7171c600
+ label pointLight
+ note_font_size 42
+ selected true
+ xpos 7204
+ ypos 2627
+ bdwidth 413
+ bdheight 236
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode12
+ tile_color 0x7171c600
+ label spotLight
+ note_font_size 42
+ selected true
+ xpos 7789
+ ypos 2752
+ bdwidth 192
+ bdheight 224
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode13
+ tile_color 0x71c67100
+ label emitter
+ note_font_size 42
+ selected true
+ xpos 6546
+ ypos -1453
+ bdwidth 242
+ bdheight 136
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode14
+ tile_color 0x71c67100
+ label Particletype
+ note_font_size 42
+ selected true
+ xpos 7188
+ ypos -1512
+ bdwidth 708
+ bdheight 805
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode15
+ tile_color 0x91746ff
+ label "basic Particle"
+ note_font_size 42
+ selected true
+ xpos 6298
+ ypos -1121
+ bdwidth 214
+ bdheight 415
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x397b90ff
+ label coloring
+ note_font_size 42
+ selected true
+ xpos 6546
+ ypos 866
+ bdwidth 239
+ bdheight 258
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0x71c67100
+ label "extra explotion"
+ note_font_size 42
+ selected true
+ xpos 6133
+ ypos -381
+ bdwidth 199
+ bdheight 518
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0x71c67100
+ label "primary explotion"
+ note_font_size 42
+ selected true
+ xpos 6546
+ ypos -403
+ bdwidth 414
+ bdheight 153
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode7
+ tile_color 0xaaaaaa00
+ label "B Channel and Forces"
+ note_font_size 42
+ selected true
+ xpos 6546
+ ypos -219
+ bdheight 198
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode8
+ tile_color 0x388e8e00
+ label "C Channel and Forces"
+ note_font_size 42
+ selected true
+ xpos 6546
+ ypos 33
+ bdheight 236
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode9
+ tile_color 0x388e8e00
+ label "D Channel and Forces"
+ note_font_size 42
+ selected true
+ xpos 6546
+ ypos 1380
+ bdwidth 266
+ bdheight 279
+}
+push $cut_paste_input
+Axis2 {
+ translate {-1 8.460000038 -11.34000015}
+ uniform_scale 10
+ name Axis_To
+ selected true
+ xpos 6890
+ ypos -323
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Axis2 {
+ inputs 0
+ translate {-1 -3.699999809 13.44999981}
+ uniform_scale 10
+ name Axis_From
+ selected true
+ xpos 6765
+ ypos -320
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0 0.825578 1 1}
+ color_panelDropped true
+ format "128 128 0 0 128 128 1 128x128"
+ name Constant9
+ selected true
+ xpos 5679
+ ypos 1097
+}
+BlendMat {
+ surfaceblend "vertex color"
+ name BlendMat6
+ selected true
+ xpos 5679
+ ypos 1169
+}
+Cylinder {
+ rows 4
+ columns {{rows}}
+ close_top true
+ close_bottom true
+ scaling {0.1 1 0.1}
+ uniform_scale 0.7
+ name Cylinder4
+ selected true
+ xpos 5679
+ ypos 1211
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0 1 0 1}
+ color_panelDropped true
+ format "18 18 0 0 18 18 1 "
+ name Constant20
+ selected true
+ xpos 6208
+ ypos -673
+}
+BlendMat {
+ surfaceblend "vertex color"
+ name BlendMat5
+ selected true
+ xpos 6208
+ ypos -601
+}
+Dot {
+ name Dot21
+ selected true
+ xpos 6456
+ ypos -539
+}
+set N17afffd0 [stack 0]
+Noise {
+ inputs 0
+ center {1056 499}
+ name Noise2
+ selected true
+ xpos 6693
+ ypos -1347
+}
+Card2 {
+ inputs 0
+ rows 24
+ columns 45
+ translate {-0.1000000015 4.340000153 -0.9400000572}
+ rotate {27.31759089 0 0}
+ scaling {1.124824643 1.124824643 1.124824643}
+ uniform_scale 10
+ control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+ name Card1
+ selected true
+ xpos 6556
+ ypos -1383
+}
+DisplaceGeo {
+ inputs 2
+ scale 5.44
+ name DisplaceGeo1
+ selected true
+ xpos 6556
+ ypos -1347
+}
+Dot {
+ name Dot37
+ selected true
+ xpos 6590
+ ypos -611
+}
+set N17aff6a0 [stack 0]
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 900
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{curve x1000 2.936341286 0}}
+ rate_variation 0.5
+ lifetime 1230
+ velocity 0
+ rotation_velocity 1
+ rotation_velocity_variation 2
+ size 3
+ size_variation 2
+ mass 0.5
+ mass_variation 1
+ spread 1
+ color {0 1 0 1}
+ color_panelDropped true
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2048
+ name ParticleEmitter4
+ tile_color 0xff0000
+ selected true
+ xpos 6556
+ ypos -543
+}
+Reformat {
+ inputs 0
+ format "128 128 0 0 128 128 1 128x128"
+ pbb true
+ name Reformat1
+ selected true
+ xpos 7569
+ ypos -1175
+}
+Noise {
+ size 80
+ zoffset {{"frame *0.08"}}
+ center {1138 953}
+ name Noise6
+ selected true
+ xpos 7569
+ ypos -1126
+}
+Constant {
+ inputs 0
+ channels rgb
+ format "128 128 0 0 128 128 1 128x128"
+ name Constant18
+ selected true
+ xpos 7418
+ ypos -1432
+}
+BasicMaterial {
+ name BasicMaterial3
+ selected true
+ xpos 7418
+ ypos -1289
+}
+Cylinder {
+ rows 8
+ columns {{rows}}
+ close_top true
+ close_bottom true
+ scaling {0.1 1 {scaling.x}}
+ uniform_scale 0.7
+ name Cylinder5
+ selected true
+ xpos 7417
+ ypos -1220
+}
+DisplaceGeo {
+ inputs 2
+ scale 0.125
+ filter Cubic
+ name DisplaceGeo5
+ selected true
+ xpos 7417
+ ypos -1126
+}
+set N17b62510 [stack 0]
+Normals {
+ action build
+ name Normals3
+ selected true
+ xpos 7417
+ ypos -1020
+}
+Dot {
+ name Dot30
+ selected true
+ xpos 7451
+ ypos -902
+}
+set N17bd3dd0 [stack 0]
+FrameHold {
+ first_frame {{frame+230}}
+ name FrameHold7
+ selected true
+ xpos 7736
+ ypos -791
+}
+push $N17bd3dd0
+FrameHold {
+ first_frame {{frame-518}}
+ name FrameHold8
+ selected true
+ xpos 7623
+ ypos -787
+}
+set N17bedd70 [stack 0]
+push $N17bedd70
+push $N17bd3dd0
+FrameHold {
+ first_frame {{frame-612}}
+ name FrameHold9
+ selected true
+ xpos 7514
+ ypos -787
+}
+push $N17bd3dd0
+FrameHold {
+ first_frame {{frame-733}}
+ name FrameHold10
+ selected true
+ xpos 7405
+ ypos -790
+}
+push $N17bd3dd0
+FrameHold {
+ first_frame {{frame-60}}
+ name FrameHold11
+ selected true
+ xpos 7302
+ ypos -790
+}
+push $N17bd3dd0
+FrameHold {
+ first_frame {{frame-800}}
+ name FrameHold12
+ selected true
+ xpos 7206
+ ypos -791
+}
+push $N17aff6a0
+push 0
+ParticleEmitter {
+ inputs 9
+ start_frame 900
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{curve x1000 2.936341286 0}}
+ rate_variation 0.5
+ lifetime 1230
+ velocity 0
+ rotation_velocity 1
+ rotation_velocity_variation 2
+ size 3
+ size_variation 2
+ mass 0.5
+ mass_variation 1
+ spread 1
+ color {0 1 0 1}
+ color_panelDropped true
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2048
+ name ParticleEmitter7
+ tile_color 0xff0000
+ selected true
+ xpos 7302
+ ypos -615
+ disable true
+}
+Dot {
+ name Dot39
+ selected true
+ xpos 7336
+ ypos -453
+}
+Switch {
+ inputs 2
+ which {{"\$gui ? 1 : 0 "}}
+ name SwitchGui4
+ selected true
+ xpos 6556
+ ypos -457
+}
+ParticleVortex {
+ parallel {{curve x1001 0 x1003 20}}
+ parallel_falloff "inverse square"
+ tangential 0.25
+ radial {{curve x1001 0 x1003 30}}
+ from {{Directionfrom} {Directionfrom} {Directionfrom}}
+ to {{DirectionTo} {DirectionTo} {DirectionTo}}
+ channels {a}
+ name ParticleVortex_CUSTOM2
+ selected true
+ xpos 6556
+ ypos -314
+ addUserKnob {20 Direction}
+ addUserKnob {7 power l "Less Power" R 0 100}
+ addUserKnob {26 ""}
+ addUserKnob {26 DirectionTo_1 l DirectionTo}
+ addUserKnob {13 DirectionTo l Direction}
+ DirectionTo {{(parent.Axis_To.world_matrix.3*(1-((ParticleVortex_CUSTOM2.power)*.01)))+(parent.Axis_From.world_matrix.3*(ParticleVortex_CUSTOM2.power*.01))} {(parent.Axis_To.world_matrix.7*(1-(ParticleVortex_CUSTOM2.power*.01)))+(parent.Axis_From.world_matrix.7*(ParticleVortex_CUSTOM2.power*.01))} {(parent.Axis_To.world_matrix.11*(1-(ParticleVortex_CUSTOM2.power*.01)))+(parent.Axis_From.world_matrix.11*(ParticleVortex_CUSTOM2.power*.01))}}
+ addUserKnob {26 DirectionFrom}
+ addUserKnob {13 Directionfrom l Direction}
+ Directionfrom {{parent.Axis_From.translate} {parent.Axis_From.translate} {parent.Axis_From.translate}}
+}
+ParticleBounce {
+ out_bounce_mode none
+ out_new_channels {b}
+ in_bounce_mode none
+ in_new_channels {b}
+ bounceaxis_translate {1 20.29999733 -40.40000534}
+ bounceaxis_rotate {-47.45 0 0}
+ bounceaxis_uniform_scale 200
+ channels {a}
+ name _A_to_B1
+ tile_color 0xff
+ selected true
+ xpos 6556
+ ypos -139
+}
+ParticleDrag {
+ drag {{curve x1008 0.9 s0 x1018 0.5072379112 s0}}
+ rotational_drag 0.05
+ probability 0.7
+ channels {b}
+ name ParticleDrag12
+ tile_color 0xff000000
+ selected true
+ xpos 6556
+ ypos -101
+}
+ParticleVortex {
+ parallel_falloff "inverse square"
+ tangential 0.8
+ radial 0.01
+ from {{Directionfrom} {Directionfrom} {Directionfrom}}
+ to {{DirectionTo} {DirectionTo} {DirectionTo}}
+ channels {b}
+ name ParticleVortex_CUSTOM1
+ tile_color 0xff0000ff
+ selected true
+ xpos 6556
+ ypos -63
+ addUserKnob {20 Direction}
+ addUserKnob {7 power l "Less Power" R 0 100}
+ addUserKnob {26 ""}
+ addUserKnob {26 DirectionTo_1 l DirectionTo}
+ addUserKnob {13 DirectionTo l Direction}
+ DirectionTo {{(parent.Axis_To.world_matrix.3*(1-((ParticleVortex_CUSTOM1.power)*.01)))+(parent.Axis_From.world_matrix.3*(ParticleVortex_CUSTOM1.power*.01))} {(parent.Axis_To.world_matrix.7*(1-(ParticleVortex_CUSTOM1.power*.01)))+(parent.Axis_From.world_matrix.7*(ParticleVortex_CUSTOM1.power*.01))} {(parent.Axis_To.world_matrix.11*(1-(ParticleVortex_CUSTOM1.power*.01)))+(parent.Axis_From.world_matrix.11*(ParticleVortex_CUSTOM1.power*.01))}}
+ addUserKnob {26 DirectionFrom}
+ addUserKnob {13 Directionfrom l Direction}
+ Directionfrom {{parent.Axis_From.translate} {parent.Axis_From.translate} {parent.Axis_From.translate}}
+}
+Dot {
+ name Dot26
+ selected true
+ xpos 6590
+ ypos 16
+}
+ParticleExpression {
+ colexpr_onlynew true
+ channelsexpr "age > 80 ? 1 : 0"
+ new_channels {c}
+ probability 0.0005
+ channels {b}
+ name ParticleExpression18
+ tile_color 0xff
+ selected true
+ xpos 6556
+ ypos 89
+}
+ParticleBounce {
+ out_bounce_mode none
+ out_new_channels {c}
+ in_bounce_mode none
+ in_new_channels {c}
+ bounceaxis_translate {6 69 -113.8000031}
+ bounceaxis_rotate {-47.45 0 0}
+ bounceaxis_uniform_scale 200
+ probability 0.05
+ channels {b}
+ name _B_to_C3
+ tile_color 0xff
+ selected true
+ xpos 6556
+ ypos 127
+}
+ParticleVortex {
+ parallel_falloff "inverse square"
+ tangential 1.5
+ radial 0.01
+ from {{Directionfrom} {Directionfrom} {Directionfrom}}
+ to {{DirectionTo} {DirectionTo} {DirectionTo}}
+ channels {c}
+ name ParticleVortex_CUSTOM3
+ tile_color 0xffff00ff
+ selected true
+ xpos 6556
+ ypos 165
+ addUserKnob {20 Direction}
+ addUserKnob {7 power l "Less Power" R 0 100}
+ addUserKnob {26 ""}
+ addUserKnob {26 DirectionTo_1 l DirectionTo}
+ addUserKnob {13 DirectionTo l Direction}
+ DirectionTo {{(parent.Axis_To.world_matrix.3*(1-((ParticleVortex_CUSTOM3.power)*.01)))+(parent.Axis_From.world_matrix.3*(ParticleVortex_CUSTOM3.power*.01))} {(parent.Axis_To.world_matrix.7*(1-(ParticleVortex_CUSTOM3.power*.01)))+(parent.Axis_From.world_matrix.7*(ParticleVortex_CUSTOM3.power*.01))} {(parent.Axis_To.world_matrix.11*(1-(ParticleVortex_CUSTOM3.power*.01)))+(parent.Axis_From.world_matrix.11*(ParticleVortex_CUSTOM3.power*.01))}}
+ addUserKnob {26 DirectionFrom}
+ addUserKnob {13 Directionfrom l Direction}
+ Directionfrom {{parent.Axis_From.translate} {parent.Axis_From.translate} {parent.Axis_From.translate}}
+}
+ParticleDrag {
+ drag 0.5
+ probability 0.95
+ channels {c}
+ name ParticleDrag13
+ tile_color 0xffff0000
+ selected true
+ xpos 6556
+ ypos 203
+}
+set N17c978c0 [stack 0]
+ParticleExpression {
+ colexpr v(0,0,0)
+ opacityexpr 0
+ new_channels {}
+ name ParticleExpression12
+ tile_color 0xff
+ selected true
+ xpos 7039
+ ypos 203
+}
+ParticleExpression {
+ colexpr v(1,0,0)
+ opacityexpr 1
+ new_channels {}
+ channels {c}
+ name ParticleExpression19
+ tile_color 0xff0000ff
+ selected true
+ xpos 7039
+ ypos 241
+}
+ParticleExpression {
+ colexpr "color == v(1,0,0) ?  vel : v(0,0,0) "
+ opacityexpr "color == v(1,0,0) ?  1 : 0"
+ new_channels {}
+ name ParticleExpression8
+ tile_color 0xffff00ff
+ selected true
+ xpos 7039
+ ypos 276
+}
+ParticleSettings {
+ steps_per_frame 4
+ name ParticleSettings7
+ selected true
+ xpos 7039
+ ypos 314
+}
+add_layer {pos pos.red pos.green pos.blue pos.alpha}
+ParticleToImage {
+ pos pos
+ name ParticleToImage2
+ selected true
+ xpos 7039
+ ypos 358
+}
+Expression {
+ expr3 "r+g+b == 0 ? 0 : 1"
+ name Expression2
+ label "\[value expr3]"
+ selected true
+ xpos 7039
+ ypos 384
+}
+FileOut {
+ name FileOut1
+ tile_color 0xbfbf00ff
+ selected true
+ xpos 7039
+ ypos 422
+ icon smartgrade.png
+ channels all
+ _destination /jobs
+ file /jobs/ABR/nc0850/TEST/O_nc0850_comp_test_particles_ToImage_v003/18x18/O_nc0850_comp_test_particles_ToImage_v003.####.exr
+ proxy ""
+ fileProxy /jobs/ABR/nc0850/TEST/O_nc0850_comp_test_particles_ToImage_v003/9x9/O_nc0850_comp_test_particles_ToImage_v003.####.exr
+ views {main}
+ first 1001
+ last 1234
+ pbb true
+ smart_grade on
+ tex_metadata "default metadata and exr/*"
+ _format "18 18 0 0 18 18 1.0 "
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '3', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'test', 'task': u'comp', 'label': u'particles_ToImage', 'out_dir': u'TEST'\}, 'job': 'ABR', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1234'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==661097f4-b891-41aa-b6e9-5fc4e6ecef72&Stem.stemname==nc0850&Stem.stemtype==shot'\}"
+ _old_filetype exr
+ _stalkname O_nc0850_comp_test_particles_ToImage_v003
+ _twigtype 2d
+ _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+ _invert_grade /tools/ABR/ivyasset/nc0850/ivy/grade/GRD_nc0850_neutral_v002/GRD_nc0850_neutral_v002.grade
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant15
+ selected true
+ xpos 6754
+ ypos 2497
+}
+Noise {
+ output rgb
+ gain 0.44
+ gamma 1
+ center {1056 499}
+ name Noise7
+ selected true
+ xpos 6754
+ ypos 2569
+}
+set N1819a4f0 [stack 0]
+Constant {
+ inputs 0
+ color {0 0.33 1 1}
+ color_panelDropped true
+ name Constant11
+ selected true
+ xpos 7050
+ ypos 2489
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Multiply1
+ selected true
+ xpos 6898
+ ypos 2512
+}
+push $N1819a4f0
+push 0
+Phong {
+ inputs 2
+ name Phong1
+ selected true
+ xpos 6754
+ ypos 2626
+}
+Reflection {
+ reflection_value 0.2
+ name Reflection2
+ selected true
+ xpos 6754
+ ypos 2652
+}
+Constant {
+ inputs 0
+ color {0 1 0 1}
+ color_panelDropped true
+ name Constant14
+ selected true
+ xpos 6919
+ ypos 2067
+}
+push 0
+Phong {
+ inputs 2
+ name Phong7
+ selected true
+ xpos 6919
+ ypos 2194
+}
+push $N17afffd0
+Dot {
+ name Dot22
+ selected true
+ xpos 6456
+ ypos -295
+}
+set N17e8a8d0 [stack 0]
+Dot {
+ name Dot25
+ selected true
+ xpos 6456
+ ypos -172
+}
+set N17e8f330 [stack 0]
+Sphere {
+ inputs 0
+ cast_shadow false
+ receive_shadow false
+ translate {{parent.ParticlePointForce7.position} {parent.ParticlePointForce7.position} {parent.ParticlePointForce7.position}}
+ name Sphere10
+ selected true
+ xpos 5667
+ ypos -365
+}
+Dot {
+ name Dot23
+ selected true
+ xpos 5701
+ ypos -295
+}
+set N17ea5e10 [stack 0]
+Dot {
+ name Dot24
+ selected true
+ xpos 5701
+ ypos -172
+}
+push $N17e8a8d0
+push $N17ea5e10
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 900
+ emit_channels {d}
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{parent.ParticlePointForce7.strength x1000 2.936341286 0}}
+ rate_variation 0.5
+ lifetime 1230
+ lifetime_variation 0.17
+ velocity 15
+ velocity_variation 1
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 1.5
+ size_variation 3
+ mass 0.5
+ mass_variation 1
+ spread 1
+ color {0.1 1 1 0.1}
+ color_panelDropped true
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2047
+ name ParticleEmitter8
+ tile_color 0xff0000
+ selected true
+ xpos 6143
+ ypos -299
+}
+ParticleEmitter {
+ inputs 3
+ start_frame 900
+ emit_channels {d}
+ emit_from faces
+ randomize_type "randomized direction"
+ rate {{parent.ParticlePointForce7.strength x1000 2.936341286 0}}
+ rate_variation 0.5
+ lifetime 1230
+ lifetime_variation 0.17
+ velocity 7
+ velocity_variation 1
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 1
+ size_variation 2
+ mass 0.5
+ mass_variation 1
+ spread 1
+ color {0.1 1 0 1}
+ color_panelDropped true
+ start_frame_animation random
+ frame_advance constant
+ max_clip_length 200
+ seed 2046
+ name ParticleEmitter9
+ tile_color 0xff0000
+ selected true
+ xpos 6143
+ ypos -176
+}
+ParticleVortex {
+ parallel_falloff "inverse square"
+ tangential 0.01
+ radial 0.005
+ from {{Directionfrom} {Directionfrom} {Directionfrom}}
+ to {{DirectionTo} {DirectionTo} {DirectionTo}}
+ channels {d}
+ name ParticleVortex_CUSTOM4
+ tile_color 0x7f00ffff
+ selected true
+ xpos 6143
+ ypos -91
+ addUserKnob {20 Direction}
+ addUserKnob {7 power l "Less Power" R 0 100}
+ addUserKnob {26 ""}
+ addUserKnob {26 DirectionTo_1 l DirectionTo}
+ addUserKnob {13 DirectionTo l Direction}
+ DirectionTo {{(parent.Axis_To.world_matrix.3*(1-((ParticleVortex_CUSTOM4.power)*.01)))+(parent.Axis_From.world_matrix.3*(ParticleVortex_CUSTOM4.power*.01))} {(parent.Axis_To.world_matrix.7*(1-(ParticleVortex_CUSTOM4.power*.01)))+(parent.Axis_From.world_matrix.7*(ParticleVortex_CUSTOM4.power*.01))} {(parent.Axis_To.world_matrix.11*(1-(ParticleVortex_CUSTOM4.power*.01)))+(parent.Axis_From.world_matrix.11*(ParticleVortex_CUSTOM4.power*.01))}}
+ addUserKnob {26 DirectionFrom}
+ addUserKnob {13 Directionfrom l Direction}
+ Directionfrom {{parent.Axis_From.translate} {parent.Axis_From.translate} {parent.Axis_From.translate}}
+}
+ParticleDrag {
+ drag {{curve x1001 0.8 x1144 0.4}}
+ name ParticleDrag10
+ selected true
+ xpos 6143
+ ypos -41
+}
+ParticleSettings {
+ steps_per_frame 4
+ name ParticleSettings4
+ selected true
+ xpos 6143
+ ypos -3
+}
+Dot {
+ name Dot19
+ selected true
+ xpos 6177
+ ypos 1738
+}
+push $N17e8f330
+Dot {
+ name Dot16
+ selected true
+ xpos 6456
+ ypos 819
+}
+set N17f1cd80 [stack 0]
+Noise {
+ inputs 0
+ center {1056 499}
+ name Noise9
+ selected true
+ xpos 6209
+ ypos 1291
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0 1 0 1}
+ color_panelDropped true
+ format "128 128 0 0 128 128 1 128x128"
+ name Constant19
+ selected true
+ xpos 6319
+ ypos 1119
+}
+BlendMat {
+ surfaceblend "vertex color"
+ name BlendMat4
+ selected true
+ xpos 6319
+ ypos 1191
+}
+Cylinder {
+ rows 16
+ columns {{rows}}
+ close_top true
+ close_bottom true
+ scaling {0.1 1 {scaling.x}}
+ uniform_scale 0.7
+ name Cylinder6
+ selected true
+ xpos 6319
+ ypos 1224
+}
+DisplaceGeo {
+ inputs 2
+ scale 0.12
+ name DisplaceGeo6
+ selected true
+ xpos 6319
+ ypos 1291
+}
+Switch {
+ inputs 2
+ which {{"\$gui ? 1 : 0 "}}
+ name SwitchGui5
+ selected true
+ xpos 6422
+ ypos 1291
+}
+Dot {
+ name Dot12
+ selected true
+ xpos 6456
+ ypos 1475
+}
+Noise {
+ inputs 0
+ size 220
+ center {1056 499}
+ name Noise10
+ selected true
+ xpos 7235
+ ypos 887
+}
+Sphere {
+ inputs 0
+ rows 5
+ columns 5
+ name Sphere9
+ selected true
+ xpos 7446
+ ypos 932
+}
+DisplaceGeo {
+ inputs 2
+ scale 1
+ name DisplaceGeo2
+ selected true
+ xpos 7235
+ ypos 920
+}
+Read {
+ inputs 0
+ file /jobs/ABR/nc0850/TEST/O_nc0850_comp_test_particles_ToImage_v003/18x18/O_nc0850_comp_test_particles_ToImage_v003.####.exr
+ localizationPolicy off
+ format "18 18 0 0 18 18 1 "
+ proxy_format "640 480 0 0 640 480 1 "
+ first 1001
+ last 1234
+ origfirst 1001
+ origlast 1234
+ origset true
+ smartGrade true
+ name Read3
+ selected true
+ xpos 7040
+ ypos 515
+ postage_stamp_frame 1117
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/ABR/nc0850/TEST/O_nc0850_comp_test_particles_ToImage_v003/18x18/O_nc0850_comp_test_particles_ToImage_v003.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid b4ca3d6e-876c-41ba-a118-939141e70abd
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid 4387d580-f7bd-40b9-85f1-d876fc8fe357
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid 9c6c2e02-ab3f-459d-b407-03fa4fe2d31b
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid 33e3e0de-9232-465d-a0bc-ea2ab56d1336
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype testr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 3
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Premult {
+ channels all
+ name Premult1
+ selected true
+ xpos 7040
+ ypos 692
+}
+PositionToPoints2 {
+ display textured
+ render_mode textured
+ P_channel pos
+ detail 1
+ pointSize 10
+ name PositionToPoints1
+ selected true
+ xpos 7040
+ ypos 730
+}
+set N17fcfae0 [stack 0]
+Dot {
+ name Dot33
+ selected true
+ xpos 7074
+ ypos 909
+}
+push $N17f1cd80
+push $N17fcfae0
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 1001
+ randomize_type "randomized direction"
+ rate {{parent.ParticleSpawn4.rate}}
+ selection_threshhold 0.1
+ rate_variation 1
+ lifetime 2000
+ velocity 7
+ velocity_variation 1
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 1.3
+ size_variation 1
+ transfer_window 0
+ spread 1
+ color_from_texture true
+ name ParticleEmitter_Custom
+ selected true
+ xpos 6879
+ ypos 815
+ addUserKnob {20 User}
+ addUserKnob {3 amount}
+ amount 1100
+}
+set N17fdbc90 [stack 0]
+ParticleEmitter {
+ inputs 3
+ start_frame 1001
+ randomize_type "randomized direction"
+ rate {{parent.ParticleSpawn4.rate}}
+ selection_threshhold 0.1
+ rate_variation 1
+ lifetime 2000
+ velocity 6
+ velocity_variation 1
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 0.8
+ size_variation 1
+ transfer_window 0
+ spread 1
+ color_from_texture true
+ name ParticleEmitter_Custom1
+ selected true
+ xpos 6879
+ ypos 965
+ addUserKnob {20 User}
+ addUserKnob {3 amount}
+ amount 1100
+}
+ParticleVortex {
+ parallel_falloff "inverse square"
+ tangential 1.5
+ radial 0.01
+ from {{Directionfrom} {Directionfrom} {Directionfrom}}
+ to {{DirectionTo} {DirectionTo} {DirectionTo}}
+ channels {a}
+ name ParticleVortex_CUSTOM7
+ tile_color 0xff00bfff
+ selected true
+ xpos 6879
+ ypos 1025
+ addUserKnob {20 Direction}
+ addUserKnob {7 power l "Less Power" R 0 100}
+ addUserKnob {26 ""}
+ addUserKnob {26 DirectionTo_1 l DirectionTo}
+ addUserKnob {13 DirectionTo l Direction}
+ DirectionTo {{(parent.Axis_To.world_matrix.3*(1-((ParticleVortex_CUSTOM7.power)*.01)))+(parent.Axis_From.world_matrix.3*(ParticleVortex_CUSTOM7.power*.01))} {(parent.Axis_To.world_matrix.7*(1-(ParticleVortex_CUSTOM7.power*.01)))+(parent.Axis_From.world_matrix.7*(ParticleVortex_CUSTOM7.power*.01))} {(parent.Axis_To.world_matrix.11*(1-(ParticleVortex_CUSTOM7.power*.01)))+(parent.Axis_From.world_matrix.11*(ParticleVortex_CUSTOM7.power*.01))}}
+ addUserKnob {26 DirectionFrom}
+ addUserKnob {13 Directionfrom l Direction}
+ Directionfrom {{parent.Axis_From.translate} {parent.Axis_From.translate} {parent.Axis_From.translate}}
+}
+ParticleDrag {
+ drag 0.5
+ probability 0.95
+ channels {a}
+ name ParticleDrag4
+ tile_color 0xff00bfff
+ selected true
+ xpos 6879
+ ypos 1063
+}
+ParticleExpression {
+ colexpr v(1,0,0.75)
+ new_channels {}
+ channels {a}
+ name ParticleExpression21
+ tile_color 0xff00bfff
+ selected true
+ xpos 6879
+ ypos 1101
+}
+set N18035980 [stack 0]
+push $N17c978c0
+ParticleExpression {
+ colexpr v(0,1,0)
+ new_channels {a}
+ channels {a}
+ name ParticleExpression11
+ tile_color 0xff0000
+ selected true
+ xpos 6556
+ ypos 946
+}
+ParticleExpression {
+ colexpr v(1,0,0)
+ channels {b}
+ name ParticleExpression13
+ tile_color 0xff0000ff
+ selected true
+ xpos 6556
+ ypos 984
+}
+ParticleExpression {
+ colexpr v(1,1,0)
+ new_channels {c}
+ channels {c}
+ name ParticleExpression14
+ tile_color 0xffff00ff
+ selected true
+ xpos 6556
+ ypos 1022
+}
+ParticleMerge {
+ inputs 2
+ name ParticleMerge2
+ selected true
+ xpos 6556
+ ypos 1107
+}
+ParticleSpawn {
+ inputs 2
+ emit_channels {d}
+ rate {{curve K x1022 0 20 0 x1033 17.33905411 x1034 0 x1043 23.08472061 x1044 0 x1049 17.33905411 x1050 0 19.94086456 0 x1054 13.65315533 x1055 0 x1063 19.94086456 x1064 0 15.7129221 0 x1069 23.40994644 x1070 0 14.7372427 0 x1074 12.35224915 x1075 0 17.98950577 0 x1081 10.72611809 x1082 0 x1086 22.10904121 x1087 0 17.33905411 0 20 0 17.33905411 0 x1093 23.08472061 x1094 0 x1096 17.33905411 x1097 0 19.94086456 0 x1101 13.65315533 x1102 0 x1104 19.94086456 x1105 0 x1137 0}}
+ rate_variation 1
+ lifetime 300
+ velocity -7
+ velocity_variation 1
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 0.75
+ size_variation 1
+ spread 0.25
+ conserve_mass false
+ conserve_momentum false
+ color {0.35 0 1 1}
+ color_panelDropped true
+ probability 0.01
+ channels {c}
+ name ParticleSpawn4
+ tile_color 0x7f00ffff
+ selected true
+ xpos 6556
+ ypos 1465
+}
+ParticleMotionAlign {
+ channels {d}
+ name ParticleMotionAlign1
+ tile_color 0x7f00ffff
+ selected true
+ xpos 6556
+ ypos 1513
+}
+ParticleVortex {
+ parallel_falloff "inverse square"
+ tangential 0.01
+ radial 0.005
+ from {{Directionfrom} {Directionfrom} {Directionfrom}}
+ to {{DirectionTo} {DirectionTo} {DirectionTo}}
+ channels {d}
+ name ParticleVortex_CUSTOM5
+ tile_color 0x7f00ffff
+ selected true
+ xpos 6556
+ ypos 1563
+ addUserKnob {20 Direction}
+ addUserKnob {7 power l "Less Power" R 0 100}
+ addUserKnob {26 ""}
+ addUserKnob {26 DirectionTo_1 l DirectionTo}
+ addUserKnob {13 DirectionTo l Direction}
+ DirectionTo {{(parent.Axis_To.world_matrix.3*(1-((ParticleVortex_CUSTOM5.power)*.01)))+(parent.Axis_From.world_matrix.3*(ParticleVortex_CUSTOM5.power*.01))} {(parent.Axis_To.world_matrix.7*(1-(ParticleVortex_CUSTOM5.power*.01)))+(parent.Axis_From.world_matrix.7*(ParticleVortex_CUSTOM5.power*.01))} {(parent.Axis_To.world_matrix.11*(1-(ParticleVortex_CUSTOM5.power*.01)))+(parent.Axis_From.world_matrix.11*(ParticleVortex_CUSTOM5.power*.01))}}
+ addUserKnob {26 DirectionFrom}
+ addUserKnob {13 Directionfrom l Direction}
+ Directionfrom {{parent.Axis_From.translate} {parent.Axis_From.translate} {parent.Axis_From.translate}}
+}
+ParticleDrag {
+ drag 0.5
+ probability 0.5
+ channels {d}
+ name ParticleDrag14
+ tile_color 0x7f00ffff
+ selected true
+ xpos 6556
+ ypos 1601
+}
+ParticleMerge {
+ inputs 2
+ name ParticleMerge1
+ selected true
+ xpos 6556
+ ypos 1734
+}
+ParticlePointForce {
+ strength {{curve K x1012 0 2.238727669 0 x1021 0 x1022 3.984989643 0 x1026 0 x1027 2.426732581 0 x1035 0 x1036 7.318358139 0 x1042 0 x1043 3.984989643 0 x1047 0 x1048 2.426732581 0 x1052 0 x1053 3.125536232 0 x1057 0 x1058 4.808856964 0 x1066 0 x1067 7.13653183 0 x1071 0 x1072 5.617900848 0 x1080 0 x1081 10 0 x1085 0 x1086 6.089683533 0 x1087 0 x1088 16.87272453 0 x1094 0 x1095 39.68264771 0 0 24.2726593 0 x1099 0 x1100 45.58288956 0 0 65.96192169 0 0 76.05918121 0 x1109 0 x1109 0 x1111 26.40049877 x1111 0 x1113 0 16.1483759 0 x1117 0 x1119 30.32587514 x1119 0 x1120 0 37.17432913 0 0 22.39609018 0}}
+ falloff inverse
+ position {{curve i K x1017 -1.399999976 x1026 -13.30000019 x1031 11.19999981 x1032 -21 x1040 -6.200000763 x1047 -6.899999619 x1053 4.699999809 x1057 -11.19999981 x1062 11.80000019 x1071 -14.80000019 x1072 6.599999905 1.200000286 x1080 5.400000095 x1081 -12.69999981 -6.5 x1085 -2.900000095 x1086 -8.199999809 x1095 23.43492126 x1102 14 x1108 -7 x1112 0 x1117 7.800000191 x1126 -10.80000019} {curve i K x1017 58 x1026 69 x1031 62 x1032 57 x1040 78 x1047 75 x1053 94.5 x1057 62.5 x1062 70 x1071 58.5 x1072 61 60 x1080 61.5 x1081 74 72.5 x1085 73 x1086 63.5 x1095 92.93508911 x1102 68.96951294 x1108 119.2972412 x1112 64.65571594 x1117 76 x1126 61.09999847} {curve i K x1017 -118 x1026 -135.8000031 x1031 -128 x1032 -146.3999939 x1040 -122 x1047 -143 x1053 -151.8999939 x1057 -182.1999969 x1062 -126.9000015 x1071 -154.6000061 x1072 -145.6000061 -142 x1080 -150.6000061 x1081 -160.8000031 -153.6000061 x1085 -157.3999939 x1086 -164.6000061 x1095 -175.9587097 x1102 -139.5310364 x1108 -184.5863037 x1112 -191.6999969 x1117 -152.4724426 x1126 -166}}
+ name ParticlePointForce7
+ selected true
+ xpos 6556
+ ypos 1884
+}
+ParticleExpression {
+ colexpr_onlynew true
+ massexpr_onlynew true
+ velexpr "vel + ((randomv-0.5)/5)"
+ velexpr_onlynew true
+ seed 15
+ name RANDOM_VELOCITY1
+ selected true
+ xpos 6556
+ ypos 1937
+}
+ParticleSettings {
+ steps_per_frame 4
+ name ParticleSettings3
+ selected true
+ xpos 6556
+ ypos 1983
+}
+set N18127410 [stack 0]
+Dot {
+ name Dot27
+ selected true
+ xpos 6590
+ ypos 2116
+}
+set N182930c0 [stack 0]
+Dot {
+ name Dot31
+ selected true
+ xpos 6688
+ ypos 2116
+}
+set N1827dd10 [stack 0]
+Dot {
+ name Dot34
+ selected true
+ xpos 6798
+ ypos 2116
+}
+ParticleToGeo {
+ channels {d}
+ name ParticleToGeo4
+ selected true
+ xpos 6764
+ ypos 2156
+}
+ApplyMaterial {
+ inputs 2
+ filter_type name
+ filter_name a
+ name ApplyMaterial7
+ selected true
+ xpos 6764
+ ypos 2194
+}
+Dot {
+ name Dot36
+ selected true
+ xpos 6798
+ ypos 2387
+}
+Constant {
+ inputs 0
+ color {1 1 0 1}
+ color_panelDropped true
+ name Constant13
+ selected true
+ xpos 7135
+ ypos 2137
+}
+Phong {
+ name Phong6
+ selected true
+ xpos 7124
+ ypos 2276
+}
+push $N1827dd10
+ParticleToGeo {
+ channels {c}
+ name ParticleToGeo3
+ selected true
+ xpos 6654
+ ypos 2160
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial6
+ selected true
+ xpos 6654
+ ypos 2276
+}
+Scene {
+ inputs 2
+ name Scene8
+ selected true
+ xpos 6664
+ ypos 2363
+}
+Constant {
+ inputs 0
+ color {1 0 0 1}
+ color_panelDropped true
+ name Constant12
+ selected true
+ xpos 6110
+ ypos 2217
+}
+Phong {
+ name Phong5
+ selected true
+ xpos 6110
+ ypos 2289
+}
+push $N182930c0
+Dot {
+ name Dot29
+ selected true
+ xpos 6513
+ ypos 2116
+}
+set N18307820 [stack 0]
+ParticleToGeo {
+ channels {b}
+ name ParticleToGeo2
+ selected true
+ xpos 6479
+ ypos 2159
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial5
+ selected true
+ xpos 6479
+ ypos 2289
+}
+Constant {
+ inputs 0
+ color {0.666667 -0.333333 0.666667 1}
+ color_panelDropped true
+ name Constant7
+ selected true
+ xpos 6262
+ ypos 2171
+}
+push 0
+Phong {
+ inputs 2
+ name Phong4
+ selected true
+ xpos 6262
+ ypos 2243
+}
+push $N18307820
+Dot {
+ name Dot28
+ selected true
+ xpos 6406
+ ypos 2116
+}
+set N183067d0 [stack 0]
+ParticleToGeo {
+ channels {a}
+ name ParticleToGeo1
+ selected true
+ xpos 6372
+ ypos 2156
+}
+ApplyMaterial {
+ inputs 2
+ filter_type name
+ filter_name a
+ name ApplyMaterial4
+ selected true
+ xpos 6372
+ ypos 2243
+}
+Dot {
+ name Dot32
+ selected true
+ xpos 6406
+ ypos 2386
+}
+Scene {
+ inputs 2
+ name Scene7
+ selected true
+ xpos 6489
+ ypos 2362
+}
+Scene {
+ inputs 2
+ name Scene9
+ selected true
+ xpos 6566
+ ypos 2445
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial2
+ selected true
+ xpos 6556
+ ypos 2666
+}
+Noise {
+ inputs 0
+ output rgb
+ gain 0.355
+ gamma 1
+ center {1056 499}
+ name Noise3
+ selected true
+ xpos 6194
+ ypos 2648
+}
+Constant {
+ inputs 0
+ color {1 1 1 1}
+ color_panelDropped true
+ name Constant5
+ selected true
+ xpos 6049
+ ypos 2675
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Multiply
+ selected true
+ xpos 6194
+ ypos 2698
+}
+push 0
+Phong {
+ inputs 2
+ name Phong2
+ selected true
+ xpos 6194
+ ypos 2743
+}
+Card2 {
+ inputs 0
+ translate {-52.45496368 -26.89822006 -86.22439575}
+ rotate {-81.58630911 -5.025736861 -7.502843275}
+ scaling {2.36466193 1.647903562 3.453033924}
+ uniform_scale 839.8
+ type bicubic
+ y_points 5
+ uv_position {0.3583332002 0.2814102471}
+ control_points {3 5 3 6 
+
+1 {-0.5 -0.1720000058 0.09380000085} 0 {0.1666666865 0.003499999642 0.0002999976277} 0 {0 0 0} 0 {-0.004999995232 -0.002749994397 -0.02235000581} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.1720000058 0.09380000085} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {-0.004999999888 -0.004499986768 -0.02189999819} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.1720000058 0.09380000085} 0 {0 0 0} 0 {-0.1666666865 0.003499999642 0.0002999976277} 0 {-0.004999995232 -0.002749994397 -0.02235000581} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5037499666 -0.1175961271 0.03013749793} 0 {0.1666666865 0.001749999821 0.0001499988139} 0 {0 0 0} 0 {0.001250028494 0.03384295478 -0.0178624969} 0 {-0.00125002861 -0.03384295851 0.01786249876} 0 {0 0.25 0} 
+1 {-0.003749999916 -0.1189086214 0.03047499992} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0.001249999972 0.0342804566 -0.01797500066} 0 {-0.001249999972 -0.0342804566 0.01797500066} 0 {0.5 0.25 0} 
+1 {0.4962500036 -0.1175961271 0.03013749793} 0 {0 0 0} 0 {-0.1666666865 0.001749999821 0.0001499988139} 0 {0.001249998808 0.03384295851 -0.01786249876} 0 {-0.001249998808 -0.03384295851 0.01786249876} 0 {1 0.25 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.03937815875 0} 0 {0 -0.03937815875 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.03937815875 0} 0 {0 -0.03937815875 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.03937815875 0} 0 {0 -0.03937815875 0} 0 {1 0.5 0} 
+1 {-0.5024166703 0.1330000162 0.006824999582} 0 {0.1656666994 0.001699998975 0.0003999997862} 0 {0 0 0} 0 {-0.00108331407 0.04666091502 0.003374998691} 0 {0.001083314419 -0.04666092992 -0.003374999622} 0 {0 0.75 0} 
+1 {-0.00241666846 0.1330000162 0.006824999582} 0 {0.1656664461 0.001720318571 0.000404780847} 0 {-0.1676466763 -0.001740881708 -0.0004096192424} 0 {-0.001083334559 0.04666091502 0.003374998691} 0 {0.001083334908 -0.04666092992 -0.003374999622} 0 {0.5 0.75 0} 
+1 {0.4983333349 0.1321000159 0.006599999964} 0 {0 0 0} 0 {-0.1676666737 0.001699998975 0.0003999997862} 0 {-0.0008333325386 0.04636092484 0.003299999982} 0 {0.0008333325386 -0.04636092484 -0.003299999982} 0 {1 0.75 0} 
+1 {-0.5029999614 0.3034999967 0.01319999993} 0 {0.1646666825 0.007899999619 0.001199999824} 0 {0 0 0} 0 {0 0 0} 0 {-0.0009999871254 -0.03817817569 0.0002999994904} 0 {0 1 0} 
+1 {-0.003000000026 0.3034999967 0.01319999993} 0 {0.1646666764 0.007899999619 0.001199999824} 0 {-0.1683761328 -0.008077962324 -0.00122703216} 0 {0 0 0} 0 {-0.000999994576 -0.03817817569 0.0002999994904} 0 {0.5 1 0} 
+1 {0.4970000088 0.3034999967 0.01319999993} 0 {0 0 0} 0 {-0.1686666608 0.007899999619 0.001199999824} 0 {0 0 0} 0 {0 -0.0393781662 0} 0 {1 1 0} }
+ drawPosition {-0.1448938549 -0.1050183102 0.02393933386}
+ name Card5
+ selected true
+ xpos 6349
+ ypos 2641
+}
+Normals {
+ action build
+ name Normals1
+ selected true
+ xpos 6349
+ ypos 2691
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial3
+ selected true
+ xpos 6349
+ ypos 2743
+}
+Scene {
+ inputs 2
+ name Scene1
+ selected true
+ xpos 6566
+ ypos 2710
+}
+set N18413130 [stack 0]
+Viewer {
+ frame_range 1001-1234
+ frame_increment 8
+ overscan 300
+ center_fstop 0
+ viewerProcess Film
+ input_process false
+ grid_display false
+ far 100000
+ name Viewer2
+ selected true
+ xpos 6715
+ ypos 3204
+}
+Read {
+ inputs 0
+ file /u/jorc/Desktop/Ridgecrest_Road_Env.hdr
+ localizationPolicy off
+ format "360 180 0 0 360 180 1 "
+ proxy_format "640 480 0 0 640 480 1 "
+ origset true
+ in_colorspace linear
+ out_colorspace linear
+ name Read4
+ selected true
+ xpos 5465
+ ypos 2765
+ disable true
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile "no results were found for query (Leaf) (WHERE Leaf.job = 'jorc' AND Leaf.location = '/u/jorc/Desktop/Ridgecrest_Road_Env.hdr' AND Leaf.deleted = '0000-00-00 00:00:00' AND Leaf.archived = '0000-00-00 00:00:00' AND Leaf.provisional = '0')"
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push 0
+Emission {
+ inputs 2
+ name Emission1
+ selected true
+ xpos 5627
+ ypos 2799
+}
+Sphere {
+ display off
+ selectable false
+ cast_shadow false
+ receive_shadow false
+ uniform_scale 5000
+ name Sphere8
+ selected true
+ xpos 5627
+ ypos 2825
+}
+Normals {
+ name Normals2
+ selected true
+ xpos 5761
+ ypos 2825
+ disable true
+}
+Read {
+ inputs 0
+ file /jobs/ABR/nc0850/OUT/O_nc0850_comp_test_particles_v001/2112x998/O_nc0850_comp_test_particles_v001.####.exr
+ localizationPolicy off
+ format "2112 998 0 0 2112 998 1 Alexa 65 OG Working"
+ proxy_format "640 480 0 0 640 480 1 "
+ first 1001
+ last 1234
+ origfirst 1001
+ origlast 1234
+ origset true
+ smartGrade true
+ name Read1
+ selected true
+ xpos 6341
+ ypos 3154
+ postage_stamp_frame 1117
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/ABR/nc0850/OUT/O_nc0850_comp_test_particles_v001/2112x998/O_nc0850_comp_test_particles_v001.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 18ea86b1-90cb-4844-8d24-755734dbf090
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid bdc2ee62-11c9-4360-9e9f-887340add8f7
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid 83d53166-fd6d-464f-ad31-1ca8d1fe19c5
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid 58c7bea1-b895-4172-97ee-ac12cf258a6b
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype out
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 1
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Grade {
+ multiply 12.95
+ name Grade1
+ selected true
+ xpos 6273
+ ypos 3322
+}
+Camera2 {
+ inputs 0
+ selectable false
+ translate {{curve x1001 398.4442749 x1234 141.9999847} {curve x1001 238.0866089 x1234 238.0865173} {curve x1001 -826.9382935 x1234 -891.999939}}
+ rotate {{curve x1001 -12.07799597 x1234 -11.23125998} {curve x1001 148.0001316 x1234 169.8755883} {curve x1001 0 x1234 -4.471426883}}
+ name Camera3
+ selected true
+ xpos 5001
+ ypos 2576
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" Alexa/OpenGate "Alexa/4:3 Full Ana" Alexa/16:9 "Alexa/4:3 Cropped Ana" "Alexa/ProRes 2.39 Ana" "Alexa/2.39 Ana DeSqueezed" "Alexa/4:3 Full Ana Phase 2" "Alexa/4:3 Cropped Ana Phase 2" "Alexa 65/6k" "Alexa LF/4.5k OpenGate" "Delivery Extractions/Alexa 65 OG" "Delivery Extractions/Alexa 65 OG Working" "Delivery Extractions/Alexa OpenGate Working" "Delivery Extractions/Alexa 16:9 Working" "Delivery Extractions/Alexa 4:3 Full Ana Working" "Delivery Extractions/Alexa 4:3 Cropped Ana Working" "Delivery Extractions/Alexa ProRes 2.39 Ana Working" "Delivery Extractions/Alexa OpenGate" "Delivery Extractions/Alexa 4:3 Full Ana" "Delivery Extractions/Alexa 16:9" "Delivery Extractions/Alexa 4:3 Cropped Ana" "Delivery Extractions/Alexa 4:3 Full Ana Phase 2" "Delivery Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Delivery Extractions/Alexa 4:3 Cropped Ana Phase 2" "Delivery Extractions/Generic 1080p HD" "Delivery Extractions/Alexa LF 4.5k OpenGate" "Delivery Extractions/Alexa LF 4.5k OpenGate Working" "Generic/1080p HD" "Internal Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa 16:9" "Movie Extractions/Alexa 65 OG Working" "Movie Extractions/Alexa OpenGate Working" "Movie Extractions/Alexa 16:9 Working" "Movie Extractions/Alexa 4:3 Full Ana Working" "Movie Extractions/Alexa 4:3 Cropped Ana Working" "Movie Extractions/Alexa ProRes 2.39 Ana Working" "Movie Extractions/Alexa 4:3 Full Ana Phase 2" "Movie Extractions/Alexa 4:3 Cropped Ana Phase 2" "Movie Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Movie Extractions/Alexa 4:3 Cropped Ana" "Movie Extractions/Alexa 4:3 Full Ana" "Movie Extractions/Alexa OpenGate" "Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa LF 4.5k OpenGate Working" "Working Extractions/Alexa 65 OG" "Working Extractions/Alexa OpenGate" "Working Extractions/Alexa 16:9" "Working Extractions/Alexa 4:3 Full Ana" "Working Extractions/Alexa 4:3 Cropped Ana" "Working Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Working Extractions/Alexa 4:3 Full Ana Phase 2" "Working Extractions/Alexa 4:3 Cropped Ana Phase 2" "Working Extractions/Alexa LF 4.5k OpenGate" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" R -1 1}
+ addUserKnob {7 vshake l "hero vert shake" R -1 1}
+ addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
+ addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
+ addUserKnob {7 avshake l "ambient vert shake" R -1 1}
+ addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+ name Dot20
+ selected true
+ xpos 5025
+ ypos 3047
+}
+set N185de180 [stack 0]
+Axis2 {
+ inputs 0
+ translate {-115 -55.5 248}
+ name Axis2
+ selected true
+ xpos 5101
+ ypos 2593
+ disable true
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Camera2 {
+ selectable false
+ translate {{curve x1001 398.4442749 x1234 141.9999847} {curve x1001 238.0866089 x1234 238.0865173} {curve x1001 -826.9382935 x1234 -891.999939}}
+ rotate {{curve x1001 -12.07799597 x1234 -11.23125998} {curve x1001 148.0001316 x1234 169.8755883} {curve x1001 0 x1234 -4.471426883}}
+ name Camera6
+ selected true
+ xpos 5101
+ ypos 2659
+ disable true
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" Alexa/OpenGate "Alexa/4:3 Full Ana" Alexa/16:9 "Alexa/4:3 Cropped Ana" "Alexa/ProRes 2.39 Ana" "Alexa/2.39 Ana DeSqueezed" "Alexa/4:3 Full Ana Phase 2" "Alexa/4:3 Cropped Ana Phase 2" "Alexa 65/6k" "Alexa LF/4.5k OpenGate" "Delivery Extractions/Alexa 65 OG" "Delivery Extractions/Alexa 65 OG Working" "Delivery Extractions/Alexa OpenGate Working" "Delivery Extractions/Alexa 16:9 Working" "Delivery Extractions/Alexa 4:3 Full Ana Working" "Delivery Extractions/Alexa 4:3 Cropped Ana Working" "Delivery Extractions/Alexa ProRes 2.39 Ana Working" "Delivery Extractions/Alexa OpenGate" "Delivery Extractions/Alexa 4:3 Full Ana" "Delivery Extractions/Alexa 16:9" "Delivery Extractions/Alexa 4:3 Cropped Ana" "Delivery Extractions/Alexa 4:3 Full Ana Phase 2" "Delivery Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Delivery Extractions/Alexa 4:3 Cropped Ana Phase 2" "Delivery Extractions/Generic 1080p HD" "Delivery Extractions/Alexa LF 4.5k OpenGate" "Delivery Extractions/Alexa LF 4.5k OpenGate Working" "Generic/1080p HD" "Internal Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa 16:9" "Movie Extractions/Alexa 65 OG Working" "Movie Extractions/Alexa OpenGate Working" "Movie Extractions/Alexa 16:9 Working" "Movie Extractions/Alexa 4:3 Full Ana Working" "Movie Extractions/Alexa 4:3 Cropped Ana Working" "Movie Extractions/Alexa ProRes 2.39 Ana Working" "Movie Extractions/Alexa 4:3 Full Ana Phase 2" "Movie Extractions/Alexa 4:3 Cropped Ana Phase 2" "Movie Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Movie Extractions/Alexa 4:3 Cropped Ana" "Movie Extractions/Alexa 4:3 Full Ana" "Movie Extractions/Alexa OpenGate" "Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa LF 4.5k OpenGate Working" "Working Extractions/Alexa 65 OG" "Working Extractions/Alexa OpenGate" "Working Extractions/Alexa 16:9" "Working Extractions/Alexa 4:3 Full Ana" "Working Extractions/Alexa 4:3 Cropped Ana" "Working Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Working Extractions/Alexa 4:3 Full Ana Phase 2" "Working Extractions/Alexa 4:3 Cropped Ana Phase 2" "Working Extractions/Alexa LF 4.5k OpenGate" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" R -1 1}
+ addUserKnob {7 vshake l "hero vert shake" R -1 1}
+ addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
+ addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
+ addUserKnob {7 avshake l "ambient vert shake" R -1 1}
+ addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+ name Dot18
+ selected true
+ xpos 5125
+ ypos 2918
+}
+Light2 {
+ inputs 0
+ light_type spot
+ color {0.94 1 1.06}
+ color_panelDropped true
+ intensity 90000
+ cone_angle 130
+ cone_penumbra_angle 643
+ falloff_type Quadratic
+ translate {-123.9999771 203 -124.0000076}
+ rotate {-57.39554126 -60.80591618 23.12995239}
+ cast_shadows true
+ depthmap_slope_bias 0.01
+ name Light4
+ selected true
+ xpos 7911
+ ypos 2834
+}
+Light2 {
+ inputs 0
+ light_type spot
+ color {0.94 1 1.06}
+ color_panelDropped true
+ intensity 90000
+ cone_angle 130
+ cone_penumbra_angle 643
+ falloff_type Quadratic
+ translate {-98.00000763 179.9999847 -121.9999847}
+ rotate {-0.6010164129 178.1346803 -20.99973079}
+ cast_shadows true
+ depthmap_slope_bias 0.01
+ name Light1
+ selected true
+ xpos 7799
+ ypos 2832
+}
+Scene {
+ inputs 2
+ name Scene11
+ selected true
+ xpos 7847
+ ypos 2906
+}
+Light2 {
+ inputs 0
+ intensity 8800
+ cone_angle 130
+ cone_penumbra_angle 60
+ falloff_type Quadratic
+ translate {-67.49999237 222.9999847 131.9999847}
+ rotate {-104.6 89.7 0}
+ depthmap_slope_bias 0.01
+ name Light7
+ selected true
+ xpos 7282
+ ypos 2710
+}
+Light2 {
+ inputs 0
+ intensity 84000
+ cone_angle 130
+ cone_penumbra_angle 60
+ falloff_type Quadratic
+ translate {165.9999847 5.999995232 -299}
+ rotate {-104.6 89.7 0}
+ cast_shadows true
+ depthmap_slope_bias 0.01
+ name Light6
+ selected true
+ xpos 7445
+ ypos 2713
+}
+Light2 {
+ inputs 0
+ intensity 880000
+ cone_angle 130
+ cone_penumbra_angle 60
+ falloff_type Quadratic
+ translate {-729.0427246 172.1552734 -50.91643906}
+ rotate {-104.6 89.7 0}
+ cast_shadows true
+ depthmap_slope_bias 0.01
+ name Light2
+ selected true
+ xpos 7547
+ ypos 2713
+}
+Light2 {
+ inputs 0
+ intensity 8800
+ cone_angle 130
+ cone_penumbra_angle 60
+ falloff_type Quadratic
+ translate {119.0000076 223 143}
+ rotate {-104.6 89.7 0}
+ depthmap_slope_bias 0.01
+ name Light8
+ selected true
+ xpos 7214
+ ypos 2708
+}
+Light2 {
+ inputs 0
+ intensity 8800
+ cone_angle 130
+ cone_penumbra_angle 60
+ falloff_type Quadratic
+ translate {219.9973907 69.99999237 -54.00001526}
+ rotate {-104.6 89.7 0}
+ depthmap_slope_bias 0.01
+ name Light5
+ selected true
+ xpos 7367
+ ypos 2707
+}
+Scene {
+ inputs 5
+ name Scene10
+ selected true
+ xpos 7378
+ ypos 2793
+}
+Scene {
+ inputs 2
+ name Scene12
+ selected true
+ xpos 7378
+ ypos 2906
+}
+push $N18413130
+Scene {
+ inputs 3
+ name Scene6
+ selected true
+ xpos 6566
+ ypos 2894
+}
+push 0
+RayRender {
+ inputs 3
+ stochastic_samples {{"\$gui ? 1 : 8"}}
+ samples {{"\$gui ? 1 : 8"}}
+ shutteroffset centred
+ name RayRender1
+ selected true
+ xpos 6556
+ ypos 3043
+}
+FileOut {
+ name FileOut3
+ tile_color 0xbfbf00ff
+ selected true
+ xpos 6556
+ ypos 3103
+ icon smartgrade.png
+ channels rgba
+ _destination /jobs
+ file /jobs/ABR/nc0850/OUT/O_nc0850_comp_test_particles_v002/2112x998/O_nc0850_comp_test_particles_v002.####.exr
+ proxy ""
+ fileProxy /jobs/ABR/nc0850/OUT/O_nc0850_comp_test_particles_v002/1056x499/O_nc0850_comp_test_particles_v002.####.exr
+ views {main}
+ first 1001
+ last 1234
+ pbb false
+ smart_grade on
+ tex_metadata "default metadata and exr/*"
+ _format "2112 998 0 0 2112 998 1.0 Alexa 65 OG Working"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '2', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'test', 'task': u'comp', 'label': u'particles', 'out_dir': u'OUT'\}, 'job': 'ABR', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1234'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==661097f4-b891-41aa-b6e9-5fc4e6ecef72&Stem.stemname==nc0850&Stem.stemtype==shot'\}"
+ _old_filetype exr
+ _stalkname O_nc0850_comp_test_particles_v002
+ _twigtype 2d
+ _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+ _invert_grade /tools/ABR/ivyasset/nc0850/ivy/grade/GRD_nc0850_neutral_v002/GRD_nc0850_neutral_v002.grade
+}
+push $N18127410
+ParticleCache {
+ file /u/jorc/Desktop/particles/test_2.####.nkpc
+ particle_cache_padding 4
+ particle_cache_read_from_file true
+ name ParticleCache1
+ selected true
+ xpos 6703
+ ypos 1977
+ disable true
+}
+push $N185de180
+push $N183067d0
+Dot {
+ name Dot17
+ selected true
+ xpos 5330
+ ypos 2116
+}
+push 0
+ScanlineRender {
+ inputs 3
+ conservative_shader_sampling false
+ overscan 150
+ shutteroffset centred
+ motion_vectors_type distance
+ name ScanlineRender1
+ selected true
+ xpos 5296
+ ypos 3043
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0 1 0 1}
+ color_panelDropped true
+ format "128 128 0 0 128 128 1 128x128"
+ name Constant3
+ selected true
+ xpos 6422
+ ypos -1028
+}
+BlendMat {
+ surfaceblend "vertex color"
+ name BlendMat3
+ selected true
+ xpos 6422
+ ypos -880
+}
+Cylinder {
+ rows 16
+ columns {{rows}}
+ close_top true
+ close_bottom true
+ scaling {0.1 1 {scaling.x}}
+ uniform_scale 0.7
+ name Cylinder3
+ selected true
+ xpos 6422
+ ypos -825
+}
+set N1857c060 [stack 0]
+Noise {
+ inputs 0
+ center {1056 499}
+ name Noise5
+ selected true
+ xpos 6308
+ ypos -870
+}
+push $N1857c060
+DisplaceGeo {
+ inputs 2
+ scale 0.135
+ name DisplaceGeo3
+ selected true
+ xpos 6308
+ ypos -825
+}
+Dot {
+ name Dot38
+ selected true
+ xpos 6342
+ ypos -732
+}
+Switch {
+ inputs 2
+ which {{"\$gui ? 1 : 0 "}}
+ name SwitchGui3
+ selected true
+ xpos 6422
+ ypos -736
+}
+Read {
+ inputs 0
+ file /u/jorc/Desktop/Ridgecrest_Road_Ref.hdr
+ localizationPolicy off
+ format "2048 1024 0 0 2048 1024 1 2K_LatLong"
+ proxy_format "640 480 0 0 640 480 1 "
+ origset true
+ in_colorspace linear
+ out_colorspace linear
+ name Read2
+ selected true
+ xpos 5608
+ ypos 2707
+ disable true
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile "no results were found for query (Leaf) (WHERE Leaf.job = 'jorc' AND Leaf.location = '/u/jorc/Desktop/Ridgecrest_Road_Ref.hdr' AND Leaf.deleted = '0000-00-00 00:00:00' AND Leaf.archived = '0000-00-00 00:00:00' AND Leaf.provisional = '0')"
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Camera2 {
+ inputs 0
+ selectable false
+ translate {{curve x1001 398.4442749 x1234 141.9999847} {curve x1001 238.0866089 x1234 238.0865173} {curve x1001 -826.9382935 x1234 -891.999939}}
+ rotate {{curve x1001 -12.07799597 x1234 -11.23125998} {curve x1001 148.0001316 x1234 169.8755883} {curve x1001 0 x1234 -4.471426883}}
+ name Camera4
+ selected true
+ xpos 4690
+ ypos 2586
+ disable true
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" Alexa/OpenGate "Alexa/4:3 Full Ana" Alexa/16:9 "Alexa/4:3 Cropped Ana" "Alexa/ProRes 2.39 Ana" "Alexa/2.39 Ana DeSqueezed" "Alexa/4:3 Full Ana Phase 2" "Alexa/4:3 Cropped Ana Phase 2" "Alexa 65/6k" "Alexa LF/4.5k OpenGate" "Delivery Extractions/Alexa 65 OG" "Delivery Extractions/Alexa 65 OG Working" "Delivery Extractions/Alexa OpenGate Working" "Delivery Extractions/Alexa 16:9 Working" "Delivery Extractions/Alexa 4:3 Full Ana Working" "Delivery Extractions/Alexa 4:3 Cropped Ana Working" "Delivery Extractions/Alexa ProRes 2.39 Ana Working" "Delivery Extractions/Alexa OpenGate" "Delivery Extractions/Alexa 4:3 Full Ana" "Delivery Extractions/Alexa 16:9" "Delivery Extractions/Alexa 4:3 Cropped Ana" "Delivery Extractions/Alexa 4:3 Full Ana Phase 2" "Delivery Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Delivery Extractions/Alexa 4:3 Cropped Ana Phase 2" "Delivery Extractions/Generic 1080p HD" "Delivery Extractions/Alexa LF 4.5k OpenGate" "Delivery Extractions/Alexa LF 4.5k OpenGate Working" "Generic/1080p HD" "Internal Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa 16:9" "Movie Extractions/Alexa 65 OG Working" "Movie Extractions/Alexa OpenGate Working" "Movie Extractions/Alexa 16:9 Working" "Movie Extractions/Alexa 4:3 Full Ana Working" "Movie Extractions/Alexa 4:3 Cropped Ana Working" "Movie Extractions/Alexa ProRes 2.39 Ana Working" "Movie Extractions/Alexa 4:3 Full Ana Phase 2" "Movie Extractions/Alexa 4:3 Cropped Ana Phase 2" "Movie Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Movie Extractions/Alexa 4:3 Cropped Ana" "Movie Extractions/Alexa 4:3 Full Ana" "Movie Extractions/Alexa OpenGate" "Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa LF 4.5k OpenGate Working" "Working Extractions/Alexa 65 OG" "Working Extractions/Alexa OpenGate" "Working Extractions/Alexa 16:9" "Working Extractions/Alexa 4:3 Full Ana" "Working Extractions/Alexa 4:3 Cropped Ana" "Working Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Working Extractions/Alexa 4:3 Full Ana Phase 2" "Working Extractions/Alexa 4:3 Cropped Ana Phase 2" "Working Extractions/Alexa LF 4.5k OpenGate" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" R -1 1}
+ addUserKnob {7 vshake l "hero vert shake" R -1 1}
+ addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
+ addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
+ addUserKnob {7 avshake l "ambient vert shake" R -1 1}
+ addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Camera2 {
+ inputs 0
+ translate {1290.724731 642.2983398 -2086.009277}
+ rotate {-11.47796983 138.600316 0}
+ name Camera5
+ selected true
+ xpos 4803
+ ypos 2577
+ disable true
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" Alexa/OpenGate "Alexa/4:3 Full Ana" Alexa/16:9 "Alexa/4:3 Cropped Ana" "Alexa/ProRes 2.39 Ana" "Alexa/2.39 Ana DeSqueezed" "Alexa/4:3 Full Ana Phase 2" "Alexa/4:3 Cropped Ana Phase 2" "Alexa 65/6k" "Alexa LF/4.5k OpenGate" "Delivery Extractions/Alexa 65 OG" "Delivery Extractions/Alexa 65 OG Working" "Delivery Extractions/Alexa OpenGate Working" "Delivery Extractions/Alexa 16:9 Working" "Delivery Extractions/Alexa 4:3 Full Ana Working" "Delivery Extractions/Alexa 4:3 Cropped Ana Working" "Delivery Extractions/Alexa ProRes 2.39 Ana Working" "Delivery Extractions/Alexa OpenGate" "Delivery Extractions/Alexa 4:3 Full Ana" "Delivery Extractions/Alexa 16:9" "Delivery Extractions/Alexa 4:3 Cropped Ana" "Delivery Extractions/Alexa 4:3 Full Ana Phase 2" "Delivery Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Delivery Extractions/Alexa 4:3 Cropped Ana Phase 2" "Delivery Extractions/Generic 1080p HD" "Delivery Extractions/Alexa LF 4.5k OpenGate" "Delivery Extractions/Alexa LF 4.5k OpenGate Working" "Generic/1080p HD" "Internal Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa 16:9" "Movie Extractions/Alexa 65 OG Working" "Movie Extractions/Alexa OpenGate Working" "Movie Extractions/Alexa 16:9 Working" "Movie Extractions/Alexa 4:3 Full Ana Working" "Movie Extractions/Alexa 4:3 Cropped Ana Working" "Movie Extractions/Alexa ProRes 2.39 Ana Working" "Movie Extractions/Alexa 4:3 Full Ana Phase 2" "Movie Extractions/Alexa 4:3 Cropped Ana Phase 2" "Movie Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Movie Extractions/Alexa 4:3 Cropped Ana" "Movie Extractions/Alexa 4:3 Full Ana" "Movie Extractions/Alexa OpenGate" "Movie Extractions/Alexa 65 OG" "Movie Extractions/Alexa LF 4.5k OpenGate Working" "Working Extractions/Alexa 65 OG" "Working Extractions/Alexa OpenGate" "Working Extractions/Alexa 16:9" "Working Extractions/Alexa 4:3 Full Ana" "Working Extractions/Alexa 4:3 Cropped Ana" "Working Extractions/Alexa ProRes 2.39 Ana DeSqueezed" "Working Extractions/Alexa 4:3 Full Ana Phase 2" "Working Extractions/Alexa 4:3 Cropped Ana Phase 2" "Working Extractions/Alexa LF 4.5k OpenGate" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" R -1 1}
+ addUserKnob {7 vshake l "hero vert shake" R -1 1}
+ addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
+ addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
+ addUserKnob {7 avshake l "ambient vert shake" R -1 1}
+ addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push $N17fcfae0
+push $N17fdbc90
+ParticleExpression {
+ velexpr vel+v(x(color),y(color),z(color))
+ name ParticleExpression__Vel_based_on_col7
+ selected true
+ xpos 7374
+ ypos 809
+ disable true
+}
+Scene {
+ inputs 2
+ name Scene4
+ selected true
+ xpos 7384
+ ypos 710
+}
+push $N18035980
+ParticleSettings {
+ steps_per_frame 4
+ name ParticleSettings2
+ selected true
+ xpos 6879
+ ypos 1167
+}
+push $N17b62510
+push 0
+Viewer {
+ inputs 2
+ frame 1074
+ frame_range 1001-1095
+ frame_increment 8
+ gain 64
+ overscan 300
+ center_fstop 0
+ colour_sample_bbox {-0.1111111119 -0.777777791 0.1111111119 -0.555555582}
+ viewerProcess Film
+ input_process false
+ near 0.0001
+ far 100000000
+ name Viewer1
+ selected true
+ xpos 7531
+ ypos 2520
+}
