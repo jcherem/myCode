@@ -1,0 +1,525 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x283f5eff
+ label geo
+ note_font_size 42
+ selected true
+ xpos -154
+ ypos -1397
+ bdwidth 416
+ bdheight 266
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x91746ff
+ label "final output"
+ note_font_size 42
+ selected true
+ xpos -120
+ ypos -693
+ bdwidth 308
+ bdheight 219
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ tile_color 0x388e8e00
+ label "bake one frame with pworld"
+ note_font_size 42
+ selected true
+ xpos -466
+ ypos -985
+ bdwidth 363
+ bdheight 179
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0x283f5eff
+ label geo
+ note_font_size 42
+ selected true
+ xpos 654
+ ypos -1396
+ bdwidth 416
+ bdheight 266
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0x91746ff
+ label "final output"
+ note_font_size 42
+ selected true
+ xpos 688
+ ypos -692
+ bdwidth 308
+ bdheight 219
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0x388e8e00
+ label "bake one frame with pworld"
+ note_font_size 42
+ selected true
+ xpos 342
+ ypos -984
+ bdwidth 363
+ bdheight 179
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ tile_color 0x263150ff
+ label "   METOD 1   "
+ note_font_size 73.5
+ selected true
+ xpos -181
+ ypos -1487
+}
+CheckerBoard2 {
+ inputs 0
+ name CheckerBoard2
+ selected true
+ xpos 813
+ ypos -1324
+}
+Sphere {
+ translate {{curve x1001 0 x1112 11.06000042} {curve x1001 0 x1112 0} {curve x1001 0 x1112 0}}
+ rotate {{curve x1001 0 x1112 95.85} {curve x1001 0 x1112 155.15} {curve x1001 0 x1112 78.75}}
+ name Sphere2
+ selected true
+ xpos 813
+ ypos -1193
+}
+Dot {
+ name Dot7
+ selected true
+ xpos 847
+ ypos -904
+}
+set Ned8f05c0 [stack 0]
+Dot {
+ name Dot8
+ selected true
+ xpos 611
+ ypos -904
+}
+Dot {
+ name Dot9
+ selected true
+ xpos 492
+ ypos -904
+}
+push $cut_paste_input
+Reformat {
+ format "1024 1024 0 0 1024 1024 1 square_1K"
+ pbb true
+ name Reformat2
+ selected true
+ xpos 352
+ ypos -872
+}
+Dot {
+ name Dot10
+ selected true
+ xpos 386
+ ypos -836
+}
+add_layer {__Pworld __Pworld.x __Pworld.y __Pworld.z}
+add_layer {__Nworld __Nworld.x __Nworld.y __Nworld.z}
+ScanlineRender {
+ inputs 2
+ conservative_shader_sampling false
+ projection_mode uv
+ overscan 150
+ shutteroffset centred
+ motion_vectors_type distance
+ output_shader_vectors true
+ P_channel __Pworld
+ N_channel __Nworld
+ name ScanlineRender3
+ selected true
+ xpos 458
+ ypos -839
+}
+FrameHold {
+ first_frame 1001
+ name FrameHold2
+ selected true
+ xpos 615
+ ypos -845
+ addUserKnob {20 dneg l DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+ addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+ addUserKnob {26 ""}
+ addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+ first_frame_dup 1001
+ addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+ addUserKnob {26 ""}
+ addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+ addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+ addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+ addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+ addUserKnob {26 "" T " "}
+ addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+ addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+ addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+ addUserKnob {26 ""}
+ addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+ addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+ addUserKnob {1 hidden_foce_startline +HIDDEN}
+ addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+ addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+ addUserKnob {1 show_specify l show +HIDDEN}
+ show_specify " "
+ addUserKnob {1 shot_specify l shot +HIDDEN}
+ shot_specify " "
+ addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+ addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+ addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+ addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+ addUserKnob {1 cut_in_specify +HIDDEN}
+ addUserKnob {1 cut_out_specify +HIDDEN}
+ addUserKnob {1 comp_first_specify +HIDDEN}
+ addUserKnob {1 comp_last_specify +HIDDEN}
+ addUserKnob {1 hero_frame_specify +HIDDEN}
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ tile_color 0x263150ff
+ label "   METOD 2   "
+ note_font_size 73.5
+ selected true
+ xpos 627
+ ypos -1489
+}
+Camera2 {
+ inputs 0
+ translate {5.022336006 2.306686878 17.71894836}
+ rotate {-5.677997302 0.5999931118 0}
+ name Camera8
+ selected true
+ xpos -110
+ ypos -613
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" "Generic/1080p HD" Generic/Anamorphic Generic/Spherical Generic/2K Previs/Anamorphic Previs/Spherical "Movie Extractions/Previs" "Movie Extractions/Generic 2K" "Movie Extractions/Generic 1080p HD" "Movie Extractions/Alexa MINI LF UHD" "Movie Extractions/Phantom Flex 4K Full" "Movie Extractions/INFINITE Working" "Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Alexa LF 4.5k OpenGate" "Movie Extractions/Alexa LF UHD" "Movie Extractions/Zenmus x7 6k RAW" "Movie Extractions/Alexa MINI 16:9 Full" "Movie Extractions/Alexa MINI 16:9 2k ProRes" "Movie Extractions/Alexa 65 UHD" "Movie Extractions/Alexa LF 4.5k 2.39" "Movie Extractions/Alexa MINI LF 4.5k OpenGate" "Movie Extractions/Alexa 65 5k 1.78" "Movie Extractions/Alexa 65 OG Spherical" "Movie Extractions/Red Epic 4K 16:9" "Movie Extractions/Red DSMC2 Helium s35 8K FF" "Movie Extractions/ZCAM E2 2.7k" "Movie Extractions/BlackMagic 4k Pocket Cinema DCI" "Movie Extractions/Zenmus x7 5.7k RAW" "Movie Extractions/Red DSMC2 Monstro VV 6K FF" "Movie Extractions/Zenmus x7 UHD RAW" "Movie Extractions/Super8 8mm 2k" "Movie Extractions/Alexa LF 4.5k 2.39 Ext734" "Movie Extractions/Alexa LF 4.5k 2.39 Ext73" "Movie Extractions/Phantom Flex 4K Cropped" "Movie Extractions/Canon 5D mkIII HD" "Internal Movie Extractions/Previs" "Canon 6D/HD" "Alexa 65/5k 1.78" "Alexa 65/OG Spherical" "Alexa 65/UHD" "Alexa LF/UHD" "Alexa LF/4.5k OpenGate" "Alexa LF/4.5k 2.39" "Phantom Flex/4K Full" "Phantom Flex/4K Cropped" "Alexa MINI LF/UHD" "Alexa MINI LF/4.5k OpenGate" "Working Extractions/Alexa MINI LF UHD" "Working Extractions/Alexa LF UHD" "Working Extractions/Alexa LF 4.5k OpenGate" "Working Extractions/Alexa 65 UHD" "Working Extractions/Zenmus x7 6k RAW" "Working Extractions/Alexa MINI OpenGate" "Working Extractions/Alexa MINI 16:9 2k ProRes" "Working Extractions/Phantom Flex 4K Full" "Working Extractions/Alexa MINI 16:9 Full" "Working Extractions/Alexa LF 4.5k 2.39" "Working Extractions/Alexa MINI LF 4.5k OpenGate" "Working Extractions/Alexa 65 OG Spherical" "Working Extractions/Alexa 65 5k 1.78" "Working Extractions/Red Epic 4K 16:9" "Working Extractions/Red DSMC2 Helium s35 8K FF" "Working Extractions/ZCAM E2 2.7k" "Working Extractions/BlackMagic 4k Pocket Cinema DCI" "Working Extractions/Zenmus x7 5.7k RAW" "Working Extractions/Red DSMC2 Monstro VV 6K FF" "Working Extractions/Zenmus x7 UHD RAW" "Working Extractions/Super8 8mm 2k" "Working Extractions/Alexa LF 4.5k 2.39 Ext734" "Working Extractions/Alexa LF 4.5k 2.39 Ext73" "Working Extractions/Phantom Flex 4K Cropped" "Working Extractions/Alexa MINI LF 4.5k OpenGate 73pc" "Working Extractions/Phantom Flex 4K Full 95pc" "Working Extractions/Alexa MINI LF UHD 90pc" "Working Extractions/Canon 5D mkIII HD" "Alexa MINI/OpenGate" "Alexa MINI/16:9 2k ProRes" "Zenmuse x7/6k RAW" "Zenmuse x7/5.7k RAW" "Zenmuse x7/UHD RAW" "Alexa SXT/16:9 1.78" "Red Epic/4k 16:9" "Lens_Grid/Alexa 65 OG to ALF OG" "Lens_Grid/Alexa 65 OG to ALF 2.39" "Red DSMC2 Helium s35/8K FF" "ZCAM/E2 2.7k" "BlackMagic 4k Pocket Cinema/DCI" "Red DSMC2 Monstro VV/6K FF" "Super8 8mm/2k" "Canon 5D mkIII/HD" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" R -1 1}
+ addUserKnob {7 vshake l "hero vert shake" R -1 1}
+ addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
+ addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
+ addUserKnob {7 avshake l "ambient vert shake" R -1 1}
+ addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+ name Dot1
+ selected true
+ xpos -86
+ ypos -499
+}
+CheckerBoard2 {
+ inputs 0
+ name CheckerBoard1
+ selected true
+ xpos 5
+ ypos -1325
+}
+Sphere {
+ translate {{curve x1001 0 x1112 11.06000042} {curve x1001 0 x1112 0} {curve x1001 0 x1112 0}}
+ rotate {{curve x1001 0 x1112 95.85} {curve x1001 0 x1112 155.15} {curve x1001 0 x1112 78.75}}
+ name Sphere1
+ selected true
+ xpos 5
+ ypos -1194
+}
+Dot {
+ name Dot2
+ selected true
+ xpos 39
+ ypos -905
+}
+set Nf8f7020 [stack 0]
+Dot {
+ name Dot3
+ selected true
+ xpos -197
+ ypos -905
+}
+Dot {
+ name Dot4
+ selected true
+ xpos -316
+ ypos -905
+}
+Reformat {
+ inputs 0
+ format "1024 1024 0 0 1024 1024 1 square_1K"
+ pbb true
+ name Reformat1
+ selected true
+ xpos -456
+ ypos -873
+}
+Dot {
+ name Dot5
+ selected true
+ xpos -422
+ ypos -837
+}
+ScanlineRender {
+ inputs 2
+ conservative_shader_sampling false
+ projection_mode uv
+ overscan 150
+ shutteroffset centred
+ motion_vectors_type distance
+ output_shader_vectors true
+ P_channel __Pworld
+ N_channel __Nworld
+ name ScanlineRender2
+ selected true
+ xpos -350
+ ypos -840
+}
+FrameHold {
+ first_frame 1001
+ name FrameHold1
+ selected true
+ xpos -193
+ ypos -846
+ addUserKnob {20 dneg l DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+ addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+ addUserKnob {26 ""}
+ addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+ first_frame_dup 1001
+ addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+ addUserKnob {26 ""}
+ addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+ addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+ addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+ addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+ addUserKnob {26 "" +STARTLINE T " "}
+ addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+ addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+ addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+ addUserKnob {26 ""}
+ addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+ addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+ addUserKnob {1 hidden_foce_startline +HIDDEN}
+ addUserKnob {26 show +HIDDEN T " "}
+ addUserKnob {26 shot +HIDDEN T " "}
+ addUserKnob {1 show_specify l show +HIDDEN}
+ show_specify " "
+ addUserKnob {1 shot_specify l shot +HIDDEN}
+ shot_specify " "
+ addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+ addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+ addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+ addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+ addUserKnob {1 cut_in_specify +HIDDEN}
+ addUserKnob {1 cut_out_specify +HIDDEN}
+ addUserKnob {1 comp_first_specify +HIDDEN}
+ addUserKnob {1 comp_last_specify +HIDDEN}
+ addUserKnob {1 hero_frame_specify +HIDDEN}
+}
+push $Nf8f7020
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial1
+ selected true
+ xpos 5
+ ypos -840
+}
+push 0
+ScanlineRender {
+ inputs 3
+ conservative_shader_sampling false
+ overscan 150
+ shutteroffset centred
+ motion_vectors_type distance
+ P_channel __Pworld
+ N_channel __Nworld
+ name ScanlineRender1
+ selected true
+ xpos 5
+ ypos -502
+}
+Mask3DV2 {
+ name Mask3DV2_1
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos 5
+ ypos -370
+ in __Pworld
+ out rgba.alpha
+ center {-0.5745878816 0.776168704 -0.2150400281}
+ radius 0.4
+ transform 0
+ falloff 0
+ _class Mask3D
+}
+Premult {
+ name Premult1
+ selected true
+ xpos 5
+ ypos -277
+}
+Camera2 {
+ inputs 0
+ translate {5.022336006 2.306686878 17.71894836}
+ rotate {-5.677997302 0.5999931118 0}
+ name Camera1
+ selected true
+ xpos 698
+ ypos -612
+ addUserKnob {20 DNeg}
+ addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
+ addUserKnob {41 "horiz aperture" T haperture}
+ addUserKnob {41 "vert aperture" T vaperture}
+ addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" "Generic/1080p HD" Generic/Anamorphic Generic/Spherical Generic/2K Previs/Anamorphic Previs/Spherical "Movie Extractions/Previs" "Movie Extractions/Generic 2K" "Movie Extractions/Generic 1080p HD" "Movie Extractions/Alexa MINI LF UHD" "Movie Extractions/Phantom Flex 4K Full" "Movie Extractions/INFINITE Working" "Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Alexa LF 4.5k OpenGate" "Movie Extractions/Alexa LF UHD" "Movie Extractions/Zenmus x7 6k RAW" "Movie Extractions/Alexa MINI 16:9 Full" "Movie Extractions/Alexa MINI 16:9 2k ProRes" "Movie Extractions/Alexa 65 UHD" "Movie Extractions/Alexa LF 4.5k 2.39" "Movie Extractions/Alexa MINI LF 4.5k OpenGate" "Movie Extractions/Alexa 65 5k 1.78" "Movie Extractions/Alexa 65 OG Spherical" "Movie Extractions/Red Epic 4K 16:9" "Movie Extractions/Red DSMC2 Helium s35 8K FF" "Movie Extractions/ZCAM E2 2.7k" "Movie Extractions/BlackMagic 4k Pocket Cinema DCI" "Movie Extractions/Zenmus x7 5.7k RAW" "Movie Extractions/Red DSMC2 Monstro VV 6K FF" "Movie Extractions/Zenmus x7 UHD RAW" "Movie Extractions/Super8 8mm 2k" "Movie Extractions/Alexa LF 4.5k 2.39 Ext734" "Movie Extractions/Alexa LF 4.5k 2.39 Ext73" "Movie Extractions/Phantom Flex 4K Cropped" "Movie Extractions/Canon 5D mkIII HD" "Internal Movie Extractions/Previs" "Canon 6D/HD" "Alexa 65/5k 1.78" "Alexa 65/OG Spherical" "Alexa 65/UHD" "Alexa LF/UHD" "Alexa LF/4.5k OpenGate" "Alexa LF/4.5k 2.39" "Phantom Flex/4K Full" "Phantom Flex/4K Cropped" "Alexa MINI LF/UHD" "Alexa MINI LF/4.5k OpenGate" "Working Extractions/Alexa MINI LF UHD" "Working Extractions/Alexa LF UHD" "Working Extractions/Alexa LF 4.5k OpenGate" "Working Extractions/Alexa 65 UHD" "Working Extractions/Zenmus x7 6k RAW" "Working Extractions/Alexa MINI OpenGate" "Working Extractions/Alexa MINI 16:9 2k ProRes" "Working Extractions/Phantom Flex 4K Full" "Working Extractions/Alexa MINI 16:9 Full" "Working Extractions/Alexa LF 4.5k 2.39" "Working Extractions/Alexa MINI LF 4.5k OpenGate" "Working Extractions/Alexa 65 OG Spherical" "Working Extractions/Alexa 65 5k 1.78" "Working Extractions/Red Epic 4K 16:9" "Working Extractions/Red DSMC2 Helium s35 8K FF" "Working Extractions/ZCAM E2 2.7k" "Working Extractions/BlackMagic 4k Pocket Cinema DCI" "Working Extractions/Zenmus x7 5.7k RAW" "Working Extractions/Red DSMC2 Monstro VV 6K FF" "Working Extractions/Zenmus x7 UHD RAW" "Working Extractions/Super8 8mm 2k" "Working Extractions/Alexa LF 4.5k 2.39 Ext734" "Working Extractions/Alexa LF 4.5k 2.39 Ext73" "Working Extractions/Phantom Flex 4K Cropped" "Working Extractions/Alexa MINI LF 4.5k OpenGate 73pc" "Working Extractions/Phantom Flex 4K Full 95pc" "Working Extractions/Alexa MINI LF UHD 90pc" "Working Extractions/Canon 5D mkIII HD" "Alexa MINI/OpenGate" "Alexa MINI/16:9 2k ProRes" "Zenmuse x7/6k RAW" "Zenmuse x7/5.7k RAW" "Zenmuse x7/UHD RAW" "Alexa SXT/16:9 1.78" "Red Epic/4k 16:9" "Lens_Grid/Alexa 65 OG to ALF OG" "Lens_Grid/Alexa 65 OG to ALF 2.39" "Red DSMC2 Helium s35/8K FF" "ZCAM/E2 2.7k" "BlackMagic 4k Pocket Cinema/DCI" "Red DSMC2 Monstro VV/6K FF" "Super8 8mm/2k" "Canon 5D mkIII/HD" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
+ addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
+ addUserKnob {26 ""}
+ addUserKnob {7 hshake l "hero horiz shake" R -1 1}
+ addUserKnob {7 vshake l "hero vert shake" R -1 1}
+ addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
+ addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
+ addUserKnob {7 avshake l "ambient vert shake" R -1 1}
+ addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
+ addUserKnob {26 ""}
+ addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
+ addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+ name Dot6
+ selected true
+ xpos 722
+ ypos -498
+}
+UVRamp {
+ inputs 0
+ name UVRamp1
+ selected true
+ xpos 703
+ ypos -839
+ overscan {0 {"overscan.u * this.Input1.width/this.Input1.height * this.Input1.pixel_aspect"}}
+ output rgb
+}
+push $Ned8f05c0
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial2
+ selected true
+ xpos 813
+ ypos -839
+}
+push 0
+ScanlineRender {
+ inputs 3
+ conservative_shader_sampling false
+ overscan 150
+ shutteroffset centred
+ motion_vectors_type distance
+ P_channel __Pworld
+ N_channel __Nworld
+ name ScanlineRender4
+ selected true
+ xpos 813
+ ypos -501
+}
+Mask3DV2 {
+ name Mask3DV2_2
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos 813
+ ypos -406
+ in rgba
+ out rgba.alpha
+ center {0.6899910569 0.65156883 0}
+ radius 0.1
+ transform 0
+ falloff 0
+ _class Mask3D
+}
+Premult {
+ name Premult2
+ selected true
+ xpos 813
+ ypos -303
+}
+StickyNote {
+ inputs 0
+ name StickyNote3
+ tile_color 0x101010ff
+ label "   PREF CREATION    inside of nuke"
+ note_font_size 91.5
+ selected true
+ xpos -170
+ ypos -1661
+}
