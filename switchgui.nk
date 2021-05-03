@@ -1,0 +1,12 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push 0
+push $cut_paste_input
+Switch {
+inputs 2
+which {{"\$gui ? 1 : 0 "}}
+name SwitchGui
+selected true
+xpos -2754
+ypos -21655
+}
