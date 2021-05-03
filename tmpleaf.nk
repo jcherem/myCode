@@ -1,0 +1,290 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Dot {
+ name Dot3
+ selected true
+ xpos 3681
+ ypos -5112
+}
+set N39482fc0 [stack 0]
+Dot {
+ name Dot5
+ selected true
+ xpos 3681
+ ypos -4946
+}
+set N2261d190 [stack 0]
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf3
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -1523
+ ypos -4962
+ leafname sprite6
+ suffix true
+ subdirs sprite6
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite6/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite6.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
+push $N2261d190
+Dot {
+ name Dot7
+ selected true
+ xpos 3681
+ ypos -4743
+}
+set N39953a70 [stack 0]
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf4
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -2623
+ ypos -4759
+ leafname sprite5
+ suffix true
+ subdirs sprite5
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite5/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite5.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
+push $N39953a70
+Dot {
+ name Dot9
+ selected true
+ xpos 3681
+ ypos -4622
+}
+set N39a8a160 [stack 0]
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf5
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -3723
+ ypos -4638
+ leafname sprite4
+ suffix true
+ subdirs sprite4
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite4/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite4.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
+push $N39a8a160
+Dot {
+ name Dot11
+ selected true
+ xpos 3681
+ ypos -4487
+}
+set N39bfa0f0 [stack 0]
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf6
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -4823
+ ypos -4503
+ leafname sprite3
+ suffix true
+ subdirs sprite3
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite3/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite3.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
+push $N39bfa0f0
+Dot {
+ name Dot13
+ selected true
+ xpos 3681
+ ypos -4350
+}
+set N39d9b070 [stack 0]
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf7
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -5923
+ ypos -4366
+ leafname sprite2
+ suffix true
+ subdirs sprite2
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite2/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite2.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
+push $N39d9b070
+Dot {
+ name Dot15
+ selected true
+ xpos 3681
+ ypos -4221
+}
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf8
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -7023
+ ypos -4237
+ leafname sprite1
+ suffix true
+ subdirs sprite1
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite1/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite1.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
+push $cut_paste_input
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf1
+ tile_color 0xbfbf00ff
+ selected true
+ xpos 787
+ ypos -5256
+ leafname sprite8
+ suffix true
+ subdirs sprite8
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite8/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite8.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
+push $N39482fc0
+push 0
+FileOutLeaf {
+ inputs 2
+ name FileOutLeaf2
+ tile_color 0xbfbf00ff
+ selected true
+ xpos -423
+ ypos -5128
+ leafname sprite7
+ suffix true
+ subdirs sprite7
+ channels rgba
+ file /jobs/BIGSMOKE/001_cpd_0200/ELEMENT/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002/sprite7/2040x2155/E_001_cpd_0200_comp_sprite_sl_513_tk02_L_v002_sprite7.####.exr
+ proxy ""
+ views {main}
+ first 1001
+ last 1250
+ tex_metadata "default metadata and exr/*"
+ _format "2040 2155 0 0 2040 2155 1.0 Sprites 2k"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _old_filetype exr
+ _twigtype 2d
+ _wrapper "FileOutLeaf dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+}
