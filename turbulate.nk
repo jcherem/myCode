@@ -1,0 +1,11 @@
+set cut_paste_input [stack 0]
+version 11.3 v6
+push $cut_paste_input
+Turbulate {
+ detail 2
+ amplitude {0 2}
+ name Turbulate3
+ selected true
+ xpos 2036
+ ypos 20924
+}
