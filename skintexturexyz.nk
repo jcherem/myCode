@@ -1,0 +1,216 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+BackdropNode {
+inputs 0
+name BackdropNode185
+tile_color 0xa59f00ff
+label "Channel Packing Example\nFemale Face 30s"
+note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+note_font_size 50
+selected true
+xpos 76546
+ypos 22295
+bdwidth 1038
+bdheight 1027
+}
+BackdropNode {
+inputs 0
+name BackdropNode186
+tile_color 0x2d2d2dff
+note_font_size 42
+selected true
+xpos 76587
+ypos 22443
+bdwidth 240
+bdheight 322
+}
+BackdropNode {
+inputs 0
+name BackdropNode187
+tile_color 0x2d2d2dff
+note_font_size 42
+selected true
+xpos 76917
+ypos 22443
+bdwidth 240
+bdheight 322
+}
+BackdropNode {
+inputs 0
+name BackdropNode188
+tile_color 0x2d2d2dff
+note_font_size 42
+selected true
+xpos 77225
+ypos 22445
+bdwidth 240
+bdheight 322
+}
+Read {
+inputs 0
+file /jobs/LIBRARY/3D/WAREHOUSE/TEXTURE/organic/skin/XYZ_skin_maps/texturingxyz_displace_female_fullface_05/texturingxyz_micro_female_fullface_05.tif
+localizationPolicy off
+format "19016 15253 0 0 19016 15253 1 "
+proxy_format "640 480 0 0 640 480 1 PC_Video"
+origset true
+raw true
+name Read96
+selected true
+xpos 77305
+ypos 22532
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile "no results were found for query (Leaf) (WHERE Leaf.job = 'LIBRARY' AND Leaf.location = '/jobs/LIBRARY/3D/WAREHOUSE/TEXTURE/organic/skin/XYZ_skin_maps/texturingxyz_displace_female_fullface_05/texturingxyz_micro_female_fullface_05.tif' AND Leaf.deleted = '0000-00-00 00:00:00' AND Leaf.archived = '0000-00-00 00:00:00' AND Leaf.provisional = '0')"
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+addUserKnob {1 leaf_label l Leaf}
+addUserKnob {1 ivy_version l Version}
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+name Dot934
+selected true
+xpos 77339
+ypos 22720
+}
+Dot {
+name Dot935
+selected true
+xpos 77339
+ypos 22925
+}
+Read {
+inputs 0
+file /jobs/LIBRARY/3D/WAREHOUSE/TEXTURE/organic/skin/XYZ_skin_maps/texturingxyz_displace_female_fullface_05/texturingxyz_tertiary_female_fullface_05.psd
+localizationPolicy off
+format "19016 15253 0 0 19016 15253 1 "
+proxy_format "640 480 0 0 640 480 1 PC_Video"
+origset true
+raw true
+name Read97
+selected true
+xpos 76983
+ypos 22529
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile "no results were found for query (Leaf) (WHERE Leaf.job = 'LIBRARY' AND Leaf.location = '/jobs/LIBRARY/3D/WAREHOUSE/TEXTURE/organic/skin/XYZ_skin_maps/texturingxyz_displace_female_fullface_05/texturingxyz_tertiary_female_fullface_05.psd' AND Leaf.deleted = '0000-00-00 00:00:00' AND Leaf.archived = '0000-00-00 00:00:00' AND Leaf.provisional = '0')"
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+addUserKnob {1 leaf_label l Leaf}
+addUserKnob {1 ivy_version l Version}
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+name Dot936
+selected true
+xpos 77017
+ypos 22693
+}
+Read {
+inputs 0
+file /jobs/LIBRARY/3D/WAREHOUSE/TEXTURE/organic/skin/XYZ_skin_maps/texturingxyz_displace_female_fullface_05/texturingxyz_displace_female_fullface_05.tif
+localizationPolicy off
+format "19016 15253 0 0 19016 15253 1 "
+proxy_format "640 480 0 0 640 480 1 PC_Video"
+origset true
+raw true
+name Read98
+selected true
+xpos 76667
+ypos 22552
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile "no results were found for query (Leaf) (WHERE Leaf.job = 'LIBRARY' AND Leaf.location = '/jobs/LIBRARY/3D/WAREHOUSE/TEXTURE/organic/skin/XYZ_skin_maps/texturingxyz_displace_female_fullface_05/texturingxyz_displace_female_fullface_05.tif' AND Leaf.deleted = '0000-00-00 00:00:00' AND Leaf.archived = '0000-00-00 00:00:00' AND Leaf.provisional = '0')"
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+addUserKnob {1 leaf_label l Leaf}
+addUserKnob {1 ivy_version l Version}
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+name Dot937
+selected true
+xpos 76701
+ypos 22742
+}
+Dot {
+name Dot938
+selected true
+xpos 76701
+ypos 22814
+}
+Copy {
+inputs 2
+from0 rgba.red
+to0 rgba.green
+name Copy14
+selected true
+xpos 76983
+ypos 22804
+}
+Dot {
+name Dot939
+selected true
+xpos 77017
+ypos 22877
+}
+Copy {
+inputs 2
+from0 rgba.red
+to0 rgba.blue
+name Copy16
+selected true
+xpos 76983
+ypos 22915
+}
