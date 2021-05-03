@@ -1,0 +1,25 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+OCIOLogConvert {
+operation "lin to log"
+name OCIOLogConvert1
+selected true
+xpos 2906
+ypos -3358
+}
+Reformat {
+filter Lanczos6
+pbb true
+name Reformat2
+selected true
+xpos 2906
+ypos -3279
+}
+OCIOLogConvert {
+operation "log to lin"
+name OCIOLogConvert2
+selected true
+xpos 2906
+ypos -3185
+}
