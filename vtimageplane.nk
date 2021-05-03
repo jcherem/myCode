@@ -1,0 +1,411 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+Group {
+ name vtImagePlane3
+ selected true
+ xpos -1917
+ ypos 3147
+ addUserKnob {20 image_plane l "Image Plane"}
+ addUserKnob {4 output l Output M {"Image Plane (deep)" "Stabilize (deep)" "Matchmove (deep)" "" "" ""}}
+ output "Matchmove (deep)"
+ addUserKnob {6 geo_out l "output geo" -STARTLINE}
+ addUserKnob {41 reference_frame l "reference frame" T FrameHold1.first_frame}
+ addUserKnob {41 distance T TransformGeo1.uniform_scale}
+ addUserKnob {26 ""}
+ addUserKnob {41 orientation T Card1.orientation}
+ addUserKnob {41 image_aspect l "image aspect" -STARTLINE T Card1.image_aspect}
+ addUserKnob {41 rows l rows/columns T Card1.rows}
+ addUserKnob {41 columns l "" -STARTLINE T Card1.columns}
+ addUserKnob {41 z T Card1.z}
+ addUserKnob {41 lens_in_focal l "lens-in focal" T Card1.lens_in_focal}
+ addUserKnob {41 lens_in_haperture l "lens-in haperture" T Card1.lens_in_haperture}
+ addUserKnob {26 ""}
+ addUserKnob {20 Card l "Card and TransformGeo" n 1}
+ addUserKnob {41 xform_order l "transform order" T Card1.xform_order}
+ addUserKnob {41 rot_order l "rotation order" T Card1.rot_order}
+ addUserKnob {6 wireframe l "show wireframe" +STARTLINE}
+ addUserKnob {41 translate l INVISIBLE +INVISIBLE T Card1.translate}
+ addUserKnob {41 rotate T Card1.rotate}
+ addUserKnob {41 scaling l scale T Card1.scaling}
+ addUserKnob {41 uniform_scale l "uniform scale" T Card1.uniform_scale}
+ addUserKnob {41 skew T Card1.skew}
+ addUserKnob {41 pivot T Card1.pivot}
+ addUserKnob {26 text_transformgeo l TransformGeo}
+ addUserKnob {41 translate_1 l translate T TransformGeo1.translate}
+ addUserKnob {22 bake_geo l "Bake Geo" T "import math \n\nmResult = nuke.math.Matrix4()\nnode = nuke.thisNode()\n\nwith node:\n    card_export = nuke.toNode('CardExport')\nfor i in range(0,16):\n    mResult\[i] = card_export\['matrix'].valueAt(node\['reference_frame'].value())\[i]\n\nmResult.transpose()\n\nmTranslate = nuke.math.Matrix4(mResult)\nmTranslate.translationOnly()\nmRotate = nuke.math.Matrix4(mResult)\nmRotate.rotationOnly()\nmScale = nuke.math.Matrix4(mResult)\nmScale.scaleOnly()\n\ntranslate = (mTranslate\[12], mTranslate\[13], mTranslate\[14])\nrotateRad = mRotate.rotationsZXY()\nrotate = (math.degrees(rotateRad\[0]), math.degrees(rotateRad\[1]), math.degrees(rotateRad\[2]))\nscale = (1, 1, 1)\n\n\nbaked_card = nuke.createNode('Card2')\n#baked_card.setInput(0, None)\nbaked_card\['label'].setValue('Baked Card')\nbaked_card\['uniform_scale'].setValue(card_export\['uniform_scale'].value())\nbaked_card\['translate'].setValue(translate)\nbaked_card\['rotate'].setValue(rotate)" +STARTLINE}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 ScanlineRender n 1}
+ addUserKnob {41 antialiasing T ScanlineRender1.antialiasing}
+ addUserKnob {41 overscan T ScanlineRender1.overscan}
+ addUserKnob {41 samples T ScanlineRender1.samples}
+ addUserKnob {41 shutter T ScanlineRender1.shutter}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 credits l "" +STARTLINE T "© 2019 Valentin Trasnea"}
+}
+ Wireframe {
+  inputs 0
+  name Wireframe1
+  xpos 288
+  ypos 197
+ }
+ Input {
+  inputs 0
+  name project_camera
+  label "\[value number]"
+  xpos 212
+  ypos -148
+  number 3
+ }
+ Input {
+  inputs 0
+  name cam
+  label "\[value number]"
+  xpos 17
+  ypos -144
+ }
+ Dot {
+  name Dot1
+  xpos 51
+  ypos -50
+ }
+set N2a85f3a0 [stack 0]
+ Switch {
+  inputs 2
+  which 1
+  name Switch1
+  xpos 212
+  ypos -54
+  disable {{"!\[exists input3]"}}
+ }
+ FrameHold {
+  first_frame 1140
+  name FrameHold1
+  xpos 212
+  ypos -15
+  disable {{"\[exists input3]"}}
+  addUserKnob {20 dneg l DNeg}
+  addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+  addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+  addUserKnob {26 ""}
+  addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  first_frame_dup 1140
+  addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {26 ""}
+  addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+  addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+  addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+  addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+  addUserKnob {26 "" -STARTLINE T " "}
+  addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+  addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+  addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+  addUserKnob {26 ""}
+  addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+  addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+  addUserKnob {1 hidden_foce_startline +HIDDEN}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+  addUserKnob {1 show_specify l show +HIDDEN}
+  show_specify " "
+  addUserKnob {1 shot_specify l shot +HIDDEN}
+  shot_specify " "
+  addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+  addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+  addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+  addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+  addUserKnob {1 cut_in_specify +HIDDEN}
+  addUserKnob {1 cut_out_specify +HIDDEN}
+  addUserKnob {1 comp_first_specify +HIDDEN}
+  addUserKnob {1 comp_last_specify +HIDDEN}
+  addUserKnob {1 hero_frame_specify +HIDDEN}
+ }
+ Dot {
+  name Dot3
+  xpos 246
+  ypos 47
+ }
+set N2a82f830 [stack 0]
+ Input {
+  inputs 0
+  name image
+  label "\[value number]"
+  xpos 439
+  ypos -134
+  number 1
+ }
+set N2a837980 [stack 0]
+ Project3D2 {
+  inputs 2
+  crop false
+  name Project3D2
+  xpos 305
+  ypos 43
+ }
+push $N2a85f3a0
+ Dot {
+  name Dot2
+  xpos 51
+  ypos 83
+ }
+set N2a8499b0 [stack 0]
+push $N2a837980
+ Project3D2 {
+  inputs 2
+  crop false
+  name Project3D1
+  xpos 439
+  ypos 79
+ }
+set N2a949c80 [stack 0]
+ Dot {
+  name Dot6
+  xpos 531
+  ypos 121
+ }
+push $N2a949c80
+ Switch {
+  inputs 3
+  which {{parent.output}}
+  name Switch_Output1
+  xpos 439
+  ypos 171
+ }
+ MergeMat {
+  inputs 2
+  operation plus
+  name MergeMat1
+  xpos 439
+  ypos 197
+  disable {{!parent.wireframe}}
+ }
+set N2934b4a0 [stack 0]
+ Input {
+  inputs 0
+  name geo
+  label "\[value number]"
+  xpos 624
+  ypos -135
+  number 2
+ }
+ ApplyMaterial {
+  inputs 2
+  name ApplyMaterial1
+  xpos 624
+  ypos 197
+ }
+push $N2a82f830
+ Dot {
+  name Dot4
+  xpos 246
+  ypos 294
+ }
+set N2a83ed70 [stack 0]
+push $N2a83ed70
+push $N2934b4a0
+ Card2 {
+  rotate {8 8 1.7}
+  uniform_scale 2
+  control_points {3 3 3 6 
+
+1 {-0.5 0 -0.5} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0.1666666865} 0 {0 0 0} 0 {0 0 0} 
+1 {0 0 -0.5} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0.1666666865} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 0 -0.5} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0.1666666865} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0.1666666716} 0 {0 0 -0.1666666716} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0.1666666716} 0 {0 0 -0.1666666716} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0.1666666716} 0 {0 0 -0.1666666716} 0 {1 0.5 0} 
+1 {-0.5 0 0.5} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 0 -0.1666666865} 0 {0 1 0} 
+1 {0 0 0.5} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 0 -0.1666666865} 0 {0.5 1 0} 
+1 {0.5 0 0.5} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 0 -0.1666666865} 0 {1 1 0} }
+  name Card1
+  xpos 439
+  ypos 264
+ }
+ TransformGeo {
+  inputs 3
+  translate {0 0 {-uniform_scale}}
+  uniform_scale 40.3
+  name TransformGeo1
+  xpos 439
+  ypos 290
+ }
+ Switch {
+  inputs 2
+  which {{"\[exists parent.input2]"}}
+  name Switch_In_Geo
+  xpos 439
+  ypos 364
+ }
+set N2928c5e0 [stack 0]
+ Dot {
+  name Dot8
+  xpos 594
+  ypos 368
+ }
+ Dot {
+  name Dot7
+  xpos 594
+  ypos 678
+ }
+push $N2a8499b0
+ Dot {
+  name Dot5
+  xpos 51
+  ypos 410
+ }
+set N299575b0 [stack 0]
+push $N2928c5e0
+push 0
+ ScanlineRender {
+  inputs 3
+  conservative_shader_sampling false
+  antialiasing {{parent.ScanlineRender1.antialiasing}}
+  overscan {{parent.ScanlineRender1.overscan} {parent.ScanlineRender1.overscan}}
+  samples {{parent.ScanlineRender1.samples}}
+  shutter {{parent.ScanlineRender1.shutter}}
+  shutteroffset centred
+  motion_vectors_type distance
+  name ScanlineRender3
+  xpos 17
+  ypos 503
+ }
+push $N2a83ed70
+push $N2928c5e0
+push 0
+ ScanlineRender {
+  inputs 3
+  conservative_shader_sampling false
+  antialiasing {{parent.ScanlineRender1.antialiasing}}
+  overscan {{parent.ScanlineRender1.overscan} {parent.ScanlineRender1.overscan}}
+  samples {{parent.ScanlineRender1.samples}}
+  shutter {{parent.ScanlineRender1.shutter}}
+  shutteroffset centred
+  motion_vectors_type distance
+  name ScanlineRender2
+  xpos 212
+  ypos 504
+ }
+push $N299575b0
+push $N2928c5e0
+push 0
+ ScanlineRender {
+  inputs 3
+  conservative_shader_sampling false
+  overscan {150 150}
+  shutteroffset centred
+  motion_vectors_type distance
+  name ScanlineRender1
+  xpos 439
+  ypos 504
+ }
+ Switch {
+  inputs 3
+  which {{parent.output}}
+  name Switch_Output
+  xpos 439
+  ypos 610
+ }
+ Switch {
+  inputs 2
+  which {{parent.geo_out}}
+  name Switch_Out_Geo
+  xpos 439
+  ypos 674
+ }
+ Output {
+  name Output1
+  xpos 439
+  ypos 752
+ }
+ Card2 {
+  inputs 0
+  uniform_scale {{abs(TransformGeo1.uniform_scale)*Card1.uniform_scale}}
+  useMatrix true
+  matrix {
+      {{parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix}}
+      {{parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix}}
+      {{parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix}}
+      {{parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix} {parent.Axis2.world_matrix}}
+    }
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name CardExport
+  gl_color 0xffff00ff
+  xpos 955
+  ypos 346
+ }
+push $N2a83ed70
+push $N2a83ed70
+ Axis2 {
+  inputs 2
+  translate {{parent.TransformGeo1.translate} {parent.TransformGeo1.translate} {parent.TransformGeo1.translate}}
+  name Axis1
+  xpos 281
+  ypos 313
+  addUserKnob {20 Ivy}
+  addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+  addUserKnob {26 divider4 l "" +STARTLINE}
+  addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+  _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+  addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+  addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+  addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+  _expressions {{curve}}
+  addUserKnob {26 divider0 l "" +STARTLINE}
+  addUserKnob {20 dbinfo l "DB Info" n 1}
+  dbinfo 0
+  addUserKnob {1 twig_dnuuid l "Twig Id"}
+  addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+  addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+  addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+  addUserKnob {26 divider1 l "" +STARTLINE}
+  addUserKnob {1 twigtype l "Twig Type"}
+  addUserKnob {1 leaf_label l Leaf}
+  addUserKnob {1 ivy_version l Version}
+  addUserKnob {43 ivy_notes l Notes}
+  addUserKnob {26 divider2 l "" +STARTLINE}
+  addUserKnob {1 build_label l "Build Label"}
+  addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+ }
+ Axis2 {
+  rotate {{parent.Card1.rotate} {parent.Card1.rotate} {parent.Card1.rotate}}
+  name Axis2
+  xpos 790
+  ypos 313
+  addUserKnob {20 Ivy}
+  addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
+  addUserKnob {26 divider4 l "" +STARTLINE}
+  addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+  _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+  addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+  addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+  addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+  _expressions {{curve}}
+  addUserKnob {26 divider0 l "" +STARTLINE}
+  addUserKnob {20 dbinfo l "DB Info" n 1}
+  dbinfo 0
+  addUserKnob {1 twig_dnuuid l "Twig Id"}
+  addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+  addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+  addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+  addUserKnob {26 divider1 l "" +STARTLINE}
+  addUserKnob {1 twigtype l "Twig Type"}
+  addUserKnob {1 leaf_label l Leaf}
+  addUserKnob {1 ivy_version l Version}
+  addUserKnob {43 ivy_notes l Notes}
+  addUserKnob {26 divider2 l "" +STARTLINE}
+  addUserKnob {1 build_label l "Build Label"}
+  addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+ }
+end_group
