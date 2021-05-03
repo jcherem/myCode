@@ -1,0 +1,1547 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+push $cut_paste_input
+RotoPaint {
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44800000 x43d68000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Brush2 512 catmullrom
+     {cc
+      {f 2080}
+      {px x44800000
+       {x42b80000 x43058000 x3e4b8000}
+       {x42bb0000 x43050000 x3e548000}
+       {x42c40000 x43038000 x3e688000}
+       {x42de0000 x43030000 x3e880000}
+       {x43388000 x43020000 x3e958000}
+       {x43874000 x43020000 x3e92c000}
+       {x43d80000 x43038000 x3e89c000}
+       {x440e4000 x43058000 x3e8c4000}
+       {x44350000 x43058000 x3e860000}
+       {x443a4000 x43050000 x3e828000}
+       {x44570000 x43020000 x3e824000}
+       {x446c2000 x42fe0000 x3e5b0000}
+       {x446e6000 x42fd0000 0}}}
+     {tx x44800000 x43e9c000 x430313b1}
+     {a ro 0 go 0 bo 0 ao 0 bu 1 str 1 spx x44800000 spy x43d68000 sb 1 ltn x447e4000 ltm x447e4000 tt x41880000}}
+    {cubiccurve Brush1 512 catmullrom
+     {cc
+      {f 2080}
+      {px x44800000
+       {x43380000 x43be8000 x3e040000}
+       {x43380000 x43be0000 x3e438000}
+       {x43340000 x43bd8000 x3e548000}
+       {x43340000 x43bc8000 x3e618000}
+       {x43340000 x43be0000 x3e678000}
+       {x43390000 x43bf8000 x3e6f0000}
+       {x43440000 x43c78000 x3e6f8000}
+       {x43510000 x43d40000 x3e688000}
+       {x436c0000 x43e60000 x3e708000}
+       {x43858000 x43f88000 x3e6e0000}
+       {x43a18000 x44088000 x3e780000}
+       {x43b08000 x440dc000 x3e7c0000}
+       {x43cb0000 x4414c000 x3e7c8000}
+       {x43da0000 x44178000 x3e7e8000}
+       {x43e38000 x44180000 x3e758000}
+       {x43eb8000 x4416c000 x3e6e0000}
+       {x43f50000 x440f0000 x3e768000}
+       {x43fb0000 x44008000 x3e83c000}
+       {x43fb8000 x43f18000 x3e8dc000}
+       {x43fd0000 x43d30000 x3e938000}
+       {x44034000 x43be8000 x3e9f4000}
+       {x44074000 x43b80000 x3ea30000}
+       {x440dc000 x43b20000 x3e9d8000}
+       {x44174000 x43af0000 x3e92c000}
+       {x441e4000 x43b10000 x3e880000}
+       {x44254000 x43b70000 x3e834000}
+       {x4430c000 x43cb0000 x3e828000}
+       {x44378000 x43d90000 x3e848000}
+       {x443d8000 x43e48000 x3e850000}
+       {x4440c000 x43e90000 x3e880000}
+       {x44434000 x43ec0000 x3e8c0000}
+       {x44438000 x43eb8000 x3e994000}
+       {x44438000 x43ea8000 x3e9fc000}
+       {x4441c000 x43e18000 x3ea10000}
+       {x44414000 x43d80000 x3ea64000}
+       {x44418000 x43d10000 x3eafc000}
+       {x44438000 x43bd0000 x3eb68000}
+       {x44494000 x43a38000 x3ebac000}
+       {x444d8000 x439a0000 x3eb9c000}
+       {x44550000 x43930000 x3eb10000}
+       {x445cc000 x43948000 x3e9bc000}
+       {x44698000 x43a10000 x3e964000}
+       {x44708000 x43ab8000 x3e9b4000}
+       {x447a4000 x43bc0000 x3ea14000}
+       {x447e0000 x43be8000 x3eafc000}
+       {x4480a000 x43c08000 x3eb90000}
+       {x44830000 x43bc0000 x3ec40000}
+       {x44858000 x43ad8000 x3ec50000}
+       {x4486e000 x43a48000 x3ec0c000}
+       {x44882000 x43990000 x3eba4000}
+       {x4488a000 x43968000 x3e8c0000}
+       {x44892000 x43978000 x3d140000}}}
+     {tx x44800000 x441f7ec5 x43cfb13b}
+     {a ro 0 go 0 bo 0 ao 0 bu 1 str 1 spx x44800000 spy x43d68000 sb 1 ltn x447e4000 ltm x447e4000 tt x41880000}}}}}}
+ toolbox {dodge {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { selectCurves str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1024 ltm 1024 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 21 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_blending_mode color-dodge
+ toolbar_brush_hardness 0.200000003
+ toolbar_lifetime_type single
+ toolbar_paint_source fg
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 429}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1017
+ lifetime_end 1017
+ motionblur_shutter_offset_type centred
+ brush_spacing 0.05000000075
+ brush_hardness 0.200000003
+ source_black_outside true
+ name RotoPaint1
+ selected true
+ xpos -123
+ ypos -337
+}
+RotoPaint {
+ inputs 0
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44800000 x43d68000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Brush2 512 catmullrom
+     {cc
+      {f 2080}
+      {px x44800000
+       {x42b80000 x43058000 x3e4b8000}
+       {x42bb0000 x43050000 x3e548000}
+       {x42c40000 x43038000 x3e688000}
+       {x42de0000 x43030000 x3e880000}
+       {x43388000 x43020000 x3e958000}
+       {x43874000 x43020000 x3e92c000}
+       {x43d80000 x43038000 x3e89c000}
+       {x440e4000 x43058000 x3e8c4000}
+       {x44350000 x43058000 x3e860000}
+       {x443a4000 x43050000 x3e828000}
+       {x44570000 x43020000 x3e824000}
+       {x446c2000 x42fe0000 x3e5b0000}
+       {x446e6000 x42fd0000 0}}}
+     {tx x44800000 x43e9c000 x430313b1}
+     {a ro 0 go 0 bo 0 ao 0 bu 1 str 1 spx x44800000 spy x43d68000 sb 1 ltn x447e4000 ltm x447e4000 tt x41880000}}
+    {cubiccurve Brush1 512 catmullrom
+     {cc
+      {f 2080}
+      {px x44800000
+       {x43380000 x43be8000 x3e040000}
+       {x43380000 x43be0000 x3e438000}
+       {x43340000 x43bd8000 x3e548000}
+       {x43340000 x43bc8000 x3e618000}
+       {x43340000 x43be0000 x3e678000}
+       {x43390000 x43bf8000 x3e6f0000}
+       {x43440000 x43c78000 x3e6f8000}
+       {x43510000 x43d40000 x3e688000}
+       {x436c0000 x43e60000 x3e708000}
+       {x43858000 x43f88000 x3e6e0000}
+       {x43a18000 x44088000 x3e780000}
+       {x43b08000 x440dc000 x3e7c0000}
+       {x43cb0000 x4414c000 x3e7c8000}
+       {x43da0000 x44178000 x3e7e8000}
+       {x43e38000 x44180000 x3e758000}
+       {x43eb8000 x4416c000 x3e6e0000}
+       {x43f50000 x440f0000 x3e768000}
+       {x43fb0000 x44008000 x3e83c000}
+       {x43fb8000 x43f18000 x3e8dc000}
+       {x43fd0000 x43d30000 x3e938000}
+       {x44034000 x43be8000 x3e9f4000}
+       {x44074000 x43b80000 x3ea30000}
+       {x440dc000 x43b20000 x3e9d8000}
+       {x44174000 x43af0000 x3e92c000}
+       {x441e4000 x43b10000 x3e880000}
+       {x44254000 x43b70000 x3e834000}
+       {x4430c000 x43cb0000 x3e828000}
+       {x44378000 x43d90000 x3e848000}
+       {x443d8000 x43e48000 x3e850000}
+       {x4440c000 x43e90000 x3e880000}
+       {x44434000 x43ec0000 x3e8c0000}
+       {x44438000 x43eb8000 x3e994000}
+       {x44438000 x43ea8000 x3e9fc000}
+       {x4441c000 x43e18000 x3ea10000}
+       {x44414000 x43d80000 x3ea64000}
+       {x44418000 x43d10000 x3eafc000}
+       {x44438000 x43bd0000 x3eb68000}
+       {x44494000 x43a38000 x3ebac000}
+       {x444d8000 x439a0000 x3eb9c000}
+       {x44550000 x43930000 x3eb10000}
+       {x445cc000 x43948000 x3e9bc000}
+       {x44698000 x43a10000 x3e964000}
+       {x44708000 x43ab8000 x3e9b4000}
+       {x447a4000 x43bc0000 x3ea14000}
+       {x447e0000 x43be8000 x3eafc000}
+       {x4480a000 x43c08000 x3eb90000}
+       {x44830000 x43bc0000 x3ec40000}
+       {x44858000 x43ad8000 x3ec50000}
+       {x4486e000 x43a48000 x3ec0c000}
+       {x44882000 x43990000 x3eba4000}
+       {x4488a000 x43968000 x3e8c0000}
+       {x44892000 x43978000 x3d140000}}}
+     {tx x44800000 x441f7ec5 x43cfb13b}
+     {a ro 0 go 0 bo 0 ao 0 bu 1 str 1 spx x44800000 spy x43d68000 sb 1 ltn x447e4000 ltm x447e4000 tt x41880000}}}}}}
+ toolbox {dodge {
+  { selectAll bm 6 src 1 str 1 ssx 1 ssy 1 sf 1 }
+  { selectCurves str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1024 ltm 1024 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 21 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_blending_mode color-dodge
+ toolbar_brush_hardness 0.200000003
+ toolbar_lifetime_type single
+ toolbar_paint_source fg
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 429}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1017
+ lifetime_end 1017
+ motionblur_shutter_offset_type centred
+ brush_spacing 0.05000000075
+ brush_hardness 0.200000003
+ source_black_outside true
+ name RotoPaint2
+ selected true
+ xpos -18
+ ypos -289
+}
+Group {
+ name X_Tesla6
+ help "With this gizmo you can create lightning and electricity effects"
+ tile_color 0x5c89ffff
+ gl_color 0xbed7ffff
+ selected true
+ xpos -18
+ ypos -183
+ addUserKnob {20 Base}
+ addUserKnob {12 point1}
+ point1 {538 390}
+ addUserKnob {12 point2 t "Sets the final point of the lightning, where the bolt dies."}
+ point2 {1392 416}
+ addUserKnob {3 arcs l bolts t "A general multiplier that duplicates the entire structure multiple times, using the same settings for all the lightning bolts."}
+ arcs 1
+ addUserKnob {26 ""}
+ addUserKnob {7 amplitude t "The bigger the amplitude, the less straight and more wiggly the lightning will be." R 0 500}
+ addUserKnob {7 soft_start l "soft start" t "Sets the initial amplitude. Values over 0 will assure that the lightning starts in the point1. Bigger values make a smoother transition."}
+ soft_start 0.255
+ addUserKnob {7 soft_end l "soft end" t "Sets the final amplitude. A value over 0 will assure that the lightning dies at point2. Bigger values make a smoother transition."}
+ soft_end 0.04
+ addUserKnob {26 ""}
+ addUserKnob {7 frequency t "How often the lightning changes direction. Higher values will do smaller shapes."}
+ frequency 0.4
+ addUserKnob {3 complexity t "How many octaves are used in the fractal noise. Higher values will produce a more detailed lightning, but it is slower. Usually there's no difference over 8 octaves."}
+ complexity 6
+ addUserKnob {7 secondary_amplitude l "secondary amp" t "Each octave has its amplitude scaled by this much. A value of .5 means that each iteration will have half of the influence of the previous octave." R 0 2}
+ secondary_amplitude 0.4
+ addUserKnob {7 secondary_frequency l "secondary freq" t "Each octave has its frequency scaled by this much. A value of 2 means that each iteration will add detail twice as small."}
+ secondary_frequency 0.42
+ addUserKnob {26 ""}
+ addUserKnob {7 size l width t "The width of the entire lightning. Higher values will create thicker bolts. The units are pixels, so a width of 10 means that the maximum width that the lightning will have is 10." R 0 100}
+ size 10
+ addUserKnob {7 end_size l "end width" t "The factor at which the width is scaled at the end of the lightning. A value of 1 means that the with is constant, and a value of 0 means that the lightning will get thinner the closer it gets to the second point."}
+ end_size 1
+ addUserKnob {20 Branches}
+ addUserKnob {3 branches t "The number of secondary branches born from each main bolt"}
+ addUserKnob {7 random_spacing l "random spacing" t "When set to 0, secondary branches will be born from equidistant points along the main bolt. A more random spacing will make the branches less evenly distributed."}
+ addUserKnob {26 ""}
+ addUserKnob {7 direction t "The tendency of the secondary branches to point in the same direction as the main bolt."}
+ direction 0.2
+ addUserKnob {7 random_direction l randomize t "A random value for the direction. It will make the secondary branches point in different directions."}
+ random_direction 0.5
+ addUserKnob {26 ""}
+ addUserKnob {7 length t "The length of the secondary branches, relative to the length of the main bolt." R 0 2}
+ length 0.935
+ addUserKnob {7 random_length l randomize t "Makes the secondary branches have different sizes between each other."}
+ random_length 0.5
+ addUserKnob {26 ""}
+ addUserKnob {7 branch_amplitude l amplitude t "How turbulent will the secondary branches be, relative to the main bolt."}
+ addUserKnob {7 random_amplitude l randomize t "Makes the secondary branches have different amplitudes between each other."}
+ random_amplitude 0.5
+ addUserKnob {26 ""}
+ addUserKnob {7 branch_size l width t "The width of the stroke, relative to the main bolt." R 0 2}
+ branch_size 1
+ addUserKnob {7 branch_end_size l "end size" t "The width at the end of the branches"}
+ branch_end_size 0.1
+ addUserKnob {7 random_branch_size l randomize t "Different branches will have slightly different width values."}
+ random_branch_size 0.2
+ addUserKnob {20 Animation}
+ addUserKnob {7 speed t "The rate of change of the lightning shape. The bigger the value, the faster it will move."}
+ speed 1
+ addUserKnob {7 flow t "The shape of the lightning can flow from the start to the end of the bolt, givig the feeling that the energy is moving forwards"}
+ flow 30
+ addUserKnob {26 ""}
+ addUserKnob {7 retract t "Use this to animate the lightning growing or shrinking."}
+ addUserKnob {26 ""}
+ addUserKnob {3 seed}
+ seed 42
+ addUserKnob {22 make_random_seed l "Random Seed" -STARTLINE T "import random\n\nnuke.thisNode()\['seed'].setValue( random.randint(1,999) )"}
+ addUserKnob {20 Render}
+ addUserKnob {68 mode M {"Stroke Only (faster)" "Medium Quality (slow)" "Best Quality (very slow)" "" "" ""}}
+ mode "Best Quality (very slow)"
+ addUserKnob {18 primary_color l primary}
+ primary_color {1 0.875814 0.732576}
+ addUserKnob {6 primary_color_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {18 secondary_color l secondary}
+ secondary_color {0.372524 0.663819 1}
+ addUserKnob {6 secondary_color_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {26 ""}
+ addUserKnob {7 saturation R 0 2}
+ saturation 0.8
+ addUserKnob {7 global_intensity l intensity R 0 10}
+ global_intensity 1
+ addUserKnob {26 ""}
+ addUserKnob {7 chromatic_aberration l aberration R 0 10}
+ chromatic_aberration 2
+ addUserKnob {7 sharpening R 0 10}
+ sharpening 2
+ addUserKnob {26 ""}
+ addUserKnob {26 Glow_Text l Glow}
+ addUserKnob {7 glow l radius R 0 1000}
+ glow 300
+ addUserKnob {7 intensity}
+ intensity 0.3
+ addUserKnob {6 soft_highlights l "soft highlights" -STARTLINE}
+ soft_highlights true
+ addUserKnob {7 gamma R 0 3}
+ gamma 1.5
+ addUserKnob {7 noise R 0 10}
+ addUserKnob {20 about l About}
+ addUserKnob {26 about_1 l "" t "A bunny:\n(\\(\\ \n( - -)\n((') (')" +STARTLINE T "<br>\n<b>Xavier Martín © 2016</b>"}
+ addUserKnob {26 ""}
+ addUserKnob {26 website l "" +STARTLINE T "<a href=\"http://www.xaviermartinvfx.com\"><span style=\"color:#C8C8C8;\">www.xaviermartinvfx.com</span></a>"}
+ addUserKnob {26 space4_1 l "" +STARTLINE T <br>}
+ addUserKnob {22 version l "<center>   version   </center>" T "nuke.message('X_Tesla Gizmo <i>v2.0</i><br><b>Xavier Martín © 2016</b>')\nnuke.message('<i><center>To my grandad, wherever you are, know we love you.</center></i>')" +STARTLINE}
+ addUserKnob {22 help_1 l "<center> ? " -STARTLINE T "nuke.message('You can find more documentation<br>on <a href=\"http://www.nukepedia.com/gizmos/draw/x_tesla\"><span style=\"color:#BCBCBC;\">Nukepedia</span></a> or my <a href=\"http://www.xaviermartinvfx.com/x_tesla/\"><span style=\"color:#BCBCBC;\">website</span></a>.')"}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0xff0000ff
+  label "OFFSET RED 1 PIXEL"
+  note_font_size 42
+  xpos -635
+  ypos 705
+  bdwidth 434
+  bdheight 127
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0xaf8508ff
+  label "GLOW EFFECT"
+  note_font_size 42
+  xpos 210
+  ypos 847
+  bdwidth 378
+  bdheight 369
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0x397b90ff
+  label "COLOR GRADE"
+  note_font_size 42
+  xpos 940
+  ypos -6
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode4
+  tile_color 0x397b90ff
+  label "COLOR GRADE"
+  note_font_size 42
+  xpos 394
+  ypos 1471
+  bdwidth 201
+  bdheight 161
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode5
+  tile_color 0x8e8e3800
+  label "NORMALIZACION "
+  note_font_size 42
+  xpos 318
+  ypos 1259
+  bdwidth 352
+  bdheight 154
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode6
+  tile_color 0x397b90ff
+  label "COLOR GRADE"
+  note_font_size 42
+  xpos -695
+  ypos 1448
+  bdwidth 201
+  bdheight 161
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode7
+  tile_color 0xaf8508ff
+  label DISTORTION
+  note_font_size 42
+  xpos -290
+  ypos 1568
+  bdwidth 310
+  bdheight 456
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode8
+  tile_color 0xaaaaaa00
+  label CORE
+  note_font_size 42
+  xpos 198
+  ypos 1887
+  bdwidth 329
+  bdheight 115
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode9
+  tile_color 0x8e8e3800
+  label "CHROMA ABR"
+  note_font_size 42
+  xpos 236
+  ypos 2077
+  bdwidth 258
+  bdheight 188
+ }
+ Crop {
+  inputs 0
+  box {0 0 {parent.Crop1.box.r} 1}
+  reformat true
+  intersect true
+  crop false
+  name Crop3
+  xpos -845
+  ypos -513
+ }
+set N1131b8b0 [stack 0]
+ Noise {
+  output {-rgba.red rgba.green -rgba.blue none}
+  size {{100/frequency} 1}
+  zoffset {{speed*frame/100+(frame-int(frame))*11107.7}}
+  octaves {{complexity}}
+  lacunarity {{1/secondary_frequency}}
+  gain {{secondary_amplitude}}
+  gamma 1
+  translate {{frame*flow} {-seed*717}}
+  scale {1 1}
+  xrotate 0
+  yrotate 0
+  name Noise2
+  xpos -723
+  ypos -513
+ }
+ Multiply {
+  value 2
+  name Multiply4
+  xpos -723
+  ypos -487
+ }
+ Add {
+  value -1
+  name Add2
+  xpos -723
+  ypos -449
+ }
+ Reformat {
+  type scale
+  scale {1 {max(amplitude,size+amplitude/2)}}
+  filter Impulse
+  name Reformat4
+  xpos -723
+  ypos -411
+ }
+ Dot {
+  name Dot1
+  xpos -689
+  ypos -238
+ }
+push $N1131b8b0
+ Expression {
+  channel0 none
+  expr0 "y<amplitude/2 "
+  expr1 1-((-cx/2+.5))**2
+  expr2 "(((-cx/2+.5))*(1+size - 1-branch_end_size)+(1+branch_end_size*size))"
+  channel3 none
+  expr3 fBm(x/100*frequency,seed*717,speed*frame/100,complexity,1/secondary_frequency,secondary_amplitude)*smoothstep(0,soft_start*Crop1.box.r,x)*smoothstep(0,soft_end*Crop1.box.r,Crop1.box.r-x)/clamp((smoothstep(0,soft_start,.5)*smoothstep(0,soft_end,.5))*2,0,1)**2
+  name Expression2
+  xpos -845
+  ypos -487
+ }
+ Reformat {
+  type scale
+  scale {1 {max(amplitude*branch_amplitude,size*branch_size+amplitude*branch_amplitude/2)}}
+  filter Impulse
+  name Reformat3
+  xpos -845
+  ypos -461
+ }
+ Expression {
+  expr0 -abs(y-(max(amplitude*branch_amplitude,size+amplitude*branch_amplitude/2))/2)+b/2
+  name Expression3
+  xpos -845
+  ypos -435
+ }
+ Remove {
+  operation keep
+  channels {rgba.red rgba.green -rgba.blue none}
+  name Remove2
+  xpos -845
+  ypos -409
+ }
+ NoTimeBlur {
+  rounding floor
+  name NoTimeBlur1
+  xpos -845
+  ypos -371
+ }
+ Clamp {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  maximum_enable false
+  name Clamp1
+  xpos -845
+  ypos -345
+ }
+ Transform {
+  scale {1 {"((1-(Transform4.translate.x/Crop1.box.r))*(1-end_size)+end_size)*branch_size*(1-random(seed*123+(frame-int(frame))*branches*10)*random_branch_size)             "}}
+  center {0 {format.t/2}}
+  black_outside false
+  name Transform3
+  xpos -845
+  ypos -319
+ }
+ Reformat {
+  type scale
+  scale {{length*(1-random(seed*71+(frame-int(frame))*branches*10)*random_length)} 1}
+  name Reformat5
+  xpos -845
+  ypos -293
+ }
+ Multiply {
+  channels {-rgba.red rgba.green -rgba.blue none}
+  value {1 {1-random_amplitude+random(seed*71+(frame-int(frame))*branches)*random_amplitude} 1 1}
+  value_panelDropped true
+  name Multiply1
+  xpos -845
+  ypos -267
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  Achannels {-rgba.red rgba.green -rgba.blue -rgba.alpha}
+  Bchannels {-rgba.red rgba.green -rgba.blue -rgba.alpha}
+  output {-rgba.red rgba.green -rgba.blue -rgba.alpha}
+  name Merge3
+  xpos -845
+  ypos -242
+ }
+ Multiply {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  value {{Transform3.scale.h/branch_size/branch_size*.5}}
+  name Multiply5
+  xpos -845
+  ypos -216
+ }
+ Crop {
+  box {0 0 {format.r} {format.t}}
+  crop false
+  name Crop4
+  xpos -845
+  ypos -178
+ }
+ IDistort {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  uv {-rgba.red rgba.green}
+  uv_scale {0 {amplitude/2*branch_amplitude}}
+  name IDistort2
+  xpos -845
+  ypos -152
+ }
+ Transform {
+  translate {{(random(seed*71+(frame-int(frame))*10*branches)*random_spacing+(frame-int(frame))*(1-random_spacing))*Crop1.box.r} {-(fBm((translate.x-int(frame)*flow)/100*frequency,seed*717,speed*int(frame)/100,complexity,1/secondary_frequency,secondary_amplitude)*smoothstep(0,soft_start*Crop1.box.r,translate.x)*smoothstep(0,soft_end*Crop1.box.r,Crop1.box.r-translate.x)/clamp((smoothstep(0,soft_start,.5)*smoothstep(0,soft_end,.5))*2,0,1)**2)*amplitude/2+(1-branch_amplitude)*amplitude/2}}
+  rotate {{(-1)**(int((frame-int(frame))*branches*10))*direction*90*(1-random(seed*111+((frame-int(frame))*branches*11))*random_direction*2)}}
+  center {0 {format.t/2}}
+  clamp true
+  name Transform4
+  xpos -845
+  ypos -126
+ }
+ Remove {
+  operation keep
+  channels {rgba.red -rgba.green -rgba.blue none}
+  name Remove1
+  xpos -845
+  ypos -100
+ }
+ Add {
+  value {{-size/branch_size*retract*.5}}
+  name Add3
+  xpos -845
+  ypos -62
+ }
+ Clamp {
+  maximum {{size/2*(1-retract)}}
+  name Clamp3
+  xpos -845
+  ypos -24
+ }
+ TimeBlur {
+  divisions {{branches-1}}
+  shutter 1
+  shutteroffset start
+  shuttercustomoffset 0
+  name TimeBlur2
+  xpos -845
+  ypos 14
+ }
+ Multiply {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  value {{branches}}
+  name Multiply2
+  xpos -845
+  ypos 40
+ }
+ Crop {
+  inputs 0
+  box {0 0 {hypot(point1.x-point2.x,point1.y-point2.y)} 1}
+  reformat true
+  intersect true
+  crop false
+  name Crop1
+  xpos -623
+  ypos -284
+ }
+set N11405f70 [stack 0]
+ Noise {
+  output {-rgba.red rgba.green -rgba.blue none}
+  size {{100/frequency} 1}
+  zoffset {{speed*frame/100}}
+  octaves {{complexity}}
+  lacunarity {{1/secondary_frequency}}
+  gain {{secondary_amplitude}}
+  gamma 1
+  translate {{frame*flow} {-seed*717}}
+  scale {1 1}
+  xrotate 0
+  yrotate 0
+  name Noise1
+  xpos -498
+  ypos -284
+ }
+ Multiply {
+  value 2
+  name Multiply3
+  xpos -498
+  ypos -258
+ }
+ Add {
+  value -1
+  name Add1
+  xpos -498
+  ypos -220
+ }
+ Reformat {
+  type scale
+  scale {1 {max(amplitude,size+amplitude/2)}}
+  filter Impulse
+  name Reformat2
+  xpos -498
+  ypos -128
+ }
+push $N11405f70
+ Expression {
+  channel0 none
+  expr0 "y<amplitude/2 "
+  expr1 smoothstep(0,soft_start*Crop1.box.r,x)*smoothstep(0,soft_end*Crop1.box.r,Crop1.box.r-x)/clamp((smoothstep(0,soft_start,.5)*smoothstep(0,soft_end,.5))*2,0,1)**2
+  expr2 ((-cx/2+.5))*size*(1-end_size)+end_size*size
+  channel3 none
+  expr3 fBm(x/100*frequency,seed*717,speed*frame/100,complexity,1/secondary_frequency,secondary_amplitude)*smoothstep(0,soft_start*Crop1.box.r,x)*smoothstep(0,soft_end*Crop1.box.r,Crop1.box.r-x)/clamp((smoothstep(0,soft_start,.5)*smoothstep(0,soft_end,.5))*2,0,1)**2
+  name Expression1
+  xpos -623
+  ypos -258
+ }
+ Reformat {
+  type scale
+  scale {1 {max(amplitude,size+amplitude/2)}}
+  filter Impulse
+  name Reformat1
+  xpos -623
+  ypos -232
+ }
+ Expression {
+  expr0 -abs(y-(max(amplitude,size+amplitude/2))/2)+b/2
+  name Expression4
+  xpos -623
+  ypos -206
+ }
+ NoTimeBlur {
+  rounding floor
+  name NoTimeBlur2
+  xpos -623
+  ypos -180
+ }
+ Remove {
+  operation keep
+  channels {rgba.red rgba.green -rgba.blue none}
+  name Remove3
+  xpos -623
+  ypos -154
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  Achannels {-rgba.red rgba.green -rgba.blue -rgba.alpha}
+  Bchannels {-rgba.red rgba.green -rgba.blue -rgba.alpha}
+  output {-rgba.red rgba.green -rgba.blue -rgba.alpha}
+  name Merge2
+  xpos -623
+  ypos -128
+ }
+ Clamp {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  maximum_enable false
+  name Clamp2
+  xpos -623
+  ypos -102
+ }
+ IDistort {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  uv {-rgba.red rgba.green}
+  uv_scale {0 {amplitude/2}}
+  name IDistort1
+  xpos -623
+  ypos -76
+ }
+ BlackOutside {
+  name BlackOutside1
+  xpos -623
+  ypos -50
+ }
+ Remove {
+  operation keep
+  channels {rgba.red -rgba.green -rgba.blue none}
+  name Remove4
+  xpos -623
+  ypos -24
+ }
+ Add {
+  value {{-size*retract}}
+  name Add4
+  xpos -623
+  ypos 2
+ }
+ Merge2 {
+  inputs 2
+  operation max
+  Achannels {rgba.red -rgba.green -rgba.blue none}
+  Bchannels {rgba.red -rgba.green -rgba.blue none}
+  output {rgba.red -rgba.green -rgba.blue none}
+  name Merge4
+  xpos -623
+  ypos 40
+ }
+set N1156bf30 [stack 0]
+ Dot {
+  name Dot6
+  xpos -405
+  ypos 44
+ }
+ Dot {
+  name Dot7
+  xpos -405
+  ypos 272
+ }
+push $N1156bf30
+ FrameHold {
+  first_frame {{frame+(frame-int(frame))*123}}
+  name FrameHold1
+  xpos -760
+  ypos 121
+ }
+ TimeBlur {
+  divisions {{parent.arcs}}
+  shutter 50
+  shutteroffset start
+  shuttercustomoffset 0
+  name TimeBlur3
+  xpos -760
+  ypos 159
+ }
+ Multiply {
+  value {{parent.arcs}}
+  name Multiply6
+  xpos -760
+  ypos 185
+ }
+ Switch {
+  inputs 2
+  which {{"arcs <= 1"}}
+  name Switch1
+  xpos -623
+  ypos 268
+ }
+ Dot {
+  name Dot5
+  xpos -589
+  ypos 308
+ }
+ Input {
+  inputs 0
+  name Input
+  xpos -691
+  ypos 477
+ }
+ Transform {
+  translate {{point1.x} {point1.y-amplitude/2}}
+  rotate {{-atan2(point1.y-point2.y,-point1.x+point2.x)/2/pi*360}}
+  center {0 {amplitude/2}}
+  black_outside false
+  name Transform1
+  xpos -625
+  ypos 561
+  disable true
+ }
+set N12727030 [stack 0]
+ Dot {
+  name Dot2
+  xpos 828
+  ypos 565
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle1
+  xpos 794
+  ypos 2546
+ }
+push $N12727030
+ Crop {
+  box {{parent.Crop2.box.x} {parent.Crop2.box.y} {parent.Crop2.box.r} {parent.Crop2.box.t}}
+  intersect true
+  crop false
+  name Crop5
+  xpos -625
+  ypos 587
+  disable true
+ }
+ Reformat {
+  type scale
+  scale 0.5
+  pbb true
+  name Reformat6
+  xpos -625
+  ypos 613
+  disable {{"1-(mode == 1)"}}
+ }
+ Expression {
+  expr0 2*r/(r+1)
+  name Expression5
+  xpos -625
+  ypos 783
+ }
+ Multiply {
+  value {{parent.global_intensity}}
+  name Multiply9
+  xpos -625
+  ypos 927
+ }
+set N12733210 [stack 0]
+ Gamma {
+  value 0.5
+  name Gamma2
+  xpos 220
+  ypos 927
+ }
+ Dot {
+  name Dot14
+  xpos 254
+  ypos 1001
+ }
+set N114f4740 [stack 0]
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  size {{"glow*(1-(mode == 1)*.5)"}}
+  filter quadratic
+  quality {{"mode == 2 ? ceil(size) : 10"}}
+  name Blur5
+  xpos 293
+  ypos 991
+ }
+ Dot {
+  name Dot20
+  xpos 438
+  ypos 1001
+ }
+push $N114f4740
+ Dot {
+  name Dot15
+  xpos 254
+  ypos 1034
+ }
+set N127a7660 [stack 0]
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  size {{"glow/2*(1-(mode == 1)*.5)"}}
+  filter quadratic
+  quality {{"mode == 2 ? ceil(size) : 10"}}
+  name Blur4
+  xpos 294
+  ypos 1024
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  bbox A
+  Achannels {rgba.red -rgba.green -rgba.blue none}
+  Bchannels {rgba.red -rgba.green -rgba.blue none}
+  output {rgba.red -rgba.green -rgba.blue none}
+  name Merge12
+  xpos 404
+  ypos 1030
+ }
+push $N127a7660
+ Dot {
+  name Dot16
+  xpos 254
+  ypos 1067
+ }
+set N117611c0 [stack 0]
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  size {{"glow/4*(1-(mode == 1)*.5)"}}
+  filter quadratic
+  quality {{"mode == 2 ? ceil(size) : 10"}}
+  name Blur3
+  xpos 294
+  ypos 1057
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  bbox A
+  Achannels {rgba.red -rgba.green -rgba.blue none}
+  Bchannels {rgba.red -rgba.green -rgba.blue none}
+  output {rgba.red -rgba.green -rgba.blue none}
+  name Merge13
+  xpos 404
+  ypos 1063
+ }
+push $N117611c0
+ Dot {
+  name Dot23
+  xpos 254
+  ypos 1101
+ }
+set N114a0c60 [stack 0]
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  size {{"glow/16*(1-(mode == 1)*.5)"}}
+  filter quadratic
+  quality {{"mode == 2 ? ceil(size) : 10"}}
+  name Blur7
+  xpos 294
+  ypos 1091
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  bbox A
+  Achannels {rgba.red -rgba.green -rgba.blue none}
+  Bchannels {rgba.red -rgba.green -rgba.blue none}
+  output {rgba.red -rgba.green -rgba.blue none}
+  name Merge18
+  xpos 404
+  ypos 1097
+ }
+push $N114a0c60
+ Dot {
+  name Dot18
+  xpos 254
+  ypos 1134
+ }
+set N127ad950 [stack 0]
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  size {{"glow/32*(1-(mode == 1)*.5)"}}
+  filter quadratic
+  quality {{"mode == 2 ? ceil(size) : 10"}}
+  name Blur2
+  xpos 294
+  ypos 1124
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  bbox A
+  Achannels {rgba.red -rgba.green -rgba.blue none}
+  Bchannels {rgba.red -rgba.green -rgba.blue none}
+  output {rgba.red -rgba.green -rgba.blue none}
+  name Merge14
+  xpos 404
+  ypos 1130
+ }
+push $N127ad950
+ Dot {
+  name Dot19
+  xpos 254
+  ypos 1168
+ }
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue none}
+  size {{"glow/64*(1-(mode == 1)*.5)"}}
+  filter quadratic
+  quality {{"mode == 2 ? ceil(size) : 10"}}
+  name Blur1
+  xpos 294
+  ypos 1158
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  bbox A
+  Achannels {rgba.red -rgba.green -rgba.blue none}
+  Bchannels {rgba.red -rgba.green -rgba.blue none}
+  output {rgba.red -rgba.green -rgba.blue none}
+  name Merge15
+  xpos 404
+  ypos 1164
+ }
+ Crop {
+  box {{parent.Crop2.box.x} {parent.Crop2.box.y} {parent.Crop2.box.r} {parent.Crop2.box.t}}
+  intersect true
+  crop false
+  name Crop6
+  xpos 404
+  ypos 1227
+  disable true
+ }
+ Multiply {
+  channels rgba
+  value {{parent.intensity}}
+  name Multiply7
+  xpos 404
+  ypos 1338
+ }
+set N117c9990 [stack 0]
+ Dot {
+  name Dot9
+  xpos -39
+  ypos 1342
+ }
+ Noise {
+  output {rgba.red -rgba.green -rgba.blue none}
+  cliptype bbox
+  replace true
+  size {{parent.Noise1.size.0*((mode==2)+1)}}
+  zoffset {{parent.Noise1.zoffset}}
+  octaves {{parent.Noise1.octaves}}
+  lacunarity {{parent.Noise1.lacunarity}}
+  gain {{parent.Noise1.gain}}
+  gamma 1
+  rotate {{parent.Transform1.rotate}}
+  center {{parent.point1.x} {parent.point1.y}}
+  name Noise3
+  xpos -73
+  ypos 1654
+ }
+set N12828980 [stack 0]
+ Multiply {
+  value {{parent.noise}}
+  name Multiply8
+  xpos -73
+  ypos 1680
+ }
+ Add {
+  value 1
+  name Add5
+  xpos -73
+  ypos 1718
+ }
+ Shuffle {
+  in rgb
+  green red
+  blue red
+  out rgb
+  name Shuffle4
+  xpos -73
+  ypos 1756
+ }
+push $N117c9990
+ Shuffle {
+  in rgb
+  green red
+  blue red
+  alpha black
+  out rgb
+  name Shuffle2
+  xpos 404
+  ypos 1364
+ }
+ Grade {
+  multiply {{parent.primary_color.r} {parent.primary_color.g} {parent.primary_color.b} 0}
+  multiply_panelDropped true
+  gamma {{parent.secondary_color.r} {parent.secondary_color.g} {parent.secondary_color.b} 0}
+  name Grade1
+  xpos 404
+  ypos 1551
+ }
+ Gamma {
+  channels rgb
+  value {{gamma}}
+  name Gamma1
+  xpos 404
+  ypos 1577
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Multiply
+  xpos 404
+  ypos 1762
+  disable {{parent.noise==0}}
+ }
+ Expression {
+  expr0 r/(r+1)*1.2
+  expr1 g/(g+1)*1.2
+  expr2 b/(b+1)*1.2
+  name Expression6
+  xpos 404
+  ypos 1788
+  disable {{1-parent.soft_highlights}}
+ }
+push $N12828980
+ Blur {
+  size {{15*(1+(mode==2))}}
+  name Blur8
+  xpos -170
+  ypos 1648
+ }
+ Dot {
+  name Dot3
+  xpos -136
+  ypos 1686
+ }
+set N1126f410 [stack 0]
+ Matrix {
+  channels rgba
+  matrix {
+      {0 0 0}
+      {-100 0 100}
+      {0 0 0}
+    }
+  name Matrix1
+  xpos -170
+  ypos 1714
+ }
+push $N1126f410
+ Matrix {
+  channels rgba
+  matrix {
+      {0 -100 0}
+      {0 0 0}
+      {0 100 0}
+    }
+  name Matrix2
+  xpos -280
+  ypos 1682
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.green
+  name Copy1
+  xpos -280
+  ypos 1708
+ }
+push $N12733210
+ Blur {
+  size 2
+  filter box
+  maskChannelInput -rgba.red
+  name Blur6
+  xpos -625
+  ypos 1074
+  disable {{"1- (mode==2)"}}
+ }
+ FilterErode {
+  channels {none none none rgba.red}
+  filter gaussian
+  maskChannelInput -rgba.red
+  invert_mask true
+  fringe true
+  name FilterErode1
+  xpos -625
+  ypos 1112
+  disable {{"1- (mode==2)"}}
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle3
+  xpos -625
+  ypos 1150
+ }
+set N139759e0 [stack 0]
+ Grade {
+  multiply {{parent.primary_color.r} {parent.primary_color.g} {parent.primary_color.b} 0}
+  multiply_panelDropped true
+  gamma {{parent.secondary_color.r} {parent.secondary_color.g} {parent.secondary_color.b} 0}
+  name Grade2
+  xpos -625
+  ypos 1547
+ }
+ Dot {
+  name Dot10
+  xpos -591
+  ypos 1973
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 forward.u
+  from1 rgba.green
+  to1 forward.v
+  name Copy2
+  xpos -280
+  ypos 1957
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  bbox A
+  Achannels {rgba.red rgba.green rgba.blue none}
+  Bchannels {rgba.red rgba.green rgba.blue none}
+  output {rgba.red rgba.green rgba.blue none}
+  name Merge5
+  xpos 404
+  ypos 1969
+ }
+ Saturation {
+  saturation {{parent.saturation}}
+  mode Average
+  name Saturation1
+  xpos 404
+  ypos 2035
+ }
+set Nf208c60 [stack 0]
+ VectorBlur {
+  channels {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+  uv motion
+  scale {{parent.chromatic_aberration*(1+(mode==2)*3)}}
+  offset -1
+  name VectorBlur1
+  xpos 404
+  ypos 2157
+ }
+ VectorBlur {
+  channels {-rgba.red rgba.green -rgba.blue none}
+  uv motion
+  scale {{parent.VectorBlur1.scale}}
+  name VectorBlur2
+  xpos 404
+  ypos 2183
+ }
+ VectorBlur {
+  channels {-rgba.red -rgba.green rgba.blue none}
+  uv motion
+  scale {{parent.VectorBlur1.scale}}
+  offset 0
+  name VectorBlur3
+  xpos 404
+  ypos 2209
+ }
+set N138ed0e0 [stack 0]
+ Sharpen {
+  channels rgb
+  amount {{parent.sharpening}}
+  filter quadratic
+  name Sharpen1
+  xpos 246
+  ypos 2209
+ }
+ Dot {
+  name Dot4
+  xpos 280
+  ypos 2239
+ }
+push $N138ed0e0
+ Merge2 {
+  inputs 2
+  operation max
+  mix {{1-1/parent.Sharpen1.amount}}
+  name Merge6
+  xpos 404
+  ypos 2235
+ }
+ Reformat {
+  type scale
+  scale 2
+  pbb true
+  name Reformat7
+  xpos 404
+  ypos 2442
+  disable {{"1-(mode == 1)"}}
+ }
+ Crop {
+  box {{parent.Crop2.box.x} {parent.Crop2.box.y} {parent.Crop2.box.r} {parent.Crop2.box.t}}
+  intersect true
+  crop false
+  name Crop7
+  xpos 404
+  ypos 2468
+  disable true
+ }
+ BlackOutside {
+  name BlackOutside2
+  xpos 404
+  ypos 2494
+ }
+ Switch {
+  inputs 2
+  which {{"mode == 0"}}
+  name Switch2
+  xpos 404
+  ypos 2552
+ }
+ Reformat {
+  format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+  resize none
+  center false
+  filter Impulse
+  pbb true
+  name Reformat8
+  xpos 404
+  ypos 2578
+  disable true
+ }
+ Reformat {
+  format "2048 858 0 0 2048 858 1 BIGSMOKE Delivery"
+  pbb true
+  name Reformat_BIGSMOKE
+  xpos 404
+  ypos 2633
+ }
+ Dot {
+  name Dot8
+  xpos 438
+  ypos 2676
+ }
+set N74c9c610 [stack 0]
+ Crop {
+  inputs 0
+  box {{format.x} {format.y} {format.r} {format.t}}
+  crop false
+  name Crop2
+  xpos 941
+  ypos 2579
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  name Merge1
+  xpos 941
+  ypos 2672
+ }
+push $Nf208c60
+push $N139759e0
+ Viewer {
+  inputs 2
+  frame 1014
+  frame_range 1001-1038
+  frame_range_lock true
+  show_overscan true
+  overscan 400
+  colour_sample_bbox {-0.1572265625 0.1630859375 -0.15625 0.1640625}
+  samplepoints {{-0.1572265625 0.1630859375}
+    }
+  name Viewer1
+  xpos 1166
+  ypos 2733
+ }
+push $N74c9c610
+ Output {
+  name Output1
+  xpos 423
+  ypos 2774
+ }
+ RotoPaint {
+  inputs 0
+  cliptype none
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44800000 x43d68000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {cubiccurve Brush2 512 catmullrom
+     {cc
+      {f 2080}
+      {px x44800000
+       {x42b80000 x43058000 x3e4b8000}
+       {x42bb0000 x43050000 x3e548000}
+       {x42c40000 x43038000 x3e688000}
+       {x42de0000 x43030000 x3e880000}
+       {x43388000 x43020000 x3e958000}
+       {x43874000 x43020000 x3e92c000}
+       {x43d80000 x43038000 x3e89c000}
+       {x440e4000 x43058000 x3e8c4000}
+       {x44350000 x43058000 x3e860000}
+       {x443a4000 x43050000 x3e828000}
+       {x44570000 x43020000 x3e824000}
+       {x446c2000 x42fe0000 x3e5b0000}
+       {x446e6000 x42fd0000 0}}}
+     {tx x44800000 x43e9c000 x430313b1}
+     {a ro 0 go 0 bo 0 ao 0 bu 1 str 1 spx x44800000 spy x43d68000 sb 1 ltn x447e4000 ltm x447e4000 tt x41880000}}
+    {cubiccurve Brush1 512 catmullrom
+     {cc
+      {f 2080}
+      {px x44800000
+       {x43380000 x43be8000 x3e040000}
+       {x43380000 x43be0000 x3e438000}
+       {x43340000 x43bd8000 x3e548000}
+       {x43340000 x43bc8000 x3e618000}
+       {x43340000 x43be0000 x3e678000}
+       {x43390000 x43bf8000 x3e6f0000}
+       {x43440000 x43c78000 x3e6f8000}
+       {x43510000 x43d40000 x3e688000}
+       {x436c0000 x43e60000 x3e708000}
+       {x43858000 x43f88000 x3e6e0000}
+       {x43a18000 x44088000 x3e780000}
+       {x43b08000 x440dc000 x3e7c0000}
+       {x43cb0000 x4414c000 x3e7c8000}
+       {x43da0000 x44178000 x3e7e8000}
+       {x43e38000 x44180000 x3e758000}
+       {x43eb8000 x4416c000 x3e6e0000}
+       {x43f50000 x440f0000 x3e768000}
+       {x43fb0000 x44008000 x3e83c000}
+       {x43fb8000 x43f18000 x3e8dc000}
+       {x43fd0000 x43d30000 x3e938000}
+       {x44034000 x43be8000 x3e9f4000}
+       {x44074000 x43b80000 x3ea30000}
+       {x440dc000 x43b20000 x3e9d8000}
+       {x44174000 x43af0000 x3e92c000}
+       {x441e4000 x43b10000 x3e880000}
+       {x44254000 x43b70000 x3e834000}
+       {x4430c000 x43cb0000 x3e828000}
+       {x44378000 x43d90000 x3e848000}
+       {x443d8000 x43e48000 x3e850000}
+       {x4440c000 x43e90000 x3e880000}
+       {x44434000 x43ec0000 x3e8c0000}
+       {x44438000 x43eb8000 x3e994000}
+       {x44438000 x43ea8000 x3e9fc000}
+       {x4441c000 x43e18000 x3ea10000}
+       {x44414000 x43d80000 x3ea64000}
+       {x44418000 x43d10000 x3eafc000}
+       {x44438000 x43bd0000 x3eb68000}
+       {x44494000 x43a38000 x3ebac000}
+       {x444d8000 x439a0000 x3eb9c000}
+       {x44550000 x43930000 x3eb10000}
+       {x445cc000 x43948000 x3e9bc000}
+       {x44698000 x43a10000 x3e964000}
+       {x44708000 x43ab8000 x3e9b4000}
+       {x447a4000 x43bc0000 x3ea14000}
+       {x447e0000 x43be8000 x3eafc000}
+       {x4480a000 x43c08000 x3eb90000}
+       {x44830000 x43bc0000 x3ec40000}
+       {x44858000 x43ad8000 x3ec50000}
+       {x4486e000 x43a48000 x3ec0c000}
+       {x44882000 x43990000 x3eba4000}
+       {x4488a000 x43968000 x3e8c0000}
+       {x44892000 x43978000 x3d140000}}}
+     {tx x44800000 x441f7ec5 x43cfb13b}
+     {a ro 0 go 0 bo 0 ao 0 bu 1 str 1 spx x44800000 spy x43d68000 sb 1 ltn x447e4000 ltm x447e4000 tt x41880000}}}}}}
+  toolbox {dodge {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { selectCurves str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 ltn 1024 ltm 1024 tt 17 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 tt 21 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_blending_mode color-dodge
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type single
+  toolbar_paint_source fg
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {1024 429}
+  colorOverlay {0 0 0 0}
+  lifetime_type "all frames"
+  lifetime_start 1017
+  lifetime_end 1017
+  motionblur_shutter_offset_type centred
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  source_black_outside true
+  name RotoPaint1
+  xpos -641
+  ypos 406
+ }
+end_group
