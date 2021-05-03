@@ -1,0 +1,25 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+Expression {
+inputs 0
+expr0 (x+0.5)/(width)
+expr1 (y+0.5)/(height)
+channel2 alpha
+expr2 1
+channel3 {-rgba.red -rgba.green rgba.blue none}
+expr3 0
+name Expression3
+label "STMap creation"
+selected true
+xpos -13299
+ypos 6505
+}
+push $cut_paste_input
+STMap {
+inputs 2
+uv rgba
+name STMap1
+selected true
+xpos -13559
+ypos 6605
+}
