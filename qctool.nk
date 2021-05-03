@@ -1,0 +1,633 @@
+set cut_paste_input [stack 0]
+version 10.5 v7
+BackdropNode {
+ inputs 0
+ name BackdropNode253
+ tile_color 0x4c4c4c01
+ label "QC Viewer IP"
+ note_font_size 30
+ selected true
+ xpos 2314
+ ypos 10059
+ bdwidth 150
+ bdheight 229
+}
+push $cut_paste_input
+Group {
+ name VIEWER_INPUT1
+ tile_color 0x349d83ff
+ note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+ selected true
+ xpos 2354
+ ypos 10195
+ addUserKnob {20 QCTool}
+ addUserKnob {4 Mode M {All Grain "Clipping Area" "Saturation Level" Luminace Saturation LOG "Negative Values" "" ""}}
+ addUserKnob {41 saturation T Saturation3.saturation}
+ addUserKnob {6 Text +STARTLINE}
+ Text true
+ addUserKnob {26 ""}
+}
+ Input {
+  inputs 0
+  name Inputinput
+  xpos -768
+  ypos -1199
+ }
+ Dot {
+  name Dot26
+  xpos -734
+  ypos -1103
+ }
+set N184a32c0 [stack 0]
+ Dot {
+  name Dot27
+  xpos -313
+  ypos -916
+ }
+set N184a7ef0 [stack 0]
+ Dot {
+  name Dot15
+  xpos -9
+  ypos -916
+ }
+set N184ac9a0 [stack 0]
+ Dot {
+  name Dot14
+  xpos 200
+  ypos -916
+ }
+set N184b1400 [stack 0]
+ Dot {
+  name Dot23
+  xpos 448
+  ypos -916
+ }
+ Expression {
+  temp_name0 factor
+  temp_expr0 .25
+  expr0 r<0?1:r*factor
+  expr1 g<0?1:g*factor
+  expr2 b<0?1:b*factor
+  name CheckNegValues
+  xpos 414
+  ypos -476
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "NEG VALUES"
+  old_message {{78 69 71 32 86 65 76 85 69 83}
+    }
+  box {0 0 {input.width} {input.height}}
+  xjustify center
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 10
+  font {{ Arial : Regular : msttcore/arial.ttf : 0 }}
+  scale {1 1}
+  center {1079 450}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{0 900}
+    }
+  group_animations {{0} imported: 0 selected: 0 items: "root transform/"}
+  animation_layers {{1 11 1079 450 0 0 1 1 0 0 0 0}
+    }
+  color {1 1 0 1}
+  name Text3
+  xpos 414
+  ypos -399
+  disable {{1-Text}}
+ }
+ Dot {
+  name Dot24
+  xpos 448
+  ypos -44
+ }
+set N184f5f20 [stack 0]
+ Dot {
+  name Dot25
+  xpos 448
+  ypos 152
+ }
+push $N184ac9a0
+ dnLogLin {
+  operation lin2log
+  "log reference" 394
+  "lin reference" 0.18
+  "negative gamma" 0.5064
+  "black level" 0.00947
+  "dens per cv" 0.002
+  name lintolog
+  xpos -43
+  ypos -450
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message LOG
+  old_message {{76 79 71}
+    }
+  box {0 0 {input.width} {input.height}}
+  xjustify center
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 3
+  font {{ Arial : Regular : msttcore/arial.ttf : 0 }}
+  scale {1 1}
+  center {1079 450}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{0 900}
+    }
+  group_animations {{0} imported: 0 selected: 0 items: "root transform/"}
+  animation_layers {{1 11 1079 450 0 0 1 1 0 0 0 0}
+    }
+  color {1 1 0 1}
+  name Text1
+  xpos -43
+  ypos -383
+  disable {{1-Text}}
+ }
+ Dot {
+  name Dot10
+  xpos -9
+  ypos -44
+ }
+set N185319e0 [stack 0]
+ Dot {
+  name Dot21
+  xpos -9
+  ypos 152
+ }
+push $N184b1400
+ Clamp {
+  name Clamp1
+  xpos 170
+  ypos -466
+ }
+ Saturation {
+  saturation 4
+  name Saturation3
+  xpos 170
+  ypos -420
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message SATURATION
+  old_message {{83 65 84 85 82 65 84 73 79 78}
+    }
+  box {0 0 {input.width} {input.height}}
+  xjustify center
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 10
+  font {{ Arial : Regular : msttcore/arial.ttf : 0 }}
+  scale {1 1}
+  center {1079 450}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{0 900}
+    }
+  group_animations {{0} imported: 0 selected: 0 items: "root transform/"}
+  animation_layers {{1 11 1079 450 0 0 1 1 0 0 0 0}
+    }
+  color {1 1 0 1}
+  name Text2
+  xpos 170
+  ypos -387
+  disable {{1-Text}}
+ }
+ Dot {
+  name Dot9
+  xpos 204
+  ypos -44
+ }
+set N18576e70 [stack 0]
+ Dot {
+  name Dot22
+  xpos 204
+  ypos 152
+ }
+push $N184a7ef0
+ Colorspace {
+  colorspace_out YPbPr
+  name Colorspace2
+  xpos -347
+  ypos -216
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle5
+  label LUMINACE
+  xpos -347
+  ypos -166
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message LUMINANCE
+  old_message {{76 85 77 73 78 65 78 67 69}
+    }
+  box {0 0 {input.width} {input.height}}
+  xjustify center
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 9
+  font {{ Arial : Regular : msttcore/arial.ttf : 0 }}
+  scale {1 1}
+  center {1079 450}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{0 900}
+    }
+  group_animations {{0} imported: 0 selected: 0 items: "root transform/"}
+  animation_layers {{1 11 1079 450 0 0 1 1 0 0 0 0}
+    }
+  color {1 1 0 1}
+  name Text8
+  xpos -347
+  ypos -129
+  disable {{1-Text}}
+ }
+ Dot {
+  name Dot19
+  xpos -313
+  ypos -44
+ }
+set N185c5b80 [stack 0]
+ Dot {
+  name Dot20
+  xpos -313
+  ypos 152
+ }
+push $N184a32c0
+ Dot {
+  name Dot28
+  xpos -560
+  ypos -936
+ }
+ SoftClip {
+  conversion "logarithmic compress"
+  softclip_min 0.685
+  name SoftClip2
+  xpos -594
+  ypos -275
+ }
+ Colorspace {
+  colorspace_out HSL
+  name Colorspace1
+  xpos -594
+  ypos -229
+ }
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle6
+  label SATURATION
+  xpos -594
+  ypos -184
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "SATURATION LEVEL"
+  old_message {{83 65 84 85 82 65 84 73 79 78 32 76 69 86 69 76}
+    }
+  box {0 0 {input.width} {input.height}}
+  xjustify center
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 16
+  font {{ Arial : Regular : msttcore/arial.ttf : 0 }}
+  scale {1 1}
+  center {1079 450}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{0 900}
+    }
+  group_animations {{0} imported: 0 selected: 0 items: "root transform/"}
+  animation_layers {{1 11 1079 450 0 0 1 1 0 0 0 0}
+    }
+  color {1 1 0 1}
+  name Text7
+  xpos -594
+  ypos -129
+  disable {{1-Text}}
+ }
+ Dot {
+  name Dot18
+  xpos -560
+  ypos -44
+ }
+set N18622b60 [stack 0]
+ Dot {
+  name Dot17
+  xpos -560
+  ypos 152
+ }
+push $N184a32c0
+ Dot {
+  name Dot11
+  xpos -753
+  ypos -1039
+ }
+set N18626fb0 [stack 0]
+ Dot {
+  name Dot29
+  xpos -753
+  ypos -969
+ }
+ Log2Lin {
+  operation lin2log
+  name Log2Lin5
+  xpos -787
+  ypos -330
+ }
+ ColorLookup {
+  lut {master {curve L 10 x0 0 x1 1 x1 -0.1}
+    red {}
+    green {}
+    blue {}
+    alpha {}}
+  name ColorLookup6
+  xpos -787
+  ypos -274
+ }
+ Log2Lin {
+  name Log2Lin6
+  xpos -787
+  ypos -210
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "CLIPPING AREAS"
+  old_message {{67 76 73 80 80 73 78 71 32 65 82 69 65 83}
+    }
+  box {0 0 {input.width} {input.height}}
+  xjustify center
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 14
+  font {{ Arial : Regular : msttcore/arial.ttf : 0 }}
+  scale {1 1}
+  center {1079 450}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{0 900}
+    }
+  group_animations {{0} imported: 0 selected: 0 items: "root transform/"}
+  animation_layers {{1 11 1079 450 0 0 1 1 0 0 0 0}
+    }
+  color {1 1 0 1}
+  name Text4
+  xpos -787
+  ypos -127
+  disable {{1-Text}}
+ }
+set N1865e970 [stack 0]
+push $N18626fb0
+ Dot {
+  name Dot12
+  xpos -906
+  ypos -986
+ }
+set N18684d30 [stack 0]
+ Dot {
+  name Dot4
+  xpos -906
+  ypos -620
+ }
+set N18682240 [stack 0]
+ Dot {
+  name Dot6
+  xpos -805
+  ypos -620
+ }
+ Dot {
+  name Dot5
+  xpos -805
+  ypos -265
+ }
+push $N18682240
+ Colorspace {
+  name Colorspace4
+  xpos -940
+  ypos -514
+ }
+set N18692b60 [stack 0]
+push $N18692b60
+ Blur {
+  size 1.7
+  name Blur4
+  xpos -895
+  ypos -477
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge2
+  xpos -940
+  ypos -422
+ }
+ Grade {
+  white 500
+  black_clamp false
+  name Grade2
+  xpos -940
+  ypos -346
+ }
+ Saturation {
+  saturation 3
+  name Saturation2
+  xpos -940
+  ypos -303
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy2
+  xpos -940
+  ypos -249
+ }
+ Dot {
+  name Dot8
+  xpos -906
+  ypos -161
+ }
+push $N18684d30
+ Dot {
+  name Dot13
+  xpos -1170
+  ypos -986
+ }
+set N186f3f90 [stack 0]
+ Log2Lin {
+  operation lin2log
+  name Log2Lin4
+  xpos -1204
+  ypos -674
+ }
+ Dot {
+  name Dot2
+  xpos -1170
+  ypos -621
+ }
+set N18707160 [stack 0]
+ Dot {
+  name Dot3
+  xpos -1069
+  ypos -621
+ }
+ Dot {
+  name Dot1
+  xpos -1069
+  ypos -270
+ }
+push $N18707160
+ Colorspace {
+  colorspace_out Cineon
+  name Colorspace3
+  xpos -1204
+  ypos -541
+ }
+set N18716260 [stack 0]
+push $N18716260
+ Blur {
+  size 1.7
+  name Blur2
+  xpos -1159
+  ypos -497
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -1204
+  ypos -442
+ }
+ Grade {
+  white 100
+  black_clamp false
+  name Grade1
+  xpos -1204
+  ypos -366
+ }
+ Saturation {
+  saturation 3
+  name Saturation1
+  xpos -1204
+  ypos -323
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos -1204
+  ypos -251
+ }
+ Merge2 {
+  inputs 2
+  operation max
+  name Max
+  xpos -1204
+  ypos -165
+ }
+ Dot {
+  name Dot16
+  xpos -1170
+  ypos -77
+ }
+push $N186f3f90
+ Dot {
+  name Dot30
+  xpos -1326
+  ypos -986
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus3
+  xpos -1360
+  ypos -81
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message GRAIN
+  old_message {{71 82 65 73 78}
+    }
+  box {0 0 {input.width} {input.height}}
+  xjustify center
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 5
+  font {{ Arial : Regular : msttcore/arial.ttf : 0 }}
+  scale {1 1}
+  center {1079 450}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{0 900}
+    }
+  group_animations {{0} imported: 0 selected: 0 items: "root transform/"}
+  animation_layers {{1 11 1079 450 0 0 1 1 0 0 0 0}
+    }
+  color {1 1 0 1}
+  name Text6
+  xpos -1360
+  ypos -48
+  disable {{1-Text}}
+ }
+set N1879ace0 [stack 0]
+ Dot {
+  name Dot7
+  xpos -1326
+  ypos 152
+ }
+push $N184f5f20
+push $N185319e0
+push $N18576e70
+push $N185c5b80
+push $N18622b60
+push $N1865e970
+push $N1879ace0
+ ContactSheet {
+  inputs 7
+  width {{input.width}}
+  height {{input.height}}
+  columns 3
+  roworder TopBottom
+  name ContactSheet1
+  xpos -787
+  ypos -48
+ }
+ Switch {
+  inputs 8
+  which {{Mode}}
+  name Switch1
+  xpos -787
+  ypos 148
+ }
+ Output {
+  name Output1
+  xpos -787
+  ypos 289
+ }
+end_group
