@@ -1,0 +1,75 @@
+set cut_paste_input [stack 0]
+version 12.2 v6
+push $cut_paste_input
+Group {
+ name Group9
+ knobChanged "n = nuke.thisNode()\nk = nuke.thisKnob()\nkn = k.name()\n\nif kn == \"color\":\n    kv = k.getValue()\n    \nelif kn == \"mode\":\n    kv = k.value()\n    all_inputs = \[\"Alpha\",\"Reference\",\"2ndReference\", \"Roto\"]\n    if kv in \['A', 'B']:\n        if kv == 'A':\n            input_names = \[\"Alpha\",\"Reference\",\"2ndReference\"]\n        else:\n            input_names = \[\"Roto\"]\n            \n        for i_name in all_inputs:\n            if i_name not in input_names:\n                if nuke.exists(\"Input\"+i_name):\n                    nuke.delete(nuke.toNode(\"Input\"+i_name))\n    \n            else:\n                i_fullname = \"Input\"+i_name\n                if not nuke.exists(i_fullname):\n                    i_node = nuke.nodes.Input()\n                    i_node\[\"name\"].setValue(i_fullname)\n                else:\n                    i_node = nuke.toNode(i_fullname)\n                dot = nuke.toNode(\"Dot\"+i_name)\n                i_node.setXYpos(dot.xpos(),dot.ypos()-40)\n                dot.setInput(0,i_node)\n\n    elif kv == 'C':\n        # If something connected, do nothing\n\n        for i_name in all_inputs:\n            if nuke.exists(\"Input\"+i_name):\n                nuke.delete(nuke.toNode(\"Input\"+i_name))\n \n            "
+ tile_color 0x8b8b8bff
+ selected true
+ xpos 5459
+ ypos -1538
+ addUserKnob {20 User}
+ addUserKnob {4 mode M {A B C "" "" "" "" ""}}
+}
+ Input {
+  inputs 0
+  name InputPlate
+  xpos -129
+  ypos -20
+ }
+ Output {
+  name Output1
+  xpos -129
+  ypos 280
+ }
+ Input {
+  inputs 0
+  name InputReference
+  xpos 146
+  ypos -43
+  number 3
+ }
+ Dot {
+  name DotReference
+  label DotReference
+  note_font "Verdana Bold"
+  xpos 146
+  ypos -3
+ }
+ Input {
+  inputs 0
+  name Input2ndReference
+  xpos 258
+  ypos 51
+  number 4
+ }
+ Dot {
+  name Dot2ndReference
+  label Dot2ndReference
+  note_font "Verdana Bold"
+  xpos 258
+  ypos 91
+ }
+ Input {
+  inputs 0
+  name InputAlpha
+  xpos 307
+  ypos 145
+  number 2
+ }
+ Dot {
+  name DotAlpha
+  label DotAlpha
+  note_font "Verdana Bold"
+  xpos 307
+  ypos 185
+ }
+ Dot {
+  inputs 0
+  name DotRoto
+  label DotRoto
+  note_font "Verdana Bold"
+  xpos 7
+  ypos -117
+ }
+end_group
