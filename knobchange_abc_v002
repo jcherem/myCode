@@ -1,0 +1,81 @@
+set cut_paste_input [stack 0]
+version 12.2 v6
+push $cut_paste_input
+Group {
+ name Group11
+ knobChanged "n = nuke.thisNode()\nk = nuke.thisKnob()\nkn = k.name()\n\nif kn == \"color\":\n    kv = k.getValue()\n    \nelif kn == \"mode\":\n    kv = k.value()\n    all_inputs = nuke.allNodes(\"Input\")\n\n    register_inputs = \[\"Plate\", \"Roto\", \"Alpha\", \"Reference\",\"2ndReference\"]\n    if kv == 'A':\n        input_names = \[\"Plate\", \"Alpha\",\"Reference\",\"2ndReference\"]\n    elif kv == 'B':\n        input_names = \[\"Plate\", \"Roto\"]\n    elif kv == 'C':\n        input_names = \[\"Plate\"]\n        \n    # First delete all input that are not required\n    for i_node in all_inputs:\n        i_name = i_node.name().replace('Input', '')\n        if i_name not in input_names:\n            nuke.delete(i_node)\n    \n    # Then create all missing nodes\n    for new_input in input_names:\n        i_fullname = \"Input\"+new_input\n        if not nuke.exists(i_fullname):\n            # First creating the node if this does not exists\n            i_node = nuke.nodes.Input()\n            i_node\[\"name\"].setValue(i_fullname)\n        else:\n            i_node = nuke.toNode(i_fullname)\n            \n        # Reconnecting the dot in case is not connected\n        dot = nuke.toNode(\"Dot\"+new_input)\n        i_node.setXYpos(dot.xpos(),dot.ypos()-40)\n        dot.setInput(0,i_node)\n\n\n \n            "
+ tile_color 0x8b8b8bff
+ selected true
+ xpos 6264
+ ypos -1661
+ addUserKnob {20 User}
+ addUserKnob {4 mode M {A B C "" "" "" "" ""}}
+}
+ Input {
+  inputs 0
+  name InputReference
+  xpos 146
+  ypos -43
+  number 2
+ }
+ Dot {
+  name DotReference
+  label DotReference
+  note_font "Verdana Bold"
+  xpos 146
+  ypos -3
+ }
+ Input {
+  inputs 0
+  name Input2ndReference
+  xpos 258
+  ypos 51
+  number 3
+ }
+ Dot {
+  name Dot2ndReference
+  label Dot2ndReference
+  note_font "Verdana Bold"
+  xpos 258
+  ypos 91
+ }
+ Dot {
+  inputs 0
+  name DotRoto
+  label DotRoto
+  note_font "Verdana Bold"
+  xpos 8
+  ypos -117
+ }
+ Input {
+  inputs 0
+  name InputAlpha
+  xpos 308
+  ypos 145
+  number 1
+ }
+ Dot {
+  name DotAlpha
+  label DotAlpha
+  note_font "Verdana Bold"
+  xpos 308
+  ypos 185
+ }
+ Input {
+  inputs 0
+  name InputPlate
+  xpos -95
+  ypos -151
+ }
+ Dot {
+  name DotPlate
+  label DotPlate
+  xpos -95
+  ypos -111
+ }
+ Output {
+  name Output1
+  xpos -129
+  ypos 280
+ }
+end_group
