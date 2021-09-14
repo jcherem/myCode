@@ -1,0 +1,133 @@
+set cut_paste_input [stack 0]
+version 12.2 v6
+push $cut_paste_input
+Group {
+ name Group1
+ knobChanged "n = nuke.thisNode()\nk = nuke.thisKnob()\nkn = k.name()\nif kn == \"color\":\n    kv = k.getValue()\n\nelif kn == \"mode\":\n    kv = k.value()\n    input_names = \[\"color\",\"limit\",\"respill\"]\n    if kv == 'A':\n        for i_name in input_names:\n            i_fullname = \"Input\"+i_name\n            if not nuke.exists(i_fullname):\n                i_node = nuke.nodes.Input()\n                i_node\[\"name\"].setValue(i_fullname)\n            else:\n                i_node = nuke.toNode(i_fullname)\n            dot = nuke.toNode(\"Dot\"+i_name)\n            i_node.setXYpos(dot.xpos(),dot.ypos()-40)\n            dot.setInput(0,i_node)\n    elif kv == 'B':\n        # If something connected, do nothing\n        if not any(\[n.input(i) for i in \[2,3,4]]):\n            for i_name in input_names:\n                if nuke.exists(\"Input\"+i_name):\n                    nuke.delete(nuke.toNode(\"Input\"+i_name))\n        else:\n            k.setValue(True)"
+ tile_color 0x8b8b8bff
+ selected true
+ xpos 4743
+ ypos -1736
+ addUserKnob {20 User}
+ addUserKnob {4 mode M {A B C "" "" "" "" ""}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -129
+  ypos -20
+ }
+ Output {
+  name Output1
+  xpos -129
+  ypos 280
+ }
+ Input {
+  inputs 0
+  name Inputrespill
+  xpos 261
+  ypos 52
+  number 3
+ }
+ Dot {
+  name Dotrespill
+  label Dotrespill
+  note_font "Verdana Bold"
+  xpos 261
+  ypos 92
+ }
+ Input {
+  inputs 0
+  name Inputlimit
+  xpos 7
+  ypos -155
+  number 2
+ }
+ Dot {
+  name Dotlimit
+  label Dotlimit
+  note_font "Verdana Bold"
+  xpos 7
+  ypos -115
+ }
+ Input {
+  inputs 0
+  name Inputcolor
+  xpos 146
+  ypos -42
+  number 1
+ }
+ Dot {
+  name Dotcolor
+  label Dotcolor
+  note_font "Verdana Bold"
+  xpos 146
+  ypos -2
+ }
+end_group
+push $cut_paste_input
+Group {
+ name Group2
+ knobChanged "n = nuke.thisNode()\nk = nuke.thisKnob()\nkn = k.name()\nif kn == \"color\":\n    kv = k.getValue()\n\nelif kn == \"imagebased\":\n    kv = k.value()\n    input_names = \[\"color\",\"limit\",\"respill\"]\n    if kv:\n        for i_name in input_names:\n            i_fullname = \"Input\"+i_name\n            if not nuke.exists(i_fullname):\n                i_node = nuke.nodes.Input()\n                i_node\[\"name\"].setValue(i_fullname)\n            else:\n                i_node = nuke.toNode(i_fullname)\n            dot = nuke.toNode(\"Dot\"+i_name)\n            i_node.setXYpos(dot.xpos(),dot.ypos()-40)\n            dot.setInput(0,i_node)\n    else:\n        # If something connected, do nothing\n        if not any(\[n.input(i) for i in \[2,3,4]]):\n            for i_name in input_names:\n                if nuke.exists(\"Input\"+i_name):\n                    nuke.delete(nuke.toNode(\"Input\"+i_name))\n        else:\n            k.setValue(True)"
+ tile_color 0x8b8b8bff
+ selected true
+ xpos 4943
+ ypos -1737
+ addUserKnob {20 User}
+ addUserKnob {6 imagebased l image_based +STARTLINE}
+ imagebased true
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -129
+  ypos -20
+ }
+ Output {
+  name Output1
+  xpos -129
+  ypos 280
+ }
+ Input {
+  inputs 0
+  name Inputrespill
+  xpos 261
+  ypos 52
+  number 3
+ }
+ Dot {
+  name Dotrespill
+  label Dotrespill
+  note_font "Verdana Bold"
+  xpos 261
+  ypos 92
+ }
+ Input {
+  inputs 0
+  name Inputlimit
+  xpos 7
+  ypos -155
+  number 2
+ }
+ Dot {
+  name Dotlimit
+  label Dotlimit
+  note_font "Verdana Bold"
+  xpos 7
+  ypos -115
+ }
+ Input {
+  inputs 0
+  name Inputcolor
+  xpos 146
+  ypos -42
+  number 1
+ }
+ Dot {
+  name Dotcolor
+  label Dotcolor
+  note_font "Verdana Bold"
+  xpos 146
+  ypos -2
+ }
+end_group
