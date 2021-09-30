@@ -1,0 +1,71 @@
+set cut_paste_input [stack 0]
+version 12.2 v6
+push $cut_paste_input
+Grade {
+multiply {1.203333 0.993332 0.803332 1}
+multiply_panelDropped true
+black_clamp false
+name Grade54
+label "adjust "
+selected true
+xpos 34427
+ypos -3920
+}
+set N8c33c100 [stack 0]
+Dot {
+name Dot94
+selected true
+xpos 34344
+ypos -3910
+}
+set N8c308800 [stack 0]
+Clamp {
+channels rgba
+MinClampTo 1e-05
+MinClampTo_enable true
+name Clamp8
+selected true
+xpos 34165
+ypos -3914
+}
+IBKColourV3 {
+name IBKColourV3_15
+selected true
+xpos 34165
+ypos -3824
+Size 0.5
+off {0.004499999806 0.003000000026 -0.01099999994}
+mult {1.019999981 1.549999952 1}
+erode 20
+}
+push $N8c308800
+IBKGizmoV3 {
+inputs 2
+name IBKGizmoV3_5
+xpos 34310
+ypos -3824
+autolevels true
+}
+Grade {
+white {{Grade54.white}}
+multiply {{Grade54.multiply.r} {Grade54.multiply.g} {Grade54.multiply.b} {Grade54.multiply.a}}
+reverse true
+black_clamp false
+unpremult rgba.alpha
+name Grade55
+label "inverse adjust"
+selected true
+xpos 34420
+ypos -3836
+}
+push $N8c33c100
+Expression {
+expr0 r>max(g,b)?1:0
+expr1 g>max(r,b)?1:0
+expr2 b>max(r,g)?1:0
+name wtf2
+tile_color 0x990000
+selected true
+xpos 34538
+ypos -3858
+}
