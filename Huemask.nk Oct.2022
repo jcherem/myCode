@@ -9,7 +9,7 @@ inputs 4
 name Huemask2022
 tile_color 0xe955ffff
 selected true
-xpos 17991
+xpos 17984
 ypos 2925
 addUserKnob {20 Controller}
 addUserKnob {26 instructions l " " +INVISIBLE T "Connect a roto\nCreate a mask on the scope \nHit \"m\" to see your matte \n"}
@@ -54,6 +54,7 @@ addUserKnob {26 xxxxxxxx l "" +STARTLINE}
 addUserKnob {20 endGroup_1 l endGroup n -1}
 addUserKnob {26 xxxxxxxxx_1 l "" +STARTLINE}
 addUserKnob {20 Referencegroup l "Reference Input" n 1}
+Referencegroup 0
 addUserKnob {6 Reference l "Display hue Reference" t "it's a more convinience buttom to deactivate the reference input instead of unplugging the node. " +STARTLINE}
 Reference true
 addUserKnob {6 offplate l "Display  hue Plate" -STARTLINE}
@@ -61,6 +62,7 @@ offplate true
 addUserKnob {41 operation l "Merge Operation" +INVISIBLE T Merge_reference.operation}
 addUserKnob {41 mix l "hue visibility" T Merge_reference.mix}
 addUserKnob {6 boolean_8 l "Show Reference Input" t "just a merge of the reference" +STARTLINE}
+boolean_8 true
 addUserKnob {41 mix_1 l mix -STARTLINE T Merge_Reference.mix}
 addUserKnob {26 text_2 l "Show outline "}
 addUserKnob {6 disablered l "Reference (Red)" +STARTLINE}
@@ -2965,6 +2967,7 @@ name Merge_Reference
 selected true
 xpos -3953
 ypos 5381
+disable {{!parent.boolean_8.lf}}
 }
 Dot {
 name Dot27
