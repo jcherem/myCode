@@ -1,0 +1,2837 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+BackdropNode {
+ inputs 0
+ name BackdropNode12
+ tile_color 0x388e8e00
+ label "Spill Suppression"
+ note_font_size 72
+ note_font_color 0xff
+ selected true
+ xpos -5321
+ ypos 960
+ appearance Border
+ border_width 5
+ bdwidth 1496
+ bdheight 1497
+ z_order -2
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0x204c1eff
+ label Key
+ note_font_size 72
+ selected true
+ xpos -6107
+ ypos -1202
+ appearance Border
+ border_width 15
+ bdwidth 1231
+ bdheight 2038
+ z_order -2
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode13
+ tile_color 0xff9455ff
+ label "Edge work"
+ note_font_size 72
+ note_font_color 0xff
+ selected true
+ xpos -2603
+ ypos 4159
+ appearance Border
+ border_width 5
+ bdwidth 1631
+ bdheight 3014
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x4f4f4fff
+ label Cleanplate
+ note_font_size 42
+ selected true
+ xpos -6039
+ ypos -1061
+ bdwidth 284
+ bdheight 464
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ tile_color 0x4f4f4fff
+ label "Core Key"
+ note_font_size 42
+ selected true
+ xpos -5404
+ ypos -560
+ bdwidth 258
+ bdheight 332
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0x4f4f4fff
+ label "Edge key"
+ note_font_size 42
+ selected true
+ xpos -5670
+ ypos -116
+ bdwidth 599
+ bdheight 202
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0x4f4f4fff
+ label Roto
+ note_font_size 42
+ selected true
+ xpos -5857
+ ypos 236
+ bdwidth 663
+ bdheight 393
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode7
+ tile_color 0x4f4f4fff
+ label SpillSupression
+ note_font_size 42
+ selected true
+ xpos -4616
+ ypos 1153
+ bdwidth 672
+ bdheight 380
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode8
+ tile_color 0x4f4f4fff
+ label "Spill Matte grade"
+ note_font_size 42
+ selected true
+ xpos -4612
+ ypos 1584
+ bdwidth 671
+ bdheight 323
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode9
+ tile_color 0x4f4f4fff
+ label "Take back luma"
+ note_font_size 42
+ selected true
+ xpos -4609
+ ypos 1936
+ bdwidth 672
+ bdheight 279
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x720000ff
+ label "Negative values"
+ note_font_size 42
+ selected true
+ xpos -5899
+ ypos -999
+ bdwidth 137
+ bdheight 111
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0x4f4f4fff
+ label "Additive Key"
+ note_font_size 42
+ selected true
+ xpos -1845
+ ypos 4256
+ bdwidth 676
+ bdheight 481
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x4f4f4fff
+ label "Log Merge"
+ note_font_size 42
+ selected true
+ xpos -1638
+ ypos 6582
+ bdwidth 612
+ bdheight 477
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode14
+ tile_color 0x8e8e8eff
+ label Plates
+ note_font_size 42
+ selected true
+ xpos -3476
+ ypos -2306
+ bdwidth 685
+ bdheight 255
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode15
+ tile_color 0xaaaaaa00
+ label "better spill example"
+ note_font_size 42
+ selected true
+ xpos -2228
+ ypos -2306
+ bdheight 204
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode16
+ tile_color 0xaaaaaaff
+ label "\"Deconstructed IBK\""
+ note_font_size 42
+ selected true
+ xpos -6635
+ ypos -624
+ bdwidth 398
+ bdheight 184
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode17
+ tile_color 0x720000ff
+ label "Crop fix"
+ note_font_size 42
+ selected true
+ xpos -5393
+ ypos -1050
+ bdwidth 244
+ bdheight 110
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode18
+ tile_color 0xaaaaaa00
+ label Greenscreen
+ note_font_size 42
+ selected true
+ xpos -782
+ ypos -2073
+ bdwidth 491
+ bdheight 312
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ label "-Keying in essance (problem solving)\n-what plates you'll normally get \n-Showing different keyers\n-talk about despill - different methods\n\n-going though step by step how I approach a key"
+ selected true
+ xpos -5247
+ ypos -1746
+}
+StickyNote {
+ inputs 0
+ name StickyNote6
+ tile_color 0x333333ff
+ label 4
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -937
+ ypos 4627
+}
+StickyNote {
+ inputs 0
+ name StickyNote5
+ tile_color 0x333333ff
+ label 5
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -909
+ ypos 6665
+}
+Roto {
+ inputs 0
+ output alpha
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x4486c000 x440e0000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Ellipse4 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {xc18599a0 xbf8ccc80}
+        {x436f199a x43617fff}
+        {x414f57c0 x3f5a2400}
+        {0 xc15ab470}
+        {x437d3030 x437730f1}
+        {0 x415ab460}
+        {x4194ef98 xbf78fa00}
+        {x4369920e x4388f273}
+        {xc11c5410 x3f018000}
+        {0 x415ab460}
+        {x435f1b1c x43784605}
+        {0 xc15ab470}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x447a4000 xc18599a0}}
+      {{x447a4000 xbf8ccc80}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 x414f57c0}}
+      {{x447a4000 x3f5a2400}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc15ab470}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x415ab460}}}
+        {{{x447a4000 x4194ef98}}
+      {{x447a4000 xbf78fa00}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 xc11c5410}}
+      {{x447a4000 x3f018000}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x415ab460}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc15ab470}}}}}}
+     {tx x447a4000 x43558000 x43744000}
+     {a osw x41200000 osf 0 str 1 spx x4486c000 spy x440e0000 sb 1 nv x40000000 view2 x40000000 ltn x447a4000 ltm x447a4000 tt x40e00000}}
+    {curvegroup Ellipse3 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {xc201c970 0}
+        {x4393a000 x43894000}
+        {x4201c970 0}
+        {0 xc179a200}
+        {x43b10000 x43976000}
+        {0 x4179a200}
+        {x4201c970 0}
+        {x4393a000 x43a58000}
+        {xc201c970 0}
+        {0 x4179a200}
+        {x436c8000 x43976000}
+        {0 xc179a200}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x447a4000 xc201c970}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 x4201c970}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc179a200}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x4179a200}}}
+        {{{x447a4000 x4201c970}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 xc201c970}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x4179a200}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc179a200}}}}}}
+     {tx x447a4000 x4393a000 x43976000}
+     {a osw x41200000 osf 0 str 1 spx x4486c000 spy x440e0000 sb 1 nv x40000000 view2 x40000000 ltn x447a4000 ltm x447a4000 tt x40e00000}}
+    {curvegroup Ellipse2 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {xc146d290 0}
+        {x436db6de x43cf6db6}
+        {x4146d290 0}
+        {0 xc1802150}
+        {x4381c000 x43d78000}
+        {0 x41802150}
+        {x4146d290 0}
+        {x437036dc x43e54926}
+        {xc146d290 0}
+        {0 x41802150}
+        {x435c924b x43d75249}
+        {0 xc1802150}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x447a4000 xc146d290}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc11457c0}}}
+        {{{x447a4000 x4146d290}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc1802150}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x41802150}}}
+        {{{x447a4000 x4146d290}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x40941d00}}}
+        {{{x447a4000 xc146d290}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x41802150}}}
+        {{{x447a4000 xc08be300}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc1802150}}}}}}
+     {tx x447a4000 x436d0000 x43d78000}
+     {a osw x41200000 osf 0 str 1 spx x4486c000 spy x440e0000 sb 1 nv x40000000 view2 x40000000 ltn x447a4000 ltm x447a4000 tt x40e00000}}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {xc1352640 0}
+        {x43568000 x43e38000}
+        {x41352640 0}
+        {0 xc11f0ee0}
+        {x436b0000 x43ec8000}
+        {0 x411f0ee0}
+        {x41352640 0}
+        {x43568000 x43f58000}
+        {xc1352640 0}
+        {0 x411f0ee0}
+        {x43420000 x43ec8000}
+        {0 xc11f0ee0}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x447a4000 xc1352640}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 x41352640}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc11f0ee0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x411f0ee0}}}
+        {{{x447a4000 x41352640}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 xc1352640}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 x411f0ee0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 0}}}
+        {{{x447a4000 0}}
+      {{x447a4000 xc11f0ee0}}}}}}
+     {tx x447a4000 x43568000 x43ec8000}
+     {a osw x41200000 osf 0 str 1 spx x4486c000 spy x440e0000 sb 1 nv x40000000 view2 x40000000 ltn x447a4000 ltm x447a4000 tt x40e00000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1078 568}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1001
+ lifetime_end 1001
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto2
+ selected true
+ xpos -4357
+ ypos 2285
+}
+Blur {
+ channels rgba
+ size 4.7
+ crop false
+ name Blur4
+ label "size: \[value size]"
+ selected true
+ xpos -4357
+ ypos 2323
+}
+SpRead2 {
+ inputs 0
+ file "\{spref:/gro/trn010/plates_des1085_fg1_degrain_v1_paint.pix?v=2\}"
+ time ""
+ first 1001
+ last 1101
+ origfirst 1001
+ origlast 1101
+ origset true
+ rep_specs /shots/gro/trn010/pix/plates/trn010_des1085_fg1_degrain_v1_paint_v2/2ka65s_acesh_exr/trn010_des1085_fg1_degrain_v1_paint_v2_2ka65s_acesh.#.exr
+ rep_names 2ka65s_acesh_exr
+ reps {
+  {true rgba true (auto) online}
+ }
+ name SpRead5
+ selected true
+ xpos -4510
+ ypos -1745
+}
+Reformat_GRO {
+ name Reformat_GRO1
+ selected true
+ xpos -4510
+ ypos -1612
+}
+Shuffle {
+ alpha white
+ name Shuffle1
+ label "\[value in]"
+ selected true
+ xpos -4510
+ ypos -1520
+}
+Dot {
+ name Dot3
+ selected true
+ xpos -4476
+ ypos -1335
+}
+set Nbd120100 [stack 0]
+Dot {
+ name Dot47
+ selected true
+ xpos -4838
+ ypos -1335
+}
+set Nbd0f7900 [stack 0]
+Dot {
+ name Dot48
+ selected true
+ xpos -4838
+ ypos 2333
+}
+push $cut_paste_input
+Roto {
+ output alpha
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x4486c000 x440e0000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {x41166680 x3f199a00}
+        {x44856ccd x43b6cccd}
+        {xc1166680 xbf199a00}
+        {x40d99980 x3f4ccc00}
+        {x447ff333 x43b18000}
+        {xc0d99980 xbf4ccc00}
+        {x40199900 x3fb33400}
+        {x447ce2a3 x43aece4e}
+        {xc0199900 xbfb33400}
+        {x41033340 0}
+        {x4477764e x43a972d0}
+        {xc1033340 0}
+        {x40c00000 x40000000}
+        {x44729111 x43a9199a}
+        {xc0c00000 xc0000000}
+        {x40e66680 x40400000}
+        {x4466999a x439c8000}
+        {xc0e66680 xc0400000}
+        {x40c00000 x40199a00}
+        {x445b0ccd x438e199a}
+        {xc0c00000 xc0199a00}
+        {x40f33300 x410ffff0}
+        {x44520000 x437fcccd}
+        {xc0f33300 xc1100000}
+        {x40266600 x40800000}
+        {x444c4888 x435b3333}
+        {xc0266600 xc0800000}
+        {x40000000 x40c00000}
+        {x4444c000 x43153333}
+        {xc0000000 xc0c00000}
+        {x3f82e000 x40a30500}
+        {x444224f6 x42e602e3}
+        {xbf881c00 xc0a989a0}
+        {x3e4cd000 x3f9999c0}
+        {x4440f501 x42bc1885}
+        {xbe4cd000 xbf9999c0}
+        {x3fe66600 x3fe66680}
+        {x443e5ed5 x42a0edf9}
+        {xbfe66600 xbfe66680}
+        {x3fc72000 x406ef3a0}
+        {x443ad99a x426ccccd}
+        {xc0000000 xc0999998}
+        {xbf4ccc00 x404cccd0}
+        {x443a199a x41b9999a}
+        {x3f4ccc00 xc04cccd0}
+        {x40666700 x404cccca}
+        {x443a0ccd x40f33333}
+        {xc0666700 xc04ccccc}
+        {xbeccd000 x40fffffe}
+        {x4437f333 xc10ccccd}
+        {x3eccd000 xc0fffffe}
+        {xc21a0000 xc1fc0000}
+        {x446f8000 xc1d80000}
+        {x421a0000 x41fc0000}
+        {xc2720000 xc2b80000}
+        {x44920000 x43460000}
+        {x42720000 x42b80000}}}     idem}
+     {tx x447a4000 x445c0891 x43395e78}
+     {a osw x41200000 osf 0 str 1 spx x4486c000 spy x440e0000 sb 1 nv x40000000 view2 x40000000 ltn x447a4000 ltm x447a4000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1078 568}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1001
+ lifetime_end 1001
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto3
+ selected true
+ xpos -5672
+ ypos 550
+}
+Blur {
+ channels rgba
+ size 5
+ crop false
+ name Blur5
+ label "size: \[value size]"
+ selected true
+ xpos -5672
+ ypos 588
+}
+SpRead2 {
+ inputs 0
+ file "\{spref:/gro/trn010/mattes_fg1_roto.pix?v=2\}"
+ time ""
+ first 1001
+ last 1101
+ origfirst 1001
+ origlast 1101
+ origset true
+ version 1
+ rep_specs "/shots/gro/trn010/pix/mattes/trn010_fg1_roto_v2/2ka65s_vd8_jpeg/trn010_fg1_roto_v2_2ka65s_vd8.#.jpeg\n/shots/gro/trn010/pix/mattes/trn010_fg1_roto_v2/roto_eyes_2ka65s_lnf_exr/trn010_fg1_roto_v2_roto_eyes_2ka65s_lnf.#.exr\n/shots/gro/trn010/pix/mattes/trn010_fg1_roto_v2/roto_holdouts_2ka65s_lnf_exr/trn010_fg1_roto_v2_roto_holdouts_2ka65s_lnf.#.exr"
+ rep_names "2ka65s_vd8_jpeg\nroto_eyes_2ka65s_lnf_exr\nroto_holdouts_2ka65s_lnf_exr"
+ ignored_rep_names "headers\nscript\nvcr\nvnpcache\nvnpcachestats"
+ reps {
+  {true rgba true (auto) online}
+  {true roto_eyes false (auto) online}
+  {true roto_holdouts false (auto) online}
+ }
+ name SpRead3
+ selected true
+ xpos -5667
+ ypos 308
+}
+set Nbd0f4800 [stack 0]
+add_layer {roto_eyes roto_eyes.red roto_eyes.green roto_eyes.blue roto_eyes.alpha}
+Shuffle {
+ in roto_eyes
+ name roto_eyes
+ label "\[value in]"
+ selected true
+ xpos -5667
+ ypos 420
+}
+Reformat_GRO {
+ name Reformat_GRO2
+ selected true
+ xpos -5667
+ ypos 473
+}
+Constant {
+ inputs 0
+ channels rgb
+ color {0.005956211593 0 0.3817383945 1}
+ first 1001
+ last 1068
+ name Constant1
+ selected true
+ xpos -6027
+ ypos -703
+}
+push $Nbd0f7900
+Dot {
+ name Dot2
+ selected true
+ xpos -5277
+ ypos -1335
+}
+set Na5052b00 [stack 0]
+CropOverscan {
+ name CropOverscan1
+ selected true
+ xpos -5311
+ ypos -984
+ overscan 5
+ uniform_overscan false
+ left 125
+ right 125
+ top 0
+ bottom 0
+}
+Dot {
+ name Dot1
+ selected true
+ xpos -5277
+ ypos -915
+}
+set Na502b900 [stack 0]
+Dot {
+ name Dot12
+ selected true
+ xpos -5551
+ ypos -915
+}
+set Na502b200 [stack 0]
+Clamp {
+ channels rgba
+ minimum 0.0001
+ maximum_enable false
+ name Clamp1
+ selected true
+ xpos -5889
+ ypos -919
+}
+IBKColourV3 {
+ name IBKColourV3_1
+ selected true
+ xpos -5889
+ ypos -823
+ Size 0.1
+ off {0 0 -0.01}
+ mult {1 1 0.1}
+ erode 1
+ multi 100
+}
+Keyer {
+ operation "luminance key"
+ range {0 0.01061210575 1 1}
+ name Keyer1
+ selected true
+ xpos -5889
+ ypos -797
+}
+EdgeBlur {
+ channels rgba
+ size 27.5
+ name EdgeBlur1
+ selected true
+ xpos -5889
+ ypos -759
+}
+Merge2 {
+ inputs 2
+ operation under
+ name Merge1
+ selected true
+ xpos -5889
+ ypos -680
+}
+Dot {
+ name Dot7
+ selected true
+ xpos -5855
+ ypos -540
+}
+set N9fa35600 [stack 0]
+Dot {
+ name Dot5
+ selected true
+ xpos -5855
+ ypos -311
+}
+set N9fa34f00 [stack 0]
+push $Na502b900
+IBKGizmoV3 {
+ inputs 2
+ name IBKGizmoV3_2
+ xpos -5311
+ ypos -315
+ lm_enable true
+ ll_enable true
+}
+Grade {
+ channels alpha
+ whitepoint 0.99
+ white_clamp true
+ name Grade2
+ selected true
+ xpos -5311
+ ypos -289
+}
+Dot {
+ name Dot33
+ selected true
+ xpos -5277
+ ypos -63
+}
+set N9f9e4f00 [stack 0]
+Dot {
+ name Dot34
+ selected true
+ xpos -5147
+ ypos -63
+}
+EdgeDetectSimple {
+ name EdgeDetectSimple1
+ selected true
+ xpos -5181
+ ypos -1
+ from0 rgba.alpha
+ dilate 12.95
+ blur 15.4
+ to0 rgba.alpha
+}
+push $N9fa34f00
+Dot {
+ name Dot11
+ selected true
+ xpos -5855
+ ypos 3
+}
+push $Na502b200
+IBKGizmoV3 {
+ inputs 2
+ name IBKGizmoV3_1
+ xpos -5585
+ ypos -1
+ ll_enable true
+}
+push $N9f9e4f00
+Keymix {
+ inputs 3
+ channels rgba
+ name Keymix1
+ selected true
+ xpos -5311
+ ypos -1
+}
+Merge2 {
+ inputs 2
+ name Merge17
+ selected true
+ xpos -5311
+ ypos 477
+}
+Merge2 {
+ inputs 2
+ name Merge23
+ selected true
+ xpos -5311
+ ypos 594
+}
+Dot {
+ name Dot6
+ selected true
+ xpos -5277
+ ypos 809
+}
+set N9fb28f00 [stack 0]
+Group {
+ name PxF_Erode
+ help "Erode the edges of an RGBA image by blurring the alpha, applying a gamma to it and doing a \"min\" with the original alpha."
+ tile_color 0x733520ff
+ selected true
+ xpos -5311
+ ypos 1830
+ addUserKnob {20 User}
+ addUserKnob {41 size l Blur t "Size of the alpha blur." T Blur1.size}
+ addUserKnob {41 value l Gamma t "Gamma correction of the blurred alpha." T Gamma1.value}
+ addUserKnob {26 ""}
+ addUserKnob {26 t l "" -STARTLINE T "PxF_Erode 2.0.3 - (c) 2012 - Xavier Bourque - www.pixelfudger.com"}
+}
+ Input {
+  inputs 0
+  name mask
+  xpos 675
+  ypos 423
+  number 1
+ }
+ Input {
+  inputs 0
+  name img
+  xpos 501
+  ypos -28
+ }
+set N9fb07900 [stack 0]
+ Dot {
+  name Dot1
+  xpos 735
+  ypos 245
+ }
+push $N9fb07900
+ Unpremult {
+  name Unpremult1
+  xpos 501
+  ypos 49
+ }
+set N9fb06b00 [stack 0]
+ Blur {
+  channels alpha
+  size 23.6
+  name Blur1
+  xpos 381
+  ypos 93
+ }
+ Gamma {
+  channels alpha
+  value 0.068
+  name Gamma1
+  xpos 381
+  ypos 153
+ }
+push $N9fb06b00
+ Merge2 {
+  inputs 2
+  operation in
+  name In
+  xpos 381
+  ypos 287
+ }
+push $N9fb06b00
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 510
+  ypos 356
+ }
+ Premult {
+  name Premult1
+  xpos 510
+  ypos 399
+ }
+ Keymix {
+  inputs 3
+  invertMask true
+  bbox B
+  name Keymix1
+  xpos 508
+  ypos 477
+  disable {{"\[exists parent.input1] ? 0 : 1" i x1 0}}
+ }
+ Output {
+  name Output1
+  xpos 510
+  ypos 546
+ }
+end_group
+set N9fb28800 [stack 0]
+Dot {
+ name Dot14
+ selected true
+ xpos -5277
+ ypos 2134
+}
+push $N9fb28f00
+push $Nbd120100
+Copy {
+ inputs 2
+ from0 rgba.alpha
+ to0 rgba.alpha
+ name Copy1
+ selected true
+ xpos -4510
+ ypos 799
+}
+Dot {
+ name Dot18
+ selected true
+ xpos -4476
+ ypos 1040
+}
+set N9f9d1d00 [stack 0]
+Dot {
+ name Dot19
+ selected true
+ xpos -4211
+ ypos 1040
+}
+Dot {
+ name Dot17
+ selected true
+ xpos -4211
+ ypos 1646
+}
+set N9f9d0f00 [stack 0]
+Dot {
+ name Dot16
+ selected true
+ xpos -4211
+ ypos 2092
+}
+push $N9fb28800
+push $N9f9d1d00
+DespillMadness {
+ name DespillMadness2
+ label Blue
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -4510
+ ypos 1339
+ screenType blue
+ algorithm "green/blue limit"
+ LimitPercentage 0.852
+ saturation 0
+ offset 0.198
+ maskChannel -rgba.alpha
+}
+DespillMadness {
+ name DespillMadness4
+ label green
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -4510
+ ypos 1391
+ maskChannel -rgba.alpha
+ which 0.74
+}
+Dot {
+ name Dot24
+ selected true
+ xpos -4476
+ ypos 1637
+}
+set N9a15f200 [stack 0]
+push $N9f9d0f00
+Merge2 {
+ inputs 2
+ operation difference
+ name Merge15
+ selected true
+ xpos -4371
+ ypos 1719
+}
+Saturation {
+ saturation 0
+ name Saturation2
+ selected true
+ xpos -4371
+ ypos 1772
+}
+Grade {
+ channels rgba
+ white {0.7933333516 1.013333321 1.193333387 1}
+ white_clamp true
+ name Grade4
+ selected true
+ xpos -4371
+ ypos 1830
+}
+push $N9a15f200
+Merge2 {
+ inputs 2+1
+ operation plus
+ name Merge16
+ selected true
+ xpos -4510
+ ypos 1830
+}
+Dot {
+ name Dot13
+ selected true
+ xpos -4476
+ ypos 2049
+}
+set N9a141d00 [stack 0]
+Dot {
+ name Dot15
+ selected true
+ xpos -4333
+ ypos 2049
+}
+Merge2 {
+ inputs 2
+ operation minus
+ name Merge18
+ selected true
+ xpos -4367
+ ypos 2088
+}
+Saturation {
+ saturation 0
+ name Saturation3
+ selected true
+ xpos -4367
+ ypos 2130
+}
+push $N9a141d00
+Merge2 {
+ inputs 2+1
+ operation plus
+ name Merge19
+ selected true
+ xpos -4510
+ ypos 2130
+}
+Merge2 {
+ inputs 2+1
+ name Merge22
+ selected true
+ xpos -4510
+ ypos 2329
+}
+Dot {
+ name Dot21
+ selected true
+ xpos -4476
+ ypos 2575
+}
+set N9a11f200 [stack 0]
+NoOp {
+ name Anchor_054bfb28c
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged "import stamps\nstamps.anchorKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ selected true
+ xpos -4354
+ ypos 2567
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title DespilledPlate
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T DespilledPlate}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_054bfb28c}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags you can define for each Anchor, that will help you find it when invoking the Stamp Selector by pressing the Stamps shortkey with nothing selected."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+set N9a11eb00 [stack 0]
+NoOp {
+ name Stamp2
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -1835
+ ypos 4336
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title DespilledPlate
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T DespilledPlate}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_054bfb28c
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+Dot {
+ name Dot23
+ selected true
+ xpos -1801
+ ypos 4399
+}
+set N9a11dd00 [stack 0]
+SpRead2 {
+ inputs 0
+ file "\{spref:/gro/trn010/matpnt_des1085_slapcomp.pix?v=8\}"
+ time ""
+ first 1001
+ last 1101
+ origfirst 1001
+ origlast 1101
+ rep_specs /shots/gro/trn010/pix/matpnt/trn010_des1085_slapcomp_v8/2kworkres_acesh_exr/trn010_des1085_slapcomp_v8_2kworkres_acesh.#.exr
+ rep_names 2kworkres_acesh_exr
+ reps {
+  {true rgba true (auto) unknown}
+ }
+ name SpRead4
+ selected true
+ xpos -1157
+ ypos 1822
+}
+Defocus {
+ channels rgba
+ defocus 23
+ name Defocus1
+ selected true
+ xpos -1157
+ ypos 1957
+}
+Grade {
+ white 0.995
+ gamma 0.79
+ name Grade3
+ selected true
+ xpos -1157
+ ypos 2187
+ disable true
+}
+Dot {
+ name Dot35
+ selected true
+ xpos -1123
+ ypos 2465
+}
+set N9a0e8800 [stack 0]
+NoOp {
+ name Anchor_1a3bc34a3e
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged "import stamps\nstamps.anchorKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ selected true
+ xpos -1062
+ ypos 2457
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title BG
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T BG}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_1a3bc34a3e}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags you can define for each Anchor, that will help you find it when invoking the Stamp Selector by pressing the Stamps shortkey with nothing selected."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+set N9a0e8100 [stack 0]
+NoOp {
+ name Stamp4
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -1442
+ ypos 4322
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title BG
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T BG}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_1a3bc34a3e
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+Dot {
+ name Dot59
+ selected true
+ xpos -1408
+ ypos 4381
+}
+set N9a0df200 [stack 0]
+Merge2 {
+ inputs 2
+ operation geometric
+ name Merge5
+ selected true
+ xpos -1835
+ ypos 4684
+}
+push $N9a11dd00
+push $N9a0df200
+Merge2 {
+ inputs 2
+ operation hypot
+ name Merge6
+ selected true
+ xpos -1722
+ ypos 4683
+}
+push $N9fa35600
+push $Na5052b00
+Dot {
+ name Dot22
+ selected true
+ xpos -6456
+ ypos -1335
+}
+Merge2 {
+ inputs 2
+ operation difference
+ name Merge3
+ selected true
+ xpos -6490
+ ypos -544
+}
+Expression {
+ expr3 r+g+b
+ name Expression1
+ selected true
+ xpos -6490
+ ypos -518
+}
+Grade {
+ channels alpha
+ blackpoint 0.03
+ whitepoint 0.1
+ white_clamp true
+ name Grade1
+ selected true
+ xpos -6490
+ ypos -492
+}
+push $N9a0df200
+push $N9a11dd00
+Merge2 {
+ inputs 2
+ operation screen
+ name Merge9
+ selected true
+ xpos -1612
+ ypos 4686
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ label "No Luma match"
+ selected true
+ xpos -5589
+ ypos 30
+}
+push $N9a11eb00
+NoOp {
+ name Stamp1
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -4354
+ ypos 2623
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title DespilledPlate
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T DespilledPlate}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_054bfb28c
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+push $N9a0e8100
+NoOp {
+ name Stamp3
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -1062
+ ypos 2513
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title BG
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T BG}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_1a3bc34a3e
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+StickyNote {
+ inputs 0
+ name StickyNote9
+ tile_color 0x333333ff
+ label 7
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -1007
+ ypos 2082
+}
+push $N9a11dd00
+push $N9a0df200
+Merge2 {
+ inputs 2
+ operation soft-light
+ name Merge8
+ selected true
+ xpos -1390
+ ypos 4686
+}
+push $N9a11dd00
+push $N9a0df200
+Merge2 {
+ inputs 2
+ operation hard-light
+ name Merge2
+ selected true
+ xpos -1290
+ ypos 4684
+}
+StickyNote {
+ inputs 0
+ name StickyNote11
+ label "Grade to match the bg for the best result usually"
+ selected true
+ xpos -1400
+ ypos 4789
+}
+StickyNote {
+ inputs 0
+ name StickyNote12
+ tile_color 0x333333ff
+ label BG
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -1215
+ ypos 1447
+}
+StickyNote {
+ inputs 0
+ name StickyNote13
+ tile_color 0x333333ff
+ label Plate
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -4649
+ ypos -2079
+}
+StickyNote {
+ inputs 0
+ name StickyNote14
+ tile_color 0x333333ff
+ label "Spill node examples"
+ note_font_size 100
+ note_font_color 0x888888ff
+ selected true
+ xpos -2132
+ ypos -2556
+}
+Dot {
+ inputs 0
+ name Dot20
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -535
+ ypos -1993
+}
+set N9d173200 [stack 0]
+Expression {
+ expr1 g>r?r:g
+ name GreenDespill14
+ label "r limit"
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -381
+ ypos -1805
+}
+push $N9d173200
+Expression {
+ expr1 g>b?b:g
+ name GreenDespill5
+ label "b limit"
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -472
+ ypos -1804
+}
+push $N9d173200
+Expression {
+ expr1 "g > (r+2*b)/3 ? (r+2*b)/3 : g"
+ name GreenDespill11
+ label 2xb
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -569
+ ypos -1804
+}
+push $N9d173200
+Expression {
+ expr1 "g > (2*r+b)/3 ? (2*r+b)/3 : g"
+ name GreenDespill12
+ label 2xr
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -667
+ ypos -1803
+}
+push $N9d173200
+Expression {
+ expr1 "g > (r+b)/2 ? (r+b)/2 : g"
+ name GreenDespill13
+ label norm
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -772
+ ypos -1805
+}
+StickyNote {
+ inputs 0
+ name StickyNote15
+ label "Despill Expressions"
+ note_font_size 21
+ selected true
+ xpos -1343
+ ypos -1729
+}
+StickyNote {
+ inputs 0
+ name StickyNote3
+ tile_color 0x333333ff
+ label 1
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -4732
+ ypos -410
+}
+StickyNote {
+ inputs 0
+ name StickyNote4
+ tile_color 0x333333ff
+ label 2
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -3684
+ ypos 1245
+}
+StickyNote {
+ inputs 0
+ name StickyNote8
+ tile_color 0x333333ff
+ label 6
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -872
+ ypos 7394
+}
+StickyNote {
+ inputs 0
+ name StickyNote10
+ tile_color 0x333333ff
+ label 3
+ note_font_size 200
+ note_font_color 0x888888ff
+ selected true
+ xpos -3665
+ ypos 1828
+}
+SpRead2 {
+ inputs 0
+ file "\{spref:/gro/trn010/plates_des1085_fg1.pix?v=1\}"
+ time ""
+ first 977
+ last 1125
+ origfirst 977
+ origlast 1125
+ origset true
+ rep_specs /shots/gro/trn010/pix/plates/trn010_des1085_fg1_v1/2ka65s_acesh_exr/trn010_des1085_fg1_v1_2ka65s_acesh.#.exr
+ rep_names 2ka65s_acesh_exr
+ reps {
+  {true rgba true (auto) online}
+ }
+ name SpRead7
+ selected true
+ xpos -3439
+ ypos -2224
+}
+SpRead2 {
+ inputs 0
+ file "\{spref:/gro/trn010/precomp_hcm_rva1880_mp1_rgba.pix?v=1\}"
+ time ""
+ first 1001
+ last 1053
+ origfirst 1001
+ origlast 1053
+ origset true
+ rep_specs /shots/gro/trn010/pix/precomp/trn010_hcm_rva1880_mp1_rgba_v1/2kworkres_cglnf_exr/trn010_hcm_rva1880_mp1_rgba_v1_2kworkres_cglnf.#.exr
+ rep_names 2kworkres_cglnf_exr
+ ignored_rep_names "1kworkres_cglnf_exr\nheaders\nscript\nvcr\nvnpcache\nvnpcachestats"
+ reps {
+  {true rgba true (auto) online}
+ }
+ name SpRead8
+ selected true
+ xpos -2225
+ ypos -2226
+}
+Shuffle {
+ alpha white
+ name Shuffle2
+ label "\[value in]"
+ selected true
+ xpos -2225
+ ypos -2099
+}
+Dot {
+ name Dot50
+ selected true
+ xpos -2187
+ ypos -1989
+}
+set N8a173200 [stack 0]
+Expression {
+ expr2 "b > (r+g)/2 ? (r+g)/2 : b"
+ name BlueDespill2
+ label norm
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -2221
+ ypos -1776
+}
+push $N8a173200
+DespillMadness {
+ name DespillMadness3
+ label "out of the box"
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -2107
+ ypos -1780
+ screenType blue
+ maskChannel -rgba.alpha
+}
+push $N8a173200
+HueCorrect {
+ hue {sat {}
+   lum {}
+   red {}
+   green {}
+   blue {}
+   r_sup {}
+   g_sup {}
+   b_sup {curve 1 1 1 1 1 0.02039813995 1}
+   sat_thrsh {}}
+ name HueCorrect2
+ selected true
+ xpos -2008
+ ypos -1772
+}
+push $N8a173200
+Group {
+ name PxF_KillSpill
+ help "Remove red/green/blue spill."
+ tile_color 0x733520ff
+ selected true
+ xpos -1913
+ ypos -1770
+ addUserKnob {20 User}
+ addUserKnob {4 back_color l ScreenColor t "Which type of spill to remove." M {red green blue "" ""}}
+ back_color blue
+ addUserKnob {7 supp l Suppression t "Bias the mix of channels used to cap the 'spill' channel.\nFor example when removing 'green spill':\n0 = green channel is capped by the red channel.\n\n0.5 = green channel is capped by half-mix of red and blue channels.\n\n1 = green channel is capped by the blue channel." R 0 2}
+ supp 0.5
+ addUserKnob {7 masterMult l Limiter t "Gain applied to the 'cap' channel to make the suppression more or less aggressive." R 0 10}
+ masterMult 1
+ addUserKnob {18 SpillTweak t "Adjust the luminance and color of the spill areas." R 0 10}
+ SpillTweak 1
+ addUserKnob {6 SpillTweak_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {26 ""}
+ addUserKnob {26 t l "" +STARTLINE T "PxF_KillSpill 2.5.2 - (c) 2011 - Xavier Bourque - www.pixelfudger.com"}
+}
+ Input {
+  inputs 0
+  name mask
+  xpos -228
+  ypos 853
+  number 1
+ }
+ Input {
+  inputs 0
+  name img
+  xpos -496
+  ypos -217
+ }
+ Dot {
+  name Dot3
+  xpos -462
+  ypos -140
+ }
+set N8c503900 [stack 0]
+ Dot {
+  name Dot2
+  xpos -689
+  ypos 208
+ }
+ Dot {
+  name Dot4
+  xpos -729
+  ypos 756
+ }
+push $N8c503900
+ Dot {
+  name Dot1
+  xpos -156
+  ypos 744
+ }
+push $N8c503900
+push $N8c503900
+ Shuffle {
+  red blue
+  green blue
+  alpha black
+  name Blue
+  xpos 187
+  ypos 28
+ }
+set N8c501d00 [stack 0]
+push $N8c503900
+ Shuffle {
+  red green
+  blue green
+  alpha black
+  name Green
+  xpos 76
+  ypos 26
+ }
+set N8c501600 [stack 0]
+push $N8c503900
+ Shuffle {
+  green red
+  blue red
+  alpha black
+  name Red
+  xpos -17
+  ypos 27
+ }
+set N8c500f00 [stack 0]
+ Switch {
+  inputs 3
+  which {{back_color i}}
+  name High
+  xpos -17
+  ypos 132
+ }
+push $N8c501600
+push $N8c500f00
+ Switch {
+  inputs 2
+  which {{"back_color == 0 ? 1 : back_color == 1 ? 0 : 0" i}}
+  name LowA
+  xpos 76
+  ypos 132
+ }
+ Multiply {
+  value {{"1 - supp" i}}
+  name Multiply1
+  xpos 76
+  ypos 190
+ }
+push $N8c501d00
+push $N8c501600
+push 0
+ Switch {
+  inputs 3
+  which {{"back_color == 0 ? 2 : back_color == 1 ? 2 : 1" i}}
+  name LowB
+  xpos 187
+  ypos 140
+ }
+ Multiply {
+  value {{supp i}}
+  name Multiply2
+  xpos 187
+  ypos 187
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos 138
+  ypos 299
+ }
+ Multiply {
+  value {{masterMult i}}
+  name Multiply3
+  xpos 138
+  ypos 327
+ }
+ Merge2 {
+  inputs 2
+  operation min
+  name Merge10
+  xpos -17
+  ypos 371
+ }
+set N8c4dc100 [stack 0]
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  name ShuffleBlue
+  xpos -426
+  ypos 371
+ }
+push $N8c503900
+push $N8c4dc100
+ ShuffleCopy {
+  inputs 2
+  red red
+  blue blue
+  name ShuffleGreen
+  xpos -526
+  ypos 369
+ }
+push $N8c503900
+push $N8c4dc100
+ ShuffleCopy {
+  inputs 2
+  green green
+  blue blue
+  name ShuffleRed
+  xpos -630
+  ypos 369
+ }
+ Switch {
+  inputs 3
+  which {{back_color i}}
+  name Switch1
+  xpos -526
+  ypos 424
+ }
+set N8c4b2400 [stack 0]
+push $N8c503900
+push $N8c4b2400
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge9
+  xpos -338
+  ypos 547
+ }
+ Saturation {
+  saturation 0
+  name Saturation1
+  xpos -338
+  ypos 586
+ }
+ ColorCorrect {
+  gain {{SpillTweak.r i} {SpillTweak.g i} {SpillTweak.b i} {1 i}}
+  name ColorCorrect1
+  xpos -338
+  ypos 655
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge11
+  xpos -526
+  ypos 655
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos -526
+  ypos 740
+ }
+ Keymix {
+  inputs 3
+  invertMask true
+  bbox A
+  name Keymix1
+  xpos -526
+  ypos 875
+  disable {{"\[exists parent.input1] ? 0 : 1" i}}
+ }
+set N899bab00 [stack 0]
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 95
+  ypos 454
+ }
+push $N899bab00
+ Output {
+  name Output1
+  xpos -526
+  ypos 980
+ }
+end_group
+push $N8a173200
+Dot {
+ name Dot4
+ selected true
+ xpos -1267
+ ypos -1989
+}
+set N899b9600 [stack 0]
+Expression {
+ expr2 "b > (r+g)/2 ? (r+g)/2 : b"
+ name BlueDespill10
+ label norm
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -1492
+ ypos -1799
+}
+push $N899b9600
+Expression {
+ expr2 "b > (2*r+g)/3 ? (2*r+g)/3 : b"
+ name BlueDespill6
+ label 2xr
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -1398
+ ypos -1802
+}
+push $N899b9600
+Expression {
+ expr2 "b > (r+2*g)/3 ? (r+2*g)/3 : b"
+ name BlueDespill7
+ label 2xg
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -1301
+ ypos -1803
+}
+push $N899b9600
+Expression {
+ expr2 b>g?g:b
+ name BlueDespill9
+ label "g limit"
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -1199
+ ypos -1802
+}
+push $N899b9600
+Expression {
+ expr2 b>r?r:b
+ name BlueDespill8
+ label "r limit"
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -1106
+ ypos -1803
+}
+push $N8a173200
+SpDespill {
+ name SpDespill1
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -1818
+ ypos -1772
+ screen_color blue
+ spill_matte_output -rgba.alpha
+}
+SpRead2 {
+ inputs 0
+ file "\{spref:/gro/trn010/plates_des1085_fg1_degrain_v1_paint.pix?v=2\}"
+ time ""
+ first 1001
+ last 1101
+ origfirst 1001
+ origlast 1101
+ origset true
+ rep_specs /shots/gro/trn010/pix/plates/trn010_des1085_fg1_degrain_v1_paint_v2/2ka65s_acesh_exr/trn010_des1085_fg1_degrain_v1_paint_v2_2ka65s_acesh.#.exr
+ rep_names 2ka65s_acesh_exr
+ reps {
+  {true rgba true (auto) online}
+ }
+ name SpRead1
+ selected true
+ xpos -3192
+ ypos -2233
+}
+SpRead2 {
+ inputs 0
+ file "\{spref:/gro/trn010/mattes_fg1_roto.pix?v=2\}"
+ time ""
+ first 1001
+ last 1101
+ origfirst 1001
+ origlast 1101
+ origset true
+ version 1
+ rep_specs "/shots/gro/trn010/pix/mattes/trn010_fg1_roto_v2/2ka65s_vd8_jpeg/trn010_fg1_roto_v2_2ka65s_vd8.#.jpeg\n/shots/gro/trn010/pix/mattes/trn010_fg1_roto_v2/roto_eyes_2ka65s_lnf_exr/trn010_fg1_roto_v2_roto_eyes_2ka65s_lnf.#.exr\n/shots/gro/trn010/pix/mattes/trn010_fg1_roto_v2/roto_holdouts_2ka65s_lnf_exr/trn010_fg1_roto_v2_roto_holdouts_2ka65s_lnf.#.exr"
+ rep_names "2ka65s_vd8_jpeg\nroto_eyes_2ka65s_lnf_exr\nroto_holdouts_2ka65s_lnf_exr"
+ ignored_rep_names "headers\nscript\nvcr\nvnpcache\nvnpcachestats"
+ reps {
+  {true rgba true (auto) online}
+  {true roto_eyes false (auto) online}
+  {true roto_holdouts false (auto) online}
+ }
+ name SpRead10
+ selected true
+ xpos -2939
+ ypos -2234
+}
+set N870a6b00 [stack 0]
+add_layer {roto_holdouts roto_holdouts.red roto_holdouts.green roto_holdouts.blue roto_holdouts.alpha}
+Shuffle {
+ in roto_holdouts
+ name roto_holdouts1
+ label "\[value in]"
+ selected true
+ xpos -2880
+ ypos -2097
+}
+push $N870a6b00
+Shuffle {
+ in roto_eyes
+ name roto_eyes1
+ label "\[value in]"
+ selected true
+ xpos -2985
+ ypos -2095
+}
+push $Nbd0f4800
+Shuffle {
+ in roto_holdouts
+ name roto_holdouts
+ label "\[value in]"
+ selected true
+ xpos -5765
+ ypos 419
+}
+push $Nbd120100
+NoOp {
+ name Anchor_2e2a102963
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged "import stamps\nstamps.anchorKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ selected true
+ xpos -4411
+ ypos -1343
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title plate
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T plate}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_2e2a102963}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags you can define for each Anchor, that will help you find it when invoking the Stamp Selector by pressing the Stamps shortkey with nothing selected."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+set N9d1a7200 [stack 0]
+NoOp {
+ name Stamp6
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -4411
+ ypos -1287
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title plate
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T plate}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_2e2a102963
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+push $N9a11f200
+Premult {
+ name Premult1
+ selected true
+ xpos -4510
+ ypos 2892
+}
+Dot {
+ name Dot9
+ selected true
+ xpos -4476
+ ypos 3441
+}
+set N9d139d00 [stack 0]
+Dot {
+ name Dot8
+ selected true
+ xpos -4476
+ ypos 4803
+}
+set N9d139600 [stack 0]
+Dot {
+ name Dot31
+ selected true
+ xpos -4476
+ ypos 6795
+}
+set N9d138f00 [stack 0]
+Dot {
+ name Dot32
+ selected true
+ xpos -4476
+ ypos 7430
+}
+push $N9d138f00
+Dot {
+ name Dot30
+ selected true
+ xpos -1583
+ ypos 6795
+}
+set N9d138100 [stack 0]
+Dot {
+ name Dot46
+ selected true
+ xpos -1583
+ ypos 6898
+}
+Keyer {
+ combine intersect
+ invert true
+ operation "luminance key"
+ range {0.05460089389 0.2550503775 1 1}
+ name Keyer5
+ selected true
+ xpos -1245
+ ypos 6888
+}
+Blur {
+ channels rgba
+ size 5.2
+ crop false
+ name Blur3
+ label "size: \[value size]"
+ selected true
+ xpos -1245
+ ypos 6926
+}
+push $N9d138100
+OCIOLogConvert {
+ operation "lin to log"
+ unpremult rgba.alpha
+ name OCIOLogConvert2
+ selected true
+ xpos -1510
+ ypos 6785
+ postage_stamp_frame 1001
+}
+push $N9a0e8100
+NoOp {
+ name Stamp8
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -1400
+ ypos 6657
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title BG
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T BG}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_1a3bc34a3e
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+OCIOLogConvert {
+ operation "lin to log"
+ unpremult rgba.alpha
+ name OCIOLogConvert4
+ selected true
+ xpos -1400
+ ypos 6744
+ postage_stamp_frame 1001
+}
+Merge2 {
+ inputs 2
+ name Merge20
+ selected true
+ xpos -1400
+ ypos 6790
+}
+OCIOLogConvert {
+ operation "log to lin"
+ unpremult rgba.alpha
+ name OCIOLogConvert1
+ selected true
+ xpos -1400
+ ypos 6836
+ postage_stamp_frame 1001
+}
+Dot {
+ name Dot45
+ selected true
+ xpos -1366
+ ypos 6995
+}
+push $N9a0e8100
+NoOp {
+ name Stamp5
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -2395
+ ypos 5242
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title BG
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T BG}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_1a3bc34a3e
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+Keyer {
+ operation "luminance key"
+ range {0.2327213959 0.5091790611 1 1}
+ name Keyer4
+ selected true
+ xpos -2395
+ ypos 5340
+}
+Blur {
+ channels rgba
+ size 5.2
+ crop false
+ name Blur2
+ label "size: \[value size]"
+ selected true
+ xpos -2395
+ ypos 5378
+}
+push $N9d1a7200
+NoOp {
+ name Stamp7
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps\nstamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos -2280
+ ypos 5246
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title plate
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T plate}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_2e2a102963
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated Sep 27 2019." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.0</big></b></a>"}
+}
+Keyer {
+ operation "luminance key"
+ range {0.05460089389 0.2550503775 1 1}
+ name Keyer3
+ selected true
+ xpos -2280
+ ypos 5341
+}
+Blur {
+ channels rgba
+ size 5.2
+ crop false
+ name Blur1
+ label "size: \[value size]"
+ selected true
+ xpos -2280
+ ypos 5379
+}
+Merge2 {
+ inputs 2
+ name Merge11
+ selected true
+ xpos -2332
+ ypos 5473
+}
+Dot {
+ name Dot37
+ selected true
+ xpos -2298
+ ypos 5545
+}
+Roto {
+ inputs 0
+ output alpha
+ cliptype none
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x4486c000 x440e0000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {x42840000 x41200000}
+        {x44884000 x448c0000}
+        {xc2840000 xc1200000}
+        {x424c0000 x42800000}
+        {x44428000 x44748000}
+        {xc24c0000 xc2800000}
+        {xc2800000 x428a0000}
+        {x44410000 x43e68000}
+        {x42800000 xc28a0000}
+        {xc30a0000 x40000000}
+        {x448f6000 x43980000}
+        {x430a0000 xc0000000}
+        {xc2ae0000 xc23c0000}
+        {x44cc8000 x43970000}
+        {x42ae0000 x423c0000}
+        {x42300000 xc2400000}
+        {x44ea4000 x44414000}
+        {xc2300000 x42400000}
+        {x428e0000 xc1980000}
+        {x44ad2000 x44878000}
+        {xc28e0000 x41980000}}}     idem}
+     {tx x447a4000 x449b0925 x44335b6e}
+     {a osw x41200000 osf 0 str 1 spx x4486c000 spy x440e0000 sb 1 nv x40000000 view2 x40000000 ltn x447a4000 ltm x447a4000 tt x40800000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1078 568}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 1001
+ lifetime_end 1001
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ name Roto1
+ selected true
+ xpos -2245
+ ypos 5037
+}
+push $N9d139600
+Dot {
+ name Dot10
+ selected true
+ xpos -2077
+ ypos 4803
+}
+Dot {
+ name Dot29
+ selected true
+ xpos -2077
+ ypos 4895
+}
+set N9d0c5d00 [stack 0]
+Dot {
+ name Dot26
+ selected true
+ xpos -1948
+ ypos 4895
+}
+Dot {
+ name Dot28
+ selected true
+ xpos -1948
+ ypos 4975
+}
+set N9d0c4f00 [stack 0]
+push $N9d0c4f00
+Merge2 {
+ inputs 2
+ operation xor
+ name Merge14
+ selected true
+ xpos -1982
+ ypos 5043
+}
+push $N9d0c5d00
+EdgeBlur {
+ channels rgba
+ output rgba.alpha
+ name EdgeBlur2
+ selected true
+ xpos -2111
+ ypos 4957
+}
+Keymix {
+ inputs 3
+ channels rgba
+ name Keymix2
+ selected true
+ xpos -2111
+ ypos 5043
+}
+Merge2 {
+ inputs 2
+ operation mask
+ name Merge12
+ selected true
+ xpos -2111
+ ypos 5541
+}
+Dot {
+ name Dot38
+ selected true
+ xpos -2077
+ ypos 5594
+}
+push $N9a11dd00
+push $N9a0df200
+Merge2 {
+ inputs 2
+ operation plus
+ Achannels rgb
+ name Merge7
+ label "Plus only rbg"
+ selected true
+ xpos -1496
+ ypos 4681
+}
+Grade {
+ name Grade5
+ selected true
+ xpos -1496
+ ypos 4792
+ disable true
+}
+Merge2 {
+ inputs 2
+ operation mask
+ name Merge13
+ selected true
+ xpos -1496
+ ypos 5590
+}
+Dot {
+ name Dot39
+ selected true
+ xpos -1462
+ ypos 5705
+}
+push $N9d139d00
+push $N9a0e8800
+Merge2 {
+ inputs 2
+ name Merge4
+ selected true
+ xpos -1157
+ ypos 3437
+}
+Merge2 {
+ inputs 2
+ mix 0.578
+ name Merge10
+ selected true
+ xpos -1157
+ ypos 5701
+}
+Dot {
+ name Dot52
+ selected true
+ xpos -1123
+ ypos 6839
+}
+Merge2 {
+ inputs 2+1
+ name Merge32
+ selected true
+ xpos -1157
+ ypos 6991
+}
+SpEdgeScatter {
+ inputs 2
+ name SpEdgeScatter1
+ note_font "Bitstream Vera Sans"
+ selected true
+ xpos -1157
+ ypos 7426
+ channels rgba
+ scatter_size 73.5
+ scatter_mix 0.082
+ mask rgba.alpha
+ scatter_mask_output none
+}
+CropOverscan {
+ name CropOverscan2
+ selected true
+ xpos -1157
+ ypos 7452
+ overscan 150
+ left 150
+ right 150
+ top 150
+ bottom 150
+}
+ScannedGrainShow {
+ name ScannedGrainShow1
+ label "Alexa_2kworkres\npreset"
+ selected true
+ xpos -1157
+ ypos 7534
+ custom_grp 1
+ seed {(default {110} lf {100})}
+ weight {master {curve C 1 1}
+   red {curve L 0.1342568398 x0.1903679967 0.9489302635 S x0.543833971 1.745938063 L x1.08513999 3.980621099 s-0.8000000119 S x1.375910044 0.5160099724 x1.377609968 0.5152430534 x1.615579963 0.4687255614}
+   green {curve L 0.1707348824 x0.09868019819 0.5963101387 S x0.2251770049 0.9124519825 x0.6091489792 1.617691755 s5 x0.9719139934 3.904266834 L x1.218050003 0.08955222368}
+   blue {curve L x-0.001558230026 0.1707348824 S x0.05594849959 0.4260802269 x0.1901959926 0.6814255714 x0.5415009856 1.216434717 s5.199999809 x1.011369944 4.483984947 L x1.241019964 0.04029858112}}
+ maskChannelInput none
+ maskChannelMask -rgba.alpha
+ unpremult none
+ fullGrain /shots/gro/dev.comp/pix/precomp/dev.comp_grain_alexa_lf_2kworkres_v1/2kworkres_ncf_exr/dev.comp_grain_alexa_lf_2kworkres_v1_2kworkres_ncf.####.exr
+ grain_last_frame 1100
+ loaded_preset Alexa_2kworkres
+}
+Viewer {
+ frame_range 1001-1068
+ center_fstop 0
+ gl_buffer_depth float
+ viewerInputOrder "after viewer process"
+ name Viewer1
+ selected true
+ xpos -6183
+ ypos -371
+}
