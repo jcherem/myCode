@@ -1,0 +1,74 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+push $cut_paste_input
+Dot {
+name Dot233
+selected true
+xpos 15984
+ypos 5921
+}
+set N2c1ac800 [stack 0]
+Dot {
+name Dot245
+selected true
+xpos 15757
+ypos 5921
+}
+add_layer {aov_util_pref aov_util_pref.red aov_util_pref.green aov_util_pref.blue}
+PMatte {
+name PMatte7
+note_font "Bitstream Vera Sans"
+selected true
+xpos 15723
+ypos 5969
+in aov_util_pref
+channel3 alpha
+sampled_frame 1038
+posCenter {352 601}
+endSample {-12.32763672 124.7539062 12.68041992}
+centerSample {-0.1573562622 178.6132812 16.49462891}
+uniform_scale 14
+falloffType smooth
+}
+Dot {
+name Dot246
+selected true
+xpos 15757
+ypos 6051
+}
+push $N2c1ac800
+push $N2c1ac800
+Blur {
+channels rgba
+size 13.2
+name Blur33
+label "size: \[value size]"
+selected true
+xpos 16133
+ypos 5911
+}
+Merge2 {
+inputs 2
+operation divide
+name Merge33
+selected true
+xpos 16133
+ypos 5949
+}
+Saturation {
+saturation 0
+name Saturation4
+selected true
+xpos 16133
+ypos 6047
+}
+push $N2c1ac800
+Merge2 {
+inputs 2+1
+operation multiply
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge57
+selected true
+xpos 15950
+ypos 6047
+}
