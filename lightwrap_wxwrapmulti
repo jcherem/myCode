@@ -1,0 +1,274 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+push 0
+push $cut_paste_input
+Group {
+inputs 2
+name wxWrapMulti
+selected true
+xpos 57051
+ypos 3509
+addUserKnob {20 wxWrapMulti}
+addUserKnob {20 bgLumaRange n 1}
+bgLumaRange 0
+addUserKnob {41 range T Keyer2.range}
+addUserKnob {26 ""}
+addUserKnob {20 endGroup n -1}
+addUserKnob {7 blur_01_amount R 0 200}
+blur_01_amount 200
+addUserKnob {7 blur_01_opacity}
+blur_01_opacity 0.105
+addUserKnob {26 ""}
+addUserKnob {7 blur_02_amount R 0 200}
+blur_02_amount 600
+addUserKnob {7 blur_02_opacity}
+blur_02_opacity 0.18
+addUserKnob {26 ""}
+addUserKnob {7 blur_03_amount R 0 200}
+blur_03_amount 13
+addUserKnob {7 blur_03_opacity}
+addUserKnob {26 ""}
+addUserKnob {7 blur_04_amount R 0 200}
+addUserKnob {7 blur_04_opacity}
+addUserKnob {26 ""}
+addUserKnob {7 blur_05_amount R 0 200}
+addUserKnob {7 blur_05_opacity}
+}
+Input {
+inputs 0
+name fgAlpha
+label fgAlpha
+xpos 560
+ypos 134
+}
+Dot {
+name Dot4
+xpos 594
+ypos 444
+}
+set Ncb67cf00 [stack 0]
+push $Ncb67cf00
+Input {
+inputs 0
+name bgImg
+label bgImg
+xpos 1010
+ypos 134
+number 1
+}
+Dot {
+name Dot5
+xpos 1044
+ypos 290
+}
+Keyer {
+operation "luminance key"
+range {0.008642458534 0.4169654807 1 1}
+name Keyer2
+xpos 1010
+ypos 334
+}
+Premult {
+name Premult2
+xpos 1010
+ypos 388
+}
+Group {
+inputs 2
+name scOutside
+tile_color 0x8378ff
+xpos 1010
+ypos 440
+addUserKnob {20 User}
+addUserKnob {41 operation T In.operation}
+addUserKnob {41 sRGB l "Video colorspace" T In.sRGB}
+addUserKnob {41 screen_alpha l "alpha masking" T In.screen_alpha}
+addUserKnob {41 bbox l "set bbox to " T In.bbox}
+addUserKnob {41 metainput l "metadata from" T In.metainput}
+addUserKnob {26 ""}
+addUserKnob {41 Achannels l "A channels" T In.Achannels}
+addUserKnob {41 Bchannels l "B channels" T In.Bchannels}
+addUserKnob {41 output T In.output}
+addUserKnob {41 also_merge l "also merge" T In.also_merge}
+addUserKnob {26 ""}
+addUserKnob {26 "" l mask}
+addUserKnob {41 maskChannelMask l "" -STARTLINE T In.maskChannelMask}
+addUserKnob {41 maskChannelInput l "" -STARTLINE T In.maskChannelInput}
+addUserKnob {41 inject T In.inject}
+addUserKnob {41 invert_mask l invert T In.invert_mask}
+addUserKnob {41 fringe T In.fringe}
+addUserKnob {41 mix T In.mix}
+}
+Input {
+inputs 0
+name matte
+xpos -800
+ypos -105
+number 1
+}
+Input {
+inputs 0
+name img
+xpos -573
+ypos -172
+}
+Merge2 {
+inputs 2
+operation stencil
+bbox B
+name In
+xpos -645
+ypos -96
+}
+Output {
+name Output1
+xpos -645
+ypos 30
+}
+end_group
+set Ncb65eb00 [stack 0]
+Blur {
+channels rgba
+size {{parent.blur_05_amount i}}
+name Blur6
+xpos 1310
+ypos 538
+}
+Multiply {
+channels rgba
+value {{parent.blur_05_opacity i}}
+name Multiply5
+xpos 1310
+ypos 590
+}
+push $Ncb65eb00
+Blur {
+channels rgba
+size {{parent.blur_04_amount i}}
+name Blur5
+xpos 1160
+ypos 540
+}
+Multiply {
+channels rgba
+value {{parent.blur_04_opacity i}}
+name Multiply4
+xpos 1160
+ypos 592
+}
+push $Ncb65eb00
+Blur {
+channels rgba
+size {{parent.blur_03_amount i}}
+name Blur4
+xpos 1010
+ypos 540
+}
+Multiply {
+channels rgba
+value {{parent.blur_03_opacity i}}
+name Multiply3
+xpos 1010
+ypos 592
+}
+push 0
+push $Ncb65eb00
+Blur {
+channels rgba
+size {{parent.blur_01_amount i}}
+name Blur2
+xpos 710
+ypos 540
+}
+Multiply {
+channels rgba
+value {{parent.blur_01_opacity i}}
+name Multiply1
+xpos 710
+ypos 590
+}
+push $Ncb65eb00
+Blur {
+channels rgba
+size {{parent.blur_02_amount i}}
+name Blur3
+xpos 860
+ypos 540
+}
+Multiply {
+channels rgba
+value {{parent.blur_02_opacity i}}
+name Multiply2
+xpos 860
+ypos 592
+}
+Merge2 {
+inputs 5+1
+name Merge7
+xpos 1010
+ypos 690
+}
+Dot {
+name Dot6
+xpos 1044
+ypos 844
+}
+Group {
+inputs 2
+name scInside
+tile_color 0x8378ff
+xpos 560
+ypos 840
+addUserKnob {20 User}
+addUserKnob {41 operation T In.operation}
+addUserKnob {41 sRGB l "Video colorspace" T In.sRGB}
+addUserKnob {41 screen_alpha l "alpha masking" T In.screen_alpha}
+addUserKnob {41 bbox l "set bbox to " T In.bbox}
+addUserKnob {41 metainput l "metadata from" T In.metainput}
+addUserKnob {26 ""}
+addUserKnob {41 Achannels l "A channels" T In.Achannels}
+addUserKnob {41 Bchannels l "B channels" T In.Bchannels}
+addUserKnob {41 output T In.output}
+addUserKnob {41 also_merge l "also merge" T In.also_merge}
+addUserKnob {26 ""}
+addUserKnob {26 "" l mask}
+addUserKnob {41 maskChannelMask l "" -STARTLINE T In.maskChannelMask}
+addUserKnob {41 maskChannelInput l "" -STARTLINE T In.maskChannelInput}
+addUserKnob {41 inject T In.inject}
+addUserKnob {41 invert_mask l invert T In.invert_mask}
+addUserKnob {41 fringe T In.fringe}
+addUserKnob {41 mix T In.mix}
+}
+Input {
+inputs 0
+name matte
+xpos -645
+ypos -155
+number 1
+}
+Input {
+inputs 0
+name img
+xpos -359
+ypos -147
+}
+Merge2 {
+inputs 2
+operation mask
+bbox A
+name In
+xpos -542
+ypos -86
+}
+Output {
+name Output1
+xpos -542
+ypos 14
+}
+end_group
+Output {
+name Output1
+xpos 560
+ypos 990
+}
+end_group
