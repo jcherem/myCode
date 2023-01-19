@@ -1,0 +1,287 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+push $cut_paste_input
+Group {
+name Glow_blur31
+tile_color 0xd36f0eff
+note_font_color 0xfff400ff
+selected true
+xpos 41009
+ypos 5668
+addUserKnob {20 User}
+addUserKnob {41 value l spread T __SPREAD__.value}
+addUserKnob {41 value_1 l brightness T Brightness.value}
+addUserKnob {26 ""}
+addUserKnob {7 lo l threshold_value R 0 8}
+addUserKnob {41 multiply T Grade2.multiply}
+addUserKnob {26 ""}
+addUserKnob {41 disable_1 l "Disable Source" T Plus1.disable}
+addUserKnob {41 value_2 l "Source Percentage" T Multiply2.value}
+addUserKnob {41 BBox T Crop_overscan42.BBox}
+}
+Input {
+inputs 0
+name Img
+xpos -441
+ypos -221
+}
+set N6c156400 [stack 0]
+Dot {
+name Dot4
+xpos -407
+ypos 859
+}
+Dot {
+name Dot1
+xpos 83
+ypos 859
+}
+set N6c155600 [stack 0]
+push $N6c155600
+Multiply {
+channels rgba
+value 0.36
+name Multiply2
+label "\[value value]"
+xpos 240
+ypos 850
+postage_stamp_frame 1001
+}
+push $N6c156400
+Keyer {
+operation "luminance key"
+name Keyer1
+xpos 440
+ypos -241
+postage_stamp_frame 1001
+}
+Premult {
+name Premult2
+xpos 440
+ypos -166
+}
+Multiply {
+channels rgb
+value {0.6000000238 0.7799999714 0.7200000286 0}
+name Multiply1
+xpos 440
+ypos -14
+}
+Multiply {
+channels rgb
+value 0.11
+name Brightness
+xpos 440
+ypos 59
+}
+set N6c136400 [stack 0]
+Blur {
+channels rgba
+size {{__BLUR__8.size*2 i}}
+name __BLUR__9
+xpos 866
+ypos 329
+}
+Multiply {
+channels rgba
+value {{__SPREAD__8.value*__SPREAD__.value i}}
+name __SPREAD__9
+xpos 866
+ypos 406
+}
+push $N6c136400
+Blur {
+channels rgba
+size {{__BLUR__7.size*2 i}}
+name __BLUR__8
+xpos 754
+ypos 326
+}
+Multiply {
+channels rgba
+value {{__SPREAD__7.value*__SPREAD__.value i}}
+name __SPREAD__8
+xpos 754
+ypos 403
+}
+push $N6c136400
+Blur {
+channels rgba
+size {{__BLUR__6.size*2 i}}
+name __BLUR__7
+xpos 643
+ypos 328
+}
+Multiply {
+channels rgba
+value {{__SPREAD__6.value*__SPREAD__.value i}}
+name __SPREAD__7
+xpos 643
+ypos 405
+}
+push $N6c136400
+Blur {
+channels rgba
+size {{__BLUR__5.size*2 i}}
+name __BLUR__6
+xpos 542
+ypos 327
+}
+Multiply {
+channels rgba
+value {{__SPREAD__5.value*__SPREAD__.value i}}
+name __SPREAD__6
+xpos 542
+ypos 408
+}
+push $N6c136400
+Blur {
+channels rgba
+size {{__BLUR__4.size*2 i}}
+name __BLUR__5
+xpos 440
+ypos 331
+}
+Multiply {
+channels rgba
+value {{__SPREAD__4.value*__SPREAD__.value i}}
+name __SPREAD__5
+xpos 440
+ypos 407
+}
+push $N6c136400
+Blur {
+channels rgba
+size {{__BLUR__3.size*2 i}}
+name __BLUR__4
+xpos 341
+ypos 330
+}
+Multiply {
+channels rgba
+value {{__SPREAD__3.value*__SPREAD__.value i}}
+name __SPREAD__4
+xpos 341
+ypos 404
+}
+push $N6c136400
+Blur {
+channels rgba
+size {{__BLUR__2.size*2 i}}
+name __BLUR__3
+xpos 238
+ypos 330
+}
+Multiply {
+channels rgba
+value {{__SPREAD__2.value*__SPREAD__.value i}}
+name __SPREAD__3
+xpos 238
+ypos 403
+}
+push $N6c136400
+Blur {
+channels rgba
+size {{__BLUR__1.size*2 i}}
+name __BLUR__2
+xpos 131
+ypos 329
+}
+Multiply {
+channels rgba
+value {{__SPREAD__1.value*__SPREAD__.value i}}
+name __SPREAD__2
+xpos 131
+ypos 403
+}
+push 0
+push $N6c136400
+Blur {
+channels rgb
+size 0.5
+name __BLUR__
+xpos -67
+ypos 329
+}
+Multiply {
+channels rgba
+value 1.02
+name __SPREAD__
+xpos -67
+ypos 401
+}
+push $N6c136400
+Blur {
+channels rgb
+size {{__BLUR__.size*2 i}}
+name __BLUR__1
+xpos 29
+ypos 329
+}
+Multiply {
+channels rgba
+value {{__SPREAD__.value*__SPREAD__.value i}}
+name __SPREAD__1
+xpos 29
+ypos 401
+}
+Merge2 {
+inputs 10+1
+operation plus
+Achannels rgb
+Bchannels rgb
+output rgb
+name Plus
+xpos 440
+ypos 622
+}
+Grade {
+multiply {1 1 1 1}
+multiply_panelDropped true
+gamma {1.129999995 0.9100000262 0.8100000024 1}
+black_clamp false
+unpremult -rgba.alpha
+name Grade2
+xpos 440
+ypos 673
+}
+Crop {
+box {{0-BBox} {0-BBox} {input.width+BBox} {input.height+BBox}}
+name Crop_overscan42
+label "BBox value \[value BBox]"
+note_font "Bitstream Vera Sans Bold"
+note_font_size 12
+note_font_color 0xffff00ff
+xpos 440
+ypos 722
+postage_stamp_frame 1001
+addUserKnob {20 BBox_1 l BBox}
+addUserKnob {7 BBox R 50 500}
+BBox 80
+}
+Merge2 {
+inputs 2
+operation plus
+Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Plus1
+xpos 440
+ypos 856
+disable true
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy1
+xpos 440
+ypos 924
+postage_stamp_frame 1009
+}
+Output {
+name Output1
+xpos 440
+ypos 1023
+}
+end_group
