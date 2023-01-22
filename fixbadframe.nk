@@ -1,0 +1,91 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+push $cut_paste_input
+Group {
+name FixBadFrame1
+tile_color 0xff
+note_font_color 0xffffff
+selected true
+xpos 38702
+ypos 7045
+postage_stamp_frame 1001
+addUserKnob {20 User}
+addUserKnob {7 speed R 0 2}
+speed 0.5
+addUserKnob {3 brokenframe l "Broken Frame"}
+brokenframe 1054
+addUserKnob {41 input.first l "Input Range" T OFlow1.input.first}
+addUserKnob {41 input.last l "" -STARTLINE T OFlow1.input.last}
+addUserKnob {41 resetInputRange l Reset T OFlow1.resetInputRange}
+}
+Input {
+inputs 0
+name Input1
+xpos -920
+ypos 275
+}
+Dot {
+name Dot2
+xpos -886
+ypos 376
+}
+set N53741d00 [stack 0]
+FrameHold {
+first_frame {{(brokenframe)+1}}
+name FrameHold1
+xpos -1047
+ypos 367
+postage_stamp_frame 1001
+}
+push $N53741d00
+Switch {
+inputs 2
+which {{frame==(brokenframe)?1:0}}
+name Switch2
+xpos -920
+ypos 456
+postage_stamp_frame 1001
+}
+FrameRange {
+first_frame {{(brokenframe)-1}}
+last_frame {{(brokenframe)+1}}
+time ""
+name FrameRange1
+xpos -920
+ypos 510
+postage_stamp_frame 1001
+}
+OFlow2 {
+input.first 1001
+input.last 1061
+timingOutputSpeed {{speed}}
+name OFlow1
+xpos -920
+ypos 599
+postage_stamp_frame 1001
+}
+push $N53741d00
+Dot {
+name Dot3
+xpos -694
+ypos 376
+}
+Dot {
+name Dot1
+xpos -694
+ypos 711
+}
+Switch {
+inputs 2
+which {{frame==(brokenframe)?1:0}}
+name Switch1
+xpos -920
+ypos 708
+postage_stamp_frame 1001
+}
+Output {
+name Output1
+xpos -920
+ypos 812
+}
+end_group
