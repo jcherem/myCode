@@ -1,0 +1,57 @@
+import Locometry
+
+
+
+import W_backdropper
+
+import AlignDots
+
+nuke.menu('Nuke').addCommand('Extra/Align Dots', "AlignDots.AlignDots()", "shift+alt+z", shortcutContext=2)
+
+
+try:
+    import shortcuteditor
+    shortcuteditor.nuke_setup()
+except Exception:
+    import traceback
+    traceback.print_exc()
+
+import duplicateWithInputs
+
+#nuke.menu('Nuke').addCommand('Scripts/Duplicate with Inputs/copy','duplicateWithInputs.copyWithInputs()', 'ctrl+alt+c')
+#nuke.menu('Nuke').addCommand('Scripts/Duplicate with Inputs/paste','duplicateWithInputs.pasteWithInputs()', 'ctrl+alt+v')
+nuke.menu('Nuke').addCommand('Scripts/Duplicate with Inputs/duplicate','duplicateWithInputs.duplicateWithInputs()', 'ctrl+e') 
+
+
+
+# StickyNote > default text size: 40pt  
+nuke.knobDefault("StickyNote.note_font_size", "40")  
+nuke.knobDefault("StickyNote.tile_color", "0x050505FF")
+
+nuke.knobDefault('Backdrop.appearance', "Border")
+nuke.knobDefault("Backdrop.appearance", "Border")
+nuke.knobDefault('Backdrop.appearance', "1")
+nuke.knobDefault("Backdrop.appearance", "border")
+
+# ShortcutEditor generated snippet:
+cur_menu = nuke.menu(u'Nodes')
+m = cur_menu.findItem(u'Other/StickyNote')
+if m is not None:
+    m.setShortcut(u'Alt+Shift+N')
+
+
+cur_menu = nuke.menu(u'Nodes')
+m = cur_menu.findItem(u'Channel/ChannelMerge')
+if m is not None:
+    m.setShortcut(u'Alt+O')
+
+
+cur_menu = nuke.menu(u'Nuke')
+m = cur_menu.findItem(u'Workspace/Toggle Hide Floating Viewers')
+if m is not None:
+    m.setShortcut(u'')
+
+m = cur_menu.findItem(u'Edit/Node/Connect')
+if m is not None:
+       m.setShortcut(u'Shift+Q')
+###    m.setShortcut(u'e')
