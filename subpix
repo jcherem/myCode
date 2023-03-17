@@ -1,0 +1,123 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+push $cut_paste_input
+Group {
+name subpix5
+tile_color 0xbf7e0bff
+selected true
+xpos 13862
+ypos 52338
+mapsize {0.15 0.15}
+addUserKnob {20 "" l User}
+addUserKnob {41 channels T Copy1.channels}
+addUserKnob {26 ""}
+addUserKnob {41 size T DilateMaster.size}
+addUserKnob {26 ""}
+addUserKnob {41 maskChannelInput l mask -STARTLINE T Copy1.maskChannelInput}
+addUserKnob {41 invert_mask l invert -STARTLINE T Copy1.invert_mask}
+addUserKnob {41 mix T Copy1.mix}
+}
+Input {
+inputs 0
+name Input1
+xpos 37
+ypos -138
+}
+Dot {
+name Dot1
+xpos 71
+ypos -64
+}
+set Nac3a8800 [stack 0]
+Dot {
+name Dot4
+xpos -95
+ypos -64
+}
+push $Nac3a8800
+Dot {
+name Dot2
+xpos 188
+ypos -64
+}
+set Nac383900 [stack 0]
+Dilate {
+size {{parent.size.w==parent.size.h?ceil(parent.size.h):0} {ceil(parent.size.h) i}}
+name DilateHeightCeil
+xpos 269
+ypos -15
+}
+push $Nac383900
+Dilate {
+size {{parent.size.w==parent.size.h?floor(parent.size.h):0 i} {floor(parent.size.h) i}}
+name DilateHeightFloor
+xpos 154
+ypos -14
+}
+Dissolve {
+inputs 2
+which {{parent.size.h%1}}
+name Dissolve1
+xpos 154
+ypos 50
+}
+set Nac382400 [stack 0]
+push $Nac382400
+Dot {
+name Dot3
+xpos 322
+ypos 121
+}
+set Nac381d00 [stack 0]
+Dilate {
+size {{ceil(parent.size.w)} 0}
+name DilateWidthCeil
+xpos 404
+ypos 188
+}
+push $Nac381d00
+Dilate {
+size {{floor(parent.size.w)} 0}
+name DilateWidthFloor
+xpos 288
+ypos 189
+}
+Dissolve {
+inputs 2
+which {{parent.size.w%1}}
+name Dissolve3
+xpos 288
+ypos 275
+}
+Switch {
+inputs 2
+which {{parent.size.w==parent.size.h}}
+name Switch1
+xpos 157
+ypos 355
+}
+push $Nac3a8800
+Copy {
+inputs 2
+from0 -rgba.alpha
+to0 -rgba.alpha
+channels rgba
+maskChannelMask none
+name Copy1
+xpos 37
+ypos 396
+}
+Output {
+name Output1
+xpos 45
+ypos 818
+}
+Dilate {
+inputs 0
+size -1.5
+name DilateMaster
+label "Do Not Delete\n"
+xpos -295
+ypos -23
+}
+end_group
