@@ -1,0 +1,178 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+push $cut_paste_input
+Group {
+name Edgefromalpha
+help "Makes an edge from an alpha channel and allows modification of the edge.\n\nUse as an alternative to EdgeDetect.\n\nCopyright (c) 2009 Sony Pictures Imageworks Inc. All rights reserved."
+tile_color 0xcc804eff
+note_font "Bitstream Vera Sans"
+selected true
+xpos 32488
+ypos 73250
+mapsize {0.15 0.15}
+addUserKnob {20 sp_edge_from_alpha l SpEdgeFromAlpha}
+addUserKnob {41 channel t "The channel to make the edge from." T Copy2.from0}
+addUserKnob {41 output t "The channel to put the edge into." T ChannelMerge4.output}
+addUserKnob {41 blackpoint T Grade1.blackpoint}
+addUserKnob {41 whitepoint T Grade1.whitepoint}
+addUserKnob {26 null l "<b>Edge Operation"}
+addUserKnob {4 inner_edge_op l "inner edge op" t "The erode style to apply to the inner edge." M {"Erode (fast)" "Erode (filter)" "Erode (blur)" ""}}
+inner_edge_op "Erode (filter)"
+addUserKnob {4 filter_1 l filter -STARTLINE M {box triangle quadratic gaussian}}
+addUserKnob {8 blur_1 l blur -STARTLINE +HIDDEN}
+addUserKnob {4 outer_edge_op l "outer edge op" t "The erode style to apply to the outer edge." M {"Erode (fast)" "Erode (filter)" "Erode (blur)" "" "" "" "" ""}}
+outer_edge_op "Erode (filter)"
+addUserKnob {4 filter -STARTLINE M {box triangle quadratic gaussian}}
+addUserKnob {8 blur -STARTLINE +HIDDEN}
+addUserKnob {26 edge_size l "<b>Edge Size"}
+addUserKnob {14 erode_inside_size l inside t "The size of the inside edge" R 0 100}
+erode_inside_size 5
+addUserKnob {14 erode_outside_size l outside t "The size of the outside edge." R 0 100}
+erode_outside_size 5
+addUserKnob {26 null2 l "<b>Edge Blur"}
+addUserKnob {14 inside_blur_size l "inside blur size" t "Amount to blur the inside edge." R 0 100}
+addUserKnob {14 outside_blur_size l "outside blur size" t "Amount to blur the outside edge." R 0 100}
+}
+Input {
+inputs 0
+name Input
+xpos -568
+ypos -187
+}
+AddChannels {
+channels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+name AddChannels1
+xpos -568
+ypos -111
+}
+set N6619f900 [stack 0]
+Dot {
+name Dot3
+xpos -536
+ypos 414
+}
+push $N6619f900
+push $N6619f900
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.red
+name Copy2
+xpos -184
+ypos -111
+}
+Clamp {
+channels {rgba.red -rgba.green -rgba.blue none}
+name Clamp1
+xpos -184
+ypos -60
+}
+Grade {
+channels {rgba.red -rgba.green -rgba.blue none}
+black_clamp false
+name Grade1
+xpos -184
+ypos -12
+}
+set N44797900 [stack 0]
+Erode {
+channels {none none none rgba.red}
+size {{parent.erode_inside_size.w} {parent.erode_inside_size.h}}
+blur {{parent.blur_1}}
+name ErodeInside
+xpos 104
+ypos 57
+}
+push $N44797900
+FilterErode {
+channels {none none none rgba.red}
+size {{parent.ErodeInside.size.w} {parent.ErodeInside.size.h}}
+filter {{parent.filter_1}}
+name FilterErode_inside
+xpos 8
+ypos 57
+}
+push $N44797900
+Dilate {
+size {{-parent.ErodeInside.size.w i} {-parent.ErodeInside.size.h i}}
+name Dilate_inside
+xpos -88
+ypos 57
+}
+Switch {
+inputs 3
+which {{parent.inner_edge_op i}}
+name Switch3
+xpos 8
+ypos 182
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue none}
+size {{parent.inside_blur_size}}
+name BlurInside
+xpos 8
+ypos 249
+}
+push $N44797900
+Erode {
+channels {none none none rgba.red}
+size {{-parent.erode_outside_size.w} {-parent.erode_outside_size.h}}
+blur {{parent.blur}}
+name ErodeOutside
+xpos -232
+ypos 57
+}
+push $N44797900
+FilterErode {
+channels {none none none rgba.red}
+size {{-parent.erode_outside_size.w} {-parent.erode_outside_size.h}}
+filter {{parent.filter}}
+name FilterErode_outside
+xpos -328
+ypos 57
+}
+push $N44797900
+Dilate {
+channels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+size {{parent.erode_outside_size.w i} {parent.erode_outside_size.h i}}
+name Dilate_outside
+xpos -424
+ypos 57
+}
+Switch {
+inputs 3
+which {{parent.outer_edge_op i}}
+name Switch2
+xpos -328
+ypos 182
+}
+Blur {
+channels {rgba.red -rgba.green -rgba.blue none}
+size {{parent.outside_blur_size}}
+name BlurOutside
+xpos -328
+ypos 249
+}
+ChannelMerge {
+inputs 2
+A rgba.red
+operation stencil
+B rgba.red
+name ChannelMerge4
+xpos -184
+ypos 312
+}
+Copy {
+inputs 2
+from0 rgba.red
+to0 rgba.red
+name Copy1
+xpos -184
+ypos 407
+}
+Output {
+name Output1
+xpos -184
+ypos 566
+}
+end_group
