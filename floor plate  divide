@@ -1,0 +1,71 @@
+set cut_paste_input [stack 0]
+version 12.2 v10
+push $cut_paste_input
+Dot {
+name Dot295
+selected true
+xpos 14258
+ypos -15790
+}
+set Naebef200 [stack 0]
+push $Naebef200
+Blur {
+channels rgba
+size 60
+name Blur90
+label "size: \[value size]"
+selected true
+xpos 14112
+ypos -15800
+}
+Merge2 {
+inputs 2
+operation divide
+name Merge106
+selected true
+xpos 14112
+ypos -15728
+}
+Grade {
+white 0.7
+name Grade97
+selected true
+xpos 14112
+ypos -15682
+}
+Dot {
+name Dot296
+selected true
+xpos 14146
+ypos -15627
+}
+push 0
+Merge2 {
+inputs 2
+operation multiply
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge129
+selected true
+xpos 13865
+ypos -15631
+}
+StickyNote {
+inputs 0
+name StickyNote7
+tile_color 0x50505ff
+label BG
+note_font_size 40
+selected true
+xpos 14192
+ypos -15883
+}
+StickyNote {
+inputs 0
+name StickyNote9
+tile_color 0x50505ff
+label "blue screen plate floor"
+note_font_size 40
+selected true
+xpos 13592
+ypos -15705
+}
