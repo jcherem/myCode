@@ -1,0 +1,74 @@
+BlinkScript {
+  inputs 1
+  name "BlinkScript_ColorVectorScope"
+
+  // Convert from RGB to YUV
+  kernel YUVConversion : ImageComputationKernel<ePixelWise>
+  {
+    Image<eRead, eAccessPoint, eEdgeClamped> src;
+    Image<eWrite, eAccessRandom> dst;
+
+    void process()
+    {
+      float r = src()[0];
+      float g = src()[1];
+      float b = src()[2];
+
+      // Convert to YUV
+      float y = 0.299*r + 0.587*g + 0.114*b;
+      float u = -0.14713*r - 0.28886*g + 0.436*b;
+      float v = 0.615*r - 0.51498*g - 0.10001*b;
+
+      dst().x = y;
+      dst().y = u;
+      dst().z = v;
+    }
+  }
+
+  // Convert U and V components to polar coordinates
+  kernel ChromaToPolar : ImageComputationKernel<ePixelWise>
+  {
+    Image<eRead, eAccessPoint, eEdgeClamped> src;
+    Image<eWrite, eAccessRandom> dst;
+
+    void process()
+    {
+      float u = src().y;
+      float v = src().z;
+
+      // Convert to polar coordinates
+      float mag = sqrt(u*u + v*v);
+      float angle = atan2(v, u);
+
+      dst().x = src().x;
+      dst().y = mag;
+      dst().z = angle;
+    }
+  }
+
+  // Normalize the chrominance values
+  kernel NormalizeChroma : ImageComputationKernel<ePixelWise>
+  {
+    Image<eRead, eAccessPoint, eEdgeClamped> src;
+    Image<eWrite, eAccessRandom> dst;
+
+    void process()
+    {
+      float u = src().y;
+      float v = src().z;
+
+      // Normalize the chrominance values
+      float mag = sqrt(u*u + v*v);
+      float norm_mag = mag / sqrt(2.0);
+
+      dst().x = src().x;
+      dst().y = norm_mag;
+      dst().z = src().z;
+    }
+  }
+
+  // Convert polar coordinates to cartesian coordinates
+  kernel PolarToCartesian : ImageComputationKernel<ePixelWise>
+  {
+    Image<eRead, eAccessPoint, eEdgeClamped> src;
+    Image<eWrite,
