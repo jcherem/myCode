@@ -1,0 +1,58 @@
+ParticleBlinkScript {
+  inputs 2
+  name "ParticleBlinkScript_DirtDebris"
+
+  // Parámetros del sistema de partículas
+  parameter float size = 1.0
+  parameter float speed = 10.0
+  parameter float randomness = 1.0
+
+  // Definir entradas
+  Image bbox
+  Image particle_input
+
+  // Definir salidas
+  Image particle_output
+
+  // Declarar variables globales
+  float3 vel = float3(0, 0, 0)
+  float3 acc = float3(0, -9.8, 0)
+  float3 pos = float3(0, 0, 0)
+  float3 rand = float3(0, 0, 0)
+
+  // Definir kernel de particulas
+  kernel particle_shader : ImageComputationKernel<ePixelWise> {
+    Image<eRead, eAccessPoint, eEdgeClamped> bbox;
+    Image<eRead, eAccessRandom, eEdgeClamped> particle_input;
+    Image<eWrite, eAccessPoint> particle_output;
+
+    void process() {
+      // Obtener la posición del píxel en coordenadas de mundo
+      pos = outputCoord();
+
+      // Si el píxel está dentro de los límites del bounding box
+      if (bbox(pos.x, pos.y)) {
+        // Obtener la velocidad aleatoria
+        rand = random3(pos, randomness);
+
+        // Calcular la velocidad y la posición actual
+        vel = vel + acc;
+        pos = pos + vel * speed + rand;
+
+        // Asignar el valor de los canales RGB del pixel de entrada al pixel de salida
+        particle_output(pos.x, pos.y, 0) = particle_input(pos.x, pos.y, 0);
+        particle_output(pos.x, pos.y, 1) = particle_input(pos.x, pos.y, 1);
+        particle_output(pos.x, pos.y, 2) = particle_input(pos.x, pos.y, 2);
+
+        // Resetear la velocidad y la aceleración cuando la partícula cae al suelo
+        if (pos.y < bbox.bounds().y()) {
+          vel = float3(0, 0, 0);
+          acc = float3(0, 0, 0);
+        }
+      }
+    }
+  }
+
+  // Definir la particula shader para el sistema de particulas
+  particle_shader(ParticleBBox(), particle_input, particle_output)
+}
