@@ -1,0 +1,42 @@
+// Definimos la estructura de color en RGB
+struct RGB {
+    float r;
+    float g;
+    float b;
+};
+
+// Función auxiliar para calcular el ángulo polar de un vector
+float polarAngle(float2 v) {
+    return atan2(v.y, v.x);
+}
+
+kernel VectorScopeKernel : ImageComputationKernel<ePixelWise> {
+    Image<eRead, eAccessPoint, eEdgeClamped> input;
+
+    Image<eWrite, eAccessPoint, eEdgeClamped> output;
+
+    void process() {
+        // Definimos las constantes necesarias
+        const float2 center = float2(0.5, 0.5);
+        const float2 scale = float2(0.5, 0.5);
+
+        // Obtenemos el color del pixel actual
+        RGB color;
+        color.r = input().r;
+        color.g = input().g;
+        color.b = input().b;
+
+        // Convertimos el color a coordenadas polares
+        float2 polar;
+        polar.x = length(color);
+        polar.y = polarAngle(float2(color.b - color.r, color.g - (color.r + color.b) * 0.5));
+
+        // Escalamos y trasladamos las coordenadas polares al espacio de salida
+        polar = (polar - center) * scale + center;
+
+        // Escribimos el valor en el output
+        output().r = polar.x;
+        output().g = polar.y;
+        output().b = 0.0;
+    }
+};
