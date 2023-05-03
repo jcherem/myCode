@@ -1,0 +1,171 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+Group {
+name DeepCropFalloff
+tile_color 0x171a60ff
+selected true
+xpos 87275
+ypos 6136
+addUserKnob {20 TAB_DeepCropFalloff l DeepCropFalloff}
+addUserKnob {26 znear}
+addUserKnob {7 nearStart l Start R 0 1000}
+addUserKnob {7 nearEnd l End -STARTLINE R 0 1000}
+nearEnd 410
+addUserKnob {6 useZnear l use -STARTLINE}
+useZnear true
+addUserKnob {26 zfar}
+addUserKnob {7 farStart l Start R 0 1000}
+farStart 19
+addUserKnob {7 farEnd l End -STARTLINE R 0 1000}
+farEnd 36
+addUserKnob {6 useZfar l use -STARTLINE}
+useZfar true
+addUserKnob {26 ""}
+addUserKnob {6 dropHiddenSample l "Drop Hidden Sample" +STARTLINE}
+addUserKnob {6 reverse l Reverse +STARTLINE}
+}
+Input {
+inputs 0
+name deep
+xpos 678
+ypos 390
+}
+set N3ee64f30 [stack 0]
+DeepExpression {
+temp_name0 relative
+temp_expr0 "(deep.front-\[value start]) / (\[value end] - \[value start])"
+chans1 deep
+rgba.red "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.red"
+rgba.green "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.green"
+rgba.blue "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.blue"
+rgba.alpha "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.alpha"
+name DeepCropFadeFrontInverse
+xpos 1089
+ypos 471
+addUserKnob {20 User}
+addUserKnob {7 start R 0 10000}
+start {{nearEnd}}
+addUserKnob {7 end R 0 10000}
+end {{nearStart}}
+}
+DeepCrop {
+znear 30
+use_znear false
+zfar {{nearEnd}}
+bbox {409.6000061 409.6000061 1638.400024 1638.400024}
+use_bbox false
+name DeepCrop1
+xpos 1089
+ypos 589
+disable {{!dropHiddenSample}}
+}
+Switch {
+which {{!useZnear}}
+name Switch2
+xpos 1094
+ypos 691
+}
+push $N3ee64f30
+DeepExpression {
+temp_name0 relative
+temp_expr0 "1-(deep.front-\[value start]) / (\[value end] - \[value start])"
+chans1 deep
+rgba.red "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.red"
+rgba.green "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.green"
+rgba.blue "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.blue"
+rgba.alpha "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.alpha"
+name DeepCropFadeBackInverse
+xpos 907
+ypos 473
+addUserKnob {20 User}
+addUserKnob {7 start R 0 10000}
+start {{farEnd}}
+addUserKnob {7 end R 0 10000}
+end {{farStart}}
+}
+DeepCrop {
+znear {{farStart}}
+zfar 40
+use_zfar false
+bbox {409.6000061 409.6000061 1638.400024 1638.400024}
+use_bbox false
+name DeepCrop3
+xpos 907
+ypos 590
+disable {{!dropHiddenSample}}
+}
+Switch {
+which {{!useZfar}}
+name Switch3
+xpos 907
+ypos 690
+}
+DeepMerge {
+inputs 2
+name DeepMerge1
+xpos 907
+ypos 790
+}
+push $N3ee64f30
+DeepExpression {
+temp_name0 relative
+temp_expr0 "1-(deep.front-\[value start]) / (\[value end] - \[value start])"
+chans1 deep
+rgba.red "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.red"
+rgba.green "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.green"
+rgba.blue "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.blue"
+rgba.alpha "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.alpha"
+name DeepCropFadeBack
+xpos 678
+ypos 479
+disable {{!useZfar}}
+addUserKnob {20 User}
+addUserKnob {7 start R 0 10000}
+start {{farStart}}
+addUserKnob {7 end R 0 10000}
+end {{farEnd}}
+}
+DeepExpression {
+temp_name0 relative
+temp_expr0 "(deep.front-\[value start]) / (\[value end] - \[value start])"
+chans1 deep
+rgba.red "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.red"
+rgba.green "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.green"
+rgba.blue "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.blue"
+rgba.alpha "( 0 < relative? (relative < 1 ? relative : 1 ) : 0 ) * rgba.alpha"
+name DeepCropFadeFront
+xpos 678
+ypos 591
+disable {{!useZnear}}
+addUserKnob {20 User}
+addUserKnob {7 start R 0 10000}
+start {{nearStart}}
+addUserKnob {7 end R 0 10000}
+end {{nearEnd}}
+}
+DeepCrop {
+znear {{nearStart}}
+use_znear {{useZnear}}
+zfar {{farEnd}}
+use_zfar {{useZfar}}
+bbox {409.6000061 409.6000061 1638.400024 1638.400024}
+use_bbox false
+name DeepCrop
+xpos 678
+ypos 684
+disable {{!dropHiddenSample}}
+}
+Switch {
+inputs 2
+which {{reverse}}
+name Switch1
+xpos 678
+ypos 790
+}
+Output {
+name Output1
+xpos 678
+ypos 990
+}
+end_group
