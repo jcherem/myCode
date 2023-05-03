@@ -1,0 +1,982 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+BackdropNode {
+inputs 0
+name BackdropNode118
+tile_color 0xca9700ff
+label precomp
+note_font_size 42
+selected true
+xpos -1906
+ypos 13408
+appearance Border
+bdwidth 947
+bdheight 245
+z_order 1
+}
+Roto {
+inputs 0
+output alpha
+cliptype none
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x45052000 x44900000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x44836000 x44864000}
+        {{{x41200000 0 1 x3f42c859 1}
+       {x41dc0000 x3f42c859 1 0 1}}
+      {{x40a00000 0 1 x3e0a7643 1}
+       {x4101c280 x3e0a7643 1 0 1}}}
+        {{{x44988000 0 1 x41166f59 1}
+       {x44b10803 x41166f59 1 0 1}}
+      {{x44750001 0 1 x3e8b76f5 1}
+       {x446c90f7 x3e8b76f5 1 0 1}}}
+        {{{xc1200000 0 1 xbf42c859 1}
+       {xc1dc0000 xbf42c859 1 0 1}}
+      {{xc0a00000 0 1 xbe0a7643 1}
+       {xc101c280 xbe0a7643 1 0 1}}}
+        {{{x41a00000 0 1 x3fc2c859 1}
+       {x425c0000 x3fc2c859 1 0 1}}
+      {{x42480000 0 1 x3fad1400 1}
+       {x42a23330 x3fad1400 1 0 1}}}
+        {{{x44884000 0 1 xbefa6dea 1}
+       {x44845803 xbefa6dea 1 0 1}}
+      {{x44688000 0 1 xbf8a3659 1}
+       {x44584a8f xbf8a3659 1 0 1}}}
+        {{{xc1a00000 0 1 xbfc2c859 1}
+       {xc25c0000 xbfc2c859 1 0 1}}
+      {{xc2480000 0 1 xbfad1400 1}
+       {xc2a23330 xbfad1400 1 0 1}}}
+        {{{xc1c80000 0 1 xbff37a6f 1}
+       {xc2898000 xbff37a6f 1 0 1}}
+      {{x41f00000 0 1 x3f4fb1bd 1}
+       {x4242a3e0 x3f4fb1bd 1 0 1}}}
+        {{{x448de001 0 1 x403bd3bd 1}
+       {x4493d005 x403bd3bd 1 0 1}}
+      {{x43e88000 0 1 xc15a7ae1 1}
+       {x42dddeb8 xc15a7ae1 1 0 1}}}
+        {{{x41c80000 0 1 x3ff37a6f 1}
+       {x42898000 x3ff37a6f 1 0 1}}
+      {{xc1f00000 0 1 xbf4fb191 1}
+       {xc242a3d0 xbf4fb191 1 0 1}}}
+        {{{xc20c0000 0 1 xc02a6f4e 1}
+       {xc2c08000 xc02a6f4e 1 0 1}}
+      {{xc1700000 0 1 xbecfb1bd 1}
+       {xc1c2a3e0 xbecfb1bd 1 0 1}}}
+        {{{x449ebfff 0 1 x41534def 1}
+       {x44c23801 x41534def 1 0 1}}
+      {{x43b18000 0 1 xc18509cb 1}
+       {xc286f850 xc18509cb 1 0 1}}}
+        {{{x420c0000 0 1 x402a6f4e 1}
+       {x42c08000 x402a6f4e 1 0 1}}
+      {{x41700000 0 1 x3ecfb1bd 1}
+       {x41c2a3e0 x3ecfb1bd 1 0 1}}}
+        {{{xc1200000 0 1 xbf42c859 1}
+       {xc1dc0000 xbf42c859 1 0 1}}
+      {{xc2340000 0 1 xbf9bc538 1}
+       {xc291fae0 xbf9bc538 1 0 1}}}
+        {{{x44af9fff 0 1 x41bbd37d 1}
+       {x44f0a001 x41bbd37d 1 0 1}}
+      {{x43fa0002 0 1 xc14b55ed 1}
+       {x4327b480 xc14b55ed 1 0 1}}}
+        {{{x41200000 0 1 x3f42c859 1}
+       {x41dc0000 x3f42c859 1 0 1}}
+      {{x42340000 0 1 x3f9bc54e 1}
+       {x4291fae8 x3f9bc54e 1 0 1}}}
+        {{{x41c80000 0 1 x3ff37a6f 1}
+       {x42898000 x3ff37a6f 1 0 1}}
+      {{xc2200000 0 1 xbf8a766f 1}
+       {xc281c290 xbf8a766f 1 0 1}}}
+        {{{x44ae6000 0 1 x41b5bd3d 1}
+       {x44ed3003 x41b5bd3d 1 0 1}}
+      {{x445e8000 0 1 xc00a5664 1}
+       {x4448123d xc00a5664 1 0 1}}}
+        {{{xc1c80000 0 1 xbff37a6f 1}
+       {xc2898000 xbff37a6f 1 0 1}}
+      {{x42200000 0 1 x3f8a766f 1}
+       {x4281c290 x3f8a766f 1 0 1}}}
+        {{{x41a00000 0 1 x3fc2c859 1}
+       {x425c0000 x3fc2c859 1 0 1}}
+      {{xc0a00000 0 1 xbe0a7643 1}
+       {xc101c280 xbe0a7643 1 0 1}}}
+        {{{x44a78000 0 1 x419442ce 1}
+       {x44da4803 x419442ce 1 0 1}}
+      {{x447a0001 0 1 x3f503216 1}
+       {x4474ad21 x3f503216 1 0 1}}}
+        {{{xc1a00000 0 1 xbfc2c859 1}
+       {xc25c0000 xbfc2c859 1 0 1}}
+      {{x40a00000 0 1 x3e0a7643 1}
+       {x4101c280 x3e0a7643 1 0 1}}}}}     idem}
+     {tx x44836000 x449f1b6e x4423edb7}
+     {a osw x41200000 osf 0 str 1 spx x45052000 spy x44900000 sb 1 ltn x44836000 ltm x44836000 tt x40800000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {2130 1152}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 1051
+lifetime_end 1051
+motionblur_shutter_offset_type centred
+source_black_outside true
+name Roto50
+selected true
+xpos -1181
+ypos 13761
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/BDL/tc4700/ELEMENT/E_tc4700_comp_precomp_droplets_v001/4260x2304/E_tc4700_comp_precomp_droplets_v001.####.exr
+localizationPolicy off
+format "4260 2304 0 0 4260 2304 1 BDL Working"
+proxy_format "640 480 0 0 640 480 1 PC_Video"
+first 1001
+last 1085
+origfirst 1001
+origlast 1085
+origset true
+version 4
+smartGrade true
+name Read53
+selected true
+xpos -1367
+ypos 13499
+postage_stamp_frame 1043
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/BDL/tc4700/ELEMENT/E_tc4700_comp_precomp_droplets_v001/4260x2304/E_tc4700_comp_precomp_droplets_v001.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 1a44a803-a653-430d-8682-0ddd2eb70e96
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 1645dc23-6de8-4158-b3ed-fbaae8ba90b8
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid a823960b-9249-468a-ba7a-025cac92994a
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 1
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+name Dot168
+selected true
+xpos -1333
+ypos 13619
+}
+Constant {
+inputs 0
+channels rgb
+format "4260 2304 0 0 4260 2304 1 BDL Working"
+name Constant3
+selected true
+xpos -2387
+ypos 11764
+}
+set N28dd0b30 [stack 0]
+Noise {
+type turbulence
+size 490
+zoffset 1.94
+center {2130 1152}
+name Noise5
+selected true
+xpos -1581
+ypos 12627
+}
+Shuffle2 {
+fromInput1 {{0} B}
+fromInput2 {{0} B}
+mappings "4 black -1 -1 rgba.blue 0 2 rgba.alpha 0 3 rgba.alpha 0 3 black -1 -1 rgba.red 0 0 rgba.green 0 1 rgba.green 0 1"
+name Shuffle46
+selected true
+xpos -1581
+ypos 12775
+}
+push $N28dd0b30
+Noise {
+size {{parent.Noise5.size}}
+center {2130 1152}
+name Noise6
+selected true
+xpos -1801
+ypos 12626
+}
+Shuffle2 {
+fromInput1 {{0} B}
+fromInput2 {{0} B}
+mappings "4 rgba.red 0 0 rgba.red 0 0 rgba.alpha 0 3 rgba.alpha 0 3 black -1 -1 rgba.green 0 1 black -1 -1 rgba.blue 0 2"
+name Shuffle48
+selected true
+xpos -1801
+ypos 12692
+}
+Merge2 {
+inputs 2
+operation plus
+name Merge128
+selected true
+xpos -1801
+ypos 12779
+}
+push $N28dd0b30
+Ramp {
+p0 {235 895}
+p1 {230 2050}
+name Ramp3
+selected true
+xpos -2387
+ypos 11857
+}
+push $cut_paste_input
+Roto {
+cliptype none
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x45052000 x44900000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {px x4482a000
+        {xc1b96680 0}
+        {x44f8932d x44500a8f}
+        {x41b96680 0}
+        {0 xc2373700}
+        {x44fdd1f7 x4464c667}
+        {0 x42373720}
+        {x41b96680 0}
+        {x44f8932d x44798240}
+        {xc1b96680 0}
+        {0 x42373720}
+        {x44f35463 x4464c667}
+        {0 xc2373700}}}     idem}
+     {tx x4482a000 x45002000 x43d18000}
+     {a osw x41200000 osf 0 str 1 spx x45052000 spy x44900000 sb 1 ltn x4482a000 ltm x4482a000 tt x40e00000}}
+    {curvegroup Rectangle1 512 bezier
+     {{cc
+       {f 8192}
+       {px x4482a000
+        {xbe910000 xc10c5c00}
+        {x44f62d71 x45138529}
+        {x3e910000 x410c5e00}
+        {xc0caa100 0}
+        {x44f8c6a0 x4514c647}
+        {x40caa100 0}
+        {xbea74000 x4114d300}
+        {x44fb9abf x45138529}
+        {x3ea76000 xc114d300}
+        {0 x434ffe7c}
+        {x44fb289c x44625e55}
+        {xc1678d80 0}
+        {x41678d80 0}
+        {x44f5bb4c x44625e55}
+        {0 x434ffe7c}}}
+      {cc
+       {f 8192}
+       {px x4482a000
+        {xbe910000 xc10c5c00}
+        {0 0}
+        {x3e910000 x410c5e00}
+        {xc0caa100 0}
+        {0 0}
+        {x40caa100 0}
+        {xbea74000 x4114d300}
+        {0 0}
+        {x3ea76000 xc114d300}
+        {0 x434ffe7c}
+        {0 0}
+        {xc1678d80 0}
+        {x41678d80 0}
+        {0 0}
+        {0 x434ffe7c}}}}
+     {tx x4482a000 x44f87000 x44960000}
+     {a osw x41200000 osf 0 str 1 spx x45052000 spy x44900000 sb 1 ltn x4482a000 ltm x4482a000 tt x41000000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { addPoints str 1 ssx 1 ssy 1 sf 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {2130 1152}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 1045
+lifetime_end 1045
+motionblur_shutter_offset_type centred
+source_black_outside true
+name Roto47
+selected true
+xpos -2161
+ypos 11683
+}
+Transform {
+scale 0.365
+center {1065 576}
+shutteroffset centred
+name Transform36
+selected true
+xpos -2161
+ypos 11738
+}
+push $N28dd0b30
+Merge2 {
+inputs 2
+name Merge129
+selected true
+xpos -2161
+ypos 11787
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge130
+selected true
+xpos -2161
+ypos 11867
+}
+set N28ef0a00 [stack 0]
+Transform {
+translate {-30 {curve x1001 1620 x1120 0}}
+center {1990 1110}
+shutteroffset centred
+name Transform37
+selected true
+xpos -2164
+ypos 11893
+}
+Transform {
+translate {-80 0}
+scale {0.15 0.6}
+center {2130 1152}
+shutteroffset centred
+name Transform38
+selected true
+xpos -2164
+ypos 11922
+}
+Dot {
+name Dot166
+selected true
+xpos -2130
+ypos 11965
+}
+set N28f1df90 [stack 0]
+Transform {
+translate {-1360 -1000}
+center {2130 1152}
+shutteroffset centred
+name Transform43
+selected true
+xpos -3861
+ypos 12111
+}
+push $N28f1df90
+Transform {
+translate {2580 -1100}
+center {2130 1152}
+shutteroffset centred
+name Transform44
+selected true
+xpos -3751
+ypos 12111
+}
+push $N28f1df90
+Transform {
+translate {-590 -2120}
+center {2130 1152}
+shutteroffset centred
+name Transform45
+selected true
+xpos -3641
+ypos 12111
+}
+push 0
+push $N28f1df90
+Transform {
+translate {370 -1330}
+center {2130 1152}
+shutteroffset centred
+name Transform46
+selected true
+xpos -3421
+ypos 12111
+}
+push $N28f1df90
+Transform {
+translate {2220 -470}
+center {2130 1152}
+shutteroffset centred
+name Transform47
+selected true
+xpos -3531
+ypos 12111
+}
+Merge2 {
+inputs 5+1
+name Merge131
+selected true
+xpos -3425
+ypos 12564
+}
+Transform {
+translate {-275 1030}
+scale 0.7
+center {1065 576}
+shutteroffset centred
+name Transform48
+selected true
+xpos -3386
+ypos 12712
+}
+push $N28f1df90
+Transform {
+translate {1025 -2030}
+center {2130 1152}
+shutteroffset centred
+name Transform49
+selected true
+xpos -2843
+ypos 12108
+}
+push $N28f1df90
+Transform {
+translate {-1650 -2000}
+center {2130 1152}
+shutteroffset centred
+name Transform50
+selected true
+xpos -2953
+ypos 12108
+}
+push $N28f1df90
+Transform {
+translate {-730 -560}
+center {2130 1152}
+shutteroffset centred
+name Transform51
+selected true
+xpos -3070
+ypos 12108
+}
+push 0
+push $N28f1df90
+Transform {
+translate {1430 -1570}
+center {2130 1152}
+shutteroffset centred
+name Transform52
+selected true
+xpos -3311
+ypos 12111
+}
+push $N28f1df90
+Transform {
+translate {-590 -2120}
+center {2130 1152}
+shutteroffset centred
+name Transform53
+selected true
+xpos -3201
+ypos 12111
+}
+Merge2 {
+inputs 5+1
+name Merge132
+selected true
+xpos -3070
+ypos 12466
+}
+Retime {
+input.first 1001
+input.first_lock true
+input.last 1059
+input.last_lock true
+output.first 1001
+output.first_lock true
+output.last 1066
+speed 0.9
+before continue
+after continue
+time ""
+name Retime6
+selected true
+xpos -3070
+ypos 12541
+}
+Transform {
+translate {1285 550}
+scale {0.63 1.2}
+center {1065 576}
+shutteroffset centred
+name Transform54
+selected true
+xpos -3070
+ypos 12605
+}
+push $N28f1df90
+Transform {
+translate {630 -360}
+center {2130 1152}
+shutteroffset centred
+name Transform55
+selected true
+xpos -2164
+ypos 12109
+}
+push $N28f1df90
+Transform {
+translate {-270 -1120}
+center {2130 1152}
+shutteroffset centred
+name Transform56
+selected true
+xpos -2293
+ypos 12108
+}
+push $N28f1df90
+Transform {
+translate {1930 -2290}
+center {2130 1152}
+shutteroffset centred
+name Transform57
+selected true
+xpos -2403
+ypos 12108
+}
+push $N28f1df90
+Transform {
+translate {70 -2330}
+center {2130 1152}
+shutteroffset centred
+name Transform58
+selected true
+xpos -2513
+ypos 12108
+}
+push 0
+push $N28f1df90
+Transform {
+translate {-1010 -1340}
+center {2130 1152}
+shutteroffset centred
+name Transform59
+selected true
+xpos -2733
+ypos 12108
+}
+push $N28f1df90
+Transform {
+translate {1820 -170}
+center {2130 1152}
+shutteroffset centred
+name Transform60
+selected true
+xpos -2623
+ypos 12108
+}
+Merge2 {
+inputs 6+1
+name Merge133
+selected true
+xpos -2164
+ypos 12385
+}
+Transform {
+translate {1700 845}
+scale {-0.73 0.7}
+center {1065 576}
+shutteroffset centred
+name Transform61
+selected true
+xpos -2164
+ypos 12469
+}
+Merge2 {
+inputs 2
+name Merge134
+selected true
+xpos -2164
+ypos 12605
+}
+Merge2 {
+inputs 2
+name Merge135
+selected true
+xpos -2164
+ypos 12693
+}
+ShuffleCopy {
+inputs 2
+alpha alpha2
+black red
+white green
+out2 forward
+name ShuffleCopy12
+selected true
+xpos -2164
+ypos 12773
+}
+IDistort {
+uv forward
+uv_offset 1
+uv_scale 180
+name IDistort1
+selected true
+xpos -2164
+ypos 12912
+}
+set N290a4810 [stack 0]
+Blur {
+size 5
+name Blur64
+selected true
+xpos -2162
+ypos 13104
+disable true
+}
+set N290bff90 [stack 0]
+Multiply {
+value 14
+name Multiply37
+selected true
+xpos -2162
+ypos 13366
+}
+set N290cd940 [stack 0]
+push $N290bff90
+Read {
+inputs 0
+file_type exr
+file /jobs/BDL/tc4700/OUT/O_tc4700_comp_v037/4260x2304/O_tc4700_comp_v037.%04d.exr
+localizationPolicy off
+format "4260 2304 0 0 4260 2304 1 BDL Working"
+proxy_format "640 480 0 0 640 480 1 PC_Video"
+first 1001
+last 1085
+origfirst 1001
+origlast 1085
+origset true
+smartGrade true
+name Read48
+selected true
+xpos -1106
+ypos 12014
+postage_stamp_frame 1043
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/BDL/tc4700/OUT/O_tc4700_comp_v037/4260x2304/O_tc4700_comp_v037.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 85f5eaf0-17a6-47f6-b740-50de7ea798a0
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid dc8bf34d-b08b-4d33-a6f2-2ec764c67d66
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid 83d53166-fd6d-464f-ad31-1ca8d1fe19c5
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 57b1783a-234a-4aa8-8188-14ae32f4d793
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype out
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 37
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Dot {
+name Dot200
+label plate
+selected true
+xpos -1072
+ypos 12120
+}
+Dot {
+name Dot167
+selected true
+xpos -1072
+ypos 12292
+}
+set N2910e080 [stack 0]
+Grade {
+name Grade110
+selected true
+xpos -1106
+ypos 12967
+}
+Glass {
+inputs 2
+name Glass3
+selected true
+xpos -1106
+ypos 13110
+channels rgb
+from0 rgba.alpha
+displace 0.9
+size_1 2
+useDef true
+size 4
+}
+Merge2 {
+inputs 2
+operation mask
+name Merge136
+selected true
+xpos -1106
+ypos 13372
+}
+Dot {
+name Dot169
+selected true
+xpos -1072
+ypos 13452
+}
+set N29af0030 [stack 0]
+Switch {
+inputs 2
+which 1
+name Switch17
+selected true
+xpos -1106
+ypos 13615
+}
+Merge2 {
+inputs 2
+operation mask
+bbox A
+name Merge81
+selected true
+xpos -1002
+ypos 13781
+}
+Transform {
+translate {2455 990}
+rotate 21.41295433
+center {990 810}
+shutteroffset centred
+name Transform41
+selected true
+xpos -1002
+ypos 13807
+}
+Grade {
+multiply {0 4 0 1}
+multiply_panelDropped true
+gamma 5
+name green4
+tile_color 0xff0000
+selected true
+xpos -1002
+ypos 13833
+disable true
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/BDL/tc4700/ELEMENT/E_tc4700_comp_precomp_droplets_v001/4260x2304/E_tc4700_comp_precomp_droplets_v001.####.exr
+localizationPolicy off
+format "4260 2304 0 0 4260 2304 1 BDL Working"
+proxy_format "640 480 0 0 640 480 1 PC_Video"
+first 1001
+last 1085
+origfirst 1001
+origlast 1085
+origset true
+smartGrade true
+name Read72
+selected true
+xpos -1276
+ypos 13647
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/BDL/tc4700/ELEMENT/E_tc4700_comp_precomp_droplets_v001/4260x2304/E_tc4700_comp_precomp_droplets_v001.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 1a44a803-a653-430d-8682-0ddd2eb70e96
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 1645dc23-6de8-4158-b3ed-fbaae8ba90b8
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid a823960b-9249-468a-ba7a-025cac92994a
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 1
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push $N29af0030
+FileOut {
+name FileOut24
+tile_color 0xbfbf00ff
+label "\[knob render_order]"
+selected true
+xpos -1276
+ypos 13432
+icon smartgrade.png
+channels rgba
+_destination /jobs
+file /jobs/BDL/tc4700/ELEMENT/E_tc4700_comp_precomp_droplets_v001/4260x2304/E_tc4700_comp_precomp_droplets_v001.####.exr
+proxy ""
+fileProxy /jobs/BDL/tc4700/ELEMENT/E_tc4700_comp_precomp_droplets_v001/2130x1152/E_tc4700_comp_precomp_droplets_v001.####.exr
+render_order 180
+views {main}
+first 1036
+last 1040
+pbb true
+smart_grade on
+dw_compression_level 0
+tex_metadata "default metadata and exr/*"
+disable_autolabel_format true
+_defaults "\{'smart_grade': 0, 'compression': 1, 'tile_color': 3216965887, 'pbb': True, 'dw_compression_level': 0, 'label': ''\}"
+_format ""
+_generator "NukeRenderGenerator dnnuke.core.render.v1"
+_ivyVals "\{'variant': None, 'host': None, 'versionNum': '1', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'droplets', 'out_dir': u'ELEMENT'\}, 'job': 'BDL', 'stalk': None, 'stalkAttrs': \{'framerange': '1036-1040'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==04860b3b-de0c-4885-8951-71081de08159&Stem.stemname==tc4700&Stem.stemtype==shot'\}"
+_old_filetype exr
+_stalkname E_tc4700_comp_precomp_droplets_v001
+_twigtype 2d
+_wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+beforeRender ""
+beforeFrameRender ""
+afterFrameRender ""
+afterRender ""
+renderProgress ""
+_invert_grade /tools/BDL/ivyasset/tc4700/ivy/grade/GRD_tc4700_neutral_v001/GRD_tc4700_neutral_v001.grade
+}
+push $N28ef0a00
+Transform {
+translate {-30 {curve x1001 1620 x1120 -1920}}
+center {1990 1110}
+shutteroffset centred
+name Transform42
+selected true
+xpos -1908
+ypos 11897
+}
+push $N290a4810
+Reformat {
+format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
+resize height
+filter Lanczos6
+pbb true
+name Reformat67
+selected true
+xpos -1930
+ypos 12959
+}
+push $N290cd940
+push $N290bff90
+push $N2910e080
+Grade {
+name Grade112
+selected true
+xpos -1550
+ypos 12967
+}
+Glass {
+inputs 2
+name Glass1
+selected true
+xpos -1550
+ypos 13110
+channels rgb
+from0 rgba.alpha
+displace 0.9
+size_1 2
+useDef true
+size 4
+}
+Merge2 {
+inputs 2
+operation mask
+name Merge1
+selected true
+xpos -1550
+ypos 13372
+}
