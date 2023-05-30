@@ -1,36 +1,33 @@
-// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy
-// Further improved with bilinear interpolation. v6
-
 kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
 {
-  Image<eRead, eAccessRandom, eEdgeNone> src;  // Changed access mode to 'Random'
+  Image<eRead, eAccessRandom, eEdgeNone> src;
   Image<eRead, eAccessPoint, eEdgeNone> stmap;
-  Image<eWrite, eAccessRandom> dst;  // Changed access mode to 'Random'
+  Image<eWrite, eAccessRandom> dst;
 
   param:
     float2 resolution;
+
+  void define() {
+    defineParam(resolution, "Resolution", float2(1920.0f, 1080.0f));
+  }
 
   void process() {
     float2 uv;
     uv.x = ((stmap().x * resolution.x - 0.5f));
     uv.y = ((stmap().y * resolution.y - 0.5f));
 
-    // Bilinear interpolation
-    float2 uv_floor = floor(uv);
-    float2 frac = uv - uv_floor;
-    
-    // Always make sure that you don't sample outside bounds
-    // as it will usually crash nuke.
-    if (src.bounds.inside(int2(uv_floor.x, uv_floor.y)) && src.bounds.inside(int2(uv_floor.x + 1, uv_floor.y + 1))) {
-      float4 tl = src(int2(uv_floor.x, uv_floor.y));
-      float4 tr = src(int2(uv_floor.x + 1, uv_floor.y));
-      float4 bl = src(int2(uv_floor.x, uv_floor.y + 1));
-      float4 br = src(int2(uv_floor.x + 1, uv_floor.y + 1));
+    int2 uv_floor = int2(floor(uv.x), floor(uv.y));
+    float2 frac = uv - float2(uv_floor);
 
-      // Interpolation
+    if (src.bounds.inside(uv_floor.x, uv_floor.y) && src.bounds.inside(uv_floor.x + 1, uv_floor.y + 1)) {
+      float4 tl = src(uv_floor);
+      float4 tr = src(uv_floor + int2(1, 0));
+      float4 bl = src(uv_floor + int2(0, 1));
+      float4 br = src(uv_floor + int2(1, 1));
+
       float4 t = lerp(tl, tr, frac.x);
       float4 b = lerp(bl, br, frac.x);
-      dst(int2(uv.x, uv.y)) = lerp(t, b, frac.y);
+      dst(uv_floor) = lerp(t, b, frac.y);
     }
   }
 };
