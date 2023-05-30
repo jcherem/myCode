@@ -1,0 +1,23 @@
+// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy
+
+kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
+{
+  Image<eRead, eAccessPoint, eEdgeNone> src;
+  Image<eRead, eAccessPoint, eEdgeNone> stmap;
+  Image<eWrite, eAccessRandom> dst;
+
+  param:
+    float2 resolution;
+
+
+  void process() {
+    float2 uv;
+    uv.x = ((stmap().x * resolution.x - 0.5f));
+    uv.y = ((stmap().y * resolution.y - 0.5f));
+    //always make sure that you don't write outside bounds
+    //as it will usually crash nuke.
+    if (dst.bounds.inside(uv.x,uv.y)) { 
+      dst(uv.x,uv.y) = src(); 
+    }
+  }
+};
