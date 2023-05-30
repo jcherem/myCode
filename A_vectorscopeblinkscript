@@ -1,32 +1,36 @@
-kernel VectorscopeKernel : ImageComputationKernel<ePixelWise>
+// Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy
+// Further improved with bilinear interpolation
+
+kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
 {
-  Image<eRead, eAccessRanged2D, eEdgeClamped> src;  // the input image
-  Image<eWrite> dst;  // the output image
+  Image<eRead, eAccessRandom, eEdgeNone> src;  // Changed access mode to 'Random'
+  Image<eRead, eAccessPoint, eEdgeNone> stmap;
+  Image<eWrite, eAccessRandom> dst;  // Changed access mode to 'Random'
 
   param:
-    float scale;  // a scale factor for adjusting the vectorscope display
-
-  void define() {
-    defineParam(scale, "Scale", 1.0f);
-  }
-
-  void init() {
-    // You might want to initialize some variables here
-  }
+    float2 resolution;
 
   void process() {
-    float4 srcPixel = src();  // get the source pixel
+    float2 uv;
+    uv.x = ((stmap().x * resolution.x - 0.5f));
+    uv.y = ((stmap().y * resolution.y - 0.5f));
 
-    // Convert the source pixel to YCbCr color space
-    float Y = 0.299f * srcPixel.r + 0.587f * srcPixel.g + 0.114f * srcPixel.b;
-    float Cb = -0.1687f * srcPixel.r - 0.3313f * srcPixel.g + 0.5f * srcPixel.b + 0.5f;
-    float Cr = 0.5f * srcPixel.r - 0.4187f * srcPixel.g - 0.0813f * srcPixel.b + 0.5f;
+    // Bilinear interpolation
+    float2 uv_floor = floor(uv);
+    float2 frac = uv - uv_floor;
+    
+    // Always make sure that you don't sample outside bounds
+    // as it will usually crash nuke.
+    if (src.bounds.inside(uv_floor.x, uv_floor.y) && src.bounds.inside(uv_floor.x + 1, uv_floor.y + 1)) {
+      float4 tl = src(int2(uv_floor.x, uv_floor.y));
+      float4 tr = src(int2(uv_floor.x + 1, uv_floor.y));
+      float4 bl = src(int2(uv_floor.x, uv_floor.y + 1));
+      float4 br = src(int2(uv_floor.x + 1, uv_floor.y + 1));
 
-    // Scale and shift the Cb and Cr components for display
-    float x = Cb * scale + 0.5f;
-    float y = Cr * scale + 0.5f;
-
-    // Write the result to the output image
-    dst() = float4(x, y, 0.0f, 1.0f);
+      // Interpolation
+      float4 t = lerp(tl, tr, frac.x);
+      float4 b = lerp(bl, br, frac.x);
+      dst(int2(uv.x, uv.y)) = lerp(t, b, frac.y);
+    }
   }
 };
