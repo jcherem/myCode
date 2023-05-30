@@ -1,5 +1,5 @@
 // Original Kernel by Mads Hagbarth, modified to use STMaps by Erwan Leroy
-// Further improved with bilinear interpolation
+// Further improved with bilinear interpolation. v6
 
 kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
 {
@@ -21,7 +21,7 @@ kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
     
     // Always make sure that you don't sample outside bounds
     // as it will usually crash nuke.
-    if (src.bounds.inside(uv_floor.x, uv_floor.y) && src.bounds.inside(uv_floor.x + 1, uv_floor.y + 1)) {
+    if (src.bounds.inside(int2(uv_floor.x, uv_floor.y)) && src.bounds.inside(int2(uv_floor.x + 1, uv_floor.y + 1))) {
       float4 tl = src(int2(uv_floor.x, uv_floor.y));
       float4 tr = src(int2(uv_floor.x + 1, uv_floor.y));
       float4 bl = src(int2(uv_floor.x, uv_floor.y + 1));
