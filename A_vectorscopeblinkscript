@@ -1,7 +1,3 @@
-float4 bilinear(Image<eRead, eAccessRandom, eEdgeClamped> img, int x, int y) {
-  return 0.25f * (img(x, y) + img(x + 1, y) + img(x, y + 1) + img(x + 1, y + 1));
-}
-
 kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
 {
   Image<eRead, eAccessPoint, eEdgeNone> src;  
@@ -24,10 +20,10 @@ kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
     float2 fuv = uv - float2(iuv);
 
     if (src.bounds.inside(iuv.x, iuv.y) && src.bounds.inside(iuv.x + 1, iuv.y + 1)) {
-      float4 c00 = bilinear(src, iuv.x, iuv.y);
-      float4 c10 = bilinear(src, iuv.x + 1, iuv.y);
-      float4 c01 = bilinear(src, iuv.x, iuv.y + 1);
-      float4 c11 = bilinear(src, iuv.x + 1, iuv.y + 1);
+      float4 c00 = 0.25f * (src(iuv) + src(iuv + int2(1, 0)) + src(iuv + int2(0, 1)) + src(iuv + int2(1, 1)));
+      float4 c10 = 0.25f * (src(iuv + int2(1, 0)) + src(iuv + int2(2, 0)) + src(iuv + int2(1, 1)) + src(iuv + int2(2, 1)));
+      float4 c01 = 0.25f * (src(iuv + int2(0, 1)) + src(iuv + int2(1, 1)) + src(iuv + int2(0, 2)) + src(iuv + int2(1, 2)));
+      float4 c11 = 0.25f * (src(iuv + int2(1, 1)) + src(iuv + int2(2, 1)) + src(iuv + int2(1, 2)) + src(iuv + int2(2, 2)));
   
       float4 c0 = lerp(c00, c10, fuv.x);
       float4 c1 = lerp(c01, c11, fuv.x);
