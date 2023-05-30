@@ -1,3 +1,7 @@
+float4 bilinear(Image<eRead, eAccessRandom, eEdgeClamped> img, int x, int y) {
+  return 0.25f * (img(x, y) + img(x + 1, y) + img(x, y + 1) + img(x + 1, y + 1));
+}
+
 kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
 {
   Image<eRead, eAccessPoint, eEdgeNone> src;  
@@ -30,9 +34,5 @@ kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
   
       dst() = lerp(c0, c1, fuv.y);
     }
-  }
-  
-  float4 bilinear(Image<eRead, eAccessRandom, eEdgeClamped> img, int x, int y) {
-    return 0.25f * (img(x, y) + img(x + 1, y) + img(x, y + 1) + img(x + 1, y + 1));
   }
 };
