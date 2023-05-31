@@ -14,7 +14,11 @@ kernel VectorscopeKernel : ImageComputationKernel<ePixelWise>
     float Cb = 128.0f - 0.168736f * srcPixel.r - 0.331264f * srcPixel.g + 0.5f * srcPixel.b;
     float Cr = 128.0f + 0.5f * srcPixel.r - 0.418688f * srcPixel.g - 0.081312f * srcPixel.b;
 
+    // Convert Cb and Cr to polar coordinates
+    float theta = atan2(Cr - 128.0f, Cb - 128.0f);  // hue (angle)
+    float r = sqrt(pow(Cr - 128.0f, 2) + pow(Cb - 128.0f, 2));  // saturation (radius)
+
     // Write the result to the output image
-    dst() = float4(Cb, Cr, 0.0f, 1.0f);
+    dst() = float4(r * cos(theta), r * sin(theta), 0.0f, 1.0f);
   }
 };
