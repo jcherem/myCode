@@ -1,34 +1,32 @@
-kernel InverseSTKernel : ImageComputationKernel<ePixelWise>
+kernel VectorscopeKernel : ImageComputationKernel<ePixelWise>
 {
-  Image<eRead, eAccessPoint, eEdgeNone> src;  
-  Image<eRead, eAccessPoint, eEdgeNone> stmap;
-  Image<eWrite, eAccessRandom> dst;
+  Image<eRead, eAccessRanged2D, eEdgeClamped> src;  // the input image
+  Image<eWrite> dst;  // the output image
 
   param:
-    float2 resolution;
+    float scale;  // a scale factor for adjusting the vectorscope display
 
   void define() {
-    defineParam(resolution, "Resolution", float2(1920.0f, 1080.0f));
+    defineParam(scale, "Scale", 1.0f);
+  }
+
+  void init() {
+    // You might want to initialize some variables here
   }
 
   void process() {
-    float2 uv;
-    uv.x = (stmap().x * resolution.x - 0.5f);
-    uv.y = (stmap().y * resolution.y - 0.5f);
+    float4 srcPixel = src();  // get the source pixel
 
-    int2 iuv = int2(int(uv.x), int(uv.y));
-    float2 fuv = uv - float2(iuv);
+    // Convert the source pixel to YCbCr color space
+    float Y = 0.299f * srcPixel.r + 0.587f * srcPixel.g + 0.114f * srcPixel.b;
+    float Cb = -0.1687f * srcPixel.r - 0.3313f * srcPixel.g + 0.5f * srcPixel.b + 0.5f;
+    float Cr = 0.5f * srcPixel.r - 0.4187f * srcPixel.g - 0.0813f * srcPixel.b + 0.5f;
 
-    if (src.bounds.inside(iuv.x, iuv.y) && src.bounds.inside(iuv.x + 1, iuv.y + 1)) {
-      float4 c00 = 0.25f * (src(iuv) + src(iuv + int2(1, 0)) + src(iuv + int2(0, 1)) + src(iuv + int2(1, 1)));
-      float4 c10 = 0.25f * (src(iuv + int2(1, 0)) + src(iuv + int2(2, 0)) + src(iuv + int2(1, 1)) + src(iuv + int2(2, 1)));
-      float4 c01 = 0.25f * (src(iuv + int2(0, 1)) + src(iuv + int2(1, 1)) + src(iuv + int2(0, 2)) + src(iuv + int2(1, 2)));
-      float4 c11 = 0.25f * (src(iuv + int2(1, 1)) + src(iuv + int2(2, 1)) + src(iuv + int2(1, 2)) + src(iuv + int2(2, 2)));
-  
-      float4 c0 = c00 + fuv.x * (c10 - c00);
-      float4 c1 = c01 + fuv.x * (c11 - c01);
-  
-      dst() = c0 + fuv.y * (c1 - c0);
-    }
+    // Scale and shift the Cb and Cr components for display
+    float x = Cb * scale + 0.5f;
+    float y = Cr * scale + 0.5f;
+
+    // Write the result to the output image
+    dst() = float4(x, y, 0.0f, 1.0f);
   }
 };
