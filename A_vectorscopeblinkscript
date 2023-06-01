@@ -1,1 +1,35 @@
-ERROR: ParticleBlinkScript1.kernelSource: Kernel compilation failed: Line 16: Error parsing kernel - no viable conversion from 'Vec<[...], 3>' to 'Vec<[...], 2>'
+kernel ParticleMudKernel : ImageComputationKernel<ePixelWise>
+{
+    Image<eReadWrite> p_position;
+    Image<eReadWrite> p_velocity;
+    Image<eRead> p_age;
+    Image<eRead> p_life;
+
+    param:
+        float _initialSpeed;
+        float _gravity;
+
+    void define() {
+        defineParam(_initialSpeed, "Initial Speed", 1.0f);
+        defineParam(_gravity, "Gravity", 9.81f);
+    }
+
+    void process() {
+        float2 position = p_position();
+        float2 velocity = p_velocity();
+        float age = p_age();
+        float life = p_life();
+
+        // Inicialmente, las partículas son lanzadas hacia atrás.
+        if (age == 0) {
+            velocity = float2(-_initialSpeed, 0);
+        }
+
+        // Luego, las partículas caen hacia el suelo debido a la gravedad.
+        velocity.y -= _gravity * age/life;
+
+        // Actualizar la posición y la velocidad de las partículas.
+        p_position() = position + velocity;
+        p_velocity() = velocity;
+    }
+};
