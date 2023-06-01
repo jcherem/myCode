@@ -1,24 +1,27 @@
-kernel VectorscopeKernel : ImageComputationKernel<ePixelWise>
+kernel ParticleMotionKernel : ImageComputationKernel<ePixelWise>
 {
-  Image<eRead> src;  // the input image
-  Image<eWrite> dst;  // the output image
+    Image<eReadWrite> p_position;
+    Image<eRead> p_velocity;
+    Image<eRead> p_age;
+    Image<eRead> p_life;
 
-  void define() {
-  }
+    param:
+        float _timeStep;
 
-  void process() {
-    float4 srcPixel = src();  // get the source pixel
+    void define() {
+        defineParam(_timeStep, "Time Step", 0.1f);
+    }
 
-    // Convert the source pixel to YCbCr color space
-    float Y = 0.299f * srcPixel.r + 0.587f * srcPixel.g + 0.114f * srcPixel.b;
-    float Cb = 128.0f - 0.168736f * srcPixel.r - 0.331264f * srcPixel.g + 0.5f * srcPixel.b;
-    float Cr = 128.0f + 0.5f * srcPixel.r - 0.418688f * srcPixel.g - 0.081312f * srcPixel.b;
+    void process() {
+        float2 position = p_position();
+        float2 velocity = p_velocity();
+        float age = p_age();
+        float life = p_life();
 
-    // Convert Cb and Cr to polar coordinates
-    float theta = atan2(Cr - 128.0f, Cb - 128.0f);  // hue (angle)
-    float r = sqrt(pow(Cr - 128.0f, 2) + pow(Cb - 128.0f, 2));  // saturation (radius)
+        // Calculate the new position based on the velocity and the time step
+        float2 newPosition = position + velocity * _timeStep;
 
-    // Write the result to the output image
-    dst() = float4(r * cos(theta), r * sin(theta), 0.0f, 1.0f);
-  }
+        // Update the position of the particle
+        p_position() = newPosition;
+    }
 };
