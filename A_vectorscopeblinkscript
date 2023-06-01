@@ -1,1 +1,20 @@
-ERROR: ParticleBlinkScript1.kernelSource: No images are declared in the kernel
+kernel ParticleMudKernel : ParticleComputationKernel<eReadParticleData|eWriteParticleData>
+{
+    param:
+        float _initialSpeed;
+        float _gravity;
+
+    void define() {
+        defineParam(_initialSpeed, "Initial Speed", 1.0f);
+        defineParam(_gravity, "Gravity", 9.81f);
+    }
+
+    void process(Particle p) {
+        if (p.age() == 0.0f) {
+            p.setvelocity(make_float3(-_initialSpeed, 0.0f, 0.0f));
+        }
+        else {
+            p.setvelocity(make_float3(p.velocity().x, p.velocity().y - (_gravity * p.age()), p.velocity().z));
+        }
+    }
+};
