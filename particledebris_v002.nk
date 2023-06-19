@@ -347,10 +347,9 @@ Card2 {
  drawPosition {-2.100744009 -1.127796888 -3.646876335}
  name Card16
  selected true
- xpos 17562
- ypos 1198
+ xpos 17620
+ ypos 1082
 }
-set N285eaeb0 [stack 0]
 ApplyMaterial {
  inputs 2
  name ApplyMaterial9
@@ -568,7 +567,28 @@ Phong {
  xpos 17407
  ypos 1390
 }
-push $N285eaeb0
+Card2 {
+ inputs 0
+ translate {{parent.ParticleBounce2.bounceaxis_translate} {parent.ParticleBounce2.bounceaxis_translate} {parent.ParticleBounce2.bounceaxis_translate}}
+ rotate {{parent.ParticleBounce2.bounceaxis_rotate} {parent.ParticleBounce2.bounceaxis_rotate} {parent.ParticleBounce2.bounceaxis_rotate}}
+ scaling {{parent.ParticleBounce2.bounceaxis_scaling} {parent.ParticleBounce2.bounceaxis_scaling} {parent.ParticleBounce2.bounceaxis_scaling}}
+ uniform_scale {{parent.ParticleBounce2.bounceaxis_uniform_scale}}
+ control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+ name BaouncingCard
+ selected true
+ xpos 17562
+ ypos 1138
+}
 Normals {
  action build
  name Normals4
@@ -1645,7 +1665,7 @@ ParticleBounce {
  name ParticleBounce2
  selected true
  xpos 15717
- ypos 1151
+ ypos 1152
 }
 ParticleBounce {
  out_bounce_mode kill
@@ -1660,7 +1680,7 @@ ParticleBounce {
  name ParticleBounce3
  selected true
  xpos 15717
- ypos 1201
+ ypos 1200
 }
 ParticleBounce {
  out_bounce_mode kill
@@ -1829,6 +1849,7 @@ Scene {
  selected true
  xpos 16804
  ypos 2943
+ disable true
 }
 Reformat {
  inputs 0
@@ -2828,8 +2849,8 @@ push $N28d7f160
 Dot {
  name Dot48
  selected true
- xpos 16547
- ypos 1919
+ xpos 16588
+ ypos 1836
 }
 set N296a5260 [stack 0]
 ParticleExpression {
@@ -2840,8 +2861,8 @@ ParticleExpression {
  name ParticleExpression1
  tile_color 0xff0000ff
  selected true
- xpos 16837
- ypos 1820
+ xpos 16878
+ ypos 1737
 }
 ParticleExpression {
  colexpr "color == v(1,0,0) ?  vel : v(0,0,0) "
@@ -2851,8 +2872,8 @@ ParticleExpression {
  name ParticleExpression2
  tile_color 0xffff00ff
  selected true
- xpos 16846
- ypos 1884
+ xpos 16887
+ ypos 1801
 }
 push $N296a5260
 ParticleExpression {
@@ -2862,8 +2883,8 @@ ParticleExpression {
  name ParticleExpression4
  tile_color 0xffff00ff
  selected true
- xpos 16654
- ypos 1940
+ xpos 16695
+ ypos 1857
  disable true
 }
 push $N28710b40
@@ -2876,16 +2897,16 @@ ParticleExpression {
  name ParticleExpression3
  tile_color 0xffff00ff
  selected true
- xpos 16731
- ypos 1905
+ xpos 16772
+ ypos 1822
 }
 add_layer {pos pos.red pos.green pos.blue pos.alpha}
 ParticleToImage {
  pos pos
  name ParticleToImage1
  selected true
- xpos 16731
- ypos 1988
+ xpos 16772
+ ypos 1905
  cached true
  bookmark true
 }
@@ -2897,8 +2918,8 @@ PositionToPoints2 {
  pointSize 10
  name PositionToPoints2
  selected true
- xpos 16731
- ypos 2014
+ xpos 16772
+ ypos 1931
  bookmark true
 }
 push 0
@@ -2924,16 +2945,16 @@ ParticleEmitter {
  seed 20
  name ParticleEmitter9
  selected true
- xpos 16731
- ypos 2086
+ xpos 16772
+ ypos 2003
 }
 push $N296a5260
 Scene {
  inputs 2
  name Scene15
  selected true
- xpos 16530
- ypos 2066
+ xpos 16571
+ ypos 1983
 }
 Camera2 {
  inputs 0
