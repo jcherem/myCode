@@ -7,8 +7,8 @@ BackdropNode {
  label "debris \nambient occlusion"
  note_font_size 42
  selected true
- xpos 16614
- ypos 2561
+ xpos 17360
+ ypos 2566
  bdwidth 416
  bdheight 736
 }
@@ -31,8 +31,8 @@ BackdropNode {
  label format
  note_font_size 42
  selected true
- xpos 18214
- ypos 3060
+ xpos 18960
+ ypos 3065
  bdheight 205
 }
 BackdropNode {
@@ -42,8 +42,8 @@ BackdropNode {
  label "geo of the floor or card "
  note_font_size 42
  selected true
- xpos 17239
- ypos 1028
+ xpos 17985
+ ypos 1033
  bdwidth 921
  bdheight 1405
 }
@@ -235,8 +235,8 @@ BackdropNode {
  label "floor  occlusion"
  note_font_size 42
  selected true
- xpos 17177
- ypos 2561
+ xpos 17923
+ ypos 2566
  bdwidth 630
  bdheight 732
 }
@@ -321,8 +321,8 @@ Phong {
  inputs 0
  name Phong8
  selected true
- xpos 17326
- ypos 1132
+ xpos 18072
+ ypos 1137
 }
 Card2 {
  inputs 0
@@ -347,15 +347,15 @@ Card2 {
  drawPosition {-2.100744009 -1.127796888 -3.646876335}
  name Card16
  selected true
- xpos 17620
- ypos 1082
+ xpos 18366
+ ypos 1087
 }
 ApplyMaterial {
  inputs 2
  name ApplyMaterial9
  selected true
- xpos 17326
- ypos 1158
+ xpos 18072
+ ypos 1163
 }
 Dot {
  name Dot59
@@ -512,8 +512,8 @@ FillMat {
  color 1
  name FillMat4
  selected true
- xpos 17220
- ypos 2948
+ xpos 17966
+ ypos 2953
 }
 Grade {
  channels rgba
@@ -521,14 +521,14 @@ Grade {
  maskChannelInput rgba.red
  name Grade3
  selected true
- xpos 17220
- ypos 2974
+ xpos 17966
+ ypos 2979
 }
 Dot {
  name Dot200
  selected true
- xpos 17254
- ypos 3012
+ xpos 18000
+ ypos 3017
 }
 set N1393ead0 [stack 0]
 Noise {
@@ -539,8 +539,8 @@ Noise {
  center {1056 499}
  name Noise19
  selected true
- xpos 17407
- ypos 1295
+ xpos 18153
+ ypos 1300
 }
 Constant {
  inputs 0
@@ -548,95 +548,96 @@ Constant {
  color_panelDropped true
  name Constant22
  selected true
- xpos 17262
- ypos 1322
+ xpos 18008
+ ypos 1327
 }
 Merge2 {
  inputs 2
  operation multiply
  name Multiply2
  selected true
- xpos 17407
- ypos 1345
+ xpos 18153
+ ypos 1350
 }
 push 0
 Phong {
  inputs 2
  name Phong14
  selected true
- xpos 17407
- ypos 1390
+ xpos 18153
+ ypos 1395
 }
 Card2 {
  inputs 0
+ orientation ZX
  translate {{parent.ParticleBounce2.bounceaxis_translate} {parent.ParticleBounce2.bounceaxis_translate} {parent.ParticleBounce2.bounceaxis_translate}}
  rotate {{parent.ParticleBounce2.bounceaxis_rotate} {parent.ParticleBounce2.bounceaxis_rotate} {parent.ParticleBounce2.bounceaxis_rotate}}
  scaling {{parent.ParticleBounce2.bounceaxis_scaling} {parent.ParticleBounce2.bounceaxis_scaling} {parent.ParticleBounce2.bounceaxis_scaling}}
  uniform_scale {{parent.ParticleBounce2.bounceaxis_uniform_scale}}
  control_points {3 3 3 6 
 
-1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
-1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
-1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
-1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
-1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+1 {-0.5 0 -0.5} 0 {0 0 0.1666666865} 0 {0 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 
+1 {-0.5 0 0} 0 {0 0 0.1666666716} 0 {0 0 -0.1666666716} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {-0.5 0 0.5} 0 {0 0 0} 0 {0 0 -0.1666666865} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {1 0 0} 
+1 {0 0 -0.5} 0 {0 0 0.1666666865} 0 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0 0 0.1666666716} 0 {0 0 -0.1666666716} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0.5 0.5 0} 
+1 {0 0 0.5} 0 {0 0 0} 0 {0 0 -0.1666666865} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {1 0.5 0} 
+1 {0.5 0 -0.5} 0 {0 0 0.1666666865} 0 {0 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 1 0} 
+1 {0.5 0 0} 0 {0 0 0.1666666716} 0 {0 0 -0.1666666716} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0.5 1 0} 
+1 {0.5 0 0.5} 0 {0 0 0} 0 {0 0 -0.1666666865} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {1 1 0} }
  name BaouncingCard
  selected true
- xpos 17562
- ypos 1138
+ xpos 18308
+ ypos 1147
 }
 Normals {
  action build
  name Normals4
  selected true
- xpos 17562
- ypos 1338
+ xpos 18308
+ ypos 1343
 }
 ApplyMaterial {
  inputs 2
  name ApplyMaterial12
  selected true
- xpos 17562
- ypos 1390
+ xpos 18308
+ ypos 1395
 }
 Dot {
  name Dot2
  selected true
- xpos 17596
- ypos 1446
+ xpos 18342
+ ypos 1451
 }
 Dot {
  name Dot47
  selected true
- xpos 17596
- ypos 2291
+ xpos 18342
+ ypos 2296
 }
 set N133c8f20 [stack 0]
 Dot {
  name Dot3
  selected true
- xpos 17596
- ypos 2823
+ xpos 18342
+ ypos 2828
 }
 set N133cdd40 [stack 0]
 ApplyMaterial {
  inputs 2
  name ApplyMaterial6
  selected true
- xpos 16941
- ypos 2963
+ xpos 17687
+ ypos 2968
 }
 FillMat {
  inputs 0
  color 1
  name FillMat6
  selected true
- xpos 16669
- ypos 2753
+ xpos 17415
+ ypos 2754
 }
 AmbientOcclusion {
  samples 15
@@ -644,8 +645,8 @@ AmbientOcclusion {
  falloff 1
  name AmbientOcclusion5
  selected true
- xpos 16669
- ypos 2797
+ xpos 17415
+ ypos 2798
 }
 Constant {
  inputs 0
@@ -760,15 +761,15 @@ Sphere {
  xpos 14280
  ypos 1367
 }
-Switch {
+clone node13ddf1a0|Switch|5266 Switch {
  inputs 2
- which {{"\$gui ? 1 : 0"}}
- name Switch2
+ name Switch1
  selected true
  xpos 14514
  ypos 1367
 }
-set N136b9830 [stack 0]
+set C13ddf1a0 [stack 0]
+set N1839d8b0 [stack 0]
 Constant {
  inputs 0
  channels rgb
@@ -911,14 +912,12 @@ TransformGeo {
  xpos 14433
  ypos -34
 }
-clone node13ddf1a0|Switch|5266 Switch {
+clone $C13ddf1a0 {
  inputs 2
- name Switch1
- selected true
  xpos 14433
  ypos 12
+ selected true
 }
-set C13ddf1a0 [stack 0]
 Dot {
  name Dot29
  selected true
@@ -1671,7 +1670,7 @@ ParticleBounce {
  name ParticleBounce2
  selected true
  xpos 15717
- ypos 1152
+ ypos 1146
 }
 ParticleBounce {
  out_bounce_mode kill
@@ -1706,12 +1705,13 @@ ParticleBounce {
 ParticleSpawn {
  inputs 2
  emit_channels {c}
- rate {{parent.ParticleEmitter6.rate/3}}
+ rate {{parent.ParticleEmitter6.rate/1.5}}
  rate_variation 1
  lifetime 200
  velocity 0.24
  velocity_variation 3
  rotation_velocity_variation 1
+ size 0.2
  size_variation 3
  mass 1
  mass_variation 3
@@ -1720,6 +1720,7 @@ ParticleSpawn {
  conserve_momentum false
  color {0 0 1 1}
  color_panelDropped true
+ channels {a b}
  name ParticleSpawn6
  selected true
  xpos 15717
@@ -1751,12 +1752,12 @@ ParticleDrag {
  ypos 1595
 }
 ParticleDrag {
- rotational_drag 1
+ rotational_drag 0.92
  channels {c}
  name ParticleDrag8
  selected true
  xpos 15717
- ypos 1647
+ ypos 1648
 }
 ParticleSettings {
  steps_per_frame 13
@@ -1831,29 +1832,30 @@ Scene {
  shadow_override "override inputs"
  name Scene5
  selected true
- xpos 17344
- ypos 2447
+ xpos 18090
+ ypos 2452
 }
 set N13c89000 [stack 0]
 Dot {
  name Dot18
  selected true
- xpos 16828
- ypos 2737
+ xpos 17574
+ ypos 2742
 }
+set N14248330 [stack 0]
 ApplyMaterial {
  inputs 2
  name ApplyMaterial8
  selected true
- xpos 16794
- ypos 2797
+ xpos 17540
+ ypos 2798
 }
 Scene {
  inputs 2
  name Scene14
  selected true
- xpos 16804
- ypos 2943
+ xpos 17550
+ ypos 2948
  disable true
 }
 Reformat {
@@ -1862,34 +1864,37 @@ Reformat {
  pbb true
  name Reformat15
  selected true
- xpos 18224
- ypos 3139
+ xpos 18970
+ ypos 3144
 }
 Dot {
  name Dot12
  selected true
- xpos 18258
- ypos 3243
+ xpos 19004
+ ypos 3248
 }
 set N13db3c00 [stack 0]
+add_layer {nor nor.red nor.green nor.blue nor.alpha}
 RayRender {
  inputs 3
  stochastic_samples {{parent.RayRender1.stochastic_samples}}
  interpolate_animation false
  samples {{parent.RayRender1.samples}}
  shutteroffset centred
+ output_shader_vectors true
+ AOV_Normal nor
  name RayRender5
  selected true
- xpos 16794
- ypos 3239
+ xpos 17540
+ ypos 3244
 }
 FileOut {
  name FileOut8
  tile_color 0xbfbf00ff
  label debirs_aoc
  selected true
- xpos 16804
- ypos 3265
+ xpos 17540
+ ypos 3270
  icon smartgrade.png
  channels all
  _destination /jobs
@@ -1919,11 +1924,12 @@ FileOut {
  renderProgress ""
  _invert_grade /tools/BDL/ivyasset/tc4740/ivy/grade/GRD_tc4740_neutral_v001/GRD_tc4740_neutral_v001.grade
 }
+set N13c00d40 [stack 0]
 Dot {
  name Dot19
  selected true
- xpos 16838
- ypos 3873
+ xpos 17584
+ ypos 3878
 }
 Constant {
  inputs 0
@@ -1931,15 +1937,15 @@ Constant {
  color 1
  name Constant19
  selected true
- xpos 16926
- ypos 4116
+ xpos 17672
+ ypos 4121
 }
 Merge2 {
  inputs 2
  name Merge6
  selected true
- xpos 16805
- ypos 4139
+ xpos 17551
+ ypos 4144
 }
 push $N15fcc8a0
 ColorWheel {
@@ -2031,14 +2037,14 @@ Sphere {
  uniform_scale 469.2
  name Sphere13
  selected true
- xpos 16410
- ypos 2945
+ xpos 16660
+ ypos 2950
 }
 Dot {
  name Dot16
  selected true
- xpos 16444
- ypos 3166
+ xpos 16694
+ ypos 3171
 }
 ApplyMaterial {
  inputs 2
@@ -2201,22 +2207,22 @@ Transform {
  shutteroffset centred
  name Transform9
  selected true
- xpos 17027
- ypos 4198
+ xpos 17773
+ ypos 4203
 }
 FilterErode {
  filter gaussian
  name FilterErode2
  selected true
- xpos 17027
- ypos 4224
+ xpos 17773
+ ypos 4229
 }
 Blur {
  size 12
  name Blur5
  selected true
- xpos 17027
- ypos 4267
+ xpos 17773
+ ypos 4272
 }
 Roto {
  inputs 0
@@ -2331,8 +2337,8 @@ Roto {
  source_black_outside true
  name Roto7
  selected true
- xpos 17158
- ypos 4071
+ xpos 17904
+ ypos 4076
 }
 push $N15fcc8a0
 FillMat {
@@ -2340,38 +2346,38 @@ FillMat {
  color 1
  name FillMat3
  selected true
- xpos 17696
- ypos 2939
+ xpos 18442
+ ypos 2944
 }
 AmbientOcclusion {
  spread 100
  falloff 1
  name AmbientOcclusion2
  selected true
- xpos 17696
- ypos 2965
+ xpos 18442
+ ypos 2970
 }
 AmbientOcclusion {
  spread 10
  falloff 1
  name AmbientOcclusion3
  selected true
- xpos 17696
- ypos 2991
+ xpos 18442
+ ypos 2996
 }
 push $N133cdd40
 ApplyMaterial {
  inputs 2
  name ApplyMaterial3
  selected true
- xpos 17562
- ypos 2991
+ xpos 18308
+ ypos 2996
 }
 Dot {
  name Dot13
  selected true
- xpos 17596
- ypos 3080
+ xpos 18342
+ ypos 3085
 }
 push $N1393ead0
 push $N13c89000
@@ -2379,15 +2385,15 @@ ApplyMaterial {
  inputs 2
  name ApplyMaterial4
  selected true
- xpos 17334
- ypos 3008
+ xpos 18080
+ ypos 3013
 }
 Scene {
  inputs 2
  name Scene10
  selected true
- xpos 17344
- ypos 3056
+ xpos 18090
+ ypos 3061
 }
 Reformat {
  inputs 0
@@ -2395,8 +2401,8 @@ Reformat {
  pbb true
  name Reformat2
  selected true
- xpos 17784
- ypos 3338
+ xpos 18530
+ ypos 3343
 }
 Shuffle2 {
  fromInput1 {{0} B}
@@ -2404,8 +2410,8 @@ Shuffle2 {
  mappings "4 white -1 -1 rgba.red 0 0 white -1 -1 rgba.green 0 1 white -1 -1 rgba.blue 0 2 white -1 -1 rgba.alpha 0 3"
  name Shuffle16
  selected true
- xpos 17784
- ypos 3364
+ xpos 18530
+ ypos 3369
 }
 RayRender {
  inputs 3
@@ -2415,16 +2421,16 @@ RayRender {
  shutteroffset centred
  name RayRender2
  selected true
- xpos 17334
- ypos 3273
+ xpos 18080
+ ypos 3278
 }
 FileOut {
  name FileOut11
  tile_color 0xbfbf00ff
  label debirs_floor_aoc
  selected true
- xpos 17334
- ypos 3299
+ xpos 18080
+ ypos 3304
  icon smartgrade.png
  channels all
  _destination /jobs
@@ -2457,8 +2463,8 @@ FileOut {
 Dot {
  name Dot17
  selected true
- xpos 17368
- ypos 3880
+ xpos 18114
+ ypos 3885
 }
 Grade {
  inputs 1+1
@@ -2467,8 +2473,8 @@ Grade {
  white_clamp true
  name Grade104
  selected true
- xpos 17334
- ypos 4071
+ xpos 18080
+ ypos 4076
 }
 Constant {
  inputs 0
@@ -2476,15 +2482,15 @@ Constant {
  color 1
  name Constant20
  selected true
- xpos 17501
- ypos 4124
+ xpos 18247
+ ypos 4129
 }
 Merge2 {
  inputs 2
  name Merge11
  selected true
- xpos 17334
- ypos 4147
+ xpos 18080
+ ypos 4152
 }
 Grade {
  inputs 1+1
@@ -2492,15 +2498,15 @@ Grade {
  white_clamp true
  name Grade12
  selected true
- xpos 17334
- ypos 4273
+ xpos 18080
+ ypos 4278
 }
 Invert {
  channels rgb
  name Invert4
  selected true
- xpos 17334
- ypos 4370
+ xpos 18080
+ ypos 4375
 }
 Constant {
  inputs 0
@@ -2509,21 +2515,21 @@ Constant {
  color_panelDropped true
  name Constant21
  selected true
- xpos 17479
- ypos 4263
+ xpos 18225
+ ypos 4268
 }
 Grade {
  multiply 0.7
  name Grade102
  selected true
- xpos 17479
- ypos 4335
+ xpos 18225
+ ypos 4340
 }
 Dot {
  name Dot397
  selected true
- xpos 17513
- ypos 4406
+ xpos 18259
+ ypos 4411
 }
 Copy {
  inputs 2
@@ -2531,8 +2537,8 @@ Copy {
  to0 rgba.alpha
  name Copy15
  selected true
- xpos 17334
- ypos 4396
+ xpos 18080
+ ypos 4401
 }
 Grade {
  channels rgba
@@ -2540,14 +2546,14 @@ Grade {
  white_clamp true
  name Grade13
  selected true
- xpos 17334
- ypos 4434
+ xpos 18080
+ ypos 4439
 }
 Premult {
  name Premult13
  selected true
- xpos 17334
- ypos 4480
+ xpos 18080
+ ypos 4485
 }
 Transform {
  translate {0 12.4}
@@ -2555,8 +2561,8 @@ Transform {
  shutteroffset centred
  name Transform8
  selected true
- xpos 17334
- ypos 4526
+ xpos 18080
+ ypos 4531
 }
 Transform {
  translate {850 38}
@@ -2565,14 +2571,14 @@ Transform {
  name Transform2
  label 378
  selected true
- xpos 17336
- ypos 4552
+ xpos 18082
+ ypos 4557
 }
 Dot {
  name Dot8
  selected true
- xpos 17368
- ypos 4589
+ xpos 18114
+ ypos 4594
 }
 Defocus {
  name Defocus2
@@ -2854,7 +2860,7 @@ push $N15efc260
 Dot {
  name Dot48
  selected true
- xpos 16588
+ xpos 16464
  ypos 1836
 }
 set N2291ebb0 [stack 0]
@@ -2866,7 +2872,7 @@ ParticleExpression {
  name ParticleExpression1
  tile_color 0xff0000ff
  selected true
- xpos 16878
+ xpos 17250
  ypos 1737
 }
 ParticleExpression {
@@ -2877,7 +2883,7 @@ ParticleExpression {
  name ParticleExpression2
  tile_color 0xffff00ff
  selected true
- xpos 16887
+ xpos 17259
  ypos 1801
 }
 push $N2291ebb0
@@ -2888,11 +2894,11 @@ ParticleExpression {
  name ParticleExpression4
  tile_color 0xffff00ff
  selected true
- xpos 16695
+ xpos 16571
  ypos 1857
  disable true
 }
-push $N136b9830
+push $N1839d8b0
 push $N2291ebb0
 ParticleExpression {
  colexpr "v(1,0,0) "
@@ -2902,7 +2908,7 @@ ParticleExpression {
  name ParticleExpression3
  tile_color 0xffff00ff
  selected true
- xpos 16772
+ xpos 16648
  ypos 1822
 }
 add_layer {pos pos.red pos.green pos.blue pos.alpha}
@@ -2910,7 +2916,7 @@ ParticleToImage {
  pos pos
  name ParticleToImage1
  selected true
- xpos 16772
+ xpos 16648
  ypos 1905
  cached true
  bookmark true
@@ -2923,7 +2929,7 @@ PositionToPoints2 {
  pointSize 10
  name PositionToPoints2
  selected true
- xpos 16772
+ xpos 16648
  ypos 1931
  bookmark true
 }
@@ -2950,7 +2956,7 @@ ParticleEmitter {
  seed 20
  name ParticleEmitter9
  selected true
- xpos 16772
+ xpos 16648
  ypos 2003
 }
 push $N2291ebb0
@@ -2958,7 +2964,7 @@ Scene {
  inputs 2
  name Scene15
  selected true
- xpos 16571
+ xpos 16447
  ypos 1983
 }
 Camera2 {
@@ -3055,8 +3061,8 @@ Card2 {
  drawPosition {-0.4639999866 0 -0.5699999928}
  name Card15
  selected true
- xpos 17793
- ypos 1284
+ xpos 18539
+ ypos 1289
  disable true
 }
 Card2 {
@@ -3081,8 +3087,8 @@ Card2 {
  drawPosition {-0.4639999866 0 -0.5699999928}
  name Card10
  selected true
- xpos 17863
- ypos 1274
+ xpos 18609
+ ypos 1279
 }
 TransformGeo {
  inputs 0
@@ -3241,8 +3247,8 @@ Read {
  smartGrade true
  name Read28
  selected true
- xpos 18088
- ypos 3349
+ xpos 18834
+ ypos 3354
  postage_stamp_frame 1099
  addUserKnob {20 Ivy}
  addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
@@ -3548,8 +3554,8 @@ Read {
  smartGrade true
  name Read32
  selected true
- xpos 17770
- ypos 3488
+ xpos 18516
+ ypos 3493
  postage_stamp_frame 1024
  addUserKnob {20 Ivy}
  addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
@@ -3656,58 +3662,6 @@ Read {
 Read {
  inputs 0
  file_type exr
- file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
- localizationPolicy off
- format "4260 2304 0 0 4260 2304 1 BDL Working"
- proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v002.%04d.exr
- proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
- first 1001
- last 1048
- origfirst 1001
- origlast 1048
- origset true
- smartGrade true
- name Read38
- selected true
- xpos 17222
- ypos 3379
- postage_stamp_frame 1024
- addUserKnob {20 Ivy}
- addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
- addUserKnob {26 divider4 l "" +STARTLINE}
- addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
- _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
- addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
- addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
- _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
- addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
- _expressions {{curve}}
- addUserKnob {26 divider0 l "" +STARTLINE}
- addUserKnob {20 dbinfo l "DB Info" n 1}
- dbinfo 0
- addUserKnob {1 twig_dnuuid l "Twig Id"}
- twig_dnuuid 1724dbcb-6f81-463a-a5e0-931731b1f2ac
- addUserKnob {1 stalk_dnuuid l "Stalk Id"}
- stalk_dnuuid 608714c6-04d6-4963-9392-aa035a4d744d
- addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
- twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
- addUserKnob {1 leaf_dnuuid l "Leaf Id"}
- leaf_dnuuid 142c3031-4140-4224-848e-87c42a0c48bb
- addUserKnob {26 divider1 l "" +STARTLINE}
- addUserKnob {1 twigtype l "Twig Type"}
- twigtype elmr
- addUserKnob {1 leaf_label l Leaf}
- leaf_label main_proxy0
- addUserKnob {1 ivy_version l Version}
- ivy_version 2
- addUserKnob {43 ivy_notes l Notes}
- addUserKnob {26 divider2 l "" +STARTLINE}
- addUserKnob {1 build_label l "Build Label"}
- addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
-}
-Read {
- inputs 0
- file_type exr
  file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v001/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v001.####.exr
  localizationPolicy off
  format "4260 2304 0 0 4260 2304 1 BDL Working"
@@ -3722,8 +3676,8 @@ Read {
  smartGrade true
  name Read31
  selected true
- xpos 16680
- ypos 3394
+ xpos 17426
+ ypos 3399
  postage_stamp_frame 1024
  addUserKnob {20 Ivy}
  addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
@@ -3820,8 +3774,8 @@ Read {
  smartGrade true
  name Read37
  selected true
- xpos 16888
- ypos 3373
+ xpos 17634
+ ypos 3378
  postage_stamp_frame 1024
  addUserKnob {20 Ivy}
  addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
@@ -3855,4 +3809,689 @@ Read {
  addUserKnob {26 divider2 l "" +STARTLINE}
  addUserKnob {1 build_label l "Build Label"}
  addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Switch {
+ inputs 0
+ which {{"\$gui ? 1 : 0"}}
+ name Switch2
+ selected true
+ xpos 14667
+ ypos 1252
+}
+Read {
+ inputs 0
+ file_type exr
+ file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
+ localizationPolicy off
+ format "4260 2304 0 0 4260 2304 1 BDL Working"
+ proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v002.%04d.exr
+ proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
+ first 1001
+ last 1048
+ origfirst 1001
+ origlast 1048
+ origset true
+ smartGrade true
+ name Read38
+ selected true
+ xpos 17964
+ ypos 3382
+ postage_stamp_frame 1024
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 1724dbcb-6f81-463a-a5e0-931731b1f2ac
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid 608714c6-04d6-4963-9392-aa035a4d744d
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid 142c3031-4140-4224-848e-87c42a0c48bb
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype elmr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 2
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+FillMat {
+ inputs 0
+ color 1
+ name FillMat2
+ selected true
+ xpos 16796
+ ypos 2768
+}
+AmbientOcclusion {
+ samples 15
+ spread 0.1
+ falloff 1
+ name AmbientOcclusion1
+ selected true
+ xpos 16796
+ ypos 2811
+}
+push $N13c00d40
+Shuffle2 {
+ fromInput1 {{0} B}
+ in1 nor
+ fromInput2 {{0} B}
+ mappings "4 nor.red 0 0 rgba.red 0 0 nor.green 0 1 rgba.green 0 1 nor.blue 0 2 rgba.blue 0 2 nor.alpha 0 3 rgba.alpha 0 3"
+ name Shuffle13
+ selected true
+ xpos 17350
+ ypos 3333
+}
+set Na5a81020 [stack 0]
+Group {
+ name apDirLight1
+ help "Simulate a simple directional/infinite light through a normal pass, by picking a normal color and then tweaking the radius, falloff and hardness of the light.\n\napDirLight v0.2 by Adrian Pueyo\nadrianpueyo.com, 2016"
+ knobChanged "\nif int(nuke.thisNode()\['theOutput'].getValue())==1:\n    nuke.thisNode()\['color'].setEnabled(True)\n    nuke.thisNode()\['intensity'].setEnabled(True)\nelse:\n    nuke.thisNode()\['color'].setEnabled(False)\n    nuke.thisNode()\['intensity'].setEnabled(False)\n"
+ selected true
+ xpos 17225
+ ypos 3389
+ addUserKnob {20 apDirLight}
+ addUserKnob {41 in l "input normals" T ShuffleNormals.in}
+ addUserKnob {6 pick_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {41 pick T CalcLight.pick}
+ addUserKnob {7 radius t "Radius of the DirLight around the picked color." R 0 2}
+ radius 1.255
+ addUserKnob {7 falloff t "Inverse gamma of the DirLight." R 0 5}
+ falloff 1.64
+ addUserKnob {7 hardness t "Brings black point and white point closer together, to create a hard center."}
+ hardness 0.525
+ addUserKnob {4 theOutput l output t "Output the light in the alpha channel or in the rgb by choosing its color/gain." M {alpha rgb}}
+ addUserKnob {18 color t "Set a rgb color to the DirLight." +DISABLED}
+ color 1
+ addUserKnob {6 color_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 color_panelDropped_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 color_panelDropped_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 color_panelDropped_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 color_panelDropped_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 color_panelDropped_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {7 intensity t "Multiplier for the color." +DISABLED R 0 3}
+ intensity 1
+ addUserKnob {26 copyright l "" +STARTLINE T "\napDirLight v0.2 - adrianpueyo.com, 2016."}
+}
+ Input {
+  inputs 0
+  name Inputmask
+  xpos -164
+  ypos 44
+  number 1
+ }
+ Input {
+  inputs 0
+  name InputN
+  xpos -54
+  ypos -131
+ }
+ Shuffle {
+  in nor
+  name ShuffleNormals
+  tile_color 0xffffff01
+  xpos -54
+  ypos -107
+ }
+ Expression {
+  temp_name0 cosA
+  temp_expr0 (r*pick.r+g*pick.g+b*pick.b)/(sqrt(r*r+g*g+b*b)*sqrt(pick.r*pick.r+pick.g*pick.g+pick.b*pick.b))
+  expr3 1-pow(clamp(cosA),1/pow(radius,5))
+  name CalcLight
+  xpos -54
+  ypos -83
+  addUserKnob {20 Picker}
+  addUserKnob {18 pick}
+  pick {0.1354659945 0.6269575357 -0.7671852112}
+  addUserKnob {6 pick_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {6 pick_panelDropped_1 l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {6 pick_panelDropped_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {6 pick_panelDropped_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {6 pick_panelDropped_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {6 pick_panelDropped_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ }
+ Gamma {
+  channels alpha
+  value {{parent.falloff}}
+  name Gamma
+  xpos -54
+  ypos -59
+ }
+ Grade {
+  channels alpha
+  blackpoint {{parent.hardness>1?0.5:parent.hardness<0?0:parent.hardness/2}}
+  whitepoint {{parent.hardness>1?0.5:parent.hardness<0?1:1-parent.hardness/2}}
+  name GradeHardness
+  xpos -54
+  ypos -27
+ }
+ Invert {
+  channels alpha
+  name Invert
+  xpos -54
+  ypos 5
+ }
+ ChannelMerge {
+  inputs 2
+  operation multiply
+  name ChannelMergeMask
+  xpos -54
+  ypos 35
+  disable {{"!\[exists parent.input1]"}}
+ }
+set Na3ecaaa0 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  alpha black
+  name ShuffleRGB
+  tile_color 0xff000000
+  xpos 43
+  ypos 44
+ }
+ Grade {
+  white {{parent.color} {parent.color} {parent.color} {parent.color}}
+  multiply {{parent.intensity}}
+  name GradeRGB
+  xpos 43
+  ypos 77
+ }
+push $Na3ecaaa0
+ Switch {
+  inputs 2
+  which {{parent.theOutput}}
+  name SwitchRGB
+  xpos -54
+  ypos 77
+ }
+ Output {
+  name Output
+  xpos -54
+  ypos 101
+ }
+end_group
+push $Na5a81020
+Group {
+ name rotatenormals
+ help "This will rotate Normal-data using rotation matrixes.\nhttp://en.wikipedia.org/wiki/Rotation_matrix\n\nYou enable Normal-data in the ScanlineRender-node, create a new layer for this.\n\nTip 1:\n Link the rotation knob to the Nuke camera, revert the camera order and then either invert the matrixes or negate the angles.\nThis will convert the Normal data from World Space to Camera Space. I guess. I am no expert on the subject.\n\n\nTip 2:\nPut these in your init.tcl to always render out the normals:\n\nadd_layer \{P P.x P.y P.z\}\nknob_default ScanlineRender.P_channel P\nadd_layer \{N N.x N.y N.z\}\nknob_default ScanlineRender.N_channel N\nknob_default ScanlineRender.output_shader_vectors true\n\nNote:\n In Nuke4.6 and earlier, the Normals is multiplied with the Z, so you need to divide them first. Use Channel Merge for this.\n"
+ selected true
+ xpos 17341
+ ypos 3419
+ addUserKnob {20 "" l Parameters}
+ addUserKnob {26 "" l Rotation}
+ addUserKnob {41 negx t "Multiply x-angle with -1.\nGood if you have linked the rotation data to something and want to reverse it.\n" T RotData.negx}
+ addUserKnob {41 negy t "Multiply y-angle with -1.\nGood if you have linked the rotation data to something and want to reverse it.\n" T RotData.negy}
+ addUserKnob {41 negz t "Multiply z-angle with -1.\nGood if you have linked the rotation data to something and want to reverse it.\n" T RotData.negz}
+ addUserKnob {41 rotate T RotData.rotate}
+ addUserKnob {26 ""}
+ addUserKnob {4 rotationorder M {XYZ XZY YXZ YZX ZXY ZYX}}
+ rotationorder ZXY
+ addUserKnob {6 revertorder l "Revert Order" t "Quick order reversal." -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {41 invertxmatrix t "Inverts the X rotation matrix. (Checks the invert knob on the ColorMatrix Node)\n" T RotData.invertxmatrix}
+ addUserKnob {41 invertymatrix t "Inverts the Y rotation matrix. (Checks the invert knob on the ColorMatrix Node)\n" T RotData.invertymatrix}
+ addUserKnob {41 invertzmatrix t "Inverts the Z rotation matrix. (Checks the invert knob on the ColorMatrix Node)\n" T RotData.invertzmatrix}
+ addUserKnob {26 "" l "Source Channels"}
+ addUserKnob {41 from0 l "Normal X" T CopyFrom.from0}
+ addUserKnob {41 from1 l "Normal Y" T CopyFrom.from1}
+ addUserKnob {41 from2 l "Normal Z" T CopyFrom.from2}
+ addUserKnob {26 "" l "Destination Channels"}
+ addUserKnob {41 to0 l X T CopyBack.to0}
+ addUserKnob {41 to1 l Y T CopyBack.to1}
+ addUserKnob {41 to2 l Z T CopyBack.to2}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0x7171c600
+  label "Reverted Order"
+  note_font_size 32
+  xpos 650
+  ypos 4
+  bdwidth 1030
+  bdheight 354
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0x8e8e3800
+  label "Normal Order"
+  note_font_size 32
+  xpos -581
+  ypos 22
+  bdwidth 1001
+  bdheight 355
+ }
+ NoOp {
+  inputs 0
+  name RotData
+  xpos 1170
+  ypos -370
+  addUserKnob {20 "" l User}
+  addUserKnob {6 invertxmatrix -STARTLINE}
+  addUserKnob {6 invertymatrix -STARTLINE}
+  addUserKnob {6 invertzmatrix -STARTLINE}
+  addUserKnob {26 ""}
+  addUserKnob {6 negx -STARTLINE}
+  addUserKnob {6 negy -STARTLINE}
+  addUserKnob {6 negz -STARTLINE}
+  addUserKnob {13 rotate}
+  rotate {-4.95 0 0}
+  addUserKnob {26 ""}
+  addUserKnob {1 alphaexpr}
+  alphaexpr (negy?-1:1)*rotate.y/360.0*(2*PI)
+  addUserKnob {1 betaexpr}
+  betaexpr (negz?-1:1)*rotate.z/360.0*(2*PI)
+  addUserKnob {1 gammaexpr}
+  gammaexpr (negx?-1:1)*rotate.x/360.0*(2*PI)
+  addUserKnob {26 ""}
+  addUserKnob {7 alpha}
+  alpha {{"\[knob alphaexpr]" i}}
+  addUserKnob {7 beta}
+  beta {{"\[knob betaexpr]" i}}
+  addUserKnob {7 gamma}
+  gamma {{"\[knob gammaexpr]" i}}
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 1830
+  ypos -610
+ }
+ Dot {
+  name Dot2
+  xpos 1863
+  ypos -487
+ }
+set N25f08c30 [stack 0]
+ Dot {
+  name Dot3
+  xpos 653
+  ypos -477
+ }
+set Na448be20 [stack 0]
+ Dot {
+  name Dot1
+  xpos 433
+  ypos -477
+ }
+push $Na448be20
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  from1 rgba.green
+  to1 rgba.green
+  from2 rgba.blue
+  to2 rgba.blue
+  name CopyFrom
+  xpos 400
+  ypos -367
+ }
+ Dot {
+  name Dot4
+  xpos 433
+  ypos -175
+ }
+set Na4674980 [stack 0]
+ ColorMatrix {
+  matrix {
+      {1 0 0}
+      {0 {"cos( \[value RotData.gamma] )" i} {"-1 * sin( \[value RotData.gamma] )" i}}
+      {0 {"sin( \[value RotData.gamma] )" i} {"cos( \[value RotData.gamma] )" i}}
+    }
+  invert {{"\[value RotData.invertxmatrix]" i}}
+  name ColorMatrix10
+  label "ROLL  X\ngamma"
+  xpos 1500
+  ypos 96
+ }
+ set Cd309bdf0 [stack 0]
+ ColorMatrix {
+  matrix {
+      {{"cos( \[value RotData.alpha] )" i} 0 {"sin( \[value RotData.alpha] )" i}}
+      {0 1 0}
+      {{"-1 * sin( \[value RotData.alpha] )" i} 0 {"cos( \[value RotData.alpha] )" i}}
+    }
+  invert {{"\[value RotData.invertymatrix]" i}}
+  name ColorMatrix11
+  label "Pitch  Y\nalpha"
+  xpos 1500
+  ypos 150
+ }
+ set Caa700b40 [stack 0]
+ ColorMatrix {
+  matrix {
+      {{"cos( \[value RotData.beta] )" i} {"-1 * sin( \[value RotData.beta] )" i} 0}
+      {{"sin( \[value RotData.beta] )" i} {"cos( \[value RotData.beta] )" i} 0}
+      {0 0 1}
+    }
+  invert {{"\[value RotData.invertzmatrix]"}}
+  name ColorMatrix12
+  label "Yaw  Z\nbeta"
+  xpos 1500
+  ypos 204
+ }
+ set Ca466c5e0 [stack 0]
+push $Na4674980
+clone $Caa700b40 {
+  xpos 1360
+  ypos 96
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos 1360
+  ypos 150
+  selected false
+ }
+clone $Ca466c5e0 {
+  xpos 1360
+  ypos 204
+  selected false
+ }
+push $Na4674980
+clone $Ca466c5e0 {
+  xpos 1210
+  ypos 102
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos 1210
+  ypos 156
+  selected false
+ }
+clone $Caa700b40 {
+  xpos 1210
+  ypos 210
+  selected false
+ }
+push $Na4674980
+clone $Cd309bdf0 {
+  xpos 1047
+  ypos 108
+  selected false
+ }
+clone $Ca466c5e0 {
+  xpos 1047
+  ypos 174
+  selected false
+ }
+clone $Caa700b40 {
+  xpos 1047
+  ypos 228
+  selected false
+ }
+push $Na4674980
+clone $Caa700b40 {
+  xpos 890
+  ypos 108
+  selected false
+ }
+clone $Ca466c5e0 {
+  xpos 890
+  ypos 167
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos 890
+  ypos 228
+  selected false
+ }
+push $Na4674980
+clone $Ca466c5e0 {
+  xpos 730
+  ypos 120
+  selected false
+ }
+clone $Caa700b40 {
+  xpos 730
+  ypos 174
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos 730
+  ypos 228
+  selected false
+ }
+ Switch {
+  inputs 6
+  which {{rotationorder}}
+  name Switch2
+  xpos 950
+  ypos 446
+ }
+push $Na4674980
+clone $Ca466c5e0 {
+  xpos 240
+  ypos 102
+  selected false
+ }
+clone $Caa700b40 {
+  xpos 240
+  ypos 156
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos 240
+  ypos 210
+  selected false
+ }
+push $Na4674980
+clone $Ca466c5e0 {
+  xpos 100
+  ypos 102
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos 100
+  ypos 156
+  selected false
+ }
+clone $Caa700b40 {
+  xpos 100
+  ypos 210
+  selected false
+ }
+push $Na4674980
+clone $Caa700b40 {
+  xpos -50
+  ypos 108
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos -50
+  ypos 162
+  selected false
+ }
+clone $Ca466c5e0 {
+  xpos -50
+  ypos 216
+  selected false
+ }
+push $Na4674980
+clone $Caa700b40 {
+  xpos -213
+  ypos 114
+  selected false
+ }
+clone $Ca466c5e0 {
+  xpos -213
+  ypos 180
+  selected false
+ }
+clone $Cd309bdf0 {
+  xpos -213
+  ypos 234
+  selected false
+ }
+push $Na4674980
+clone $Cd309bdf0 {
+  xpos -370
+  ypos 114
+  selected false
+ }
+clone $Ca466c5e0 {
+  xpos -370
+  ypos 173
+  selected false
+ }
+clone $Caa700b40 {
+  xpos -370
+  ypos 247
+  selected false
+ }
+push $Na4674980
+clone $Cd309bdf0 {
+  xpos -501
+  ypos 102
+  selected false
+ }
+clone $Caa700b40 {
+  xpos -501
+  ypos 171
+  selected false
+ }
+clone $Ca466c5e0 {
+  xpos -501
+  ypos 234
+  selected false
+ }
+ Switch {
+  inputs 6
+  which {{rotationorder}}
+  name Switch1
+  xpos -75
+  ypos 422
+ }
+ Switch {
+  inputs 2
+  which {{revertorder}}
+  name Switch3
+  xpos 510
+  ypos 542
+ }
+ Dot {
+  name Dot5
+  xpos 543
+  ypos 665
+ }
+push $N25f08c30
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  from1 rgba.green
+  to1 rgba.green
+  from2 rgba.blue
+  to2 rgba.blue
+  name CopyBack
+  xpos 1830
+  ypos 641
+ }
+ Output {
+  name Output1
+  xpos 1830
+  ypos 758
+ }
+end_group
+push $N15fcc8a0
+Light2 {
+ inputs 0
+ light_type directional
+ color 2
+ rotate {48.75 13.4 0}
+ cast_shadows true
+ depthmap_slope_bias 0.01
+ name Light1
+ selected true
+ xpos 17226
+ ypos 2998
+}
+Phong {
+ inputs 0
+ specular 0
+ name Phong9
+ selected true
+ xpos 16936
+ ypos 2843
+}
+push $N14248330
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial10
+ selected true
+ xpos 17078
+ ypos 2836
+}
+Scene {
+ inputs 2
+ name Scene16
+ selected true
+ xpos 17088
+ ypos 2998
+}
+push $N13db3c00
+RayRender {
+ inputs 3
+ stochastic_samples {{parent.RayRender1.stochastic_samples}}
+ interpolate_animation false
+ samples {{parent.RayRender1.samples}}
+ shutteroffset centred
+ name RayRender3
+ selected true
+ xpos 17078
+ ypos 3244
+}
+FileOut {
+ name FileOut14
+ tile_color 0xbfbf00ff
+ label debirs_aoc
+ selected true
+ xpos 17078
+ ypos 3270
+ icon smartgrade.png
+ channels all
+ _destination /jobs
+ file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v002.####.exr
+ proxy ""
+ fileProxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_aoc_v002.####.exr
+ views {main}
+ first 1001
+ last 1048
+ proxy_mode "full + proxy"
+ pbb true
+ smart_grade on
+ dw_compression_level 0
+ tex_metadata "default metadata and exr/*"
+ _defaults "\{'smart_grade': 0, 'compression': 1, 'tile_color': 3216965887, 'pbb': True, 'dw_compression_level': 0, 'label': 'debirs_aoc'\}"
+ _format "4260 2304 0 0 4260 2304 1.0 BDL Working"
+ _generator "NukeRenderGenerator dnnuke.core.render.generators"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '2', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'debirs_aoc', 'out_dir': u'ELEMENT'\}, 'job': 'BDL', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1048'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==913197df-6c6e-4c29-9618-2fc66fecc78b&Stem.stemname==tc4740&Stem.stemtype==shot'\}"
+ _old_filetype exr
+ _stalkname E_tc4740_comp_precomp_debirs_aoc_v002
+ _twigtype 2d
+ _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+ _invert_grade /tools/BDL/ivyasset/tc4740/ivy/grade/GRD_tc4740_neutral_v001/GRD_tc4740_neutral_v001.grade
 }
