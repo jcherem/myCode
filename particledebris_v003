@@ -2,6 +2,19 @@ set cut_paste_input [stack 0]
 version 12.1 v5
 BackdropNode {
  inputs 0
+ name BackdropNode1
+ tile_color 0x8e7c8e00
+ label "extra forces"
+ note_font_size 42
+ selected true
+ xpos 15353
+ ypos 1238
+ appearance Border
+ bdwidth 889
+ bdheight 208
+}
+BackdropNode {
+ inputs 0
  name BackdropNode10
  tile_color 0x39a890ff
  label "debris \nambient occlusion"
@@ -66,10 +79,10 @@ BackdropNode {
  label emitter
  note_font_size 42
  selected true
- xpos 16580
- ypos 145
- bdwidth 237
- bdheight 202
+ xpos 16942
+ ypos -395
+ bdwidth 445
+ bdheight 842
 }
 BackdropNode {
  inputs 0
@@ -79,7 +92,7 @@ BackdropNode {
  note_font_size 42
  selected true
  xpos 14117
- ypos 1052
+ ypos 818
  bdwidth 1149
  bdheight 348
 }
@@ -97,13 +110,25 @@ BackdropNode {
 }
 BackdropNode {
  inputs 0
+ name BackdropNode18
+ tile_color 0x3e364bff
+ label "Particle Spawn"
+ note_font_size 42
+ selected true
+ xpos 15350
+ ypos 1046
+ bdwidth 895
+ bdheight 138
+}
+BackdropNode {
+ inputs 0
  name BackdropNode31
  tile_color 0x397b90ff
  label coloring
  note_font_size 42
  selected true
- xpos 15707
- ypos 2010
+ xpos 16713
+ ypos 1763
  bdwidth 239
  bdheight 258
 }
@@ -114,8 +139,8 @@ BackdropNode {
  label "instance proxy"
  note_font_size 42
  selected true
- xpos 14547
- ypos -184
+ xpos 14555
+ ypos -421
  bdwidth 303
  bdheight 250
 }
@@ -126,8 +151,8 @@ BackdropNode {
  label "instance proxy"
  note_font_size 42
  selected true
- xpos 15071
- ypos -164
+ xpos 15079
+ ypos -401
  bdwidth 303
  bdheight 250
 }
@@ -138,8 +163,8 @@ BackdropNode {
  label "instance proxy"
  note_font_size 42
  selected true
- xpos 15589
- ypos -176
+ xpos 15597
+ ypos -413
  bdwidth 303
  bdheight 250
 }
@@ -150,8 +175,8 @@ BackdropNode {
  label "instance proxy"
  note_font_size 42
  selected true
- xpos 16211
- ypos -171
+ xpos 16219
+ ypos -408
  bdwidth 303
  bdheight 250
 }
@@ -163,9 +188,9 @@ BackdropNode {
  note_font_size 42
  selected true
  xpos 15060
- ypos 401
- bdwidth 1251
- bdheight 271
+ ypos 167
+ bdwidth 1245
+ bdheight 262
 }
 BackdropNode {
  inputs 0
@@ -174,10 +199,10 @@ BackdropNode {
  label gravity
  note_font_size 42
  selected true
- xpos 15342
- ypos 790
- bdwidth 880
- bdheight 199
+ xpos 15352
+ ypos 594
+ bdwidth 895
+ bdheight 127
 }
 BackdropNode {
  inputs 0
@@ -186,10 +211,10 @@ BackdropNode {
  label "bounce floor "
  note_font_size 42
  selected true
- xpos 15351
- ypos 1081
- bdwidth 880
- bdheight 199
+ xpos 15353
+ ypos 729
+ bdwidth 891
+ bdheight 257
 }
 BackdropNode {
  inputs 0
@@ -199,7 +224,8 @@ BackdropNode {
  note_font_size 42
  selected true
  xpos 15352
- ypos 1554
+ ypos 1559
+ appearance Border
  bdwidth 862
  bdheight 157
 }
@@ -223,8 +249,8 @@ BackdropNode {
  label "instance proxy"
  note_font_size 42
  selected true
- xpos 14014
- ypos -182
+ xpos 14022
+ ypos -419
  bdwidth 303
  bdheight 250
 }
@@ -251,6 +277,30 @@ BackdropNode {
  ypos 2088
  bdwidth 274
  bdheight 1251
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x3b445bff
+ label "inside card "
+ note_font_size 42
+ selected true
+ xpos 15587
+ ypos 742
+ bdheight 223
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ tile_color 0x3b445bff
+ label "bouncing on a geo"
+ note_font_size 42
+ selected true
+ xpos 15886
+ ypos 761
+ bdheight 241
+ z_order 1
 }
 push $cut_paste_input
 Light2 {
@@ -316,52 +366,6 @@ Read {
  addUserKnob {26 divider2 l "" +STARTLINE}
  addUserKnob {1 build_label l "Build Label"}
  addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
-}
-Phong {
- inputs 0
- name Phong8
- selected true
- xpos 18072
- ypos 1137
-}
-Card2 {
- inputs 0
- lens_in_haperture 14.5
- translate {1667.775513 32.691082 397.7049866}
- rotate {83.16316223 50.31438065 71.40393066}
- scaling {30.83052826 32.56348801 1.183449626}
- uniform_scale 0.135
- type bicubic
- uv_position {0.3525640368 0.3525638878}
- control_points {3 3 3 6 
-
-1 {-7.25 -3.921126842 0} 1 {2.416666985 0 0} 0 {0 0 0} 1 {0 1.30704236 0} 0 {0 0 0} 0 {0 0 0} 
-1 {0 -3.921126842 0} 1 {2.416666746 0 0} 1 {-2.416666746 0 0} 1 {0 1.30704236 0} 0 {0 0 0} 0 {0.5 0 0} 
-1 {7.25 -3.921126842 0} 0 {0 0 0} 1 {-2.416666985 0 0} 1 {0 1.30704236 0} 0 {0 0 0} 0 {1 0 0} 
-1 {-7.25 0 0} 1 {2.416666985 0 0} 0 {0 0 0} 1 {0 1.30704236 0} 1 {0 -1.30704236 0} 0 {0 0.5 0} 
-1 {0.05000000075 0.03999999911 -4.599999905} 1 {2.416666746 0 0} 1 {-2.416666746 0 0} 1 {-0.02018357627 1.306886554 2.623864889} 1 {0.01999999955 -1.294999957 -2.599999905} 0 {0.5 0.5 0} 
-1 {7.25 0 0} 0 {0 0 0} 1 {-2.416666985 0 0} 1 {0 1.30704236 0} 1 {0 -1.30704236 0} 0 {1 0.5 0} 
-1 {-7.360000134 3.714999914 28.10000038} 1 {2.416666985 0 0} 0 {0 0 0} 0 {0 0 0} 1 {0 -1.30704236 0} 0 {0 1 0} 
-1 {0 3.921126842 0} 1 {2.416666746 0 0} 1 {-2.416666746 0 0} 0 {0 0 0} 1 {0 -1.30704236 0} 0 {0.5 1 0} 
-1 {7.25 3.921126842 0} 0 {0 0 0} 1 {-2.416666985 0 0} 0 {0 0 0} 1 {0 -1.30704236 0} 0 {1 1 0} }
- drawPosition {-2.100744009 -1.127796888 -3.646876335}
- name Card16
- selected true
- xpos 18366
- ypos 1087
-}
-ApplyMaterial {
- inputs 2
- name ApplyMaterial9
- selected true
- xpos 18072
- ypos 1163
-}
-Dot {
- name Dot59
- selected true
- xpos 16012
- ypos 1162
 }
 Camera2 {
  inputs 0
@@ -492,21 +496,21 @@ Camera2 {
  addUserKnob {7 verticalFilmOffset l "Vertical Film Offset"}
  verticalFilmOffset {{curve x999 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
 }
-set N15b64240 [stack 0]
+set N134d48a0 [stack 0]
 Dot {
  name Dot14
  selected true
  xpos 14821
  ypos 3166
 }
-set N140435d0 [stack 0]
+set N1237f3b0 [stack 0]
 Dot {
  name Dot11
  selected true
  xpos 14821
  ypos 3243
 }
-set N15fcc8a0 [stack 0]
+set N131f6e00 [stack 0]
 FillMat {
  inputs 0
  color 1
@@ -530,7 +534,7 @@ Dot {
  xpos 18000
  ypos 3017
 }
-set N1393ead0 [stack 0]
+set N13058bf0 [stack 0]
 Noise {
  inputs 0
  output rgb
@@ -587,8 +591,14 @@ Card2 {
 1 {0.5 0 0.5} 0 {0 0 0} 0 {0 0 -0.1666666865} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {1 1 0} }
  name BaouncingCard
  selected true
- xpos 18308
- ypos 1147
+ xpos 15758
+ ypos 841
+}
+Dot {
+ name Dot9
+ selected true
+ xpos 18342
+ ypos 845
 }
 Normals {
  action build
@@ -616,14 +626,14 @@ Dot {
  xpos 18342
  ypos 2296
 }
-set N133c8f20 [stack 0]
+set N1212c5f0 [stack 0]
 Dot {
  name Dot3
  selected true
  xpos 18342
  ypos 2828
 }
-set N133cdd40 [stack 0]
+set N127a39d0 [stack 0]
 ApplyMaterial {
  inputs 2
  name ApplyMaterial6
@@ -636,8 +646,8 @@ FillMat {
  color 1
  name FillMat6
  selected true
- xpos 17415
- ypos 2754
+ xpos 17409
+ ypos 2811
 }
 AmbientOcclusion {
  samples 15
@@ -645,8 +655,8 @@ AmbientOcclusion {
  falloff 1
  name AmbientOcclusion5
  selected true
- xpos 17415
- ypos 2798
+ xpos 17409
+ ypos 2837
 }
 Constant {
  inputs 0
@@ -657,7 +667,7 @@ Constant {
  name Constant40
  selected true
  xpos 14404
- ypos 1176
+ ypos 942
 }
 add_layer {col col.red col.green col.blue}
 Shuffle {
@@ -666,16 +676,16 @@ Shuffle {
  label "--->\[knob in] >\[knob out]"
  selected true
  xpos 14404
- ypos 1248
+ ypos 1014
 }
-set N134870a0 [stack 0]
+set N14f0f760 [stack 0]
 CheckerBoard2 {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
  name CheckerBoard1
  selected true
  xpos 14514
- ypos 1130
+ ypos 896
 }
 Grade {
  multiply_panelDropped true
@@ -684,7 +694,7 @@ Grade {
  name Grade14
  selected true
  xpos 14514
- ypos 1202
+ ypos 968
 }
 Transform {
  scale 0.3
@@ -693,7 +703,7 @@ Transform {
  name Transform5
  selected true
  xpos 14514
- ypos 1228
+ ypos 994
 }
 ShuffleCopy {
  inputs 2
@@ -705,16 +715,16 @@ ShuffleCopy {
  name ShuffleCopy12
  selected true
  xpos 14514
- ypos 1254
+ ypos 1020
 }
-push $N134870a0
+push $N14f0f760
 Reformat {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
  name Reformat14
  selected true
  xpos 14280
- ypos 1132
+ ypos 898
 }
 Noise {
  size 6
@@ -722,7 +732,7 @@ Noise {
  name Noise11
  selected true
  xpos 14280
- ypos 1170
+ ypos 936
 }
 Shuffle {
  alpha white
@@ -730,7 +740,7 @@ Shuffle {
  label "--->\[knob in] >\[knob out]"
  selected true
  xpos 14280
- ypos 1196
+ ypos 962
 }
 ShuffleCopy {
  inputs 2
@@ -742,14 +752,14 @@ ShuffleCopy {
  name ShuffleCopy1
  selected true
  xpos 14280
- ypos 1256
+ ypos 1022
 }
 Phong {
  specular 0.015
  name Phong1
  selected true
  xpos 14280
- ypos 1341
+ ypos 1107
 }
 Sphere {
  rows 3
@@ -759,17 +769,46 @@ Sphere {
  name Sphere5
  selected true
  xpos 14280
- ypos 1367
+ ypos 1133
 }
-clone node13ddf1a0|Switch|5266 Switch {
+clone node14d35e80|Switch|15304 Switch {
  inputs 2
  name Switch1
  selected true
  xpos 14514
- ypos 1367
+ ypos 1133
 }
-set C13ddf1a0 [stack 0]
-set N1839d8b0 [stack 0]
+set C14d35e80 [stack 0]
+set N14d35e80 [stack 0]
+Card2 {
+ inputs 0
+ lens_in_haperture 14.5
+ translate {1667.775513 29 397.7049866}
+ rotate {83.16316223 50.31438065 71.40393066}
+ scaling {30.83052826 32.56348801 1.183449626}
+ uniform_scale 0.28
+ type bicubic
+ uv_position {0.3525640368 0.3525638878}
+ control_points {3 3 3 6 
+
+1 {-7.25 -3.921126842 0} 0 {2.416666985 0 0} 0 {0 0 0} 0 {0 1.30704236 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -3.921126842 0} 0 {2.416666746 0 0} 0 {-2.416666746 0 0} 0 {0 1.30704236 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {7.25 -3.921126842 0} 0 {0 0 0} 0 {-2.416666985 0 0} 0 {0 1.30704236 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-7.25 0 0} 0 {2.416666985 0 0} 0 {0 0 0} 0 {0 1.30704236 0} 0 {0 -1.30704236 0} 0 {0 0.5 0} 
+1 {0.05000000075 0.03999999911 -4.599999905} 0 {2.416666746 0 0} 0 {-2.416666746 0 0} 0 {-0.02018357627 1.306886554 2.623864889} 0 {0.01999999955 -1.294999957 -2.599999905} 0 {0.5 0.5 0} 
+1 {7.25 0 0} 0 {0 0 0} 0 {-2.416666985 0 0} 0 {0 1.30704236 0} 0 {0 -1.30704236 0} 0 {1 0.5 0} 
+1 {-7.360000134 3.714999914 28.10000038} 0 {2.416666985 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -1.30704236 0} 0 {0 1 0} 
+1 {0 3.921126842 0} 0 {2.416666746 0 0} 0 {-2.416666746 0 0} 0 {0 0 0} 0 {0 -1.30704236 0} 0 {0.5 1 0} 
+1 {7.25 3.921126842 0} 0 {0 0 0} 0 {-2.416666985 0 0} 0 {0 0 0} 0 {0 -1.30704236 0} 0 {1 1 0} }
+ drawPosition {-2.100744009 -1.127796888 -3.646876335}
+ name Card16
+ selected true
+ xpos 16153
+ ypos 847
+}
+set N14c93b50 [stack 0]
+push $N14c93b50
+push $N14c93b50
 Constant {
  inputs 0
  channels rgb
@@ -778,33 +817,135 @@ Constant {
  format "256 256 0 0 256 256 1 square_256"
  name Constant39
  selected true
- xpos 14108
- ypos -235
+ xpos 14116
+ ypos -472
 }
-set N136c1960 [stack 0]
+set N14d019a0 [stack 0]
 Shuffle {
  out col
  name Shuffle17
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 14108
+ xpos 14116
+ ypos -237
 }
 CheckerBoard2 {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
- name CheckerBoard2
+ name CheckerBoard4
  selected true
- xpos 14208
- ypos -133
+ xpos 14425
+ ypos -1050
+}
+Shuffle2 {
+ fromInput1 {{0} B}
+ fromInput2 {{0} B}
+ mappings "4 black -1 -1 rgba.red 0 0 black -1 -1 rgba.green 0 1 black -1 -1 rgba.blue 0 2 white -1 -1 rgba.alpha 0 3"
+ name Shuffle23
+ selected true
+ xpos 14425
+ ypos -978
+ disable true
+}
+Grade {
+ multiply {4.333333 3.382565 -1.666667 1}
+ multiply_panelDropped true
+ name Grade1
+ selected true
+ xpos 14428
+ ypos -925
+}
+NoOp {
+ name Anchor_72273d612
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+ knobChanged stamps.anchorKnobChanged()
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0xffffff01
+ note_font_size 20
+ selected true
+ xpos 14428
+ ypos -881
+ addUserKnob {20 anchor_tab l "Anchor Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title "temp image"
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "temp image"}
+ addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_72273d612}
+ addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+ addUserKnob {1 tags l Tags t "Comma-separated tags you can define for each Anchor, that will help you find it when invoking the Stamp Selector by pressing the Stamps shortkey with nothing selected."}
+ tags 2D,
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+ addUserKnob {22 selectStamps l select t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+ addUserKnob {22 reconnectStamps l reconnect -STARTLINE T stamps.anchorReconnectWired()}
+ addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
+}
+set N16603090 [stack 0]
+PostageStamp {
+ name Stamp2
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps; stamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos 14216
+ ypos -341
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title "temp image"
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "temp image"}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_72273d612
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
 }
 Transform {
  scale 0.3
  center {128 128}
  shutteroffset centred
- name Transform6
+ name Transform1
  selected true
- xpos 14208
- ypos -61
+ xpos 14216
+ ypos -307
 }
 ShuffleCopy {
  inputs 2
@@ -815,16 +956,16 @@ ShuffleCopy {
  out col
  name ShuffleCopy7
  selected true
- xpos 14208
- ypos 6
+ xpos 14216
+ ypos -231
 }
 Reformat {
  inputs 0
  format "512 512 0 0 512 512 1 square_512"
  name Reformat6
  selected true
- xpos 14314
- ypos -137
+ xpos 14322
+ ypos -374
 }
 Noise {
  premult rgb
@@ -834,40 +975,40 @@ Noise {
  center {1024 576}
  name Noise6
  selected true
- xpos 14314
- ypos -99
+ xpos 14322
+ ypos -336
 }
-push $N136c1960
+push $N14d019a0
 Shuffle {
  out col
  name Shuffle2
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 14313
- ypos -224
+ xpos 14321
+ ypos -461
 }
 Reformat {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
  name Reformat8
  selected true
- xpos 14433
- ypos -328
+ xpos 14441
+ ypos -565
 }
 Noise {
  center {1144 858}
  name Noise1
  selected true
- xpos 14433
- ypos -290
+ xpos 14441
+ ypos -527
 }
 Shuffle {
  alpha white
  name Shuffle10
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 14433
- ypos -264
+ xpos 14441
+ ypos -501
 }
 ShuffleCopy {
  inputs 2
@@ -878,15 +1019,15 @@ ShuffleCopy {
  out col
  name ShuffleCopy2
  selected true
- xpos 14433
- ypos -218
+ xpos 14441
+ ypos -455
 }
 Phong {
  specular 0.015
  name Phong6
  selected true
- xpos 14433
- ypos -151
+ xpos 14441
+ ypos -388
 }
 Sphere {
  rows 10
@@ -895,36 +1036,42 @@ Sphere {
  uniform_scale 0.26
  name Sphere8
  selected true
- xpos 14433
- ypos -125
+ xpos 14441
+ ypos -362
 }
 DisplaceGeo {
  inputs 2
  scale 1.115
  name DisplaceGeo5
  selected true
- xpos 14433
- ypos -99
+ xpos 14441
+ ypos -336
 }
 TransformGeo {
  name TransformGeo14
  selected true
- xpos 14433
- ypos -34
+ xpos 14441
+ ypos -271
 }
-clone $C13ddf1a0 {
+clone $C14d35e80 {
  inputs 2
- xpos 14433
- ypos 12
+ xpos 14441
+ ypos -225
  selected true
 }
 Dot {
  name Dot29
  selected true
- xpos 14467
- ypos 535
+ xpos 14475
+ ypos 298
 }
-set N13de72c0 [stack 0]
+set N14fdfef0 [stack 0]
+Dot {
+ name Dot4
+ selected true
+ xpos 14475
+ ypos 372
+}
 Constant {
  inputs 0
  channels rgb
@@ -933,34 +1080,79 @@ Constant {
  format "256 256 0 0 256 256 1 square_256"
  name Constant41
  selected true
- xpos 14603
- ypos -185
+ xpos 14611
+ ypos -422
 }
-set N136b0240 [stack 0]
+set N1248e380 [stack 0]
 Shuffle {
  out col
  name Shuffle18
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 14603
- ypos 1
+ xpos 14611
+ ypos -236
 }
-CheckerBoard2 {
- inputs 0
- format "256 256 0 0 256 256 1 square_256"
- name CheckerBoard3
+push $N16603090
+PostageStamp {
+ name Stamp3
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps; stamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
  selected true
- xpos 14717
- ypos -122
+ xpos 14711
+ ypos -336
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title "temp image"
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "temp image"}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_72273d612
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
 }
 Transform {
  scale 0.3
  center {128 128}
  shutteroffset centred
- name Transform7
+ name Transform6
  selected true
- xpos 14717
- ypos -50
+ xpos 14711
+ ypos -302
 }
 ShuffleCopy {
  inputs 2
@@ -971,16 +1163,16 @@ ShuffleCopy {
  out col
  name ShuffleCopy8
  selected true
- xpos 14703
- ypos 7
+ xpos 14711
+ ypos -230
 }
 Reformat {
  inputs 0
  format "512 512 0 0 512 512 1 square_512"
  name Reformat5
  selected true
- xpos 14862
- ypos -116
+ xpos 14870
+ ypos -353
 }
 Noise {
  premult rgb
@@ -990,41 +1182,41 @@ Noise {
  center {1024 576}
  name Noise5
  selected true
- xpos 14862
- ypos -78
+ xpos 14870
+ ypos -315
 }
-push $N136b0240
+push $N1248e380
 Shuffle {
  out col
  name Shuffle3
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 14862
- ypos -174
+ xpos 14870
+ ypos -411
 }
 Reformat {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
  name Reformat9
  selected true
- xpos 14973
- ypos -282
+ xpos 14981
+ ypos -519
 }
 Noise {
  size 11
  center {1144 858}
  name Noise7
  selected true
- xpos 14972
- ypos -244
+ xpos 14980
+ ypos -481
 }
 Shuffle {
  alpha white
  name Shuffle9
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 14972
- ypos -218
+ xpos 14980
+ ypos -455
 }
 ShuffleCopy {
  inputs 2
@@ -1035,15 +1227,15 @@ ShuffleCopy {
  out col
  name ShuffleCopy3
  selected true
- xpos 14972
- ypos -168
+ xpos 14980
+ ypos -405
 }
 Phong {
  specular 0.015
  name Phong5
  selected true
- xpos 14972
- ypos -130
+ xpos 14980
+ ypos -367
 }
 Sphere {
  rows 10
@@ -1052,24 +1244,24 @@ Sphere {
  uniform_scale 0.26
  name Sphere9
  selected true
- xpos 14972
- ypos -104
+ xpos 14980
+ ypos -341
 }
 DisplaceGeo {
  inputs 2
  scale 1.115
  name DisplaceGeo4
  selected true
- xpos 14972
- ypos -78
+ xpos 14980
+ ypos -315
 }
-clone $C13ddf1a0 {
+clone $C14d35e80 {
  inputs 2
- xpos 14972
- ypos 13
+ xpos 14980
+ ypos -224
  selected true
 }
-set N1409d920 [stack 0]
+set N20d33970 [stack 0]
 Constant {
  inputs 0
  channels rgb
@@ -1078,25 +1270,70 @@ Constant {
  format "256 256 0 0 256 256 1 square_256"
  name Constant46
  selected true
- xpos 15121
- ypos -189
+ xpos 15129
+ ypos -426
 }
-set N13c36770 [stack 0]
+set N20d3bde0 [stack 0]
 Shuffle {
  out col
  name Shuffle19
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 15121
- ypos 5
+ xpos 15129
+ ypos -232
 }
-CheckerBoard2 {
- inputs 0
- format "256 256 0 0 256 256 1 square_256"
- name CheckerBoard5
+push $N16603090
+PostageStamp {
+ name Stamp4
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps; stamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
  selected true
- xpos 15221
- ypos -114
+ xpos 15229
+ ypos -313
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title "temp image"
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "temp image"}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_72273d612
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
 }
 Transform {
  scale 0.3
@@ -1104,8 +1341,8 @@ Transform {
  shutteroffset centred
  name Transform11
  selected true
- xpos 15221
- ypos -42
+ xpos 15229
+ ypos -279
 }
 ShuffleCopy {
  inputs 2
@@ -1116,16 +1353,16 @@ ShuffleCopy {
  out col
  name ShuffleCopy9
  selected true
- xpos 15221
- ypos 11
+ xpos 15229
+ ypos -226
 }
 Reformat {
  inputs 0
  format "512 512 0 0 512 512 1 square_512"
  name Reformat4
  selected true
- xpos 15385
- ypos -110
+ xpos 15393
+ ypos -347
 }
 Noise {
  premult rgb
@@ -1135,41 +1372,41 @@ Noise {
  center {1024 576}
  name Noise4
  selected true
- xpos 15385
- ypos -72
+ xpos 15393
+ ypos -309
 }
-push $N13c36770
+push $N20d3bde0
 Shuffle {
  out col
  name Shuffle4
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 15375
- ypos -178
+ xpos 15383
+ ypos -415
 }
 Reformat {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
  name Reformat11
  selected true
- xpos 15495
- ypos -286
+ xpos 15503
+ ypos -523
 }
 Noise {
  size 560
  center {1144 858}
  name Noise8
  selected true
- xpos 15495
- ypos -248
+ xpos 15503
+ ypos -485
 }
 Shuffle {
  alpha white
  name Shuffle8
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 15495
- ypos -222
+ xpos 15503
+ ypos -459
 }
 ShuffleCopy {
  inputs 2
@@ -1180,15 +1417,15 @@ ShuffleCopy {
  out col
  name ShuffleCopy4
  selected true
- xpos 15495
- ypos -172
+ xpos 15503
+ ypos -409
 }
 Phong {
  specular 0.015
  name Phong4
  selected true
- xpos 15495
- ypos -124
+ xpos 15503
+ ypos -361
 }
 Sphere {
  rows 10
@@ -1197,24 +1434,24 @@ Sphere {
  uniform_scale 0.26
  name Sphere10
  selected true
- xpos 15495
- ypos -98
+ xpos 15503
+ ypos -335
 }
 DisplaceGeo {
  inputs 2
  scale 0.37
  name DisplaceGeo3
  selected true
- xpos 15495
- ypos -72
+ xpos 15503
+ ypos -309
 }
-clone $C13ddf1a0 {
+clone $C14d35e80 {
  inputs 2
- xpos 15495
- ypos 17
+ xpos 15503
+ ypos -220
  selected true
 }
-set N14722450 [stack 0]
+set Nbebd5b0 [stack 0]
 Constant {
  inputs 0
  color {0 1 0 1}
@@ -1222,25 +1459,70 @@ Constant {
  format "256 256 0 0 256 256 1 square_256"
  name Constant44
  selected true
- xpos 15628
- ypos -243
+ xpos 15636
+ ypos -480
 }
-set N132febb0 [stack 0]
+set Nbec5a20 [stack 0]
 Shuffle {
  out col
  name Shuffle20
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 15628
- ypos 9
+ xpos 15636
+ ypos -228
 }
-CheckerBoard2 {
- inputs 0
- format "256 256 0 0 256 256 1 square_256"
- name CheckerBoard6
+push $N16603090
+PostageStamp {
+ name Stamp5
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps; stamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
  selected true
- xpos 15738
- ypos -100
+ xpos 15746
+ ypos -299
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title "temp image"
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "temp image"}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_72273d612
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
 }
 Transform {
  scale 0.3
@@ -1248,8 +1530,8 @@ Transform {
  shutteroffset centred
  name Transform12
  selected true
- xpos 15738
- ypos -28
+ xpos 15746
+ ypos -265
 }
 ShuffleCopy {
  inputs 2
@@ -1260,16 +1542,16 @@ ShuffleCopy {
  out col
  name ShuffleCopy10
  selected true
- xpos 15738
- ypos 15
+ xpos 15746
+ ypos -222
 }
 Reformat {
  inputs 0
  format "512 512 0 0 512 512 1 square_512"
  name Reformat3
  selected true
- xpos 15910
- ypos -124
+ xpos 15918
+ ypos -361
 }
 Noise {
  premult rgb
@@ -1279,49 +1561,49 @@ Noise {
  center {1024 576}
  name Noise3
  selected true
- xpos 15910
- ypos -86
+ xpos 15918
+ ypos -323
 }
-push $N132febb0
+push $Nbec5a20
 Shuffle {
  alpha white
  name Shuffle7
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 15905
- ypos -232
+ xpos 15913
+ ypos -469
 }
 Shuffle {
  out col
  name Shuffle5
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 15905
- ypos -182
+ xpos 15913
+ ypos -419
 }
 Reformat {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
  name Reformat12
  selected true
- xpos 16029
- ypos -290
+ xpos 16037
+ ypos -527
 }
 Noise {
  size 6
  center {1144 858}
  name Noise9
  selected true
- xpos 16029
- ypos -252
+ xpos 16037
+ ypos -489
 }
 Shuffle {
  alpha white
  name Shuffle11
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 16029
- ypos -226
+ xpos 16037
+ ypos -463
 }
 ShuffleCopy {
  inputs 2
@@ -1332,15 +1614,15 @@ ShuffleCopy {
  out col
  name ShuffleCopy5
  selected true
- xpos 16029
- ypos -176
+ xpos 16037
+ ypos -413
 }
 Phong {
  specular 0.015
  name Phong3
  selected true
- xpos 16029
- ypos -138
+ xpos 16037
+ ypos -375
 }
 Sphere {
  rows 10
@@ -1349,24 +1631,24 @@ Sphere {
  uniform_scale 0.26
  name Sphere11
  selected true
- xpos 16029
- ypos -112
+ xpos 16037
+ ypos -349
 }
 DisplaceGeo {
  inputs 2
  scale 0.37
  name DisplaceGeo2
  selected true
- xpos 16029
- ypos -86
+ xpos 16037
+ ypos -323
 }
-clone $C13ddf1a0 {
+clone $C14d35e80 {
  inputs 2
- xpos 16029
- ypos 21
+ xpos 16037
+ ypos -216
  selected true
 }
-set N1354bdc0 [stack 0]
+set Nbfc2100 [stack 0]
 Constant {
  inputs 0
  color {0.276835 0.001733 1 1}
@@ -1374,25 +1656,70 @@ Constant {
  format "256 256 0 0 256 256 1 square_256"
  name Constant45
  selected true
- xpos 16283
- ypos -231
+ xpos 16291
+ ypos -468
 }
-set N15e819c0 [stack 0]
+set Nbfca570 [stack 0]
 Shuffle {
  out col
  name Shuffle21
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 16283
- ypos -6
+ xpos 16291
+ ypos -243
 }
-CheckerBoard2 {
- inputs 0
- format "256 256 0 0 256 256 1 square_256"
- name CheckerBoard7
+push $N16603090
+PostageStamp {
+ name Stamp6
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps; stamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
  selected true
- xpos 16383
- ypos -127
+ xpos 16391
+ ypos -326
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title "temp image"
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "temp image"}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_72273d612
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
 }
 Transform {
  scale 0.3
@@ -1400,8 +1727,8 @@ Transform {
  shutteroffset centred
  name Transform13
  selected true
- xpos 16383
- ypos -55
+ xpos 16391
+ ypos -292
 }
 ShuffleCopy {
  inputs 2
@@ -1412,15 +1739,16 @@ ShuffleCopy {
  out col
  name ShuffleCopy11
  selected true
- xpos 16383
+ xpos 16391
+ ypos -237
 }
 Reformat {
  inputs 0
  format "512 512 0 0 512 512 1 square_512"
  name Reformat10
  selected true
- xpos 16651
- ypos -162
+ xpos 16659
+ ypos -399
 }
 Noise {
  premult rgb
@@ -1430,41 +1758,41 @@ Noise {
  center {1024 576}
  name Noise2
  selected true
- xpos 16651
- ypos -124
+ xpos 16659
+ ypos -361
 }
-push $N15e819c0
+push $Nbfca570
 Shuffle {
  out col
  name Shuffle6
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 16427
- ypos -220
+ xpos 16435
+ ypos -457
 }
 Reformat {
  inputs 0
  format "256 256 0 0 256 256 1 square_256"
  name Reformat13
  selected true
- xpos 16527
- ypos -328
+ xpos 16535
+ ypos -565
 }
 Noise {
  size {820 820}
  center {1144 858}
  name Noise10
  selected true
- xpos 16527
- ypos -290
+ xpos 16535
+ ypos -527
 }
 Shuffle {
  alpha white
  name Shuffle1
  label "--->\[knob in] >\[knob out]"
  selected true
- xpos 16527
- ypos -264
+ xpos 16535
+ ypos -501
 }
 ShuffleCopy {
  inputs 2
@@ -1475,15 +1803,15 @@ ShuffleCopy {
  out col
  name ShuffleCopy6
  selected true
- xpos 16527
- ypos -214
+ xpos 16535
+ ypos -451
 }
 Phong {
  specular 0.015
  name Phong2
  selected true
- xpos 16527
- ypos -176
+ xpos 16535
+ ypos -413
 }
 Sphere {
  rows 10
@@ -1492,24 +1820,24 @@ Sphere {
  uniform_scale 0.26
  name Sphere12
  selected true
- xpos 16527
- ypos -150
+ xpos 16535
+ ypos -387
 }
 DisplaceGeo {
  inputs 2
  scale 0.37
  name DisplaceGeo1
  selected true
- xpos 16527
- ypos -124
+ xpos 16535
+ ypos -361
 }
-clone $C13ddf1a0 {
+clone $C14d35e80 {
  inputs 2
- xpos 16527
- ypos 6
+ xpos 16535
+ ypos -231
  selected true
 }
-set N13ca09d0 [stack 0]
+set N20e112a0 [stack 0]
 Card2 {
  inputs 0
  translate {1.892000198 1.003600001 -9.294401169}
@@ -1529,8 +1857,8 @@ Card2 {
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
  name Card12
  selected true
- xpos 16723
- ypos 265
+ xpos 17140
+ ypos 28
 }
 Card2 {
  inputs 0
@@ -1551,15 +1879,15 @@ Card2 {
 1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
  name Card13
  selected true
- xpos 16586
- ypos 226
+ xpos 17030
+ ypos -34
 }
 MergeGeo {
  inputs 2
  name MergeGeo2
  selected true
- xpos 16586
- ypos 265
+ xpos 17030
+ ypos 28
 }
 TransformGeo {
  translate {{curve x1010 1671 x1022 1671 x1031 1671} {curve x1010 32.75999451 x1022 32.75999451 x1031 32.75999451} {curve x1010 398.6000671 x1022 398.6000671 x1031 398.6000671}}
@@ -1568,16 +1896,22 @@ TransformGeo {
  pivot {1.899999976 1.04400003 -9.324000359}
  name TransformGeo10
  selected true
- xpos 16586
- ypos 291
+ xpos 17030
+ ypos 54
 }
 Dot {
  name Dot30
  selected true
- xpos 16620
- ypos 535
+ xpos 17064
+ ypos 298
 }
-set N146ceaa0 [stack 0]
+set N20ea6c70 [stack 0]
+Dot {
+ name Dot5
+ selected true
+ xpos 17064
+ ypos 372
+}
 push 0
 ParticleEmitter {
  inputs 7
@@ -1601,15 +1935,15 @@ ParticleEmitter {
  name ParticleEmitter14
  label "\[value emit_channels]"
  selected true
- xpos 15495
- ypos 599
+ xpos 15352
+ ypos 362
 }
-push $N13de72c0
-push $N1409d920
-push $N14722450
-push $N1354bdc0
-push $N13ca09d0
-push $N146ceaa0
+push $N14fdfef0
+push $N20d33970
+push $Nbebd5b0
+push $Nbfc2100
+push $N20e112a0
+push $N20ea6c70
 push 0
 ParticleEmitter {
  inputs 7
@@ -1626,6 +1960,7 @@ ParticleEmitter {
  mass 5
  mass_variation 1
  spread 0.105
+ color {1 1 1 1}
  color_from_texture true
  start_wrap true
  max_clip_length 121
@@ -1633,74 +1968,69 @@ ParticleEmitter {
  name ParticleEmitter6
  label "\[value emit_channels]"
  selected true
- xpos 15717
- ypos 525
+ xpos 15725
+ ypos 288
 }
 ParticleMerge {
  inputs 2
  name ParticleMerge3
  selected true
- xpos 15717
- ypos 605
+ xpos 15725
+ ypos 368
 }
 ParticleGravity {
- to {0 -0.25 0}
- name ParticleGravity11
+ to {0 -0.3995 0}
+ name ParticleGravity1
  selected true
- xpos 15717
- ypos 883
+ xpos 15725
+ ypos 658
 }
-ParticleGravity {
- to {0 -0.1495 0}
- name ParticleGravity12
+Dot {
+ name Dot6
  selected true
- xpos 15717
- ypos 921
+ xpos 15759
+ ypos 756
 }
+set N20f083f0 [stack 0]
 ParticleBounce {
+ inputs 2
  out_bounce_mode kill
- out_new_channels all
  in_new_channels {c}
  in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
  in_friction 0.69
- bounceaxis_translate {1662.3 31.3 434.8}
- bounceaxis_rotate {0.15 -4.05 7}
- bounceaxis_uniform_scale 152.45
+ object input
  channels {a}
- name ParticleBounce2
+ name ParticleBounce1
  selected true
- xpos 15717
- ypos 1146
+ xpos 15900
+ ypos 841
 }
 ParticleBounce {
+ inputs 2
  out_bounce_mode kill
- out_new_channels all
  in_new_channels {c}
  in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
  in_friction 0.495
- bounceaxis_translate {1662.3 31.3 434.8}
- bounceaxis_rotate {0.15 -4.05 7}
- bounceaxis_uniform_scale 152.45
+ object input
  channels {b}
- name ParticleBounce3
+ name ParticleBounce6
  selected true
- xpos 15717
- ypos 1200
+ xpos 15900
+ ypos 887
 }
 ParticleBounce {
- out_bounce_mode kill
- out_new_channels all
+ inputs 2
+ out_new_channels {c}
  in_new_channels {c}
  in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
- in_friction 0.495
- bounceaxis_translate {1662.3 31.3 434.8}
- bounceaxis_rotate {0.15 -4.05 7}
- bounceaxis_uniform_scale 152.45
+ in_friction 0.69
+ object input
  channels {c}
- name ParticleBounce4
+ name ParticleBounce5
+ tile_color 0x444444ff
  selected true
- xpos 15717
- ypos 1245
+ xpos 15900
+ ypos 941
 }
 ParticleSpawn {
  inputs 2
@@ -1722,9 +2052,10 @@ ParticleSpawn {
  color_panelDropped true
  channels {a b}
  name ParticleSpawn6
+ tile_color 0x444444ff
  selected true
  xpos 15717
- ypos 1361
+ ypos 1127
 }
 ParticleDirectionalForce {
  strength {0.03 0.03 0}
@@ -1732,16 +2063,16 @@ ParticleDirectionalForce {
  name ParticleDirectionalForce1
  selected true
  xpos 15717
- ypos 1453
+ ypos 1319
 }
 ParticleTurbulence {
  strength {1.25 1.4 0}
  scale {24.7 13.35 -4.4}
- channels {c}
+ channels {a b}
  name ParticleTurbulence1
  selected true
  xpos 15717
- ypos 1505
+ ypos 1376
 }
 ParticleDrag {
  drag 0.16
@@ -1749,62 +2080,30 @@ ParticleDrag {
  name ParticleDrag6
  selected true
  xpos 15717
- ypos 1595
+ ypos 1600
 }
 ParticleDrag {
  rotational_drag 0.92
  channels {c}
- name ParticleDrag8
+ name Rotation_Drag_ParticleDrag_floor
+ tile_color 0x444444ff
  selected true
  xpos 15717
- ypos 1648
+ ypos 1662
 }
 ParticleSettings {
- steps_per_frame 13
+ steps_per_frame 14
  name ParticleSettings6
  selected true
  xpos 15717
  ypos 1832
 }
-set N15efc260 [stack 0]
-ParticleExpression {
- colexpr v(0,1,0)
- new_channels {a}
- channels {a}
- name ParticleExpression6
- tile_color 0xff0000
+set N20fc4c70 [stack 0]
+Dot {
+ name Dot7
  selected true
- xpos 15717
- ypos 2090
-}
-ParticleExpression {
- colexpr v(1,0,0)
- channels {b}
- name ParticleExpression7
- tile_color 0xff0000ff
- selected true
- xpos 15717
- ypos 2128
-}
-ParticleExpression {
- colexpr v(1,1,0)
- new_channels {c}
- channels {c}
- name ParticleExpression9
- tile_color 0xffff00ff
- selected true
- xpos 15717
- ypos 2166
-}
-ParticleExpression {
- colexpr v(1,0,0.75)
- new_channels {d}
- channels {d}
- name ParticleExpression10
- tile_color 0xff00bfff
- selected true
- xpos 15717
- ypos 2204
+ xpos 15751
+ ypos 2179
 }
 Dot {
  name Dot21
@@ -1813,21 +2112,26 @@ Dot {
  xpos 15751
  ypos 2296
 }
-set N15c67990 [stack 0]
+set N20fd1ee0 [stack 0]
 Dot {
  name Dot10
  selected true
  xpos 15751
  ypos 2471
 }
-set N15c6c6d0 [stack 0]
+set N20fd6d10 [stack 0]
 Dot {
  name Dot15
  selected true
  xpos 16150
  ypos 2471
 }
-set N13c841e0 [stack 0]
+ParticleToGeo {
+ name ParticleToGeo2
+ selected true
+ xpos 17420
+ ypos 2461
+}
 Scene {
  shadow_override "override inputs"
  name Scene5
@@ -1835,20 +2139,20 @@ Scene {
  xpos 18090
  ypos 2452
 }
-set N13c89000 [stack 0]
+set N20fe0970 [stack 0]
 Dot {
  name Dot18
  selected true
  xpos 17574
  ypos 2742
 }
-set N14248330 [stack 0]
+set N12a5f8f0 [stack 0]
 ApplyMaterial {
  inputs 2
  name ApplyMaterial8
  selected true
  xpos 17540
- ypos 2798
+ ypos 2837
 }
 Scene {
  inputs 2
@@ -1873,7 +2177,7 @@ Dot {
  xpos 19004
  ypos 3248
 }
-set N13db3c00 [stack 0]
+set N12f70b30 [stack 0]
 add_layer {nor nor.red nor.green nor.blue nor.alpha}
 RayRender {
  inputs 3
@@ -1898,9 +2202,9 @@ FileOut {
  icon smartgrade.png
  channels all
  _destination /jobs
- file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v002.####.exr
+ file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v003/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v003.####.exr
  proxy ""
- fileProxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_aoc_v002.####.exr
+ fileProxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v003/2130x1152/E_tc4740_comp_precomp_debirs_aoc_v003.####.exr
  views {main}
  first 1001
  last 1048
@@ -1912,9 +2216,9 @@ FileOut {
  _defaults "\{'smart_grade': 0, 'compression': 1, 'tile_color': 3216965887, 'pbb': True, 'dw_compression_level': 0, 'label': 'debirs_aoc'\}"
  _format "4260 2304 0 0 4260 2304 1.0 BDL Working"
  _generator "NukeRenderGenerator dnnuke.core.render.generators"
- _ivyVals "\{'variant': None, 'host': None, 'versionNum': '2', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'debirs_aoc', 'out_dir': u'ELEMENT'\}, 'job': 'BDL', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1048'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==913197df-6c6e-4c29-9618-2fc66fecc78b&Stem.stemname==tc4740&Stem.stemtype==shot'\}"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '3', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'debirs_aoc', 'out_dir': u'ELEMENT'\}, 'job': 'BDL', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1048'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==913197df-6c6e-4c29-9618-2fc66fecc78b&Stem.stemname==tc4740&Stem.stemtype==shot'\}"
  _old_filetype exr
- _stalkname E_tc4740_comp_precomp_debirs_aoc_v002
+ _stalkname E_tc4740_comp_precomp_debirs_aoc_v003
  _twigtype 2d
  _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
  beforeRender ""
@@ -1924,7 +2228,7 @@ FileOut {
  renderProgress ""
  _invert_grade /tools/BDL/ivyasset/tc4740/ivy/grade/GRD_tc4740_neutral_v001/GRD_tc4740_neutral_v001.grade
 }
-set N13c00d40 [stack 0]
+set N12619c90 [stack 0]
 Dot {
  name Dot19
  selected true
@@ -1947,7 +2251,7 @@ Merge2 {
  xpos 17551
  ypos 4144
 }
-push $N15fcc8a0
+push $N131f6e00
 ColorWheel {
  inputs 0
  format "1024 1024 0 0 1024 1024 1 square_1K"
@@ -2054,7 +2358,7 @@ ApplyMaterial {
  ypos 3162
 }
 push 0
-push $N140435d0
+push $N1237f3b0
 push 0
 Phong {
  inputs 0
@@ -2072,8 +2376,8 @@ Reflection {
  xpos 15963
  ypos 2806
 }
-push $N13c841e0
 ParticleToGeo {
+ inputs 0
  name ParticleToGeo1
  selected true
  xpos 16116
@@ -2093,7 +2397,7 @@ Scene {
  xpos 16126
  ypos 3142
 }
-push $N13db3c00
+push $N12f70b30
 add_layer {IBL IBL.red IBL.green IBL.blue}
 RayRender {
  inputs 3
@@ -2116,7 +2420,7 @@ Dot {
  xpos 16150
  ypos 3696
 }
-set N222f1570 [stack 0]
+set N128a3760 [stack 0]
 Dot {
  name Dot26
  selected true
@@ -2143,7 +2447,7 @@ Dot {
  xpos 15991
  ypos 3835
 }
-push $N222f1570
+push $N128a3760
 Shuffle {
  in IBL
  in2 alpha
@@ -2169,7 +2473,7 @@ Copy {
  xpos 16118
  ypos 3825
 }
-set N223343d0 [stack 0]
+set N12179a60 [stack 0]
 Unpremult {
  name Unpremult1
  selected true
@@ -2200,7 +2504,7 @@ Premult {
  xpos 16118
  ypos 4188
 }
-set N2236c050 [stack 0]
+set N145458b0 [stack 0]
 Transform {
  translate {0 -21.45}
  center {1584 1207}
@@ -2340,7 +2644,7 @@ Roto {
  xpos 17904
  ypos 4076
 }
-push $N15fcc8a0
+push $N131f6e00
 FillMat {
  inputs 0
  color 1
@@ -2365,7 +2669,7 @@ AmbientOcclusion {
  xpos 18442
  ypos 2996
 }
-push $N133cdd40
+push $N127a39d0
 ApplyMaterial {
  inputs 2
  name ApplyMaterial3
@@ -2379,8 +2683,8 @@ Dot {
  xpos 18342
  ypos 3085
 }
-push $N1393ead0
-push $N13c89000
+push $N13058bf0
+push $N20fe0970
 ApplyMaterial {
  inputs 2
  name ApplyMaterial4
@@ -2434,9 +2738,9 @@ FileOut {
  icon smartgrade.png
  channels all
  _destination /jobs
- file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
+ file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v003/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v003.####.exr
  proxy ""
- fileProxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
+ fileProxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v003/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v003.####.exr
  views {main}
  first 1001
  last 1048
@@ -2448,9 +2752,9 @@ FileOut {
  _defaults "\{'smart_grade': 0, 'compression': 1, 'tile_color': 3216965887, 'pbb': True, 'dw_compression_level': 0, 'label': 'debirs_floor_aoc'\}"
  _format "4260 2304 0 0 4260 2304 1.0 BDL Working"
  _generator "NukeRenderGenerator dnnuke.core.render.generators"
- _ivyVals "\{'variant': None, 'host': None, 'versionNum': '2', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'debirs_floor_aoc', 'out_dir': u'ELEMENT'\}, 'job': 'BDL', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1048'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==913197df-6c6e-4c29-9618-2fc66fecc78b&Stem.stemname==tc4740&Stem.stemtype==shot'\}"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '3', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'debirs_floor_aoc', 'out_dir': u'ELEMENT'\}, 'job': 'BDL', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1048'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==913197df-6c6e-4c29-9618-2fc66fecc78b&Stem.stemname==tc4740&Stem.stemtype==shot'\}"
  _old_filetype exr
- _stalkname E_tc4740_comp_precomp_debirs_floor_aoc_v002
+ _stalkname E_tc4740_comp_precomp_debirs_floor_aoc_v003
  _twigtype 2d
  _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
  beforeRender ""
@@ -2586,7 +2890,7 @@ Defocus {
  xpos 14517
  ypos 4579
 }
-push $N2236c050
+push $N145458b0
 Transform {
  translate {850 38}
  center {706 832}
@@ -2621,7 +2925,7 @@ Read {
  origfirst 1001
  origlast 1048
  origset true
- version 14
+ version 20
  smartGrade true
  name Read29
  selected true
@@ -2669,14 +2973,14 @@ Remove {
  xpos 14147
  ypos 2937
 }
-set N22706c20 [stack 0]
+set N212a3140 [stack 0]
 Dot {
  name Dot20
  selected true
  xpos 14181
  ypos 4119
 }
-set N2270f1e0 [stack 0]
+set N212ab7d0 [stack 0]
 Merge2 {
  inputs 2
  name Merge5
@@ -2778,16 +3082,16 @@ Read {
  addUserKnob {1 build_label l "Build Label"}
  addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
 }
-push $N15fcc8a0
-push $N15c6c6d0
+push $N131f6e00
+push $N20fd6d10
 Dot {
  name Dot1
  selected true
  xpos 15751
  ypos 3111
 }
-set N228badb0 [stack 0]
-push $N13db3c00
+set N21456960 [stack 0]
+push $N12f70b30
 ScanlineRender {
  inputs 3
  conservative_shader_sampling false
@@ -2798,15 +3102,15 @@ ScanlineRender {
  name ScanlineRender5
  selected true
  xpos 15717
- ypos 3239
+ ypos 3244
 }
-set N228bf640 [stack 0]
+set N2145c700 [stack 0]
 Shuffle {
  in col
  name Shuffle15
  selected true
  xpos 15717
- ypos 3265
+ ypos 3270
 }
 Dot {
  name Dot27
@@ -2830,7 +3134,7 @@ Transform {
  xpos 14541
  ypos 4077
 }
-push $N2270f1e0
+push $N212ab7d0
 Merge2 {
  inputs 2
  name Merge12
@@ -2845,181 +3149,10 @@ StickyNote {
  label "   ANIMATION   "
  selected true
  xpos 15986
- ypos 514
+ ypos 280
 }
-StickyNote {
- inputs 0
- name StickyNote3
- tile_color 0x101010ff
- label "   ANIMATION   "
- selected true
- xpos 15873
- ypos 1617
-}
-push $N15efc260
-Dot {
- name Dot48
- selected true
- xpos 16464
- ypos 1836
-}
-set N2291ebb0 [stack 0]
-ParticleExpression {
- colexpr v(1,0,0)
- opacityexpr 1
- new_channels {}
- channels {a}
- name ParticleExpression1
- tile_color 0xff0000ff
- selected true
- xpos 17250
- ypos 1737
-}
-ParticleExpression {
- colexpr "color == v(1,0,0) ?  vel : v(0,0,0) "
- opacityexpr "color == v(1,0,0) ?  1 : 0"
- new_channels {}
- channels {a}
- name ParticleExpression2
- tile_color 0xffff00ff
- selected true
- xpos 17259
- ypos 1801
-}
-push $N2291ebb0
-ParticleExpression {
- colexpr vel
- new_channels {}
- channels {a}
- name ParticleExpression4
- tile_color 0xffff00ff
- selected true
- xpos 16571
- ypos 1857
- disable true
-}
-push $N1839d8b0
-push $N2291ebb0
-ParticleExpression {
- colexpr "v(1,0,0) "
- opacityexpr 1
- new_channels {}
- channels {a}
- name ParticleExpression3
- tile_color 0xffff00ff
- selected true
- xpos 16648
- ypos 1822
-}
-add_layer {pos pos.red pos.green pos.blue pos.alpha}
-ParticleToImage {
- pos pos
- name ParticleToImage1
- selected true
- xpos 16648
- ypos 1905
- cached true
- bookmark true
-}
-PositionToPoints2 {
- display textured
- render_mode textured
- P_channel pos
- detail 1
- pointSize 10
- name PositionToPoints2
- selected true
- xpos 16648
- ypos 1931
- bookmark true
-}
-push 0
-ParticleEmitter {
- inputs 3
- start_frame 1005
- rate {{curve x1007 0 x1009 1.983287826 x1010 4.665632308 x1020 0}}
- selection_threshhold 0.1
- rate_variation 1
- lifetime 200
- velocity 2
- velocity_variation 3
- rotation_velocity 1
- rotation_velocity_variation 1
- size 0.39
- size_variation 2
- mass 5
- mass_variation 1
- spread 0.105
- color_from_texture true
- start_wrap true
- max_clip_length 121
- seed 20
- name ParticleEmitter9
- selected true
- xpos 16648
- ypos 2003
-}
-push $N2291ebb0
-Scene {
- inputs 2
- name Scene15
- selected true
- xpos 16447
- ypos 1983
-}
-Camera2 {
- inputs 0
- translate {19.38810349 2.64513135 -35.72108841}
- rotate {-2.47799921 152.8000488 1.068215738e-07}
- name Camera8
- selected true
- xpos 14945
- ypos 2195
- addUserKnob {20 DNeg}
- addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.0}
- addUserKnob {41 "horiz aperture" T haperture}
- addUserKnob {41 "vert aperture" T vaperture}
- addUserKnob {4 setApertureValues l "" t "Set aperture values based on registered camera sensor data. The 'read from file' knob needs to be disabled and any potential curves deleted." +STARTLINE M {"Set Aperture Values" "Alexa 65/6k 2.11" "Alexa MINI/OpenGate" "Alexa MINI/16:9 Full" "Alexa SXT/4:3 Full" "Delivery Extractions/IMAX 15perf" "Film 35mm/4k Full App" "Generic/1080p HD" Generic/Anamorphic Generic/Spherical IMAX/6k IMAX/15perf "IMAX/15perf Scaled" "IMAX/65mm 5 perf" "Internal Movie Extractions/Previs" "Internal Movie Extractions/MAGIC Working" "Internal Movie Extractions/Super 35mm Film" "Internal Movie Extractions/MAGIC IMAX Delivery" "Internal Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Previs" "Movie Extractions/MAGIC Working" "Movie Extractions/Alexa SXT 4:3 Full" "Movie Extractions/Super 35mm Film" "Movie Extractions/MAGIC IMAX Delivery" "Movie Extractions/Alexa 65 6k 2.11 " "Movie Extractions/MAGIC IMAX Working" "Movie Extractions/Alexa MINI OpenGate 100pc" "Movie Extractions/Alexa MINI OpenGate" "Movie Extractions/Alexa MINI 16:9 Full" "Movie Extractions/Alexa 65 6k 2.11" "Movie Extractions/VistaVision" "Movie Extractions/IMAX 65mm 5 Perf" "Movie Extractions/MAGIC IMAX Working 2k" "Movie Extractions VFX/MAGIC Working" "Movie Extractions VFX/MAGIC IMAX Working" Previs/Anamorphic Previs/Spherical "Previs/IMAX 6k" Sony/A7 "Sony/A7 Portrait" VistaVision/6k "Working Extractions/Super 35mm Film" "Working Extractions/IMAX 15perf" "Working Extractions/Alexa MINI OpenGate 100pc" "Working Extractions/Alexa MINI 16:9 Full 100pc" "Working Extractions/Alexa SXT 4:3 Full 100pc" "Working Extractions/Alexa MINI OpenGate 95pc" "Working Extractions/VistaVision" "Working Extractions/Alexa 65 6k 2.11" "Working Extractions/IMAX 65mm 5 Perf" "Working Extractions/MAGIC IMAX Working 2k" "Digital SLR/Full Frame" "Digital SLR/Full Frame Portrait" "Digital SLR/APS-C" "Digital SLR/APS-C Portrait" Generic/HD LatLong/360 LatLong/180}}
- addUserKnob {26 ""}
- addUserKnob {22 makeProjector l "Make Projector..." T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeProjectorNode()" +STARTLINE}
- addUserKnob {22 makeLinkedProjector l "Make Linked Projector..." -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeProjectorNode']).makeLinkedProjectorNode()"}
- addUserKnob {26 ""}
- addUserKnob {7 hshake l "hero horiz shake" R -1 1}
- addUserKnob {7 vshake l "hero vert shake" R -1 1}
- addUserKnob {7 shakeroll l "hero shake roll" R -180 180}
- addUserKnob {7 ahshake l "ambient horiz shake" R -1 1}
- addUserKnob {7 avshake l "ambient vert shake" R -1 1}
- addUserKnob {7 ashakeroll l "ambient shake roll" R -180 180}
- addUserKnob {26 ""}
- addUserKnob {22 makeShakeCamera l "Make Shake Camera" T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeCamera']).makeAmbientHeroShakeCamera()" +STARTLINE}
- addUserKnob {22 makeShakeTransform l "Make Shake Transform" -STARTLINE T "__import__('dnnuke.init.callbacks.on_user_create.tabs.camera', fromlist=\['makeAmbientHeroShakeTransform']).makeAmbientHeroShakeTransform()"}
- addUserKnob {20 Ivy}
- addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.utils.asst.common', fromlist=\['openDocsName']).openDocsName('IvyTab')" +STARTLINE}
- addUserKnob {26 divider4 l "" +STARTLINE}
- addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
- _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
- addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
- addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
- addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
- _expressions {{curve}}
- addUserKnob {26 divider0 l "" +STARTLINE}
- addUserKnob {20 dbinfo l "DB Info" n 1}
- dbinfo 0
- addUserKnob {1 twig_dnuuid l "Twig Id"}
- addUserKnob {1 stalk_dnuuid l "Stalk Id"}
- addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
- addUserKnob {1 leaf_dnuuid l "Leaf Id"}
- addUserKnob {26 divider1 l "" +STARTLINE}
- addUserKnob {1 twigtype l "Twig Type"}
- addUserKnob {1 leaf_label l Leaf}
- addUserKnob {1 ivy_version l Version}
- addUserKnob {43 ivy_notes l Notes}
- addUserKnob {26 divider2 l "" +STARTLINE}
- addUserKnob {1 build_label l "Build Label"}
- addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
-}
-push $N15fcc8a0
-push $N228badb0
+push $N131f6e00
+push $N21456960
 push 0
 ScanlineRender {
  inputs 3
@@ -3032,8 +3165,8 @@ ScanlineRender {
  xpos 15535
  ypos 3345
 }
-push $N228bf640
-push $N22706c20
+push $N2145c700
+push $N212a3140
 Merge2 {
  inputs 2
  name Merge13
@@ -3041,68 +3174,8 @@ Merge2 {
  xpos 14494
  ypos 2959
 }
-Card2 {
- inputs 0
- translate {0 -0.0405 22.93828447}
- uniform_scale 100
- type bilinear
- uv_position {0 0}
- control_points {3 3 3 6 
-
-1 {-0.4639999866 0 -0.5699999928} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1270000041 -0.002000033855} 0 {0 0 0} 0 {0 0 0} 
-1 {0.03599999845 0 -0.5699999928} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0.001000002027 0.1204999983 -0.01099997759} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5360000134 0 -0.5699999928} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0.002999961376 0 0.02549999952} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {1 0.5 0} 
-1 {-0.5 0.380997479 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0 1 0} 
-1 {0 0.380997479 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0.5 1 0} 
-1 {0.5 0.380997479 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {1 1 0} }
- drawPosition {-0.4639999866 0 -0.5699999928}
- name Card15
- selected true
- xpos 18539
- ypos 1289
- disable true
-}
-Card2 {
- inputs 0
- translate {1681.641602 33.95324707 397.4830017}
- rotate {83.16316223 50.31438065 71.40393066}
- scaling {30.83053017 18.71924782 1.183449388}
- uniform_scale 100
- type bilinear
- uv_position {0 0}
- control_points {3 3 3 6 
-
-1 {-0.4639999866 0 -0.5699999928} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1270000041 -0.002000033855} 0 {0 0 0} 0 {0 0 0} 
-1 {0.03599999845 0 -0.5699999928} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0.001000002027 0.1204999983 -0.01099997759} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5360000134 0 -0.5699999928} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0.002999961376 0 0.02549999952} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {1 0.5 0} 
-1 {-0.5 0.380997479 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0 1 0} 
-1 {0 0.380997479 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0.5 1 0} 
-1 {0.5 0.380997479 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {1 1 0} }
- drawPosition {-0.4639999866 0 -0.5699999928}
- name Card10
- selected true
- xpos 18609
- ypos 1279
-}
-TransformGeo {
- inputs 0
- translate {1670.554688 35.63447571 396.9017334}
- rotate {-2.75 -296.4 -48.15}
- uniform_scale 38.325
- pivot {1.899999976 1.04400003 -9.324000359}
- name TransformGeo12
- selected true
- xpos 16732
- ypos 326
-}
-push $N133c8f20
-push $N146ceaa0
+push $N1212c5f0
+push $N20ea6c70
 ReadGeo2 {
  inputs 0
  file /jobs/BDL/tc4740/ivy/gch/GCH_tc4740_vehicle_banditTechnical_anim_vehicle_banditTechnical_001_vehicle_renderGeo_lod300_v006/GCH_tc4740_vehicle_banditTechnical_anim_vehicle_banditTechnical_001_vehicle_renderGeo_lod300_v006.abc
@@ -3117,6 +3190,7 @@ ReadGeo2 {
  selected true
  xpos 15462
  ypos 2080
+ disable true
  addUserKnob {20 Ivy}
  addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
  addUserKnob {26 divider4 l "" +STARTLINE}
@@ -3215,8 +3289,8 @@ Normals {
  ypos 2079
  disable true
 }
-push $N15c67990
-push $N15b64240
+push $N20fd1ee0
+push $N134d48a0
 Scene {
  inputs 5
  name Scene12
@@ -3342,272 +3416,6 @@ ParticleToGeo {
  xpos 16237
  ypos 2701
 }
-Constant {
- inputs 0
- color {0 1 0 1}
- color_panelDropped true
- name Constant35
- selected true
- xpos 15582
- ypos 2552
-}
-push 0
-Phong {
- inputs 2
- name Phong16
- selected true
- xpos 15582
- ypos 2624
-}
-push $N15c6c6d0
-Dot {
- name Dot52
- selected true
- xpos 15384
- ypos 2546
-}
-set N22be1820 [stack 0]
-Dot {
- name Dot53
- selected true
- xpos 15420
- ypos 2546
-}
-set N22be66e0 [stack 0]
-Dot {
- name Dot54
- selected true
- xpos 15506
- ypos 2546
-}
-ParticleToGeo {
- channels {d}
- name ParticleToGeo7
- selected true
- xpos 15472
- ypos 2586
-}
-ApplyMaterial {
- inputs 2
- filter_type name
- filter_name a
- name ApplyMaterial18
- selected true
- xpos 15472
- ypos 2624
-}
-Dot {
- name Dot55
- selected true
- xpos 15506
- ypos 2770
-}
-Constant {
- inputs 0
- color {1 1 0 1}
- color_panelDropped true
- name Constant36
- selected true
- xpos 15547
- ypos 2634
-}
-push 0
-Phong {
- inputs 2
- name Phong17
- selected true
- xpos 15547
- ypos 2706
-}
-push $N22be66e0
-ParticleToGeo {
- channels {c}
- name ParticleToGeo8
- selected true
- xpos 15386
- ypos 2587
-}
-ApplyMaterial {
- inputs 2
- name ApplyMaterial19
- selected true
- xpos 15386
- ypos 2706
-}
-Scene {
- inputs 2
- name Scene25
- selected true
- xpos 15396
- ypos 2746
-}
-Constant {
- inputs 0
- color {1 0 0 1}
- color_panelDropped true
- name Constant37
- selected true
- xpos 15008
- ypos 2633
-}
-Phong {
- name Phong18
- selected true
- xpos 15008
- ypos 2705
-}
-push $N22be1820
-Dot {
- name Dot56
- selected true
- xpos 15339
- ypos 2546
-}
-set N22c59cf0 [stack 0]
-ParticleToGeo {
- channels {b}
- name ParticleToGeo9
- selected true
- xpos 15305
- ypos 2584
-}
-ApplyMaterial {
- inputs 2
- name ApplyMaterial20
- selected true
- xpos 15305
- ypos 2705
-}
-Constant {
- inputs 0
- color {0.666667 -0.333333 0.666667 1}
- color_panelDropped true
- name Constant38
- selected true
- xpos 15134
- ypos 2601
-}
-push 0
-Phong {
- inputs 2
- name Phong19
- selected true
- xpos 15134
- ypos 2673
-}
-push $N22c59cf0
-Dot {
- name Dot57
- selected true
- xpos 15254
- ypos 2546
-}
-ParticleToGeo {
- channels {a}
- name ParticleToGeo10
- selected true
- xpos 15220
- ypos 2586
-}
-ApplyMaterial {
- inputs 2
- filter_type name
- filter_name a
- name ApplyMaterial21
- selected true
- xpos 15220
- ypos 2673
-}
-Dot {
- name Dot58
- selected true
- xpos 15254
- ypos 2769
-}
-Scene {
- inputs 2
- name Scene26
- selected true
- xpos 15315
- ypos 2745
-}
-Scene {
- inputs 2
- name Scene27
- selected true
- xpos 15341
- ypos 2806
-}
-Read {
- inputs 0
- file_type exr
- file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v001/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v001.####.exr
- localizationPolicy off
- format "4260 2304 0 0 4260 2304 1 BDL Working"
- proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v001/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v001.%04d.exr
- proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
- first 1001
- last 1048
- origfirst 1001
- origlast 1048
- origset true
- smartGrade true
- name Read32
- selected true
- xpos 18516
- ypos 3493
- postage_stamp_frame 1024
- addUserKnob {20 Ivy}
- addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
- addUserKnob {26 divider4 l "" +STARTLINE}
- addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
- _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
- addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
- addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
- _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v001/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v001.####.exr
- addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
- _expressions {{curve}}
- addUserKnob {26 divider0 l "" +STARTLINE}
- addUserKnob {20 dbinfo l "DB Info" n 1}
- dbinfo 0
- addUserKnob {1 twig_dnuuid l "Twig Id"}
- twig_dnuuid 1724dbcb-6f81-463a-a5e0-931731b1f2ac
- addUserKnob {1 stalk_dnuuid l "Stalk Id"}
- stalk_dnuuid a410ddb7-b9dd-4f48-9198-d56cbebde34d
- addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
- twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
- addUserKnob {1 leaf_dnuuid l "Leaf Id"}
- leaf_dnuuid db7cc1fb-a23b-42b8-a3ed-d27dcd742167
- addUserKnob {26 divider1 l "" +STARTLINE}
- addUserKnob {1 twigtype l "Twig Type"}
- twigtype elmr
- addUserKnob {1 leaf_label l Leaf}
- leaf_label main_proxy0
- addUserKnob {1 ivy_version l Version}
- ivy_version 1
- addUserKnob {43 ivy_notes l Notes}
- addUserKnob {26 divider2 l "" +STARTLINE}
- addUserKnob {1 build_label l "Build Label"}
- addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
-}
-StickyNote {
- inputs 0
- name StickyNote4
- tile_color 0x101010ff
- label "   ANIMATION   "
- selected true
- xpos 15885
- ypos 1121
-}
-StickyNote {
- inputs 0
- name StickyNote2
- tile_color 0x101010ff
- label "   ANIMATION   "
- selected true
- xpos 15889
- ypos 911
-}
 Read {
  inputs 0
  file_type exr
@@ -3718,9 +3526,9 @@ Switch {
  name Switch3
  selected true
  xpos 14257
- ypos 110
+ ypos -124
 }
-push $N223343d0
+push $N12179a60
 FileOut {
  name FileOut13
  tile_color 0xbfbf00ff
@@ -3757,119 +3565,6 @@ FileOut {
  renderProgress ""
  _invert_grade /tools/BDL/ivyasset/tc4740/ivy/grade/GRD_tc4740_neutral_v001/GRD_tc4740_neutral_v001.grade
 }
-Read {
- inputs 0
- file_type exr
- file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v002.####.exr
- localizationPolicy off
- format "4260 2304 0 0 4260 2304 1 BDL Working"
- proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_aoc_v002.%04d.exr
- proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
- first 1001
- last 1048
- origfirst 1001
- origlast 1048
- origset true
- version 4
- smartGrade true
- name Read37
- selected true
- xpos 17634
- ypos 3378
- postage_stamp_frame 1024
- addUserKnob {20 Ivy}
- addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
- addUserKnob {26 divider4 l "" +STARTLINE}
- addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
- _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
- addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
- addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
- _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v002.####.exr
- addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
- _expressions {{curve}}
- addUserKnob {26 divider0 l "" +STARTLINE}
- addUserKnob {20 dbinfo l "DB Info" n 1}
- dbinfo 0
- addUserKnob {1 twig_dnuuid l "Twig Id"}
- twig_dnuuid 34a1fc0f-d838-430b-9ebd-70c1ef74ea2b
- addUserKnob {1 stalk_dnuuid l "Stalk Id"}
- stalk_dnuuid 10f6b8fc-5525-4872-83e5-7eb0a2fb2722
- addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
- twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
- addUserKnob {1 leaf_dnuuid l "Leaf Id"}
- leaf_dnuuid 16246a3f-c30d-4fef-9129-888d33fcafbb
- addUserKnob {26 divider1 l "" +STARTLINE}
- addUserKnob {1 twigtype l "Twig Type"}
- twigtype elmr
- addUserKnob {1 leaf_label l Leaf}
- leaf_label main_proxy0
- addUserKnob {1 ivy_version l Version}
- ivy_version 2
- addUserKnob {43 ivy_notes l Notes}
- addUserKnob {26 divider2 l "" +STARTLINE}
- addUserKnob {1 build_label l "Build Label"}
- addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
-}
-Switch {
- inputs 0
- which {{"\$gui ? 1 : 0"}}
- name Switch2
- selected true
- xpos 14667
- ypos 1252
-}
-Read {
- inputs 0
- file_type exr
- file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
- localizationPolicy off
- format "4260 2304 0 0 4260 2304 1 BDL Working"
- proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v002.%04d.exr
- proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
- first 1001
- last 1048
- origfirst 1001
- origlast 1048
- origset true
- smartGrade true
- name Read38
- selected true
- xpos 17964
- ypos 3382
- postage_stamp_frame 1024
- addUserKnob {20 Ivy}
- addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
- addUserKnob {26 divider4 l "" +STARTLINE}
- addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
- _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
- addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
- addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
- _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
- addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
- _expressions {{curve}}
- addUserKnob {26 divider0 l "" +STARTLINE}
- addUserKnob {20 dbinfo l "DB Info" n 1}
- dbinfo 0
- addUserKnob {1 twig_dnuuid l "Twig Id"}
- twig_dnuuid 1724dbcb-6f81-463a-a5e0-931731b1f2ac
- addUserKnob {1 stalk_dnuuid l "Stalk Id"}
- stalk_dnuuid 608714c6-04d6-4963-9392-aa035a4d744d
- addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
- twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
- addUserKnob {1 leaf_dnuuid l "Leaf Id"}
- leaf_dnuuid 142c3031-4140-4224-848e-87c42a0c48bb
- addUserKnob {26 divider1 l "" +STARTLINE}
- addUserKnob {1 twigtype l "Twig Type"}
- twigtype elmr
- addUserKnob {1 leaf_label l Leaf}
- leaf_label main_proxy0
- addUserKnob {1 ivy_version l Version}
- ivy_version 2
- addUserKnob {43 ivy_notes l Notes}
- addUserKnob {26 divider2 l "" +STARTLINE}
- addUserKnob {1 build_label l "Build Label"}
- addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
-}
 FillMat {
  inputs 0
  color 1
@@ -3887,7 +3582,7 @@ AmbientOcclusion {
  xpos 16796
  ypos 2811
 }
-push $N13c00d40
+push $N12619c90
 Shuffle2 {
  fromInput1 {{0} B}
  in1 nor
@@ -3898,7 +3593,7 @@ Shuffle2 {
  xpos 17350
  ypos 3333
 }
-set Na5a81020 [stack 0]
+set N22f51330 [stack 0]
 Group {
  name apDirLight1
  help "Simulate a simple directional/infinite light through a normal pass, by picking a normal color and then tweaking the radius, falloff and hardness of the light.\n\napDirLight v0.2 by Adrian Pueyo\nadrianpueyo.com, 2016"
@@ -3995,7 +3690,7 @@ Group {
   ypos 35
   disable {{"!\[exists parent.input1]"}}
  }
-set Na3ecaaa0 [stack 0]
+set N22fbafe0 [stack 0]
  Shuffle {
   red alpha
   green alpha
@@ -4013,7 +3708,7 @@ set Na3ecaaa0 [stack 0]
   xpos 43
   ypos 77
  }
-push $Na3ecaaa0
+push $N22fbafe0
  Switch {
   inputs 2
   which {{parent.theOutput}}
@@ -4027,7 +3722,7 @@ push $Na3ecaaa0
   ypos 101
  }
 end_group
-push $Na5a81020
+push $N22f51330
 Group {
  name rotatenormals
  help "This will rotate Normal-data using rotation matrixes.\nhttp://en.wikipedia.org/wiki/Rotation_matrix\n\nYou enable Normal-data in the ScanlineRender-node, create a new layer for this.\n\nTip 1:\n Link the rotation knob to the Nuke camera, revert the camera order and then either invert the matrixes or negate the angles.\nThis will convert the Normal data from World Space to Camera Space. I guess. I am no expert on the subject.\n\n\nTip 2:\nPut these in your init.tcl to always render out the normals:\n\nadd_layer \{P P.x P.y P.z\}\nknob_default ScanlineRender.P_channel P\nadd_layer \{N N.x N.y N.z\}\nknob_default ScanlineRender.N_channel N\nknob_default ScanlineRender.output_shader_vectors true\n\nNote:\n In Nuke4.6 and earlier, the Normals is multiplied with the Z, so you need to divide them first. Use Channel Merge for this.\n"
@@ -4120,19 +3815,19 @@ Group {
   xpos 1863
   ypos -487
  }
-set N25f08c30 [stack 0]
+set N2301e240 [stack 0]
  Dot {
   name Dot3
   xpos 653
   ypos -477
  }
-set Na448be20 [stack 0]
+set N230230c0 [stack 0]
  Dot {
   name Dot1
   xpos 433
   ypos -477
  }
-push $Na448be20
+push $N230230c0
  Copy {
   inputs 2
   from0 rgba.red
@@ -4150,7 +3845,7 @@ push $Na448be20
   xpos 433
   ypos -175
  }
-set Na4674980 [stack 0]
+set N2303b150 [stack 0]
  ColorMatrix {
   matrix {
       {1 0 0}
@@ -4163,7 +3858,7 @@ set Na4674980 [stack 0]
   xpos 1500
   ypos 96
  }
- set Cd309bdf0 [stack 0]
+ set C230407e0 [stack 0]
  ColorMatrix {
   matrix {
       {{"cos( \[value RotData.alpha] )" i} 0 {"sin( \[value RotData.alpha] )" i}}
@@ -4176,7 +3871,7 @@ set Na4674980 [stack 0]
   xpos 1500
   ypos 150
  }
- set Caa700b40 [stack 0]
+ set C2304d680 [stack 0]
  ColorMatrix {
   matrix {
       {{"cos( \[value RotData.beta] )" i} {"-1 * sin( \[value RotData.beta] )" i} 0}
@@ -4189,83 +3884,83 @@ set Na4674980 [stack 0]
   xpos 1500
   ypos 204
  }
- set Ca466c5e0 [stack 0]
-push $Na4674980
-clone $Caa700b40 {
+ set C2305a470 [stack 0]
+push $N2303b150
+clone $C2304d680 {
   xpos 1360
   ypos 96
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos 1360
   ypos 150
   selected false
  }
-clone $Ca466c5e0 {
+clone $C2305a470 {
   xpos 1360
   ypos 204
   selected false
  }
-push $Na4674980
-clone $Ca466c5e0 {
+push $N2303b150
+clone $C2305a470 {
   xpos 1210
   ypos 102
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos 1210
   ypos 156
   selected false
  }
-clone $Caa700b40 {
+clone $C2304d680 {
   xpos 1210
   ypos 210
   selected false
  }
-push $Na4674980
-clone $Cd309bdf0 {
+push $N2303b150
+clone $C230407e0 {
   xpos 1047
   ypos 108
   selected false
  }
-clone $Ca466c5e0 {
+clone $C2305a470 {
   xpos 1047
   ypos 174
   selected false
  }
-clone $Caa700b40 {
+clone $C2304d680 {
   xpos 1047
   ypos 228
   selected false
  }
-push $Na4674980
-clone $Caa700b40 {
+push $N2303b150
+clone $C2304d680 {
   xpos 890
   ypos 108
   selected false
  }
-clone $Ca466c5e0 {
+clone $C2305a470 {
   xpos 890
   ypos 167
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos 890
   ypos 228
   selected false
  }
-push $Na4674980
-clone $Ca466c5e0 {
+push $N2303b150
+clone $C2305a470 {
   xpos 730
   ypos 120
   selected false
  }
-clone $Caa700b40 {
+clone $C2304d680 {
   xpos 730
   ypos 174
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos 730
   ypos 228
   selected false
@@ -4277,98 +3972,98 @@ clone $Cd309bdf0 {
   xpos 950
   ypos 446
  }
-push $Na4674980
-clone $Ca466c5e0 {
+push $N2303b150
+clone $C2305a470 {
   xpos 240
   ypos 102
   selected false
  }
-clone $Caa700b40 {
+clone $C2304d680 {
   xpos 240
   ypos 156
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos 240
   ypos 210
   selected false
  }
-push $Na4674980
-clone $Ca466c5e0 {
+push $N2303b150
+clone $C2305a470 {
   xpos 100
   ypos 102
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos 100
   ypos 156
   selected false
  }
-clone $Caa700b40 {
+clone $C2304d680 {
   xpos 100
   ypos 210
   selected false
  }
-push $Na4674980
-clone $Caa700b40 {
+push $N2303b150
+clone $C2304d680 {
   xpos -50
   ypos 108
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos -50
   ypos 162
   selected false
  }
-clone $Ca466c5e0 {
+clone $C2305a470 {
   xpos -50
   ypos 216
   selected false
  }
-push $Na4674980
-clone $Caa700b40 {
+push $N2303b150
+clone $C2304d680 {
   xpos -213
   ypos 114
   selected false
  }
-clone $Ca466c5e0 {
+clone $C2305a470 {
   xpos -213
   ypos 180
   selected false
  }
-clone $Cd309bdf0 {
+clone $C230407e0 {
   xpos -213
   ypos 234
   selected false
  }
-push $Na4674980
-clone $Cd309bdf0 {
+push $N2303b150
+clone $C230407e0 {
   xpos -370
   ypos 114
   selected false
  }
-clone $Ca466c5e0 {
+clone $C2305a470 {
   xpos -370
   ypos 173
   selected false
  }
-clone $Caa700b40 {
+clone $C2304d680 {
   xpos -370
   ypos 247
   selected false
  }
-push $Na4674980
-clone $Cd309bdf0 {
+push $N2303b150
+clone $C230407e0 {
   xpos -501
   ypos 102
   selected false
  }
-clone $Caa700b40 {
+clone $C2304d680 {
   xpos -501
   ypos 171
   selected false
  }
-clone $Ca466c5e0 {
+clone $C2305a470 {
   xpos -501
   ypos 234
   selected false
@@ -4392,7 +4087,7 @@ clone $Ca466c5e0 {
   xpos 543
   ypos 665
  }
-push $N25f08c30
+push $N2301e240
  Copy {
   inputs 2
   from0 rgba.red
@@ -4411,7 +4106,779 @@ push $N25f08c30
   ypos 758
  }
 end_group
-push $N15fcc8a0
+Read {
+ inputs 0
+ file_type exr
+ file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v001/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v001.####.exr
+ localizationPolicy off
+ format "4260 2304 0 0 4260 2304 1 BDL Working"
+ proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v001/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v001.%04d.exr
+ proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
+ first 1001
+ last 1048
+ origfirst 1001
+ origlast 1048
+ origset true
+ smartGrade true
+ name Read32
+ selected true
+ xpos 18516
+ ypos 3493
+ postage_stamp_frame 1024
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v001/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v001.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 1724dbcb-6f81-463a-a5e0-931731b1f2ac
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid a410ddb7-b9dd-4f48-9198-d56cbebde34d
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid db7cc1fb-a23b-42b8-a3ed-d27dcd742167
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype elmr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 1
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Read {
+ inputs 0
+ file /jobs/BDL/tc4700/nuke/scripts/comp/Particlecache/particlecache
+ localizationPolicy off
+ proxy_format "640 480 0 0 640 480 1 PC_Video"
+ origset true
+ name Read1
+ selected true
+ xpos 15988
+ ypos 2226
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile "no results were found for query (Leaf) (WHERE Leaf.job = 'BDL' AND Leaf.location = '/jobs/BDL/tc4700/nuke/scripts/comp/Particlecache/particlecache' AND Leaf.deleted = '0000-00-00 00:00:00' AND Leaf.archived = '0000-00-00 00:00:00' AND Leaf.provisional = '0')"
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ addUserKnob {1 leaf_label l Leaf}
+ addUserKnob {1 ivy_version l Version}
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push $N14d35e80
+push $N20fc4c70
+Dot {
+ name Dot48
+ selected true
+ xpos 16464
+ ypos 1836
+}
+set N232853b0 [stack 0]
+ParticleExpression {
+ colexpr v(0,1,0)
+ new_channels {a}
+ channels {a}
+ name ParticleExpression6
+ tile_color 0xff0000
+ selected true
+ xpos 16723
+ ypos 1842
+}
+ParticleExpression {
+ colexpr v(1,0,0)
+ channels {b}
+ name ParticleExpression7
+ tile_color 0xff0000ff
+ selected true
+ xpos 16723
+ ypos 1880
+}
+ParticleExpression {
+ colexpr v(1,1,0)
+ new_channels {c}
+ channels {c}
+ name ParticleExpression9
+ tile_color 0xffff00ff
+ selected true
+ xpos 16723
+ ypos 1918
+}
+ParticleExpression {
+ colexpr v(1,0,0.75)
+ new_channels {d}
+ channels {d}
+ name ParticleExpression10
+ tile_color 0xff00bfff
+ selected true
+ xpos 16723
+ ypos 1956
+}
+set N232cd0b0 [stack 0]
+add_layer {pos pos.red pos.green pos.blue pos.alpha}
+ParticleToImage {
+ pos pos
+ name ParticleToImage2
+ selected true
+ xpos 16715
+ ypos 2019
+}
+PositionToPoints2 {
+ display textured
+ render_mode textured
+ P_channel pos
+ detail 1
+ pointSize 10
+ name PositionToPoints2
+ selected true
+ xpos 16602
+ ypos 2035
+ bookmark true
+}
+set N232ecc90 [stack 0]
+push 0
+ParticleEmitter {
+ inputs 3
+ start_frame 1005
+ rate {{curve x1007 0 x1009 1.983287826 x1010 4.665632308 x1020 0}}
+ selection_threshhold 0.1
+ rate_variation 1
+ lifetime 200
+ velocity 2
+ velocity_variation 3
+ rotation_velocity 1
+ rotation_velocity_variation 1
+ size 0.39
+ size_variation 2
+ mass 5
+ mass_variation 1
+ spread 0.105
+ color_from_texture true
+ start_wrap true
+ max_clip_length 121
+ seed 20
+ name ParticleEmitter9
+ selected true
+ xpos 16602
+ ypos 2113
+}
+push $N232853b0
+Scene {
+ inputs 2
+ name Scene15
+ selected true
+ xpos 16440
+ ypos 2086
+}
+Read {
+ inputs 0
+ file_type exr
+ file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
+ localizationPolicy off
+ format "4260 2304 0 0 4260 2304 1 BDL Working"
+ proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/2130x1152/E_tc4740_comp_precomp_debirs_floor_aoc_v002.%04d.exr
+ proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
+ first 1001
+ last 1048
+ origfirst 1001
+ origlast 1048
+ origset true
+ smartGrade true
+ name Read38
+ selected true
+ xpos 17956
+ ypos 3380
+ postage_stamp_frame 1024
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_floor_aoc_v002/4260x2304/E_tc4740_comp_precomp_debirs_floor_aoc_v002.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 1724dbcb-6f81-463a-a5e0-931731b1f2ac
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid 608714c6-04d6-4963-9392-aa035a4d744d
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid 142c3031-4140-4224-848e-87c42a0c48bb
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype elmr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 2
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Read {
+ inputs 0
+ file_type exr
+ file /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v003/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v003.%04d.exr
+ localizationPolicy off
+ format "4260 2304 0 0 4260 2304 1 BDL Working"
+ proxy /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v003/2130x1152/E_tc4740_comp_precomp_debirs_aoc_v003.%04d.exr
+ proxy_format "2130 1152 0 0 2130 1152 1 BDL Delivery 2k"
+ first 1001
+ last 1048
+ origfirst 1001
+ origlast 1048
+ origset true
+ version 4
+ smartGrade true
+ name Read37
+ selected true
+ xpos 17633
+ ypos 3374
+ postage_stamp_frame 1024
+ addUserKnob {20 Ivy}
+ addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+ addUserKnob {26 divider4 l "" +STARTLINE}
+ addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+ _ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+ addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+ addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+ _ivyFile /jobs/BDL/tc4740/ELEMENT/E_tc4740_comp_precomp_debirs_aoc_v003/4260x2304/E_tc4740_comp_precomp_debirs_aoc_v003.####.exr
+ addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+ _expressions {{curve}}
+ addUserKnob {26 divider0 l "" +STARTLINE}
+ addUserKnob {20 dbinfo l "DB Info" n 1}
+ dbinfo 0
+ addUserKnob {1 twig_dnuuid l "Twig Id"}
+ twig_dnuuid 34a1fc0f-d838-430b-9ebd-70c1ef74ea2b
+ addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+ stalk_dnuuid 043d8c07-84c6-4fde-9162-52cc10597325
+ addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+ twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+ addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+ leaf_dnuuid f60db3e4-f9f1-4a52-9a50-cd4db9f10aa7
+ addUserKnob {26 divider1 l "" +STARTLINE}
+ addUserKnob {1 twigtype l "Twig Type"}
+ twigtype elmr
+ addUserKnob {1 leaf_label l Leaf}
+ leaf_label main_proxy0
+ addUserKnob {1 ivy_version l Version}
+ ivy_version 3
+ addUserKnob {43 ivy_notes l Notes}
+ addUserKnob {26 divider2 l "" +STARTLINE}
+ addUserKnob {1 build_label l "Build Label"}
+ addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Card2 {
+ inputs 0
+ translate {1681.641602 33.95324707 397.4830017}
+ rotate {83.16316223 50.31438065 71.40393066}
+ scaling {30.83053017 18.71924782 1.183449388}
+ uniform_scale 100
+ type bilinear
+ uv_position {0 0}
+ control_points {3 3 3 6 
+
+1 {-0.4639999866 0 -0.5699999928} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1270000041 -0.002000033855} 0 {0 0 0} 0 {0 0 0} 
+1 {0.03599999845 0 -0.5699999928} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0.001000002027 0.1204999983 -0.01099997759} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5360000134 0 -0.5699999928} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0.002999961376 0 0.02549999952} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {1 0.5 0} 
+1 {-0.5 0.380997479 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0 1 0} 
+1 {0 0.380997479 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0.5 1 0} 
+1 {0.5 0.380997479 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {1 1 0} }
+ drawPosition {-0.4639999866 0 -0.5699999928}
+ name Card10
+ selected true
+ xpos 18603
+ ypos 1274
+}
+Card2 {
+ inputs 0
+ translate {0 -0.0405 22.93828447}
+ uniform_scale 100
+ type bilinear
+ uv_position {0 0}
+ control_points {3 3 3 6 
+
+1 {-0.4639999866 0 -0.5699999928} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1270000041 -0.002000033855} 0 {0 0 0} 0 {0 0 0} 
+1 {0.03599999845 0 -0.5699999928} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0.001000002027 0.1204999983 -0.01099997759} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5360000134 0 -0.5699999928} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0.002999961376 0 0.02549999952} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1269991696 0} 0 {0 -0.1269991696 0} 0 {1 0.5 0} 
+1 {-0.5 0.380997479 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0 1 0} 
+1 {0 0.380997479 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {0.5 1 0} 
+1 {0.5 0.380997479 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1269991696 0} 0 {1 1 0} }
+ drawPosition {-0.4639999866 0 -0.5699999928}
+ name Card15
+ selected true
+ xpos 18541
+ ypos 1286
+}
+push $N16603090
+PostageStamp {
+ name Stamp1
+ help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+ onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+ knobChanged "import stamps; stamps.wiredKnobChanged()"
+ autolabel "nuke.thisNode().knob(\"title\").value()"
+ tile_color 0x1000001
+ note_font "Bitstream Vera Sans"
+ note_font_size 20
+ selected true
+ xpos 14420
+ ypos -827
+ hide_input true
+ addUserKnob {20 wired_tab l "Wired Stamp"}
+ addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+ addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+ addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+ addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+ title "temp image"
+ addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "temp image"}
+ addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+ addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +STARTLINE}
+ addUserKnob {26 anchor_label l Anchor: T " "}
+ addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+ addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+ addUserKnob {26 stamps_label l Stamps: T " "}
+ addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+ addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+ addUserKnob {26 space_1 l "" +STARTLINE T " "}
+ addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+ addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+ addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+ addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+ addUserKnob {26 space_2 l "" +STARTLINE T " "}
+ addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+ addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+ addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+ addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+ addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+ addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+ addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+ addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+ addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+ addUserKnob {1 anchor l Anchor}
+ anchor Anchor_72273d612
+ addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+ addUserKnob {26 line2 l "" +STARTLINE}
+ addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+ addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
+}
+StickyNote {
+ inputs 0
+ name StickyNote4
+ tile_color 0x101010ff
+ label "   ANIMATION   "
+ selected true
+ xpos 15970
+ ypos 765
+}
+push $N20f083f0
+ParticleBounce {
+ out_bounce_mode kill
+ out_new_channels all
+ in_new_channels {c}
+ in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
+ in_friction 0.69
+ bounceaxis_translate {1662.3 31.3 434.8}
+ bounceaxis_rotate {0.15 -4.05 7}
+ bounceaxis_uniform_scale 152.45
+ channels {a}
+ name ParticleBounce2
+ selected true
+ xpos 15597
+ ypos 822
+}
+ParticleBounce {
+ out_bounce_mode kill
+ out_new_channels all
+ in_new_channels {c}
+ in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
+ in_friction 0.495
+ bounceaxis_translate {1662.3 31.3 434.8}
+ bounceaxis_rotate {0.15 -4.05 7}
+ bounceaxis_uniform_scale 152.45
+ channels {b}
+ name ParticleBounce3
+ selected true
+ xpos 15597
+ ypos 873
+}
+ParticleBounce {
+ out_bounce_mode kill
+ out_new_channels all
+ in_new_channels {c}
+ in_bounce {{curve x1014 0.74 s0 x1038 0 s0}}
+ in_friction 0.495
+ bounceaxis_translate {1662.3 31.3 434.8}
+ bounceaxis_rotate {0.15 -4.05 7}
+ bounceaxis_uniform_scale 152.45
+ channels {c}
+ name ParticleBounce4
+ tile_color 0x444444ff
+ selected true
+ xpos 15597
+ ypos 923
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ tile_color 0x101010ff
+ label "   ANIMATION   "
+ selected true
+ xpos 15990
+ ypos 685
+}
+StickyNote {
+ inputs 0
+ name StickyNote3
+ tile_color 0x50505ff
+ label "   SPAWN   "
+ selected true
+ xpos 15846
+ ypos 1135
+}
+push $N232853b0
+ParticleExpression {
+ colexpr vel
+ new_channels {}
+ channels {a}
+ name ParticleExpression4
+ tile_color 0xffff00ff
+ selected true
+ xpos 16791
+ ypos 1714
+ disable true
+}
+push $N232cd0b0
+ParticleToImage {
+ pos pos
+ name ParticleToImage1
+ selected true
+ xpos 16944
+ ypos 1904
+ bookmark true
+}
+push $N232853b0
+ParticleExpression {
+ colexpr "v(1,0,0) "
+ opacityexpr 1
+ new_channels {}
+ channels {a}
+ name ParticleExpression3
+ tile_color 0xffff00ff
+ selected true
+ xpos 16869
+ ypos 1793
+}
+push $N232853b0
+ParticleExpression {
+ colexpr v(1,0,0)
+ opacityexpr 1
+ new_channels {}
+ channels {a}
+ name ParticleExpression1
+ tile_color 0xff0000ff
+ selected true
+ xpos 16566
+ ypos 1691
+}
+ParticleExpression {
+ colexpr "color == v(1,0,0) ?  vel : v(0,0,0) "
+ opacityexpr "color == v(1,0,0) ?  1 : 0"
+ new_channels {}
+ channels {a}
+ name ParticleExpression2
+ tile_color 0xffff00ff
+ selected true
+ xpos 16566
+ ypos 1755
+}
+push $N232ecc90
+Dot {
+ name Dot52
+ selected true
+ xpos 13842
+ ypos 2072
+}
+set N258e76a0 [stack 0]
+Dot {
+ name Dot53
+ selected true
+ xpos 13877
+ ypos 2072
+}
+Dot {
+ name Dot54
+ selected true
+ xpos 13928
+ ypos 2072
+}
+push $N258e76a0
+Dot {
+ name Dot56
+ selected true
+ xpos 13761
+ ypos 2072
+}
+Dot {
+ name Dot57
+ selected true
+ xpos 13676
+ ypos 2072
+}
+Constant {
+ inputs 0
+ color {0 1 0 1}
+ color_panelDropped true
+ name Constant35
+ selected true
+ xpos 14068
+ ypos 2078
+}
+set N258d2e20 [stack 0]
+push $N258d2e20
+push 0
+Phong {
+ inputs 3
+ name Phong16
+ selected true
+ xpos 14068
+ ypos 2150
+}
+ParticleToGeo {
+ inputs 0
+ channels {d}
+ name ParticleToGeo7
+ selected true
+ xpos 13894
+ ypos 2112
+}
+ApplyMaterial {
+ inputs 2
+ filter_type name
+ filter_name a
+ name ApplyMaterial18
+ selected true
+ xpos 13894
+ ypos 2150
+}
+Dot {
+ name Dot55
+ selected true
+ xpos 13928
+ ypos 2296
+}
+Constant {
+ inputs 0
+ color {1 1 0 1}
+ color_panelDropped true
+ name Constant36
+ selected true
+ xpos 13969
+ ypos 2160
+}
+push 0
+Phong {
+ inputs 2
+ name Phong17
+ selected true
+ xpos 13969
+ ypos 2232
+}
+ParticleToGeo {
+ inputs 0
+ channels {c}
+ name ParticleToGeo8
+ selected true
+ xpos 13808
+ ypos 2113
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial19
+ selected true
+ xpos 13808
+ ypos 2232
+}
+Scene {
+ inputs 2
+ name Scene25
+ selected true
+ xpos 13818
+ ypos 2272
+}
+set N2593f9b0 [stack 0]
+push $N2593f9b0
+Constant {
+ inputs 0
+ color {1 0 0 1}
+ color_panelDropped true
+ name Constant37
+ selected true
+ xpos 13370
+ ypos 2141
+}
+Phong {
+ name Phong18
+ selected true
+ xpos 13430
+ ypos 2231
+}
+ParticleToGeo {
+ inputs 0
+ channels {b}
+ name ParticleToGeo9
+ selected true
+ xpos 13727
+ ypos 2114
+}
+ApplyMaterial {
+ inputs 2
+ name ApplyMaterial20
+ selected true
+ xpos 13727
+ ypos 2231
+}
+Constant {
+ inputs 0
+ color {0.666667 -0.333333 0.666667 1}
+ color_panelDropped true
+ name Constant38
+ selected true
+ xpos 13519
+ ypos 2055
+}
+set N2597c970 [stack 0]
+Diffuse {
+ name Diffuse1
+ selected true
+ xpos 13519
+ ypos 2159
+}
+ParticleToGeo {
+ inputs 0
+ channels {a}
+ name ParticleToGeo10
+ selected true
+ xpos 13642
+ ypos 2104
+}
+ApplyMaterial {
+ inputs 2
+ filter_type name
+ filter_name a
+ name ApplyMaterial21
+ selected true
+ xpos 13639
+ ypos 2159
+}
+Dot {
+ name Dot58
+ selected true
+ xpos 13676
+ ypos 2295
+}
+Scene {
+ inputs 2
+ name Scene26
+ selected true
+ xpos 13717
+ ypos 2266
+}
+Scene {
+ inputs 3
+ name Scene27
+ selected true
+ xpos 13755
+ ypos 2315
+}
+push $N2597c970
+push $N2597c970
+Phong {
+ inputs 2
+ name Phong19
+ selected true
+ xpos 13331
+ ypos 1989
+}
+FileOut {
+ inputs 0
+ name FileOut1
+ tile_color 0xbfbf00ff
+ label sandbox_cache
+ selected true
+ xpos 16114
+ ypos 2049
+ icon smartgrade.png
+ channels rgba
+ _destination /jobs
+ file ""
+ proxy ""
+ fileProxy ""
+ views {main}
+ pbb true
+ smart_grade on
+ dw_compression_level 0
+ interleave channels
+ tex_metadata "default metadata and exr/*"
+ disable_autolabel_format true
+ _defaults "\{'smart_grade': 0, 'compression': 1, 'tile_color': 3216965887, 'pbb': True, 'dw_compression_level': 0, 'label': 'sandbox_cache'\}"
+ _format ""
+ _generator "NukeRenderGenerator dnnuke.core.render.v1"
+ _ivyVals "\{'variant': None, 'host': None, 'versionNum': '9', 'twigType': 'spider://query@TwigType.one?TwigType.code==2d', 'twigNameTags': \{'subtask': u'precomp', 'task': u'comp', 'label': u'sandbox_cache', 'out_dir': u'ELEMENT'\}, 'job': 'BDL', 'stalk': None, 'stalkAttrs': \{'framerange': '1001-1048'\}, 'twig': None, 'stem': 'spider://query@Stem.one?Stem.dnuuid==913197df-6c6e-4c29-9618-2fc66fecc78b&Stem.stemname==tc4740&Stem.stemtype==shot'\}"
+ _old_filetype exr
+ _stalkname E_tc4740_comp_precomp_sandbox_cache_v009
+ _twigtype 2d
+ _wrapper "FileOut dnnuke.nodes.file_out.wrapper"
+ beforeRender ""
+ beforeFrameRender ""
+ afterFrameRender ""
+ afterRender ""
+ renderProgress ""
+ _invert_grade /tools/BDL/ivyasset/tc4740/ivy/grade/GRD_tc4740_neutral_v001/GRD_tc4740_neutral_v001.grade
+}
+push $N131f6e00
 Light2 {
  inputs 0
  light_type directional
@@ -4432,7 +4899,7 @@ Phong {
  xpos 16936
  ypos 2843
 }
-push $N14248330
+push $N12a5f8f0
 ApplyMaterial {
  inputs 2
  name ApplyMaterial10
@@ -4447,7 +4914,7 @@ Scene {
  xpos 17088
  ypos 2998
 }
-push $N13db3c00
+push $N12f70b30
 RayRender {
  inputs 3
  stochastic_samples {{parent.RayRender1.stochastic_samples}}
@@ -4465,7 +4932,7 @@ FileOut {
  label debirs_aoc
  selected true
  xpos 17078
- ypos 3270
+ ypos 3282
  icon smartgrade.png
  channels all
  _destination /jobs
@@ -4494,4 +4961,18 @@ FileOut {
  afterRender ""
  renderProgress ""
  _invert_grade /tools/BDL/ivyasset/tc4740/ivy/grade/GRD_tc4740_neutral_v001/GRD_tc4740_neutral_v001.grade
+}
+push $N12619c90
+Viewer {
+ frame 1037
+ frame_range 1001-1048
+ frame_increment 8
+ overscan 300
+ center_fstop 0
+ viewerProcess "Film (sRGB)"
+ far 100000
+ name Viewer1
+ selected true
+ xpos 17651
+ ypos 3477
 }
