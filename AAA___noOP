@@ -1,0 +1,35 @@
+import nuke
+
+def update_layers():
+    # Obtén el nodo actual
+    node = nuke.thisNode()
+
+    # Obtén todos los nodos conectados al nodo actual
+    input_nodes = node.dependencies()
+
+    # Crea un conjunto para almacenar los nombres de las capas
+    layers = set()
+
+    # Itera sobre todos los nodos de entrada
+    for input_node in input_nodes:
+        # Obtén las capas del nodo de entrada
+        input_layers = input_node.channels()
+
+        # Itera sobre las capas y agrega el nombre de la capa al conjunto
+        for layer in input_layers:
+            layer_name = layer.split('.')[0]
+            layers.add(layer_name)
+
+    # Actualiza el menú desplegable con los nombres de las capas
+    node.knob('layer_menu').setValues(list(layers))
+
+# Crea un nodo NoOp
+node = nuke.createNode('NoOp')
+
+# Añade un menú desplegable al nodo
+layer_menu = nuke.Enumeration_Knob('layer_menu', 'Layer Menu', [])
+node.addKnob(layer_menu)
+
+# Añade un botón para actualizar el menú desplegable
+update_button = nuke.PyScript_Knob('update_button', 'Update Layers', 'update_layers()')
+node.addKnob(update_button)
