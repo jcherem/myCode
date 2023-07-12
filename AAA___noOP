@@ -29,22 +29,30 @@ def perform_operation():
     # Obtén el nodo actual
     node = nuke.thisNode()
 
-    # Configura el nodo Merge para usar las capas seleccionadas
+    # Configura los nodos Copy para usar las capas seleccionadas
     layer1 = node.knob('layer_menu1').value()
     layer2 = node.knob('layer_menu2').value()
 
-    # Configura el nodo Merge para realizar la operación de stencil
-    node.knob('operation').setValue('stencil')
-    node.knob('bbox').setValue(layer1)
-    node.knob('bbox2').setValue(layer2)
+    # Configura los nodos Copy para copiar los canales de las capas seleccionadas
+    node.node('Copy1').knob('from0').setValue(layer1 + '.red')
+    node.node('Copy1').knob('from1').setValue(layer1 + '.green')
+    node.node('Copy1').knob('from2').setValue(layer1 + '.blue')
+    node.node('Copy1').knob('from3').setValue(layer1 + '.alpha')
+
+    node.node('Copy2').knob('from0').setValue(layer2 + '.red')
+    node.node('Copy2').knob('from1').setValue(layer2 + '.green')
+    node.node('Copy2').knob('from2').setValue(layer2 + '.blue')
+    node.node('Copy2').knob('from3').setValue(layer2 + '.alpha')
 
 # Crea un nodo Group con dos entradas
 node = nuke.nodes.Group(inputs=[None, None])
 
-# Añade un nodo Merge al grupo
-merge_node = nuke.nodes.Merge(inputs=[node])
+# Añade dos nodos Copy al grupo
 node.begin()
-merge_node.setInput(0, None)
+copy_node1 = nuke.nodes.Copy(inputs=[None])
+copy_node1.setName('Copy1')
+copy_node2 = nuke.nodes.Copy(inputs=[copy_node1])
+copy_node2.setName('Copy2')
 node.end()
 
 # Añade dos menús desplegables para seleccionar capas
