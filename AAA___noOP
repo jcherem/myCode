@@ -1,3 +1,8 @@
+Para lograr lo que estás pidiendo, necesitarías crear un nodo personalizado que tenga dos menús desplegables para seleccionar capas y un tercer menú desplegable para seleccionar la operación (como stencil, mask o plus). Luego, podrías usar un nodo Merge para realizar la operación seleccionada en las capas seleccionadas.
+
+Aquí te dejo un ejemplo de cómo podrías hacerlo con Python:
+
+```python
 import nuke
 
 def update_layers():
@@ -20,16 +25,49 @@ def update_layers():
             layer_name = layer.split('.')[0]
             layers.add(layer_name)
 
-    # Actualiza el menú desplegable con los nombres de las capas
-    node.knob('layer_menu').setValues(list(layers))
+    # Actualiza los menús desplegables con los nombres de las capas
+    node.knob('layer_menu1').setValues(list(layers))
+    node.knob('layer_menu2').setValues(list(layers))
+
+def perform_operation():
+    # Obtén el nodo actual
+    node = nuke.thisNode()
+
+    # Crea un nodo Merge
+    merge_node = nuke.createNode('Merge')
+
+    # Configura el nodo Merge para usar la operación seleccionada
+    operation = node.knob('operation_menu').value()
+    merge_node.knob('operation').setValue(operation)
+
+    # Configura el nodo Merge para usar las capas seleccionadas
+    layer1 = node.knob('layer_menu1').value()
+    layer2 = node.knob('layer_menu2').value()
+    merge_node.knob('bbox').setValue(layer1)
+    merge_node.knob('bbox').setValue(layer2)
 
 # Crea un nodo NoOp
 node = nuke.createNode('NoOp')
 
-# Añade un menú desplegable al nodo
-layer_menu = nuke.Enumeration_Knob('layer_menu', 'Layer Menu', [])
-node.addKnob(layer_menu)
+# Añade dos menús desplegables para seleccionar capas
+layer_menu1 = nuke.Enumeration_Knob('layer_menu1', 'Layer Menu 1', [])
+layer_menu2 = nuke.Enumeration_Knob('layer_menu2', 'Layer Menu 2', [])
+node.addKnob(layer_menu1)
+node.addKnob(layer_menu2)
 
-# Añade un botón para actualizar el menú desplegable
+# Añade un menú desplegable para seleccionar la operación
+operation_menu = nuke.Enumeration_Knob('operation_menu', 'Operation Menu', ['stencil', 'mask', 'plus'])
+node.addKnob(operation_menu)
+
+# Añade un botón para actualizar los menús desplegables de capas
 update_button = nuke.PyScript_Knob('update_button', 'Update Layers', 'update_layers()')
 node.addKnob(update_button)
+
+# Añade un botón para realizar la operación
+perform_button = nuke.PyScript_Knob('perform_button', 'Perform Operation', 'perform_operation()')
+node.addKnob(perform_button)
+```
+
+Este script crea un nodo NoOp con tres menús desplegables y dos botones. Cuando presionas el botón "Update Layers", el script recoge todas las capas de los nodos conectados al nodo NoOp y actualiza los menús desplegables con estos nombres de capa. Cuando presionas el botón "Perform Operation", el script crea un nodo Merge que realiza la operación seleccionada en las capas seleccionadas.
+
+Por favor, ten en cuenta que este script es solo un ejemplo y puede que necesites ajustarlo para que se ajuste a tus necesidades específicas. Además, este script asume que estás familiarizado con la creación de nodos y la configuración de sus propiedades en Nuke. Si no estás familiarizado con estos conceptos, te recomendaría que consultes la documentación de Nuke o que busques tutoriales en línea para aprender más.
