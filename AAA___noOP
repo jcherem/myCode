@@ -36,25 +36,6 @@ def update_layers():
     node.knob('layer_menu1').setValues(list(layers1))
     node.knob('layer_menu2').setValues(list(layers1.union(layers2)))
 
-def update_copy_nodes():
-    # Obtén el nodo actual
-    node = nuke.thisNode()
-
-    # Configura los nodos Copy para usar las capas seleccionadas
-    layer1 = node.knob('layer_menu1').value()
-    layer2 = node.knob('layer_menu2').value()
-
-    # Configura los nodos Copy para copiar los canales de las capas seleccionadas
-    node.node('Copy1').knob('from0').setValue(layer1 + '.red')
-    node.node('Copy1').knob('from1').setValue(layer1 + '.green')
-    node.node('Copy1').knob('from2').setValue(layer1 + '.blue')
-    node.node('Copy1').knob('from3').setValue(layer1 + '.alpha')
-
-    node.node('Copy2').knob('from0').setValue(layer2 + '.red')
-    node.node('Copy2').knob('from1').setValue(layer2 + '.green')
-    node.node('Copy2').knob('from2').setValue(layer2 + '.blue')
-    node.node('Copy2').knob('from3').setValue(layer2 + '.alpha')
-
 # Crea un nodo Group con dos entradas
 node = nuke.nodes.Group(inputs=[])
 
@@ -74,15 +55,19 @@ layer_menu1 = nuke.Enumeration_Knob('layer_menu1', 'Layer Menu 1', [])
 layer_menu1.setFlag(nuke.STARTLINE)
 layer_menu1.setTooltip('Select the layer for the first Copy node.')
 layer_menu1.setAnimated()
-layer_menu1.setExpression('update_copy_nodes()')
 node.addKnob(layer_menu1)
 
 layer_menu2 = nuke.Enumeration_Knob('layer_menu2', 'Layer Menu 2', [])
 layer_menu2.setTooltip('Select the layer for the second Copy node.')
 layer_menu2.setAnimated()
-layer_menu2.setExpression('update_copy_nodes()')
 node.addKnob(layer_menu2)
 
 # Añade un botón para actualizar los menús desplegables de capas
 update_button = nuke.PyScript_Knob('update_button', 'Update Layers', 'update_layers()')
 node.addKnob(update_button)
+
+# Configura los nodos Copy para usar las capas seleccionadas
+for i in range(4):
+    channel = ['red', 'green', 'blue', 'alpha'][i]
+    copy_node1.knob('from' + str(i)).setExpression('parent.layer_menu1 + "." + ' + repr(channel))
+    copy_node2.knob('from' + str(i)).setExpression('parent.layer_menu2 + "." + ' + repr(channel))
