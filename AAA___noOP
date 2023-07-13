@@ -5,27 +5,38 @@ def update_layers():
     node = nuke.thisNode()
 
     # Crea un conjunto para almacenar los nombres de las capas
-    layers = set()
+    layers1 = set()
+    layers2 = set()
 
-    # Itera sobre las dos entradas del nodo
-    for i in range(2):
-        # Obtén el nodo conectado a la entrada
-        input_node = node.input(i)
+    # Obtén el nodo conectado a la primera entrada
+    input_node1 = node.input(0)
 
-        # Si hay un nodo conectado a la entrada, obtén sus capas
-        if input_node is not None:
-            input_layers = input_node.channels()
+    # Si hay un nodo conectado a la entrada, obtén sus capas
+    if input_node1 is not None:
+        input_layers1 = input_node1.channels()
 
-            # Itera sobre las capas y agrega el nombre de la capa al conjunto
-            for layer in input_layers:
-                layer_name = layer.split('.')[0]
-                layers.add(layer_name)
+        # Itera sobre las capas y agrega el nombre de la capa al conjunto
+        for layer in input_layers1:
+            layer_name = layer.split('.')[0]
+            layers1.add(layer_name)
+
+    # Obtén el nodo conectado a la segunda entrada
+    input_node2 = node.input(1)
+
+    # Si hay un nodo conectado a la entrada, obtén sus capas
+    if input_node2 is not None:
+        input_layers2 = input_node2.channels()
+
+        # Itera sobre las capas y agrega el nombre de la capa al conjunto
+        for layer in input_layers2:
+            layer_name = layer.split('.')[0]
+            layers2.add(layer_name)
 
     # Actualiza los menús desplegables con los nombres de las capas
-    node.knob('layer_menu1').setValues(list(layers))
-    node.knob('layer_menu2').setValues(list(layers))
+    node.knob('layer_menu1').setValues(list(layers1))
+    node.knob('layer_menu2').setValues(list(layers1.union(layers2)))
 
-def perform_operation():
+def update_copy_nodes():
     # Obtén el nodo actual
     node = nuke.thisNode()
 
@@ -49,22 +60,26 @@ node = nuke.nodes.Group(inputs=[None, None])
 
 # Añade dos nodos Copy al grupo
 node.begin()
-copy_node1 = nuke.nodes.Copy(inputs=[None])
+copy_node1 = nuke.nodes.Copy(inputs=[node.input(0)])
 copy_node1.setName('Copy1')
-copy_node2 = nuke.nodes.Copy(inputs=[copy_node1])
+copy_node2 = nuke.nodes.Copy(inputs=[copy_node1, node.input(1)])
 copy_node2.setName('Copy2')
 node.end()
 
 # Añade dos menús desplegables para seleccionar capas
 layer_menu1 = nuke.Enumeration_Knob('layer_menu1', 'Layer Menu 1', [])
-layer_menu2 = nuke.Enumeration_Knob('layer_menu2', 'Layer Menu 2', [])
+layer_menu1.setFlag(nuke.STARTLINE)
+layer_menu1.setTooltip('Select the layer for the first Copy node.')
+layer_menu1.setAnimated()
+layer_menu1.setExpression('update_copy_nodes()')
 node.addKnob(layer_menu1)
+
+layer_menu2 = nuke.Enumeration_Knob('layer_menu2', 'Layer Menu 2', [])
+layer_menu2.setTooltip('Select the layer for the second Copy node.')
+layer_menu2.setAnimated()
+layer_menu2.setExpression('update_copy_nodes()')
 node.addKnob(layer_menu2)
 
 # Añade un botón para actualizar los menús desplegables de capas
 update_button = nuke.PyScript_Knob('update_button', 'Update Layers', 'update_layers()')
 node.addKnob(update_button)
-
-# Añade un botón para realizar la operación
-perform_button = nuke.PyScript_Knob('perform_button', 'Perform Operation', 'perform_operation()')
-node.addKnob(perform_button)
