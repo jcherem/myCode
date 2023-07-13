@@ -62,7 +62,7 @@ node = nuke.nodes.Group(inputs=[None, None])
 node.begin()
 copy_node1 = nuke.nodes.Copy(inputs=[node.input(0)])
 copy_node1.setName('Copy1')
-copy_node2 = nuke.nodes.Copy(inputs=[copy_node1, node.input(1)])
+copy_node2 = nuke.nodes.Copy(inputs=[node.input(1)])
 copy_node2.setName('Copy2')
 node.end()
 
