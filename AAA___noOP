@@ -56,14 +56,17 @@ def update_copy_nodes():
     node.node('Copy2').knob('from3').setValue(layer2 + '.alpha')
 
 # Crea un nodo Group con dos entradas
-node = nuke.nodes.Group(inputs=[None, None])
+node = nuke.nodes.Group(inputs=2)
 
-# Añade dos nodos Copy al grupo
+# Añade dos nodos Copy al grupo y un nodo Output
 node.begin()
-copy_node1 = nuke.nodes.Copy(inputs=[node.input(0)])
+input_node1 = nuke.nodes.Input()
+input_node2 = nuke.nodes.Input()
+copy_node1 = nuke.nodes.Copy(inputs=[input_node1])
 copy_node1.setName('Copy1')
-copy_node2 = nuke.nodes.Copy(inputs=[node.input(1)])
+copy_node2 = nuke.nodes.Copy(inputs=[copy_node1, input_node2])
 copy_node2.setName('Copy2')
+output_node = nuke.nodes.Output(inputs=[copy_node2])
 node.end()
 
 # Añade dos menús desplegables para seleccionar capas
