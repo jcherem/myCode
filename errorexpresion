@@ -1,0 +1,13 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push 0
+push $cut_paste_input
+ShuffleCopy {
+inputs 2
+name ShuffleCopy3
+label "self-disables if node has an error"
+selected true
+xpos -31090
+ypos 17738
+disable {{hasError()==1?1:0}}
+}
