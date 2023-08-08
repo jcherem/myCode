@@ -1,0 +1,40 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+NoOp {
+name simple_random2
+knobChanged "\nn = nuke.thisNode()\nx = n\['mute'].getValue()\n\nif x == 0:\n        \n        tilecol = int('%02x%02x%02x%02x' % (0*255,0*255,0*255,1),16)\n        textcol = int('%02x%02x%02x%02x' % (1*255,1*255,1*255,1),16)\n        n\['tile_color'].setValue(tilecol)\n        n\['note_font_color'].setValue(textcol)\n\nif x == 1:\n        \n        tilecol = int('%02x%02x%02x%02x' % (1*255,0*255,0*255,1),16)\n        textcol = int('%02x%02x%02x%02x' % (1*255,1*255,0*255,1),16)\n        n\['tile_color'].setValue(tilecol)\n        n\['note_font_color'].setValue(textcol)\n\n\n"
+tile_color 1
+note_font "DejaVu Sans"
+note_font_color 0xffffff01
+selected true
+xpos -26396
+ypos 14518
+addUserKnob {20 User}
+addUserKnob {26 text_2 l " <font color='#C8FF00'> <b>SIMPLE RANDOM" T " "}
+addUserKnob {22 reset l RESET -STARTLINE T "n=nuke.thisNode()\n\nn.knob(\"seed\").setValue(0)\nn.knob(\"frequency\").setValue(1)\nn.knob(\"amplitude\").setValue(10)\n\nn.knob(\"offset\").clearAnimated()\nn.knob(\"offset\").setValue(0)\nn\['offset'].setVisible(False)\n\nn.knob(\"mult\").setValue(1)\nn.knob(\"mute\").setValue(0)\n"}
+addUserKnob {6 mute t "Mute curve going to output node, but without disconnecting." -STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {7 seed R 0 10}
+seed 1.9
+addUserKnob {7 frequency R 0 20}
+frequency 0.2
+addUserKnob {7 amplitude R 0 100}
+amplitude 0.3
+addUserKnob {26 ""}
+addUserKnob {26 text l offsets/pivot t "Change the anchor point for your curve" T " "}
+addUserKnob {22 python_button l middle t "Offset curve so that the middle of the curve is centered around 0" -STARTLINE T "n=nuke.thisNode()\nn.knob('offset').setExpression('amplitude/2-1')\nn\['offset'].setVisible(False)\n\n"}
+addUserKnob {22 python_button_1 l " bottom" t "Offset curve so that the bottom of the curve is centered around 0" -STARTLINE T "n=nuke.thisNode()\nn.knob('offset').setExpression('amplitude-1')\nn\['offset'].setVisible(False)\n\n"}
+addUserKnob {22 python_button_2 l top t "Offset curve so that the top of the curve is centered around 0" -STARTLINE T "n=nuke.thisNode()\nn.knob('offset').setExpression('-1+(1.5*amplitude)-(1.5*amplitude)')\nn\['offset'].setVisible(False)\n\n"}
+addUserKnob {22 python_button_3 l custom -STARTLINE T "n=nuke.thisNode()\nn.knob('offset').clearAnimated()\nn.knob('offset').setValue('0')\nn\['offset'].setVisible(True)\n\n"}
+addUserKnob {7 offset +HIDDEN R -100 100}
+offset {{amplitude-1}}
+addUserKnob {26 ""}
+addUserKnob {7 mult l MULT}
+mult 5
+addUserKnob {26 ""}
+addUserKnob {3 output l OUTPUT t "Output values for use elsewhere"}
+output {{(1-(random(seed,frame*frequency)*amplitude)+offset)*mult*(1-mute)}}
+addUserKnob {26 ""}
+addUserKnob {26 text_1 l " <font color='#C8FF00'> simple random" T "\nBuilt by Christopher Maslen<br>\n\ncmas@dneg.com<br>\n\n</font>\nLast updated January 17th 2022"}
+}
