@@ -1,0 +1,54 @@
+#! C:/Program Files/Nuke11.3v1/nuke-11.3.1.dll -nx
+version 11.3 v1
+Gizmo {
+ inputs 0
+ addUserKnob {20 Radial_Rings l "Radial Rings"}
+ addUserKnob {41 format l "output format" T Reformat2.format}
+ addUserKnob {12 Positioner1001 l position}
+ Positioner1001 {535 495}
+ addUserKnob {41 ring_radius T NoOp20010.ring_radius}
+ addUserKnob {7 NoOp20010_wipe_speed l wipe_speed R 1 50}
+ NoOp20010_wipe_speed 12.8
+ addUserKnob {41 time_offset T NoOp20010.time_offset}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 _1 l "" +STARTLINE T "<br><b>Ozgur Taparli © 2019</b>"}
+}
+ Reformat {
+  inputs 0
+  format "1024 1024 0 0 1024 1024 1 square_1K"
+  name Reformat2
+  xpos -161
+  ypos -462
+ }
+ Expression {
+  expr3 (frame-(21+NoOp20010.time_offset))/(51-NoOp20010.wipe_speed)-sin(((format/2)-sqrt((x-parent.Positioner1001.x)*(x-parent.Positioner1001.x)+(y-parent.Positioner1001.y)*(y-parent.Positioner1001.y)))/(NoOp20010.ring_radius))
+  name Expression2
+  selected true
+  xpos -161
+  ypos -403
+ }
+ Shuffle {
+  in alpha
+  name Shuffle1
+  xpos -161
+  ypos -317
+ }
+ Output {
+  name Output1
+  xpos -161
+  ypos -217
+ }
+ NoOp {
+  inputs 0
+  name NoOp20010
+  xpos 86
+  ypos -408
+  addUserKnob {20 User l Controls}
+  addUserKnob {7 ring_radius R 0 40}
+  ring_radius 17.4
+  addUserKnob {7 wipe_speed R 1 50}
+  wipe_speed {{parent.NoOp20010_wipe_speed}}
+  addUserKnob {7 time_offset R -50 50}
+  time_offset -3
+ }
+end_group
