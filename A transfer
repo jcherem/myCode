@@ -1,37 +1,5 @@
-kernel RadialTexture : ImageComputationKernel<ePixelWise>
-{
+Syntax error at "
   Image<eWrite> dst;
 
   param:
-    float wiper_angle;
-    float noise_strength;
-
-  // Define other parameters as needed
-
-  void define() {
-    // Add parameter definitions here, for example:
-    // defineParam("wiper_angle", "Wiper Angle", 0.0f);
-    // defineParam("noise_strength", "Noise Strength", 0.1f);
-  }
-
-  void process() {
-    vec2 pos = make_vector2((float)dst.x(), (float)dst.y());
-    vec2 center = make_vector2(300.0f, 50.0f); // Center of the circle
-
-    float radial_distance = distance(pos, center);
-
-    // Apply the radial texture based on the sin formula
-    float radial_value = sin(sqrt(radial_distance) / 4.0f);
-
-    // Add wiper effect
-    float wiper_effect = sin((atan2(pos.y - center.y, pos.x - center.x) + wiper_angle));
-    radial_value *= wiper_effect;
-
-    // Add noise
-    float noise_value = noise(pos * noise_strength);
-    radial_value += noise_value;
-
-    // Write the value to the output image
-    dst() = make_vector4(radial_value, radial_value, radial_value, 1.0f);
-  }
-};
+    floa"
