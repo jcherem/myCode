@@ -1,5 +1,42 @@
-Syntax error at "
-  Image<eWrite> dst;
+kernel RadialTexture : public ImageComputationKernel<ePixelWise>
+{
+    Image<eWrite> dst;  // Output image
 
-  param:
-    floa"
+    param:
+        float wiper_angle;  // Wiper angle in radians
+        float noise_strength;  // Strength of the noise
+
+    local:
+        float2 center;  // Center of the circle
+
+    void define()
+    {
+        defineParam(wiper_angle, "Wiper Angle", 0.0f);
+        defineParam(noise_strength, "Noise Strength", 0.1f);
+    }
+
+    void init()
+    {
+        center = make_float2(300.0f, 50.0f);  // Initialize the center of the circle
+    }
+
+    void process()
+    {
+        float2 pos = make_float2(dst.x(), dst.y());
+        float radial_distance = distance(pos, center);
+
+        // Apply the radial texture based on the sin formula
+        float radial_value = sin(sqrt(radial_distance) / 4.0f);
+
+        // Add wiper effect
+        float wiper_effect = sin(atan2(pos.y - center.y, pos.x - center.x) + wiper_angle);
+        radial_value *= wiper_effect;
+
+        // Add noise
+        float noise_value = noise(pos * noise_strength);
+        radial_value += noise_value;
+
+        // Write the value to the output image
+        dst() = make_float4(radial_value, radial_value, radial_value, 1.0f);
+    }
+};
