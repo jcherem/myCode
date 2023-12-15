@@ -1,0 +1,414 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+add_layer {__position_reference __position_reference.x __position_reference.y __position_reference.z}
+Group {
+name mask3d
+help "Creates a spherical or cubic matte around a 3D position sampled from a point pass."
+onCreate "__import__(\"dnnuke.nodes.mask3DV2\", fromlist=\['Mask3DV2_updateKnobs']).Mask3DV2_updateKnobs(nuke.thisNode())"
+knobChanged "__import__(\"dnnuke.nodes.mask3DV2\", fromlist=\['Mask3DV2_knobChanged']).Mask3DV2_knobChanged()"
+note_font "Bitstream Vera Sans"
+selected true
+xpos -21739
+ypos 7261
+mapsize {0.15 0.15}
+addUserKnob {20 Mask3D}
+addUserKnob {22 Documentation t "Click here to see the DNeg user docs for this tool." T "__import__('dnnuke.utils.asst', fromlist=\['openDocs']).openDocs(nuke.thisNode())" +STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {41 in l "3D Data" t "Choose a layer from the input that contains a data pass \n\nposition_reference for animated / deforming geometry (these are data sets in the T pose at the world origin)\nposition_world for objects in world space coordinates\npostion_object object position \n\netc" T Shuffle_Input_Channels.in}
+addUserKnob {41 out l Output t "Which channels to output the final values into." T ChannelMerge1.output}
+addUserKnob {6 fixvals l "fix vals" +STARTLINE}
+addUserKnob {6 unpremultiply t "Unpremultiplies the incoming position data by the alpha channel." -STARTLINE}
+unpremultiply true
+addUserKnob {6 useAlpha l "ignore outside alpha" t "If your input has an alpha channel, checking this will force everything outside that alpha channel to be black." -STARTLINE}
+useAlpha true
+addUserKnob {6 edge_cleanup l "clean edges" t "This does an edge detection that attempts to remove unwanted data from edges that are not \npart of the radius. " -STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {4 matteShape l "Mask Shape   " t "3D matte geometry." M {Sphere Cube "" "" "" "" "" "" "" ""}}
+matteShape Cube
+addUserKnob {6 useBBox l "use BBox" t "Manually specify corners of a bounding box." -STARTLINE}
+addUserKnob {41 center l "Mask Position" t "The center point of the matte. Activate the colour picker and ctrl-alt-click on a point on the image to position the matte." T Center.center}
+addUserKnob {18 radius l "Mask Radius  " t "The radius of the matte. Can be split into 3 values to stretch along seperate axis." R 0 500}
+radius {35 35 35}
+addUserKnob {6 radius_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {41 bboxPt1 +HIDDEN T Corners.bboxPt1}
+addUserKnob {41 bboxPt2 +HIDDEN T Corners.bboxPt2}
+addUserKnob {41 operation l "Merge Operation" t "This is how the Mask3D matte is applied to the input alpha." T ChannelMerge1.operation}
+addUserKnob {26 ""}
+addUserKnob {20 transform l Transform t "Transform the matte shape as desired." n 1}
+addUserKnob {41 rot_order l "rotation order" T Axis1.rot_order}
+addUserKnob {41 rotate T Axis1.rotate}
+addUserKnob {13 scaling l scale}
+scaling {0.5 2.45 0.205}
+addUserKnob {41 skew T Axis1.skew}
+addUserKnob {20 endGroup n -1}
+addUserKnob {26 ""}
+addUserKnob {4 falloffType l "Falloff Type" t "Controls how the matte fades at the edges." M {None Linear Smooth Quadratic Cubic Exponential "" ""}}
+falloffType Linear
+addUserKnob {7 falloff l "Falloff Amount"}
+falloff 0.11
+addUserKnob {7 exp +HIDDEN R 0.1 10}
+exp 8
+addUserKnob {20 preview_tab l "3D Preview"}
+addUserKnob {22 activate l Activate t "Activates the 3D preview. Please note that this adds a number of internal nodes to the gizmo so it's useful to deactivate the preview (which removes the nodes again) once you're done with it." T "node = nuke.toNode( 'Mask3DV2Internal1' )\nif node:\n\tnuke.thisNode().knob( 'activate' ).setLabel( 'Activate' )\n\tnuke.thisNode().knob( 'quality' ).setFlag( nuke.INVISIBLE )\n\tnuke.delete( node )\n\n\tnuke.toNode( 'Output1' ).connectInput( 0, nuke.toNode( 'Copy2' ) )\n\nelse:\n\tfor node in nuke.selectedNodes(): node.setSelected( 0 )\n\tpreviewNode = nuke.createNode( 'Mask3DV2Internal', inpanel = False )\n\tpreviewNode.connectInput( 0, nuke.toNode( 'img' ) )\n\tpreviewNode.connectInput( 1, nuke.toNode( 'Unpremult1' ) )\n\tpreviewNode.connectInput( 2, nuke.toNode( 'Axis1' ) )\n\tpreviewNode.connectInput( 3, nuke.toNode( 'Copy2' ) )\n\tnuke.toNode( 'Output1' ).connectInput( 0, previewNode )\n\n\tpreviewNode\['center'].setExpression( 'parent.center' )\n\tpreviewNode\['quality'].setExpression( 'parent.quality' )\n\tpreviewNode\['shape'].setExpression( 'parent.matteShape' )\n\n\tnuke.runIn( 'Mask3DV2Internal1', \"nuke.toNode( 'TransformGeo2' ).connectInput( 0, nuke.toNode( 'axis' ) )\" )\n\n\tnuke.thisNode().knob( 'activate' ).setLabel( 'Deactivate' )\n\tnuke.thisNode().knob( 'quality' ).clearFlag( nuke.INVISIBLE )\n\tnuke.thisNode().knob( 'quality' ).setLabel( 'quality' )" +STARTLINE}
+addUserKnob {7 quality t "Point cloud resolution." +INVISIBLE}
+quality 0.25
+addUserKnob {6 activatePreview +INVISIBLE +STARTLINE}
+addUserKnob {1 _class +INVISIBLE}
+_class Mask3D
+addUserKnob {3 Mask3D_node l INVISIBLE +INVISIBLE}
+}
+Input {
+inputs 0
+name img
+xpos -799
+ypos -581
+addUserKnob {20 User}
+addUserKnob {3 input_check}
+input_check {{"\[exists input0.Mask3D_node]&&1-input0.disable?0:1"}}
+}
+Dot {
+name Dot1
+xpos -765
+ypos -499
+}
+set Nfc42ff00 [stack 0]
+Shuffle {
+in alpha
+name Shuffle2
+xpos -754
+ypos -432
+}
+push $Nfc42ff00
+Shuffle {
+in mask
+name Shuffle3
+xpos -865
+ypos -434
+}
+Switch {
+inputs 2
+which {{img.input_check}}
+name Switch4
+xpos -808
+ypos -359
+}
+set Nf5d94200 [stack 0]
+push $Nfc42ff00
+AddChannels {
+channels alpha
+color 1
+name AddChannels1
+label "Avoids error messages"
+xpos -360
+ypos -515
+}
+Shuffle {
+in __position_reference
+alpha blue
+out rgb
+name Shuffle_Input_Channels
+label "Use the position data"
+xpos -360
+ypos -465
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy3
+xpos -360
+ypos -365
+}
+set N686ea520 [stack 0]
+Unpremult {
+name Unpremult1
+xpos -360
+ypos -309
+disable {{!unpremultiply}}
+}
+set Nf2959120 [stack 0]
+NoOp {
+name Corners
+knobChanged "__import__(\"dnnuke.nodes.mask3DV2\", fromlist=\['Mask3DV2_knobChanged2']).Mask3DV2_knobChanged2()"
+label "Picks up the corner points correctly"
+xpos -60
+ypos -315
+addUserKnob {20 Corners}
+addUserKnob {18 bboxPt1 t "First corner of box."}
+bboxPt1 {-1000 0 -1000}
+addUserKnob {6 bboxPt1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {18 bboxPt2 t "Second corner of box."}
+bboxPt2 {1000 4000 1000}
+addUserKnob {6 bboxPt2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+}
+Axis2 {
+inputs 0
+selectable false
+xform_order STR
+rot_order ZYX
+scaling {{"max( parent.radius * parent.scaling, 0.0001 )"} {"max( parent.radius * parent.scaling, 0.0001 )"} {"max( parent.radius * parent.scaling, 0.0001 )"}}
+name Axis1
+label "Mask transform"
+xpos -188
+ypos -415
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+addUserKnob {1 leaf_label l Leaf}
+addUserKnob {1 ivy_version l Version}
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push $Nf5d94200
+Dot {
+name Dot6
+xpos -1189
+ypos -355
+}
+Dot {
+name Dot5
+xpos -1189
+ypos 530
+}
+push $Nfc42ff00
+Dot {
+name Dot8
+xpos -905
+ypos -499
+}
+set N5982adc0 [stack 0]
+Dot {
+name Dot2
+xpos -1057
+ypos -499
+}
+Shuffle {
+alpha black
+name Shuffle4
+xpos -1091
+ypos -189
+}
+set N4492c7f0 [stack 0]
+push $N5982adc0
+Switch {
+inputs 2
+which {{img.input_check}}
+name Switch5
+xpos -939
+ypos -183
+}
+Dot {
+name Dot3
+xpos -905
+ypos 410
+}
+push $N4492c7f0
+Dot {
+name Dot7
+xpos -1057
+ypos 307
+}
+push $N686ea520
+BlinkScript {
+recompileCount 15
+ProgramGroup 1
+KernelDescription "2 \"distance_edge_filter\" iterate pixelWise 4f58eaa3daa0bb985ea00526aed70240799b5bfe07fd16055cd0cc26f8f96148 2 \"data\" Read Random \"dst\" Write Point 4 \"Filter Area\" Int 2 AQAAAAEAAAA= \"Unit\" Float 1 zczMPQ== \"Power\" Float 1 AACAPw== \"Blur Facing Camera\" Float 1 AACAPw== 4 \"filter_area\" 2 1 \"unit\" 1 1 \"power\" 1 1 \"facing\" 1 1 0"
+kernelSource "\nkernel distance_edge_filter : ImageComputationKernel<ePixelWise>\n\{\n  \n  Image<eRead, eAccessRandom> data;  //the input image\n  Image<eWrite, eAccessPoint> dst;  //the output image\n\n  param:\n    int2 filter_area;\n    float unit;\n    float power;\n    float facing; \n\n\n  void define() \{\n    defineParam(filter_area, \"Filter Area\", int2(1.0f, 1.0f));\n    defineParam(unit, \"Unit\", 0.1f);\n    defineParam(power, \"Power\", 1.0f);\n    defineParam(facing, \"Blur Facing Camera\", 1.0f);\n  \}\n\n\n  void process(int2 pos ) \{ \n      int x = pos.x;\n      int y = pos.y; \n      float wsum = 1.0f;\n      float distance = 0.0f;\n      float alpha =  data(x,y,3);\n      SampleType(dst) accum(data(x,y));\n      float max_value = 1.0f;\n      float inv_distance = 0.0f;\n      //current rgb pixel value from the data input\n      float3 current_data_values = float3(data(x, y, 0), data(x, y, 1), data(x, y, 2)); \n      \n      if (alpha != 0.0f)\n      \{\n        for (int iy = y-filter_area.y; iy<=y+filter_area.y; iy++)\n        \{\n          for (int ix = x-filter_area.x ; ix<=x+filter_area.x ; ix++)\n          \{\n            float3 neighbour_values = float3(data(ix, iy, 0), data(ix, iy, 1), data(ix, iy, 2)); \n            float distance = clamp((length(fabs(current_data_values - neighbour_values)))/unit, 0.0f, 1.0f);\n            float inv_distance = facing == 1.0f ? pow(facing-fabs(distance), power) :  pow(fabs(distance), power);\n            accum += data(ix, iy)*(inv_distance);      \n            wsum += (inv_distance);   \n            max_value += 1.0f; \n       \n          \}         \n        \}\n      \}\n      \n      if (unit != 0.0f)\n      \{\n        dst() =wsum / max_value ;\n        dst(3) = data(x, y, 3) ;\n      \}\n      else\n      \{\n        dst() = data(x,y);\n      \}\n   \}\n\};\n"
+rebuild ""
+distance_edge_filter_Unit {{parent.radius}}
+"distance_edge_filter_Blur Facing Camera" 0
+rebuild_finalise ""
+name BlinkScript2
+xpos -619
+ypos -223
+disable {{!edge_cleanup}}
+}
+Grade {
+blackpoint 0.1
+name Grade1
+xpos -619
+ypos -155
+}
+Shuffle {
+green red
+blue red
+alpha red
+name Shuffle1
+xpos -619
+ypos -54
+}
+push $Nf2959120
+Add {
+channels rgb
+value {{-center} {-center} {-center} {curve}}
+name Center
+xpos -360
+ypos -283
+addUserKnob {20 User}
+addUserKnob {18 center}
+center {8.51968956 24.79509544 508.3947144}
+addUserKnob {6 center_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+}
+ColorMatrix {
+matrix {
+    {{Axis1.world_matrix.0} {Axis1.world_matrix.1} {Axis1.world_matrix.2}}
+    {{Axis1.world_matrix.4} {Axis1.world_matrix.5} {Axis1.world_matrix.6}}
+    {{Axis1.world_matrix.8} {Axis1.world_matrix.9} {Axis1.world_matrix.10}}
+  }
+invert true
+name Rotate_Scale_Skew
+label "Applies the mask transform matrix"
+xpos -360
+ypos -257
+disable {{hasError x200 1}}
+}
+set Nfc42f640 [stack 0]
+Dot {
+name Dot4
+xpos -141
+ypos -247
+}
+Expression {
+expr3 "(parent.useAlpha &&  a == 0.0 )? 0 : 1-max(abs(r),abs(g),abs(b))"
+name CubeMatte
+xpos -175
+ypos -182
+}
+push $Nfc42f640
+Expression {
+expr3 "(parent.useAlpha &&  a == 0.0 ) ? 0 : 1-(sqrt((r*r)+(g*g)+(b*b)))"
+name SphereMatte
+xpos -360
+ypos -219
+}
+Switch {
+inputs 2
+which {{matteShape}}
+name Switch1
+label "Switches between sphere and cube mask"
+xpos -365
+ypos -188
+}
+Grade {
+channels alpha
+whitepoint {{falloffType?falloff:0 i}}
+white_clamp true
+name Falloff
+xpos -365
+ypos -128
+}
+Merge2 {
+inputs 2
+operation stencil
+bbox B
+name Merge1
+xpos -360
+ypos -48
+disable {{!edge_cleanup}}
+}
+set N6febd880 [stack 0]
+Expression {
+expr3 a==0?0:pow(a,parent.exp)
+name Exponential
+xpos 113
+ypos 58
+}
+push $N6febd880
+Expression {
+expr3 a==0?0:clamp((a**3),0,1)
+name Cubic
+xpos 22
+ypos 57
+}
+push $N6febd880
+Expression {
+expr3 a==0?0:clamp(pow2(a),0,1)
+name Quadratic
+xpos -72
+ypos 58
+}
+push $N6febd880
+Expression {
+expr3 a==0?0:smoothstep(0,1,a)
+name Smooth
+xpos -169
+ypos 59
+}
+push $N6febd880
+NoOp {
+name Linear
+xpos -260
+ypos 60
+}
+push $N6febd880
+NoOp {
+name None
+xpos -360
+ypos 60
+}
+Switch {
+inputs 6
+which {{falloffType i}}
+name Switch2
+label "Switches between falloff types"
+xpos -360
+ypos 123
+}
+Remove {
+operation keep
+channels alpha
+name Remove1
+xpos -360
+ypos 170
+disable true
+}
+FixVals {
+name FixVals1
+xpos -360
+ypos 208
+disable {{!parent.fixvals}}
+}
+Copy {
+inputs 2
+channels rgb
+name Copy1
+xpos -360
+ypos 291
+}
+ChannelMerge {
+inputs 2
+name ChannelMerge1
+xpos -360
+ypos 394
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 mask.a
+name Copy2
+xpos -360
+ypos 520
+}
+Output {
+name Output1
+xpos -360
+ypos 665
+}
+end_group
