@@ -1,0 +1,228 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+add_layer {__depth __depth.red __depth.green __depth.blue __depth.alpha __depth.r __depth.z __depth.x __depth.y __depth.Z __depth.r __depth.Z __depth.r}
+Remove {
+operation keep
+channels rgba
+channels2 {__depth.red __depth.green __depth.blue __depth.alpha}
+name Remove4
+selected true
+xpos 1896
+ypos -25198
+}
+Reformat {
+pbb true
+name Reformat49
+selected true
+xpos 1896
+ypos -25172
+}
+Group {
+name IvyGroup2
+onCreate "__import__('dnnuke.core.ivy.tab.callbacks', fromlist=\['onCreate']).onCreate()"
+knobChanged "__import__('dnnuke.core.ivy.tab.callbacks', fromlist=\['knobChanged']).knobChanged()"
+label "<b>Unpremult32bit_v\[format %03d \[value ivy_version]]</b>(comp)"
+selected true
+xpos 1896
+ypos -25142
+addUserKnob {20 VFX_Unpremult32bit}
+addUserKnob {41 channels l divide T Unpremult.channels}
+addUserKnob {26 info l "" +STARTLINE T "\nUnpremulty 32bit channels with __depth blue channel.\n\n-__depth\n-__normal_world\n-__position_world\n-__position_object\n-__position_reference\n-__motion_vector"}
+addUserKnob {1 default_values +INVISIBLE}
+default_values "\[('VFX_Unpremult32bit', \{'knob': 'Tab_Knob', 'tcl': '\{20 VFX_Unpremult32bit\}', 'link': '', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '1', 'range': None, 'value': True, 'label': 'VFX_Unpremult32bit'\}), ('channels', \{'knob': 'Link_Knob', 'tcl': '\{41 channels l divide T Unpremult.channels\}', 'link': 'Unpremult.channels', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': 'all', 'range': None, 'value': 'all', 'label': 'divide'\}), ('info', \{'knob': 'Text_Knob', 'tcl': '\{26 info l \"\" +STARTLINE T \"\\\\nUnpremulty 32bit channels with __depth blue channel.\\\\n\\\\n-__depth\\\\n-__normal_world\\\\n-__position_world\\\\n-__position_object\\\\n-__position_reference\\\\n-__motion_vector\"\}', 'link': '', 'tooltip': '', 'default': None, 'flags': \{4096: True\}, 'toScript': '', 'range': None, 'value': '\\nUnpremulty 32bit channels with __depth blue channel.\\n\\n-__depth\\n-__normal_world\\n-__position_world\\n-__position_object\\n-__position_reference\\n-__motion_vector', 'label': ''\})]"
+addUserKnob {20 ivygrouptab l IvyGroup}
+addUserKnob {2 file l "Script Path"}
+file /jobs/LIBRARY/ASSET/ivy/nkt/F_NKT_LIBRARY_comp_group_VFX_Unpremult32bit_v001/F_NKT_LIBRARY_comp_group_VFX_Unpremult32bit_v001.nk
+addUserKnob {6 internal_updates l "Update internal spider nodes" t "Whether or not to recursively update all internal Ivy nodes as well" +STARTLINE}
+internal_updates true
+addUserKnob {6 save_template l "Save Template on Update" t "Saves the current template at update time internally allowing switching between the old and new one" -STARTLINE}
+save_template true
+addUserKnob {6 execute_spawners l "Execute internal spawners" t "Whether or not to recursively execute all internal spawner nodes" +STARTLINE}
+execute_spawners true
+addUserKnob {6 previous_template l "Output Previous Template" t "Toggles displaying of the previously saved template" +HIDDEN +STARTLINE}
+addUserKnob {22 clearPreviousTemplate l "Clear Previous Template" t "Clears the previous template that was saved at update" +HIDDEN T "__import__('dnnuke.core.ivy.template.group', fromlist=\['clearIvyGroups']).clearIvyGroups(nuke.thisNode())" +STARTLINE}
+addUserKnob {6 ivygroup -STARTLINE +INVISIBLE}
+ivygroup true
+addUserKnob {1 _class l "" +STARTLINE +INVISIBLE}
+_class IvyGroup
+addUserKnob {26 divider10 l "" +STARTLINE}
+addUserKnob {22 ivy_publish l Publish... +HIDDEN T "__import__('dnnuke.core.ivy.template', fromlist=\['publish']).publish(nodes=\[nuke.thisNode()])" +STARTLINE}
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {26 comment l "" +STARTLINE T "Publish Comment: Unpremult32bit\nVersion Comment (v001): first publish"}
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': 'LIBRARY', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \[\{'text': 'comp', 'required': False, 'name': 'department'\}, \{'text': 'VFX', 'required': False, 'name': 'discipline'\}, \{'text': 'group', 'required': False, 'name': 'type'\}, \{'text': 'Unpremult32bit', 'required': False, 'name': 'label'\}], 'ivy_shot': 'LIBRARY', 'ivy_regex': False, 'ivy_type': 'nkt', 'ivy_versionquery': 'approved', 'spider_uri': 'spider://query@Stalk.latest?Stem.job==LIBRARY&Stem.stemname==LIBRARY&TwigType.code.re(nkt)&Twig.transfix_map.re(^department:comp;discipline:VFX;label:Unpremult32bit;type:group\$)&Stalk.reviewstatus==Approved&Stalk.state==complete'\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/LIBRARY/ASSET/ivy/nkt/F_NKT_LIBRARY_comp_group_VFX_Unpremult32bit_v001/F_NKT_LIBRARY_comp_group_VFX_Unpremult32bit_v001.nk
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 3313cd76-0b1d-4288-8212-5c3bdff389be
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 7f3316ab-a9f8-4c6d-849a-a9db96a659f0
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid 9a87d850-8e1b-4781-95c5-e50580d06fe5
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 25cb5bff-e53c-45a5-ba6d-647cba218ec8
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype nkt
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main
+addUserKnob {1 ivy_version l Version}
+ivy_version 1
+addUserKnob {43 ivy_notes l Notes}
+ivy_notes "first publish"
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Input {
+inputs 0
+name Input1
+selected true
+xpos -92
+ypos 311
+}
+Dot {
+name Dot1
+selected true
+xpos -58
+ypos 394
+}
+set N5fc50320 [stack 0]
+Dot {
+name Dot2
+label 32bit
+note_font_size 21
+selected true
+xpos 100
+ypos 394
+}
+Unpremult {
+channels {{{parent.Unpremult.channels}}}
+alpha __depth.blue
+name Unpremult1
+selected true
+xpos 66
+ypos 440
+}
+set N803ea6a0 [stack 0]
+push $N803ea6a0
+push $N803ea6a0
+push $N803ea6a0
+push $N803ea6a0
+push $N803ea6a0
+push $N5fc50320
+Unpremult {
+channels {__depth.red __depth.green __depth.blue __depth.alpha}
+name Unpremult
+selected true
+xpos -92
+ypos 441
+}
+Copy {
+inputs 2
+channels {__depth.red __depth.green __depth.blue __depth.alpha}
+name Copy1
+selected true
+xpos -92
+ypos 496
+}
+add_layer {__normal_world __normal_world.x __normal_world.y __normal_world.z __normal_world.red __normal_world.green __normal_world.blue __normal_world.alpha}
+Copy {
+inputs 2
+channels __normal_world
+name Copy2
+selected true
+xpos -92
+ypos 546
+}
+add_layer {__position_object __position_object.x __position_object.y __position_object.z}
+Copy {
+inputs 2
+channels __position_object
+name Copy3
+selected true
+xpos -92
+ypos 595
+}
+add_layer {__position_reference __position_reference.x __position_reference.y __position_reference.z}
+Copy {
+inputs 2
+channels __position_reference
+name Copy4
+selected true
+xpos -92
+ypos 644
+}
+add_layer {__position_world __position_world.x __position_world.y __position_world.z __position_world.red __position_world.green __position_world.blue __position_world.alpha}
+Copy {
+inputs 2
+channels __position_world
+name Copy5
+selected true
+xpos -92
+ypos 695
+}
+add_layer {__motion_vector __motion_vector.x __motion_vector.y __motion_vector.z}
+Copy {
+inputs 2
+channels __motion_vector
+name Copy6
+selected true
+xpos -92
+ypos 745
+}
+Output {
+name Output1
+selected true
+xpos -92
+ypos 839
+}
+end_group
+Shuffle {
+in __depth
+green black
+blue black
+alpha black
+name Shuffle20
+selected true
+xpos 1896
+ypos -25084
+}
+ColorLookup {
+lut {master {curve C x2043.487183 0 x2606.74707 1}
+  red {}
+  green {}
+  blue {}
+  alpha {}}
+name ColorLookup4
+selected true
+xpos 1896
+ypos -25046
+}
+Clamp {
+name Clamp9
+selected true
+xpos 1896
+ypos -25020
+}
+Shuffle {
+green red
+blue red
+alpha red
+black red
+white red
+name red_Shuffle3
+tile_color 0xff0000ff
+selected true
+xpos 1896
+ypos -24976
+}
