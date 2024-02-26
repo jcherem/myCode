@@ -1,0 +1,300 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push 0
+push 0
+push $cut_paste_input
+Group {
+ inputs 3
+ name DEEP_CTRL6
+ tile_color 0xdfff00ff
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 22
+ note_font_color 0xff00bfff
+ selected true
+ xpos 37526
+ ypos -12453
+ addUserKnob {20 User}
+ addUserKnob {26 text_5 l "<font color='yellow'> <b>GR DEEP CTRL" T "Controller for repositioning generic FX elements within Deep.\t\t\t\t\t\t\t"}
+ addUserKnob {26 ""}
+ addUserKnob {41 first_frame l "<font color='yellow'> <b> Proj frame" T FrameHold1.first_frame}
+ addUserKnob {41 current_frame l "current frame" -STARTLINE T FrameHold1.current_frame}
+ addUserKnob {26 text_8 l " " -STARTLINE T "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 python_button l RESET -STARTLINE T "n=nuke.thisNode()\nn.knob('first_frame').setValue(1001)\nn.knob('time_offset').setValue(0)\n\n"}
+ addUserKnob {41 time_offset l "Time offset" T TimeOffset1.time_offset}
+ addUserKnob {26 ""}
+ addUserKnob {26 text_1 l "<font color='yellow'> <b>Transform" T " "}
+ addUserKnob {26 text_4 l " " -STARTLINE T "    \t\t\t\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 tReset l RESET -STARTLINE T "n=nuke.thisNode()\nn.knob('x').setValue(0)\nn.knob('y').setValue(0)\nn.knob('z').setValue(0)\n\nn.knob('x').clearAnimated()\nn.knob('y').clearAnimated()\nn.knob('z').clearAnimated()\n"}
+ addUserKnob {7 x R -2000 2000}
+ x -580
+ addUserKnob {7 y R -500 500}
+ y 115
+ addUserKnob {7 z R -1000 1000}
+ z 94
+ addUserKnob {26 ""}
+ addUserKnob {26 text l "<font color='yellow'> <b>Scale" T "Scale is inverted here i.e. smaller number increases size.\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 sReset l RESET -STARTLINE T "n=nuke.thisNode()\nn.knob('scale').setValue(1,0)\nn.knob('scale').setValue(1,1)\nn.knob('flop').setValue(0)\nn.knob('scale').clearAnimated()"}
+ addUserKnob {6 flop +STARTLINE}
+ flop true
+ addUserKnob {14 scale l "        " R 0 100}
+ scale {1 1}
+ addUserKnob {26 ""}
+ addUserKnob {26 text_7 l "<font color='yellow'> <b>Matte input" T " "}
+ addUserKnob {6 matteSwitch l "on | off" -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {26 text_2 l "<font color='yellow'> <b>Volume" T " "}
+ addUserKnob {6 volumeswitch l on|off -STARTLINE}
+ addUserKnob {26 text_3 l " " -STARTLINE T " \t\t\t \t\t\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 resetVolume l RESET -STARTLINE T "n=nuke.thisNode()\n\nn.knob('volumeswitch').setValue(0)\nn.knob('frontCTRL').setValue(0)\nn.knob('backCTRL').setValue(0)\n\nn.knob('frontCTRL').clearAnimated()\nn.knob('backCTRL').clearAnimated()"}
+ addUserKnob {7 frontCTRL l front R 0 1000}
+ addUserKnob {7 backCTRL l back R 0 1000}
+ addUserKnob {26 ""}
+ addUserKnob {26 text_6 l " " T "\t\t\t\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 docs l "<font color='magenta'>Documentation" -STARTLINE T "nukescripts.openurl.start('http://dnet.dneg.com/display/GR/FX+-+Generic+renders')\n\n"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -290
+  ypos -510
+  number 2
+ }
+ Dot {
+  name Dot7
+  note_font_size 35
+  xpos -259
+  ypos -459
+ }
+set N77825180 [stack 0]
+ Dot {
+  name Dot6
+  note_font_size 35
+  xpos -259
+  ypos -159
+ }
+push $N77825180
+ Dot {
+  name Dot8
+  note_font_size 35
+  xpos -359
+  ypos -459
+ }
+ FrameHold {
+  first_frame 1001
+  name FrameHold1
+  xpos -390
+  ypos -416
+  addUserKnob {20 dneg l DNeg}
+  addUserKnob {26 _version l "" +STARTLINE +INVISIBLE T 1.1}
+  addUserKnob {22 documentation l Documentation -STARTLINE T nukescripts.start('http://dnet/x/PwBDBg')}
+  addUserKnob {26 ""}
+  addUserKnob {3 first_frame_dup l "first frame" t "The first frame to use. If increment is set to 0, first frame is used at every frame of the input clip.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  first_frame_dup 1001
+  addUserKnob {3 increment_dup l increment t "The increment to use when rendering every certain number of frames from the input clip. For example, if this is set to 5 and first frame is set to 1, Nuke only uses frames 1, 6, 11, 16, and so on from the input.\n\n<b>NOTE:</b> This is a duplicate of the knob on the first tab, here for convenience. Any change here will set the knob on the first tab."}
+  addUserKnob {26 ""}
+  addUserKnob {22 comp_first l "comp first" t "Set the hold frame to the comp first frame, a.k.a. in Nuke parlance, root.first_frame, or in Shotgun parlance, 'sg_head_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compFirstButton\"]).compFirstButton()"}
+  addUserKnob {22 cut_in l "cut in" t "Set the hold frame to the cut in frame, which is the comp first frame plus head handles, or in Shotgun parlance, 'sg_cut_in'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutInButton\"]).cutInButton()"}
+  addUserKnob {22 cut_out l "cut out" t "Set the hold frame to the cut out frame, which is the comp last frame minus tail handles, or in Shotgun parlance, 'sg_cut_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"cutOutButton\"]).cutOutButton()"}
+  addUserKnob {22 comp_last l "comp last" t "Set the hold frame to the comp last frame, a.k.a. in Nuke parlance, root.last_frame, or in Shotgun parlance, 'sg_tail_out'" -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"compLastButton\"]).compLastButton()"}
+  addUserKnob {26 "" -STARTLINE T " "}
+  addUserKnob {22 hero_frame l "hero frame" t "Set the hold frame to the hero frame from Shotgun, a.k.a. 'sg_hero_frame'. Beware that this may not always be set by the sequence supervisor. If not, go bug him or her!" T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"getHeroFrameButton\"]).getHeroFrameButton()" +STARTLINE}
+  addUserKnob {22 middle_frame l "middle frame" t "Set the hold frame to the frame between the cut in and cut out." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"middleFrameButton\"]).middleFrameButton()"}
+  addUserKnob {22 current_frame l "current frame" t "Set the hold frame to the current frame as in the active viewer's timeline, a.k.a. nuke.frame()." -STARTLINE T "__import__(\"dnnuke.init.callbacks.on_user_create.tabs.framehold\", fromlist=\[\"currentFrameButton\"]).currentFrameButton()"}
+  addUserKnob {26 ""}
+  addUserKnob {4 get_show_shot_from l "get show/shot from" t "Which should be used to retrieve info from the database? Default is <b>environment</b>, which uses \$SHOW and \$SHOT. If you want to use this node's input, use <b>metadata</b>, which will grab the input/filename value. Or, you can type it in manually with <b>specify</b>.," M {environment metadata specify}}
+  addUserKnob {6 always_refresh l "always refresh" t "If unchecked, use locally-cached frame range information if available. If checked, always refresh from the database no matter what. Certain actions will cause locally-cached frame range info to become stale and override this preference, such as changing the <i>get show/shot from</i> value." -STARTLINE}
+  addUserKnob {1 hidden_foce_startline +HIDDEN}
+  addUserKnob {26 show -STARTLINE +HIDDEN T " "}
+  addUserKnob {26 shot -STARTLINE +HIDDEN T " "}
+  addUserKnob {1 show_specify l show +HIDDEN}
+  show_specify " "
+  addUserKnob {1 shot_specify l shot +HIDDEN}
+  shot_specify " "
+  addUserKnob {26 cut_range l "cut range" +HIDDEN T " "}
+  addUserKnob {26 comp_range l "comp range" +HIDDEN T " "}
+  addUserKnob {26 hero_frame_value l "hero frame" +HIDDEN T " "}
+  addUserKnob {6 hidden_is_stale l "" -STARTLINE +HIDDEN}
+  addUserKnob {1 cut_in_specify +HIDDEN}
+  addUserKnob {1 cut_out_specify +HIDDEN}
+  addUserKnob {1 comp_first_specify +HIDDEN}
+  addUserKnob {1 comp_last_specify +HIDDEN}
+  addUserKnob {1 hero_frame_specify +HIDDEN}
+ }
+ Dot {
+  name Dot9
+  note_font_size 35
+  xpos -359
+  ypos -359
+ }
+set N7711dbb0 [stack 0]
+ Dot {
+  name Dot5
+  note_font_size 35
+  xpos -359
+  ypos -259
+ }
+push 0
+push $N7711dbb0
+ Input {
+  inputs 0
+  name matte
+  xpos -390
+  ypos -610
+  number 1
+ }
+ Dot {
+  name Dot1
+  note_font_size 35
+  xpos -359
+  ypos -559
+ }
+ Input {
+  inputs 0
+  name input
+  xpos -590
+  ypos -1110
+ }
+ Dot {
+  name Dot4
+  note_font_size 35
+  xpos -559
+  ypos -1009
+ }
+set N7dc21100 [stack 0]
+push $N7dc21100
+ Dot {
+  name Dot3
+  note_font_size 35
+  xpos -659
+  ypos -1009
+ }
+ Dot {
+  name Dot2
+  note_font_size 35
+  xpos -659
+  ypos -909
+ }
+ DeepRecolor {
+  inputs 2
+  name DeepRecolor1
+  xpos -590
+  ypos -910
+ }
+ DeepReformat {
+  type scale
+  scale {1 1}
+  resize none
+  pbb true
+  name DeepReformat1
+  xpos -590
+  ypos -860
+ }
+ DeepToImage2 {
+  name DeepToImage1
+  xpos -590
+  ypos -808
+ }
+ Mirror2 {
+  flop {{parent.flop}}
+  name Mirror2_1
+  xpos -590
+  ypos -756
+ }
+ TimeOffset {
+  time ""
+  name TimeOffset1
+  xpos -590
+  ypos -724
+ }
+ Transform {
+  scale {{parent.scale} {parent.scale}}
+  center {1920 804}
+  shutteroffset centred
+  name Transform2
+  xpos -590
+  ypos -660
+ }
+ Transform {
+  translate {{parent.x} {parent.y}}
+  center {1920 804}
+  shutteroffset centred
+  name Transform1
+  xpos -590
+  ypos -610
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  bbox A
+  name Merge1
+  label "also merge -\[value also_merge] mix - \[expr \[value mix] * 100]%"
+  xpos -590
+  ypos -566
+  disable {{1-parent.matteSwitch}}
+ }
+ Project3D2 {
+  inputs 2
+  crop false
+  name Project3D1
+  xpos -590
+  ypos -360
+ }
+ Card2 {
+  rows 1
+  columns 1
+  translate {0 0 {parent.z}}
+  uniform_scale 1000
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name Card1
+  xpos -590
+  ypos -310
+ }
+ TransformGeo {
+  inputs 3
+  name TransformGeo1
+  xpos -590
+  ypos -260
+ }
+push 0
+ ScanlineRender {
+  inputs 3
+  conservative_shader_sampling false
+  overscan 150
+  shutteroffset centred
+  motion_vectors_type distance
+  name ScanlineRender1
+  xpos -590
+  ypos -160
+ }
+ DeepExpression {
+  chans1 deep
+  rgba.alpha rgba.alpha*0.999999
+  deep.front "deep.front - \[value softness_F]"
+  deep.back "deep.back + \[value softness_B]"
+  name DeepVolume1
+  label "Front \[value softness_F]\nBack \[value softness_B]"
+  xpos -590
+  ypos -22
+  disable {{1-parent.volumeswitch}}
+  addUserKnob {20 DeepSoftness}
+  addUserKnob {7 softness_F l "Softness Front" R 0 1000}
+  softness_F {{parent.frontCTRL}}
+  addUserKnob {7 softness_B l "Softness Back" R 0 10000}
+  softness_B {{parent.backCTRL}}
+ }
+ Output {
+  name Output1
+  xpos -590
+  ypos 190
+ }
+end_group
