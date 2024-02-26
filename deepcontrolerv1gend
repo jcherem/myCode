@@ -1,0 +1,150 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+Group {
+ name DEEP_CTRL12
+ tile_color 0xdfff00ff
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 22
+ note_font_color 0xff00bfff
+ selected true
+ xpos 33478
+ ypos -12494
+ addUserKnob {20 User}
+ addUserKnob {26 text_5 l "<font color='yellow'> <b>GR DEEP CTRL" T "Controller for repositioning generic FX elements within Deep.\t\t\t\t\t\t\t"}
+ addUserKnob {26 ""}
+ addUserKnob {26 text_1 l "<font color='yellow'> <b>Transform" T " "}
+ addUserKnob {26 text_4 l " " -STARTLINE T "    \t\t\t\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 tReset l RESET -STARTLINE T "n=nuke.thisNode()\nn.knob('x').setValue(0)\nn.knob('y').setValue(0)\nn.knob('z').setValue(0)\n\nn.knob('x').clearAnimated()\nn.knob('y').clearAnimated()\nn.knob('z').clearAnimated()\n"}
+ addUserKnob {7 x R -2000 2000}
+ addUserKnob {7 y R -500 500}
+ addUserKnob {7 z R -1500 0}
+ addUserKnob {26 ""}
+ addUserKnob {26 text l "<font color='yellow'> <b>Scale" T "Scale is inverted here i.e. smaller number increases size.\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 sReset l RESET -STARTLINE T "n=nuke.thisNode()\nn.knob('scale').setValue(1)\nn.knob('scale').clearAnimated()"}
+ addUserKnob {14 scale l "        " R 0 100}
+ scale 1
+ addUserKnob {26 ""}
+ addUserKnob {26 text_2 l "<font color='yellow'> <b>Volume" T " "}
+ addUserKnob {6 volumeswitch l on|off -STARTLINE}
+ addUserKnob {26 text_3 l " " -STARTLINE T " \t\t\t \t\t\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 resetVolume l RESET -STARTLINE T "n=nuke.thisNode()\n\nn.knob('volumeswitch').setValue(0)\nn.knob('frontCTRL').setValue(0)\nn.knob('backCTRL').setValue(0)\n\nn.knob('frontCTRL').clearAnimated()\nn.knob('backCTRL').clearAnimated()"}
+ addUserKnob {7 frontCTRL l front R 0 1000}
+ addUserKnob {7 backCTRL l back R 0 1000}
+ addUserKnob {26 ""}
+ addUserKnob {26 text_6 l " " T "\t\t\t\t\t\t\t\t\t\t\t"}
+ addUserKnob {22 docs l "<font color='magenta'>Documentation" -STARTLINE T "nukescripts.openurl.start('http://dnet.dneg.com/display/GR/FX+-+Generic+renders')\n\n"}
+}
+ Input {
+  inputs 0
+  name matte
+  xpos -390
+  ypos -660
+  number 1
+ }
+ Dot {
+  name Dot1
+  note_font_size 35
+  xpos -359
+  ypos -559
+ }
+ Input {
+  inputs 0
+  name input
+  xpos -590
+  ypos -1060
+ }
+set Nab749ce0 [stack 0]
+push $Nab749ce0
+ DeepRecolor {
+  inputs 2
+  name DeepRecolor2
+  xpos -590
+  ypos -1008
+  disable true
+ }
+ DeepToImage2 {
+  name DeepToImage1
+  xpos -590
+  ypos -960
+  disable true
+ }
+ Transform {
+  scale {{parent.scale}}
+  center {1920 804}
+  shutteroffset centred
+  name Transform1
+  xpos -590
+  ypos -860
+  disable true
+ }
+ Dot {
+  name Dot4
+  note_font_size 35
+  xpos -559
+  ypos -809
+ }
+set N9d29c490 [stack 0]
+push $N9d29c490
+ Dot {
+  name Dot3
+  note_font_size 35
+  xpos -659
+  ypos -809
+ }
+ DeepFromImage {
+  name DeepFromImage1
+  xpos -693
+  ypos -761
+  disable true
+ }
+ Dot {
+  name Dot2
+  note_font_size 35
+  xpos -659
+  ypos -709
+ }
+ DeepRecolor {
+  inputs 2
+  name DeepRecolor1
+  xpos -590
+  ypos -710
+ }
+ DeepReformat {
+  type scale
+  scale {{parent.scale} {parent.scale}}
+  resize none
+  pbb true
+  name DeepReformat1
+  xpos -590
+  ypos -658
+ }
+ DeepTransform {
+  inputs 2
+  translate {{parent.x} {parent.y} {parent.z}}
+  name DeepTransform1
+  xpos -590
+  ypos -560
+ }
+ DeepExpression {
+  chans1 deep
+  rgba.alpha rgba.alpha*0.999999
+  deep.front "deep.front - \[value softness_F]"
+  deep.back "deep.back + \[value softness_B]"
+  name DeepVolume1
+  label "Front \[value softness_F]\nBack \[value softness_B]"
+  xpos -590
+  ypos -472
+  disable {{1-parent.boolean}}
+  addUserKnob {20 DeepSoftness}
+  addUserKnob {7 softness_F l "Softness Front" R 0 1000}
+  softness_F {{parent.frontCTRL}}
+  addUserKnob {7 softness_B l "Softness Back" R 0 10000}
+  softness_B {{parent.backCTRL}}
+ }
+ Output {
+  name Output1
+  xpos -590
+  ypos -310
+ }
+end_group
