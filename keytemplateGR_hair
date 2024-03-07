@@ -1,0 +1,3993 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+BackdropNode {
+inputs 0
+name BackdropNode14
+tile_color 0xff9fff
+gl_color 0xffffffff
+note_font "Bitstream Vera Sans"
+note_font_size 250
+selected true
+xpos -7229
+ypos 3336
+appearance Border
+border_width 5
+bdwidth 343
+bdheight 170
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode34
+tile_color 0x90ffff
+gl_color 0xffffffff
+note_font "Bitstream Vera Sans"
+note_font_size 250
+selected true
+xpos -8355
+ypos 2778
+appearance Border
+border_width 20
+bdwidth 1601
+bdheight 1250
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode41
+tile_color 0xff5594ff
+gl_color 0xffffffff
+note_font "Bitstream Vera Sans"
+note_font_size 250
+selected true
+xpos -7317
+ypos 6655
+appearance Border
+border_width 20
+bdwidth 1424
+bdheight 695
+z_order 1
+}
+StickyNote {
+inputs 0
+name StickyNote18
+tile_color 0xff5594ff
+label REMOVE
+note_font_size 75
+selected true
+xpos -7306
+ypos 6709
+}
+StickyNote {
+inputs 0
+name StickyNote14
+tile_color 0x4be2a9ff
+label "key imperfections"
+note_font_size 35
+selected true
+xpos -7205
+ypos 3399
+}
+Dot {
+inputs 0
+name Dot28
+selected true
+xpos -6064
+ypos 7194
+}
+Roto {
+inputs 0
+cliptype none
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097664}
+    {t x44f00000 x44490000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Ellipse3 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {xc39ec828 0}
+        {x43f40002 x447a8001}
+        {x439ec828 0}
+        {0 xc37273f0}
+        {x4484e001 x44b42000}
+        {0 x43727400}
+        {x439ec828 0}
+        {x43f40002 x44eb0002}
+        {xc39ec828 0}
+        {0 x43727400}
+        {xc2ae0001 x44b42000}
+        {0 xc37273f0}}}
+      {cc
+       {f 8192}
+       {px x447a4000
+        {xc39ec828 0}
+        {0 xc304fffc}
+        {x439ec828 0}
+        {0 xc37273f0}
+        {x4386bffc x40600000}
+        {0 x43727400}
+        {x439ec828 0}
+        {0 0}
+        {xc39ec828 0}
+        {0 x43727400}
+        {0 0}
+        {0 xc37273f0}}}}
+     {tx x447a4000 x4402c000 x449d6000}
+     {a osw x41200000 osf 0 str 1 spx x44f00000 spy x44490000 sb 1 ltn x447a4000 ltm x447a4000 tt x40e00000}}
+    {curvegroup Ellipse2 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x447a4000 x44888000}
+        {{{xc3449d04 -}}
+	 {{0 -}}}
+        {{{x445bbfff 0 1 xc05bfdbf 1}
+	  {x440d8ccc xc05bfdbf 1 0 1}}
+	 {{x444ae000 0 1 x404bd0ba 1}
+	  {x4489a999 x404bd0ba 1 0 1}}}
+        {{{x43449d04 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{xc3503618 -}}}
+        {{{x448e8000 -}}
+	 {{x44a8c000 -}}}
+        {{{0 -}}
+	 {{x43503618 -}}}
+        {{{x43449d04 -}}
+	 {{0 -}}}
+        {{{x44440000 0 1 xbe9b49c2 1}
+	  {x443d1999 xbe9b49c2 1 0 1}}
+	 {{x44d7e000 -}}}
+        {{{xc3449d04 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{x43503618 -}}}
+        {{{x43d60000 -}}
+	 {{x44a8c000 -}}}
+        {{{0 -}}
+	 {{xc3503618 -}}}}}
+      {cc
+       {f 8192}
+       {px
+        {x447a4000 x44888000}
+        {{{xc3449d04 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{xc3ad4000 -}}}
+        {{{x43449d04 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{xc3503618 -}}}
+        {{{x40a00000 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{x43503618 -}}}
+        {{{x43449d04 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{x40a00000 -}}}
+        {{{xc3449d04 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{x43503618 -}}}
+        {{{xc0a00000 -}}
+	 {{0 -}}}
+        {{{0 -}}
+	 {{xc3503618 -}}}}}}
+     {tx x447a4000 x44440000 x44a8c000}
+     {a vis 0 osw x41200000 osf 0 str 1 spx x44f00000 spy x44490000 sb 1 ltn x447a4000 ltm x447a4000 tt x40e00000}}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {px x447a4000
+        {xc3aeefa8 0}
+        {x44f57665 x4410dfff}
+        {x43aeefac 0}
+        {0 xc3ab58a4}
+        {x4523c001 x447a2000}
+        {0 x43ab58a8}
+        {x43aeefac 0}
+        {x44f84fff x44ca9fff}
+        {xc3aeefa8 0}
+        {0 x43ab58a8}
+        {x44a92000 x447a2000}
+        {0 xc3ab58a4}}}
+      {cc
+       {f 8192}
+       {px x447a4000
+        {xc3aeefa8 0}
+        {x40b66600 xc32be664}
+        {x43aeefac 0}
+        {0 xc3ab58a4}
+        {x42960000 0}
+        {0 x43ab58a8}
+        {x43aeefac 0}
+        {0 x42960000}
+        {xc3aeefa8 0}
+        {0 x43ab58a8}
+        {xc2960000 0}
+        {0 xc3ab58a4}}}}
+     {tx x447a4000 x44f85000 x447a2000}
+     {a osw x41200000 osf 0 str 1 spx x44f00000 spy x44490000 sb 1 ltn x447a4000 ltm x447a4000 tt x40e00000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {1920 804}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 1001
+lifetime_end 1001
+motionblur_shutter_offset_type centred
+source_black_outside true
+name Roto10
+label "autokey:\[value toolbar_autokey]"
+selected true
+xpos -9089
+ypos 3181
+}
+push 0
+Dot {
+name Dot148
+label "ALPHA BUILD\n"
+note_font "DejaVu Sans"
+note_font_size 150
+selected true
+xpos -5573
+ypos 2594
+}
+Dot {
+name Dot30
+selected true
+xpos -6864
+ypos 2594
+}
+NoOp {
+name Anchor_1fb3701d5e
+help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+knobChanged stamps.anchorKnobChanged()
+autolabel "nuke.thisNode().knob(\"title\").value()"
+tile_color 0xffffff01
+note_font_size 20
+selected true
+xpos -6898
+ypos 2632
+addUserKnob {20 anchor_tab l "Anchor Stamp"}
+addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+title "plate no vignette"
+addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "plate no vignette"}
+addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_1fb3701d5e}
+addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+addUserKnob {1 tags l Tags t "Comma-separated tags you can define for each Anchor, that will help you find it when invoking the Stamp Selector by pressing the Stamps shortkey with nothing selected."}
+tags 2D,
+addUserKnob {26 line1 l "" +STARTLINE}
+addUserKnob {26 stamps_label l Stamps: T " "}
+addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+addUserKnob {22 selectStamps l select t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+addUserKnob {22 reconnectStamps l reconnect -STARTLINE T stamps.anchorReconnectWired()}
+addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+addUserKnob {26 line2 l "" +STARTLINE}
+addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
+}
+Dot {
+name Dot56
+note_font_size 35
+selected true
+xpos -6864
+ypos 2894
+}
+set N3e6c9140 [stack 0]
+Dot {
+name Dot39
+selected true
+xpos -6964
+ypos 2894
+addUserKnob {20 beDotTab l BeDot}
+addUserKnob {22 rootName l "Add Root Name" -STARTLINE T "nuke.load('beAddRootToLabel.py'), beAddRootToLabel()"}
+}
+set N3e6cdff0 [stack 0]
+Dot {
+name Dot64
+selected true
+xpos -7614
+ypos 2894
+}
+set N3e6d3370 [stack 0]
+Dot {
+name Dot63
+selected true
+xpos -7764
+ypos 2894
+}
+set N3e6d81f0 [stack 0]
+Dot {
+name Dot189
+selected true
+xpos -8646
+ypos 2894
+}
+set N8f5a8a30 [stack 0]
+Dot {
+name Dot190
+selected true
+xpos -8899
+ypos 2894
+}
+push $N8f5a8a30
+DespillMadness {
+name DespillMadness10
+note_font "Bitstream Vera Sans"
+selected true
+xpos -8683
+ypos 2912
+screenType blue
+LimitPercentage 1.125
+offset 0.1
+spillMatteOut true
+maskChannel -rgba.alpha
+}
+Dot {
+name Dot191
+note_font_size 35
+selected true
+xpos -8649
+ypos 2938
+}
+set N7dafd9c0 [stack 0]
+Dot {
+name Dot192
+note_font_size 35
+selected true
+xpos -8749
+ypos 2938
+}
+Grade {
+channels alpha
+white 10
+white_clamp true
+name Grade47
+selected true
+xpos -8783
+ypos 2954
+}
+Invert {
+channels rgba
+name Invert9
+selected true
+xpos -8783
+ypos 2992
+}
+Dot {
+name Dot193
+note_font_size 35
+selected true
+xpos -8749
+ypos 3018
+}
+push $N7dafd9c0
+Dot {
+name Dot194
+note_font_size 35
+selected true
+xpos -8502
+ypos 2938
+}
+DespillMadness {
+name DespillMadness11
+note_font "Bitstream Vera Sans"
+selected true
+xpos -8536
+ypos 2959
+LimitPercentage 0.915
+offset 0.1
+maskChannel -rgba.alpha
+}
+Dot {
+name Dot195
+note_font_size 35
+selected true
+xpos -8502
+ypos 3018
+}
+push $N7dafd9c0
+DespillMadness {
+name DespillMadness12
+note_font "Bitstream Vera Sans"
+selected true
+xpos -8683
+ypos 2956
+LimitPercentage 0.78
+offset 0.1
+maskChannel -rgba.alpha
+}
+Keymix {
+inputs 3
+name Keymix4
+selected true
+xpos -8683
+ypos 3008
+}
+Dot {
+name Dot196
+selected true
+xpos -8649
+ypos 3046
+}
+Merge2 {
+inputs 2
+operation difference
+name Merge48
+tile_color 0x7fff01
+note_font Normal
+selected true
+xpos -8933
+ypos 3042
+}
+Saturation {
+saturation 0
+name Saturation3
+selected true
+xpos -8933
+ypos 3061
+}
+Group {
+name COL_to_ALPHA2
+knobChanged "\n\n"
+tile_color 0xffffffff
+note_font "DejaVu Sans Bold"
+note_font_size 15
+selected true
+xpos -8933
+ypos 3087
+addUserKnob {20 User l COL_to_ALPHA}
+addUserKnob {26 text l " <font color='#00FFC5'><B>COL to ALPHA" T "Simplified tool to transfer all RGB information into Alpha channel."}
+addUserKnob {26 ""}
+addUserKnob {26 channel_controls l "<B>CHANNEL CONTROLS" T " "}
+addUserKnob {7 red t "reduce red channel contribution"}
+red 1
+addUserKnob {7 green t "reduce green channel contribution"}
+green 1
+addUserKnob {7 blue t "reduce blue channel contribution"}
+blue 1
+addUserKnob {22 reset l Reset T "\nn = nuke.thisNode()\nn.knob(\"red\").setValue(1)\nn.knob(\"green\").setValue(1)\nn.knob(\"blue\").setValue(1)\nn.knob(\"alpha\").setValue(1)\n\n" +STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {26 gradingTitle l <B>GRADING T " "}
+addUserKnob {7 black}
+addUserKnob {7 white}
+white 0.535
+addUserKnob {7 alpha l "alpha mult" t "reduce overall alpha intensity"}
+alpha 8
+addUserKnob {22 resetLevels l Reset T "\nn = nuke.thisNode()\nn.knob(\"black\").setValue(0)\nn.knob(\"white\").setValue(1)\n\nn.knob(\"alpha\").setValue(1)\n\n" +STARTLINE}
+addUserKnob {26 ""}
+addUserKnob {26 output_options l "<B>OUTPUT OPTIONS" T ""}
+addUserKnob {4 channel_options l "RGB output" t "Pick a channel, any channel." M {input alpha red green blue "" "" "" "" "" ""}}
+addUserKnob {6 alpha_only l "alpha only" t "output in alpha channel only" -STARTLINE}
+addUserKnob {6 clamp t "...adds a clamp" -STARTLINE}
+clamp true
+addUserKnob {6 invert -STARTLINE}
+addUserKnob {22 resetOutput l reset -STARTLINE T "\nn = nuke.thisNode()\n\nn.knob(\"channel_options\").setValue(0)\nn.knob(\"alpha_only\").setValue(0)\nn.knob(\"clamp\").setValue(0)\n\n"}
+addUserKnob {26 ""}
+addUserKnob {26 footer l " <font color='#00FFC5'>COL_to_ALPHA" T "\nBuilt by Christopher Maslen<br>\n\ncmas@dneg.com<br>\n\n</font>\nLast updated September 21st 2021"}
+}
+BackdropNode {
+inputs 0
+name BackdropNode2
+tile_color 0xff9fff
+gl_color 0xffffffff
+note_font "Bitstream Vera Sans"
+note_font_size 250
+xpos 58
+ypos 1899
+appearance Border
+border_width 10
+bdwidth 985
+bdheight 201
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode21
+tile_color 0xff9fff
+gl_color 0xffffffff
+note_font "Bitstream Vera Sans"
+note_font_size 250
+xpos -30
+ypos -416
+appearance Border
+border_width 20
+bdwidth 1161
+bdheight 632
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode3
+tile_color 0xff9fff
+gl_color 0xffffffff
+note_font "Bitstream Vera Sans"
+note_font_size 250
+xpos 0
+ypos 505
+appearance Border
+border_width 5
+bdwidth 1100
+bdheight 289
+z_order 1
+}
+BackdropNode {
+inputs 0
+name BackdropNode4
+tile_color 0xff9fff
+gl_color 0xffffffff
+note_font "Bitstream Vera Sans"
+note_font_size 250
+xpos 44
+ypos 1143
+appearance Border
+border_width 10
+bdwidth 1103
+bdheight 482
+z_order 1
+}
+Input {
+inputs 0
+name Input
+xpos 510
+ypos -560
+}
+Dot {
+name Dot1301
+xpos 541
+ypos -309
+}
+set N27d82360 [stack 0]
+Dot {
+name Dot1303
+xpos 641
+ypos -309
+}
+set N58dfe520 [stack 0]
+Dot {
+name Dot1304
+xpos 741
+ypos -309
+}
+Shuffle {
+red black
+green black
+alpha blue
+name Shuffle88
+tile_color 0x7fff01
+xpos 710
+ypos -216
+}
+Multiply {
+value {{parent.blue}}
+name Multiply3
+tile_color 0xff4cff01
+xpos 710
+ypos -116
+}
+Dot {
+name Dot1302
+xpos 741
+ypos 91
+}
+push 0
+push $N58dfe520
+Shuffle {
+red black
+blue black
+alpha green
+name Shuffle89
+tile_color 0x33ff0001
+xpos 610
+ypos -216
+}
+Multiply {
+value {{parent.green}}
+name Multiply2
+tile_color 0xff4cff01
+xpos 610
+ypos -116
+}
+Dot {
+name Dot1305
+xpos 641
+ypos -9
+}
+push $N27d82360
+Shuffle {
+green black
+blue black
+alpha red
+name Shuffle87
+tile_color 0xff190001
+xpos 510
+ypos -216
+}
+Multiply {
+value {{parent.red}}
+name Multiply1
+tile_color 0xff4cff01
+xpos 510
+ypos -116
+}
+Merge2 {
+inputs 3+1
+operation plus
+name Merge520
+tile_color 0x7fff01
+note_font Normal
+xpos 510
+ypos 90
+}
+Dot {
+name Dot14
+xpos 541
+ypos 391
+}
+set N576f5e80 [stack 0]
+Multiply {
+value {{parent.alpha}}
+name ALPHA_MULT
+tile_color 0xff4cff01
+xpos 510
+ypos 634
+}
+Grade {
+channels rgba
+blackpoint {{parent.black}}
+whitepoint {{parent.white}}
+name BLACK_AND_WHITE
+tile_color 0x7fb2e501
+note_font_color 0xe5ff01
+xpos 510
+ypos 690
+}
+Dot {
+name Dot13
+xpos 541
+ypos 891
+}
+set N465fd320 [stack 0]
+Dot {
+name Dot16
+xpos 541
+ypos 991
+}
+set N5a0f3c80 [stack 0]
+Dot {
+name Dot3
+xpos 541
+ypos 1241
+}
+set N5b2fc790 [stack 0]
+Dot {
+name Dot6
+xpos 141
+ypos 1241
+}
+Shuffle {
+red black
+green black
+blue black
+name Shuffle4
+tile_color 0xffffff01
+xpos 110
+ypos 1984
+}
+Dot {
+name Dot7
+xpos 141
+ypos 2041
+}
+push $N5b2fc790
+Dot {
+name Dot5
+xpos 691
+ypos 1241
+}
+set N446ecba0 [stack 0]
+Dot {
+name Dot4
+xpos 791
+ypos 1241
+}
+Shuffle {
+red black
+green black
+blue alpha
+name Shuffle3
+tile_color 0xffffff01
+xpos 760
+ypos 1334
+}
+Dot {
+name Dot18
+label BLUE
+xpos 791
+ypos 1441
+}
+push $N446ecba0
+Shuffle {
+red black
+green alpha
+blue black
+name Shuffle2
+tile_color 0xffffff01
+xpos 660
+ypos 1334
+}
+Dot {
+name Dot1
+label GREEN
+xpos 691
+ypos 1441
+}
+push $N5b2fc790
+Shuffle {
+red alpha
+green black
+blue black
+name Shuffle1
+tile_color 0xffffff01
+xpos 510
+ypos 1334
+}
+Dot {
+name Dot2
+label RED
+xpos 541
+ypos 1441
+}
+push $N465fd320
+push $N576f5e80
+Dot {
+name Dot15
+xpos 391
+ypos 391
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy2
+xpos 360
+ypos 884
+}
+Dot {
+name Dot17
+label RGB
+xpos 391
+ypos 1441
+}
+push $N5a0f3c80
+push $N27d82360
+Dot {
+name Dot12
+xpos 291
+ypos -309
+}
+Shuffle {
+alpha black
+name Shuffle5
+tile_color 0xff000000
+xpos 260
+ypos -216
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy1
+xpos 260
+ypos 984
+}
+Dot {
+name Dot11
+label INPUT
+xpos 291
+ypos 1441
+}
+Switch {
+inputs 5
+which {{parent.channel_options}}
+name Switch1
+note_font_size 20
+xpos 510
+ypos 1536
+}
+Switch {
+inputs 2
+which {{parent.alpha_only}}
+name Switch4
+note_font_size 20
+xpos 510
+ypos 2036
+}
+Clamp {
+name Clamp1
+xpos 510
+ypos 2284
+disable {{1-parent.clamp}}
+}
+Invert {
+channels rgba
+name Invert1
+xpos 510
+ypos 2348
+disable {{1-parent.invert}}
+}
+Output {
+name Output1
+xpos 510
+ypos 2490
+}
+StickyNote {
+inputs 0
+name StickyNote4
+tile_color 0x4be2a9ff
+label "CHANNEL CONTROLS"
+note_font_size 50
+xpos 302
+ypos -380
+}
+StickyNote {
+inputs 0
+name StickyNote2
+tile_color 0x4be2a9ff
+label "ALPHA ONLY"
+note_font_size 50
+xpos 402
+ypos 1920
+}
+StickyNote {
+inputs 0
+name StickyNote3
+tile_color 0x4be2a9ff
+label GRADING
+note_font_size 50
+xpos 438
+ypos 520
+}
+StickyNote {
+inputs 0
+name StickyNote5
+tile_color 0x4be2a9ff
+label "RGB OUTPUT"
+note_font_size 50
+xpos 396
+ypos 1170
+}
+end_group
+Blur {
+channels rgba
+size 12.2
+name Blur20
+selected true
+xpos -8933
+ypos 3117
+}
+Invert {
+name Invert10
+selected true
+xpos -8933
+ypos 3143
+}
+Merge2 {
+inputs 2
+operation mask
+bbox A
+name Merge49
+label "also merge -\[value also_merge] mix - \[expr \[value mix] * 100]%"
+selected true
+xpos -8933
+ypos 3181
+}
+Clamp {
+maximum 0
+MaxClampTo_enable true
+name Clamp7
+selected true
+xpos -8933
+ypos 3219
+}
+push $N3e6d81f0
+Primatte3 {
+data { 5
+    15697 21663 35003
+    67600
+    0 5
+    30234 30234 30234 0
+    2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550
+    77490.1 130560 130560 130560 130560 30010.8 27961.8 51784.2 130560 130560 14925 130560 130560 130560 130560 46702.6 130560 130560 130560 40227.6 130560 25366.8 130560 130560 130560 130560 33127.9 13992.1 35322 130560 130560 130560 130560 130560 112714 130560 18579.3 130560 130560 130560 130560 130560 16168.3 49718.9 14550.8 130560 130560 70578.2 130560 130560 130560 62786.5 93282.6 130560 44477.3 48795 25409.5 34060.7 130560 130560 130560 130560 130560 130560 130560 130560
+    77490.1 130560 130560 130560 130560 30010.8 27961.8 51784.2 130560 130560 15015.9 130560 130560 130560 130560 46702.6 130560 130560 130560 40227.6 130560 25366.8 130560 130560 130560 130560 33127.9 15715.2 35322 130560 130560 130560 130560 130560 112714 130560 26788.4 130560 130560 130560 130560 130560 16168.3 49718.9 15420.2 130560 130560 70578.2 130560 130560 130560 62786.5 93282.6 130560 44477.3 48795 25409.5 34060.7 130560 130560 130560 130560 130560 130560 130560 130560
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 1.94362e+10 5.09511e+13 5.09511e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 1.61235e+10 4.22669e+13 4.22669e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 -8.73643e+09 -2.29021e+13 -2.29021e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 -1.20491e+10 -3.15862e+13 -3.15862e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 1.20491e+10 3.15862e+13 3.15862e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 8.73643e+09 2.29021e+13 2.29021e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 -1.61235e+10 -4.22669e+13 -4.22669e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 -1.94362e+10 -5.0951e+13 -5.0951e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 3.68808e+10 9.66808e+13 9.66808e+13
+    -3.02734e+09 -4.02537e+12 -5.80394e+12 4.72082e+10 6.64018e+12 5.17903e+12
+    -3.02733e+09 -1.69267e+13 -1.69267e+13 2.54329e+10 2.57067e+13 2.57067e+13
+    -3.02733e+09 -2.98823e+12 -3.16678e+12 -2.34797e+10 7.82753e+12 7.24316e+12
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -1.94234e+10 -5.0917e+13 -5.0917e+13
+    -3.02733e+09 -3.50783e+14 -3.50783e+14 -9.09599e+09 -2.21706e+13 -2.21706e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -4.30511e+09 -1.12856e+13 -1.12856e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -5.32178e+10 -1.39507e+14 -1.39507e+14
+    -3.02734e+09 -5.39589e+12 -7.78e+12 5.32179e+10 6.17623e+12 9.38334e+12
+    -3.02733e+09 -1.195e+14 -1.195e+14 4.3051e+09 1.38623e+14 1.38623e+14
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 9.09595e+09 2.38445e+13 2.38445e+13
+    -3.02733e+09 -3.87763e+12 -3.87763e+12 1.94233e+10 3.80531e+12 3.80531e+12
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 2.34797e+10 6.15507e+13 6.15507e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -2.5433e+10 -6.6671e+13 -6.6671e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -4.72082e+10 -1.23753e+14 -1.23753e+14
+    -3.02733e+09 -1.28942e+13 -1.28942e+13 -3.68808e+10 -1.50394e+12 -1.50394e+12
+    -3.90827e+09 -1.36848e+14 -1.36848e+14 6.5842e+10 1.94033e+14 1.94033e+14
+    -3.90827e+09 -3.9757e+12 -3.99991e+12 3.18187e+10 2.08329e+12 2.14838e+12
+    -3.90827e+09 -2.83566e+14 -2.83566e+14 4.40503e+10 5.70952e+13 5.70952e+13
+    -3.90827e+09 -8.2762e+11 -8.82411e+11 1.0027e+10 8.47396e+10 3.7204e+11
+    -3.90827e+09 -5.24559e+14 -5.24559e+14 -1.0027e+10 -2.62853e+13 -2.62853e+13
+    -3.90827e+09 -5.24559e+14 -5.24559e+14 -4.40503e+10 -1.15475e+14 -1.15475e+14
+    -3.90827e+09 -5.24559e+14 -5.24559e+14 -3.18187e+10 -8.34109e+13 -8.34109e+13
+    -3.90827e+09 -2.52261e+14 -2.52261e+14 -6.5842e+10 -8.90245e+13 -8.90245e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 3.92453e+10 1.02879e+14 1.02879e+14
+    -3.02733e+09 -5.43207e+13 -5.43207e+13 4.19209e+10 4.02047e+13 4.02047e+13
+    -3.02733e+09 -1.6116e+14 -1.6116e+14 2.97372e+09 1.50443e+14 1.50443e+14
+    -3.02733e+09 -3.31387e+13 -3.31387e+13 -2.58443e+10 -9.93722e+12 -9.93722e+12
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 3.03596e+09 7.95849e+12 7.95849e+12
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 5.71143e+09 1.49722e+13 1.49722e+13
+    -3.02732e+09 -4.06321e+14 -4.06321e+14 -1.91125e+10 -5.01023e+13 -5.01023e+13
+    -3.02734e+09 -2.90309e+14 -2.90309e+14 -4.79306e+10 -1.23938e+14 -1.23938e+14
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 1.61864e+10 4.24318e+13 4.24318e+13
+    -1.65814e+09 -7.80173e+11 -1.26341e+12 2.33902e+10 5.53535e+11 -3.96806e+10
+    -1.65813e+09 -2.68898e+12 -2.68898e+12 2.21312e+10 1.25704e+12 1.25704e+12
+    -1.65813e+09 -1.03268e+13 -1.03268e+13 -8.7993e+09 9.49363e+12 9.49363e+12
+    -1.65814e+09 -2.22551e+14 -2.22551e+14 -1.88184e+10 -4.93314e+13 -4.93314e+13
+    -1.65813e+09 -1.14034e+14 -1.14034e+14 -1.16146e+10 8.42181e+12 8.42181e+12
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 4.22751e+09 1.10822e+13 1.10822e+13
+    -1.65814e+09 -2.22551e+14 -2.22551e+14 -2.6703e+10 -7.00002e+13 -7.00002e+13
+    -3.02734e+09 -2.86779e+13 -2.86779e+13 5.05339e+10 4.01646e+13 4.01646e+13
+    -3.02733e+09 -4.01502e+12 -4.03947e+12 1.03063e+10 9.76318e+12 9.7079e+12
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 3.45883e+10 9.06711e+13 9.06711e+13
+    -3.02734e+09 -6.16457e+11 -6.9659e+11 2.21072e+10 1.25276e+12 8.03122e+11
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -2.01259e+09 -5.27588e+12 -5.27588e+12
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -4.22402e+10 -1.1073e+14 -1.1073e+14
+    -3.02732e+09 -4.06321e+14 -4.06321e+14 -3.0401e+10 -7.96944e+13 -7.96944e+13
+    -3.02733e+09 -1.95401e+14 -1.95401e+14 -4.28821e+10 -1.39784e+14 -1.39784e+14
+    -3.90827e+09 -4.89517e+13 -4.89517e+13 6.9307e+10 5.92897e+13 5.92897e+13
+    -3.90827e+09 -6.67864e+13 -6.67864e+13 2.40712e+10 8.11443e+13 8.11443e+13
+    -3.90826e+09 -5.24559e+14 -5.24559e+14 1.11398e+10 2.92024e+13 2.92024e+13
+    -3.90827e+09 -9.81178e+12 -9.81178e+12 6.56205e+09 2.10562e+13 2.10562e+13
+    -3.90826e+09 -5.24559e+14 -5.24559e+14 2.28834e+10 5.99875e+13 5.99875e+13
+    -3.90827e+09 -5.24559e+14 -5.24559e+14 -2.23523e+10 -5.85953e+13 -5.85953e+13
+    -3.90827e+09 -5.24559e+14 -5.24559e+14 -5.35167e+10 -1.40291e+14 -1.40291e+14
+    -3.90826e+09 -3.86007e+13 -3.86007e+13 -5.80943e+10 2.34083e+13 2.34083e+13
+    -3.02733e+09 -1.45345e+14 -1.45345e+14 4.79306e+10 1.40563e+14 1.40563e+14
+    -3.02733e+09 -1.51857e+14 -1.51857e+14 1.91125e+10 1.85833e+14 1.85833e+14
+    -3.02732e+09 -4.06322e+14 -4.06322e+14 -5.71142e+09 -1.49722e+13 -1.49722e+13
+    -3.02733e+09 -6.13717e+13 -6.13717e+13 -3.03596e+09 4.13976e+13 4.13976e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 2.58443e+10 6.77494e+13 6.77494e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -2.97372e+09 -7.7955e+12 -7.7955e+12
+    -3.02733e+09 -4.06322e+14 -4.06322e+14 -4.19209e+10 -1.09893e+14 -1.09893e+14
+    -3.02733e+09 -6.21749e+13 -6.21749e+13 -3.92453e+10 -2.02286e+13 -2.02286e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 4.28821e+10 1.12413e+14 1.12413e+14
+    -3.02734e+09 -9.68799e+11 -1.09473e+12 3.0401e+10 4.39687e+11 1.35558e+11
+    -3.02733e+09 -5.94245e+13 -5.94245e+13 4.22401e+10 7.51646e+13 7.51646e+13
+    -3.02733e+09 -1.31352e+12 -1.40047e+12 2.01256e+09 2.24927e+12 2.62894e+12
+    -3.02732e+09 -4.06321e+14 -4.06321e+14 -2.21073e+10 -5.79527e+13 -5.79527e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -3.45883e+10 -9.06711e+13 -9.06711e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -1.03064e+10 -2.70175e+13 -2.70175e+13
+    -3.02733e+09 -4.06321e+14 -4.06321e+14 -5.05339e+10 -1.32472e+14 -1.32472e+14
+    -1.65813e+09 -1.96949e+12 -2.83968e+12 2.6703e+10 4.97124e+12 3.9592e+12
+    -1.65813e+09 -2.89347e+13 -2.89347e+13 -4.22751e+09 4.49259e+13 4.49259e+13
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 1.16146e+10 3.0447e+13 3.0447e+13
+    -1.65814e+09 -1.06519e+12 -1.19636e+12 1.88184e+10 -1.43497e+12 -1.14632e+12
+    -1.65813e+09 -2.22551e+14 -2.22551e+14 8.7993e+09 2.30669e+13 2.30669e+13
+    -1.65814e+09 -2.22551e+14 -2.22551e+14 -2.21312e+10 -5.80155e+13 -5.80155e+13
+    -1.65814e+09 -2.22551e+14 -2.22551e+14 -2.33902e+10 -6.13161e+13 -6.13161e+13
+    -1.65813e+09 -4.06986e+13 -4.06986e+13 -1.61864e+10 -2.27705e+13 -2.27705e+13
+    -3.90826e+09 -5.24559e+14 -5.24559e+14 5.80943e+10 1.52291e+14 1.52291e+14
+    -3.90827e+09 -1.36482e+13 -1.36482e+13 5.35167e+10 9.94294e+12 9.94294e+12
+    -3.90827e+09 -1.12471e+14 -1.12471e+14 2.23523e+10 4.6173e+13 4.6173e+13
+    -3.90826e+09 -4.76801e+12 -5.05289e+12 -2.28833e+10 2.68619e+12 1.8643e+12
+    -3.90827e+09 -5.24559e+14 -5.24559e+14 -6.56205e+09 -1.72022e+13 -1.72022e+13
+    -3.90827e+09 -5.24559e+14 -5.24559e+14 -1.11399e+10 -2.92024e+13 -2.92024e+13
+    -3.90826e+09 -5.24559e+14 -5.24559e+14 -2.40711e+10 -6.3101e+13 -6.3101e+13
+    -3.90828e+09 -3.74787e+14 -3.74787e+14 -6.9307e+10 -1.33121e+14 -1.33121e+14
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 3.60653e+10 9.45431e+13 9.45431e+13
+    -2.70772e+09 -1.35825e+14 -1.35825e+14 2.7532e+10 6.5677e+13 6.5677e+13
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 -8.50359e+09 -2.22917e+13 -2.22917e+13
+    -2.70772e+09 -1.38397e+14 -1.38397e+14 -1.70368e+10 6.69871e+13 6.69871e+13
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 1.70368e+10 4.46611e+13 4.46611e+13
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 8.50359e+09 2.22917e+13 2.22917e+13
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 -2.7532e+10 -7.21737e+13 -7.21737e+13
+    -2.70772e+09 -2.5966e+14 -2.5966e+14 -3.60653e+10 -1.31032e+14 -1.31032e+14
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 3.15498e+10 8.27059e+13 8.27059e+13
+    -2.70773e+09 -1.07868e+12 -1.74682e+12 3.76288e+10 1.53345e+12 6.14319e+11
+    -2.70773e+09 -1.03268e+13 -1.03268e+13 3.43856e+10 1.1137e+13 1.1137e+13
+    -2.70772e+09 -3.16657e+12 -3.35577e+12 -1.25213e+10 4.93539e+12 4.78663e+12
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 -2.58524e+10 -6.77702e+13 -6.77702e+13
+    -2.70772e+09 -3.13749e+14 -3.13749e+14 -1.97733e+10 -1.13685e+13 -1.13685e+13
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 7.44819e+08 1.95253e+12 1.95253e+12
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 -4.6162e+10 -1.21011e+14 -1.21011e+14
+    -2.70773e+09 -3.65017e+12 -5.26295e+12 4.61621e+10 5.37805e+12 7.09719e+12
+    -2.70772e+09 -2.71204e+13 -2.71204e+13 -7.44819e+08 2.0932e+13 2.0932e+13
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 1.97733e+10 5.18345e+13 5.18345e+13
+    -2.70773e+09 -9.37126e+11 -1.05253e+12 2.58523e+10 1.00778e+12 5.82233e+11
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 1.25213e+10 3.2824e+13 3.2824e+13
+    -2.70772e+09 -3.63425e+14 -3.63425e+14 -3.43856e+10 -9.01396e+13 -9.01396e+13
+    -2.70773e+09 -3.63425e+14 -3.63425e+14 -3.76288e+10 -9.86416e+13 -9.86416e+13
+    -2.70772e+09 -5.38498e+13 -5.38498e+13 -3.15498e+10 -4.78979e+12 -4.78979e+12
+    -4.51288e+09 -1.58018e+14 -1.58018e+14 7.84235e+10 1.95684e+14 1.95684e+14
+    -4.51288e+09 -1.50087e+13 -1.50087e+13 4.44002e+10 2.29892e+13 2.29892e+13
+    -4.51288e+09 -3.27434e+14 -3.27434e+14 3.14688e+10 1.89439e+14 1.89439e+14
+    -4.51289e+09 -3.18351e+12 -3.37373e+12 -2.55447e+09 5.76442e+12 6.5926e+12
+    -4.51288e+09 -6.05708e+14 -6.05708e+14 2.55447e+09 6.69619e+12 6.69619e+12
+    -4.51288e+09 -6.05708e+14 -6.05708e+14 -3.14688e+10 -8.24937e+13 -8.24937e+13
+    -4.51288e+09 -6.05708e+14 -6.05708e+14 -4.44002e+10 -1.16392e+14 -1.16392e+14
+    -4.51289e+09 -2.08118e+14 -2.08118e+14 -7.84235e+10 -6.61219e+13 -6.61219e+13
+    -1 -1 -1 -1
+    -1 -1 999999 999999
+    -1 -1 -1 -1
+    0.05 0.211919 0.271919
+    0.05 1.732 1.732
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+  }
+
+primEdgedata { 5
+    15697 21663 35003
+    67600
+    0 5
+    30234 30234 30234 0
+    2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550
+    77490.1 130560 130560 130560 130560 30010.8 27961.8 51784.2 130560 130560 14925 130560 130560 130560 130560 46702.6 130560 130560 130560 40227.6 130560 25366.8 130560 130560 130560 130560 33127.9 13992.1 35322 130560 130560 130560 130560 130560 112714 130560 18579.3 130560 130560 130560 130560 130560 16168.3 49718.9 14550.8 130560 130560 70578.2 130560 130560 130560 62786.5 93282.6 130560 44477.3 48795 25409.5 34060.7 130560 130560 130560 130560 130560 130560 130560 130560
+    77490.1 130560 130560 130560 130560 30010.8 27961.8 51784.2 130560 130560 15015.9 130560 130560 130560 130560 46702.6 130560 130560 130560 40227.6 130560 25366.8 130560 130560 130560 130560 33127.9 15715.2 35322 130560 130560 130560 130560 130560 112714 130560 26788.4 130560 130560 130560 130560 130560 16168.3 49718.9 15420.2 130560 130560 70578.2 130560 130560 130560 62786.5 93282.6 130560 44477.3 48795 25409.5 34060.7 130560 130560 130560 130560 130560 130560 130560 130560
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    -1 -1 -1 -1
+    -1 -1 999999 999999
+    -1 -1 -1 -1
+    0.05 0.211919 0.271919
+    0.05 1.732 1.732
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+  }
+
+primBodydata { 5
+    15697 21663 35003
+    67600
+    0 5
+    30234 30234 30234 0
+    2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550 2550
+    77490.1 130560 130560 130560 130560 30010.8 27961.8 51784.2 130560 130560 7688.23 130560 130560 130560 130560 46702.6 130560 130560 130560 40227.6 130560 25366.8 130560 130560 130560 130560 33127.9 5558.5 35322 130560 130560 130560 130560 130560 112714 130560 7151.41 130560 130560 130560 130560 130560 8784.7 49718.9 14550.8 130560 130560 70578.2 130560 130560 130560 62786.5 93282.6 130560 44477.3 48795 9634.41 13955.2 130560 130560 130560 130560 130560 130560 130560 130560
+    77490.1 130560 130560 130560 130560 30010.8 27961.8 51784.2 130560 130560 15015.9 130560 130560 130560 130560 46702.6 130560 130560 130560 40227.6 130560 25366.8 130560 130560 130560 130560 33127.9 15715.2 35322 130560 130560 130560 130560 130560 112714 130560 26788.4 130560 130560 130560 130560 130560 16168.3 49718.9 15420.2 130560 130560 70578.2 130560 130560 130560 62786.5 93282.6 130560 44477.3 48795 25409.5 34060.7 130560 130560 130560 130560 130560 130560 130560 130560
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    -1 -1 -1 -1
+    -1 -1 999999 999999
+    -1 -1 -1 -1
+    0.05 0.0870302 0.271919
+    0.05 1.732 1.732
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+  }
+
+init_hybrid_matte true
+crop {0 0 3855 1600}
+algorithm "Primatte RT"
+"Adjust Lighting" 0
+"Hybrid Matte" 0
+"Fine Tuning" 0
+name Primatte5
+tile_color 0x9fffff
+selected true
+xpos -7801
+ypos 2953
+}
+Merge2 {
+inputs 2
+name Merge47
+selected true
+xpos -7801
+ypos 3225
+}
+Dot {
+name Dot29
+selected true
+xpos -7767
+ypos 3282
+}
+set N3e7044f0 [stack 0]
+Dot {
+name Dot38
+selected true
+xpos -7764
+ypos 3679
+}
+push $N3e6cdff0
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+show "Final Result"
+unPreMultiply false
+screenColour {{parent.Keylight4.screenColour x1073 0.01791374758} {parent.Keylight4.screenColour x1073 0.02430729382} {parent.Keylight4.screenColour x1073 0.1256102175}}
+screenGain {{parent.Keylight4.screenGain}}
+screenBalance {{parent.Keylight4.screenBalance}}
+alphaBias {{parent.Keylight4.alphaBias x1073 0.5} {parent.Keylight4.alphaBias x1073 0.5} {parent.Keylight4.alphaBias x1073 0.5}}
+despillBias {0.5 0.5 0.5}
+gangBiases true
+preBlur 0
+"Screen Matte" 0
+screenClipMin 0
+screenClipMax 1
+screenClipRollback 0
+screenGrowShrink 0
+screenSoftness 0
+screenDespotBlack 0
+screenDespotWhite 0
+screenReplaceMethod "Soft Colour"
+screenReplaceColour {0.5 0.5 0.5}
+Tuning 0
+midPoint 0.5
+lowGain 1
+midGain 1
+highGain 1
+"Inside Mask" 0
+sourceAlphaHandling Ignore
+insideReplaceMethod "Soft Colour"
+insideReplaceColour {0.5 0.5 0.5}
+Crops 0
+SourceXMethod Colour
+SourceYMethod Colour
+SourceEdgeColour 0
+SourceCropL 0
+SourceCropR 1
+SourceCropB 0
+SourceCropT 1
+balanceSet true
+insideComponent None
+outsideComponent None
+cacheBreaker true
+name Keylight1
+selected true
+xpos -6998
+ypos 3461
+}
+Invert {
+name Invert1
+selected true
+xpos -6998
+ypos 3505
+}
+Dot {
+name Dot40
+selected true
+xpos -6967
+ypos 3562
+addUserKnob {20 beDotTab l BeDot}
+addUserKnob {22 rootName l "Add Root Name" -STARTLINE T "nuke.load('beAddRootToLabel.py'), beAddRootToLabel()"}
+}
+push $N3e7044f0
+push $N3e6d3370
+Group {
+inputs 2
+name ColorDilatePF1
+knobChanged "\ntn = nuke.thisNode()\ntk = nuke.thisKnob()\n\nfullList =  tn\['fullList'].value().strip(\"\[']\").split(\"', '\")\nnodeList = fullList\[0], fullList\[1], fullList\[2], fullList\[3], fullList\[4], fullList\[5], fullList\[6]\npreviousLoopNum = tn\['previousLoopNum'].getValue()\n\ngrowTexture = tn\['growTexture'].getValue()\nqualityVal = int( tn\['quality'].getValue() )\n\n\n##### DEFINE VALUE CHANGES ##################\n\ndef valChange():\n    qualityBias = tn\['qualityBias'].getValue()\n    blurCenter = tn\['blurCenter'].getValue()\n    bcDistribution = tn\['bcDistribution'].getValue()\n    for i in range (0, qualityVal):\n        blurVal = nuke.toNode(fullList\[i*len(nodeList)])\n        erodeVal = nuke.toNode(fullList\[i*len(nodeList)+3])\n        blurCenterVal = nuke.toNode(fullList\[i*len(nodeList)+5])\n        if isinstance(growTexture, float) == True:\n            blurValSize = (growTexture/qualityVal*(i+1)*(1-qualityBias)) + (growTexture/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2)))\n            blurVal\['size'].setValue( blurValSize )\n            erodeVal\['size'].setValue(blurVal\['size'].getValue()/2)\n            blurCenterVal\['size'].setValue( ( blurValSize*(1-bcDistribution) +  (blurValSize*(bcDistribution*(pow(i+1, 2)/pow(qualityVal, 2)))) ) * blurCenter )\n        else:\n            blurVal\['size'].setValue(\[ (growTexture\[0]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[0]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) , (growTexture\[1]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[1]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) ])\n            erodeVal\['size'].setValue(\[blurVal\['size'].getValue()\[0]/2,blurVal\['size'].getValue()\[1]/2])\n            blurCenterVal\['size'].setValue(\[ (growTexture\[0]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[0]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) , (growTexture\[1]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[1]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) ])\n\ndef filterChange():\n    filters = int( tn\['filter'].getValue() )\n    filterQuality = int( tn\['filterQuality'].getValue() )\n    crop = int( tn\['crop'].getValue() )\n    for i in range (0, qualityVal):\n        blurVal = nuke.toNode(fullList\[i*len(nodeList)])\n        blurVal\['filter'].setValue( filters )\n        blurVal\['quality'].setValue( filterQuality )\n        blurVal\['crop'].setValue( crop )\n        blurCenterVal = nuke.toNode(fullList\[i*len(nodeList)])\n        blurCenterVal\['filter'].setValue( filters )\n        blurCenterVal\['quality'].setValue( filterQuality )\n        blurCenterVal\['crop'].setValue( crop )\n\n\n##### CREATE THE NODES ###################\n\nif tk.name()=='quality':\n    if qualityVal < 1:\n        qualityVal = 1\n    elif qualityVal >100:\n        qualityVal = 100\n    tn\['quality'].setValue( qualityVal )\n    \n\n    if qualityVal != previousLoopNum:\n\n\n        inputDep = nuke.dependencies(\[nuke.toNode('Unpremult1')], nuke.INPUTS)\n        resultOver = nuke.toNode( inputDep\[0].name() )\n\n        difference = qualityVal-previousLoopNum\n        if difference > 0:\n            for i in range (1, int(difference+1)):\n                \n                blur = nuke.nodes.Blur ()\n                blur\['channels'].setValue('rgba')\n                blur\['maskChannelInput'].setValue('none')\n                blur.setInput (0, nuke.toNode('Switch2'))\n                \n                unpremult = nuke.nodes.Unpremult ()\n                unpremult\['channels'].setValue('rgb')\n                unpremult\['alpha'].setValue('rgba.alpha')\n                unpremult\['invert'].setValue(0)\n                unpremult.setInput (0, blur)\n                \n                expression = nuke.nodes.Expression(expr3 = 'a==0?0:1')\n                expression.setInput (0, unpremult)\n                \n                erode = nuke.nodes.FilterErode ()\n                erode\['channels'].setValue( 'rgba.alpha' )\n                erode\['filter'].setValue( 'gaussian' )\n                erode.setInput (0, expression)\n                \n                premult = nuke.nodes.Premult ()\n                premult\['channels'].setValue( 'rgb' )\n                premult\['alpha'].setValue( 'rgba.alpha' )\n                premult.setInput (0, erode)\n\n                blurCenter = nuke.nodes.Blur ()\n                blurCenter\['channels'].setValue('rgba')\n                blurCenter\['maskChannelInput'].setValue('none')\n                blurCenter.setInput (0, premult)\n\n                mergeOver = nuke.nodes.Merge2 ()\n                mergeOver\['operation'].setValue( 'over' )\n                mergeOver\['sRGB'].setValue( 0 )\n                mergeOver\['screen_alpha'].setValue( 0 )\n                mergeOver\['bbox'].setValue( 'union' )\n                mergeOver\['Achannels'].setValue( 'rgba' )\n                mergeOver\['Bchannels'].setValue( 'rgba' )\n                mergeOver\['output'].setValue( 'rgba' )\n                mergeOver\['also_merge'].setValue( 'none' )\n                mergeOver.setInput (0, blurCenter)\n                mergeOver.setInput (1, resultOver)\n                \n                \n                resultOver = mergeOver\n                \n                \n                nodeList = blur.name(), unpremult.name(), expression.name(), erode.name(), premult.name(), blurCenter.name(), resultOver.name()\n                fullList.extend(nodeList)\n\n\n##### DELETE THE NODES ##################################\n\n        else:\n            fullList.reverse()\n            for i in range (int(qualityVal), int(previousLoopNum)):\n                for i in range (0, len(nodeList)):\n                    nuke.delete(nuke.toNode(fullList\[0]))\n                    del fullList\[0]\n                resultOver = nuke.toNode(fullList\[0])\n                resultExpression = nuke.toNode(fullList\[3])\n            fullList.reverse()\n\n        nuke.toNode('Unpremult1').setInput(0, resultOver)\n        valChange()\n        filterChange()\n                \n        previousLoopNum = qualityVal\n        \n        tn\['previousLoopNum'].setValue( int(previousLoopNum) )\n        tn\['fullList'].setValue( str(fullList) )\n\n\n\n##### CHANGE EXISTING VALUES #####################\n\nif tk.name()=='growTexture':\n    valChange()\n    \nif tk.name()=='qualityBias':\n    valChange()\n\nif tk.name()=='blurCenter':\n    valChange()\n\nif tk.name()=='bcDistribution':\n    valChange()\n    \nif tk.name()=='filter':\n    filterChange()\n    \nif tk.name()=='filterQuality':\n    filterChange()\n    \nif tk.name()=='crop':\n    filterChange()\n\n\n"
+note_font "Bitstream Vera Sans"
+selected true
+xpos -7651
+ypos 3278
+addUserKnob {20 User l fColourDilate}
+addUserKnob {14 growTexture l "Grow Texture" R 0 100}
+growTexture 240
+addUserKnob {14 erodeMatte l "Erode Matte" t "Dilate or erode the matte to adjust the grow start paint" R -100 100}
+erodeMatte -24
+addUserKnob {7 expandMatte l "Expand Matte" t "Expand or compress the matte to adjust the grow start point" R -0.99999 0.99999}
+expandMatte -0.99999
+addUserKnob {7 quality l Iterations t "The number of iterations Colour Dilate will go through.  More is slower.  Max steps is 100" R 1 20}
+quality 10
+addUserKnob {7 qualityBias l Distribution t "0 is a linear distribution.  1 is exponential distribution.\nExponential is smoother with low quality.\nLinear is better with high quality."}
+qualityBias 1
+addUserKnob {26 ""}
+addUserKnob {7 blurCenter l "Blur Center" t "Soften central area where opposite dilates meet creating a hard line.  Is a multiple of Grow Texture." R 0 5}
+blurCenter 1
+addUserKnob {7 bcDistribution l "BC Distribution" t "0 blurs a direct multiple of Grow Texture. 1 blurs exponentially more towards the center."}
+addUserKnob {26 ""}
+addUserKnob {4 filter l Filter t "filter\n" M {box triangle quadratic gaussian ""}}
+filter gaussian
+addUserKnob {3 filterQuality l " " -STARTLINE}
+filterQuality 15
+addUserKnob {6 crop l "crop to format" -STARTLINE}
+crop true
+addUserKnob {4 matteOutput l "Matte Output" M {rgb.alpha matte "dilated matte" "dilated area" "grain matte" ""}}
+matteOutput "dilated matte"
+addUserKnob {26 blank l "" -STARTLINE T "      "}
+addUserKnob {6 invertMatte l "invert Matte" -STARTLINE}
+addUserKnob {26 blank2 l "" -STARTLINE T "      "}
+addUserKnob {6 rgbIsPremult l "RGB is Premult?" -STARTLINE}
+addUserKnob {1 colorDilate l INVISIBLE t "Keep me hidden" +INVISIBLE}
+addUserKnob {3 previousLoopNum l INVISIBLE +INVISIBLE}
+previousLoopNum 10
+addUserKnob {1 fullList l INVISIBLE +INVISIBLE}
+fullList "\['Blur1', 'Unpremult2', 'Expression1', 'FilterErode2', 'Premult1', 'BlurCenter', 'Merge2', 'Blur2', 'Unpremult3', 'Expression2', 'FilterErode3', 'Premult2', 'Blur3', 'Merge5', 'Blur4', 'Unpremult4', 'Expression3', 'FilterErode4', 'Premult3', 'Blur5', 'Merge6', 'Blur6', 'Unpremult5', 'Expression4', 'FilterErode5', 'Premult4', 'Blur7', 'Merge7', 'Blur8', 'Unpremult6', 'Expression5', 'FilterErode6', 'Premult5', 'Blur9', 'Merge8', 'Blur10', 'Unpremult7', 'Expression6', 'FilterErode7', 'Premult6', 'Blur11', 'Merge9', 'Blur12', 'Unpremult8', 'Expression7', 'FilterErode8', 'Premult7', 'Blur13', 'Merge10', 'Blur14', 'Unpremult9', 'Expression9', 'FilterErode9', 'Premult8', 'Blur15', 'Merge11', 'Blur16', 'Unpremult10', 'Expression10', 'FilterErode10', 'Premult9', 'Blur17', 'Merge12', 'Blur18', 'Unpremult11', 'Expression11', 'FilterErode11', 'Premult10', 'Blur19', 'Merge13']"
+}
+Input {
+inputs 0
+name InputMask
+note_font "Bitstream Vera Sans"
+xpos 803
+ypos -665
+number 1
+}
+set N3e879860 [stack 0]
+AddChannels {
+channels alpha
+name AddChannels2
+note_font "Bitstream Vera Sans"
+xpos 365
+ypos 1125
+}
+Dot {
+name Dot3
+note_font "Bitstream Vera Sans"
+xpos 399
+ypos 1183
+}
+Input {
+inputs 0
+name InputRGB
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -531
+}
+set N3e88c690 [stack 0]
+AddChannels {
+channels alpha
+name AddChannels1
+note_font "Bitstream Vera Sans"
+xpos 348
+ypos 949
+}
+Dot {
+name Dot2
+note_font "Bitstream Vera Sans"
+xpos 382
+ypos 1078
+}
+push $N3e879860
+FilterErode {
+channels alpha
+size {{invertMatte==0?erodeMatte.w:-erodeMatte.w i} {invertMatte==0?erodeMatte.h:-erodeMatte.h i}}
+name FilterErode1
+note_font "Bitstream Vera Sans"
+xpos 803
+ypos -621
+}
+Invert {
+channels alpha
+mix {{invertMatte i}}
+name Invert2
+note_font "Bitstream Vera Sans"
+xpos 803
+ypos -563
+}
+Grade {
+channels alpha
+blackpoint {{"clamp(expandMatte, 0, 1)" i}}
+whitepoint {{"clamp(1+expandMatte, 0, 1)" i}}
+white_clamp true
+name Grade1
+tile_color 0xffffff01
+note_font " Bold"
+xpos 803
+ypos -505
+}
+Grade {
+channels alpha
+whitepoint 0.5
+black_clamp false
+white_clamp true
+name Grade6
+tile_color 0xffffff01
+note_font " Bold"
+xpos 803
+ypos -345
+}
+Dot {
+name Dot1
+note_font "Bitstream Vera Sans"
+xpos 837
+ypos -287
+}
+set N3e8da520 [stack 0]
+push $N3e88c690
+AddChannels {
+channels alpha
+name AddChannels3
+note_font "Bitstream Vera Sans"
+xpos 1120
+ypos -444
+}
+push $N3e88c690
+Shuffle {
+alpha white
+name Shuffle1
+tile_color 0x99999901
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -458
+}
+Crop {
+box {{InputRGB.bbox.x i x1001 542} {InputRGB.bbox.y i} {InputRGB.bbox.r i} {InputRGB.bbox.t i}}
+name Crop3
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -414
+}
+Switch {
+inputs 2
+which {{rgbIsPremult i}}
+name Switch1
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -370
+}
+Dot {
+name Dot5
+note_font "Bitstream Vera Sans"
+xpos 1047
+ypos -326
+}
+set N3e90c500 [stack 0]
+Merge2 {
+inputs 2
+operation stencil
+bbox intersection
+name Merge1
+tile_color 0x7fff01
+note_font Normal
+xpos 1013
+ypos -292
+}
+push $N3e8da520
+Dot {
+name Dot4
+note_font "Bitstream Vera Sans"
+xpos 837
+ypos -253
+}
+push $N3e90c500
+Dot {
+name Dot6
+note_font "Bitstream Vera Sans"
+xpos 946
+ypos -326
+}
+Merge2 {
+inputs 2
+operation stencil
+bbox B
+name Merge3
+tile_color 0x7fff01
+note_font Normal
+xpos 912
+ypos -258
+}
+Dot {
+name Dot7
+note_font "Bitstream Vera Sans"
+xpos 946
+ypos -192
+}
+Switch {
+inputs 2
+which {{invertMatte i}}
+name Switch2
+note_font "Bitstream Vera Sans"
+xpos 1002
+ypos -196
+}
+set N3e9412d0 [stack 0]
+push $N3e9412d0
+Blur {
+channels rgba
+size 0.24
+name Blur1
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos -26
+}
+Unpremult {
+name Unpremult2
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 18
+}
+Expression {
+expr3 a==0?0:1
+name Expression1
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 62
+}
+FilterErode {
+channels alpha
+size 0.12
+filter gaussian
+name FilterErode2
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 106
+}
+Premult {
+name Premult1
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 164
+}
+Blur {
+channels rgba
+size 0.24
+name BlurCenter
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 222
+}
+Merge2 {
+inputs 2
+name Merge2
+tile_color 0x7fff01
+note_font Normal
+xpos 1336
+ypos 280
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 1.92
+name Blur2
+xpos 1882
+ypos -154
+}
+Unpremult {
+name Unpremult3
+xpos 1882
+ypos -112
+}
+Expression {
+expr3 a==0?0:1
+name Expression2
+xpos 1882
+ypos -70
+}
+FilterErode {
+channels alpha
+size 0.96
+filter gaussian
+name FilterErode3
+xpos 1992
+ypos -28
+}
+Premult {
+name Premult2
+xpos 1992
+ypos 14
+}
+Blur {
+channels rgba
+size 1.92
+name Blur3
+xpos 1992
+ypos 56
+}
+Merge2 {
+inputs 2
+name Merge5
+tile_color 0x7fff01
+note_font Normal
+xpos 1992
+ypos 280
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 6.48
+name Blur4
+xpos 1772
+ypos -154
+}
+Unpremult {
+name Unpremult4
+xpos 1772
+ypos -112
+}
+Expression {
+expr3 a==0?0:1
+name Expression3
+xpos 1772
+ypos -70
+}
+FilterErode {
+channels alpha
+size 3.24
+filter gaussian
+name FilterErode4
+xpos 1882
+ypos -28
+}
+Premult {
+name Premult3
+xpos 1882
+ypos 14
+}
+Blur {
+channels rgba
+size 6.48
+name Blur5
+xpos 1882
+ypos 322
+}
+Merge2 {
+inputs 2
+name Merge6
+tile_color 0x7fff01
+note_font Normal
+xpos 1992
+ypos 322
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 15.36
+name Blur6
+}
+Unpremult {
+name Unpremult5
+}
+Expression {
+expr3 a==0?0:1
+name Expression4
+}
+FilterErode {
+channels alpha
+size 7.68
+filter gaussian
+name FilterErode5
+}
+Premult {
+name Premult4
+}
+Blur {
+channels rgba
+size 15.36
+name Blur7
+}
+Merge2 {
+inputs 2
+name Merge7
+tile_color 0x7fff01
+note_font Normal
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 30
+name Blur8
+}
+Unpremult {
+name Unpremult6
+}
+Expression {
+expr3 a==0?0:1
+name Expression5
+}
+FilterErode {
+channels alpha
+size 15
+filter gaussian
+name FilterErode6
+}
+Premult {
+name Premult5
+}
+Blur {
+channels rgba
+size 30
+name Blur9
+}
+Merge2 {
+inputs 2
+name Merge8
+tile_color 0x7fff01
+note_font Normal
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 51.84
+name Blur10
+}
+Unpremult {
+name Unpremult7
+}
+Expression {
+expr3 a==0?0:1
+name Expression6
+}
+FilterErode {
+channels alpha
+size 25.92
+filter gaussian
+name FilterErode7
+}
+Premult {
+name Premult6
+}
+Blur {
+channels rgba
+size 51.84
+name Blur11
+}
+Merge2 {
+inputs 2
+name Merge9
+tile_color 0x7fff01
+note_font Normal
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 82.32
+name Blur12
+}
+Unpremult {
+name Unpremult8
+}
+Expression {
+expr3 a==0?0:1
+name Expression7
+}
+FilterErode {
+channels alpha
+size 41.16
+filter gaussian
+name FilterErode8
+}
+Premult {
+name Premult7
+}
+Blur {
+channels rgba
+size 82.32
+name Blur13
+}
+Merge2 {
+inputs 2
+name Merge10
+tile_color 0x7fff01
+note_font Normal
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 122.88
+name Blur14
+}
+Unpremult {
+name Unpremult9
+}
+Expression {
+expr3 a==0?0:1
+name Expression9
+}
+FilterErode {
+channels alpha
+size 61.44
+filter gaussian
+name FilterErode9
+}
+Premult {
+name Premult8
+}
+Blur {
+channels rgba
+size 122.88
+name Blur15
+}
+Merge2 {
+inputs 2
+name Merge11
+tile_color 0x7fff01
+note_font Normal
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 174.96
+name Blur16
+}
+Unpremult {
+name Unpremult10
+}
+Expression {
+expr3 a==0?0:1
+name Expression10
+}
+FilterErode {
+channels alpha
+size 87.48
+filter gaussian
+name FilterErode10
+}
+Premult {
+name Premult9
+}
+Blur {
+channels rgba
+size 174.96
+name Blur17
+}
+Merge2 {
+inputs 2
+name Merge12
+tile_color 0x7fff01
+note_font Normal
+}
+push $N3e9412d0
+Blur {
+channels rgba
+size 240
+name Blur18
+}
+Unpremult {
+name Unpremult11
+}
+Expression {
+expr3 a==0?0:1
+name Expression11
+}
+FilterErode {
+channels alpha
+size 120
+filter gaussian
+name FilterErode11
+}
+Premult {
+name Premult10
+}
+Blur {
+channels rgba
+size 240
+name Blur19
+}
+Merge2 {
+inputs 2
+name Merge13
+tile_color 0x7fff01
+note_font Normal
+}
+Unpremult {
+name Unpremult1
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 966
+}
+Dot {
+name Dot11
+xpos 258
+ypos 1020
+}
+set N3ecb54e0 [stack 0]
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+mix {{matteOutput==0?1:0 i}}
+name Copy2
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1068
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+mix {{matteOutput==1?1:0}}
+name Copy1
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1173
+}
+Dot {
+name Dot8
+xpos 258
+ypos 1227
+}
+set N3ecd6de0 [stack 0]
+Dot {
+name Dot9
+xpos 453
+ypos 1227
+}
+Expression {
+expr3 a<=0.000001?0:1
+name Expression12
+note_font "Bitstream Vera Sans"
+xpos 419
+ypos 1261
+}
+Dot {
+name Dot10
+xpos 453
+ypos 1303
+}
+push $N3ecb54e0
+Dot {
+name Dot13
+xpos 521
+ypos 1020
+}
+Dot {
+name Dot12
+xpos 521
+ypos 1205
+}
+push $N3e88c690
+Merge2 {
+inputs 2
+operation difference
+bbox B
+name Merge14
+tile_color 0x7fff01
+note_font Normal
+xpos 563
+ypos 1201
+}
+Keyer {
+operation "luminance key"
+range {0 1e-05 1 1}
+name Keyer1
+xpos 563
+ypos 1243
+}
+Merge2 {
+inputs 2
+operation mask
+bbox B
+name Merge15
+tile_color 0x7fff01
+note_font Normal
+xpos 563
+ypos 1299
+}
+Dot {
+name Dot14
+xpos 597
+ypos 1341
+}
+push $N3ecd6de0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+mix {{matteOutput==4?1:0 i}}
+name Copy3
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1331
+}
+Expression {
+expr3 a<=0.000001?0:1
+mix {{matteOutput==3?1:0 i}}
+name Expression8
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1418
+}
+push $N3e88c690
+Merge2 {
+inputs 2
+operation copy
+bbox B
+name Merge4
+tile_color 0x7fff01
+note_font Normal
+xpos 932
+ypos 1418
+}
+Output {
+name Output1
+note_font "Bitstream Vera Sans"
+xpos 932
+ypos 1579
+}
+end_group
+NoOp {
+name Anchor_38389c05b5
+help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+knobChanged stamps.anchorKnobChanged()
+autolabel "nuke.thisNode().knob(\"title\").value()"
+tile_color 0xffffff01
+note_font_size 20
+selected true
+xpos -7651
+ypos 3304
+addUserKnob {20 anchor_tab l "Anchor Stamp"}
+addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+title "clean plate"
+addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "clean plante"}
+addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_38389c05b5}
+addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+addUserKnob {1 tags l Tags t "Comma-separated tags you can define for each Anchor, that will help you find it when invoking the Stamp Selector by pressing the Stamps shortkey with nothing selected."}
+tags 2D,
+addUserKnob {26 line1 l "" +STARTLINE}
+addUserKnob {26 stamps_label l Stamps: T " "}
+addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+addUserKnob {22 selectStamps l select t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+addUserKnob {22 reconnectStamps l reconnect -STARTLINE T stamps.anchorReconnectWired()}
+addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+addUserKnob {26 line2 l "" +STARTLINE}
+addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
+}
+set N3ed66a80 [stack 0]
+Dot {
+name Dot42
+selected true
+xpos -7617
+ypos 3362
+}
+set N3ed6eab0 [stack 0]
+Dot {
+name Dot44
+selected true
+xpos -7117
+ypos 3362
+addUserKnob {20 beDotTab l BeDot}
+addUserKnob {22 rootName l "Add Root Name" -STARTLINE T "nuke.load('beAddRootToLabel.py'), beAddRootToLabel()"}
+}
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+show "Final Result"
+unPreMultiply false
+screenColour {0.06425023079 0.1240230873 0.3486543894}
+screenGain 1.02
+screenBalance 0.805
+alphaBias {0.5 0.5 0.5}
+despillBias {0.5 0.5 0.5}
+gangBiases true
+preBlur 0
+"Screen Matte" 0
+screenClipMin 0
+screenClipMax 1
+screenClipRollback 0
+screenGrowShrink 0
+screenSoftness 0
+screenDespotBlack 0
+screenDespotWhite 0
+screenReplaceMethod "Soft Colour"
+screenReplaceColour {0.5 0.5 0.5}
+Tuning 0
+midPoint 0.5
+lowGain 1
+midGain 1
+highGain 1
+"Inside Mask" 0
+sourceAlphaHandling Ignore
+insideReplaceMethod "Soft Colour"
+insideReplaceColour {0.5 0.5 0.5}
+Crops 0
+SourceXMethod Colour
+SourceYMethod Colour
+SourceEdgeColour 0
+SourceCropL 0
+SourceCropR 1
+SourceCropB 0
+SourceCropT 1
+balanceSet true
+insideComponent None
+outsideComponent None
+cacheBreaker true
+name Keylight4
+selected true
+xpos -7148
+ypos 3461
+}
+Invert {
+name Invert3
+selected true
+xpos -7148
+ypos 3505
+}
+Merge2 {
+inputs 2
+operation divide
+bbox B
+name Merge5
+tile_color 0x7fff01
+note_font Normal
+selected true
+xpos -7148
+ypos 3558
+}
+Grade {
+channels alpha
+gamma 0.26
+white_clamp true
+name Grade4
+tile_color 0xffffff01
+note_font " Bold"
+selected true
+xpos -7148
+ypos 3584
+}
+Blur {
+size 8.6
+name Blur3
+selected true
+xpos -7148
+ypos 3634
+}
+Multiply {
+inputs 1+1
+value 0
+name Multiply3
+tile_color 0xff000000
+selected true
+xpos -7145
+ypos 3672
+}
+Dot {
+name Dot66
+selected true
+xpos -7114
+ypos 3829
+}
+Constant {
+inputs 0
+channels rgb
+color {0.06388957053 0.1210118979 0.3361760378 0}
+name REF_COLOUR2
+tile_color 0xb0c4901
+selected true
+xpos -8248
+ypos 3645
+}
+Dot {
+name Dot54
+label "AMEND PER SHOT\n"
+note_font "DejaVu Sans"
+note_font_size 55
+note_font_color 0xff0000ff
+selected true
+xpos -8214
+ypos 3779
+}
+push $N3ed6eab0
+Merge2 {
+inputs 2
+operation minus
+bbox B
+name Merge6
+tile_color 0x7fff01
+note_font Normal
+selected true
+xpos -7645
+ypos 3775
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy3
+selected true
+xpos -7645
+ypos 3819
+}
+Premult {
+name Premult2
+selected true
+xpos -7645
+ypos 3871
+}
+Dot {
+name Dot55
+note_font "Bitstream Vera Sans Bold"
+note_font_size 49.85
+selected true
+xpos -7611
+ypos 3944
+}
+push $N3e6c9140
+Merge2 {
+inputs 2
+operation plus
+bbox B
+name Merge18
+tile_color 0x7fff01
+note_font Normal
+selected true
+xpos -6898
+ypos 3940
+disable true
+}
+Dot {
+name Dot8
+note_font_size 35
+selected true
+xpos -6864
+ypos 4144
+}
+set N3ee9c4c0 [stack 0]
+Dot {
+name Dot70
+label "HARD KEY\n"
+note_font "DejaVu Sans"
+note_font_size 102.05
+selected true
+xpos -9214
+ypos 4144
+}
+Group {
+name m_keyer
+tile_color 0xff28ff
+selected true
+xpos -9245
+ypos 4337
+addUserKnob {20 User}
+addUserKnob {41 input T Keyer11.input}
+addUserKnob {41 output T Keyer11.output}
+addUserKnob {41 combine l "" -STARTLINE T Keyer11.combine}
+addUserKnob {41 operation T Keyer11.operation}
+addUserKnob {41 range T Keyer11.range}
+addUserKnob {41 invert T Keyer11.invert}
+}
+Input {
+inputs 0
+name Input1
+xpos 587
+ypos 444
+}
+dnLogLin {
+operation lin2log
+"log reference" 445
+"lin reference" 0.18
+"negative gamma" 0.6
+"black level" 0
+"dens per cv" 0.002
+name dnLogLin8
+xpos 587
+ypos 484
+}
+Keyer {
+operation bluescreen
+range {0.8877616727 0.9068015959 1 1}
+name Keyer11
+xpos 587
+ypos 550
+}
+dnLogLin {
+"log reference" 445
+"lin reference" 0.18
+"negative gamma" 0.6
+"black level" 0
+"dens per cv" 0.002
+name dnLogLin7
+xpos 587
+ypos 615
+}
+Output {
+name Output1
+xpos 587
+ypos 715
+}
+end_group
+KeyChewV4 {
+name KeyChewV4_1
+selected true
+xpos -9245
+ypos 4393
+chew 11
+bbox {{"\[python nuke.thisNode().input(0).format().x()]"} {"\[python nuke.thisNode().input(0).format().y()]"} {"\[python nuke.thisNode().input(0).format().r()]"} {"\[python nuke.thisNode().input(0).format().t()]"}}
+}
+KeyChewV4 {
+name KeyChewV4_3
+selected true
+xpos -9245
+ypos 4443
+chew -40
+bbox {{"\[python nuke.thisNode().input(0).format().x()]"} {"\[python nuke.thisNode().input(0).format().y()]"} {"\[python nuke.thisNode().input(0).format().r()]"} {"\[python nuke.thisNode().input(0).format().t()]"}}
+}
+Blur {
+size 28.5
+name Blur2
+selected true
+xpos -9245
+ypos 4487
+}
+NoOp {
+name Anchor_54e703f6f
+help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.anchorOnCreate()\n    except:\n        pass"
+knobChanged stamps.anchorKnobChanged()
+autolabel "nuke.thisNode().knob(\"title\").value()"
+tile_color 0xffffff01
+note_font_size 20
+selected true
+xpos -9245
+ypos 4589
+addUserKnob {20 anchor_tab l "Anchor Stamp"}
+addUserKnob {26 identifier -STARTLINE +HIDDEN T anchor}
+addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+title "hard key"
+addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "hard key"}
+addUserKnob {26 prev_name l "" +STARTLINE +HIDDEN T Anchor_54e703f6f}
+addUserKnob {3 showing l "" +STARTLINE +HIDDEN}
+addUserKnob {1 tags l Tags t "Comma-separated tags you can define for each Anchor, that will help you find it when invoking the Stamp Selector by pressing the Stamps shortkey with nothing selected."}
+tags alpha
+addUserKnob {26 line1 l "" +STARTLINE}
+addUserKnob {26 stamps_label l Stamps: T " "}
+addUserKnob {22 createStamp l new t "Create a new Stamp for this Anchor." -STARTLINE T stamps.stampCreateWired(nuke.thisNode())}
+addUserKnob {22 selectStamps l select t "Reconnect all of this Anchor's Stamps." -STARTLINE T stamps.wiredSelectSimilar(nuke.thisNode().name())}
+addUserKnob {22 reconnectStamps l reconnect -STARTLINE T stamps.anchorReconnectWired()}
+addUserKnob {22 zoomNext l "zoom next" t "Navigate to this Anchor's next Stamp on the Node Graph." -STARTLINE T stamps.wiredZoomNext(nuke.thisNode().name())}
+addUserKnob {26 line2 l "" +STARTLINE}
+addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
+}
+Dot {
+name Dot33
+label "HARD KEY\n"
+note_font "DejaVu Sans"
+note_font_size 102.05
+selected true
+xpos -9211
+ypos 5203
+}
+push $N3ed66a80
+PostageStamp {
+name Stamp1
+help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
+onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
+knobChanged "import stamps; stamps.wiredKnobChanged()"
+autolabel "nuke.thisNode().knob(\"title\").value()"
+tile_color 0x1000001
+note_font "Bitstream Vera Sans"
+note_font_size 20
+selected true
+xpos -6695
+ypos 4489
+hide_input true
+addUserKnob {20 wired_tab l "Wired Stamp"}
+addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
+addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
+addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
+addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
+title "clean plate"
+addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T "clean plate"}
+addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>2D</i>}
+addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." +HIDDEN T " "}
+addUserKnob {26 line1 l "" +STARTLINE}
+addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +STARTLINE}
+addUserKnob {26 anchor_label l Anchor: T " "}
+addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
+addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
+addUserKnob {26 stamps_label l Stamps: T " "}
+addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
+addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
+addUserKnob {26 space_1 l "" +STARTLINE T " "}
+addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
+addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
+addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
+addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
+addUserKnob {26 space_2 l "" +STARTLINE T " "}
+addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
+addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
+addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
+addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
+addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
+addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
+addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
+addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
+addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
+addUserKnob {1 anchor l Anchor}
+anchor Anchor_38389c05b5
+addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
+addUserKnob {26 line2 l "" +STARTLINE}
+addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE T "<a href=\"http://www.nukepedia.com/gizmos/other/stamps\" style=\"color:#666;text-decoration: none;\"><span style=\"color:#666\"> <big>Stamps v1.1</big></b></a>"}
+}
+push $N3ee9c4c0
+Dot {
+name Dot14
+label "SOFT KEY\n"
+note_font "DejaVu Sans"
+note_font_size 99.85
+selected true
+xpos -6864
+ypos 4394
+}
+IBKGizmoV3 {
+inputs 2
+name IBKGizmoV3_2
+xpos -6895
+ypos 4493
+red_weight 0.91
+blue_green_weight 0.295
+level 0.015
+luma 0.14
+magenta true
+}
+Clamp {
+channels rgba
+name Clamp4
+selected true
+xpos -6895
+ypos 4593
+}
+Defocus {
+channels rgba
+name Defocus1
+selected true
+xpos -6895
+ypos 4643
+}
+Clamp {
+name Clamp1
+selected true
+xpos -6895
+ypos 4893
+}
+Dot {
+name Dot136
+label "SOFT KEY"
+note_font "DejaVu Sans"
+note_font_size 99.85
+selected true
+xpos -6861
+ypos 5003
+}
+ChannelMerge {
+inputs 2
+name ChannelMerge4
+selected true
+xpos -6892
+ypos 5190
+}
+Merge2 {
+inputs 2
+operation stencil
+bbox B
+name Merge4
+tile_color 0x7fff01
+note_font Normal
+selected true
+xpos -6895
+ypos 7193
+disable true
+}
+Clamp {
+name Clamp2
+selected true
+xpos -6895
+ypos 7637
+}
+Dot {
+name Dot104
+label "ADDITIONAL \nSOFTENING"
+note_font_size 98.1
+selected true
+xpos -6864
+ypos 8094
+}
+Clamp {
+name Clamp3
+selected true
+xpos -6895
+ypos 9687
+}
+NoOp {
+name ALPHA_ALL
+selected true
+xpos -6895
+ypos 9743
+}
+Dot {
+name Dot36
+selected true
+xpos -6864
+ypos 9794
+}
+Dot {
+name Dot37
+label "ALPHA\n"
+note_font "DejaVu Sans"
+note_font_size 150
+selected true
+xpos -3414
+ypos 9794
+}
+push 0
+Dot {
+name Dot49
+label COLOUR
+note_font "DejaVu Sans"
+note_font_size 150
+selected true
+xpos -2014
+ypos 9594
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy12
+selected true
+xpos -2045
+ypos 9784
+}
+Premult {
+name Premult12
+selected true
+xpos -2045
+ypos 9891
+}
+Crop {
+box {0 0 3840 1608}
+name Crop1
+selected true
+xpos -2045
+ypos 9993
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/GR/107_mnt_6560/ELEMENT/E_107_mnt_6560_comp_precomp_key_all_v001/3840x1608/E_comp_general_seq_comp_precomp_key_all_v001.####.exr
+localizationPolicy off
+format "3840 1608 0 0 3840 1608 1 GR Working"
+proxy_format "640 480 0 0 640 480 1 Alexa 65 HD 1.78(proxy)"
+first 1001
+last 1092
+origfirst 1001
+origlast 1092
+origset true
+smartGrade true
+name Read31
+selected true
+xpos -3208
+ypos 9467
+postage_stamp_frame 1046
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/GR/107_mnt_6560/ELEMENT/E_107_mnt_6560_comp_precomp_key_all_v001/3840x1608/E_comp_general_seq_comp_precomp_key_all_v001.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 58d32e9d-85ee-4029-b542-b3f77db79584
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 036a69f3-ea1e-4312-b239-9c986f3d6971
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid efbf2afc-249c-4c63-8c23-2ac696585a2c
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 1
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push $cut_paste_input
+Primatte3 {
+data { 5
+    17590 24769 39137
+    65552
+    0 5
+    30234 30234 30234 0
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 7204.09 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4933.44 815.261 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 55685.5 10603.6 1004.84 1 1 1 1 1 1
+    79343.1 130560 130560 130560 130560 32835.4 31457.8 63071.8 130560 130560 15322.4 130560 130560 130560 130560 32710.2 130560 130560 130560 41231.2 130560 27616.1 130560 130560 130560 130560 34211.9 13591.2 39862.6 130560 130560 130560 130560 130560 130560 130560 7577.29 130560 130560 130560 130560 130560 21358.4 60320.2 16602.9 130560 130560 130560 130560 130560 130560 57789.1 100962 130560 48220.7 56121.4 14670 55685.5 130560 130560 130560 130560 130560 130560 130560 130560
+    79343.1 130560 130560 130560 130560 32835.4 31457.8 63071.8 130560 130560 17020 130560 130560 130560 130560 49441.6 130560 130560 130560 41231.2 130560 27616.1 130560 130560 130560 130560 34211.9 14711.9 39862.6 130560 130560 130560 130560 130560 130560 130560 19552.4 130560 130560 130560 130560 130560 21358.4 60320.2 16602.9 130560 130560 130560 130560 130560 130560 57789.1 100962 130560 48220.7 56121.4 30417.3 55685.5 130560 130560 130560 130560 130560 130560 130560 130560
+    -82 -2.22551e+14 -2.22551e+14 -7.31432e+06 5.79127e+13 5.79127e+13
+    -81 -2.22551e+14 -2.22551e+14 -7.77493e+06 4.81813e+13 4.81813e+13
+    -0.100037 -2.22551e+14 -2.22551e+14 -1568.24 -2.65294e+13 -2.65294e+13
+    -0.100037 -2.22551e+14 -2.22551e+14 -2133.49 -3.62608e+13 -3.62608e+13
+    -0.100159 -2.22551e+14 -2.22551e+14 2133.49 3.62607e+13 3.62607e+13
+    -0.100159 -2.22551e+14 -2.22551e+14 1568.24 2.65294e+13 2.65294e+13
+    -0.100159 -2.22551e+14 -2.22551e+14 -2825.9 -4.81813e+13 -4.81813e+13
+    -0.100159 -2.22551e+14 -2.22551e+14 -3391.16 -5.79127e+13 -5.79127e+13
+    -183 -4.06321e+14 -4.06321e+14 -1.11342e+07 1.09126e+14 1.09126e+14
+    -6.49754e+06 -6.63845e+11 -5.3685e+12 -2.79482e+11 3.23431e+12 1.03204e+13
+    -0.183105 -4.1519e+13 -4.1519e+13 4313.36 6.28083e+13 6.28083e+13
+    -0.183228 -3.93167e+12 -3.93167e+12 -4118.32 9.41204e+12 9.41204e+12
+    -0.183105 -4.06322e+14 -4.06322e+14 -3270.35 -5.59904e+13 -5.59904e+13
+    -0.18335 -4.06321e+14 -4.06321e+14 -1518.13 -2.58466e+13 -2.58466e+13
+    -0.183472 -4.06321e+14 -4.06321e+14 -802.526 -1.34325e+13 -1.34325e+13
+    -0.182129 -4.06321e+14 -4.06321e+14 -9210.78 -1.56924e+14 -1.56924e+14
+    -3.61334e+11 -2.51988e+12 -9.8282e+12 5.29953e+11 1.2132e+12 7.51485e+12
+    -0.183228 -1.5007e+14 -1.5007e+14 802.526 1.93118e+14 1.93118e+14
+    -0.183594 -4.06321e+14 -4.06321e+14 1518.13 2.58466e+13 2.58466e+13
+    -0.182129 -6.79213e+12 -6.79213e+12 3270.35 1.06911e+13 1.06911e+13
+    -0.182983 -4.06321e+14 -4.06321e+14 4118.32 6.9847e+13 6.9847e+13
+    -0.182129 -4.06321e+14 -4.06321e+14 -4313.36 -7.36443e+13 -7.36443e+13
+    -0.182129 -4.06321e+14 -4.06321e+14 -8167.77 -1.3927e+14 -1.3927e+14
+    -0.183472 -1.36848e+13 -1.36848e+13 -6438.97 -3.80328e+12 -3.80328e+12
+    -1.32055e+07 -2.23731e+14 -2.23731e+14 -1.63883e+11 2.13369e+14 2.13369e+14
+    -0.234375 -2.55478e+12 -5.88406e+12 5505.46 9.08817e+12 1.63445e+12
+    -0.235352 -5.24559e+14 -5.24559e+14 7537.32 1.28502e+14 1.28502e+14
+    -0.235352 -1.28069e+12 -1.42258e+12 1703.33 3.12958e+11 -2.80021e+11
+    -0.234863 -5.24559e+14 -5.24559e+14 -1703.33 -2.85566e+13 -2.85566e+13
+    -0.234863 -5.24559e+14 -5.24559e+14 -7537.32 -1.28502e+14 -1.28502e+14
+    -0.235352 -5.24559e+14 -5.24559e+14 -5505.46 -9.38728e+13 -9.38728e+13
+    -0.234375 -2.32183e+14 -2.32183e+14 -11339.4 -9.46259e+13 -9.46259e+13
+    -1936 -4.06321e+14 -4.06321e+14 -1.13048e+08 1.16585e+14 1.16585e+14
+    -1.07339e+06 -4.37584e+13 -6.6141e+13 -4.61833e+10 7.23852e+13 5.60746e+13
+    -0.182617 -1.96288e+14 -1.96288e+14 432.81 1.45225e+14 1.45225e+14
+    -0.183716 -4.52315e+13 -4.52315e+13 -4555.39 -2.17451e+13 -2.17451e+13
+    -0.182617 -4.06321e+14 -4.06321e+14 593.559 1.04073e+13 1.04073e+13
+    -0.183716 -4.06321e+14 -4.06321e+14 1060.8 1.8164e+13 1.8164e+13
+    -0.183716 -4.06321e+14 -4.06321e+14 -3381.45 -5.74431e+13 -5.74431e+13
+    -0.182617 -3.14208e+14 -3.14208e+14 -8331.86 -1.40204e+14 -1.40204e+14
+    -0.100098 -2.22551e+14 -2.22551e+14 2787.8 4.76613e+13 4.76613e+13
+    -496 -3.38153e+11 -9.4452e+11 -1.87464e+07 2.29279e+12 7.18844e+11
+    -0.100098 -3.61468e+12 -3.61468e+12 3802.77 1.47106e+12 1.47106e+12
+    -0.0999756 -1.11921e+13 -1.11921e+13 -1530.13 1.06646e+13 1.06646e+13
+    -0.100098 -2.22551e+14 -2.22551e+14 -3237.52 -5.49954e+13 -5.49954e+13
+    -0.10022 -1.35248e+14 -1.35248e+14 -1991.84 -3.57596e+12 -3.57596e+12
+    -0.10022 -2.22551e+14 -2.22551e+14 734.176 1.23063e+13 1.23063e+13
+    -0.100098 -2.22551e+14 -2.22551e+14 -4598.72 -7.84298e+13 -7.84298e+13
+    -10208 -5.29124e+13 -5.29124e+13 -1.31879e+08 4.76965e+13 4.76965e+13
+    -0.182861 -4.61505e+12 -5.12637e+12 1786.98 1.19014e+13 1.0619e+13
+    -0.182861 -4.06321e+14 -4.06321e+14 5951.32 1.01211e+14 1.01211e+14
+    -0.182617 -8.12069e+11 -9.7642e+11 3767.24 2.87628e+12 3.05495e+12
+    -0.182861 -4.06321e+14 -4.06321e+14 -341.718 -5.51783e+12 -5.51783e+12
+    -0.182617 -4.06321e+14 -4.06321e+14 -7245.2 -1.23599e+14 -1.23599e+14
+    -0.182129 -4.06321e+14 -4.06321e+14 -5235.93 -8.93156e+13 -8.93156e+13
+    -0.182861 -1.79848e+14 -1.79848e+14 -7396.58 -1.61044e+14 -1.61044e+14
+    -1.00262e+12 -5.6053e+13 -8.47244e+13 2.17376e+12 5.45866e+13 7.56058e+13
+    -0.236816 -8.32791e+13 -8.32791e+13 4228.63 9.1578e+13 9.1578e+13
+    -0.236572 -5.24559e+14 -5.24559e+14 1824.71 3.12069e+13 3.12069e+13
+    -0.234863 -1.91527e+13 -1.91527e+13 1063.82 3.35914e+13 3.35914e+13
+    -0.236816 -5.24559e+14 -5.24559e+14 4065.37 6.87389e+13 6.87389e+13
+    -0.235352 -5.24559e+14 -5.24559e+14 -3763.95 -6.40118e+13 -6.40118e+13
+    -0.234863 -5.24559e+14 -5.24559e+14 -9278.83 -1.58363e+14 -1.58363e+14
+    -0.236328 -4.32609e+13 -4.32609e+13 -10118.7 1.93753e+13 1.93753e+13
+    -1.13702e+10 -1.01799e+14 -1.53869e+14 -5.74766e+11 1.59357e+14 1.56388e+14
+    -0.183472 -1.74658e+14 -1.74658e+14 3381.45 1.94795e+14 1.94795e+14
+    -0.183472 -4.06322e+14 -4.06322e+14 -1060.8 -1.8164e+13 -1.8164e+13
+    -0.182617 -9.06875e+13 -9.06875e+13 -593.559 4.67948e+13 4.67948e+13
+    -0.183472 -4.06321e+14 -4.06321e+14 4555.39 7.73059e+13 7.73059e+13
+    -0.182617 -4.06321e+14 -4.06321e+14 -432.81 -7.24653e+12 -7.24653e+12
+    -0.182617 -4.06321e+14 -4.06321e+14 -7305.49 -1.24342e+14 -1.24342e+14
+    -0.183716 -7.5707e+13 -7.5707e+13 -6876.05 -2.36344e+13 -2.36344e+13
+    -183.25 -4.06321e+14 -4.06321e+14 -3.6809e+06 1.2607e+14 1.2607e+14
+    -0.183105 -5.57769e+11 -1.39056e+12 5235.93 1.37722e+12 8.09154e+11
+    -0.182617 -1.24058e+14 -1.24058e+14 7245.2 1.96061e+14 1.96061e+14
+    -0.182373 -1.58901e+12 -1.76506e+12 341.718 3.56243e+12 2.65908e+12
+    -0.182617 -4.06321e+14 -4.06321e+14 -3767.24 -6.44567e+13 -6.44567e+13
+    -0.182373 -4.06321e+14 -4.06321e+14 -5951.32 -1.01211e+14 -1.01211e+14
+    -0.182373 -4.06321e+14 -4.06321e+14 -1786.98 -3.03767e+13 -3.03767e+13
+    -0.182129 -4.06321e+14 -4.06321e+14 -8713.89 -1.48457e+14 -1.48457e+14
+    -494 -9.91794e+11 -2.55922e+12 -1.59593e+07 8.97991e+12 6.96921e+12
+    -0.100098 -3.54402e+13 -3.54402e+13 -734.176 5.59754e+13 5.59754e+13
+    -0.10022 -2.22551e+14 -2.22551e+14 1991.84 3.39582e+13 3.39582e+13
+    -0.100098 -1.23243e+12 -1.33405e+12 3237.52 -2.30083e+12 -2.07464e+12
+    -0.10022 -2.22551e+14 -2.22551e+14 1530.13 2.60093e+13 2.60093e+13
+    -0.100098 -2.22551e+14 -2.22551e+14 -3802.77 -6.47268e+13 -6.47268e+13
+    -0.100098 -2.22551e+14 -2.22551e+14 -4033.47 -6.86984e+13 -6.86984e+13
+    -0.100098 -4.27115e+13 -4.27115e+13 -2787.8 -2.78907e+13 -2.78907e+13
+    -2.49037e+06 -5.24559e+14 -5.24559e+14 -1.33168e+11 1.71944e+14 1.71944e+14
+    -1692.9 -6.34754e+12 -1.98932e+13 -7.29593e+07 9.87554e+12 1.67407e+13
+    -0.234863 -2.53407e+14 -2.53407e+14 3763.95 -2.54717e+13 -2.54717e+13
+    -0.236816 -7.42572e+12 -7.42572e+12 -4065.37 3.52101e+12 3.52101e+12
+    -0.235352 -5.24559e+14 -5.24559e+14 -1063.82 -1.76268e+13 -1.76268e+13
+    -0.236816 -5.24559e+14 -5.24559e+14 -1824.71 -3.12069e+13 -3.12069e+13
+    -0.236816 -5.24559e+14 -5.24559e+14 -4228.63 -7.19978e+13 -7.19978e+13
+    -0.234863 -4.05641e+14 -4.05641e+14 -11979 -1.61926e+14 -1.61926e+14
+    -1.42541e+06 -3.63425e+14 -3.63425e+14 -8.37328e+10 1.07213e+14 1.07213e+14
+    -133.5 -1.56219e+14 -1.56219e+14 -8.35961e+06 7.40611e+13 7.40611e+13
+    -0.164062 -3.63425e+14 -3.63425e+14 -1550.02 -2.6373e+13 -2.6373e+13
+    -0.163574 -1.67906e+14 -1.67906e+14 -3028.38 5.82276e+13 5.82276e+13
+    -0.164062 -3.63425e+14 -3.63425e+14 3028.38 5.14401e+13 5.14401e+13
+    -0.164307 -3.63425e+14 -3.63425e+14 1550.02 2.6373e+13 2.6373e+13
+    -0.163818 -3.63425e+14 -3.63425e+14 -4839.3 -8.21462e+13 -8.21462e+13
+    -0.164307 -2.81036e+14 -2.81036e+14 -6317.66 -1.391e+14 -1.391e+14
+    -164 -3.63425e+14 -3.63425e+14 -1.2006e+07 9.29694e+13 9.29694e+13
+    -808.5 -2.4671e+11 -1.42881e+12 -4.22721e+07 2.06488e+12 2.1834e+12
+    -0.163574 -2.34705e+13 -2.34705e+13 5889.91 2.85118e+13 2.85118e+13
+    -0.163818 -3.82447e+12 -3.82447e+12 -2189.88 5.31664e+12 5.31664e+12
+    -0.163574 -3.63425e+14 -3.63425e+14 -4411.56 -7.53561e+13 -7.53561e+13
+    -0.163818 -3.63425e+14 -3.63425e+14 -3397.45 -5.76717e+13 -5.76717e+13
+    -0.164062 -3.63425e+14 -3.63425e+14 108.16 1.89851e+12 1.89851e+12
+    -0.164062 -3.63425e+14 -3.63425e+14 -7971.64 -1.35721e+14 -1.35721e+14
+    -4.49577e+07 -2.74667e+12 -7.08749e+12 -6.23375e+11 4.88985e+12 7.57431e+12
+    -0.164062 -3.51727e+13 -3.51727e+13 -108.16 2.71329e+13 2.71329e+13
+    -0.164307 -3.63425e+14 -3.63425e+14 3397.45 5.76717e+13 5.76717e+13
+    -0.163574 -1.3091e+12 -1.41705e+12 4411.56 3.57648e+12 3.26953e+12
+    -0.164307 -3.63425e+14 -3.63425e+14 2189.88 3.71962e+13 3.71962e+13
+    -0.164062 -3.63425e+14 -3.63425e+14 -5889.91 -1.00423e+14 -1.00423e+14
+    -0.163574 -3.63425e+14 -3.63425e+14 -6493.28 -1.10654e+14 -1.10654e+14
+    -0.163818 -5.08003e+13 -5.08003e+13 -5479.17 -1.52236e+13 -1.52236e+13
+    -1.61482e+11 -2.58342e+14 -2.58342e+14 -7.98679e+11 2.2103e+14 2.2103e+14
+    -0.271973 -1.0805e+13 -2.24035e+13 7711.9 3.9929e+13 2.94206e+13
+    -0.271484 -6.05708e+14 -6.05708e+14 5330.88 9.07922e+13 9.07922e+13
+    -0.271484 -5.82168e+12 -5.82168e+12 -503.11 6.58673e+12 6.58673e+12
+    -0.271973 -6.05708e+14 -6.05708e+14 503.11 9.15364e+12 9.15364e+12
+    -0.271484 -6.05708e+14 -6.05708e+14 -5330.88 -9.07922e+13 -9.07922e+13
+    -0.271973 -6.05708e+14 -6.05708e+14 -7711.9 -1.31583e+14 -1.31583e+14
+    -0.271973 -2.07323e+14 -2.07323e+14 -13545.9 -7.06235e+13 -7.06235e+13
+    -1 -1 -1 -1
+    -1 -1 999999 999999
+    -1 -1 -1 -1
+    0.05 1.732 1.732
+    0.05 1.732 1.732
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+  }
+
+primEdgedata { 5
+    17590 24769 39137
+    65552
+    0 5
+    30234 30234 30234 0
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 7204.09 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4933.44 815.261 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 55685.5 10603.6 1004.84 1 1 1 1 1 1
+    79343.1 130560 130560 130560 130560 32835.4 31457.8 63071.8 130560 130560 15322.4 130560 130560 130560 130560 32710.2 130560 130560 130560 41231.2 130560 27616.1 130560 130560 130560 130560 34211.9 13591.2 39862.6 130560 130560 130560 130560 130560 130560 130560 7577.29 130560 130560 130560 130560 130560 21358.4 60320.2 16602.9 130560 130560 130560 130560 130560 130560 57789.1 100962 130560 48220.7 56121.4 14670 55685.5 130560 130560 130560 130560 130560 130560 130560 130560
+    79343.1 130560 130560 130560 130560 32835.4 31457.8 63071.8 130560 130560 17020 130560 130560 130560 130560 49441.6 130560 130560 130560 41231.2 130560 27616.1 130560 130560 130560 130560 34211.9 14711.9 39862.6 130560 130560 130560 130560 130560 130560 130560 19552.4 130560 130560 130560 130560 130560 21358.4 60320.2 16602.9 130560 130560 130560 130560 130560 130560 57789.1 100962 130560 48220.7 56121.4 30417.3 55685.5 130560 130560 130560 130560 130560 130560 130560 130560
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    -1 -1 -1 -1
+    -1 -1 999999 999999
+    -1 -1 -1 -1
+    0.05 1.732 1.732
+    0.05 1.732 1.732
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+  }
+
+primBodydata { 5
+    17590 24769 39137
+    65552
+    0 5
+    30234 30234 30234 0
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    79343.1 130560 130560 130560 130560 32835.4 31457.8 63071.8 130560 130560 15322.4 130560 130560 130560 130560 32710.2 130560 130560 130560 41231.2 130560 27616.1 130560 130560 130560 130560 34211.9 13591.2 39862.6 130560 130560 130560 130560 130560 130560 130560 7577.29 130560 130560 130560 130560 130560 21358.4 60320.2 16602.9 130560 130560 130560 130560 130560 130560 57789.1 100962 130560 48220.7 56121.4 14670 13236.8 130560 130560 130560 130560 130560 130560 130560 130560
+    79343.1 130560 130560 130560 130560 32835.4 31457.8 63071.8 130560 130560 17020 130560 130560 130560 130560 49441.6 130560 130560 130560 41231.2 130560 27616.1 130560 130560 130560 130560 34211.9 14711.9 39862.6 130560 130560 130560 130560 130560 130560 130560 19552.4 130560 130560 130560 130560 130560 21358.4 60320.2 16602.9 130560 130560 130560 130560 130560 130560 57789.1 100962 130560 48220.7 56121.4 30417.3 26523.7 130560 130560 130560 130560 130560 130560 130560 130560
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    0 0 0 0 0 0
+    -1 -1 -1 -1
+    -1 -1 999999 999999
+    -1 -1 -1 -1
+    0.05 1.732 1.732
+    0.05 1.732 1.732
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+    0.05 0.866 0.866
+  }
+
+crop {0 0 4260 2304}
+"Adjust Lighting" 0
+"Hybrid Matte" 0
+"Fine Tuning" 0
+name Primatte3
+tile_color 0x9fffff
+selected true
+xpos -7497
+ypos 3234
+}
+Dot {
+name Dot188
+selected true
+xpos -7463
+ypos 3286
+}
+push 0
+Group {
+inputs 2
+name ColorDilatePF4
+knobChanged "\ntn = nuke.thisNode()\ntk = nuke.thisKnob()\n\nfullList =  tn\['fullList'].value().strip(\"\[']\").split(\"', '\")\nnodeList = fullList\[0], fullList\[1], fullList\[2], fullList\[3], fullList\[4], fullList\[5], fullList\[6]\npreviousLoopNum = tn\['previousLoopNum'].getValue()\n\ngrowTexture = tn\['growTexture'].getValue()\nqualityVal = int( tn\['quality'].getValue() )\n\n\n##### DEFINE VALUE CHANGES ##################\n\ndef valChange():\n    qualityBias = tn\['qualityBias'].getValue()\n    blurCenter = tn\['blurCenter'].getValue()\n    bcDistribution = tn\['bcDistribution'].getValue()\n    for i in range (0, qualityVal):\n        blurVal = nuke.toNode(fullList\[i*len(nodeList)])\n        erodeVal = nuke.toNode(fullList\[i*len(nodeList)+3])\n        blurCenterVal = nuke.toNode(fullList\[i*len(nodeList)+5])\n        if isinstance(growTexture, float) == True:\n            blurValSize = (growTexture/qualityVal*(i+1)*(1-qualityBias)) + (growTexture/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2)))\n            blurVal\['size'].setValue( blurValSize )\n            erodeVal\['size'].setValue(blurVal\['size'].getValue()/2)\n            blurCenterVal\['size'].setValue( ( blurValSize*(1-bcDistribution) +  (blurValSize*(bcDistribution*(pow(i+1, 2)/pow(qualityVal, 2)))) ) * blurCenter )\n        else:\n            blurVal\['size'].setValue(\[ (growTexture\[0]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[0]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) , (growTexture\[1]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[1]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) ])\n            erodeVal\['size'].setValue(\[blurVal\['size'].getValue()\[0]/2,blurVal\['size'].getValue()\[1]/2])\n            blurCenterVal\['size'].setValue(\[ (growTexture\[0]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[0]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) , (growTexture\[1]/qualityVal*(i+1)*(1-qualityBias)) + (growTexture\[1]/qualityVal*(i+1)) * (qualityBias*(pow(i+1, 2)/pow(qualityVal, 2))) ])\n\ndef filterChange():\n    filters = int( tn\['filter'].getValue() )\n    filterQuality = int( tn\['filterQuality'].getValue() )\n    crop = int( tn\['crop'].getValue() )\n    for i in range (0, qualityVal):\n        blurVal = nuke.toNode(fullList\[i*len(nodeList)])\n        blurVal\['filter'].setValue( filters )\n        blurVal\['quality'].setValue( filterQuality )\n        blurVal\['crop'].setValue( crop )\n        blurCenterVal = nuke.toNode(fullList\[i*len(nodeList)])\n        blurCenterVal\['filter'].setValue( filters )\n        blurCenterVal\['quality'].setValue( filterQuality )\n        blurCenterVal\['crop'].setValue( crop )\n\n\n##### CREATE THE NODES ###################\n\nif tk.name()=='quality':\n    if qualityVal < 1:\n        qualityVal = 1\n    elif qualityVal >100:\n        qualityVal = 100\n    tn\['quality'].setValue( qualityVal )\n    \n\n    if qualityVal != previousLoopNum:\n\n\n        inputDep = nuke.dependencies(\[nuke.toNode('Unpremult1')], nuke.INPUTS)\n        resultOver = nuke.toNode( inputDep\[0].name() )\n\n        difference = qualityVal-previousLoopNum\n        if difference > 0:\n            for i in range (1, int(difference+1)):\n                \n                blur = nuke.nodes.Blur ()\n                blur\['channels'].setValue('rgba')\n                blur\['maskChannelInput'].setValue('none')\n                blur.setInput (0, nuke.toNode('Switch2'))\n                \n                unpremult = nuke.nodes.Unpremult ()\n                unpremult\['channels'].setValue('rgb')\n                unpremult\['alpha'].setValue('rgba.alpha')\n                unpremult\['invert'].setValue(0)\n                unpremult.setInput (0, blur)\n                \n                expression = nuke.nodes.Expression(expr3 = 'a==0?0:1')\n                expression.setInput (0, unpremult)\n                \n                erode = nuke.nodes.FilterErode ()\n                erode\['channels'].setValue( 'rgba.alpha' )\n                erode\['filter'].setValue( 'gaussian' )\n                erode.setInput (0, expression)\n                \n                premult = nuke.nodes.Premult ()\n                premult\['channels'].setValue( 'rgb' )\n                premult\['alpha'].setValue( 'rgba.alpha' )\n                premult.setInput (0, erode)\n\n                blurCenter = nuke.nodes.Blur ()\n                blurCenter\['channels'].setValue('rgba')\n                blurCenter\['maskChannelInput'].setValue('none')\n                blurCenter.setInput (0, premult)\n\n                mergeOver = nuke.nodes.Merge2 ()\n                mergeOver\['operation'].setValue( 'over' )\n                mergeOver\['sRGB'].setValue( 0 )\n                mergeOver\['screen_alpha'].setValue( 0 )\n                mergeOver\['bbox'].setValue( 'union' )\n                mergeOver\['Achannels'].setValue( 'rgba' )\n                mergeOver\['Bchannels'].setValue( 'rgba' )\n                mergeOver\['output'].setValue( 'rgba' )\n                mergeOver\['also_merge'].setValue( 'none' )\n                mergeOver.setInput (0, blurCenter)\n                mergeOver.setInput (1, resultOver)\n                \n                \n                resultOver = mergeOver\n                \n                \n                nodeList = blur.name(), unpremult.name(), expression.name(), erode.name(), premult.name(), blurCenter.name(), resultOver.name()\n                fullList.extend(nodeList)\n\n\n##### DELETE THE NODES ##################################\n\n        else:\n            fullList.reverse()\n            for i in range (int(qualityVal), int(previousLoopNum)):\n                for i in range (0, len(nodeList)):\n                    nuke.delete(nuke.toNode(fullList\[0]))\n                    del fullList\[0]\n                resultOver = nuke.toNode(fullList\[0])\n                resultExpression = nuke.toNode(fullList\[3])\n            fullList.reverse()\n\n        nuke.toNode('Unpremult1').setInput(0, resultOver)\n        valChange()\n        filterChange()\n                \n        previousLoopNum = qualityVal\n        \n        tn\['previousLoopNum'].setValue( int(previousLoopNum) )\n        tn\['fullList'].setValue( str(fullList) )\n\n\n\n##### CHANGE EXISTING VALUES #####################\n\nif tk.name()=='growTexture':\n    valChange()\n    \nif tk.name()=='qualityBias':\n    valChange()\n\nif tk.name()=='blurCenter':\n    valChange()\n\nif tk.name()=='bcDistribution':\n    valChange()\n    \nif tk.name()=='filter':\n    filterChange()\n    \nif tk.name()=='filterQuality':\n    filterChange()\n    \nif tk.name()=='crop':\n    filterChange()\n\n\n"
+note_font "Bitstream Vera Sans"
+selected true
+xpos -7344
+ypos 3285
+addUserKnob {20 User l fColourDilate}
+addUserKnob {14 growTexture l "Grow Texture" R 0 100}
+growTexture 240
+addUserKnob {14 erodeMatte l "Erode Matte" t "Dilate or erode the matte to adjust the grow start paint" R -100 100}
+erodeMatte -24
+addUserKnob {7 expandMatte l "Expand Matte" t "Expand or compress the matte to adjust the grow start point" R -0.99999 0.99999}
+expandMatte -0.99999
+addUserKnob {7 quality l Iterations t "The number of iterations Colour Dilate will go through.  More is slower.  Max steps is 100" R 1 20}
+quality 10
+addUserKnob {7 qualityBias l Distribution t "0 is a linear distribution.  1 is exponential distribution.\nExponential is smoother with low quality.\nLinear is better with high quality."}
+qualityBias 1
+addUserKnob {26 ""}
+addUserKnob {7 blurCenter l "Blur Center" t "Soften central area where opposite dilates meet creating a hard line.  Is a multiple of Grow Texture." R 0 5}
+blurCenter 1
+addUserKnob {7 bcDistribution l "BC Distribution" t "0 blurs a direct multiple of Grow Texture. 1 blurs exponentially more towards the center."}
+addUserKnob {26 ""}
+addUserKnob {4 filter l Filter t "filter\n" M {box triangle quadratic gaussian ""}}
+filter gaussian
+addUserKnob {3 filterQuality l " " -STARTLINE}
+filterQuality 15
+addUserKnob {6 crop l "crop to format" -STARTLINE}
+crop true
+addUserKnob {4 matteOutput l "Matte Output" M {rgb.alpha matte "dilated matte" "dilated area" "grain matte" ""}}
+matteOutput "dilated matte"
+addUserKnob {26 blank l "" -STARTLINE T "      "}
+addUserKnob {6 invertMatte l "invert Matte" -STARTLINE}
+addUserKnob {26 blank2 l "" -STARTLINE T "      "}
+addUserKnob {6 rgbIsPremult l "RGB is Premult?" -STARTLINE}
+addUserKnob {1 colorDilate l INVISIBLE t "Keep me hidden" +INVISIBLE}
+addUserKnob {3 previousLoopNum l INVISIBLE +INVISIBLE}
+previousLoopNum 10
+addUserKnob {1 fullList l INVISIBLE +INVISIBLE}
+fullList "\['Blur1', 'Unpremult2', 'Expression1', 'FilterErode2', 'Premult1', 'BlurCenter', 'Merge2', 'Blur2', 'Unpremult3', 'Expression2', 'FilterErode3', 'Premult2', 'Blur3', 'Merge5', 'Blur4', 'Unpremult4', 'Expression3', 'FilterErode4', 'Premult3', 'Blur5', 'Merge6', 'Blur6', 'Unpremult5', 'Expression4', 'FilterErode5', 'Premult4', 'Blur7', 'Merge7', 'Blur8', 'Unpremult6', 'Expression5', 'FilterErode6', 'Premult5', 'Blur9', 'Merge8', 'Blur10', 'Unpremult7', 'Expression6', 'FilterErode7', 'Premult6', 'Blur11', 'Merge9', 'Blur12', 'Unpremult8', 'Expression7', 'FilterErode8', 'Premult7', 'Blur13', 'Merge10', 'Blur14', 'Unpremult9', 'Expression9', 'FilterErode9', 'Premult8', 'Blur15', 'Merge11', 'Blur16', 'Unpremult10', 'Expression10', 'FilterErode10', 'Premult9', 'Blur17', 'Merge12', 'Blur18', 'Unpremult11', 'Expression11', 'FilterErode11', 'Premult10', 'Blur19', 'Merge13']"
+}
+Input {
+inputs 0
+name InputMask
+note_font "Bitstream Vera Sans"
+xpos 803
+ypos -665
+number 1
+}
+set Nbfd3dae0 [stack 0]
+AddChannels {
+channels alpha
+name AddChannels2
+note_font "Bitstream Vera Sans"
+xpos 365
+ypos 1125
+}
+Dot {
+name Dot3
+note_font "Bitstream Vera Sans"
+xpos 399
+ypos 1183
+}
+Input {
+inputs 0
+name InputRGB
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -531
+}
+set Nc4efb740 [stack 0]
+AddChannels {
+channels alpha
+name AddChannels1
+note_font "Bitstream Vera Sans"
+xpos 348
+ypos 949
+}
+Dot {
+name Dot2
+note_font "Bitstream Vera Sans"
+xpos 382
+ypos 1078
+}
+push $Nbfd3dae0
+FilterErode {
+channels alpha
+size {{invertMatte==0?erodeMatte.w:-erodeMatte.w i} {invertMatte==0?erodeMatte.h:-erodeMatte.h i}}
+name FilterErode1
+note_font "Bitstream Vera Sans"
+xpos 803
+ypos -621
+}
+Invert {
+channels alpha
+mix {{invertMatte i}}
+name Invert2
+note_font "Bitstream Vera Sans"
+xpos 803
+ypos -563
+}
+Grade {
+channels alpha
+blackpoint {{"clamp(expandMatte, 0, 1)" i}}
+whitepoint {{"clamp(1+expandMatte, 0, 1)" i}}
+white_clamp true
+name Grade1
+tile_color 0xffffff01
+note_font " Bold"
+xpos 803
+ypos -505
+}
+Grade {
+channels alpha
+whitepoint 0.5
+black_clamp false
+white_clamp true
+name Grade6
+tile_color 0xffffff01
+note_font " Bold"
+xpos 803
+ypos -345
+}
+Dot {
+name Dot1
+note_font "Bitstream Vera Sans"
+xpos 837
+ypos -287
+}
+set Nbfa2f910 [stack 0]
+push $Nc4efb740
+AddChannels {
+channels alpha
+name AddChannels3
+note_font "Bitstream Vera Sans"
+xpos 1120
+ypos -444
+}
+push $Nc4efb740
+Shuffle {
+alpha white
+name Shuffle1
+tile_color 0x99999901
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -458
+}
+Crop {
+box {{InputRGB.bbox.x i x1001 542} {InputRGB.bbox.y i} {InputRGB.bbox.r i} {InputRGB.bbox.t i}}
+name Crop3
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -414
+}
+Switch {
+inputs 2
+which {{rgbIsPremult i}}
+name Switch1
+note_font "Bitstream Vera Sans"
+xpos 1013
+ypos -370
+}
+Dot {
+name Dot5
+note_font "Bitstream Vera Sans"
+xpos 1047
+ypos -326
+}
+set Nbfd1c8f0 [stack 0]
+Merge2 {
+inputs 2
+operation stencil
+bbox intersection
+name Merge1
+tile_color 0x7fff01
+note_font Normal
+xpos 1013
+ypos -292
+}
+push $Nbfa2f910
+Dot {
+name Dot4
+note_font "Bitstream Vera Sans"
+xpos 837
+ypos -253
+}
+push $Nbfd1c8f0
+Dot {
+name Dot6
+note_font "Bitstream Vera Sans"
+xpos 946
+ypos -326
+}
+Merge2 {
+inputs 2
+operation stencil
+bbox B
+name Merge3
+tile_color 0x7fff01
+note_font Normal
+xpos 912
+ypos -258
+}
+Dot {
+name Dot7
+note_font "Bitstream Vera Sans"
+xpos 946
+ypos -192
+}
+Switch {
+inputs 2
+which {{invertMatte i}}
+name Switch2
+note_font "Bitstream Vera Sans"
+xpos 1002
+ypos -196
+}
+set Nbfd9c960 [stack 0]
+push $Nbfd9c960
+Blur {
+channels rgba
+size 0.24
+name Blur1
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos -26
+}
+Unpremult {
+name Unpremult2
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 18
+}
+Expression {
+expr3 a==0?0:1
+name Expression1
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 62
+}
+FilterErode {
+channels alpha
+size 0.12
+filter gaussian
+name FilterErode2
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 106
+}
+Premult {
+name Premult1
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 164
+}
+Blur {
+channels rgba
+size 0.24
+name BlurCenter
+note_font "Bitstream Vera Sans"
+xpos 1336
+ypos 222
+}
+Merge2 {
+inputs 2
+name Merge2
+tile_color 0x7fff01
+note_font Normal
+xpos 1336
+ypos 280
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 1.92
+name Blur2
+xpos 1882
+ypos -154
+}
+Unpremult {
+name Unpremult3
+xpos 1882
+ypos -112
+}
+Expression {
+expr3 a==0?0:1
+name Expression2
+xpos 1882
+ypos -70
+}
+FilterErode {
+channels alpha
+size 0.96
+filter gaussian
+name FilterErode3
+xpos 1992
+ypos -28
+}
+Premult {
+name Premult2
+xpos 1992
+ypos 14
+}
+Blur {
+channels rgba
+size 1.92
+name Blur3
+xpos 1992
+ypos 56
+}
+Merge2 {
+inputs 2
+name Merge5
+tile_color 0x7fff01
+note_font Normal
+xpos 1992
+ypos 280
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 6.48
+name Blur4
+xpos 1772
+ypos -154
+}
+Unpremult {
+name Unpremult4
+xpos 1772
+ypos -112
+}
+Expression {
+expr3 a==0?0:1
+name Expression3
+xpos 1772
+ypos -70
+}
+FilterErode {
+channels alpha
+size 3.24
+filter gaussian
+name FilterErode4
+xpos 1882
+ypos -28
+}
+Premult {
+name Premult3
+xpos 1882
+ypos 14
+}
+Blur {
+channels rgba
+size 6.48
+name Blur5
+xpos 1882
+ypos 322
+}
+Merge2 {
+inputs 2
+name Merge6
+tile_color 0x7fff01
+note_font Normal
+xpos 1992
+ypos 322
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 15.36
+name Blur6
+}
+Unpremult {
+name Unpremult5
+}
+Expression {
+expr3 a==0?0:1
+name Expression4
+}
+FilterErode {
+channels alpha
+size 7.68
+filter gaussian
+name FilterErode5
+}
+Premult {
+name Premult4
+}
+Blur {
+channels rgba
+size 15.36
+name Blur7
+}
+Merge2 {
+inputs 2
+name Merge7
+tile_color 0x7fff01
+note_font Normal
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 30
+name Blur8
+}
+Unpremult {
+name Unpremult6
+}
+Expression {
+expr3 a==0?0:1
+name Expression5
+}
+FilterErode {
+channels alpha
+size 15
+filter gaussian
+name FilterErode6
+}
+Premult {
+name Premult5
+}
+Blur {
+channels rgba
+size 30
+name Blur9
+}
+Merge2 {
+inputs 2
+name Merge8
+tile_color 0x7fff01
+note_font Normal
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 51.84
+name Blur10
+}
+Unpremult {
+name Unpremult7
+}
+Expression {
+expr3 a==0?0:1
+name Expression6
+}
+FilterErode {
+channels alpha
+size 25.92
+filter gaussian
+name FilterErode7
+}
+Premult {
+name Premult6
+}
+Blur {
+channels rgba
+size 51.84
+name Blur11
+}
+Merge2 {
+inputs 2
+name Merge9
+tile_color 0x7fff01
+note_font Normal
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 82.32
+name Blur12
+}
+Unpremult {
+name Unpremult8
+}
+Expression {
+expr3 a==0?0:1
+name Expression7
+}
+FilterErode {
+channels alpha
+size 41.16
+filter gaussian
+name FilterErode8
+}
+Premult {
+name Premult7
+}
+Blur {
+channels rgba
+size 82.32
+name Blur13
+}
+Merge2 {
+inputs 2
+name Merge10
+tile_color 0x7fff01
+note_font Normal
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 122.88
+name Blur14
+}
+Unpremult {
+name Unpremult9
+}
+Expression {
+expr3 a==0?0:1
+name Expression9
+}
+FilterErode {
+channels alpha
+size 61.44
+filter gaussian
+name FilterErode9
+}
+Premult {
+name Premult8
+}
+Blur {
+channels rgba
+size 122.88
+name Blur15
+}
+Merge2 {
+inputs 2
+name Merge11
+tile_color 0x7fff01
+note_font Normal
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 174.96
+name Blur16
+}
+Unpremult {
+name Unpremult10
+}
+Expression {
+expr3 a==0?0:1
+name Expression10
+}
+FilterErode {
+channels alpha
+size 87.48
+filter gaussian
+name FilterErode10
+}
+Premult {
+name Premult9
+}
+Blur {
+channels rgba
+size 174.96
+name Blur17
+}
+Merge2 {
+inputs 2
+name Merge12
+tile_color 0x7fff01
+note_font Normal
+}
+push $Nbfd9c960
+Blur {
+channels rgba
+size 240
+name Blur18
+}
+Unpremult {
+name Unpremult11
+}
+Expression {
+expr3 a==0?0:1
+name Expression11
+}
+FilterErode {
+channels alpha
+size 120
+filter gaussian
+name FilterErode11
+}
+Premult {
+name Premult10
+}
+Blur {
+channels rgba
+size 240
+name Blur19
+}
+Merge2 {
+inputs 2
+name Merge13
+tile_color 0x7fff01
+note_font Normal
+}
+Unpremult {
+name Unpremult1
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 966
+}
+Dot {
+name Dot11
+xpos 258
+ypos 1020
+}
+set Nbdfde660 [stack 0]
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+mix {{matteOutput==0?1:0 i}}
+name Copy2
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1068
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+mix {{matteOutput==1?1:0}}
+name Copy1
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1173
+}
+Dot {
+name Dot8
+xpos 258
+ypos 1227
+}
+set Nbe7f5f80 [stack 0]
+Dot {
+name Dot9
+xpos 453
+ypos 1227
+}
+Expression {
+expr3 a<=0.000001?0:1
+name Expression12
+note_font "Bitstream Vera Sans"
+xpos 419
+ypos 1261
+}
+Dot {
+name Dot10
+xpos 453
+ypos 1303
+}
+push $Nbdfde660
+Dot {
+name Dot13
+xpos 521
+ypos 1020
+}
+Dot {
+name Dot12
+xpos 521
+ypos 1205
+}
+push $Nc4efb740
+Merge2 {
+inputs 2
+operation difference
+bbox B
+name Merge14
+tile_color 0x7fff01
+note_font Normal
+xpos 563
+ypos 1201
+}
+Keyer {
+operation "luminance key"
+range {0 1e-05 1 1}
+name Keyer1
+xpos 563
+ypos 1243
+}
+Merge2 {
+inputs 2
+operation mask
+bbox B
+name Merge15
+tile_color 0x7fff01
+note_font Normal
+xpos 563
+ypos 1299
+}
+Dot {
+name Dot14
+xpos 597
+ypos 1341
+}
+push $Nbe7f5f80
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+mix {{matteOutput==4?1:0 i}}
+name Copy3
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1331
+}
+Expression {
+expr3 a<=0.000001?0:1
+mix {{matteOutput==3?1:0 i}}
+name Expression8
+note_font "Bitstream Vera Sans"
+xpos 224
+ypos 1418
+}
+push $Nc4efb740
+Merge2 {
+inputs 2
+operation copy
+bbox B
+name Merge4
+tile_color 0x7fff01
+note_font Normal
+xpos 932
+ypos 1418
+}
+Output {
+name Output1
+note_font "Bitstream Vera Sans"
+xpos 932
+ypos 1579
+}
+end_group
+StickyNote {
+inputs 0
+name StickyNote10
+tile_color 0x4ac8e2ff
+label "BLUE SCREEN CLEANUP"
+note_font_size 50
+selected true
+xpos -8417
+ypos 2754
+}
