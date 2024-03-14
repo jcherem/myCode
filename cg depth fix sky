@@ -1,0 +1,238 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+Group {
+name CG_Depth_Fix8
+selected true
+xpos 22466
+ypos -1405
+addUserKnob {20 User l "CG depth fix"}
+addUserKnob {41 color l "Depth BG value" T Constant3.color}
+}
+Input {
+inputs 0
+name Input1
+xpos -540
+ypos -410
+}
+Dot {
+name Dot36
+xpos -509
+ypos -359
+}
+set N2d96c920 [stack 0]
+Dot {
+name Dot37
+xpos -409
+ypos -359
+}
+Group {
+name Unpremult32bit
+xpos -440
+ypos -310
+addUserKnob {20 User}
+addUserKnob {26 info l "" +STARTLINE T "\nUnpremulty 32bit channels with 32bit channel and the rest by alpha from RGBA.\n\n-_compound_depth\n-_Nworld\n-_Pworld\n-_Pobject\n-_Pref\n-_motion_extra\n-_depth_extra"}
+}
+Input {
+inputs 0
+name Input1
+xpos -95
+ypos 311
+}
+Dot {
+name Dot1
+xpos -61
+ypos 394
+}
+set N60297dd0 [stack 0]
+Dot {
+name Dot2
+label 32bit
+note_font_size 21
+xpos 100
+ypos 394
+}
+add_layer {__depth __depth.red __depth.green __depth.blue __depth.alpha __depth.r __depth.z __depth.x __depth.y __depth.Z __depth.r __depth.Z __depth.r}
+Unpremult {
+channels all
+alpha __depth.blue
+name Unpremult1
+xpos 66
+ypos 431
+}
+set N902a80b0 [stack 0]
+Dot {
+name Dot3
+xpos 100
+ypos 761
+}
+push $N902a80b0
+Dot {
+name Dot4
+xpos 100
+ypos 711
+}
+push $N902a80b0
+Dot {
+name Dot5
+xpos 100
+ypos 661
+}
+push $N902a80b0
+Dot {
+name Dot6
+xpos 100
+ypos 611
+}
+push $N902a80b0
+Dot {
+name Dot7
+xpos 100
+ypos 561
+}
+push $N902a80b0
+Dot {
+name Dot8
+xpos 100
+ypos 511
+}
+push $N60297dd0
+Unpremult {
+channels all
+name Unpremult2
+xpos -95
+ypos 438
+}
+Copy {
+inputs 2
+channels __depth
+name Copy1
+xpos -95
+ypos 495
+}
+add_layer {__normal_world __normal_world.x __normal_world.y __normal_world.z __normal_world.red __normal_world.green __normal_world.blue __normal_world.alpha}
+Copy {
+inputs 2
+channels __normal_world
+name Copy2
+xpos -92
+ypos 545
+}
+add_layer {__position_object __position_object.x __position_object.y __position_object.z}
+Copy {
+inputs 2
+channels __position_object
+name Copy3
+xpos -92
+ypos 595
+}
+add_layer {__position_reference __position_reference.x __position_reference.y __position_reference.z}
+Copy {
+inputs 2
+channels __position_reference
+name Copy4
+xpos -92
+ypos 645
+}
+add_layer {__position_world __position_world.x __position_world.y __position_world.z __position_world.red __position_world.green __position_world.blue __position_world.alpha}
+Copy {
+inputs 2
+channels __position_world
+name Copy5
+xpos -92
+ypos 695
+}
+add_layer {__motion_vector __motion_vector.x __motion_vector.y __motion_vector.z}
+Copy {
+inputs 2
+channels __motion_vector
+name Copy6
+xpos -92
+ypos 745
+}
+Output {
+name Output1
+xpos -92
+ypos 839
+}
+end_group
+set N6add9780 [stack 0]
+Shuffle {
+in __depth
+alpha red
+name Shuffle4
+xpos -240
+ypos -316
+}
+push $N6add9780
+Shuffle {
+in __depth
+in2 rgba
+alpha alpha2
+name Shuffle3
+xpos -440
+ypos -316
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy2
+xpos -440
+ypos -266
+}
+Clamp {
+channels alpha
+name Clamp4
+xpos -440
+ypos -216
+}
+Constant {
+inputs 0
+channels rgb
+color 10000
+name Constant3
+xpos -240
+ypos -233
+}
+Dot {
+name Dot38
+xpos -209
+ypos -159
+}
+Merge2 {
+inputs 2
+name Merge34
+xpos -440
+ypos -160
+}
+Dot {
+name Dot39
+xpos -409
+ypos -109
+}
+push $N2d96c920
+ShuffleCopy {
+inputs 2
+alpha alpha2
+black red
+white green
+red2 blue
+green2 black
+out2 __depth
+name ShuffleCopy1
+xpos -540
+ypos -66
+}
+Remove {
+channels {-__depth.red -__depth.green -__depth.blue __depth.alpha}
+name Remove1
+xpos -540
+ypos -16
+}
+Output {
+name Output1
+xpos -540
+ypos 90
+}
+end_group
