@@ -1,0 +1,160 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+push $cut_paste_input
+Dot {
+ name Dot1
+ note_font_size 35
+ selected true
+ xpos 1650
+ ypos -32
+}
+set N51cbf150 [stack 0]
+Group {
+ name Diffuse1
+ selected true
+ xpos 1414
+ ypos 70
+ addUserKnob {20 settings l Settings}
+ addUserKnob {41 channels T Blur1.channels}
+ addUserKnob {41 mix T Blur1.mix}
+ addUserKnob {41 multiply T Grade1.multiply}
+ addUserKnob {26 "" l mask T ""}
+ addUserKnob {41 maskChannelMask l "" -STARTLINE T Blur1.maskChannelMask}
+ addUserKnob {41 invert_mask l invert -STARTLINE T Blur1.invert_mask}
+}
+ Input {
+  inputs 0
+  name Input
+  xpos 296
+  ypos -660
+ }
+ Dot {
+  name Dot1
+  xpos 330
+  ypos -593
+ }
+set N8d72ca70 [stack 0]
+ Dot {
+  name Dot3
+  xpos 169
+  ypos -593
+ }
+ Dot {
+  name Dot2
+  xpos 169
+  ypos -36
+ }
+ Input {
+  inputs 0
+  name Matte
+  xpos 472
+  ypos -662
+  number 1
+ }
+ Dot {
+  name Dot6
+  xpos 506
+  ypos -526
+ }
+set N7447d090 [stack 0]
+push $N7447d090
+push $N7447d090
+push $N7447d090
+push $N7447d090
+push $N7447d090
+push $N7447d090
+push $N7447d090
+push $N8d72ca70
+ Blur {
+  inputs 1+1
+  channels rgb
+  size 5
+  maskChannelMask -rgba.alpha
+  mix 0.1
+  name Blur1
+  xpos 296
+  ypos -535
+ }
+ Blur {
+  inputs 1+1
+  channels {{{parent.Blur1.channels}}}
+  size 12
+  mix {{parent.Blur1.mix}}
+  name Blur7
+  xpos 296
+  ypos -481
+ }
+ Blur {
+  inputs 1+1
+  channels {{{parent.Blur1.channels}}}
+  size 25
+  mix {{parent.Blur1.mix}}
+  name Blur6
+  xpos 296
+  ypos -416
+ }
+ Blur {
+  inputs 1+1
+  channels {{{parent.Blur1.channels}}}
+  size 50
+  mix {{parent.Blur1.mix}}
+  name Blur2
+  selected true
+  xpos 296
+  ypos -338
+ }
+ Blur {
+  inputs 1+1
+  channels {{{parent.Blur1.channels}}}
+  size 100
+  mix {{parent.Blur1.mix}}
+  name Blur3
+  xpos 296
+  ypos -277
+ }
+ Blur {
+  inputs 1+1
+  channels {{{parent.Blur1.channels}}}
+  size 200
+  mix {{parent.Blur1.mix}}
+  name Blur4
+  xpos 296
+  ypos -225
+ }
+ Blur {
+  inputs 1+1
+  channels {{{parent.Blur1.channels}}}
+  size 400
+  mix {{parent.Blur1.mix}}
+  name Blur5
+  xpos 296
+  ypos -167
+ }
+ Grade {
+  inputs 1+1
+  name Grade1
+  xpos 296
+  ypos -91
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos 296
+  ypos -39
+ }
+ Output {
+  name Output1
+  xpos 296
+  ypos 76
+ }
+end_group
+push $N51cbf150
+Dissolve {
+ inputs 2
+ which 0.255
+ name Dissolve1
+ label "mix:\[value which]"
+ selected true
+ xpos 1616
+ ypos 58
+}
