@@ -1,0 +1,3537 @@
+set cut_paste_input [stack 0]
+version 12.1 v5
+BackdropNode {
+inputs 0
+name BackdropNode320
+tile_color 0x2f4839ff
+label Cleanplate
+note_font_size 42
+note_font_color 0xb1a892ff
+selected true
+xpos 21871
+ypos 51261
+bdwidth 240
+bdheight 240
+}
+BackdropNode {
+inputs 0
+name BackdropNode321
+tile_color 0x45632bff
+label Key
+note_font_size 42
+note_font_color 0xdff8bfff
+selected true
+xpos 21679
+ypos 51580
+bdwidth 641
+bdheight 245
+}
+BackdropNode {
+inputs 0
+name BackdropNode322
+tile_color 0x2c2c2cff
+label ADDITIVE
+note_font_size 42
+note_font_color 0x7f7f7fff
+selected true
+xpos 22359
+ypos 51198
+bdwidth 564
+bdheight 479
+}
+BackdropNode {
+inputs 0
+name BackdropNode323
+tile_color 0x6b482cff
+label Scan
+note_font_size 42
+note_font_color 0xd4c581ff
+selected true
+xpos 21984
+ypos 50211
+bdwidth 240
+bdheight 308
+}
+BackdropNode {
+inputs 0
+name BackdropNode324
+tile_color 0x8e388e00
+label "REMOVE\nVIGNETTE"
+note_font_size 42
+selected true
+xpos 22054
+ypos 50614
+bdwidth 219
+bdheight 160
+}
+BackdropNode {
+inputs 0
+name BackdropNode325
+tile_color 0x2d45aaff
+label "REMOVE \nDETAILS \nON SCREEN"
+note_font_size 42
+selected true
+xpos 21919
+ypos 50824
+bdwidth 235
+bdheight 258
+}
+push 0
+Roto {
+inputs 0
+output alpha
+cliptype none
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44f00000 x44490000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {px
+        {x449b4000 x449ba000}
+        {{{xc3fbd780 -}      xc3fbd780}
+      {{0 -}      0}}
+        {{{x45594001 -}}
+      {{x4374000a 0 1 xc0800000 1}
+       {x4374000a xc0800000 1 0 1}}}
+        {{{x43fbd780 0 1 xb8aaaaab 1}      x43fbd780}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{xc3d7641b -}      xc3d7641b}}
+        {{{x458a6000 0 1 x420aaaab 1}      x458a6000}
+      {{x44560002 0 1 xc2555550 1}      x44560002}}
+        {{{0 -}      0}
+      {{x43d7641c -}      x43d7641c}}
+        {{{x43fbd780 -}      x43fbd780}
+      {{0 -}      0}}
+        {{{x455bc000 0 1 x420aaaab 1}      x455bc000}
+      {{x44cc8001 0 1 xc255554b 1}      x44cc8001}}
+        {{{xc3fbd780 -}      xc3fbd780}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{x43d7641c -}      x43d7641c}}
+        {{{x4522c000 0 1 x420aaaab 1}      x4522c000}
+      {{x44560002 0 1 xc2555550 1}      x44560002}}
+        {{{0 -}      0}
+      {{xc3d7641b -}      xc3d7641b}}}}
+      {cc
+       {f 8192}
+       {px
+        {x449b4000 x449ba000}
+        {{{xc3fbd780 -}      xc3fbd780}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{xc3240000 -}      xc3240000}}
+        {{{x43fbd780 0 1 xb8aaaaab 1}      x43fbd780}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{xc3d7641b -}      xc3d7641b}}
+        {{{x43240000 -}      x43240000}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{x43d7641c -}      x43d7641c}}
+        {{{x43fbd780 -}      x43fbd780}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{x43240000 -}      x43240000}}
+        {{{xc3fbd780 -}      xc3fbd780}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{x43d7641c -}      x43d7641c}}
+        {{{xc3240000 -}      xc3240000}
+      {{0 -}      0}}
+        {{{0 -}      0}
+      {{xc3d7641b -}      xc3d7641b}}}}}
+     {t x45574000 x44430000}
+     {a opc
+   {{x449ae000 0 0 1 x3f400000 1}
+    {x449b2000 1 -}
+    {x449b4000}
+    {x449be000 0 xbe99999a 1 0 1}}     osw x41200000 osf 0 str 1 spx x44f00000 spy x44490000 sb 1 ltn x449b4000 ltm x449b4000 tt x40e00000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_ripple true
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {1920 804}
+colorOverlay {0 0 0 0}
+opacity {{curve x1239 0 x1241 1 x1242 1 x1247 0}}
+lifetime_type "all frames"
+lifetime_start 1242
+lifetime_end 1242
+motionblur_shutter_offset_type centred
+source_black_outside true
+name Roto196
+selected true
+xpos 22234
+ypos 51977
+}
+Dot {
+name Dot1189
+selected true
+xpos 22266
+ypos 52079
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_roto_id_mp01_s01_00_L100_v001/3840x1608/e_104_msf_2000_roto_id_mp01_s01_00_L100_v001.####.exr
+localizationPolicy off
+format "3840 1608 0 0 3840 1608 1 GR Working"
+proxy_format "640 480 0 0 640 480 1 Alexa 65 HD 1.78(proxy)"
+first 990
+last 1604
+origfirst 990
+origlast 1604
+origset true
+smartGrade true
+name Read141
+selected true
+xpos 22490
+ypos 51932
+postage_stamp_frame 1297
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_roto_id_mp01_s01_00_L100_v001/3840x1608/e_104_msf_2000_roto_id_mp01_s01_00_L100_v001.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 02d0be14-c2ef-43f0-a388-03912848640d
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 928a9ed9-2803-43ff-82c3-1127e05ec4b6
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 53d37115-d25e-46cb-88b6-6c8f9f8ca94b
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 1
+addUserKnob {43 ivy_notes l Notes}
+ivy_notes "Submitting roto as final"
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_roto_id_mp01_s01_00_L010_v003/3840x1608/e_104_msf_2000_roto_id_mp01_s01_00_L010_v003.####.exr
+localizationPolicy off
+format "3840 1608 0 0 3840 1608 1 GR Working"
+proxy_format "640 480 0 0 640 480 1 Alexa 65 HD 1.78(proxy)"
+first 1225
+last 1587
+origfirst 1225
+origlast 1587
+origset true
+smartGrade true
+name Read142
+selected true
+xpos 22356
+ypos 51810
+postage_stamp_frame 1406
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_roto_id_mp01_s01_00_L010_v003/3840x1608/e_104_msf_2000_roto_id_mp01_s01_00_L010_v003.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid bfc9eb58-2141-4b32-b2d6-8f174dda50b5
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 6887f63f-e03d-4b98-b9b4-3beb2f660757
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 4f70ed14-e638-4e2d-b637-838c8aa9acf2
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 3
+addUserKnob {43 ivy_notes l Notes}
+ivy_notes "roto done"
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Merge2 {
+inputs 2
+name Merge552
+selected true
+xpos 22356
+ypos 51966
+}
+KeyChewV4 {
+name KeyChewV4_19
+selected true
+xpos 22356
+ypos 52030
+chew 5
+soften 5
+bbox {{"\[python nuke.thisNode().input(0).format().x()]"} {"\[python nuke.thisNode().input(0).format().y()]"} {"\[python nuke.thisNode().input(0).format().r()]"} {"\[python nuke.thisNode().input(0).format().t()]"}}
+}
+Merge2 {
+inputs 2
+operation max
+name Merge635
+selected true
+xpos 22356
+ypos 52077
+}
+Dot {
+name Dot1190
+selected true
+xpos 22388
+ypos 52119
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_prep_precomp_bg_markers_mp01_s01_00_v002/3840x1608/E_104_msf_2000_prep_precomp_bg_markers_mp01_s01_00_v002.####.exr
+localizationPolicy off
+format "3840 1608 0 0 3840 1608 1 GR Working"
+proxy_format "640 480 0 0 640 480 1 Alexa 65 HD 1.78(proxy)"
+first 990
+last 1604
+origfirst 990
+origlast 1604
+origset true
+smartGrade true
+name Read146
+selected true
+xpos 22078
+ypos 50401
+postage_stamp_frame 1297
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_prep_precomp_bg_markers_mp01_s01_00_v002/3840x1608/E_104_msf_2000_prep_precomp_bg_markers_mp01_s01_00_v002.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 3efa6c29-ac52-4ceb-928d-92970f755b9f
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 7e2218d1-3524-4e9c-ab22-43b63c610e63
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 3b42328b-649f-4dc9-be48-c13a44c38386
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 2
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Group {
+name IvyGroup2
+onCreate "__import__('dnnuke.core.ivy.tab.callbacks', fromlist=\['onCreate']).onCreate()"
+knobChanged "__import__('dnnuke.core.ivy.tab.callbacks', fromlist=\['knobChanged']).knobChanged()"
+tile_color 0x202226ff
+label "<b>lensFX_vignette_v\[format %03d \[value ivy_version]]</b>(comp)"
+selected true
+xpos 22064
+ypos 50715
+addUserKnob {20 VFX_lensFX_vignette}
+addUserKnob {41 format T RGrad1.format}
+addUserKnob {41 Center T RGrad1.Center}
+addUserKnob {41 Radius T RGrad1.Radius}
+addUserKnob {41 FallOffRadius T RGrad1.FallOffRadius}
+addUserKnob {41 VerticalSquash T RGrad1.VerticalSquash}
+addUserKnob {41 FallOff T RGrad1.FallOff}
+addUserKnob {41 edgeColor T RGrad1.edgeColor}
+addUserKnob {41 mix T Merge65.mix}
+addUserKnob {6 removeVignette l "remove vignette" +STARTLINE}
+removeVignette true
+addUserKnob {1 default_values +INVISIBLE}
+default_values "\[('VFX_lensFX_vignette', \{'knob': 'Tab_Knob', 'tcl': '\{20 VFX_lensFX_vignette\}', 'link': '', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '1', 'range': None, 'value': True, 'label': 'VFX_lensFX_vignette'\}), ('format', \{'knob': 'Link_Knob', 'tcl': '\{41 format T RGrad1.format\}', 'link': 'RGrad1.format', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '0', 'range': None, 'value': 'GR Working', 'label': 'format'\}), ('Center', \{'knob': 'Link_Knob', 'tcl': '\{41 Center T RGrad1.Center\}', 'link': 'RGrad1.Center', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '1920 804', 'range': (0.0, 1.0), 'value': (1920.0, 804.0), 'label': 'Center'\}), ('Radius', \{'knob': 'Link_Knob', 'tcl': '\{41 Radius T RGrad1.Radius\}', 'link': 'RGrad1.Radius', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '600', 'range': (0.0, 389.0), 'value': 600.0, 'label': 'Radius'\}), ('FallOffRadius', \{'knob': 'Link_Knob', 'tcl': '\{41 FallOffRadius T RGrad1.FallOffRadius\}', 'link': 'RGrad1.FallOffRadius', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '717.9552612', 'range': (0.0, 389.0), 'value': 717.9552612, 'label': 'FallOffRadius'\}), ('VerticalSquash', \{'knob': 'Link_Knob', 'tcl': '\{41 VerticalSquash T RGrad1.VerticalSquash\}', 'link': 'RGrad1.VerticalSquash', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '1', 'range': (0.0, 1.0), 'value': 1.0, 'label': 'VerticalSquash'\}), ('FallOff', \{'knob': 'Link_Knob', 'tcl': '\{41 FallOff T RGrad1.FallOff\}', 'link': 'RGrad1.FallOff', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '0.5', 'range': (0.0, 1.0), 'value': 0.5, 'label': 'FallOff'\}), ('edgeColor', \{'knob': 'Link_Knob', 'tcl': '\{41 edgeColor T RGrad1.edgeColor\}', 'link': 'RGrad1.edgeColor', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '0', 'range': (0.0, 1.0), 'value': 0.0, 'label': 'edgeColor'\}), ('mix', \{'knob': 'Link_Knob', 'tcl': '\{41 mix T Merge65.mix\}', 'link': 'Merge65.mix', 'tooltip': '', 'default': None, 'flags': \{\}, 'toScript': '1', 'range': (0.0, 1.0), 'value': 1.0, 'label': 'mix'\}), ('removeVignette', \{'knob': 'Boolean_Knob', 'tcl': '\{6 removeVignette l \"remove vignette\" +STARTLINE\}', 'link': '', 'tooltip': '', 'default': None, 'flags': \{4096: True\}, 'toScript': 'false', 'range': (0.0, 1.0), 'value': False, 'label': 'remove vignette'\})]"
+addUserKnob {20 ivygrouptab l IvyGroup}
+addUserKnob {2 file l "Script Path"}
+file /jobs/LIBRARY/ASSET/ivy/nkt/F_NKT_LIBRARY_comp_group_VFX_lensFX_vignette_v006/F_NKT_LIBRARY_comp_group_VFX_lensFX_vignette_v006.nk
+addUserKnob {6 internal_updates l "Update internal spider nodes" t "Whether or not to recursively update all internal Ivy nodes as well" +STARTLINE}
+internal_updates true
+addUserKnob {6 save_template l "Save Template on Update" t "Saves the current template at update time internally allowing switching between the old and new one" -STARTLINE}
+save_template true
+addUserKnob {6 execute_spawners l "Execute internal spawners" t "Whether or not to recursively execute all internal spawner nodes" +STARTLINE}
+execute_spawners true
+addUserKnob {6 previous_template l "Output Previous Template" t "Toggles displaying of the previously saved template" +HIDDEN +STARTLINE}
+addUserKnob {22 clearPreviousTemplate l "Clear Previous Template" t "Clears the previous template that was saved at update" +HIDDEN T "__import__('dnnuke.core.ivy.template.group', fromlist=\['clearIvyGroups']).clearIvyGroups(nuke.thisNode())" +STARTLINE}
+addUserKnob {6 ivygroup -STARTLINE +INVISIBLE}
+ivygroup true
+addUserKnob {1 _class l "" +STARTLINE +INVISIBLE}
+_class IvyGroup
+addUserKnob {26 divider10 l "" +STARTLINE}
+addUserKnob {22 ivy_publish l Publish... +HIDDEN T "__import__('dnnuke.core.ivy.template', fromlist=\['publish']).publish(nodes=\[nuke.thisNode()])" +STARTLINE}
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {26 comment l "" +STARTLINE T "Publish Comment: Creates a vignette with controls over color, fall-off and radius.\nVersion Comment (v006): Adding VerticalSquash to the controls, also option to remove vignette"}
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': 'LIBRARY', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \[\{'text': 'comp', 'required': False, 'name': 'department'\}, \{'text': 'VFX', 'required': False, 'name': 'discipline'\}, \{'text': 'group', 'required': False, 'name': 'type'\}, \{'text': 'lensFX_vignette', 'required': False, 'name': 'label'\}], 'ivy_shot': 'LIBRARY', 'ivy_regex': False, 'ivy_type': 'nkt', 'ivy_versionquery': 'approved', 'spider_uri': 'spider://query@Stalk.latest?Stem.job==LIBRARY&Stem.stemname==LIBRARY&TwigType.code.re(nkt)&Twig.transfix_map.re(^department:comp;discipline:VFX;label:lensFX_vignette;type:group\$)&Stalk.reviewstatus==Approved&Stalk.state==complete'\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/LIBRARY/ASSET/ivy/nkt/F_NKT_LIBRARY_comp_group_VFX_lensFX_vignette_v006/F_NKT_LIBRARY_comp_group_VFX_lensFX_vignette_v006.nk
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 61eda65f-d206-4bde-84ad-947612a48cc5
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 7cd9c15f-21de-419e-a4a3-f905a8f7736f
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid 9a87d850-8e1b-4781-95c5-e50580d06fe5
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 61d01f12-80d3-46f7-9859-8f73fc089a0d
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype nkt
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main
+addUserKnob {1 ivy_version l Version}
+ivy_version 6
+addUserKnob {43 ivy_notes l Notes}
+ivy_notes "Adding VerticalSquash to the controls, also option to remove vignette"
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Input {
+inputs 0
+name plate
+selected true
+xpos 154
+ypos 388
+}
+Dot {
+name Dot1
+selected true
+xpos 188
+ypos 466
+}
+set N108f5c40 [stack 0]
+Dot {
+name Dot2
+selected true
+xpos 44
+ypos 466
+}
+Dot {
+name Dot3
+selected true
+xpos 44
+ypos 811
+}
+push $N108f5c40
+Dot {
+name Dot4
+selected true
+xpos 308
+ypos 466
+}
+RGrad {
+inputs 0
+channels rgb
+Radius 1480.014038
+FallOffRadius 1153.655762
+name RGrad1
+selected true
+xpos 494
+ypos 510
+}
+set N58a061e0 [stack 0]
+Constant {
+inputs 0
+channels rgb
+color {1 1 1 0}
+name Constant1
+selected true
+xpos 640
+ypos 510
+}
+Dot {
+name Dot6
+selected true
+xpos 674
+ypos 606
+}
+Dissolve {
+inputs 2
+which {{parent.Merge65.mix}}
+name Dissolve1
+selected true
+xpos 494
+ypos 596
+}
+Merge2 {
+inputs 2
+operation divide
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge1
+selected true
+xpos 274
+ypos 602
+}
+set N12c4bb00 [stack 0]
+Dot {
+name Dot5
+selected true
+xpos 308
+ypos 692
+}
+push $N58a061e0
+push $N108f5c40
+Merge2 {
+inputs 2
+operation multiply
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge65
+selected true
+xpos 154
+ypos 533
+}
+Switch {
+inputs 2
+which {{parent.removeVignette}}
+name Switch1
+selected true
+xpos 154
+ypos 688
+}
+Reformat {
+format {{{parent.RGrad1.format}}}
+pbb true
+name Reformat29
+selected true
+xpos 154
+ypos 757
+}
+CopyBBox {
+inputs 2
+name CopyBBox1
+selected true
+xpos 154
+ypos 807
+}
+Output {
+name Output1
+tile_color 0x202226ff
+label "<b>lensFX_vignette_v\[format %03d \[value ivy_version]]</b>(comp)"
+selected true
+xpos 154
+ypos 893
+}
+push $N12c4bb00
+push $N12c4bb00
+Viewer {
+inputs 2
+frame_range 1001-1058
+overscan 300
+center_fstop 0
+viewerProcess "Film (EIZO)"
+far 100000
+name Viewer1
+selected true
+xpos -233
+ypos 783
+}
+end_group
+Dot {
+name Dot1191
+selected true
+xpos 22096
+ypos 50904
+}
+set N132df3f0 [stack 0]
+Group {
+name IBK_Patch_Simple2
+help "This node provides IBKGizmo a colour reference in which to base its keying algorithm on a per pixel basis.\nThe idea is to remove the foreground image and only leave the shades and hues of the original blue/greenscreen.\nAttach the output of this node to the 'c' input of a default IBKGizmo. Attach the input of this node along with the 'fg' input of the IBKGizmo to the original screen.\nPick which colour your screen type is in both nodes and then while viewing the alpha output from the IBKGizmo lower the darks.b (if a bluescreen - adjust darks.g if a greenscreen) in this node \nuntil you see a change in the garbage area of the matte. Once you see a change then you have gone too far -back off a step. If you are still left with discoloured edges you can use the other colours in the lights and darks to eliminate them. Remember the idea is \nto be left with the original shades of the screen and the foreground blacked out. While swapping between viewing the matte from the IBKGizmo and the rgb output of this IBKColour adjust the other colours \nuntil you see a change in the garbage area of the matte. Simple rule of thumb - if you have a light red discoloured area increase the lights.r - if you have a dark green discoloured area increase darks.g. If your screen does not have a very saturated hue you may still be left\n with areas of discolouration after the above process. The 'erode' slider can help with this - while viewing the rgb output adjust the erode until those areas disappear.\nThe 'patch black' slider allows you to fill in the black areas with screen colour. This is not always necessary but if you see blue squares in your composite increase this value and it'll fix it.\nThe above is the only real workflow for this node - working from the top parameter to the bottom parameter- going back to tweak darks/lights with 'erode' and 'patch black' activated isn't really gonna work. "
+knobChanged "nuke.thisNode()\['multi'].setEnabled(nuke.thisNode()\['patch'].value())"
+tile_color 0x480099ff
+selected true
+xpos 21926
+ypos 50987
+addUserKnob {20 "" l Parameters}
+addUserKnob {41 screen_type l "screen type" T IBK2.screen_type}
+addUserKnob {18 off l darks R -1 1}
+off {0.03 0.014 -0.01}
+addUserKnob {6 off_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {18 mult l lights R 0 2}
+mult {1 1 1}
+addUserKnob {6 mult_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {26 ""}
+addUserKnob {7 erode R 0 5}
+erode 20
+addUserKnob {26 ""}
+addUserKnob {6 patch l INVISIBLE +INVISIBLE +STARTLINE}
+patch {{1-autopatch}}
+addUserKnob {7 multi l "patch black" +DISABLED R 0 5}
+addUserKnob {6 autopatch l "auto patch" +STARTLINE}
+autopatch true
+addUserKnob {6 filt l INVISIBLE -STARTLINE +INVISIBLE}
+filt true
+addUserKnob {26 ""}
+addUserKnob {7 level l INVISIBLE t "multiply the rgb output. Helps remove noise from main key" +INVISIBLE}
+level 1
+addUserKnob {26 INFO l About: T "Created by: Aston Constantinides \n\nIn an attempt to recreate a node by Pontus Albrecht."}
+}
+Input {
+inputs 0
+name Input1
+xpos -56
+ypos -383
+}
+Dot {
+name Dot16
+xpos -22
+ypos -126
+}
+set N132c8350 [stack 0]
+Dot {
+name Dot1
+tile_color 0x9597bf00
+xpos -174
+ypos -126
+}
+set N586119a0 [stack 0]
+Dot {
+name Dot7
+xpos -357
+ypos -126
+}
+Dot {
+name Dot9
+xpos -357
+ypos 2416
+}
+Input {
+inputs 0
+name Garbage
+xpos -193
+ypos 177
+number 1
+}
+Grade {
+channels alpha
+whitepoint 0
+white_clamp true
+name Grade2
+xpos -193
+ypos 203
+}
+push $N586119a0
+Grade {
+multiply {{mult.r} {mult.g} {mult.b} {curve}}
+add {{off.r} {off.g} {off.b} {curve}}
+name Grade11
+tile_color 0x7aa9ff00
+xpos -208
+ypos -77
+}
+Clamp {
+maximum_enable false
+name Clamp2
+xpos -208
+ypos -16
+}
+set N14e5f6c0 [stack 0]
+push $N14e5f6c0
+push $N14e5f6c0
+IBK {
+inputs 3
+blue_green_weight 1
+luma 1
+name IBK2
+tile_color 0xff00
+xpos -208
+ypos 81
+}
+Invert {
+channels alpha
+name Invert1
+tile_color 0x7aa9ff00
+xpos -56
+ypos 75
+}
+Erode {
+size {{erode}}
+name Erode1
+xpos -56
+ypos 119
+}
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha
+xpos -56
+ypos 157
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge2
+xpos -56
+ypos 257
+}
+push $N132c8350
+Dot {
+name Dot17
+xpos 126
+ypos -126
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+channels alpha
+bbox B
+name Copy3
+tile_color 0x9e3c6300
+xpos 92
+ypos 245
+}
+Premult {
+name Premult3
+xpos 92
+ypos 307
+}
+Dot {
+name Dot2
+xpos 126
+ypos 394
+}
+Dot {
+name Dot15
+xpos 126
+ypos 477
+}
+set N141fbe40 [stack 0]
+Dot {
+name Dot18
+xpos 1970
+ypos 477
+}
+Dot {
+name Dot25
+xpos 1970
+ypos 684
+}
+set Nf3aff010 [stack 0]
+Dot {
+name Dot20
+xpos 2312
+ypos 684
+}
+Dot {
+name Dot21
+xpos 2312
+ypos 844
+}
+set N5896d9c0 [stack 0]
+Blur {
+channels rgba
+size 2.5
+name Blur6
+xpos 2380
+ypos 840
+}
+Unpremult {
+name Unpremult2
+xpos 2380
+ypos 866
+}
+set N588eb480 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha2
+xpos 2569
+ypos 866
+}
+Dot {
+name Dot22
+xpos 2778
+ypos 870
+}
+set N1449a6f0 [stack 0]
+Blur {
+channels rgba
+size 2.5
+name Blur7
+xpos 2846
+ypos 866
+}
+Unpremult {
+name Unpremult8
+xpos 2846
+ypos 892
+}
+set N14533730 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha6
+xpos 3121
+ypos 892
+}
+Dot {
+name Dot26
+xpos 3330
+ypos 896
+}
+set N1556aaa0 [stack 0]
+Blur {
+channels rgba
+size 5
+name Blur8
+xpos 3398
+ypos 892
+}
+Unpremult {
+name Unpremult9
+xpos 3398
+ypos 918
+}
+set N11db6be0 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha8
+xpos 3684
+ypos 918
+}
+Dot {
+name Dot30
+xpos 3893
+ypos 922
+}
+set N13441910 [stack 0]
+Blur {
+channels rgba
+size 10
+name Blur10
+xpos 3961
+ypos 918
+}
+Unpremult {
+name Unpremult11
+xpos 3961
+ypos 944
+}
+set N11a87f80 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha9
+xpos 4222
+ypos 944
+}
+Dot {
+name Dot32
+xpos 4431
+ypos 948
+}
+set N12b83a50 [stack 0]
+Blur {
+channels rgba
+size 20
+name Blur11
+xpos 4499
+ypos 944
+}
+Unpremult {
+name Unpremult12
+xpos 4499
+ypos 970
+}
+set N144b9cc0 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha10
+xpos 4859
+ypos 970
+}
+Dot {
+name Dot34
+xpos 5068
+ypos 974
+}
+set N11e0d4c0 [stack 0]
+Blur {
+channels rgba
+size 40
+name Blur12
+xpos 5136
+ypos 970
+}
+Unpremult {
+name Unpremult13
+xpos 5136
+ypos 996
+}
+set N12c47500 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha11
+xpos 5665
+ypos 996
+}
+Dot {
+name Dot36
+xpos 5874
+ypos 1000
+}
+set N58698370 [stack 0]
+Blur {
+channels rgba
+size 100
+name Blur13
+xpos 5942
+ypos 996
+}
+Unpremult {
+name Unpremult14
+xpos 5942
+ypos 1022
+}
+set N14f3cb00 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha7
+xpos 6417
+ypos 1022
+}
+Dot {
+name Dot28
+xpos 6626
+ypos 1026
+}
+set Nbd4df840 [stack 0]
+Blur {
+channels rgba
+size 200
+name Blur9
+xpos 6694
+ypos 1022
+}
+Unpremult {
+name Unpremult10
+xpos 6694
+ypos 1048
+}
+set N11d66970 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha12
+xpos 7169
+ypos 1048
+}
+Dot {
+name Dot38
+xpos 7378
+ypos 1052
+}
+set N113ef030 [stack 0]
+Dot {
+name Dot39
+xpos 7378
+ypos 1175
+}
+push $N113ef030
+Blur {
+channels rgba
+size 400
+name Blur14
+xpos 7446
+ypos 1048
+}
+Unpremult {
+name Unpremult15
+xpos 7446
+ypos 1074
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy15
+xpos 7446
+ypos 1165
+}
+Invert {
+channels alpha
+name Invert15
+xpos 7446
+ypos 1216
+}
+FilterErode {
+channels alpha
+size -38
+filter gaussian
+name FilterErode14
+xpos 7446
+ypos 1254
+}
+Premult {
+name Premult15
+xpos 7446
+ypos 1292
+}
+push $Nbd4df840
+Dot {
+name Dot29
+xpos 6626
+ypos 1149
+}
+push $N11d66970
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy10
+xpos 6694
+ypos 1139
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge14
+xpos 6694
+ypos 1292
+}
+Invert {
+channels alpha
+name Invert10
+xpos 6694
+ypos 1318
+}
+FilterErode {
+channels alpha
+size -26
+filter gaussian
+name FilterErode9
+xpos 6694
+ypos 1356
+}
+Premult {
+name Premult10
+xpos 6694
+ypos 1394
+}
+push $N58698370
+Dot {
+name Dot37
+xpos 5874
+ypos 1123
+}
+push $N14f3cb00
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy14
+xpos 5942
+ypos 1113
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge10
+xpos 5942
+ypos 1394
+}
+Invert {
+channels alpha
+name Invert14
+xpos 5942
+ypos 1432
+}
+FilterErode {
+channels alpha
+size -16
+filter gaussian
+name FilterErode13
+xpos 5942
+ypos 1470
+}
+Premult {
+name Premult14
+xpos 5942
+ypos 1508
+}
+push $N11e0d4c0
+Dot {
+name Dot35
+xpos 5068
+ypos 1097
+}
+push $N12c47500
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy13
+xpos 5136
+ypos 1087
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge13
+xpos 5136
+ypos 1508
+}
+Invert {
+channels alpha
+name Invert13
+xpos 5136
+ypos 1534
+}
+FilterErode {
+channels alpha
+size -16
+filter gaussian
+name FilterErode12
+xpos 5136
+ypos 1572
+}
+Premult {
+name Premult13
+xpos 5136
+ypos 1610
+}
+push $N12b83a50
+Dot {
+name Dot33
+xpos 4431
+ypos 1071
+}
+push $N144b9cc0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy12
+xpos 4499
+ypos 1061
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge12
+xpos 4499
+ypos 1610
+}
+Invert {
+channels alpha
+name Invert12
+xpos 4499
+ypos 1636
+}
+FilterErode {
+channels alpha
+size -10
+filter gaussian
+name FilterErode11
+xpos 4499
+ypos 1674
+}
+Premult {
+name Premult12
+xpos 4499
+ypos 1712
+}
+push $N13441910
+Dot {
+name Dot31
+xpos 3893
+ypos 1045
+}
+push $N11a87f80
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy11
+xpos 3961
+ypos 1035
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge11
+xpos 3961
+ypos 1712
+}
+Invert {
+channels alpha
+name Invert11
+xpos 3961
+ypos 1738
+}
+FilterErode {
+channels alpha
+size -4
+filter gaussian
+name FilterErode10
+xpos 3961
+ypos 1776
+}
+Premult {
+name Premult11
+xpos 3961
+ypos 1814
+}
+push $N1556aaa0
+Dot {
+name Dot27
+xpos 3330
+ypos 1019
+}
+push $N11db6be0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy9
+xpos 3398
+ypos 1009
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge9
+xpos 3398
+ypos 1814
+}
+Invert {
+channels alpha
+name Invert9
+xpos 3398
+ypos 1859
+}
+FilterErode {
+channels alpha
+size -2
+filter gaussian
+name FilterErode8
+xpos 3398
+ypos 1897
+}
+Premult {
+name Premult9
+xpos 3398
+ypos 1935
+}
+push $N1449a6f0
+Dot {
+name Dot23
+xpos 2778
+ypos 993
+}
+push $N14533730
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy7
+xpos 2846
+ypos 983
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge8
+xpos 2846
+ypos 1935
+}
+Invert {
+channels alpha
+name Invert7
+xpos 2846
+ypos 1961
+}
+FilterErode {
+channels alpha
+size -1
+filter gaussian
+name FilterErode6
+xpos 2846
+ypos 1999
+}
+Premult {
+name Premult7
+xpos 2846
+ypos 2037
+}
+push $N5896d9c0
+Dot {
+name Dot24
+xpos 2312
+ypos 967
+}
+push $N588eb480
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy8
+xpos 2380
+ypos 957
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge6
+xpos 2380
+ypos 2037
+}
+Invert {
+channels alpha
+name Invert8
+xpos 2380
+ypos 2063
+}
+FilterErode {
+channels alpha
+size -1
+filter gaussian
+name FilterErode7
+xpos 2380
+ypos 2101
+}
+Premult {
+name Premult8
+xpos 2380
+ypos 2139
+}
+push $Nf3aff010
+Merge2 {
+inputs 2
+bbox B
+name Merge15
+xpos 1936
+ypos 2139
+}
+Dot {
+name Dot19
+xpos 1970
+ypos 2317
+}
+push $N141fbe40
+EdgeBlur {
+size {{clamp(multi)}}
+edge_mult 1
+name EdgeBlur3
+xpos 92
+ypos 681
+}
+Unpremult {
+name Unpremult4
+xpos 92
+ypos 738
+}
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha5
+xpos 92
+ypos 764
+}
+Dot {
+name Dot4
+xpos 126
+ypos 989
+}
+set N13100970 [stack 0]
+Dot {
+name Dot3
+xpos 468
+ypos 989
+}
+Dot {
+name Dot5
+xpos 468
+ypos 1088
+}
+set N132ea840 [stack 0]
+Blur {
+channels rgba
+size {{1*multi}}
+name Blur4
+xpos 536
+ypos 1084
+}
+Unpremult {
+name Unpremult3
+xpos 536
+ypos 1110
+}
+set N11b79c90 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha1
+xpos 725
+ypos 1110
+}
+Dot {
+name Dot6
+xpos 934
+ypos 1114
+}
+set N153c0410 [stack 0]
+Dot {
+name Dot14
+xpos 934
+ypos 1237
+}
+push $N153c0410
+Blur {
+channels rgba
+size {{3*multi}}
+name Blur5
+xpos 1002
+ypos 1110
+}
+Unpremult {
+name Unpremult1
+xpos 1002
+ypos 1136
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy6
+xpos 1002
+ypos 1227
+}
+Invert {
+channels alpha
+name Invert6
+xpos 1002
+ypos 1395
+}
+FilterErode {
+channels alpha
+size {{clamp((-multi/2.5),-5,0)}}
+filter gaussian
+name FilterErode5
+xpos 1002
+ypos 1464
+}
+Premult {
+name Premult6
+xpos 1002
+ypos 1534
+}
+push $N132ea840
+Dot {
+name Dot8
+xpos 468
+ypos 1211
+}
+push $N11b79c90
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy5
+xpos 536
+ypos 1201
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge5
+xpos 536
+ypos 1534
+}
+Invert {
+channels alpha
+name Invert5
+xpos 536
+ypos 1581
+}
+FilterErode {
+channels alpha
+size {{clamp((-multi/2.5),-5,0)}}
+filter gaussian
+name FilterErode4
+xpos 536
+ypos 1663
+}
+Premult {
+name Premult5
+xpos 536
+ypos 1717
+}
+push $N13100970
+Merge {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge1
+xpos 92
+ypos 1717
+}
+Switch {
+inputs 2
+which {{parent.autopatch}}
+name Switch1
+xpos 92
+ypos 2313
+}
+CopyBBox {
+inputs 2
+name CopyBBox1
+xpos 92
+ypos 2412
+}
+Grade {
+multiply {{level}}
+name Grade1
+xpos 92
+ypos 2545
+}
+Output {
+name Output1
+xpos 92
+ypos 2592
+}
+end_group
+push $N132df3f0
+Group {
+inputs 2
+name PxF_ScreenClean16
+help "Clean chroma key background imperfections using a clean plate."
+tile_color 0x733520ff
+selected true
+xpos 22062
+ypos 51051
+addUserKnob {20 User}
+addUserKnob {4 screen_type l ScreenType t "The color of the chroma key background." M {Red Green Blue "" "" ""}}
+screen_type Blue
+addUserKnob {18 screen_color l ScreenColor t "The color that will be used to repair the chroma key background (usually the average color of the background)."}
+screen_color {0.03603162244 0.06205322593 0.248887}
+addUserKnob {6 screen_color_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {26 ""}
+addUserKnob {26 t l "" t "PxF_ScreenClean.\nInput 1 = Plate.\nInput 2 = Clean Plate.\nUse ScreenClean to erase\nimperfections in a green/blue/red\nscreen using a clean plate." -STARTLINE T "PxF_ScreenClean 2.0.3 - (c) 2012 - Xavier Bourque - www.pixelfudger.com"}
+}
+Input {
+inputs 0
+name mask
+xpos 419
+ypos 274
+number 2
+}
+Input {
+inputs 0
+name plate
+xpos 203
+ypos -448
+}
+Dot {
+name Dot1
+xpos 209
+ypos -347
+}
+set N12b37830 [stack 0]
+Dot {
+name Dot2
+xpos -64
+ypos -202
+}
+Dot {
+name Dot3
+xpos -57
+ypos 214
+}
+set N11f788b0 [stack 0]
+push $N11f788b0
+push $N12b37830
+Shuffle {
+red blue
+green blue
+alpha black
+name Blue
+xpos 203
+ypos -187
+}
+set N13b403d0 [stack 0]
+push $N12b37830
+Shuffle {
+red green
+blue green
+alpha black
+name Green
+xpos 112
+ypos -179
+}
+set N58a87c00 [stack 0]
+push $N12b37830
+Shuffle {
+green red
+blue red
+alpha black
+name Red
+xpos 17
+ypos -180
+}
+set N134fdec0 [stack 0]
+Switch {
+inputs 3
+which {{screen_type i x1 0}}
+name High
+xpos 17
+ypos -99
+}
+push $N58a87c00
+push $N134fdec0
+Switch {
+inputs 2
+which {{"screen_type == 0 ? 1 : screen_type == 1 ? 0 : 0" i x1 0}}
+name LowA
+xpos 145
+ypos -108
+}
+push $N13b403d0
+push $N58a87c00
+push 0
+Switch {
+inputs 3
+which {{"screen_type == 0 ? 2 : screen_type == 1 ? 2 : 1" i x1 1}}
+name LowB
+xpos 261
+ypos -107
+}
+Merge2 {
+inputs 2
+operation max
+name Merge1
+xpos 217
+ypos -59
+}
+Merge2 {
+inputs 2
+operation minus
+name Merge2
+xpos 116
+ypos -20
+}
+Input {
+inputs 0
+name clean_plate
+xpos 462
+ypos -437
+number 1
+}
+Dot {
+name Dot4
+xpos 530
+ypos -235
+}
+set N1313ea30 [stack 0]
+Shuffle {
+red blue
+green blue
+alpha black
+name Blue1
+xpos 570
+ypos -194
+}
+set N1317bf30 [stack 0]
+push $N1313ea30
+Shuffle {
+red green
+blue green
+alpha black
+name Green1
+xpos 481
+ypos -195
+}
+set Naa925840 [stack 0]
+push $N1313ea30
+Shuffle {
+green red
+blue red
+alpha black
+name Red1
+xpos 382
+ypos -194
+}
+set Nf3ce7690 [stack 0]
+Switch {
+inputs 3
+which {{screen_type i x1 0}}
+name High1
+xpos 401
+ypos -130
+}
+push $Naa925840
+push $Nf3ce7690
+Switch {
+inputs 2
+which {{"screen_type == 0 ? 1 : screen_type == 1 ? 0 : 0" i}}
+name LowA1
+xpos 498
+ypos -131
+}
+push $N1317bf30
+push $Naa925840
+push 0
+Switch {
+inputs 3
+which {{"screen_type == 0 ? 2 : screen_type == 1 ? 2 : 1" i}}
+name LowB1
+xpos 592
+ypos -128
+}
+Merge2 {
+inputs 2
+operation max
+name Merge3
+xpos 532
+ypos -73
+}
+Merge2 {
+inputs 2
+operation minus
+name Merge4
+xpos 429
+ypos -19
+}
+Merge2 {
+inputs 2
+operation divide
+name Merge5
+xpos 309
+ypos 87
+}
+Clamp {
+name Clamp1
+xpos 309
+ypos 114
+}
+push $N1313ea30
+Dot {
+name Dot5
+xpos 720
+ypos -198
+}
+push $N12b37830
+Dot {
+name Dot7
+xpos 845
+ypos -231
+}
+ColorCorrect {
+gain 0
+offset {{screen_color.r i} {screen_color.g i} {screen_color.b i} {1 i}}
+name ColorCorrect1
+xpos 817
+ypos -159
+postage_stamp true
+}
+Merge2 {
+inputs 2
+operation minus
+name Merge6
+xpos 692
+ypos -24
+}
+Dot {
+name Dot6
+xpos 688
+ypos 165
+}
+Merge2 {
+inputs 2
+operation multiply
+name Merge7
+xpos 309
+ypos 166
+}
+Merge2 {
+inputs 2
+operation minus
+name Merge8
+xpos 309
+ypos 215
+}
+Keymix {
+inputs 3
+invertMask true
+bbox B
+name Keymix1
+selected true
+xpos 309
+ypos 299
+disable {{"\[exists parent.input2] ? 0 : 1" i x1 0}}
+}
+Output {
+name Output1
+xpos 309
+ypos 348
+}
+end_group
+Dot {
+name Dot1192
+selected true
+xpos 22094
+ypos 51211
+}
+set N1384d550 [stack 0]
+Dot {
+name Dot1193
+selected true
+xpos 21789
+ypos 51211
+}
+OFXuk.co.thefoundry.keylight.keylight_v201 {
+show "Final Result"
+unPreMultiply false
+screenColour {0.03601074219 0.0608215332 0.2434082031}
+screenGain 1
+screenBalance 0.95
+alphaBias {0.5 0.5 0.5}
+despillBias {0.5 0.5 0.5}
+gangBiases true
+preBlur 0
+"Screen Matte" 0
+screenClipMin 0
+screenClipMax 1
+screenClipRollback 0
+screenGrowShrink 0
+screenSoftness 0
+screenDespotBlack 0
+screenDespotWhite 0
+screenReplaceMethod "Soft Colour"
+screenReplaceColour {0.5 0.5 0.5}
+Tuning 0
+midPoint 0.5
+lowGain 1
+midGain 1
+highGain 1
+"Inside Mask" 0
+sourceAlphaHandling Ignore
+insideReplaceMethod "Soft Colour"
+insideReplaceColour {0.5 0.5 0.5}
+Crops 0
+SourceXMethod Colour
+SourceYMethod Colour
+SourceEdgeColour 0
+SourceCropL 0
+SourceCropR 1
+SourceCropB 0
+SourceCropT 1
+balanceSet false
+insideComponent None
+outsideComponent None
+cacheBreaker true
+name Keylight3
+selected true
+xpos 21759
+ypos 51683
+}
+DespillMadness {
+name DespillMadness38
+note_font "Bitstream Vera Sans"
+selected true
+xpos 21757
+ypos 51905
+LimitPercentage 0.885
+maskChannel -rgba.alpha
+}
+Dot {
+name Dot1194
+selected true
+xpos 21791
+ypos 52119
+}
+Dot {
+inputs 0
+name Dot1195
+selected true
+xpos 21966
+ypos 51702
+}
+Dot {
+name Dot1196
+selected true
+xpos 21966
+ypos 51783
+}
+push $N1384d550
+Group {
+name IBK_Patch_Simple1
+help "This node provides IBKGizmo a colour reference in which to base its keying algorithm on a per pixel basis.\nThe idea is to remove the foreground image and only leave the shades and hues of the original blue/greenscreen.\nAttach the output of this node to the 'c' input of a default IBKGizmo. Attach the input of this node along with the 'fg' input of the IBKGizmo to the original screen.\nPick which colour your screen type is in both nodes and then while viewing the alpha output from the IBKGizmo lower the darks.b (if a bluescreen - adjust darks.g if a greenscreen) in this node \nuntil you see a change in the garbage area of the matte. Once you see a change then you have gone too far -back off a step. If you are still left with discoloured edges you can use the other colours in the lights and darks to eliminate them. Remember the idea is \nto be left with the original shades of the screen and the foreground blacked out. While swapping between viewing the matte from the IBKGizmo and the rgb output of this IBKColour adjust the other colours \nuntil you see a change in the garbage area of the matte. Simple rule of thumb - if you have a light red discoloured area increase the lights.r - if you have a dark green discoloured area increase darks.g. If your screen does not have a very saturated hue you may still be left\n with areas of discolouration after the above process. The 'erode' slider can help with this - while viewing the rgb output adjust the erode until those areas disappear.\nThe 'patch black' slider allows you to fill in the black areas with screen colour. This is not always necessary but if you see blue squares in your composite increase this value and it'll fix it.\nThe above is the only real workflow for this node - working from the top parameter to the bottom parameter- going back to tweak darks/lights with 'erode' and 'patch black' activated isn't really gonna work. "
+knobChanged "nuke.thisNode()\['multi'].setEnabled(nuke.thisNode()\['patch'].value())"
+tile_color 0x480099ff
+selected true
+xpos 21927
+ypos 51331
+addUserKnob {20 "" l Parameters}
+addUserKnob {41 screen_type l "screen type" T IBK2.screen_type}
+addUserKnob {18 off l darks R -1 1}
+off {0.03 0.014 -0.06}
+addUserKnob {6 off_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {18 mult l lights R 0 2}
+mult {1 1 1}
+addUserKnob {6 mult_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+addUserKnob {26 ""}
+addUserKnob {7 erode R 0 5}
+erode 50
+addUserKnob {26 ""}
+addUserKnob {6 patch l INVISIBLE +INVISIBLE +STARTLINE}
+patch {{1-autopatch}}
+addUserKnob {7 multi l "patch black" +DISABLED R 0 5}
+addUserKnob {6 autopatch l "auto patch" +STARTLINE}
+autopatch true
+addUserKnob {6 filt l INVISIBLE -STARTLINE +INVISIBLE}
+filt true
+addUserKnob {26 ""}
+addUserKnob {7 level l INVISIBLE t "multiply the rgb output. Helps remove noise from main key" +INVISIBLE}
+level 1
+addUserKnob {26 INFO l About: T "Created by: Aston Constantinides \n\nIn an attempt to recreate a node by Pontus Albrecht."}
+}
+Input {
+inputs 0
+name Input1
+xpos -56
+ypos -383
+}
+Dot {
+name Dot16
+xpos -22
+ypos -126
+}
+set Nf3a08be0 [stack 0]
+Dot {
+name Dot1
+tile_color 0x9597bf00
+xpos -174
+ypos -126
+}
+set Nf3a0dad0 [stack 0]
+Dot {
+name Dot7
+xpos -357
+ypos -126
+}
+Dot {
+name Dot9
+xpos -357
+ypos 2416
+}
+Input {
+inputs 0
+name Garbage
+xpos -193
+ypos 177
+number 1
+}
+Grade {
+channels alpha
+whitepoint 0
+white_clamp true
+name Grade2
+xpos -193
+ypos 203
+}
+push $Nf3a0dad0
+Grade {
+multiply {{mult.r} {mult.g} {mult.b} {curve}}
+add {{off.r} {off.g} {off.b} {curve}}
+name Grade11
+tile_color 0x7aa9ff00
+xpos -208
+ypos -77
+}
+Clamp {
+maximum_enable false
+name Clamp2
+xpos -208
+ypos -16
+}
+set Nf3d64350 [stack 0]
+push $Nf3d64350
+push $Nf3d64350
+IBK {
+inputs 3
+blue_green_weight 1
+luma 1
+name IBK2
+tile_color 0xff00
+xpos -208
+ypos 81
+}
+Invert {
+channels alpha
+name Invert1
+tile_color 0x7aa9ff00
+xpos -56
+ypos 75
+}
+Erode {
+size {{erode}}
+name Erode1
+xpos -56
+ypos 119
+}
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha
+xpos -56
+ypos 157
+}
+Merge2 {
+inputs 2
+operation stencil
+name Merge2
+xpos -56
+ypos 257
+}
+push $Nf3a08be0
+Dot {
+name Dot17
+xpos 126
+ypos -126
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+channels alpha
+bbox B
+name Copy3
+tile_color 0x9e3c6300
+xpos 92
+ypos 245
+}
+Premult {
+name Premult3
+xpos 92
+ypos 307
+}
+Dot {
+name Dot2
+xpos 126
+ypos 394
+}
+Dot {
+name Dot15
+xpos 126
+ypos 477
+}
+set Nf3a3adc0 [stack 0]
+Dot {
+name Dot18
+xpos 1970
+ypos 477
+}
+Dot {
+name Dot25
+xpos 1970
+ypos 684
+}
+set Nf3a44a90 [stack 0]
+Dot {
+name Dot20
+xpos 2312
+ypos 684
+}
+Dot {
+name Dot21
+xpos 2312
+ypos 844
+}
+set Nf3a4e730 [stack 0]
+Blur {
+channels rgba
+size 2.5
+name Blur6
+xpos 2380
+ypos 840
+}
+Unpremult {
+name Unpremult2
+xpos 2380
+ypos 866
+}
+set Nf3a61020 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha2
+xpos 2569
+ypos 866
+}
+Dot {
+name Dot22
+xpos 2778
+ypos 870
+}
+set Nf3a77890 [stack 0]
+Blur {
+channels rgba
+size 2.5
+name Blur7
+xpos 2846
+ypos 866
+}
+Unpremult {
+name Unpremult8
+xpos 2846
+ypos 892
+}
+set Nf3a89fa0 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha6
+xpos 3121
+ypos 892
+}
+Dot {
+name Dot26
+xpos 3330
+ypos 896
+}
+set Nf3aa0810 [stack 0]
+Blur {
+channels rgba
+size 5
+name Blur8
+xpos 3398
+ypos 892
+}
+Unpremult {
+name Unpremult9
+xpos 3398
+ypos 918
+}
+set Nf3ab2f20 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha8
+xpos 3684
+ypos 918
+}
+Dot {
+name Dot30
+xpos 3893
+ypos 922
+}
+set Nf3b26820 [stack 0]
+Blur {
+channels rgba
+size 10
+name Blur10
+xpos 3961
+ypos 918
+}
+Unpremult {
+name Unpremult11
+xpos 3961
+ypos 944
+}
+set Nf3b38f30 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha9
+xpos 4222
+ypos 944
+}
+Dot {
+name Dot32
+xpos 4431
+ypos 948
+}
+set Nf3b4f7a0 [stack 0]
+Blur {
+channels rgba
+size 20
+name Blur11
+xpos 4499
+ypos 944
+}
+Unpremult {
+name Unpremult12
+xpos 4499
+ypos 970
+}
+set Nf3b61eb0 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha10
+xpos 4859
+ypos 970
+}
+Dot {
+name Dot34
+xpos 5068
+ypos 974
+}
+set Nf3b78720 [stack 0]
+Blur {
+channels rgba
+size 40
+name Blur12
+xpos 5136
+ypos 970
+}
+Unpremult {
+name Unpremult13
+xpos 5136
+ypos 996
+}
+set Nf3b8ae30 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha11
+xpos 5665
+ypos 996
+}
+Dot {
+name Dot36
+xpos 5874
+ypos 1000
+}
+set Nf3ba16a0 [stack 0]
+Blur {
+channels rgba
+size 100
+name Blur13
+xpos 5942
+ypos 996
+}
+Unpremult {
+name Unpremult14
+xpos 5942
+ypos 1022
+}
+set Nf3bb3db0 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha7
+xpos 6417
+ypos 1022
+}
+Dot {
+name Dot28
+xpos 6626
+ypos 1026
+}
+set Nf3048640 [stack 0]
+Blur {
+channels rgba
+size 200
+name Blur9
+xpos 6694
+ypos 1022
+}
+Unpremult {
+name Unpremult10
+xpos 6694
+ypos 1048
+}
+set Nf305ad50 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha12
+xpos 7169
+ypos 1048
+}
+Dot {
+name Dot38
+xpos 7378
+ypos 1052
+}
+set Nf30718e0 [stack 0]
+Dot {
+name Dot39
+xpos 7378
+ypos 1175
+}
+push $Nf30718e0
+Blur {
+channels rgba
+size 400
+name Blur14
+xpos 7446
+ypos 1048
+}
+Unpremult {
+name Unpremult15
+xpos 7446
+ypos 1074
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy15
+xpos 7446
+ypos 1165
+}
+Invert {
+channels alpha
+name Invert15
+xpos 7446
+ypos 1216
+}
+FilterErode {
+channels alpha
+size -38
+filter gaussian
+name FilterErode14
+xpos 7446
+ypos 1254
+}
+Premult {
+name Premult15
+xpos 7446
+ypos 1292
+}
+push $Nf3048640
+Dot {
+name Dot29
+xpos 6626
+ypos 1149
+}
+push $Nf305ad50
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy10
+xpos 6694
+ypos 1139
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge14
+xpos 6694
+ypos 1292
+}
+Invert {
+channels alpha
+name Invert10
+xpos 6694
+ypos 1318
+}
+FilterErode {
+channels alpha
+size -26
+filter gaussian
+name FilterErode9
+xpos 6694
+ypos 1356
+}
+Premult {
+name Premult10
+xpos 6694
+ypos 1394
+}
+push $Nf3ba16a0
+Dot {
+name Dot37
+xpos 5874
+ypos 1123
+}
+push $Nf3bb3db0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy14
+xpos 5942
+ypos 1113
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge10
+xpos 5942
+ypos 1394
+}
+Invert {
+channels alpha
+name Invert14
+xpos 5942
+ypos 1432
+}
+FilterErode {
+channels alpha
+size -16
+filter gaussian
+name FilterErode13
+xpos 5942
+ypos 1470
+}
+Premult {
+name Premult14
+xpos 5942
+ypos 1508
+}
+push $Nf3b78720
+Dot {
+name Dot35
+xpos 5068
+ypos 1097
+}
+push $Nf3b8ae30
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy13
+xpos 5136
+ypos 1087
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge13
+xpos 5136
+ypos 1508
+}
+Invert {
+channels alpha
+name Invert13
+xpos 5136
+ypos 1534
+}
+FilterErode {
+channels alpha
+size -16
+filter gaussian
+name FilterErode12
+xpos 5136
+ypos 1572
+}
+Premult {
+name Premult13
+xpos 5136
+ypos 1610
+}
+push $Nf3b4f7a0
+Dot {
+name Dot33
+xpos 4431
+ypos 1071
+}
+push $Nf3b61eb0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy12
+xpos 4499
+ypos 1061
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge12
+xpos 4499
+ypos 1610
+}
+Invert {
+channels alpha
+name Invert12
+xpos 4499
+ypos 1636
+}
+FilterErode {
+channels alpha
+size -10
+filter gaussian
+name FilterErode11
+xpos 4499
+ypos 1674
+}
+Premult {
+name Premult12
+xpos 4499
+ypos 1712
+}
+push $Nf3b26820
+Dot {
+name Dot31
+xpos 3893
+ypos 1045
+}
+push $Nf3b38f30
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy11
+xpos 3961
+ypos 1035
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge11
+xpos 3961
+ypos 1712
+}
+Invert {
+channels alpha
+name Invert11
+xpos 3961
+ypos 1738
+}
+FilterErode {
+channels alpha
+size -4
+filter gaussian
+name FilterErode10
+xpos 3961
+ypos 1776
+}
+Premult {
+name Premult11
+xpos 3961
+ypos 1814
+}
+push $Nf3aa0810
+Dot {
+name Dot27
+xpos 3330
+ypos 1019
+}
+push $Nf3ab2f20
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy9
+xpos 3398
+ypos 1009
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge9
+xpos 3398
+ypos 1814
+}
+Invert {
+channels alpha
+name Invert9
+xpos 3398
+ypos 1859
+}
+FilterErode {
+channels alpha
+size -2
+filter gaussian
+name FilterErode8
+xpos 3398
+ypos 1897
+}
+Premult {
+name Premult9
+xpos 3398
+ypos 1935
+}
+push $Nf3a77890
+Dot {
+name Dot23
+xpos 2778
+ypos 993
+}
+push $Nf3a89fa0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy7
+xpos 2846
+ypos 983
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge8
+xpos 2846
+ypos 1935
+}
+Invert {
+channels alpha
+name Invert7
+xpos 2846
+ypos 1961
+}
+FilterErode {
+channels alpha
+size -1
+filter gaussian
+name FilterErode6
+xpos 2846
+ypos 1999
+}
+Premult {
+name Premult7
+xpos 2846
+ypos 2037
+}
+push $Nf3a4e730
+Dot {
+name Dot24
+xpos 2312
+ypos 967
+}
+push $Nf3a61020
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy8
+xpos 2380
+ypos 957
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge6
+xpos 2380
+ypos 2037
+}
+Invert {
+channels alpha
+name Invert8
+xpos 2380
+ypos 2063
+}
+FilterErode {
+channels alpha
+size -1
+filter gaussian
+name FilterErode7
+xpos 2380
+ypos 2101
+}
+Premult {
+name Premult8
+xpos 2380
+ypos 2139
+}
+push $Nf3a44a90
+Merge2 {
+inputs 2
+bbox B
+name Merge15
+xpos 1936
+ypos 2139
+}
+Dot {
+name Dot19
+xpos 1970
+ypos 2317
+}
+push $Nf3a3adc0
+EdgeBlur {
+size {{clamp(multi)}}
+edge_mult 1
+name EdgeBlur3
+xpos 92
+ypos 681
+}
+Unpremult {
+name Unpremult4
+xpos 92
+ypos 738
+}
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha5
+xpos 92
+ypos 764
+}
+Dot {
+name Dot4
+xpos 126
+ypos 989
+}
+set Nf3518bb0 [stack 0]
+Dot {
+name Dot3
+xpos 468
+ypos 989
+}
+Dot {
+name Dot5
+xpos 468
+ypos 1088
+}
+set Nf3522650 [stack 0]
+Blur {
+channels rgba
+size {{1*multi}}
+name Blur4
+xpos 536
+ypos 1084
+}
+Unpremult {
+name Unpremult3
+xpos 536
+ypos 1110
+}
+set Nf35352c0 [stack 0]
+Expression {
+expr3 "a > 0 ? a/a : 0"
+name UnpremultAlpha1
+xpos 725
+ypos 1110
+}
+Dot {
+name Dot6
+xpos 934
+ypos 1114
+}
+set Nf2f4ba70 [stack 0]
+Dot {
+name Dot14
+xpos 934
+ypos 1237
+}
+push $Nf2f4ba70
+Blur {
+channels rgba
+size {{3*multi}}
+name Blur5
+xpos 1002
+ypos 1110
+}
+Unpremult {
+name Unpremult1
+xpos 1002
+ypos 1136
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy6
+xpos 1002
+ypos 1227
+}
+Invert {
+channels alpha
+name Invert6
+xpos 1002
+ypos 1395
+}
+FilterErode {
+channels alpha
+size {{clamp((-multi/2.5),-5,0)}}
+filter gaussian
+name FilterErode5
+xpos 1002
+ypos 1464
+}
+Premult {
+name Premult6
+xpos 1002
+ypos 1534
+}
+push $Nf3522650
+Dot {
+name Dot8
+xpos 468
+ypos 1211
+}
+push $Nf35352c0
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy5
+xpos 536
+ypos 1201
+}
+Merge2 {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge5
+xpos 536
+ypos 1534
+}
+Invert {
+channels alpha
+name Invert5
+xpos 536
+ypos 1581
+}
+FilterErode {
+channels alpha
+size {{clamp((-multi/2.5),-5,0)}}
+filter gaussian
+name FilterErode4
+xpos 536
+ypos 1663
+}
+Premult {
+name Premult5
+xpos 536
+ypos 1717
+}
+push $Nf3518bb0
+Merge {
+inputs 2
+output {rgba.red rgba.green rgba.blue -rgba.alpha}
+name Merge1
+xpos 92
+ypos 1717
+}
+Switch {
+inputs 2
+which {{parent.autopatch}}
+name Switch1
+xpos 92
+ypos 2313
+}
+CopyBBox {
+inputs 2
+name CopyBBox1
+xpos 92
+ypos 2412
+}
+Grade {
+multiply {{level}}
+name Grade1
+xpos 92
+ypos 2545
+}
+Output {
+name Output1
+xpos 92
+ypos 2592
+}
+end_group
+Dot {
+name Dot1197
+selected true
+xpos 21983
+ypos 51420
+}
+set Nf301a700 [stack 0]
+push $N1384d550
+Dot {
+name Dot1198
+selected true
+xpos 22105
+ypos 51489
+}
+set Nf301f920 [stack 0]
+IBKGizmoV3 {
+inputs 2
+name IBKGizmoV3_7
+label "brighter edges"
+xpos 22195
+ypos 51681
+red_weight 0.6
+blue_green_weight 0.8
+}
+Dot {
+name Dot1199
+selected true
+xpos 22227
+ypos 51783
+}
+push $Nf301a700
+push $Nf301f920
+IBKGizmoV3 {
+inputs 2
+name IBKGizmoV3_8
+label "denser edges"
+xpos 22062
+ypos 51681
+red_weight 0.59
+blue_green_weight 0.83
+lm_enable true
+}
+Keymix {
+inputs 3
+name Keymix51
+selected true
+xpos 22062
+ypos 51775
+}
+DespillMadness {
+name DespillMadness39
+note_font "Bitstream Vera Sans"
+selected true
+xpos 22062
+ypos 51909
+LimitPercentage 0.885
+maskChannel -rgba.alpha
+}
+Merge2 {
+inputs 2+1
+operation under
+name Merge636
+selected true
+xpos 22064
+ypos 52117
+}
+Dot {
+name Dot1200
+selected true
+xpos 22096
+ypos 52281
+}
+push 0
+push 0
+Dot {
+name Dot1201
+selected true
+xpos 22917
+ypos 51266
+}
+set N12935e50 [stack 0]
+Dot {
+name Dot1202
+selected true
+xpos 22795
+ypos 51266
+}
+dnLogLin {
+operation lin2log
+"log reference" 394
+"lin reference" 0.18
+"negative gamma" 0.5064
+"black level" 0.00947
+"dens per cv" 0.002
+name dnLogLin41
+selected true
+xpos 22763
+ypos 51338
+}
+push $Nf301a700
+Dot {
+name Dot1203
+selected true
+xpos 22471
+ypos 51420
+}
+dnLogLin {
+operation lin2log
+"log reference" 394
+"lin reference" 0.18
+"negative gamma" 0.5064
+"black level" 0.00947
+"dens per cv" 0.002
+name dnLogLin42
+selected true
+xpos 22439
+ypos 51461
+}
+Dot {
+name Dot1204
+selected true
+xpos 22471
+ypos 51504
+}
+push $N1384d550
+Dot {
+name Dot1205
+selected true
+xpos 22597
+ypos 51211
+}
+dnLogLin {
+operation lin2log
+"log reference" 394
+"lin reference" 0.18
+"negative gamma" 0.5064
+"black level" 0.00947
+"dens per cv" 0.002
+name dnLogLin43
+selected true
+xpos 22565
+ypos 51363
+}
+Group {
+inputs 3
+name Screen_Diff_Keyer_v3
+help "This tool applies the difference between the FG and the Cleanplate (or the constant colour) to your BG.\nThis can help to restore fine detail, eg. hairs or motion blur which has been eaten away by your FG key.\nA good way to test the gizmo is by using a grey constant as your BG input. \nYou have control over the darks and highs seperately. Choose from different strengths to colour tints.\nIt is recommended to restrict this effect by a garbage mask (eg. a grown soft version of your main key)."
+selected true
+xpos 22763
+ypos 51503
+addUserKnob {20 User}
+addUserKnob {4 Method t "uses the Image you have connected as CleanPlate, or a simple colour" M {CleanPlate Colour}}
+addUserKnob {26 ""}
+addUserKnob {41 huerotation l overall_hue T HSVTool1.huerotation}
+addUserKnob {41 saturation l overall_saturation T Saturation_overall.saturation}
+addUserKnob {26 ""}
+addUserKnob {41 value l Lows_strength T Brightness_Lows.value}
+addUserKnob {41 value_1 l Lows_mult t "tint your lows" T Multiply_lows.value}
+addUserKnob {41 mix l Lows_limit t "0= no limit\n\"Limit\" prevents negative effects. Handle with care!" T Multiply_limits_low.mix}
+addUserKnob {26 ""}
+addUserKnob {41 value_2 l Highs_strength T Brightness_Highs.value}
+addUserKnob {41 value_3 l Highs_mult t "tint your highs" T Multiply_highs.value}
+addUserKnob {41 mix_1 l Highs_limit t "0= no limit\n\"Limit\" prevents negative effects. Handle with care!" T Multiply_limits_highs.mix}
+addUserKnob {26 ""}
+addUserKnob {41 colour t "if you choose the \"colour\" method, \nset your reference colour here" T Constant.color}
+addUserKnob {41 format t "of your Colour constant" T Constant.format}
+addUserKnob {20 endGroup n -1}
+addUserKnob {20 endGroup_1 l endGroup n -1}
+}
+Input {
+inputs 0
+name FG
+xpos -895
+ypos 149
+}
+NoOp {
+name Foreground
+xpos -895
+ypos 299
+}
+Clamp {
+name Clamp1
+xpos -895
+ypos 367
+}
+Remove {
+channels alpha
+name Remove
+xpos -897
+ypos 427
+}
+Constant {
+inputs 0
+channels rgb
+color {0 1 0 0}
+name Constant
+xpos -632
+ypos 196
+}
+Input {
+inputs 0
+name clean
+xpos -758
+ypos 149
+number 1
+}
+NoOp {
+name CleanPlate
+xpos -758
+ypos 246
+}
+Switch {
+inputs 2
+which {{"Method ==1"}}
+name Switch1
+xpos -758
+ypos 309
+}
+Clamp {
+name Clamp2
+xpos -758
+ypos 370
+}
+Remove {
+channels alpha
+name Remove1
+xpos -758
+ypos 425
+}
+Merge2 {
+inputs 2
+operation minus
+Achannels rgb
+Bchannels rgb
+output rgb
+name Merge3
+xpos -846
+ypos 491
+}
+set N129eea00 [stack 0]
+Expression {
+channel0 {-rgba.red -rgba.green -rgba.blue none}
+channel1 {-rgba.red -rgba.green -rgba.blue none}
+channel2 {-rgba.red -rgba.green -rgba.blue none}
+expr3 (r+g+b)/3
+name Expression_luma
+xpos -661
+ypos 675
+}
+Clamp {
+channels rgb
+name Clamp3
+xpos -661
+ypos 846
+}
+Dot {
+name Dot1
+xpos -625
+ypos 1189
+}
+Input {
+inputs 0
+name BG
+xpos -1034
+ypos 150
+number 2
+}
+NoOp {
+name Background
+xpos -1034
+ypos 300
+}
+Clamp {
+name Clamp6
+xpos -1034
+ypos 369
+}
+Shuffle {
+alpha black
+name Shuffle1
+xpos -1034
+ypos 439
+}
+set N12a396d0 [stack 0]
+Expression {
+channel0 {-rgba.red -rgba.green -rgba.blue none}
+channel1 {-rgba.red -rgba.green -rgba.blue none}
+channel2 {-rgba.red -rgba.green -rgba.blue none}
+expr3 (r+g+b)/3
+name Expression_luma1
+xpos -1170
+ypos 674
+}
+set N12a49cd0 [stack 0]
+push $N129eea00
+Saturation {
+saturation 0
+name Saturation_overall
+xpos -846
+ypos 550
+}
+HSVTool {
+name HSVTool1
+xpos -846
+ypos 595
+}
+set N12a64c10 [stack 0]
+Clamp {
+minimum -15
+maximum 0
+MinClampTo -15
+MaxClampTo 0
+name Clamp5
+xpos -996
+ypos 751
+}
+Multiply {
+name Brightness_Lows
+xpos -996
+ypos 805
+}
+Multiply {
+channels rgb
+value 1.3
+name Multiply_lows
+xpos -996
+ypos 859
+}
+Merge2 {
+inputs 2
+operation multiply
+name Multiply_limits_low
+xpos -1170
+ypos 859
+}
+push $N12a64c10
+Clamp {
+maximum 15
+MaxClampTo 15
+name Clamp4
+xpos -846
+ypos 746
+}
+Multiply {
+value 0.68
+name Brightness_Highs
+xpos -846
+ypos 800
+}
+Multiply {
+channels rgb
+name Multiply_highs
+xpos -846
+ypos 858
+}
+push $N12a49cd0
+Merge2 {
+inputs 2
+operation multiply
+name Multiply_limits_highs
+xpos -855
+ypos 938
+}
+Merge2 {
+inputs 2
+operation plus
+name Plus
+xpos -1170
+ypos 938
+}
+push $N12a396d0
+Merge2 {
+inputs 2
+operation plus
+name Plus1
+xpos -1044
+ypos 1045
+}
+Copy {
+inputs 2
+from0 rgba.alpha
+to0 rgba.alpha
+name Copy1
+xpos -1044
+ypos 1174
+}
+NoOp {
+name ScreenDiff_Out
+xpos -1044
+ypos 1242
+}
+Output {
+name Output1
+xpos -1044
+ypos 1342
+}
+end_group
+dnLogLin {
+"log reference" 394
+"lin reference" 0.18
+"negative gamma" 0.5064
+"black level" 0.00947
+"dens per cv" 0.002
+name dnLogLin44
+selected true
+xpos 22763
+ypos 51580
+}
+Crop {
+box {0 0 3840 1608}
+name Crop45
+selected true
+xpos 22763
+ypos 51606
+}
+Dot {
+name Dot1206
+selected true
+xpos 22795
+ypos 51724
+}
+push $N12935e50
+Dissolve {
+inputs 2+1
+which 1
+name Dissolve25
+selected true
+xpos 22885
+ypos 51714
+}
+Merge2 {
+inputs 2+1
+bbox B
+name Merge637
+selected true
+xpos 22883
+ypos 52277
+}
+Dot {
+name Dot1207
+selected true
+xpos 22917
+ypos 52357
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/GR/104_msf_2000/OUT/O_104_msf_2000_comp_v130/3840x1608/O_104_msf_2000_comp_v130.%04d.exr
+localizationPolicy off
+format "3840 1608 0 0 3840 1608 1 GR Working"
+proxy_format "640 480 0 0 640 480 1 Alexa 65 HD 1.78(proxy)"
+first 1215
+last 1587
+origfirst 1215
+origlast 1587
+origset true
+smartGrade true
+name Read145
+selected true
+xpos 22518
+ypos 50873
+postage_stamp_frame 1401
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/GR/104_msf_2000/OUT/O_104_msf_2000_comp_v130/3840x1608/O_104_msf_2000_comp_v130.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 153466d8-fbb9-4f91-8ff0-3b068e3ad78f
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid cbf47cca-60e6-4350-802a-43d8ac854932
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid 83d53166-fd6d-464f-ad31-1ca8d1fe19c5
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 304b7643-2f8e-4b78-8e63-1fefcd5e8075
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype out
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 130
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+push $cut_paste_input
+Roto {
+output alpha
+cliptype none
+curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 2097152}
+    {t x44f00000 x44490000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}
+    {curvegroup Ellipse1 512 bezier
+     {{cc
+       {f 8192}
+       {p
+        {xc3449d00}
+        {x451c2000 x441a8000}
+        {x43449d00}
+        {0 xc3074f4c}
+        {x45326000 x4457c000}
+        {0 x43074f4c}
+        {x43449d00}
+        {x451c2000 x448a8000}
+        {xc3449d00}
+        {0 x43074f4c}
+        {x4505e000 x4457c000}
+        {0 xc3074f4c}}}
+      {cc
+       {f 8192}
+       {p
+        {xc3449d00}
+        {}
+        {x43449d00}
+        {0 xc3074f4c}
+        {}
+        {0 x43074f4c}
+        {x43449d00}
+        {}
+        {xc3449d00}
+        {0 x43074f4c}
+        {}
+        {0 xc3074f4c}}}}
+     {t x451c2000 x4457c000}
+     {a osw x41200000 osf 0 str 1 spx x44f00000 spy x44490000 sb 1 ltn x449b4000 ltm x449b4000 tt x40e00000}}}}}}
+toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 tt 7 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+toolbar_brush_hardness 0.200000003
+toolbar_source_transform_scale {1 1}
+toolbar_source_transform_center {1920 804}
+colorOverlay {0 0 0 0}
+lifetime_type "all frames"
+lifetime_start 1242
+lifetime_end 1242
+motionblur_shutter_offset_type centred
+source_black_outside true
+name Roto197
+selected true
+xpos 21923
+ypos 51639
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_comp_precomp_bg_all_v008/3840x1608/E_104_msf_2000_comp_precomp_bg_all_v008.####.exr
+localizationPolicy off
+format "3840 1608 0 0 3840 1608 1 GR Working"
+proxy_format "640 480 0 0 640 480 1 Alexa 65 HD 1.78(proxy)"
+first 1215
+last 1587
+origfirst 1215
+origlast 1587
+origset true
+smartGrade true
+name Read144
+selected true
+xpos 22883
+ypos 51017
+postage_stamp_frame 1401
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_comp_precomp_bg_all_v008/3840x1608/E_104_msf_2000_comp_precomp_bg_all_v008.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 00583537-7f81-46f8-a738-e6080b225757
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid e7978ca3-d0f3-4385-9c04-76514ce42b05
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 8756110e-f452-444f-aa38-aaaf7cb4ce26
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 8
+addUserKnob {43 ivy_notes l Notes}
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
+Read {
+inputs 0
+file_type exr
+file /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_comp_denoise_mp01_s01_00_v001/3840x1608/E_104_msf_2000_comp_denoise_mp01_s01_00_v001.####.exr
+localizationPolicy off
+format "3840 1608 0 0 3840 1608 1 GR Working"
+proxy_format "640 480 0 0 640 480 1 Alexa 65 HD 1.78(proxy)"
+first 1215
+last 1587
+origfirst 985
+origlast 1858
+origset true
+smartGrade true
+name Read143
+selected true
+xpos 21943
+ypos 50331
+postage_stamp_frame 1401
+addUserKnob {20 Ivy}
+addUserKnob {22 ivy_documentation l "Ivy Documentation" t "Open IvyTab documentation page in your web browser" T "__import__('dnnuke.toolbox.v1.nodes.docs', fromlist=\['open_docs_name']).open_docs_name('IvyTab')" +STARTLINE}
+addUserKnob {26 divider4 l "" +STARTLINE}
+addUserKnob {1 _ivyVals l "" +STARTLINE +HIDDEN}
+_ivyVals "\{'ivy_job': '', 'ivy_usemanualuri': False, 'leafname': '', 'ivy_vnum': 0, 'ivy_twignametags': \{\}, 'ivy_shot': '', 'ivy_regex': False, 'ivy_type': '', 'ivy_versionquery': '', 'spider_uri': ''\}"
+addUserKnob {52 ivyTab l "" -STARTLINE T "__import__('nukescripts').panels.WidgetKnob(__import__('dnnuke.core.ivy.tab.widget.query', fromlist=\['getBoundKnob']).getBoundKnob(nuke.thisNode()))"}
+addUserKnob {1 _ivyFile l "" +STARTLINE +HIDDEN +INVISIBLE}
+_ivyFile /jobs/GR/104_msf_2000/ELEMENT/E_104_msf_2000_comp_denoise_mp01_s01_00_v001/3840x1608/E_104_msf_2000_comp_denoise_mp01_s01_00_v001.####.exr
+addUserKnob {78 _expressions l "" -STARTLINE +HIDDEN +INVISIBLE n 1}
+_expressions {{curve}}
+addUserKnob {26 divider0 l "" +STARTLINE}
+addUserKnob {20 dbinfo l "DB Info" n 1}
+dbinfo 0
+addUserKnob {1 twig_dnuuid l "Twig Id"}
+twig_dnuuid 266b9294-644e-40f7-96d2-b2dffd06c6fe
+addUserKnob {1 stalk_dnuuid l "Stalk Id"}
+stalk_dnuuid 3802f9ae-adda-493f-8dc2-1a771ae03f24
+addUserKnob {1 twigtype_dnuuid l "Twig Type Id"}
+twigtype_dnuuid e9f824fa-c932-4c3e-acbd-c612fb5ea846
+addUserKnob {1 leaf_dnuuid l "Leaf Id"}
+leaf_dnuuid 7a1de8ef-b5ad-4a8f-98ed-d62845a7ce7b
+addUserKnob {26 divider1 l "" +STARTLINE}
+addUserKnob {1 twigtype l "Twig Type"}
+twigtype elmr
+addUserKnob {1 leaf_label l Leaf}
+leaf_label main_proxy0
+addUserKnob {1 ivy_version l Version}
+ivy_version 1
+addUserKnob {43 ivy_notes l Notes}
+ivy_notes "Popcorn Microwave Dispatched Render"
+addUserKnob {26 divider2 l "" +STARTLINE}
+addUserKnob {1 build_label l "Build Label"}
+addUserKnob {20 dbinfoEndGroup l "DB Info" n -1}
+}
