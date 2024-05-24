@@ -1,0 +1,50 @@
+set cut_paste_input [stack 0]
+version 13.2 v8
+BackdropNode {
+inputs 0
+name BackdropNode14
+tile_color 0x64386a01
+label "<center> Depth fix"
+note_font_size 42
+selected true
+xpos -59826
+ypos 31080
+bdwidth 253
+bdheight 211
+}
+push $cut_paste_input
+Expression {
+channel0 depth
+expr0 "1 / Z"
+name Expression8
+label "only when 1/Z"
+selected true
+xpos -59745
+ypos 31169
+}
+Expression {
+temp_name3 value
+temp_expr3 10000
+channel0 depth
+expr0 "isinf(Z) ? value : Z"
+name Expression_inf
+selected true
+xpos -59745
+ypos 31207
+}
+Expression {
+channel0 depth
+expr0 "isnan(Z) ? 10000 : Z"
+name Expression_nan
+selected true
+xpos -59745
+ypos 31233
+}
+Expression {
+channel0 depth
+expr0 "Z == 0 ? 10000 : Z"
+name Expression_0
+selected true
+xpos -59745
+ypos 31259
+}
