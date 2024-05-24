@@ -4,8 +4,8 @@ push $cut_paste_input
 Group {
 name CG_Depth_BG_Fix
 selected true
-xpos -58876
-ypos 31251
+xpos -58787
+ypos 31150
 addUserKnob {20 User l "CG depth fix"}
 addUserKnob {41 color l "Depth BG value" T Constant3.color}
 addUserKnob {41 format T Constant3.format}
@@ -30,7 +30,7 @@ Dot {
 Group {
   name Unpremult32bit
   xpos -440
-  ypos -331
+  ypos -332
   addUserKnob {20 User}
   addUserKnob {26 info l "" +STARTLINE T "\nUnpremulty 32bit channels with 32bit channel and the rest by alpha from RGBA.\n\n-_compound_depth\n-_Nworld\n-_Pworld\n-_Pobject\n-_Pref\n-_motion_extra\n-_depth_extra"}
 }
@@ -186,7 +186,7 @@ Clamp {
   channels alpha
   name Clamp4
   xpos -440
-  ypos -213
+  ypos -214
 }
 Constant {
   inputs 0
@@ -210,7 +210,7 @@ Merge2 {
 }
 Dot {
   name Dot39
-  xpos -409
+  xpos -406
   ypos -109
 }
 push $N2eeb6380
@@ -221,24 +221,23 @@ ShuffleCopy {
   white green
   red2 blue
   green2 black
-  out2 {__depth.red __depth.green __depth.blue __depth.alpha}
+  out2 depth
   name ShuffleCopy1
-  selected true
   xpos -540
   ypos -113
 }
+set N28d17460 [stack 0]
 Output {
   name Output1
   xpos -540
   ypos 90
 }
-Shuffle2 {
-  inputs 0
-  fromInput1 {{0} B}
-  fromInput2 {{0} B}
-  mappings "4 white -1 -1 rgba.red 0 0 white -1 -1 rgba.green 0 1 white -1 -1 rgba.blue 0 2 white -1 -1 rgba.alpha 0 3"
-  name Shuffle2
-  xpos -74
-  ypos -176
+push $N28d17460
+Viewer {
+  frame_range 1001-1376
+  channels depth
+  name Viewer1
+  xpos 293
+  ypos -11
 }
 end_group
