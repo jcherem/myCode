@@ -1,334 +1,50 @@
 set cut_paste_input [stack 0]
 version 13.2 v8
-push $cut_paste_input
-Camera {
- projection_mode {{"\[expression \[value the_cam]projection_mode(\[value the_frame])]"}}
- focal {{"\[expression \[value the_cam]focal(\[value the_frame])]"}}
- haperture {{"\[expression \[value the_cam]haperture(\[value the_frame])]"}}
- vaperture {{"\[expression \[value the_cam]vaperture(\[value the_frame])]"}}
- near {{"\[expression \[value the_cam]near(\[value the_frame])]"}}
- far {{"\[expression \[value the_cam]far(\[value the_frame])]"}}
- win_translate {{"\[expression \[value the_cam]win_translate.u(\[value the_frame])]"} {"\[expression \[value the_cam]win_translate.v(\[value the_frame])]"}}
- win_scale {{"\[expression \[value the_cam]win_scale.u(\[value the_frame])]"} {"\[expression \[value the_cam]win_scale.v(\[value the_frame])]"}}
- winroll {{"\[expression \[value the_cam]winroll(\[value the_frame])]"}}
- focal_point {{"\[expression \[value the_cam]focal_point(\[value the_frame])]"}}
- fstop {{"\[expression \[value the_cam]fstop(\[value the_frame])]"}}
- name Stamp17
- help "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021"
- onCreate "if nuke.GUI:\n    try:\n        import stamps; stamps.wiredOnCreate()\n    except:\n        pass\n"
- knobChanged "import stamps; stamps.wiredKnobChanged()"
- autolabel "nuke.thisNode().knob(\"title\").value()"
- tile_color 0x33000001
- note_font "Bitstream Vera Sans"
- note_font_size 20
- selected true
- xpos -59216
- ypos 31091
- hide_input true
- addUserKnob {20 DummyCam l Defaults +INVISIBLE}
- addUserKnob {43 the_cam +INVISIBLE}
- the_cam "\[\n#DummyCam v1.2 - Updated 5 May 2021.\nset starting_point \"this.input0\"\nset default \"this.d_\"\n\n# If cam has no inputs, return the default.\nif \{\[exists \$starting_point]\} \{\n    set x \[node \$starting_point]\n\} \{ \n    return \$default\n\}\n\nset finished 0\nwhile \{\$finished != 1\} \{\n\n    # First look for a Cam or Input or topnode.\n    while \{\[class \$x] != \"Camera3\" && \[class \$x] != \"Camera2\" && \[class \$x] != \"Camera\" && \[class \$x] != \"Input\" && \$x != \[topnode \$x]\} \{\n        set x \[node \$x.input0]\n    \}\n\n    # Then, check if node is a cam (and return), and otherwise, if it's an input, see if the parent exists and move to it.\n    if \{\[class \$x]==\"Camera3\"||\[class \$x]==\"Camera2\"||\[class \$x]==\"Camera\"\} \{\n        set x \[append x \".\"]\n        return \$x\n    \} \{ \n        if \{ \[class \$x]==\"Input\" \} \{ \n            set inp \"\$x.parent.input\"\n            set inputNum \[value \$x.number]\n            set inp \[append inp \$inputNum]\n            if \{ \[exists \$inp] \} \{\n                set x \[node \$inp]\n            \} \{ \n                set finished 1\n            \}\n        \} \{ \n            set finished 1\n        \}\n    \}\n\}\nreturn \$default\n]"
- addUserKnob {43 the_frame +INVISIBLE}
- the_frame "\[\nset the_camera \[string trimright \[value the_cam] .]\nif \{\[exists \$the_camera]\} \{\n    return \[value \$the_camera.frame]\n\} \{ \n    return \[frame]\n\}\n]"
- addUserKnob {4 d_projection_mode l projection +INVISIBLE M {perspective orthographic uv spherical ""}}
- addUserKnob {7 d_focal l "focal length" +INVISIBLE R 0 100}
- d_focal 50
- addUserKnob {7 d_haperture l "horiz aperture" +INVISIBLE R 0 50}
- d_haperture 24.576
- addUserKnob {7 d_vaperture l "vert aperture" +INVISIBLE R 0 50}
- d_vaperture 18.672
- addUserKnob {7 d_near l near +INVISIBLE R 0 10}
- d_near 0.1
- addUserKnob {7 d_far l far +INVISIBLE R 0 10000}
- d_far 10000
- addUserKnob {30 d_win_translate l "window translate" +INVISIBLE}
- addUserKnob {30 d_win_scale l "window scale" +INVISIBLE}
- d_win_scale {1 1}
- addUserKnob {7 d_winroll l "window roll" +INVISIBLE R 0 45}
- addUserKnob {7 d_focal_point l "focal distance" +INVISIBLE R 0 10}
- d_focal_point 2
- addUserKnob {7 d_fstop l fstop +INVISIBLE R 0 30}
- d_fstop 16
- addUserKnob {26 version l " " t "Stamps by Adrian Pueyo and Alexey Kuchinski.\nUpdated May 18 2021." -STARTLINE +INVISIBLE T "<span style=\"color:#666\"><br/><b>DummyCam v1.2</b> - <a href=\"http://www.adrianpueyo.com\" style=\"color:#666;text-decoration: none;\">adrianpueyo.com</a>, 2019-2021</span>"}
- addUserKnob {20 wired_tab l "Wired Stamp"}
- addUserKnob {26 identifier -STARTLINE +HIDDEN T wired}
- addUserKnob {3 lockCallbacks l "" +STARTLINE +HIDDEN}
- addUserKnob {6 toReconnect -STARTLINE +HIDDEN}
- addUserKnob {1 title l Title: t "Displayed name on the Node Graph for this Stamp and its Anchor.\nIMPORTANT: This is only for display purposes, and is different from the real/internal name of the Stamps."}
- title cam
- addUserKnob {26 prev_title l "" +STARTLINE +HIDDEN T cam}
- addUserKnob {26 tags l Tags: t "Tags of this stamp's Anchor, for information purpose only.\nClick \"show anchor\" to change them." T <i>Camera</i>}
- addUserKnob {26 backdrops l Backdrops: t "Labels of backdrop nodes which contain this stamp's Anchor." T "<i>cam,<center> CG</i>"}
- addUserKnob {26 line1 l "" +STARTLINE}
- addUserKnob {6 postageStamp_show l "postage stamp" t "Enable the postage stamp thumbnail in this node.\nYou're seeing this because the class of this node includes the postage_stamp knob." +HIDDEN +STARTLINE}
- addUserKnob {26 anchor_label l Anchor: T " "}
- addUserKnob {22 show_anchor l " show anchor " t "Show the properties panel for this Stamp's Anchor." -STARTLINE T stamps.wiredShowAnchor()}
- addUserKnob {22 zoom_anchor l "zoom anchor" t "Navigate to this Stamp's Anchor on the Node Graph." -STARTLINE T stamps.wiredZoomAnchor()}
- addUserKnob {26 stamps_label l Stamps: T " "}
- addUserKnob {22 zoomNext l " zoom next " t "Navigate to this Stamp's next sibling on the Node Graph." -STARTLINE T stamps.wiredZoomNext()}
- addUserKnob {22 selectSimilar l " select similar " t "Select all similar Stamps to this one on the Node Graph." -STARTLINE T stamps.wiredSelectSimilar()}
- addUserKnob {26 space_1 l "" +STARTLINE T " "}
- addUserKnob {26 reconnect_label l Reconnect: t "Reconnect by the stored Anchor name." T " "}
- addUserKnob {22 reconnect_this l this t "Reconnect this Stamp to its Anchor, by its stored Anchor name." -STARTLINE T "n = nuke.thisNode()\ntry:\n    n.setInput(0,nuke.toNode(n.knob(\"anchor\").value()))\nexcept:\n    nuke.message(\"Unable to reconnect.\")\ntry:\n    import stamps\n    stamps.wiredGetStyle(n)\nexcept:\n    pass\n"}
- addUserKnob {22 reconnect_similar l similar t "Reconnect this Stamp and similar ones to their Anchor, by their stored anchor name." -STARTLINE T stamps.wiredReconnectSimilar()}
- addUserKnob {22 reconnect_all l all t "Reconnect all the Stamps to their Anchors, by their stored anchor names." -STARTLINE T stamps.wiredReconnectAll()}
- addUserKnob {26 space_2 l "" +STARTLINE T " "}
- addUserKnob {20 advanced_reconnection l "Advanced Reconnection" n 2}
- addUserKnob {26 reconnect_by_title_label l "<font color=gold>By Title:" t "Reconnect by searching for a matching title." T " "}
- addUserKnob {22 reconnect_by_title_this l this t "Look for an Anchor that shares this Stamp's title, and connect this Stamp to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitle()}
- addUserKnob {22 reconnect_by_title_similar l similar t "Look for an Anchor that shares this Stamp's title, and connect this Stamp and similar ones to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSimilar()}
- addUserKnob {22 reconnect_by_title_selected l selected t "For each Stamp selected, look for an Anchor that shares its title, and connect to it.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectByTitleSelected()}
- addUserKnob {26 reconnect_by_selection_label l "<font color=orangered>By Selection:" t "Force reconnect to a selected Anchor." T " "}
- addUserKnob {22 reconnect_by_selection_this l this t "Force reconnect this Stamp to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelection()}
- addUserKnob {22 reconnect_by_selection_similar l similar t "Force reconnect this Stamp and similar ones to a selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSimilar()}
- addUserKnob {22 reconnect_by_selection_selected l selected t "Force reconnect all selected Stamps to an also selected Anchor, whatever its name or title.\nIMPORTANT: Use this carefully, and only when the normal reconnection doesn't work." -STARTLINE T stamps.wiredReconnectBySelectionSelected()}
- addUserKnob {1 anchor l Anchor}
- anchor Anchor_38346e9bcf1
- addUserKnob {6 auto_reconnect_by_title l "<font color=#ED9977>&nbsp; auto-reconnect by title" t "When creating this stamp again (like on copy-paste), auto-reconnect it by title instead of doing it by the saved anchor's name, and auto-turn this off immediately.\nIMPORTANT: Should be off by default. Only use this for setting up templates." +STARTLINE}
- addUserKnob {26 line2 l "" +STARTLINE}
- addUserKnob {22 buttonHelp l Help -STARTLINE T stamps.showHelp()}
+BackdropNode {
+inputs 0
+name BackdropNode14
+tile_color 0x64386a01
+label "<center> Depth fix"
+note_font_size 42
+selected true
+xpos -59826
+ypos 31080
+bdwidth 253
+bdheight 211
 }
-Group {
- name DofCalc2
- label "<left>\nfocal length: \[format \"%.0f\" \[value f]]\nf-stop: \[format \"%.2f\" \[value N]]\nsubject dist: \[format \"%.2f\" \[value s]]\n\nhyperfocal dist: \[format \"%.2f\" \[value H]]\n---------------------------\ndof: \[format \"%.2f\" \[value dof]]\ndof near: \[format \"%.2f\" \[value Dn]]\ndof far: \[format \"%.2f\" \[value Df]]"
- selected true
- xpos -59412
- ypos 31046
- addUserKnob {20 DofCalc}
- addUserKnob {4 depth_unit l "depth unit" t "Set your depth unit" M {mm cm dm m inch ft}}
- depth_unit ft
- addUserKnob {41 s l subject_distance T VAR.s}
- addUserKnob {41 f l focal_length T VAR.f}
- addUserKnob {41 N l f-number T VAR.N}
- addUserKnob {41 c l "coc limit" t "The smallest circle of confusion to be treated as a point in mm" T VAR.c}
- addUserKnob {41 H l hyperfocal_distance t "The hyperfocal distance in Meters" T VAR.H}
- addUserKnob {41 Dn l dof_near T VAR.Dn}
- addUserKnob {41 Df l dof_far T VAR.Df}
- addUserKnob {7 dof l dof_range R 0 100}
- dof {{Df-Dn}}
- addUserKnob {41 haperture l "horiz aperture" T cam_dof.haperture}
- addUserKnob {41 vaperture l "vert aperture" T cam_dof.vaperture}
-}
- Camera2 {
-  inputs 0
-  xform_order {{"\[topnode input0].knob.xform_order"}}
-  rot_order {{"\[topnode input0].knob.rot_order"}}
-  translate {{"\[topnode input0].translate.x"} {"\[topnode input0].translate.y"} {"\[topnode input0].translate.z"}}
-  rotate {{"\[topnode input0].rotate.x"} {"\[topnode input0].rotate.y"} {"\[topnode input0].rotate.z"}}
-  scaling {{"\[topnode input0].knob.scaling"} {"\[topnode input0].knob.scaling"} {"\[topnode input0].knob.scaling"}}
-  uniform_scale {{"\[topnode input0].knob.uniform_scale"}}
-  skew {{"\[topnode input0].knob.skew"} {"\[topnode input0].knob.skew"} {"\[topnode input0].knob.skew"}}
-  pivot_translate {{"\[topnode input0].knob.pivot"} {"\[topnode input0].knob.pivot"} {"\[topnode input0].knob.pivot"}}
-  projection_mode {{"\[topnode input0].knob.projection_mode"}}
-  focal {{"\[topnode input0]knob.focal"}}
-  haperture {{"\[topnode input0].haperture"}}
-  vaperture {{"\[topnode input0].vaperture"}}
-  near {{"\[topnode input0].knob.near"}}
-  far {{"\[topnode input0].knob.far"}}
-  win_translate {{"\[topnode input0].knob.win_translate"} {"\[topnode input0].knob.win_translate"}}
-  win_scale {{"parent.stabilize == 1 ? parent.overscan_percentage : 1"} {win_scale.u}}
-  winroll {{"\[topnode input0].knob.winroll"}}
-  focal_point {{"\[topnode input0].knob.focal_point"}}
-  fstop {{"\[topnode input0].knob.fstop"}}
-  name cam_dof
-  xpos -360
-  ypos -270
- }
- Dot {
-  name Dot6
-  note_font_size 42
-  note_font_color 0x7f7f7f01
-  xpos -337
-  ypos -50
- }
-set Na8cf12c0 [stack 0]
- Constant {
-  inputs 0
-  color {0.2 0 0 0}
-  name Constant8
-  xpos -481
-  ypos -101
- }
- Card2 {
-  image_aspect false
-  control_points {3 3 3 6 
-
-1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
-1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
-1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
-1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
-1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
-  name Card5
-  xpos -481
-  ypos -5
- }
- TransformGeo {
-  inputs 2
-  translate {0 0 {-parent.VAR.Df}}
-  scaling {{(parent.cam_dof.haperture/parent.cam_dof.focal)*-translate.z} {(cam_dof.vaperture/cam_dof.focal)*-translate.z} 1}
-  name TransformGeo5
-  xpos -481
-  ypos 43
- }
-push $Na8cf12c0
- Constant {
-  inputs 0
-  color {0 0 0.2 0}
-  name Constant7
-  xpos -591
-  ypos -101
- }
- Card2 {
-  image_aspect false
-  control_points {3 3 3 6 
-
-1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
-1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
-1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
-1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
-1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
-  name Card4
-  xpos -591
-  ypos -5
- }
- TransformGeo {
-  inputs 2
-  translate {0 0 {-parent.VAR.Dn}}
-  scaling {{(parent.cam_dof.haperture/parent.cam_dof.focal)*-translate.z} {(parent.cam_dof.vaperture/parent.cam_dof.focal)*-translate.z} 1}
-  name TransformGeo4
-  xpos -591
-  ypos 43
- }
-push $Na8cf12c0
- Constant {
-  inputs 0
-  color {0.03306 0.364 0.03306 0}
-  name Constant6
-  xpos -701
-  ypos -101
- }
- Card2 {
-  image_aspect false
-  control_points {3 3 3 6 
-
-1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
-1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
-1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
-1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
-1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
-1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
-1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
-1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
-1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
-  name Card3
-  xpos -701
-  ypos -5
- }
- TransformGeo {
-  inputs 2
-  translate {0 0 {-parent.cam_dof.focal_point}}
-  scaling {{(parent.cam_dof.haperture/parent.cam_dof.focal)*parent.cam_dof.focal_point} {(parent.cam_dof.vaperture/parent.cam_dof.focal)*parent.cam_dof.focal_point} 1}
-  name TransformGeo3
-  xpos -701
-  ypos 43
- }
- Scene {
-  inputs 3
-  name Scene2
-  xpos -691
-  ypos 129
- }
- Output {
-  name Output1
-  xpos -701
-  ypos 375
- }
- Input {
-  inputs 0
-  name InputCam
-  label "\[value number]"
-  xpos -260
-  ypos -249
- }
- NoOp {
-  name VAR
-  selected true
-  xpos -260
-  ypos -177
-  addUserKnob {20 User}
-  addUserKnob {7 s l subject_distance R 0 1000}
-  s {{parent.cam_dof.focal_point}}
-  addUserKnob {7 f l focal_length R 0 250}
-  f {{parent.cam_dof.focal}}
-  addUserKnob {7 N l f-number R 0 45}
-  N {{parent.cam_dof.fstop}}
-  addUserKnob {7 c l coc}
-  c 0.025
-  addUserKnob {7 H l hyperfocal_distance R 0 1000}
-  H {{"(pow(f, 2)) / (N*c)/mm"}}
-  addUserKnob {7 Dn l dof_near R 0 1000}
-  Dn {{"(s*mm * (H*mm-f) / (H*mm + s*mm - f*2))/mm"}}
-  addUserKnob {7 Df l dof_far R 0 1000}
-  Df {{"s > H ? 100000 : (s*mm * (H*mm-f) / (H*mm - s*mm))/mm"}}
-  addUserKnob {7 mm}
-  mm {{"parent.depth_unit == 1 ? 10 : parent.depth_unit == 2 ? 100 : parent.depth_unit == 3 ? 1000 : parent.depth_unit == 4 ? 25.4 : parent.depth_unit == 5 ? 304.8 : 1"}}
- }
-end_group
 push $cut_paste_input
 Expression {
- temp_name0 pixelAngleX
- temp_expr0 (x-halfPixelSize.w)/pixelSize.w*cameraHorizontalFOV
- temp_name1 pixelAngleY
- temp_expr1 (y-halfPixelSize.h)/pixelSize.h*cameraVerticalFOV
- temp_name2 correctionFactor
- temp_expr2 cos(pixelAngleY)*cos(pixelAngleX)
- channel0 depth
- expr0 1/(depth.Z*correctionFactor)
- channel1 none
- channel2 none
- name MayaDepthToNukeDepth6
- selected true
- xpos -59614
- ypos 31115
- addUserKnob {20 Camera_settings l "Camera Settings"}
- addUserKnob {26 text1 l "" +STARTLINE T "Use expressions to connect these\nto your camera\n\n"}
- addUserKnob {7 cameraHorizontalAperture}
- cameraHorizontalAperture {{parent.DofCalc2.cam_dof.haperture}}
- addUserKnob {7 cameraVerticalAperture}
- cameraVerticalAperture {{parent.DofCalc2.cam_dof.vaperture}}
- addUserKnob {7 cameraFocalLength}
- cameraFocalLength {{parent.DofCalc2.VAR.f}}
- addUserKnob {20 endGroup n -1}
- addUserKnob {26 ""}
- addUserKnob {26 Text2 l "" +STARTLINE T "These are calculated automatically\nbased on the settings above. Yeah!"}
- addUserKnob {7 cameraHorizontalFOV}
- cameraHorizontalFOV {{2*atan(0.5*(cameraHorizontalAperture/cameraFocalLength))}}
- addUserKnob {7 cameraVerticalFOV}
- cameraVerticalFOV {{2*atan(0.5*(cameraVerticalAperture/cameraFocalLength))}}
- addUserKnob {14 pixelSize R 0 100}
- pixelSize {{width} {height}}
- addUserKnob {14 halfPixelSize R 0 100}
- halfPixelSize {{pixelSize.w/2} {pixelSize.h/2}}
+channel0 depth
+expr0 "1 / Z"
+name Expression8
+label "only when 1/Z"
+selected true
+xpos -59745
+ypos 31169
 }
-DeepFromImage {
- premult true
- name DeepFromImage8
- selected true
- xpos -59614
- ypos 31141
+Expression {
+temp_name3 value
+temp_expr3 10000
+channel0 depth
+expr0 "isinf(Z) ? value : Z"
+name Expression_inf
+selected true
+xpos -59745
+ypos 31207
 }
-DeepReformat {
- format "3840 2160 0 0 3840 2160 1 HD 2X"
- name DeepReformat1
- selected true
- xpos -59614
- ypos 31167
+Expression {
+channel0 depth
+expr0 "isnan(Z) ? 10000 : Z"
+name Expression_nan
+selected true
+xpos -59745
+ypos 31233
+}
+Expression {
+channel0 depth
+expr0 "Z == 0 ? 10000 : Z"
+name Expression_0
+selected true
+xpos -59745
+ypos 31259
 }
